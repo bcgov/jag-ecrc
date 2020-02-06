@@ -34,6 +34,8 @@ mvn clean install
 mvn springboot:run
 ```
 
+Note: If using STS4, see the **Boot Dashboard** window instead of using the Maven command above. 
+
 ## Application Entry point
 
 ```
