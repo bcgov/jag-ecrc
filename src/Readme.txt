@@ -1,0 +1,1 @@
+The ReactJS project folder should be placed at this level. Remove this file once complete.  
