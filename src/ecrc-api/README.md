@@ -1,6 +1,6 @@
 # ecrc-api
 
-This application provides the eCRC API.   
+This application provides the eCRC API.
 
 ## Getting Started
 
