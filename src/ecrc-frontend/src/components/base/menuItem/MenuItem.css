@@ -7,12 +7,12 @@ li {
   list-style-type: none;
 }
 
-a {
+li a {
   color: #1a5a96;
   text-decoration: none;
 }
 
-a:hover {
-  color: #428bca;
+li a:hover {
+  color: #0000ff;
   text-decoration: underline;
 }

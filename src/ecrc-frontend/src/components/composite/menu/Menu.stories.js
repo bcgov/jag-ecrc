@@ -1,5 +1,5 @@
 import React from "react";
-
+import "@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css";
 import Menu from "./Menu";
 
 export default {
