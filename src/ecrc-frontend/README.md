@@ -2,6 +2,10 @@
 
 In the project directory, you can run:
 
+### `npm install`
+
+Installs all the required dependencies to get the application up and running.
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
