@@ -6,17 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "apphome",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "doAuth",
 			"request": {
 				"method": "GET",
