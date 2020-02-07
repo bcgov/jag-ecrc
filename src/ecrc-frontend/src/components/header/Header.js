@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header(props) {
+export default function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark">
@@ -21,7 +21,7 @@ export default function Header(props) {
               alt="B.C. Government Logo"
             />
           </a>
-          <div className="navbar-brand">{props.name}</div>
+          <div className="navbar-brand">eCRC</div>
           <button
             className="navbar-toggler"
             type="button"
@@ -31,7 +31,7 @@ export default function Header(props) {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
