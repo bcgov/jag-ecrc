@@ -1,3 +1,5 @@
+package ca.bc.gov.open.ecrc.exception;
+
 /**
  * 
  * EcrcServiceException class

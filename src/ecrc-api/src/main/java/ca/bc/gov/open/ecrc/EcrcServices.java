@@ -1,5 +1,6 @@
 package ca.bc.gov.open.ecrc;
 
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 
 /**
  * 
@@ -10,7 +11,7 @@ package ca.bc.gov.open.ecrc;
  */
 public interface EcrcServices {
 	
-	public String doAuthenticateUser(String accessCode);
+	public String doAuthenticateUser(String accessCode) throws EcrcServiceException;
 	
 	//TODO - fill in other service method signatures here. 
 	
