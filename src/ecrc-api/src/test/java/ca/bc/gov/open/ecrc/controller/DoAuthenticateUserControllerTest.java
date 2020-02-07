@@ -2,14 +2,10 @@ package ca.bc.gov.open.ecrc.controller;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 
-import ca.bc.gov.open.ecrc.controller.DoAuthenticateUserController;
-
-
-public class DoAuthenticateControllerTest {
+public class DoAuthenticateUserControllerTest {
 
 	DoAuthenticateUserController auth = new DoAuthenticateUserController();
 	
