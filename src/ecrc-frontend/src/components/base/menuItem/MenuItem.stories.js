@@ -7,4 +7,6 @@ export default {
   component: MenuItem
 };
 
+export const Empty = () => <MenuItem />;
+
 export const Default = () => <MenuItem url="url" name="Name" />;
