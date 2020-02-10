@@ -1,0 +1,65 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DoAuthenticateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AccessCodeResponse">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="org_party_id"/>
+              <xs:element type="xs:string" name="org_nm"/>
+              <xs:element type="xs:string" name="contact_surname_nm"/>
+              <xs:element type="xs:string" name="contact_first_nm"/>
+              <xs:element type="xs:string" name="address_line_1"/>
+              <xs:element type="xs:string" name="address_line_2"/>
+              <xs:element type="xs:string" name="city_nm"/>
+              <xs:element type="xs:string" name="province_nm"/>
+              <xs:element type="xs:string" name="country_nm"/>
+              <xs:element type="xs:string" name="postal_code_txt"/>
+              <xs:element type="xs:string" name="contact_phone_no"/>
+              <xs:element type="xs:string" name="contact_fax_no"/>
+              <xs:element type="xs:string" name="org_applicant_relationship"/>
+              <xs:element type="xs:string" name="default_schedule_type_cd"/>
+              <xs:element type="xs:string" name="default_crc_scope_level_cd"/>
+              <xs:element type="xs:string" name="ticket_found_yn"/>
+              <xs:element type="xs:string" name="already_used_yn"/>
+              <xs:element type="xs:string" name="valid_date_range_yn"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ScopeLevels">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ScopeLevel" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="crc_scope_level_cd"/>
+                    <xs:element type="xs:string" name="crc_scope_level_dsc"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <xs:element name="ScheduleTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ScheduleType" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="crc_schedule_type_cd"/>
+                    <xs:element type="xs:string" name="crc_schedule_type_dsc"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        
+        <xs:element type="xs:string" name="Message"/>
+        <xs:element type="xs:int" name="ResponseCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
