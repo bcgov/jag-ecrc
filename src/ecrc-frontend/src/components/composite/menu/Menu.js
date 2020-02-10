@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./Menu.css";
 import MenuItem from "../../base/menuItem/MenuItem";
 
-export default function Menu({ menuItems: [...menuItems] }) {
+export default function Menu({ menuItems }) {
   const menuList = menuItems.map(menuItem => {
     return <MenuItem key={menuItem.name} menuItem={menuItem} />;
   });

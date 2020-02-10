@@ -5,12 +5,12 @@ import MenuItem from "./MenuItem";
 
 describe("MenuItem Component", () => {
   test("Matches the snapshot", () => {
-    const link = {
+    const menuItem = {
       url: "/somewhere",
       name: "Link to Somewhere"
     };
 
-    const menuItem = create(<MenuItem menuItem={link} />);
-    expect(menuItem.toJSON()).toMatchSnapshot();
+    const singleMenuItem = create(<MenuItem menuItem={menuItem} />);
+    expect(singleMenuItem.toJSON()).toMatchSnapshot();
   });
 });

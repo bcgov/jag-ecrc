@@ -4,7 +4,11 @@ import { create } from "react-test-renderer";
 import Menu from "./Menu";
 
 describe("Menu Component", () => {
-  test("Matches the snapshot", () => {
+  test("Matches the snapshot of empty menu", () => {
+    const emptyMenu = create(<Menu />);
+    expect(emptyMenu.toJSON()).toMatchSnapshot();
+  });
+  test("Matches the snapshot of populated menu", () => {
     const menuItems = [
       {
         name: "Home",
@@ -24,7 +28,7 @@ describe("Menu Component", () => {
       }
     ];
 
-    const menu = create(<Menu menuItems={menuItems} />);
-    expect(menu.toJSON()).toMatchSnapshot();
+    const populatedMenu = create(<Menu menuItems={menuItems} />);
+    expect(populatedMenu.toJSON()).toMatchSnapshot();
   });
 });
