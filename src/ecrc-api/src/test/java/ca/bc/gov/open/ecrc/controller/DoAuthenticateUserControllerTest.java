@@ -12,12 +12,7 @@ public class DoAuthenticateUserControllerTest {
 	
 	@Test
 	public void testOddValidOrg() {
-		ResponseEntity<String> result = auth.doAuthenticateUser(1);
-		Assertions.assertEquals(result.getBody().toString(), "{\"bscsorg\" : \"0\"}");
-	}
-	@Test
-	public void testEvenValidOrg() {
-		ResponseEntity<String> result = auth.doAuthenticateUser(2);
-		Assertions.assertEquals(result.getBody().toString(), "{\"bscsorg\" : \"1\"}");
+		ResponseEntity<String> result = auth.doAuthenticateUser("Test");
+		Assertions.assertEquals("{\"AccessCodeResponse\":{\"org_party_id\":1,\"org_nm\":\"orgNm\",\"contact_surname_nm\":\"contactSurnameNm\",\"contact_first_nm\":\"contactFirstNm\",\"address_line_1\":\"addressLine1\",\"address_line_2\":\"addressLine2\",\"city_nm\":\"cityNm\",\"province_nm\":\"provinceNm\",\"country_nm\":\"countryNm\",\"postal_code_txt\":\"postalCodeTxt\",\"contact_phone_no\":\"contactPhoneNo\",\"contact_fax_no\":\"contactFaxNo\",\"org_applicant_relationship\":\"orgApplicantRelationship\",\"default_schedule_type_cd\":\"defaultScheduleTypeCd\",\"default_crc_scope_level_cd\":\"defaultCrcScopeLevelCd\",\"ticket_found_yn\":\"Y\",\"already_used_yn\":\"Y\",\"valid_date_range_yn\":\"Y\"},\"ScopeLevels\":{},\"ScheduleTypes\":{},\"Message\":\"Test\",\"ResponseCode\":1}",result.getBody().toString());
 	}
 }

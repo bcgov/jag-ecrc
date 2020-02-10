@@ -7,11 +7,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.MarshalException;
 
 public class ObjectToJSONUtilTest {
     @Test
-    public void testFailedInputReturnsNull() {
-        Assertions.assertNull(ObjectToJSONUtil.jaxbObjectToJSON(new DoAuthenticateUser()));
+    public void testFailedInputReturnsEmptyString() {
+        String result = ObjectToJSONUtil.jaxbObjectToJSON(null);
+        Assertions.assertEquals("", result);
     }
 
     @Test
@@ -22,6 +24,6 @@ public class ObjectToJSONUtilTest {
         getNextInvoiceId.setResponseCode(1);
         String result = ObjectToJSONUtil.jaxbObjectToJSON(getNextInvoiceId);
 
-        Assertions.assertEquals("{\"\":\"\"}", result);
+        Assertions.assertEquals("{\"InvoiceId\":111,\"Message\":\"TEST\",\"ResponseCode\":1}", result);
     }
 }
