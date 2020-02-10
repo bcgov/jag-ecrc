@@ -10,7 +10,7 @@ describe("MenuItem Component", () => {
       name: "Link to Somewhere"
     };
 
-    const menuItem = create(<MenuItem name={link.name} url={link.url} />);
+    const menuItem = create(<MenuItem menuItem={link} />);
     expect(menuItem.toJSON()).toMatchSnapshot();
   });
 });
