@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./Menu.css";
 import MenuItem from "../../base/menuItem/MenuItem";
@@ -39,3 +40,7 @@ export default function Menu({ menuItems }) {
     </div>
   );
 }
+
+Menu.propTypes = {
+  menuItems: PropTypes.array
+};
