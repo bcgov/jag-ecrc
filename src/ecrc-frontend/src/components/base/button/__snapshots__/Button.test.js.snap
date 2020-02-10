@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button component Matches the snapshot 1`] = `
+exports[`Button Component Matches the snapshot 1`] = `
 <button
   className="btn btn--primary--solid btn--medium"
   onClick={[Function]}
-  type="reset"
+  type="button"
 >
   test
 </button>
