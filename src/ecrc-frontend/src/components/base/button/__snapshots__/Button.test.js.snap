@@ -2,8 +2,10 @@
 
 exports[`Button component Matches the snapshot 1`] = `
 <button
-  type="submit"
+  className="btn btn--primary--solid btn--medium"
+  onClick={[Function]}
+  type="reset"
 >
-  Nothing to do for now
+  test
 </button>
 `;
