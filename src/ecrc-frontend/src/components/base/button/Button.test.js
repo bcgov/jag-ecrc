@@ -8,7 +8,6 @@ describe("Button Component", () => {
   test("Matches the snapshot", () => {
     const buttonTest = {
       children: "test",
-      type: "reset",
       onClick: action("onButtonClicked"),
       buttonStyle: "btn--primary--solid",
       buttonSize: "btn--medium"

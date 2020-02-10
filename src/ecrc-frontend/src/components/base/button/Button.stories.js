@@ -12,7 +12,6 @@ export default {
 
 export const buttonData = {
   children: "buttonChildren",
-  type: "submit",
   onClick: action("onButtonClicked"),
   buttonStyle: "btn--primary--solid",
   buttonSize: "btn--medium"
