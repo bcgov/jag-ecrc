@@ -7,7 +7,7 @@ const BUTTON_STYLES = ["btn--primary--solid", "btn--warning--solid"];
 const BUTTON_SIZES = ["btn--medium", "btn--small"];
 
 export const Button = ({
-  button: { children, onClick, type, buttonStyle, buttonSize }
+  button: { children, onClick, buttonStyle, buttonSize }
 }) => {
   const checkButtonStyle = BUTTON_STYLES.includes(buttonStyle)
     ? buttonStyle
@@ -20,8 +20,8 @@ export const Button = ({
   return (
     <button
       className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-      type={type}
       onClick={onClick}
+      type="button"
     >
       {children}
     </button>
@@ -32,18 +32,16 @@ Button.propTypes = {
   button: PropTypes.shape({
     children: PropTypes.node.isRequired,
     onClick: PropTypes.func.isRequired,
-    buttonStyle: PropTypes.string.isRequired,
-    buttonSize: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
-  }).isRequired
+    buttonStyle: PropTypes.string,
+    buttonSize: PropTypes.string
+  })
 };
 
-// Button.defaultProps = {
-//   children: "",
-//   buttonStyle: BUTTON_STYLES[0],
-//   buttonSize: BUTTON_SIZES[0],
-//   onClick: console.log("button clicked."),
-//   type: "button"
-// };
+Button.defaultProps = {
+  button: {
+    buttonStyle: BUTTON_STYLES[0],
+    buttonSize: BUTTON_SIZES[0]
+  }
+};
 
 export default Button;
