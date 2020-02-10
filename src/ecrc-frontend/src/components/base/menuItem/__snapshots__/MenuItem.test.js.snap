@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuItem Component Matches the snapshot 1`] = `
+<li
+  className="menuItem"
+>
+  <a
+    href="/somewhere"
+  >
+    Link to Somewhere
+  </a>
+</li>
+`;
