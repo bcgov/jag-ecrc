@@ -12,7 +12,7 @@ export default function Menu({ menuItems }) {
   });
 
   return (
-    <div className="col-sm-3 col-md-3">
+    <div className="col-12 col-md-3 ">
       <nav className="navbar navbar-expand-md navbar-light" role="navigation">
         <button
           className="navbar-toggler"
