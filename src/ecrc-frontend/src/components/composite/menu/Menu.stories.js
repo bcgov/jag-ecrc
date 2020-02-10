@@ -30,3 +30,13 @@ const menuItems = [
 export const Empty = () => <Menu />;
 
 export const Default = () => <Menu menuItems={menuItems} />;
+
+export const Mobile = () => <Menu menuItems={menuItems} />;
+
+Mobile.story = {
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile2"
+    }
+  }
+};
