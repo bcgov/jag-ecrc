@@ -12,25 +12,27 @@ export default function Menu({ menuItems }) {
   });
 
   return (
-    <div className="col-12 col-md-3 ">
-      <nav className="navbar navbar-expand-md navbar-light" role="navigation">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#leftNav"
-          aria-controls="leftNav"
-          aria-expanded="false"
-          aria-label="Toggle left navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
+    menuItems.length > 0 && (
+      <div className="col-12 col-md-3 ">
+        <nav className="navbar navbar-expand-md navbar-light" role="navigation">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#leftNav"
+            aria-controls="leftNav"
+            aria-expanded="false"
+            aria-label="Toggle left navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
 
-        <div id="leftNav" className="collapse navbar-collapse">
-          <ul className="menuList navbar-nav flex-column">{menuList}</ul>
-        </div>
-      </nav>
-    </div>
+          <div id="leftNav" className="collapse navbar-collapse">
+            <ul className="menuList navbar-nav flex-column">{menuList}</ul>
+          </div>
+        </nav>
+      </div>
+    )
   );
 }
 
