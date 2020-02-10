@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import ca.bc.gov.open.ecrc.controller.DoAuthenticateUserController;
 
 
-public class DoAuthenticateControllerTest {
+public class DoAuthenticateUserControllerTest {
 
 	DoAuthenticateUserController auth = new DoAuthenticateUserController();
 	
