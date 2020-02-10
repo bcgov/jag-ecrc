@@ -5,6 +5,7 @@ import "../../base/menuItem/MenuItem";
 import MenuItem from "../../base/menuItem/MenuItem";
 
 export default function Menu(props) {
+  //If menuItems are provided, create an array of MenuItems, else default to empty array
   const menuList = props.menuItems
     ? props.menuItems.map((menuItem, index) => {
         return <MenuItem key={index} url={menuItem.url} name={menuItem.name} />;
@@ -27,7 +28,7 @@ export default function Menu(props) {
         </button>
 
         <div id="leftNav" className="collapse navbar-collapse">
-          <ul className="navbar-nav flex-column">{menuList}</ul>
+          <ul className="menuList navbar-nav flex-column">{menuList}</ul>
         </div>
       </nav>
     </div>
