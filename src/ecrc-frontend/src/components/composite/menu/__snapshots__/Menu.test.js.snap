@@ -2,7 +2,7 @@
 
 exports[`Menu Component Matches the snapshot 1`] = `
 <div
-  className="col-sm-3 col-md-3"
+  className="col-12 col-md-3 "
 >
   <nav
     className="navbar navbar-expand-md navbar-light"
@@ -26,7 +26,7 @@ exports[`Menu Component Matches the snapshot 1`] = `
       id="leftNav"
     >
       <ul
-        className="navbar-nav flex-column"
+        className="menuList navbar-nav flex-column"
       >
         <li
           className="menuItem"
