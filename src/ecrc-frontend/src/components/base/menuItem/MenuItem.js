@@ -6,12 +6,12 @@ import "./MenuItem.css";
 export default function MenuItem({ name, url }) {
   return (
     <li className="menuItem">
-      <a href={url || ""}>{name || ""}</a>
+      <a href={url}>{name}</a>
     </li>
   );
 }
 
 MenuItem.propTypes = {
-  name: PropTypes.string,
-  url: PropTypes.string
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 };

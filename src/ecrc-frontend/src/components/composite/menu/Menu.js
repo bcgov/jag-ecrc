@@ -6,17 +6,11 @@ import MenuItem from "../../base/menuItem/MenuItem";
 
 export default function Menu({ menuItems }) {
   // If menuItems are provided, create an array of MenuItems, else default to empty array
-  const menuList = menuItems
-    ? menuItems.map((menuItem, index) => {
-        return (
-          <MenuItem
-            key={menuItem.name}
-            url={menuItem.url}
-            name={menuItem.name}
-          />
-        );
-      })
-    : [];
+  const menuList = menuItems.map(menuItem => {
+    return (
+      <MenuItem key={menuItem.name} url={menuItem.url} name={menuItem.name} />
+    );
+  });
 
   return (
     <div className="col-sm-3 col-md-3">
@@ -42,5 +36,14 @@ export default function Menu({ menuItems }) {
 }
 
 Menu.propTypes = {
-  menuItems: PropTypes.array
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired
+    })
+  )
+};
+
+Menu.defaultProps = {
+  MenuItems: []
 };
