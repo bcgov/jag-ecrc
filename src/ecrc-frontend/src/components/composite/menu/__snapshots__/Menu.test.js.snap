@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Component Matches the snapshot of empty menu 1`] = `null`;
+
+exports[`Menu Component Matches the snapshot of populated menu 1`] = `
+<div
+  className="col-12 col-md-3 "
+>
+  <nav
+    className="navbar navbar-expand-md navbar-light"
+    role="navigation"
+  >
+    <button
+      aria-controls="leftNav"
+      aria-expanded="false"
+      aria-label="Toggle left navigation"
+      className="navbar-toggler"
+      data-target="#leftNav"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse"
+      id="leftNav"
+    >
+      <ul
+        className="menuList navbar-nav flex-column"
+      >
+        <li
+          className="menuItem"
+        >
+          <a
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li
+          className="menuItem"
+        >
+          <a
+            href="/somewhere"
+          >
+            Somewhere
+          </a>
+        </li>
+        <li
+          className="menuItem"
+        >
+          <a
+            href="/somewhereelse"
+          >
+            Somewhere else
+          </a>
+        </li>
+        <li
+          className="menuItem"
+        >
+          <a
+            href="/here"
+          >
+            Somewhere with a long name for no reason
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;

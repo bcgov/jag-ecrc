@@ -1,0 +1,18 @@
+.menuItem {
+  margin: 10px 0px 0px;
+  padding: 0px 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+li a {
+  color: #1a5a96;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}
