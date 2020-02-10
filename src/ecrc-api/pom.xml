@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -41,6 +41,33 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2.11</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-core</artifactId>
+			<version>2.2.11</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.2.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+			<version>3.2.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-xjc-plugin</artifactId>
+			<version>3.2.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -49,6 +76,161 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-xjc-plugin</artifactId>
+				<version>3.2.3</version>
+				<configuration>
+					<extensions>
+						<extension>org.apache.cxf.xjcplugins:cxf-xjc-dv:3.2.3</extension>
+						<extension>org.andromda.thirdparty.jaxb2_commons:camelcase-always:1.0</extension>
+					</extensions>
+				</configuration>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>xsdtojava</goal>
+						</goals>
+						<configuration>
+							<sourceRoot>${basedir}/target/generated-sources/src</sourceRoot>
+							<xsdOptions>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/DoAuthenticateUser.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/CheckApplicantForPrevCRC.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/CreateApplicant.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/CreateNewCRCService.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/CreateSharingService.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/GetCountryList.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/GetNextInvoiceId.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/GetNextSessionId.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/GetProvinceList.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/GetServiceFeeAmount.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/LogEivFailure.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/LogPaymentFailure.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+								<xsdOption>
+									<xsd>src/main/resources/schemas/UpdateServiceFinancialTxn.xsd</xsd>
+									<packagename>ca.bc.gov.open.ecrc.objects</packagename>
+									<extension>true</extension>
+									<extensionArgs>
+										<extensionArg>-camelcase-always</extensionArg>
+									</extensionArgs>
+								</xsdOption>
+							</xsdOptions>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.2</version>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+						<manifest>
+							<addDefaultEntries>true</addDefaultEntries>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
