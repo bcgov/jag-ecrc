@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "./components/base/button/Button";
 
 export default function App() {
   return (
