@@ -1,14 +1,19 @@
 import React from "react";
 
 import "./Menu.css";
-import "../../base/menuItem/MenuItem";
 import MenuItem from "../../base/menuItem/MenuItem";
 
-export default function Menu(props) {
-  //If menuItems are provided, create an array of MenuItems, else default to empty array
-  const menuList = props.menuItems
-    ? props.menuItems.map((menuItem, index) => {
-        return <MenuItem key={index} url={menuItem.url} name={menuItem.name} />;
+export default function Menu({ menuItems }) {
+  // If menuItems are provided, create an array of MenuItems, else default to empty array
+  const menuList = menuItems
+    ? menuItems.map((menuItem, index) => {
+        return (
+          <MenuItem
+            key={menuItem.name}
+            url={menuItem.url}
+            name={menuItem.name}
+          />
+        );
       })
     : [];
 
