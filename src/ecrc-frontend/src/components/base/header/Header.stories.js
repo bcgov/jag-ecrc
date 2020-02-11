@@ -7,6 +7,8 @@ export default {
   component: Header
 };
 
-const name = "eCRC";
+const header = {
+  name: "eCRC"
+};
 
-export const Default = () => <Header name={name} />;
+export const Default = () => <Header header={header} />;

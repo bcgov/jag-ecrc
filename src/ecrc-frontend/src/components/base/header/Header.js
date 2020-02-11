@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Header({ name }) {
+export default function Header({ header: { name } }) {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark">
@@ -48,5 +48,7 @@ export default function Header({ name }) {
 }
 
 Header.propTypes = {
-  name: PropTypes.string.isRequired
+  header: PropTypes.shape({
+    name: PropTypes.string.isRequired
+  }).isRequired
 };
