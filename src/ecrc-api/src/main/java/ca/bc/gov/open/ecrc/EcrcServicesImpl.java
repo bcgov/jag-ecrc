@@ -1,11 +1,13 @@
 package ca.bc.gov.open.ecrc;
 
 import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
+import javassist.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -42,13 +44,17 @@ public class EcrcServicesImpl implements EcrcServices {
 				.defaultHeaders(header -> header.setBasicAuth(userName, password)).build();
 	}
 
-	public String doAuthenticateUser(String accessCode) throws EcrcServiceException {
+	public String doAuthenticateUser(String accessCode) throws EcrcServiceException  {
 		doAuthenticateUserUri = String.format(doAuthenticateUserUri, accessCode);
 		Mono<DoAuthenticateUser> responseBody = this.webClient.get().uri(doAuthenticateUserUri).retrieve()
 				.bodyToMono(DoAuthenticateUser.class);
 		String response;
 		try {
-			response = objectMapper.writeValueAsString(responseBody.block());
+			if (responseBody.block().getAccessCodeResponse() != null) {
+				return objectMapper.writeValueAsString(responseBody.block());
+			} else {
+				return null;
+			}
 		} catch (JsonProcessingException e) {
 			logger.error("Failed to convert to json processing exception");
 			throw new EcrcServiceException(EcrcExceptionConstants.CONVERT_TO_JSON_ERROR, e);
@@ -56,7 +62,6 @@ public class EcrcServicesImpl implements EcrcServices {
 			logger.error("Failed to convert to json general exception");
 			throw new EcrcServiceException(EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, e);
 		}
-		return response;
 	}
 
 	public String getProvinceList() throws EcrcServiceException {
