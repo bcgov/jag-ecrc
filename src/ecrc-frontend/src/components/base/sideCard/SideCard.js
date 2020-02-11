@@ -14,6 +14,7 @@ export default function SideCard({ sideCard: { heading, content, type } }) {
           <p />
           {type === "notice" && (
             <section
+              id="notice-section"
               className="submit-container"
               style={{
                 backgroundColor: "#F2F2F2",
@@ -28,7 +29,7 @@ export default function SideCard({ sideCard: { heading, content, type } }) {
             </section>
           )}
           {type === "blue" && (
-            <section className="submit-container">
+            <section id="blue-section" className="submit-container">
               <h2>{heading}</h2>
               <div className="submit-content">
                 <p>{content}</p>
