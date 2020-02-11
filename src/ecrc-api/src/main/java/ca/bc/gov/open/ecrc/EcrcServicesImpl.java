@@ -2,6 +2,8 @@ package ca.bc.gov.open.ecrc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -12,6 +14,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.objects.GetProvinceList;
 import reactor.core.publisher.Mono;
+import ca.bc.gov.open.ecrc.model.Link;
 
 /**
  * 
@@ -40,6 +43,17 @@ public class EcrcServicesImpl implements EcrcServices {
 	public String doAuthenticateUser(String accessCode) throws EcrcServiceException {
 		//TODO - code to be added here and change response object. 
 		return null; 
+	}
+	
+	public ArrayList<Link> getLinks() throws EcrcServiceException {
+		//TODO: replace hard coded links with actual links
+		ArrayList<Link> linkList = new ArrayList<Link>();
+		Link link1 = new Link("test1", "www.google.com");
+		Link link2 = new Link("test2", "www.google.ca");
+		linkList.add(link1);
+		linkList.add(link2);
+		
+		return linkList;
 	}
 
 	public String getProvinceList() throws EcrcServiceException {
