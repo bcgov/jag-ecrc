@@ -8,13 +8,14 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.objects.GetProvinceList;
 import reactor.core.publisher.Mono;
 
 /**
  * 
- * Service Implementation class.
+ * Service Implementation class. 
  * 
  * @author shaunmillargov
  *
@@ -37,8 +38,8 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 	public String doAuthenticateUser(String accessCode) throws EcrcServiceException {
-		// TODO - code to be added here and change response object.
-		return null;
+		//TODO - code to be added here and change response object. 
+		return null; 
 	}
 
 	public String getProvinceList() throws EcrcServiceException {
@@ -48,7 +49,11 @@ public class EcrcServicesImpl implements EcrcServices {
 		try {
 			response = objectMapper.writeValueAsString(responseBody.block());
 		} catch (JsonProcessingException e) {
-			throw new EcrcServiceException("JsonProcessingException");
+			// TODO - Log exception
+			throw new EcrcServiceException(EcrcExceptionConstants.CONVERT_TO_JSON_ERROR, e);
+		} catch (Exception e) {
+			// TODO - Log exception
+			throw new EcrcServiceException(EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, e);
 		}
 		return response;
 	}

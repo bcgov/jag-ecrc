@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.EcrcServices;
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 
 /**
@@ -14,13 +15,20 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
  */
 @RestController
 public class GetProvinceListController {
-	
-	@Autowired 
+
+	@Autowired
 	EcrcServices ecrcServices;
 
 	@CrossOrigin(origins = "/**")
 	@GetMapping("/getProvinceList")
-	public String getProvinceList() throws EcrcServiceException {
-		return ecrcServices.getProvinceList();
+	public String getProvinceList() {
+		String response = null;
+		try {
+			response = ecrcServices.getProvinceList();
+		} catch (EcrcServiceException e) {
+			e.printStackTrace();
+			response = String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE, e.getMessage());
+		}
+		return response;
 	}
 }
