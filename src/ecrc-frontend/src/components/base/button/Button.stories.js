@@ -1,22 +1,24 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-
+import { storiesOf } from "@storybook/react";
 import { Button } from "./Button";
 
-export default {
-  component: Button,
-  title: "Button",
-  // Our exports that end in "Data" are not stories.
-  excludeStories: /.*Data$/
-};
-
-export const buttonData = {
-  children: "buttonChildren",
+const button = {
+  label: "button label",
   onClick: action("onButtonClicked"),
-  buttonStyle: "btn--primary--solid",
-  buttonSize: "btn--medium"
+  buttonStyle: "btn btn-primary",
+  buttonSize: "btn btn-sm",
+  type: "submit"
 };
 
-export const Default = () => {
-  return <Button button={buttonData} />;
-};
+storiesOf("Button", module)
+  .add("Default", () => <Button button={button} />)
+  .add("Warning", () => (
+    <Button
+      button={{
+        ...button,
+        buttonStyle: "btn btn-warning",
+        buttonSize: "btn btn-sm"
+      }}
+    />
+  ));

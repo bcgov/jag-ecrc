@@ -2,9 +2,8 @@
 
 exports[`Button Component Matches the snapshot 1`] = `
 <button
-  className="btn btn--primary--solid btn--medium"
+  className="btn-warning btn-sm"
   onClick={[Function]}
-  type="button"
 >
   test
 </button>
