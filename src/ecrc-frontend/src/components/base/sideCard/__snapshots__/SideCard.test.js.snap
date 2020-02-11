@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideCard Component Renders as expected 1`] = `
+<div
+  className="dashboard-spacing"
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-lg-4 col-sm-12"
+      style={
+        Object {
+          "paddingTop": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <p />
+      <section
+        className="submit-container"
+        id="notice-section"
+        style={
+          Object {
+            "backgroundColor": "#F2F2F2",
+            "border": "none",
+            "color": "#000",
+          }
+        }
+      >
+        <h2
+          style={
+            Object {
+              "color": "#000",
+            }
+          }
+        >
+          header
+        </h2>
+        <div
+          className="submit-content"
+        >
+          <p>
+            content
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;
