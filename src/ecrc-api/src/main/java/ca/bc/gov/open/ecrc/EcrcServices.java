@@ -12,7 +12,7 @@ import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
  */
 public interface EcrcServices {
 	
-	public DoAuthenticateUser doAuthenticateUser(String accessCode) throws EcrcServiceException;
+	public String doAuthenticateUser(String accessCode) throws EcrcServiceException;
 	
 	public String getProvinceList() throws EcrcServiceException;
 	
