@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "./SideCard.css";
 
-export default function SideCard({ sideCard: { heading, content } }) {
+export default function SideCard({ sideCard: { heading, content, type } }) {
   return (
     <div className="dashboard-spacing" style={{ position: "relative" }}>
       <div className="row">
@@ -12,21 +12,39 @@ export default function SideCard({ sideCard: { heading, content } }) {
           style={{ position: "relative", paddingTop: "30px" }}
         >
           <p />
-          <section className="submit-container">
-            <h2 style={{ paddingLeft: "10px" }}>{heading}</h2>
-            <div className="submit-content">
-              <p>{content}</p>
-            </div>
-          </section>
+          {type === "notice" && (
+            <section
+              className="submit-container"
+              style={{
+                backgroundColor: "#F2F2F2",
+                color: "#000",
+                border: "none"
+              }}
+            >
+              <h2 style={{ color: "#000" }}>{heading}</h2>
+              <div className="submit-content">
+                <p>{content}</p>
+              </div>
+            </section>
+          )}
+          {type === "blue" && (
+            <section className="submit-container">
+              <h2>{heading}</h2>
+              <div className="submit-content">
+                <p>{content}</p>
+              </div>
+            </section>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-SideCard.PropTypes = {
+SideCard.propTypes = {
   sideCard: PropTypes.shape({
     heading: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired
+    content: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired
   }).isRequired
 };
