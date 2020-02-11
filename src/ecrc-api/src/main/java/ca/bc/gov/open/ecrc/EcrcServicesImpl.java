@@ -50,7 +50,7 @@ public class EcrcServicesImpl implements EcrcServices {
 				.bodyToMono(DoAuthenticateUser.class);
 		String response;
 		try {
-			if (responseBody.block().getAccessCodeResponse() != null) {
+			if (responseBody.block().getResponseCode() == 1) {
 				return objectMapper.writeValueAsString(responseBody.block());
 			} else {
 				return null;
