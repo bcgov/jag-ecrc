@@ -14,6 +14,8 @@ public interface EcrcServices {
 	
 	public DoAuthenticateUser doAuthenticateUser(String accessCode) throws EcrcServiceException;
 	
+	public String getProvinceList() throws EcrcServiceException;
+	
 	//TODO - fill in other service method signatures here. 
 	
 }
