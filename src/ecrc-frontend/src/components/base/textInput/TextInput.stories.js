@@ -20,21 +20,23 @@ storiesOf("TextInput", module)
       }}
     />
   ))
-  .add("editable-white", () => (
+  .add("editable-white-required", () => (
     <TextInput
       textInput={{
         ...textInput,
         textInputStyle: "textinput_editable_white",
-        value: "initial value"
+        value: "initial value",
+        isRequired: true
       }}
     />
   ))
-  .add("editable-gray", () => (
+  .add("editable-gray-required", () => (
     <TextInput
       textInput={{
         ...textInput,
         textInputStyle: "textinput_editable_gray",
-        value: "initial value"
+        value: "initial value",
+        isRequired: true
       }}
     />
   ));

@@ -67,3 +67,10 @@
   text-align: left;
   border-style: inset;
 }
+
+.musthave {
+  padding: 0px 0px 0px 3px;
+  color: red;
+  font-weight: 500;
+  font-size: 16px;
+}

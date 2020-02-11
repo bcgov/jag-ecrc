@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./TextInput.css";
 
 export const TextInput = ({
-  textInput: { label, id, textInputStyle, value }
+  textInput: { label, id, textInputStyle, value, isRequired }
 }) => {
   let textStyle = "textinput_editable_white";
   const validStyles = [
@@ -16,6 +16,11 @@ export const TextInput = ({
     textStyle = textInputStyle;
   }
 
+  let redStar = "";
+  if (isRequired === true) {
+    redStar = <span className="musthave">*</span>;
+  }
+
   if (textStyle === "textinput_non_editable_gray")
     return (
       <div>
@@ -23,12 +28,13 @@ export const TextInput = ({
           <label className="textinput_label" htmlFor={id}>
             {label}
           </label>
+          {redStar}
         </div>
         <input
           className={`${textStyle}`}
           type="text"
           id={id}
-          value={value}
+          defaultValue={value}
           readOnly
         />
       </div>
@@ -40,6 +46,7 @@ export const TextInput = ({
         <label className="textinput_label" htmlFor={id}>
           {label}
         </label>
+        {redStar}
       </div>
       <input
         className={`${textStyle}`}
@@ -56,7 +63,8 @@ TextInput.propTypes = {
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     textInputStyle: PropTypes.string,
-    value: PropTypes.string
+    value: PropTypes.string,
+    isRequired: PropTypes.bool
   }).isRequired
 };
 
