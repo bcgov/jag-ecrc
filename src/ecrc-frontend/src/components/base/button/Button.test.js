@@ -5,10 +5,11 @@ import { Button } from "./Button";
 describe("Button Component", () => {
   test("Matches the snapshot", () => {
     const buttonTest = {
-      children: "test",
+      label: "test",
       onClick: () => jest.fn(),
       buttonStyle: "btn-warning",
-      buttonSize: "btn-sm"
+      buttonSize: "btn-sm",
+      type: "button"
     };
 
     const button = create(<Button button={buttonTest} />);
