@@ -4,7 +4,6 @@ exports[`Button Component Matches the snapshot 1`] = `
 <button
   className="btn-warning btn-sm"
   onClick={[Function]}
->
-  test
-</button>
+  type="button"
+/>
 `;
