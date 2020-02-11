@@ -5,6 +5,8 @@ package ca.bc.gov.open.ecrc.exception;
  *
  */
 public final class EcrcExceptionConstants {
+	
+	public static final int WEBSERVICE_STATUS_CODE_SUCCESS = 0;
 
 	public static final String WEBSERVICE_ERROR_JSON_RESPONSE = "{\"message\":\"%s\", \"responseCode\":1}";
 

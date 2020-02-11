@@ -47,7 +47,7 @@ public class EcrcServicesImpl implements EcrcServices {
 		Mono<DoAuthenticateUser> responseBody = this.webClient.get().uri(doAuthenticateUserUri).retrieve()
 				.bodyToMono(DoAuthenticateUser.class);
 		try {
-			if (responseBody.block().getResponseCode() == 0) {
+			if (responseBody.block().getResponseCode() == EcrcExceptionConstants.WEBSERVICE_STATUS_CODE_SUCCESS) {
 				return objectMapper.writeValueAsString(responseBody.block());
 			} else {
 				return null;
@@ -65,7 +65,7 @@ public class EcrcServicesImpl implements EcrcServices {
 		Mono<GetProvinceList> responseBody = this.webClient.get().uri(provinceListUri).retrieve()
 				.bodyToMono(GetProvinceList.class);
 		try {
-			if (responseBody.block().getResponseCode() == 0) {
+			if (responseBody.block().getResponseCode() == EcrcExceptionConstants.WEBSERVICE_STATUS_CODE_SUCCESS) {
 				return objectMapper.writeValueAsString(responseBody.block());
 			} else {
 				return null;
