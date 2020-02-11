@@ -5,6 +5,20 @@ import "./TextInput.css";
 export const TextInput = ({
   textInput: { label, id, textInputStyle, value, isRequired }
 }) => {
+  let redStar = "";
+  if (isRequired === true) {
+    redStar = <span className="musthave">*</span>;
+  }
+
+  let labelPart = (
+    <div>
+      <label className="textinput_label" htmlFor={id}>
+        {label}
+      </label>
+      {redStar}
+    </div>
+  );
+
   let textStyle = "textinput_editable_white";
   const validStyles = [
     "textinput_editable_gray",
@@ -16,20 +30,10 @@ export const TextInput = ({
     textStyle = textInputStyle;
   }
 
-  let redStar = "";
-  if (isRequired === true) {
-    redStar = <span className="musthave">*</span>;
-  }
-
   if (textStyle === "textinput_non_editable_gray")
     return (
       <div>
-        <div>
-          <label className="textinput_label" htmlFor={id}>
-            {label}
-          </label>
-          {redStar}
-        </div>
+        {labelPart}
         <input
           className={`${textStyle}`}
           type="text"
@@ -42,12 +46,7 @@ export const TextInput = ({
 
   return (
     <div>
-      <div>
-        <label className="textinput_label" htmlFor={id}>
-          {label}
-        </label>
-        {redStar}
-      </div>
+      {labelPart}
       <input
         className={`${textStyle}`}
         type="text"
