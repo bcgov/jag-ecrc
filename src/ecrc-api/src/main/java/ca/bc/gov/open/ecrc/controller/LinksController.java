@@ -14,12 +14,17 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 public class LinksController {
 	
 	@Autowired
-	EcrcServices ecrcServices;
+	private EcrcServices ecrcServices;
 	
 	@CrossOrigin(origins = "/**")
 	@GetMapping(value = "/links")
-	public ResponseEntity<Object> getLinks() throws EcrcServiceException {
-		return new ResponseEntity<>(ecrcServices.getLinks(), HttpStatus.OK);
+	public ResponseEntity<Object> getLinks() {
+		try {
+			return new ResponseEntity<>(ecrcServices.getLinks(), HttpStatus.OK);
+		} catch (EcrcServiceException e) {
+			e.printStackTrace();
+			return new ResponseEntity<>("Error", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 	
 }
