@@ -2,18 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./TextInput.css";
 
-export const TextInput = ({ textInput: {} }) => {
-  return <input type="text" className={`${buttonStyle} ${buttonSize}`}></input>;
+export const TextInput = ({ textInput: { placeHolder } }) => {
+  return <input type="text"></input>;
 };
 
 Button.propTypes = {
-  button: PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-    buttonStyle: PropTypes.string.isRequired,
-    buttonSize: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
+  textInput: PropTypes.shape({
+    placeHolder: PropTypes.string.isRequired
   }).isRequired
 };
 
-export default Button;
+export default TextInput;
