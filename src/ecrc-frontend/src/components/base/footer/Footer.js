@@ -11,6 +11,7 @@ export default function Footer() {
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Disclaimer
               </a>
@@ -20,6 +21,7 @@ export default function Footer() {
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/privacy"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Privacy
               </a>
@@ -29,6 +31,7 @@ export default function Footer() {
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/accessibility"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Accessibility
               </a>
@@ -38,6 +41,7 @@ export default function Footer() {
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/copyright"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Copyright
               </a>
@@ -47,6 +51,7 @@ export default function Footer() {
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/contact-us"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Contact Us
               </a>

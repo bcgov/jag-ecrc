@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Header({ name }) {
   return (
@@ -31,7 +32,7 @@ export default function Header({ name }) {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
@@ -45,3 +46,7 @@ export default function Header({ name }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  name: PropTypes.string.isRequired
+};

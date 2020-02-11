@@ -1,6 +1,5 @@
 import React from "react";
 
-import Header from "./Footer";
 import Footer from "./Footer";
 
 export default {
