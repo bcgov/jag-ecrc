@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component Matches the snapshot 1`] = `
+<header>
+  <nav
+    className="navbar navbar-expand-lg navbar-dark"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand"
+        href="https://www2.gov.bc.ca"
+      >
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+      </a>
+      <div
+        className="navbar-brand"
+      >
+        eCRC
+      </div>
+      <button
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        className="navbar-toggler"
+        data-target="#navbarNavAltMarkup"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        id="navbarNavAltMarkup"
+      >
+        <div
+          className="navbar-nav"
+        >
+          <a
+            className="nav-item nav-link"
+            href="/"
+          >
+            Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+`;
