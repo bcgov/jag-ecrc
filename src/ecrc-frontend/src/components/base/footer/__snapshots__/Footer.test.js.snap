@@ -19,6 +19,7 @@ exports[`Footer Component Matches the snapshot 1`] = `
           <a
             className="nav-link"
             href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+            rel="noopener noreferrer"
             target="_blank"
           >
             Disclaimer
@@ -30,6 +31,7 @@ exports[`Footer Component Matches the snapshot 1`] = `
           <a
             className="nav-link"
             href="https://www2.gov.bc.ca/gov/content/home/privacy"
+            rel="noopener noreferrer"
             target="_blank"
           >
             Privacy
@@ -41,6 +43,7 @@ exports[`Footer Component Matches the snapshot 1`] = `
           <a
             className="nav-link"
             href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+            rel="noopener noreferrer"
             target="_blank"
           >
             Accessibility
@@ -52,6 +55,7 @@ exports[`Footer Component Matches the snapshot 1`] = `
           <a
             className="nav-link"
             href="https://www2.gov.bc.ca/gov/content/home/copyright"
+            rel="noopener noreferrer"
             target="_blank"
           >
             Copyright
@@ -63,6 +67,7 @@ exports[`Footer Component Matches the snapshot 1`] = `
           <a
             className="nav-link"
             href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+            rel="noopener noreferrer"
             target="_blank"
           >
             Contact Us
