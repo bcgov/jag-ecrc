@@ -10,7 +10,7 @@ export const TextInput = ({
     redStar = <span className="musthave">*</span>;
   }
 
-  let labelPart = (
+  const labelPart = (
     <div>
       <label className="textinput_label" htmlFor={id}>
         {label}
