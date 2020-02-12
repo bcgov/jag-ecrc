@@ -1,54 +1,60 @@
 package ca.bc.gov.open.ecrc;
 
-import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
-import javassist.NotFoundException;
+import javax.annotation.PostConstruct;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 import ca.bc.gov.open.ecrc.objects.GetProvinceList;
 import reactor.core.publisher.Mono;
 
 /**
  * 
- * Service Implementation class. 
+ * Service Implementation class.
  * 
  * @author shaunmillargov
  *
  */
 @Service
+@Configuration
+@EnableConfigurationProperties(EcrcProperties.class)
 public class EcrcServicesImpl implements EcrcServices {
-	private final WebClient webClient;
+
+	@Autowired
+	private EcrcProperties ecrcProps;
+
+	private WebClient webClient = null;
+
 	Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
+
 	@Autowired
 	ObjectMapper objectMapper;
 
-	@Value("${rest.getProvincesList}")
-	private String provinceListUri;
+	@PostConstruct
+	public void InitService() {
 
-	@Value("${rest.doAuthenticateUser}")
-	private String doAuthenticateUserUri;
-
-	public EcrcServicesImpl(@Value("${rest.baseUrl}") final String baseUrl,
-							@Value("${rest.userName}") final String userName, @Value("${rest.password}") final String password) {
-		this.webClient = WebClient.builder().baseUrl(baseUrl)
-				.defaultHeaders(header -> header.setBasicAuth(userName, password)).build();
+		this.webClient = WebClient.builder().baseUrl(ecrcProps.getBaseUrl())
+				.defaultHeaders(header -> header.setBasicAuth(ecrcProps.getUsername(), ecrcProps.getPassword()))
+				.build();
 	}
 
-	public String doAuthenticateUser(String accessCode) throws EcrcServiceException  {
-		doAuthenticateUserUri = String.format(doAuthenticateUserUri, accessCode);
-		Mono<DoAuthenticateUser> responseBody = this.webClient.get().uri(doAuthenticateUserUri).retrieve()
+	public String doAuthenticateUser(String accessCode) throws EcrcServiceException {
+		String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), accessCode);
+		Mono<DoAuthenticateUser> responseBody = this.webClient.get().uri(_doAuthenticateUserUri).retrieve()
 				.bodyToMono(DoAuthenticateUser.class);
-		String response;
+
 		try {
 			if (responseBody.block().getResponseCode() == 1) {
 				return objectMapper.writeValueAsString(responseBody.block());
@@ -65,16 +71,16 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 	public String getProvinceList() throws EcrcServiceException {
-		Mono<GetProvinceList> responseBody = this.webClient.get().uri(provinceListUri).retrieve()
+		Mono<GetProvinceList> responseBody = this.webClient.get().uri(ecrcProps.getGetProvincesListUri()).retrieve()
 				.bodyToMono(GetProvinceList.class);
 		String response;
 		try {
 			response = objectMapper.writeValueAsString(responseBody.block());
 		} catch (JsonProcessingException e) {
-			// TODO - Log exception
+			logger.error(e.getMessage());
 			throw new EcrcServiceException(EcrcExceptionConstants.CONVERT_TO_JSON_ERROR, e);
 		} catch (Exception e) {
-			// TODO - Log exception
+			logger.error(e.getMessage());
 			throw new EcrcServiceException(EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, e);
 		}
 		return response;
