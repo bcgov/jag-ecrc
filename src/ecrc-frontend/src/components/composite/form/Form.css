@@ -1,0 +1,19 @@
+.ecrcForm {
+  width: 100%;
+  /* background-color: yellow; */
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  /* background: #3399ff; */
+  padding: 20px;
+  width: 100%;
+}
+
+ul li {
+  margin: 15px;
+}
