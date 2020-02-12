@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 
@@ -29,10 +30,24 @@ public class DoAuthenticateUserControllerTest {
 	}
 
 	@Test
-	public void testOddValidOrg() throws EcrcServiceException {
+	public void testFoundValidOrg() throws EcrcServiceException {
 		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn("SOMESTRING");
 		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
 		Assertions.assertEquals("SOMESTRING", result.getBody());
 	}
 
+	@Test
+	public void testNotFoundValidOrg() throws EcrcServiceException {
+		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(null);
+		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
+		Assertions.assertEquals("{\"accessCode\":\"SOMEDATA\"}", result.getBody());
+		Assertions.assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
+	}
+
+	@Test
+	public void testServiceExceptionValidOrg() throws EcrcServiceException {
+		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenThrow(new EcrcServiceException("ATHINGHAPPENED"));
+		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
+		Assertions.assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
+	}
 }
