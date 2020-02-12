@@ -35,7 +35,6 @@ export default function OrgValidation({
 
   const button = {
     label: "Validate",
-    onClick: orgValidation,
     buttonStyle: "btn btn-primary",
     buttonSize: "btn btn-sm",
     type: "submit"
@@ -48,7 +47,7 @@ export default function OrgValidation({
         <div className="content">
           <OrgValidationText />
           <TextInput textInput={textInput} onChange={setOrgInput} />
-          <Button button={button} />
+          <Button button={button} onClick={orgValidation} />
         </div>
         <div className="sidecard">
           <SideCard sideCard={sideCard1} />
