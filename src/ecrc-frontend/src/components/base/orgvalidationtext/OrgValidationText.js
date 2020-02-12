@@ -9,18 +9,18 @@ export default function OrgValidationText() {
       <span>This is just a place holder for the page.</span>
       <div>
         <br />
-        <div class="introduction sizable">
+        <div>
           <h3>PLEASE DO NOT USE YOUR BACK BUTTON ON YOUR INTERNET BROWSER</h3>
         </div>
 
-        <div class="introduction sizable">
+        <div>
           <h3>
             ALWAYS USE THE NAVIGATION BUTTONS AS INDICATED IN THE APPLICATION
           </h3>
         </div>
         <br />
 
-        <div class="introduction sizable">
+        <div>
           <h3>
             Internet Explorer 11 or later is required, other types of browsers
             or older versions may experience problems
@@ -28,24 +28,26 @@ export default function OrgValidationText() {
         </div>
         <br />
 
-        <div class="introduction sizable">
+        <div>
           <b>Option 1: Request a New Criminal Record Check</b>
         </div>
 
-        <div class="BodyContent sizable">
+        <div>
           <p>
             To Submit an online request for a criminal record check, you must:
           </p>
           <ul>
-            <li>Be at least 12 years of age as of today's date.</li>
+            <li>Be at least 12 years of age as of today&apos;s date.</li>
             <li>
               Have your identity verified through the Electronic Identity
-              Verification <b>(EIV)</b> process.
-              <br />
-              <span className="red">Please Note:</span> Not all individuals will
-              be able to use the EIV process and may be required to submit the
-              request for a criminal record check through the manual paper
+              Verification
+              <b>(EIV)</b>
               process.
+              <br />
+              <span className="red">Please Note:</span>
+              Not all individuals will be able to use the EIV process and may be
+              required to submit the request for a criminal record check through
+              the manual paper process.
             </li>
             <li>
               Please use a laptop or desktop computer, some applicants have
@@ -80,11 +82,11 @@ export default function OrgValidationText() {
 
         <br />
 
-        <div class="introduction sizable">
+        <div>
           <b>Option 2: Share the Result of a Completed Criminal Record Check</b>
         </div>
 
-        <div class="BodyContent sizable">
+        <div>
           <p>
             To Submit an online request to share the result of a completed
             criminal record check:
@@ -106,15 +108,16 @@ export default function OrgValidationText() {
               Have your identity verified through the Electronic Identity
               Verification (EIV) process.
               <br />
-              <span className="red">Please Note:</span> Not all individuals will
-              be able to use the EIV process and may be required to submit the
-              request for a criminal record check through the manual paper
-              process.
+              <span className="red">Please Note:</span>
+              Not all individuals will be able to use the EIV process and may be
+              required to submit the request for a criminal record check through
+              the manual paper process.
             </li>
           </ul>
 
           <p>
-            To use the EIV: <b>Please see requirements outlined above.</b>
+            To use the EIV:
+            <b>Please see requirements outlined above.</b>
           </p>
         </div>
       </div>
