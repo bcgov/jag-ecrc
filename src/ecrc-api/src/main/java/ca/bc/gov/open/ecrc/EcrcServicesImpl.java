@@ -42,7 +42,7 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	private WebClient webClient = null;
 
-	Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
+	private final Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
 
 	@Autowired
 	ObjectMapper objectMapper;

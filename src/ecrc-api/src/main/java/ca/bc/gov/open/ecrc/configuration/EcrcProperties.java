@@ -63,5 +63,4 @@ public class EcrcProperties {
 
 	public void setDoAuthenticateUserUri(String doAuthenticateUserUri) { this.doAuthenticateUserUri = doAuthenticateUserUri; }
 
-
 }
