@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import OrgValidation from "./components/page/orgvalidation/OrgValidation";
 
 export default function App() {
+  const [org, setOrg] = useState({});
+
   const header = {
-    name: "eCRC"
+    name: "Criminal Record Check"
   };
 
   const sideCard1 = {
@@ -26,9 +28,14 @@ export default function App() {
     sideCard2
   };
 
+  const page = {
+    setOrg,
+    pageLayout
+  };
+
   return (
     <div>
-      <OrgValidation pageLayout={pageLayout} />
+      <OrgValidation page={page} />
     </div>
   );
 }

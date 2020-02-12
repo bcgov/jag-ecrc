@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 import "../page.css";
 import Header from "../../base/header/Header";
@@ -8,10 +9,19 @@ import SideCard from "../../base/sideCard/SideCard";
 import Button from "../../base/button/Button";
 
 export default function OrgValidation({
-  pageLayout: { header, sideCard1, sideCard2 }
+  page: {
+    setOrg,
+    pageLayout: { header, sideCard1, sideCard2 }
+  }
 }) {
   const orgValidation = () => {
-    console.log("You clicked validate!");
+    const orgId = "crce";
+
+    console.log(`You clicked validate for ${orgId} Org ID.`);
+
+    axios.get(`/ecrc/doAuthenticateUser?org=${orgId}`).then(res => {
+      setOrg(res.data.accessCodeResponse);
+    });
   };
 
   const button = {
