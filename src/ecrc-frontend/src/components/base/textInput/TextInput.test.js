@@ -11,8 +11,12 @@ describe("TextInput Component", () => {
     value: "init value"
   };
 
+  const actionData = { onClick: () => jest.fn() };
+
   test("Matches the snapshot", () => {
-    const textInputBox = create(<TextInput textInput={textInput} />);
+    const textInputBox = create(
+      <TextInput textInput={{ ...textInput }} {...actionData} />
+    );
     expect(textInputBox.toJSON()).toMatchSnapshot();
   });
 
@@ -23,6 +27,7 @@ describe("TextInput Component", () => {
           ...textInput,
           textInputStyle: "textinput_non_editable_gray"
         }}
+        {...actionData}
       />
     );
     expect(textInputBox.find("div input").prop("readOnly")).toBe(true);
@@ -35,6 +40,7 @@ describe("TextInput Component", () => {
           ...textInput,
           isRequired: true
         }}
+        {...actionData}
       />
     );
     expect(textInputBox.exists("#asterisk")).toEqual(true);

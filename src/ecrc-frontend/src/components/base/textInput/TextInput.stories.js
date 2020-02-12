@@ -1,5 +1,5 @@
 import React from "react";
-// import { action } from "@storybook/addon-actions";
+import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import { TextInput } from "./TextInput";
 
@@ -7,6 +7,10 @@ const textInput = {
   label: "button label",
   id: "textInputId",
   textInputStyle: "placeHolder"
+};
+
+const actionData = {
+  onChange: action("onChange")
 };
 
 storiesOf("TextInput", module)
@@ -18,6 +22,7 @@ storiesOf("TextInput", module)
         textInputStyle: "textinput_non_editable_gray",
         value: "initial value"
       }}
+      {...actionData}
     />
   ))
   .add("editable-white-required", () => (
@@ -28,6 +33,7 @@ storiesOf("TextInput", module)
         value: "initial value",
         isRequired: true
       }}
+      {...actionData}
     />
   ))
   .add("editable-gray-required", () => (
@@ -38,5 +44,6 @@ storiesOf("TextInput", module)
         value: "initial value",
         isRequired: true
       }}
+      {...actionData}
     />
   ));
