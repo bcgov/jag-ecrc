@@ -6,26 +6,22 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.Link;
 import ca.bc.gov.open.ecrc.EcrcServices;
-import ca.bc.gov.open.ecrc.controller.LinksController;
 
 /**
  * 
  * @author BrendanBeachBCJ
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
 public class LinksControllerTest {
 	
