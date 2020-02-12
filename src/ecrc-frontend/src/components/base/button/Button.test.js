@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { create } from "react-test-renderer";
 import { Button } from "./Button";
-/* eslint-disable react/jsx-props-no-spreading */
+
 describe("Button Component", () => {
   test("Matches the snapshot", () => {
     const buttonTest = {
