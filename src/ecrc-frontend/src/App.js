@@ -33,9 +33,5 @@ export default function App() {
     pageLayout
   };
 
-  return (
-    <div>
-      <OrgValidation page={page} />
-    </div>
-  );
+  return <div>{!org.orgNm && <OrgValidation page={page} />}</div>;
 }

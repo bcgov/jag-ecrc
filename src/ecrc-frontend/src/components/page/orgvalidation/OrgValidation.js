@@ -21,9 +21,15 @@ export default function OrgValidation({
   const orgValidation = () => {
     console.log(`You clicked validate for ${orgInput} Org ID.`);
 
-    axios.get(`/ecrc/doAuthenticateUser?orgId=${orgInput}`).then(res => {
-      setOrg(res.data.accessCodeResponse);
-    });
+    axios
+      .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
+      .then(res => {
+        console.log(res.data.accessCodeResponse);
+        setOrg(res.data.accessCodeResponse);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   const textInput = {
