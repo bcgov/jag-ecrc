@@ -51,7 +51,9 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 	public String doAuthenticateUser(String accessCode) throws EcrcServiceException {
+		
 		String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), accessCode);
+		
 		Mono<DoAuthenticateUser> responseBody = this.webClient.get().uri(_doAuthenticateUserUri).retrieve()
 				.bodyToMono(DoAuthenticateUser.class);
 
