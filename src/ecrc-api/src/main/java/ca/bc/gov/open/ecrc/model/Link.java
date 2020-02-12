@@ -1,5 +1,9 @@
 package ca.bc.gov.open.ecrc.model;
-
+/**
+ * 
+ * @author BrendanBeachBCJ
+ *
+ */
 public class Link {
 	
 	private String name;
@@ -14,8 +18,8 @@ public class Link {
 		return name;
 	}
 
-	public void setName(String text) {
-		this.name = text;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getUrl() {

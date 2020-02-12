@@ -9,7 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-
+/**
+ * 
+ * Controller for links for side bar navigation.
+ * 
+ * @author BrendanBeachBCJ
+ *
+ */
 @RestController
 public class LinksController {
 	
