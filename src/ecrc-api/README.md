@@ -12,15 +12,15 @@ Possibly STS4 (Used to create this initial code base).
 
 Note: Clone the repo then import as a 'Maven' project into STS4.
 
-### Environmental variables
+### Environmental variables for running the eCRC-API locally
 
-The following Windows environmental variables must be set to ensure the Wildfly plugin finds your server at deployment time: 
+The following Windows environmental variables must be set either as Windows environmental variables or as STS4 Spring Boot App variables.
 
 | Variable                   | Example Value                |
 | -------------------------- |-----------------------------:|
-|                            |                              |
-|                            |                              |
-|                            |                              |
+| ECRC_BASEURL               | http:8000//myendpoint        |
+| ECRC_USERNAME              | user                         |
+| ECRC_PASSWORD              | password                     |
 
 ### Installing
 
