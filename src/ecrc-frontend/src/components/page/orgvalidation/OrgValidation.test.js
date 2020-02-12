@@ -37,6 +37,6 @@ describe("OrgValidation Component", () => {
     };
 
     const orgValidationPage = create(<OrgValidation page={page} />);
-    expect(orgValidationPageu.toJSON()).toMatchSnapshot();
+    expect(orgValidationPage.toJSON()).toMatchSnapshot();
   });
 });
