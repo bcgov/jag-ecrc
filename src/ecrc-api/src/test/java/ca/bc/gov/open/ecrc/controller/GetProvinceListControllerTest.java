@@ -6,19 +6,16 @@ import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import ca.bc.gov.open.ecrc.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
 class GetProvinceListControllerTest {
 

@@ -23,11 +23,11 @@ public class DoAuthenticateUserController {
 
 	@CrossOrigin(origins = "/**")
 	@GetMapping("/doAuthenticateUser")
-	public ResponseEntity<String> doAuthenticateUser(@RequestParam(required=true) String orgId) {
+	public ResponseEntity<String> doAuthenticateUser(@RequestParam(required=true) String orgTicketId) {
 		try {
-			String result = ecrcServices.doAuthenticateUser(orgId);
+			String result = ecrcServices.doAuthenticateUser(orgTicketId);
 			if (result != null) {
-				return new ResponseEntity<>(ecrcServices.doAuthenticateUser(orgId), HttpStatus.OK);
+				return new ResponseEntity<>(ecrcServices.doAuthenticateUser(orgTicketId), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND);
