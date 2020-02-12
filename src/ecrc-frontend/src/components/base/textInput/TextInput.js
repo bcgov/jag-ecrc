@@ -5,10 +5,10 @@ import "./TextInput.css";
 export const TextInput = ({
   textInput: { label, id, textInputStyle, value, isRequired }
 }) => {
-  let redStar = "";
-  if (isRequired === true) {
-    redStar = (
-      <span id="redStar" className="musthave">
+  let asterisk = "";
+  if (isRequired) {
+    asterisk = (
+      <span id="asterisk" className="mandatory">
         *
       </span>
     );
@@ -19,7 +19,7 @@ export const TextInput = ({
       <label className="textinput_label" htmlFor={id}>
         {label}
       </label>
-      {redStar}
+      {asterisk}
     </div>
   );
 

@@ -37,6 +37,6 @@ describe("TextInput Component", () => {
         }}
       />
     );
-    expect(textInputBox.exists("#redStar")).toEqual(true);
+    expect(textInputBox.exists("#asterisk")).toEqual(true);
   });
 });

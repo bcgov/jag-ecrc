@@ -68,7 +68,7 @@
   border-style: inset;
 }
 
-.musthave {
+.mandatory {
   padding: 0px 0px 0px 3px;
   color: red;
   font-weight: 500;
