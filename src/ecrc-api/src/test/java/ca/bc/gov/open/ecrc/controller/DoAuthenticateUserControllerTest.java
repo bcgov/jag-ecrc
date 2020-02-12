@@ -33,14 +33,16 @@ public class DoAuthenticateUserControllerTest {
 	@DisplayName("Success - doAuthenticateUser controller")
 	@Test
 	public void testFoundValidOrg() throws EcrcServiceException {
-		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn("SOMESTRING");
-		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
+		//Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn("SOMESTRING");
+		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser(new ResponseEntity<>("SOMEDATA"), HttpStatus.OK));
 		Assertions.assertEquals("SOMESTRING", result.getBody());
 	}
+
 	@DisplayName("Failure - doAuthenticateUser controller")
 	@Test
 	public void testNotFoundValidOrg() throws EcrcServiceException {
-		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(null);
+		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND));
 		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
 		Assertions.assertEquals(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), result.getBody());
