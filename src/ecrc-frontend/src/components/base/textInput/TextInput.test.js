@@ -1,7 +1,8 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { TextInput } from "./TextInput";
 import { shallow } from "enzyme";
+
+import { TextInput } from "./TextInput";
 
 describe("TextInput Component", () => {
   const textInput = {
