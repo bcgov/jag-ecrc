@@ -10,20 +10,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 
 public class EcrcServicesImplTest {
-    @InjectMocks
-    EcrcServicesImpl ecrcServices;
-
-    @Mock
-    WebClient webClient;
-
-    @BeforeEach
-    public void initMocks() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-
+    
     @Test
     public void testDoAuthenticateResult() {
-        
+
     }
 }
