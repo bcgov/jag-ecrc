@@ -1,51 +1,66 @@
 package ca.bc.gov.open.ecrc;
 
-import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
+import javax.annotation.PostConstruct;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import java.util.ArrayList;
+
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 import ca.bc.gov.open.ecrc.objects.GetProvinceList;
 import reactor.core.publisher.Mono;
+import ca.bc.gov.open.ecrc.model.Link;
 
 /**
  * 
- * Service Implementation class. 
+ * Service Implementation class.
  * 
  * @author shaunmillargov
  *
  */
 @Service
+@Configuration
+@EnableConfigurationProperties(EcrcProperties.class)
 public class EcrcServicesImpl implements EcrcServices {
-	private final WebClient webClient;
-	Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
+
+	@Autowired
+	private EcrcProperties ecrcProps;
+
+	private WebClient webClient = null;
+
+	private final Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
+
 	@Autowired
 	ObjectMapper objectMapper;
 
-	@Value("${rest.getProvincesList}")
-	private String provinceListUri;
+	@PostConstruct
+	public void InitService() {
 
-	@Value("${rest.doAuthenticateUser}")
-	private String doAuthenticateUserUri;
-
-	public EcrcServicesImpl(@Value("${rest.baseUrl}") final String baseUrl,
-							@Value("${rest.userName}") final String userName, @Value("${rest.password}") final String password) {
-		this.webClient = WebClient.builder().baseUrl(baseUrl)
-				.defaultHeaders(header -> header.setBasicAuth(userName, password)).build();
+		this.webClient = WebClient.builder().baseUrl(ecrcProps.getBaseUrl())
+				.defaultHeaders(header -> header.setBasicAuth(ecrcProps.getUsername(), ecrcProps.getPassword()))
+				.build();
 	}
 
-	public String doAuthenticateUser(String accessCode) throws EcrcServiceException  {
-		doAuthenticateUserUri = String.format(doAuthenticateUserUri, accessCode);
-		Mono<DoAuthenticateUser> responseBody = this.webClient.get().uri(doAuthenticateUserUri).retrieve()
+	public String doAuthenticateUser(String accessCode) throws EcrcServiceException {
+		
+		String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), accessCode);
+		
+		Mono<DoAuthenticateUser> responseBody = this.webClient.get().uri(_doAuthenticateUserUri).retrieve()
 				.bodyToMono(DoAuthenticateUser.class);
+
 		try {
 			if (responseBody.block().getResponseCode() == EcrcExceptionConstants.WEBSERVICE_STATUS_CODE_SUCCESS) {
 				return objectMapper.writeValueAsString(responseBody.block());
@@ -59,23 +74,33 @@ public class EcrcServicesImpl implements EcrcServices {
 			logger.error("Failed to convert to json general exception");
 			throw new EcrcServiceException(EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, e);
 		}
+	}
+	
+	public ArrayList<Link> getLinks() throws EcrcServiceException {
+		//TODO: replace hard coded links with actual links
+		ArrayList<Link> linkList = new ArrayList<Link>();
+		Link link1 = new Link("test1", "www.google.com");
+		Link link2 = new Link("test2", "www.google.ca");
+		linkList.add(link1);
+		linkList.add(link2);
+		
+		return linkList;
 	}
 
 	public String getProvinceList() throws EcrcServiceException {
-		Mono<GetProvinceList> responseBody = this.webClient.get().uri(provinceListUri).retrieve()
+		Mono<GetProvinceList> responseBody = this.webClient.get().uri(ecrcProps.getGetProvincesListUri()).retrieve()
 				.bodyToMono(GetProvinceList.class);
+		
+		String response;
 		try {
-			if (responseBody.block().getResponseCode() == EcrcExceptionConstants.WEBSERVICE_STATUS_CODE_SUCCESS) {
-				return objectMapper.writeValueAsString(responseBody.block());
-			} else {
-				return null;
-			}
+			response = objectMapper.writeValueAsString(responseBody.block());
 		} catch (JsonProcessingException e) {
-			logger.error("Failed to convert to json processing exception");
+			logger.error(e.getMessage());
 			throw new EcrcServiceException(EcrcExceptionConstants.CONVERT_TO_JSON_ERROR, e);
 		} catch (Exception e) {
-			logger.error("Failed to convert to json general exception");
+			logger.error(e.getMessage());
 			throw new EcrcServiceException(EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, e);
 		}
+		return response;
 	}
 }

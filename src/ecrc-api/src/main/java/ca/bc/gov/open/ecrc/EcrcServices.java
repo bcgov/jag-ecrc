@@ -1,8 +1,12 @@
 package ca.bc.gov.open.ecrc;
 
+import java.util.ArrayList;
+
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.model.Link;
 import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 import javassist.NotFoundException;
+
 
 /**
  * 
@@ -14,6 +18,8 @@ import javassist.NotFoundException;
 public interface EcrcServices {
 	
 	public String doAuthenticateUser(String accessCode) throws EcrcServiceException, NotFoundException;
+	
+	public ArrayList<Link> getLinks() throws EcrcServiceException;
 	
 	public String getProvinceList() throws EcrcServiceException;
 	
