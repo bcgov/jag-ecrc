@@ -37,6 +37,7 @@ public class GetNextSessionIdControllerTest {
         ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA");
         Assertions.assertEquals("SOMESTRING", result.getBody());
     }
+
     @DisplayName("Failure - doAuthenticateUser controller")
     @Test
     public void testNotFoundValidOrg() throws EcrcServiceException {
