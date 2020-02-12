@@ -75,4 +75,7 @@ TextInput.propTypes = {
   onChange: PropTypes.func
 };
 
+TextInput.defaultProps = {
+  onChange: () => {}
+};
 export default TextInput;
