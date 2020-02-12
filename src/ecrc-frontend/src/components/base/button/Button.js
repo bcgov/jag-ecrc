@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import "./Button.css";
 
 export const Button = ({
-  button: { label, onClick, buttonStyle, buttonSize, type }
+  button: { label, buttonStyle, buttonSize, type },
+  onClick
 }) => {
   let buttonType = "button";
   const validTypes = ["button", "submit", "reset"];
@@ -27,11 +28,11 @@ export const Button = ({
 Button.propTypes = {
   button: PropTypes.shape({
     label: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
     buttonStyle: PropTypes.string.isRequired,
     buttonSize: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default Button;
