@@ -58,7 +58,7 @@ export const TextInput = ({
         type="text"
         id={id}
         defaultValue={value}
-        onChange={onChange}
+        onChange={event => onChange(event.target.value)}
       />
     </div>
   );

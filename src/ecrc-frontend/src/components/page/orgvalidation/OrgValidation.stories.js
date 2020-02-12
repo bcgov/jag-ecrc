@@ -31,9 +31,16 @@ const pageLayout = {
   sideCard2
 };
 
-export const Default = () => <OrgValidation pageLayout={pageLayout} />;
+const setOrg = {};
 
-export const Mobile = () => <OrgValidation pageLayout={pageLayout} />;
+const page = {
+  setOrg,
+  pageLayout
+};
+
+export const Default = () => <OrgValidation page={page} />;
+
+export const Mobile = () => <OrgValidation page={page} />;
 
 Mobile.story = {
   parameters: {
