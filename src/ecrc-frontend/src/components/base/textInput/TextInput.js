@@ -7,7 +7,11 @@ export const TextInput = ({
 }) => {
   let redStar = "";
   if (isRequired === true) {
-    redStar = <span className="musthave">*</span>;
+    redStar = (
+      <span id="redStar" className="musthave">
+        *
+      </span>
+    );
   }
 
   const labelPart = (

@@ -9,11 +9,7 @@ exports[`TextInput Component Matches the snapshot 1`] = `
     >
       button label
     </label>
-    <span
-      className="musthave"
-    >
-      *
-    </span>
+    
   </div>
   <input
     className="textinput_editable_white"
