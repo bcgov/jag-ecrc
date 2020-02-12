@@ -15,6 +15,7 @@ exports[`TextInput Component Matches the snapshot 1`] = `
     className="textinput_editable_white"
     defaultValue="init value"
     id="textInputId"
+    onChange={[Function]}
     type="text"
   />
 </div>
