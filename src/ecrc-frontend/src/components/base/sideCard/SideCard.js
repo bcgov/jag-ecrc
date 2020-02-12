@@ -8,7 +8,7 @@ export default function SideCard({ sideCard: { heading, content, type } }) {
     <div className="dashboard-spacing" style={{ position: "relative" }}>
       <div className="row">
         <div
-          className="col-lg-4 col-sm-12"
+          className="col-12"
           style={{ position: "relative", paddingTop: "30px" }}
         >
           <p />
