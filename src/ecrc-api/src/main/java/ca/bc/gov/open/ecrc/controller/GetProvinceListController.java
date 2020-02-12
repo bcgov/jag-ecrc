@@ -1,6 +1,8 @@
 package ca.bc.gov.open.ecrc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,14 +23,20 @@ public class GetProvinceListController {
 
 	@CrossOrigin(origins = "/**")
 	@GetMapping("/getProvinceList")
-	public String getProvinceList() {
-		String response = null;
+	public ResponseEntity<String> getProvinceList() {
 		try {
-			response = ecrcServices.getProvinceList();
+			String result = ecrcServices.getProvinceList();
+			if (result != null) {
+				return new ResponseEntity<String>(result, HttpStatus.OK);
+			} else {
+				return new ResponseEntity<String>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND);
+			}
 		} catch (EcrcServiceException e) {
 			e.printStackTrace();
-			response = String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE, e.getMessage());
+			return new ResponseEntity<String>(
+					String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE, e.getMessage()),
+					HttpStatus.BAD_REQUEST);
 		}
-		return response;
 	}
 }
