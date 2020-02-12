@@ -19,6 +19,7 @@ public class EcrcProperties {
 	private String password;
 	private String getProvincesListUri;
 	private String doAuthenticateUserUri;
+	private String getNextSessionIdUri;
 
 	public String getBaseUrl() {
 		return baseUrl;
@@ -52,14 +53,15 @@ public class EcrcProperties {
 		this.getProvincesListUri = getProvincesListUri;
 	}
 
-	public String getDoAuthenticateUserUri() {
-		return doAuthenticateUserUri;
+	public String getGetNextSessionIdUri() {
+		return getNextSessionIdUri;
 	}
 
-	public void setDoAuthenticateUserUri(String doAuthenticateUserUri) {
-		this.doAuthenticateUserUri = doAuthenticateUserUri;
-	}
+	public void setGetNextSessionIdUri(String getNextSessionIdUri) { this.getNextSessionIdUri = getNextSessionIdUri; }
 
-	
+	public String getDoAuthenticateUserUri() { return doAuthenticateUserUri; }
+
+	public void setDoAuthenticateUserUri(String doAuthenticateUserUri) { this.doAuthenticateUserUri = doAuthenticateUserUri; }
+
 
 }
