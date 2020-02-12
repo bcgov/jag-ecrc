@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import axios from "axios";
 
 import "../page.css";
@@ -6,8 +7,8 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgvalidationtext/OrgValidationText";
 import SideCard from "../../base/sideCard/SideCard";
-import Button from "../../base/button/Button";
-import TextInput from "../../base/textInput/TextInput";
+import { Button } from "../../base/button/Button";
+import { TextInput } from "../../base/textInput/TextInput";
 
 export default function OrgValidation({
   page: {
@@ -18,11 +19,9 @@ export default function OrgValidation({
   const [orgInput, setOrgInput] = useState("");
 
   const orgValidation = () => {
-    const orgId = "crce";
-
     console.log(`You clicked validate for ${orgInput} Org ID.`);
 
-    axios.get(`/ecrc/doAuthenticateUser?org=${orgId}`).then(res => {
+    axios.get(`/ecrc/doAuthenticateUser?orgId=${orgInput}`).then(res => {
       setOrg(res.data.accessCodeResponse);
     });
   };
@@ -59,3 +58,22 @@ export default function OrgValidation({
     </main>
   );
 }
+
+OrgValidation.propTypes = {
+  page: PropTypes.shape({
+    setOrg: PropTypes.func.isRequired,
+    pageLayout: PropTypes.shape({
+      header: PropTypes.shape({
+        name: PropTypes.string.isRequired
+      }),
+      sideCard1: PropTypes.shape({
+        heading: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired
+      }),
+      sideCard2: PropTypes.shape({
+        heading: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired
+      })
+    }).isRequired
+  }).isRequired
+};

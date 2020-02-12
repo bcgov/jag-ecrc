@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import OrgValidation from "./OrgValidation";
 
@@ -31,7 +31,9 @@ const pageLayout = {
   sideCard2
 };
 
-const setOrg = {};
+const setOrg = () => {
+  return;
+};
 
 const page = {
   setOrg,
