@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput Component Matches the snapshot 1`] = `
+<div>
+  <div>
+    <label
+      className="textinput_label"
+      htmlFor="textInputId"
+    >
+      button label
+    </label>
+    
+  </div>
+  <input
+    className="textinput_editable_white"
+    defaultValue="init value"
+    id="textInputId"
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;

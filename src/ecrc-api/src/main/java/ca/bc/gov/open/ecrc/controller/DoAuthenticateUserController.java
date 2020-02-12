@@ -1,8 +1,8 @@
 package ca.bc.gov.open.ecrc.controller;
 
 import ca.bc.gov.open.ecrc.EcrcServicesImpl;
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DoAuthenticateUserController {
 	@Autowired
-	EcrcServicesImpl ecrcServices;
+	private EcrcServicesImpl ecrcServices;
 
 	@CrossOrigin(origins = "/**")
 	@GetMapping("/doAuthenticateUser")
@@ -29,13 +29,13 @@ public class DoAuthenticateUserController {
 			if (result != null) {
 				return new ResponseEntity<>(ecrcServices.doAuthenticateUser(orgTicketId), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<>(String.format("{\"accessCode\":\"%s\"}",orgTicketId), HttpStatus.NOT_FOUND);
+				return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND);
 			}
 		} catch(EcrcServiceException e) {
-			return new ResponseEntity<>("Failed to find user", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+					EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR), HttpStatus.BAD_REQUEST);
 		}
-
 	}
-
 }
 

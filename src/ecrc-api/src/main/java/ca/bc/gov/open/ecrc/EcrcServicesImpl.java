@@ -41,7 +41,7 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	private WebClient webClient = null;
 
-	Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
+	private final Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
 
 	@Autowired
 	ObjectMapper objectMapper;
@@ -90,6 +90,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	public String getProvinceList() throws EcrcServiceException {
 		Mono<GetProvinceList> responseBody = this.webClient.get().uri(ecrcProps.getGetProvincesListUri()).retrieve()
 				.bodyToMono(GetProvinceList.class);
+		
 		String response;
 		try {
 			response = objectMapper.writeValueAsString(responseBody.block());
