@@ -34,7 +34,7 @@ class GetProvinceListControllerTest {
 	@Test
 	void testSuccess() throws EcrcServiceException {
 		when(ecrcServices.getProvinceList()).thenReturn(
-				"{\"provinces\":{\"province\":[{\"name\":\"BRITISH COLUMBIA\"},{\"name\":\"ALBERTA\"},{\"name\":\"MANITOBA\"},{\"name\":\"NEW BRUNSWICK\"},{\"name\":\"NEWFOUNDLAND\"},{\"name\":\"NORTH WEST TERRITORIES\"},{\"name\":\"NOVA SCOTIA\"},{\"name\":\"NUNAVUT\"},{\"name\":\"ONTARIO\"},{\"name\":\"PRINCE EDWARD ISLAND\"},{\"name\":\"QUEBEC\"},{\"name\":\"SASKATCHEWAN\"},{\"name\":\"YUKON\"}]},\"message\":\"Success\",\"responseCode\":0}");
+				new ResponseEntity<String>("{\"provinces\":{\"province\":[{\"name\":\"BRITISH COLUMBIA\"},{\"name\":\"ALBERTA\"},{\"name\":\"MANITOBA\"},{\"name\":\"NEW BRUNSWICK\"},{\"name\":\"NEWFOUNDLAND\"},{\"name\":\"NORTH WEST TERRITORIES\"},{\"name\":\"NOVA SCOTIA\"},{\"name\":\"NUNAVUT\"},{\"name\":\"ONTARIO\"},{\"name\":\"PRINCE EDWARD ISLAND\"},{\"name\":\"QUEBEC\"},{\"name\":\"SASKATCHEWAN\"},{\"name\":\"YUKON\"}]},\"message\":\"Success\",\"responseCode\":0}", HttpStatus.OK));
 		ResponseEntity<String> response = getProvinceListController.getProvinceList();
 		Assert.assertEquals(
 				"{\"provinces\":{\"province\":[{\"name\":\"BRITISH COLUMBIA\"},{\"name\":\"ALBERTA\"},{\"name\":\"MANITOBA\"},{\"name\":\"NEW BRUNSWICK\"},{\"name\":\"NEWFOUNDLAND\"},{\"name\":\"NORTH WEST TERRITORIES\"},{\"name\":\"NOVA SCOTIA\"},{\"name\":\"NUNAVUT\"},{\"name\":\"ONTARIO\"},{\"name\":\"PRINCE EDWARD ISLAND\"},{\"name\":\"QUEBEC\"},{\"name\":\"SASKATCHEWAN\"},{\"name\":\"YUKON\"}]},\"message\":\"Success\",\"responseCode\":0}",
@@ -45,7 +45,7 @@ class GetProvinceListControllerTest {
 	@DisplayName("Failure - getProvinceList controller")
 	@Test
 	void testFailure() throws EcrcServiceException {
-		when(ecrcServices.getProvinceList()).thenReturn(null);
+		when(ecrcServices.getProvinceList()).thenReturn(new ResponseEntity<>("{\"message\":\"Requested data not found\", \"responseCode\":1}", HttpStatus.NOT_FOUND));
 		ResponseEntity<String> response = getProvinceListController.getProvinceList();
 		Assert.assertEquals("{\"message\":\"Requested data not found\", \"responseCode\":1}", response.getBody());
 		Assert.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
@@ -54,9 +54,9 @@ class GetProvinceListControllerTest {
 	@DisplayName("Error - getProvinceList controller")
 	@Test
 	void testError() throws EcrcServiceException {
-		when(ecrcServices.getProvinceList()).thenThrow(new EcrcServiceException("Exception"));
+		when(ecrcServices.getProvinceList()).thenReturn(new ResponseEntity<>("{\"message\":\"Requested data not found\", \"responseCode\":1}", HttpStatus.BAD_REQUEST));
 		ResponseEntity<String> response = getProvinceListController.getProvinceList();
-		Assert.assertEquals("{\"message\":\"Exception\", \"responseCode\":1}", response.getBody());
+		Assert.assertEquals("{\"message\":\"Requested data not found\", \"responseCode\":1}", response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
 }
