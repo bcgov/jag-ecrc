@@ -5,6 +5,9 @@ import javax.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import java.util.ArrayList;
+
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 import ca.bc.gov.open.ecrc.objects.GetProvinceList;
 import reactor.core.publisher.Mono;
+import ca.bc.gov.open.ecrc.model.Link;
 
 /**
  * 
@@ -70,6 +74,17 @@ public class EcrcServicesImpl implements EcrcServices {
 			logger.error("Failed to convert to json general exception");
 			throw new EcrcServiceException(EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, e);
 		}
+	}
+	
+	public ArrayList<Link> getLinks() throws EcrcServiceException {
+		//TODO: replace hard coded links with actual links
+		ArrayList<Link> linkList = new ArrayList<Link>();
+		Link link1 = new Link("test1", "www.google.com");
+		Link link2 = new Link("test2", "www.google.ca");
+		linkList.add(link1);
+		linkList.add(link2);
+		
+		return linkList;
 	}
 
 	public String getProvinceList() throws EcrcServiceException {
