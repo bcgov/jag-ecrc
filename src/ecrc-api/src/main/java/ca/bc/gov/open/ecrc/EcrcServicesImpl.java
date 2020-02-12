@@ -1,7 +1,6 @@
 package ca.bc.gov.open.ecrc;
 
 import javax.annotation.PostConstruct;
-import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
