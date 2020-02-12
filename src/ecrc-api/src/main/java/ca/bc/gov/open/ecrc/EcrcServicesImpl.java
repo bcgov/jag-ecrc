@@ -1,6 +1,7 @@
 package ca.bc.gov.open.ecrc;
 
 import javax.annotation.PostConstruct;
+import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,7 +57,7 @@ public class EcrcServicesImpl implements EcrcServices {
 				.bodyToMono(DoAuthenticateUser.class);
 
 		try {
-			if (responseBody.block().getResponseCode() == 1) {
+			if (responseBody.block().getResponseCode() == EcrcExceptionConstants.WEBSERVICE_STATUS_CODE_SUCCESS) {
 				return objectMapper.writeValueAsString(responseBody.block());
 			} else {
 				return null;
