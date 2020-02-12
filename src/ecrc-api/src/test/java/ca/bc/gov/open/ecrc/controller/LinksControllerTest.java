@@ -25,7 +25,6 @@ import ca.bc.gov.open.ecrc.controller.LinksController;
  * @author BrendanBeachBCJ
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
 public class LinksControllerTest {
 	
