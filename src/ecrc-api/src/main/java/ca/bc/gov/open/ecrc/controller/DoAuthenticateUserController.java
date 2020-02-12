@@ -23,13 +23,13 @@ public class DoAuthenticateUserController {
 
 	@CrossOrigin(origins = "/**")
 	@GetMapping("/doAuthenticateUser")
-	public ResponseEntity<String> doAuthenticateUser(@RequestParam(required=true) String org) {
+	public ResponseEntity<String> doAuthenticateUser(@RequestParam(required=true) String orgTicketId) {
 		try {
-			String result = ecrcServices.doAuthenticateUser(org);
+			String result = ecrcServices.doAuthenticateUser(orgTicketId);
 			if (result != null) {
-				return new ResponseEntity<>(ecrcServices.doAuthenticateUser(org), HttpStatus.OK);
+				return new ResponseEntity<>(ecrcServices.doAuthenticateUser(orgTicketId), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<>(String.format("{\"accessCode\":\"%s\"}",org), HttpStatus.NOT_FOUND);
+				return new ResponseEntity<>(String.format("{\"accessCode\":\"%s\"}",orgTicketId), HttpStatus.NOT_FOUND);
 			}
 		} catch(EcrcServiceException e) {
 			return new ResponseEntity<>("Failed to find user", HttpStatus.BAD_REQUEST);

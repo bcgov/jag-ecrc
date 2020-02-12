@@ -17,7 +17,7 @@ public class GetNextSessionIdController {
 
     @CrossOrigin(origins = "/**")
     @GetMapping("/getNextSessionId")
-    public ResponseEntity<String> getNextSessionId(@RequestParam(required=true) String orgId) {
+    public ResponseEntity<String> getNextSessionId(@RequestParam(required=true) String orgTicketId) {
         return new ResponseEntity<>("", HttpStatus.NOT_IMPLEMENTED);
     }
 }
