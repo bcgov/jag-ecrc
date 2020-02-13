@@ -20,6 +20,7 @@ public class EcrcProperties {
 	private String getProvincesListUri;
 	private String doAuthenticateUserUri;
 	private String getNextSessionIdUri;
+	private String createNewCRCServiceUri;
 
 	public String getBaseUrl() {
 		return baseUrl;
@@ -62,5 +63,9 @@ public class EcrcProperties {
 	public String getDoAuthenticateUserUri() { return doAuthenticateUserUri; }
 
 	public void setDoAuthenticateUserUri(String doAuthenticateUserUri) { this.doAuthenticateUserUri = doAuthenticateUserUri; }
+
+	public String getCreateNewCRCServiceUri() { return createNewCRCServiceUri; }
+
+	public void setCreateNewCRCServiceUri(String createNewCRCServiceUri) { this.createNewCRCServiceUri = createNewCRCServiceUri; }
 
 }

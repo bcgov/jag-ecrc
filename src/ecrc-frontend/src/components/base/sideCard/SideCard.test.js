@@ -22,6 +22,13 @@ describe("SideCard Component", () => {
     expect(sideCard.exists("#blue-section")).toEqual(true);
   });
 
+  test("Renders the bluegrey card when the type is bluegrey", () => {
+    const sideCard = shallow(
+      <SideCard sideCard={{ ...sideCardProps, type: "bluegrey" }} />
+    );
+    expect(sideCard.exists("#bluegrey-section")).toEqual(true);
+  });
+
   test("Renders as expected", () => {
     const sideCard = create(<SideCard sideCard={sideCardProps} />);
     expect(sideCard.toJSON()).toMatchSnapshot();

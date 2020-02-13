@@ -21,4 +21,14 @@ storiesOf("SideCard", module)
         type: "notice"
       }}
     />
+  ))
+  .add("bluegrey", () => (
+    <SideCard
+      sideCard={{
+        ...sideCard,
+        heading: "Business Profile",
+        content: "Content for blue grey",
+        type: "bluegrey"
+      }}
+    />
   ));
