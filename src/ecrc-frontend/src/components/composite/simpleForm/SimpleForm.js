@@ -30,8 +30,8 @@ export const SimpleForm = ({ title, textInputs, buttons }) => {
   });
 
   return (
-    <form className="ecrcForm">
-      {title != null && <div className="ecrcForm_title">{title}</div>}
+    <form className="simpleForm">
+      {title != null && <div className="simpleForm_title">{title}</div>}
       {inputList.length > 0 && <ul>{inputList}</ul>}
       {buttonList.length > 0 && <ul id="buttonList">{buttonList}</ul>}
     </form>
