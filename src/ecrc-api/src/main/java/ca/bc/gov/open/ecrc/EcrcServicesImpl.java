@@ -2,7 +2,7 @@ package ca.bc.gov.open.ecrc;
 
 import javax.annotation.PostConstruct;
 
-import ca.bc.gov.open.ecrc.model.CRCService;
+import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
 import ca.bc.gov.open.ecrc.objects.CreateNewCrcService;
 import ca.bc.gov.open.ecrc.objects.GetNextSessionId;
 import org.json.JSONObject;
@@ -86,8 +86,8 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 
-	public ResponseEntity<String> createNewCRCService(CRCService crcService) throws EcrcServiceException {
-		String _createNewCRCServiceUri = ecrcProps.getCreateNewCRCServiceUri();
+	public ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException {
+		String _createNewCRCServiceUri = String.format(ecrcProps.getCreateNewCRCServiceUri(),crcService.toQueryString());
 		return callWebMethodsService(_createNewCRCServiceUri, new CreateNewCrcService());
 	}
 
