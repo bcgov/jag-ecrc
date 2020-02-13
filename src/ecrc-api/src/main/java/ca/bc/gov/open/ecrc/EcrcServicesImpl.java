@@ -25,7 +25,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 import ca.bc.gov.open.ecrc.objects.GetProvinceList;
 import reactor.core.publisher.Mono;
-import ca.bc.gov.open.ecrc.model.ApplicantInfo;
+import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 import ca.bc.gov.open.ecrc.model.Link;
 
 /**
@@ -83,7 +83,7 @@ public class EcrcServicesImpl implements EcrcServices {
 		return callWebMethodsService(_getNextSessionIdUri, new GetNextSessionId());
 	}
 	
-	public ResponseEntity<String> createApplicant(ApplicantInfo applicant) throws EcrcServiceException {
+	public ResponseEntity<String> createApplicant(RequestCreateApplicant applicant) throws EcrcServiceException {
 		// TODO Auto-generated method stub
 		return null;
 	}

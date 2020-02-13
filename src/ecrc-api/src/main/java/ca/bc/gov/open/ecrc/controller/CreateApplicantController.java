@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.model.ApplicantInfo;
+import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 
 /**
  * @author sivakaruna
@@ -23,9 +23,9 @@ public class CreateApplicantController {
 
 	@CrossOrigin(origins = "/**")
 	@GetMapping("/createApplicant")
-	public ResponseEntity<String> createApplicant(@RequestBody ApplicantInfo applicant) throws EcrcServiceException {
+	public ResponseEntity<String> createApplicant(@RequestBody RequestCreateApplicant applicantInfo) throws EcrcServiceException {
 		
-		return ecrcServices.createApplicant(applicant);
+		return ecrcServices.createApplicant(applicantInfo);
 		
 	}
 }

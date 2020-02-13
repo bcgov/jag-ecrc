@@ -1,10 +1,12 @@
 package ca.bc.gov.open.ecrc.model;
 
 /**
+ * Object for requesting create applicant 
+ *  
  * @author sivakaruna
  *
  */
-public class ApplicantInfo {
+public class RequestCreateApplicant {
 	
 	private String orgTicketNumber;
 	private String callPurpose;
