@@ -1,6 +1,9 @@
 package ca.bc.gov.open.ecrc.model;
 
-public class CRCService {
+/***
+ * Object for requesting new CRC Service
+ */
+public class RequestNewCRCService {
     private String orgTicketNumber;
     private String schedule_Type_Cd;
     private String scope_Level_Cd;
