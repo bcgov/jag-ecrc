@@ -35,11 +35,20 @@ Form.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired
     })
+  ),
+  buttons: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      buttonStyle: PropTypes.string.isRequired,
+      buttonSize: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired
+    })
   )
 };
 
 Form.defaultProps = {
-  textInputs: []
+  textInputs: [],
+  buttons: []
 };
 
 export default Form;

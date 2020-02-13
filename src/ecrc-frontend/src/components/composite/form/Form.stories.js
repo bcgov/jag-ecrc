@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { Form } from "./Form";
 import { action } from "@storybook/addon-actions";
+
+import { Form } from "./Form";
 
 const textInputs = [
   {
