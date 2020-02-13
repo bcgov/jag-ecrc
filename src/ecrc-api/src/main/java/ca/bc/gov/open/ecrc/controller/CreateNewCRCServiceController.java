@@ -13,7 +13,7 @@ public class CreateNewCRCServiceController {
     private EcrcServicesImpl ecrcServices;
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/createNewCRCService")
-    public ResponseEntity<String> createNewCRCService(@RequestParam(required=true) RequestNewCRCService requestNewCRCService) throws EcrcServiceException {
+    public ResponseEntity<String> createNewCRCService(@RequestBody(required=true) RequestNewCRCService requestNewCRCService) throws EcrcServiceException {
         return  ecrcServices.createNewCRCService(requestNewCRCService);
     }
 }
