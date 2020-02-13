@@ -3,6 +3,7 @@ package ca.bc.gov.open.ecrc;
 import java.util.ArrayList;
 
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.model.CRCService;
 import ca.bc.gov.open.ecrc.model.Link;
 import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 import javassist.NotFoundException;
@@ -25,6 +26,8 @@ public interface EcrcServices {
 	public  ResponseEntity<String> getProvinceList() throws EcrcServiceException;
 
 	public  ResponseEntity<String> getNextSessionId(String orgTicketNumber) throws EcrcServiceException;
+
+	public  ResponseEntity<String> createNewCRCService(CRCService crcService) throws EcrcServiceException;
 
 	//TODO - fill in other service method signatures here.
 
