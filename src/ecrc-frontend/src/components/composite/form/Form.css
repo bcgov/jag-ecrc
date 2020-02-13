@@ -1,10 +1,24 @@
 .ecrcForm {
   width: 100%;
-  /* background-color: yellow; */
   overflow: hidden;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 10px;
+}
+
+.ecrcForm_title {
+  width: 100%;
+  background-color: rgba(56, 89, 138, 1);
+  height: 36px;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-top: 5px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 22px;
+  vertical-align: middle;
 }
 
 ul {
