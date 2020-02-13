@@ -2,10 +2,10 @@
 
 exports[`SimpleForm Component Matches the snapshot 1`] = `
 <form
-  className="ecrcForm"
+  className="simpleForm"
 >
   <div
-    className="ecrcForm_title"
+    className="simpleForm_title"
   >
     title
   </div>
