@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { create } from "react-test-renderer";
-import { shallow } from "enzyme";
 
 import { Form } from "./Form";
 
