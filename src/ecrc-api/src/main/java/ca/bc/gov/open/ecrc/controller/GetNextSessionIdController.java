@@ -18,18 +18,7 @@ public class GetNextSessionIdController {
 
     @CrossOrigin(origins = "/**")
     @GetMapping("/getNextSessionId")
-    public ResponseEntity<String> getNextSessionId(@RequestParam(required=true) String orgTicketId) {
-        try {
-            String result = ecrcServices.getNextSessionId(orgTicketId);
-            if (result != null) {
-                return new ResponseEntity<>(result, HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-                        EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND);
-            }
-        } catch(EcrcServiceException e) {
-            return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-                    EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR), HttpStatus.BAD_REQUEST);
-        }
+    public ResponseEntity<String> getNextSessionId(@RequestParam(required=true) String orgTicketId) throws EcrcServiceException {
+        return ecrcServices.getNextSessionId(orgTicketId);
     }
 }

@@ -23,20 +23,8 @@ public class GetProvinceListController {
 
 	@CrossOrigin(origins = "/**")
 	@GetMapping("/getProvinceList")
-	public ResponseEntity<String> getProvinceList() {
-		try {
-			String result = ecrcServices.getProvinceList();
-			if (result != null) {
-				return new ResponseEntity<String>(result, HttpStatus.OK);
-			} else {
-				return new ResponseEntity<String>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND);
-			}
-		} catch (EcrcServiceException e) {
-			e.printStackTrace();
-			return new ResponseEntity<String>(
-					String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE, e.getMessage()),
-					HttpStatus.BAD_REQUEST);
-		}
+	public ResponseEntity<String> getProvinceList() throws EcrcServiceException {
+		return ecrcServices.getProvinceList();
+
 	}
 }

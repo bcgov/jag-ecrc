@@ -30,28 +30,30 @@ public class GetNextSessionIdControllerTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    @DisplayName("Success - doAuthenticateUser controller")
+    @DisplayName("Success - getNextSessionId controller")
     @Test
     public void testFoundValidOrg() throws EcrcServiceException {
-        Mockito.when(ecrcServices.getNextSessionId("SOMEDATA")).thenReturn("SOMESTRING");
+        Mockito.when(ecrcServices.getNextSessionId("SOMEDATA")).thenReturn(new ResponseEntity<>("SOMESTRING", HttpStatus.OK));
         ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA");
         Assertions.assertEquals("SOMESTRING", result.getBody());
     }
 
-    @DisplayName("Failure - doAuthenticateUser controller")
+    @DisplayName("Failure - getNextSessionId controller")
     @Test
     public void testNotFoundValidOrg() throws EcrcServiceException {
-        Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(null);
+        Mockito.when(ecrcServices.getNextSessionId("SOMEDATA")).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND));
         ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA");
         Assertions.assertEquals(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                 EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), result.getBody());
         Assertions.assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
     }
 
-    @DisplayName("Error - doAuthenticateUser controller")
+    @DisplayName("Error - getNextSessionId controller")
     @Test
     public void testServiceExceptionValidOrg() throws EcrcServiceException {
-        Mockito.when(ecrcServices.getNextSessionId("SOMEDATA")).thenThrow(new EcrcServiceException("ATHINGHAPPENED"));
+        Mockito.when(ecrcServices.getNextSessionId("SOMEDATA")).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.BAD_REQUEST));
         ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA");
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
     }
