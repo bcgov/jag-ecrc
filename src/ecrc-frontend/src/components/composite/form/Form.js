@@ -2,25 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Form.css";
 import { TextInput } from "../../base/textInput/TextInput";
+import { Button } from "../../base/button/Button";
 
-export const Form = ({ textInputs }) => {
+export const Form = ({ textInputs, buttons }) => {
   const inputList = textInputs.map(input => {
     return (
       <li>
-        <div>
-          <TextInput key={input.name} textInput={input} />
-        </div>
+        <TextInput key={input.name} textInput={input} />
+      </li>
+    );
+  });
+
+  const buttonList = buttons.map(button => {
+    return (
+      <li>
+        <Button key={button.name} button={button} />
       </li>
     );
   });
 
   return (
     <form className="ecrcForm">
-      {inputList.length > 0 && (
-        <div className="row">
-          <ul>{inputList}</ul>
-        </div>
-      )}
+      {inputList.length > 0 && <ul>{inputList}</ul>}
+      {buttonList.length > 0 && <ul id="buttonList">{buttonList}</ul>}
     </form>
   );
 };
