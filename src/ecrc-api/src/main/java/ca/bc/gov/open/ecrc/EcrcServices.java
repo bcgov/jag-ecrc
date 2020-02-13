@@ -9,21 +9,22 @@ import javassist.NotFoundException;
 
 
 /**
- * 
+ *
  * Interface for ECRC Service
- * 
+ *
  * @author shaunmillargov
  *
  */
 public interface EcrcServices {
-	
-	public String doAuthenticateUser(String accessCode) throws EcrcServiceException, NotFoundException;
-	
-	public ArrayList<Link> getLinks() throws EcrcServiceException;
-	
-	public String getProvinceList() throws EcrcServiceException;
-	
-	//TODO - fill in other service method signatures here. 
-	
-}
 
+	public String doAuthenticateUser(String orgTicketNumber) throws EcrcServiceException, NotFoundException;
+
+	public ArrayList<Link> getLinks() throws EcrcServiceException;
+
+	public String getProvinceList() throws EcrcServiceException;
+
+	public String getNextSessionId(String orgTicketNumber) throws EcrcServiceException;
+
+	//TODO - fill in other service method signatures here.
+
+}

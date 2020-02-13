@@ -2,6 +2,7 @@ package ca.bc.gov.open.ecrc;
 
 import javax.annotation.PostConstruct;
 
+import ca.bc.gov.open.ecrc.objects.GetNextSessionId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,9 @@ import reactor.core.publisher.Mono;
 import ca.bc.gov.open.ecrc.model.Link;
 
 /**
- * 
+ *
  * Service Implementation class.
- * 
+ *
  * @author shaunmillargov
  *
  */
@@ -54,10 +55,10 @@ public class EcrcServicesImpl implements EcrcServices {
 				.build();
 	}
 
-	public String doAuthenticateUser(String accessCode) throws EcrcServiceException {
-		
-		String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), accessCode);
-		
+	public String doAuthenticateUser(String orgTicketNumber) throws EcrcServiceException {
+
+		String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
+
 		Mono<DoAuthenticateUser> responseBody = this.webClient.get().uri(_doAuthenticateUserUri).retrieve()
 				.bodyToMono(DoAuthenticateUser.class);
 
@@ -75,7 +76,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			throw new EcrcServiceException(EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, e);
 		}
 	}
-	
+
 	public ArrayList<Link> getLinks() throws EcrcServiceException {
 		//TODO: replace hard coded links with actual links
 		ArrayList<Link> linkList = new ArrayList<Link>();
@@ -83,14 +84,13 @@ public class EcrcServicesImpl implements EcrcServices {
 		Link link2 = new Link("test2", "www.google.ca");
 		linkList.add(link1);
 		linkList.add(link2);
-		
+
 		return linkList;
 	}
 
 	public String getProvinceList() throws EcrcServiceException {
 		Mono<GetProvinceList> responseBody = this.webClient.get().uri(ecrcProps.getGetProvincesListUri()).retrieve()
 				.bodyToMono(GetProvinceList.class);
-		
 		String response;
 		try {
 			response = objectMapper.writeValueAsString(responseBody.block());
@@ -102,5 +102,25 @@ public class EcrcServicesImpl implements EcrcServices {
 			throw new EcrcServiceException(EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, e);
 		}
 		return response;
+	}
+
+	public String getNextSessionId(String orgTicketNumber) throws EcrcServiceException {
+		String _getNextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), orgTicketNumber);
+		Mono<GetNextSessionId> responseBody = this.webClient.get().uri(_getNextSessionIdUri).retrieve()
+				.bodyToMono(GetNextSessionId.class);
+
+		try {
+			if (responseBody.block().getResponseCode() == EcrcExceptionConstants.WEBSERVICE_STATUS_CODE_SUCCESS) {
+				return objectMapper.writeValueAsString(responseBody.block());
+			} else {
+				return null;
+			}
+		} catch (JsonProcessingException e) {
+			logger.error("Failed to convert to json processing exception");
+			throw new EcrcServiceException(EcrcExceptionConstants.CONVERT_TO_JSON_ERROR, e);
+		} catch (Exception e) {
+			logger.error("Failed to convert to json general exception");
+			throw new EcrcServiceException(EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, e);
+		}
 	}
 }
