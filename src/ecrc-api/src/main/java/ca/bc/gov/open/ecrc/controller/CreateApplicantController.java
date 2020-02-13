@@ -4,25 +4,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.model.ApplicantInfo;
 
 /**
  * @author sivakaruna
  *
  */
 @RestController
-public class GetProvinceListController {
+public class CreateApplicantController {
 
 	@Autowired
 	EcrcServices ecrcServices;
 
 	@CrossOrigin(origins = "/**")
-	@GetMapping("/getProvinceList")
-	public ResponseEntity<String> getProvinceList() throws EcrcServiceException {
-		return ecrcServices.getProvinceList();
-
+	@GetMapping("/createApplicant")
+	public ResponseEntity<String> createApplicant(@RequestBody ApplicantInfo applicant) throws EcrcServiceException {
+		
+		return ecrcServices.createApplicant(applicant);
+		
 	}
 }
+

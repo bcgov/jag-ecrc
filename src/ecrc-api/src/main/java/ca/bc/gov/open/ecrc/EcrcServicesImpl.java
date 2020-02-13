@@ -7,7 +7,6 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import java.util.ArrayList;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -26,6 +25,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 import ca.bc.gov.open.ecrc.objects.GetProvinceList;
 import reactor.core.publisher.Mono;
+import ca.bc.gov.open.ecrc.model.ApplicantInfo;
 import ca.bc.gov.open.ecrc.model.Link;
 
 /**
@@ -81,6 +81,11 @@ public class EcrcServicesImpl implements EcrcServices {
 	public ResponseEntity<String> getNextSessionId(String orgTicketNumber) throws EcrcServiceException {
 		String _getNextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), orgTicketNumber);
 		return callWebMethodsService(_getNextSessionIdUri, new GetNextSessionId());
+	}
+	
+	public ResponseEntity<String> createApplicant(ApplicantInfo applicant) throws EcrcServiceException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private ResponseEntity<String> callWebMethodsService(String Uri, Object returnObject) {
