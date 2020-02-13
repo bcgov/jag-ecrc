@@ -234,4 +234,32 @@ public class RequestCreateApplicant {
 		this.driversLicNo = driversLicNo;
 	}
 
+	public String toQueryString() {
+        return "? " +
+        		"& OrgTicketNumber  = " + orgTicketNumber +
+        		"& Call_Purpose     = " + callPurpose +
+        		"& Legal_Surname_Nm = " + legalSurnameNm +
+        		"& Legal_First_Nm   = " + legalFirstNm +
+        		"& Legal_Second_Nm  = " + legalSecondNm +
+        		"& Birth_Dt         = " + birthDt +
+        		"& Gender_Txt       = " + genderTxt +
+        		"& Birth_Place      = " + birthPlace +
+        		"& Alias1_Surname_Nm= " + alias1SurnameNm +
+        		"& Alias1_First_Nm  = " + alias1FirstNm +
+        		"& Alias1_Second_Nm = " + alias1SecondNm +
+        		"& Alias2_Surname_Nm= " + alias2SurnameNm +
+        		"& Alias2_First_Nm  = " + alias2FirstNm+
+        		"& Alias2_Second_Nm = " + alias2SecondNm +
+        		"& Alias3_Surname_Nm= " + alias3SurnameNm +
+        		"& Alias3_First_Nm  = " + alias3FirstNm +
+        		"& Alias3_Second_Nm = " + alias3SecondNm +
+        		"& Phone_Number     = " + phoneNumber +
+        		"& Address_Line1    = " + addressLine1 +
+        		"& Address_Line2    = " + addressLine2 +
+        		"& City_Nm          = " + cityNm +
+        		"& Province_Nm      = " + provinceNm +
+        		"& Country_Nm       = " + countryNm +
+        		"& Postal_Code_Txt  = " + postalCodeTxt +
+        		"& Drivers_Lic_No   = " + driversLicNo;
+    }
 }
