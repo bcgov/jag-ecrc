@@ -2,6 +2,8 @@ package ca.bc.gov.open.ecrc;
 
 import javax.annotation.PostConstruct;
 
+import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
+import ca.bc.gov.open.ecrc.objects.CreateNewCrcService;
 import ca.bc.gov.open.ecrc.objects.GetNextSessionId;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -81,6 +83,12 @@ public class EcrcServicesImpl implements EcrcServices {
 	public ResponseEntity<String> getNextSessionId(String orgTicketNumber) throws EcrcServiceException {
 		String _getNextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), orgTicketNumber);
 		return callWebMethodsService(_getNextSessionIdUri, new GetNextSessionId());
+	}
+
+
+	public ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException {
+		String _createNewCRCServiceUri = String.format(ecrcProps.getCreateNewCRCServiceUri(),crcService.toQueryString());
+		return callWebMethodsService(_createNewCRCServiceUri, new CreateNewCrcService());
 	}
 
 	private ResponseEntity<String> callWebMethodsService(String Uri, Object returnObject) {
