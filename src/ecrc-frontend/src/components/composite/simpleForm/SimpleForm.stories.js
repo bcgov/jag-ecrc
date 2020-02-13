@@ -3,7 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import { Form } from "./Form";
+import { SimpleForm } from "./SimpleForm";
 
 const textInputs = [
   {
@@ -50,11 +50,11 @@ const buttons = [
   }
 ];
 
-storiesOf("Form", module)
-  .add("Default", () => <Form />)
+storiesOf("SimpleForm", module)
+  .add("Default", () => <SimpleForm />)
   .add("3texts_3buttons", () => (
-    <Form textInputs={textInputs} buttons={buttons} />
+    <SimpleForm textInputs={textInputs} buttons={buttons} />
   ))
   .add("Title_3texts_3buttons", () => (
-    <Form title="title" textInputs={textInputs} buttons={buttons} />
+    <SimpleForm title="title" textInputs={textInputs} buttons={buttons} />
   ));

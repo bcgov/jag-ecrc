@@ -2,9 +2,9 @@
 import React from "react";
 import { create } from "react-test-renderer";
 
-import { Form } from "./Form";
+import { SimpleForm } from "./SimpleForm";
 
-describe("Form Component", () => {
+describe("SimpleForm Component", () => {
   const textInputs = [
     {
       label: "label1",
@@ -38,7 +38,7 @@ describe("Form Component", () => {
 
   test("Matches the snapshot", () => {
     const form = create(
-      <Form title="title" textInputs={textInputs} buttons={buttons} />
+      <SimpleForm title="title" textInputs={textInputs} buttons={buttons} />
     );
     expect(form.toJSON()).toMatchSnapshot();
   });

@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Form.css";
+import "./SimpleForm.css";
 import { TextInput } from "../../base/textInput/TextInput";
 import { Button } from "../../base/button/Button";
 
-export const Form = ({ title, textInputs, buttons }) => {
+export const SimpleForm = ({ title, textInputs, buttons }) => {
   const inputList = textInputs.map(input => {
     return (
       <li key={input.id}>
@@ -38,7 +38,7 @@ export const Form = ({ title, textInputs, buttons }) => {
   );
 };
 
-Form.propTypes = {
+SimpleForm.propTypes = {
   title: PropTypes.string,
   textInputs: PropTypes.arrayOf(
     PropTypes.shape({
@@ -61,10 +61,10 @@ Form.propTypes = {
   )
 };
 
-Form.defaultProps = {
+SimpleForm.defaultProps = {
   title: null,
   textInputs: [],
   buttons: []
 };
 
-export default Form;
+export default SimpleForm;
