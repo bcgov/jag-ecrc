@@ -13,7 +13,7 @@ exports[`SideCard Component Renders as expected 1`] = `
     className="row"
   >
     <div
-      className="col-lg-4 col-sm-12"
+      className="col-12"
       style={
         Object {
           "paddingTop": "30px",

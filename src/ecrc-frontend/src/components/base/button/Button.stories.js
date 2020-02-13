@@ -16,7 +16,7 @@ const actionData = {
 };
 
 storiesOf("Button", module)
-  .add("Default", () => <Button button={button} actionData />)
+  .add("Default", () => <Button button={button} {...actionData} />)
   .add("Warning", () => (
     <Button
       button={{

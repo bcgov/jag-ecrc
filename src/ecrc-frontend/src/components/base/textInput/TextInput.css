@@ -49,7 +49,7 @@
 .textinput_editable_white {
   padding: 1px 0px 1px 0px;
   box-sizing: border-box;
-  position: absolute;
+  /* position: absolute; */
   left: 0px;
   top: 30px;
   width: 100%;
