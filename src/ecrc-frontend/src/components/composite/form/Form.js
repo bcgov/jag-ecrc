@@ -7,7 +7,7 @@ import { Button } from "../../base/button/Button";
 export const Form = ({ title, textInputs, buttons }) => {
   const inputList = textInputs.map(input => {
     return (
-      <li key={input.name}>
+      <li key={input.id}>
         <TextInput textInput={input} onChange={input.onChange} />
       </li>
     );
@@ -15,7 +15,7 @@ export const Form = ({ title, textInputs, buttons }) => {
 
   const buttonList = buttons.map(button => {
     return (
-      <li key={button.name}>
+      <li key={button.label}>
         <Button
           button={{
             label: button.label,
