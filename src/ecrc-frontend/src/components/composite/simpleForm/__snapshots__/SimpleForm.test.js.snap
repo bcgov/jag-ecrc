@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleForm Component Matches the snapshot 1`] = `
+<form
+  className="simpleForm"
+>
+  <div
+    className="simpleForm_title"
+  >
+    title
+  </div>
+  <ul>
+    <li>
+      <div>
+        <div>
+          <label
+            className="textinput_label"
+            htmlFor="textInput1"
+          >
+            label1
+          </label>
+          
+        </div>
+        <input
+          className="textinput_editable_white"
+          id="textInput1"
+          onChange={[Function]}
+          type="text"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <div>
+          <label
+            className="textinput_label"
+            htmlFor="textInput3"
+          >
+            label3
+          </label>
+          <span
+            className="mandatory"
+            id="asterisk"
+          >
+            *
+          </span>
+        </div>
+        <input
+          className="textinput_editable_gray"
+          id="textInput3"
+          onChange={[Function]}
+          type="text"
+        />
+      </div>
+    </li>
+  </ul>
+  <ul
+    id="buttonList"
+  >
+    <li>
+      <button
+        className="btn btn-warning btn btn-lg"
+        onClick={[Function]}
+        type="button"
+      >
+        button2
+      </button>
+    </li>
+    <li>
+      <button
+        className="btn btn-danger btn btn-sm"
+        onClick={[Function]}
+        type="button"
+      >
+        button3
+      </button>
+    </li>
+  </ul>
+</form>
+`;
