@@ -5,6 +5,7 @@ import { TextInput } from "../../base/textInput/TextInput";
 import { Button } from "../../base/button/Button";
 
 export const SimpleForm = ({ title, textInputs, buttons }) => {
+  console.log(title, textInputs, buttons);
   const inputList = textInputs.map(input => {
     return (
       <li key={input.id}>
@@ -31,7 +32,7 @@ export const SimpleForm = ({ title, textInputs, buttons }) => {
 
   return (
     <form className="simpleForm">
-      {title != null && <div className="simpleForm_title">{title}</div>}
+      {title !== null && <div className="simpleForm_title">{title}</div>}
       {inputList.length > 0 && <ul>{inputList}</ul>}
       {buttonList.length > 0 && <ul id="buttonList">{buttonList}</ul>}
     </form>

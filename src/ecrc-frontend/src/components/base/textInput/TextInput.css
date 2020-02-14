@@ -12,7 +12,6 @@
 .textinput_editable_gray {
   padding: 1px 0px 1px 0px;
   box-sizing: border-box;
-  left: 0px;
   top: 30px;
   width: 100%;
   height: 40px;
@@ -27,8 +26,6 @@
 }
 
 .textinput_non_editable_gray {
-  padding: 0px 0px 0px 0px;
-  left: 0px;
   top: 30px;
   width: 100%;
   height: 40px;
@@ -47,7 +44,6 @@
 .textinput_editable_white {
   padding: 1px 0px 1px 0px;
   box-sizing: border-box;
-  left: 0px;
   top: 30px;
   width: 100%;
   height: 40px;
