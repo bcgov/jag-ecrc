@@ -2,7 +2,17 @@ package ca.bc.gov.open.ecrc.model;
 
 public class RequestUpdateServiceFinancialTxn {
     private String orgTicketNumber;
-
+    private String appl_Party_Id;
+    private String service_Id;
+    private String cC_Authorization;
+    private String payment_Date;
+    private String payor_Type_Cd;
+    private String payment_Status_Cd;
+    private String session_Id;
+    private String invoice_Id;
+    private String transaction_Id;
+    private String transaction_Amount;
+    
     public String getOrgTicketNumber() {
         return orgTicketNumber;
     }
@@ -90,17 +100,6 @@ public class RequestUpdateServiceFinancialTxn {
     public void setTransaction_Amount(String transaction_Amount) {
         this.transaction_Amount = transaction_Amount;
     }
-
-    private String appl_Party_Id;
-    private String service_Id;
-    private String cC_Authorization;
-    private String payment_Date;
-    private String payor_Type_Cd;
-    private String payment_Status_Cd;
-    private String session_Id;
-    private String invoice_Id;
-    private String transaction_Id;
-    private String transaction_Amount;
 
     public String toQueryString() {
         return "? " +
