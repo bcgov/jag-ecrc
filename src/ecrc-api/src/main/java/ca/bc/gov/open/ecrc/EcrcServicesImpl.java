@@ -5,7 +5,6 @@ import javax.annotation.PostConstruct;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
 import ca.bc.gov.open.ecrc.model.RequestUpdateServiceFinancialTxn;
 import ca.bc.gov.open.ecrc.objects.*;
-import com.sun.javaws.exceptions.ErrorCodeResponseException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -95,7 +94,7 @@ public class EcrcServicesImpl implements EcrcServices {
 		return callWebMethodsService(_createNewCRCServiceUri, new CreateNewCrcService());
 	}
 
-	public ResponseEntity<String> updateServiceFinancialTxn(RequestUpdateServiceFinancialTxn updateServiceFinancialTxn) throws ErrorCodeResponseException {
+	public ResponseEntity<String> updateServiceFinancialTxn(RequestUpdateServiceFinancialTxn updateServiceFinancialTxn) throws EcrcServiceException {
 		String _updateServiceFinancialTxnUri = String.format(ecrcProps.getUpdateServiceFinancialTxnUri(),updateServiceFinancialTxn.toQueryString());
 		return callWebMethodsService(_updateServiceFinancialTxnUri, new UpdateServiceFinancialTxn());
 
