@@ -1,0 +1,13 @@
+td:nth-child(odd) {
+  font-weight: bold;
+}
+
+td {
+  border: 5px solid white;
+  padding: 3px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+}
