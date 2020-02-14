@@ -6,6 +6,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
 import ca.bc.gov.open.ecrc.model.Link;
+import ca.bc.gov.open.ecrc.model.RequestUpdateServiceFinancialTxn;
 import javassist.NotFoundException;
 import org.springframework.http.ResponseEntity;
 
@@ -31,7 +32,10 @@ public interface EcrcServices {
 
 	public  ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException;
 
+	public ResponseEntity<String> updateServiceFinancialTxn(RequestUpdateServiceFinancialTxn updateServiceFinancialTxn) throws EcrcServiceException;
+
 	public ResponseEntity<String> getServiceFeeAmount(String orgTicketNumber, String scheduleTypeCd, String scopeLevelCd) throws EcrcServiceException;
+
 
 	//TODO - fill in other service method signatures here.
 

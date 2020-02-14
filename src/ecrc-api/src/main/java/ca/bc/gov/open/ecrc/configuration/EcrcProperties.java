@@ -24,6 +24,8 @@ public class EcrcProperties {
   private String getServiceFeeAmountUri;
 	private String createApplicantUri;
 
+	private String updateServiceFinancialTxnUri;
+
 	public String getBaseUrl() {
 		return baseUrl;
 	}
@@ -69,6 +71,10 @@ public class EcrcProperties {
 	public String getCreateNewCRCServiceUri() { return createNewCRCServiceUri; }
 
 	public void setCreateNewCRCServiceUri(String createNewCRCServiceUri) { this.createNewCRCServiceUri = createNewCRCServiceUri; }
+
+	public String getUpdateServiceFinancialTxnUri() { return updateServiceFinancialTxnUri; }
+
+	public void setUpdateServiceFinancialTxnUri(String updateServiceFinancialTxnUri) { this.updateServiceFinancialTxnUri = updateServiceFinancialTxnUri; }
 
 	public String getGetServiceFeeAmountUri() { return getServiceFeeAmountUri; }
 

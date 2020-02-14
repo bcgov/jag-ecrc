@@ -3,7 +3,7 @@ package ca.bc.gov.open.ecrc;
 import javax.annotation.PostConstruct;
 
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
-
+import ca.bc.gov.open.ecrc.model.RequestUpdateServiceFinancialTxn;
 import ca.bc.gov.open.ecrc.objects.*;
 
 import org.json.JSONObject;
@@ -94,6 +94,11 @@ public class EcrcServicesImpl implements EcrcServices {
 		return callWebMethodsService(_createNewCRCServiceUri, new CreateNewCrcService());
 	}
 
+	public ResponseEntity<String> updateServiceFinancialTxn(RequestUpdateServiceFinancialTxn updateServiceFinancialTxn) throws EcrcServiceException {
+		String _updateServiceFinancialTxnUri = String.format(ecrcProps.getUpdateServiceFinancialTxnUri(),updateServiceFinancialTxn.toQueryString());
+		return callWebMethodsService(_updateServiceFinancialTxnUri, new UpdateServiceFinancialTxn());
+  }
+  
 	public ResponseEntity<String> getServiceFeeAmount(String orgTicketNumber, String scheduleTypeCd, String scopeLevelCd) throws EcrcServiceException {
 		String _getServiceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), orgTicketNumber, scheduleTypeCd, scopeLevelCd);
 		return callWebMethodsService(_getServiceFeeAmountUri, new GetServiceFeeAmount());
