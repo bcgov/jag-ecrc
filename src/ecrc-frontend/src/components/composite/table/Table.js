@@ -30,5 +30,5 @@ Table.propTypes = {
         value: PropTypes.string.isRequired
       }).isRequired
     )
-  })
+  }).isRequired
 };

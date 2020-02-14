@@ -3,6 +3,7 @@ table {
 }
 
 th {
+  background: white;
   padding: 3px;
   border: 5px solid white;
 }

@@ -6,6 +6,7 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import SideCard from "../../base/sideCard/SideCard";
 import { Button } from "../../base/button/Button";
+import Table from "../../composite/table/Table";
 
 export default function OrgVerification({
   page: {
@@ -28,11 +29,26 @@ export default function OrgVerification({
     type: "submit"
   };
 
+  const tableElements = [
+    { name: "Org name", value: org.orgNm },
+    {
+      name: "Org Address",
+      value: `${org.addressLine1}\n${org.cityNm}\n${org.provinceNm}\n${org.postalCodeTxt}\n${org.countryNm}`
+    },
+    { name: "Applicant Relationship", value: "Employee" }
+  ];
+
+  const table = {
+    header: "Org Information",
+    tableElements
+  };
+
   return (
     <main>
       <Header header={header} />
       <div className="page">
-        <div className="content">
+        <div className="content col-md-8">
+          <Table table={table} />
           <Button button={button} onClick={orgVerification} />
         </div>
         <div className="sidecard">
@@ -47,6 +63,7 @@ export default function OrgVerification({
 
 OrgVerification.propTypes = {
   page: PropTypes.shape({
+    org: PropTypes.object.isRequired,
     pageLayout: PropTypes.shape({
       header: PropTypes.shape({
         name: PropTypes.string.isRequired

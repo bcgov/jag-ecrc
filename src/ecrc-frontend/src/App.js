@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import OrgValidation from "./components/page/orgvalidation/OrgValidation";
-import OrgValidation from "./components/page/orgverification/OrgVerification";
+import OrgVerification from "./components/page/orgverification/OrgVerification";
 
 export default function App() {
   const [org, setOrg] = useState({});
@@ -38,7 +38,7 @@ export default function App() {
   return (
     <div>
       {!org.orgNm && <OrgValidation page={page} />}
-      {org.orgNm && <OrgVerifivation page={page} />}
+      {org.orgNm && <OrgVerification page={page} />}
     </div>
   );
 }
