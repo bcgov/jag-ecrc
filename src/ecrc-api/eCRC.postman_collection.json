@@ -97,6 +97,17 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "getFeeAmount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

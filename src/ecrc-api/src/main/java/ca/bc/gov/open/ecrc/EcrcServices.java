@@ -34,6 +34,9 @@ public interface EcrcServices {
 
 	public ResponseEntity<String> updateServiceFinancialTxn(RequestUpdateServiceFinancialTxn updateServiceFinancialTxn) throws EcrcServiceException;
 
+	public ResponseEntity<String> getServiceFeeAmount(String orgTicketNumber, String scheduleTypeCd, String scopeLevelCd) throws EcrcServiceException;
+
+
 	//TODO - fill in other service method signatures here.
 
 }
