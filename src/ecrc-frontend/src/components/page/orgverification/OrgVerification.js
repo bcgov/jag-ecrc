@@ -6,7 +6,6 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import SideCard from "../../base/sideCard/SideCard";
 import { Button } from "../../base/button/Button";
-import OrgVerificationText from "../../composite/orgverificationtext/OrgVerificationText";
 
 export default function OrgVerification({
   page: {
@@ -34,7 +33,6 @@ export default function OrgVerification({
       <Header header={header} />
       <div className="page">
         <div className="content">
-          <OrgVerificationText org={org} />
           <Button button={button} onClick={orgVerification} />
         </div>
         <div className="sidecard">
