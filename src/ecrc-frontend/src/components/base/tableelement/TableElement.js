@@ -16,5 +16,5 @@ TableElement.propTypes = {
   element: PropTypes.shape({
     name: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired
-  })
+  }).isRequired
 };
