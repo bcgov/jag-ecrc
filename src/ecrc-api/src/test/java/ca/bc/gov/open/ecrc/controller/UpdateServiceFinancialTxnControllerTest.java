@@ -38,6 +38,7 @@ public class UpdateServiceFinancialTxnControllerTest {
         Mockito.when(ecrcServices.updateServiceFinancialTxn(updateServiceFinancialTxn)).thenReturn(new ResponseEntity<>("SOMESTRING", HttpStatus.OK));
         ResponseEntity<String> result = updateServiceFinancialTxnController.updateServiceFinancialTxn(updateServiceFinancialTxn);
         Assertions.assertEquals("SOMESTRING", result.getBody());
+        Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
     }
 
     @DisplayName("Failure - updateServiceFinancialTxn controller")
