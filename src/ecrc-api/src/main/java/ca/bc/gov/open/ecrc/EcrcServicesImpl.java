@@ -3,6 +3,7 @@ package ca.bc.gov.open.ecrc;
 import javax.annotation.PostConstruct;
 
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
+import ca.bc.gov.open.ecrc.objects.CreateApplicant;
 import ca.bc.gov.open.ecrc.objects.CreateNewCrcService;
 import ca.bc.gov.open.ecrc.objects.GetNextSessionId;
 import org.json.JSONObject;
@@ -85,9 +86,9 @@ public class EcrcServicesImpl implements EcrcServices {
 		return callWebMethodsService(_getNextSessionIdUri, new GetNextSessionId());
 	}
 	
-	public ResponseEntity<String> createApplicant(RequestCreateApplicant applicant) throws EcrcServiceException {
-		// TODO Auto-generated method stub
-		return null;
+	public ResponseEntity<String> createApplicant(RequestCreateApplicant applicantInfo) throws EcrcServiceException {
+		String _createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(),applicantInfo.toQueryString());
+		return callWebMethodsService(_createApplicantUri, new CreateApplicant());
 	}
 
 
