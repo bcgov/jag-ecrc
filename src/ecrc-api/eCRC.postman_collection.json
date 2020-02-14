@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "9949f442-1237-445c-9ca2-c592e702d39d",
+		"name": "eCRC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "doAuth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSession",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/ecrc/getNextSessionId?orgTicketId=crce",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"ecrc",
+						"getNextSessionId"
+					],
+					"query": [
+						{
+							"key": "orgTicketId",
+							"value": "crce"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProvs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLinks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postCreateCRC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orgTicketNumber\":\"crce\"\r\n    , \"schedule_Type_Cd\":\"EE\"\r\n    , \"scope_Level_Cd\":\"EE\"\r\n    , \"appl_Party_Id\":\"123\"\r\n    , \"org_Appl_To_Pay\":\"org_Appl_To_Pay\"\r\n    , \"applicant_Posn\":\"applicant_Posn\"\r\n    , \"child_Care_Fac_Nm\":\"child_Care_Fac_Nm\"\r\n    , \"governing_Body_Nm\":\"governing_Body_Nm\"\r\n    , \"session_Id\":\"123\"\r\n    , \"invoice_Id\":\"123\"\r\n    , \"auth_Release_EIV_Vendor_YN\":\"auth_Release_EIV_Vendor_YN\"\r\n    , \"auth_Conduct_CRC_Check_YN\":\"auth_Conduct_CRC_Check_YN\"\r\n    , \"auth_Release_To_Org_YN\":\"auth_Release_To_Org_YN\"\r\n    , \"appl_Identity_Verified_EIV_YN\":\"appl_Identity_Verified_EIV_YN\"\r\n    , \"eivPassDetailsResults\":\"eivPassDetailsResults\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/ecrc/createNewCRCService",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"ecrc",
+						"createNewCRCService"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFeeAmount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

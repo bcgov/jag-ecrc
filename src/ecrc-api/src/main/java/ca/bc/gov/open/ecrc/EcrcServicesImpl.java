@@ -87,14 +87,13 @@ public class EcrcServicesImpl implements EcrcServices {
 		return null;
 	}
 
-
 	public ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException {
 		String _createNewCRCServiceUri = String.format(ecrcProps.getCreateNewCRCServiceUri(),crcService.toQueryString());
 		return callWebMethodsService(_createNewCRCServiceUri, new CreateNewCrcService());
 	}
 
 	public ResponseEntity<String> getServiceFeeAmount(String orgTicketNumber, String scheduleTypeCd, String scopeLevelCd) throws EcrcServiceException {
-		String _getServiceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmount(),orgTicketNumber, scheduleTypeCd, scopeLevelCd);
+		String _getServiceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), orgTicketNumber, scheduleTypeCd, scopeLevelCd);
 		return callWebMethodsService(_getServiceFeeAmountUri, new GetServiceFeeAmount());
 	}
 
@@ -115,7 +114,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 					EcrcExceptionConstants.CONVERT_TO_JSON_ERROR), HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
-			logger.error("Failed to convert to json general exception");
+			logger.error("Error in call to webMethods");
 			return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 					EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR), HttpStatus.BAD_REQUEST);
 		}
