@@ -21,7 +21,8 @@ public class EcrcProperties {
 	private String doAuthenticateUserUri;
 	private String getNextSessionIdUri;
 	private String createNewCRCServiceUri;
-    private String getServiceFeeAmountUri;
+  private String getServiceFeeAmountUri;
+	private String createApplicantUri;
 
 	public String getBaseUrl() {
 		return baseUrl;
@@ -72,5 +73,13 @@ public class EcrcProperties {
 	public String getGetServiceFeeAmountUri() { return getServiceFeeAmountUri; }
 
 	public void setGetServiceFeeAmountUri(String getServiceFeeAmountUri) { this.getServiceFeeAmountUri = getServiceFeeAmountUri; }
+
+	public String getCreateApplicantUri() {
+		return createApplicantUri;
+	}
+
+	public void setCreateApplicantUri(String createApplicantUri) {
+		this.createApplicantUri = createApplicantUri;
+	}
 
 }
