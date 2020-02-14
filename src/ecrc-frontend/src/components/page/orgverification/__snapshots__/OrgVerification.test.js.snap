@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrgVerification Component Matches the snapshot 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="https://www2.gov.bc.ca"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div
+          className="navbar-brand"
+        >
+          Criminal Record Check
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        >
+          <div
+            className="navbar-nav"
+          >
+            <a
+              className="nav-item nav-link"
+              href="/"
+            >
+              Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Org Information
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Org name
+            </td>
+            <td>
+              Test Org Name
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Org Address
+            </td>
+            <td>
+              123 Somewhere Lane
+Nowhere
+British Columbia
+undefined
+Canada
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Applicant Relationship
+            </td>
+            <td>
+              Employee
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Verify
+      </button>
+    </div>
+    <div
+      className="sidecard"
+    >
+      <div
+        className="dashboard-spacing"
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-12"
+            style={
+              Object {
+                "paddingTop": "30px",
+                "position": "relative",
+              }
+            }
+          >
+            <p />
+            <section
+              className="submit-container"
+              id="blue-section"
+            >
+              <h2>
+                Contact Your Organization
+              </h2>
+              <div
+                className="submit-content"
+              >
+                <p>
+                  You require a valid Organization Code, supplied by the organization you are applying to. You must contact them in order to receive this code.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div
+        className="dashboard-spacing"
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-12"
+            style={
+              Object {
+                "paddingTop": "30px",
+                "position": "relative",
+              }
+            }
+          >
+            <p />
+            <section
+              className="submit-container"
+              id="blue-section"
+            >
+              <h2>
+                Get a BC Services Card
+              </h2>
+              <div
+                className="submit-content"
+              >
+                <p>
+                  B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
