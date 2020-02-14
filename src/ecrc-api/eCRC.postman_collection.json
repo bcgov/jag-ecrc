@@ -108,6 +108,41 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "postUpdateFinancial",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OrgTicketNumber\":\"crce\",\r\n    \"Appl_Party_Id\":\"123\",\r\n    \"Service_Id\":\"123\",\r\n    \"CC_Authorization\":\"cC_Authorization\",\r\n    \"Payment_Date\":\"1/1/2020\",\r\n    \"Payor_Type_Cd\":\"CDE\",\r\n    \"Payment_Status_Cd\":\"CDE\",\r\n    \"Session_Id\":\"123\",\r\n    \"Invoice_Id\":\"123\",\r\n    \"Transaction_Id\":\"123\",\r\n    \"Transaction_Amount\":\"28\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/ecrc/updateServiceFinancialTxn",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"ecrc",
+						"updateServiceFinancialTxn"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
