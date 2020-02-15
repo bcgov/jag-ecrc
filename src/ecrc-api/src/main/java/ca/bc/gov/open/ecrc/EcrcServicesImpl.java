@@ -86,7 +86,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 	
 	public ResponseEntity<String> createApplicant(RequestCreateApplicant applicantInfo) throws EcrcServiceException {
-		String _createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(),applicantInfo.toQueryString());
+		String _createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(), applicantInfo.toQueryString());
 		return callWebMethodsService(_createApplicantUri, new CreateApplicant());
 	}
 
@@ -98,7 +98,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	public ResponseEntity<String> updateServiceFinancialTxn(RequestUpdateServiceFinancialTxn updateServiceFinancialTxn) throws EcrcServiceException {
 		String _updateServiceFinancialTxnUri = String.format(ecrcProps.getUpdateServiceFinancialTxnUri(),updateServiceFinancialTxn.toQueryString());
 		return callWebMethodsService(_updateServiceFinancialTxnUri, new UpdateServiceFinancialTxn());
-  }
+    }
   
 	public ResponseEntity<String> getServiceFeeAmount(String orgTicketNumber, String scheduleTypeCd, String scopeLevelCd) throws EcrcServiceException {
 		String _getServiceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), orgTicketNumber, scheduleTypeCd, scopeLevelCd);
@@ -107,8 +107,8 @@ public class EcrcServicesImpl implements EcrcServices {
 	
 	public ResponseEntity<String> logPaymentFailure(RequestLogPaymentFailure paymentFailure)
 			throws EcrcServiceException {
-		// TODO Implement Service
-		return null;
+		String _logPaymentFailureUri = String.format(ecrcProps.getLogPaymentFailureUri(), paymentFailure.toQueryString());
+		return callWebMethodsService(_logPaymentFailureUri, new LogPaymentFailure());
 	}
 
 	private ResponseEntity<String> callWebMethodsService(String Uri, Object returnObject) {
