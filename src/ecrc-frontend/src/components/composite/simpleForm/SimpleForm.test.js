@@ -36,10 +36,10 @@ describe("SimpleForm Component", () => {
     }
   ];
 
+  const simpleForm = { title: "title", textInputs, buttons };
+
   test("Matches the snapshot", () => {
-    const form = create(
-      <SimpleForm title="title" textInputs={textInputs} buttons={buttons} />
-    );
+    const form = create(<SimpleForm simpleForm={simpleForm} />);
     expect(form.toJSON()).toMatchSnapshot();
   });
 });
