@@ -50,11 +50,17 @@ const buttons = [
   }
 ];
 
+const simpleForm = {
+  title: "simple form title",
+  textInputs: textInputs,
+  buttons: buttons
+};
+
 storiesOf("SimpleForm", module)
-  .add("Default", () => <SimpleForm />)
-  .add("3texts_3buttons", () => (
-    <SimpleForm textInputs={textInputs} buttons={buttons} />
+  .add("Default", () => (
+    <SimpleForm simpleForm={{ title: null, textInputs: [], buttons: [] }} />
   ))
-  .add("Title_3texts_3buttons", () => (
-    <SimpleForm title="title" textInputs={textInputs} buttons={buttons} />
-  ));
+  .add("3texts_3buttons", () => (
+    <SimpleForm simpleForm={{ ...simpleForm, title: null }} />
+  ))
+  .add("Title_3texts_3buttons", () => <SimpleForm simpleForm={simpleForm} />);
