@@ -52,8 +52,8 @@ const buttons = [
 
 const simpleForm = {
   title: "simple form title",
-  textInputs: textInputs,
-  buttons: buttons
+  textInputs,
+  buttons
 };
 
 storiesOf("SimpleForm", module)
