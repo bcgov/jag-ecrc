@@ -21,6 +21,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
     >
       <button
         className="btn btn-primary"
+        type="submit"
       >
         <i
           className="fa fa-download"
@@ -317,9 +318,9 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
     >
       Continue
     </button>
-    <a>
+    <p>
       Cancel and Exit
-    </a>
+    </p>
   </section>
 </div>
 `;
