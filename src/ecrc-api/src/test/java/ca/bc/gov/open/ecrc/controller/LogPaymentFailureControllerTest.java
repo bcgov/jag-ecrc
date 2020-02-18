@@ -15,16 +15,16 @@ import org.springframework.test.context.ContextConfiguration;
 
 import ca.bc.gov.open.ecrc.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
+import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
 
 /**
- * Tests for create applicant controller
- *  
+ * Tests for log payment failure controller
+ * 
  * @author sivakaruna
  *
  */
 @ContextConfiguration
-class CreateApplicantControllerTest {
+class LogPaymentFailureControllerTest {
 
 	@BeforeEach
 	public void initMocks() {
@@ -35,37 +35,36 @@ class CreateApplicantControllerTest {
 	EcrcServices ecrcServices;
 
 	@InjectMocks
-	CreateApplicantController createApplicantController = new CreateApplicantController();
+	LogPaymentFailureController logPaymentFailureController = new LogPaymentFailureController();
 
-	@DisplayName("Success - createApplicant controller")
+	@DisplayName("Success - logPaymentFailure controller")
 	@Test
 	void testSuccess() throws EcrcServiceException {
-		RequestCreateApplicant request = new RequestCreateApplicant();
-		when(ecrcServices.createApplicant(request)).thenReturn(new ResponseEntity<String>(
-				"{\"message\":\"Success\",\"partyId\":49060,\"responseCode\":0}", HttpStatus.OK));
-		ResponseEntity<String> response = createApplicantController.createApplicant(request);
-		Assert.assertEquals("{\"message\":\"Success\",\"partyId\":49060,\"responseCode\":0}", response.getBody());
+		RequestLogPaymentFailure request = new RequestLogPaymentFailure();
+		when(ecrcServices.logPaymentFailure(request)).thenReturn(new ResponseEntity<String>("success", HttpStatus.OK));
+		ResponseEntity<String> response = logPaymentFailureController.logPaymentFailure(request);
+		Assert.assertEquals("success", response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
 
-	@DisplayName("Failure - createApplicant controller")
+	@DisplayName("Failure - logPaymentFailure controller")
 	@Test
 	void testFailure() throws EcrcServiceException {
-		RequestCreateApplicant request = new RequestCreateApplicant();
-		when(ecrcServices.createApplicant(request)).thenReturn(new ResponseEntity<>(
+		RequestLogPaymentFailure request = new RequestLogPaymentFailure();
+		when(ecrcServices.logPaymentFailure(request)).thenReturn(new ResponseEntity<>(
 				"{\"message\":\"Requested data not found\", \"responseCode\":1}", HttpStatus.NOT_FOUND));
-		ResponseEntity<String> response = createApplicantController.createApplicant(request);
+		ResponseEntity<String> response = logPaymentFailureController.logPaymentFailure(request);
 		Assert.assertEquals("{\"message\":\"Requested data not found\", \"responseCode\":1}", response.getBody());
 		Assert.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 	}
 
-	@DisplayName("Error - createApplicant controller")
+	@DisplayName("Error - logPaymentFailure controller")
 	@Test
 	void testError() throws EcrcServiceException {
-		RequestCreateApplicant request = new RequestCreateApplicant();
-		when(ecrcServices.createApplicant(request)).thenReturn(new ResponseEntity<>(
+		RequestLogPaymentFailure request = new RequestLogPaymentFailure();
+		when(ecrcServices.logPaymentFailure(request)).thenReturn(new ResponseEntity<>(
 				"{\"message\":\"Requested data not found\", \"responseCode\":1}", HttpStatus.BAD_REQUEST));
-		ResponseEntity<String> response = createApplicantController.createApplicant(request);
+		ResponseEntity<String> response = logPaymentFailureController.logPaymentFailure(request);
 		Assert.assertEquals("{\"message\":\"Requested data not found\", \"responseCode\":1}", response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
