@@ -37,7 +37,12 @@ export default function SideCard({
                 <p>{content}</p>
                 {image && (
                   <a href={imageLink}>
-                    <img src={image} height="65px" width="310px" />
+                    <img
+                      src={image}
+                      alt="imagelink"
+                      height="65px"
+                      width="310px"
+                    />
                   </a>
                 )}
               </div>

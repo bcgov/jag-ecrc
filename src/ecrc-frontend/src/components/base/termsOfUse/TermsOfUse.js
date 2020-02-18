@@ -1,9 +1,18 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
-import Button from "../button/Button";
+import PropTypes from "prop-types";
+import { Button } from "../button/Button";
 
 import "./TermsOfUse.css";
 
 export default function TermsOfUse({ onClick }) {
+  const button = {
+    label: "Continue",
+    buttonStyle: "btn btn-primary",
+    buttonSize: "btn btn-sm",
+    type: "submit"
+  };
+
   return (
     <div>
       <div style={{ width: "800px" }}>
@@ -12,8 +21,8 @@ export default function TermsOfUse({ onClick }) {
           download
           style={{ float: "right", marginRight: "-30px" }}
         >
-          <button className="btn btn-primary">
-            <i className="fa fa-download"></i> Download Terms of Use
+          <button type="submit" className="btn btn-primary">
+            <i className="fa fa-download" /> Download Terms of Use
           </button>
         </a>
         <h1>Terms of Use</h1>
@@ -381,15 +390,12 @@ export default function TermsOfUse({ onClick }) {
       </section>
       <section className="buttons">
         <Button button={button} onClick={onClick} />
-        <a>Cancel and Exit</a>
+        <p>Cancel and Exit</p>
       </section>
     </div>
   );
 }
 
-const button = {
-  label: "Continue",
-  buttonStyle: "btn btn-primary",
-  buttonSize: "btn btn-sm",
-  type: "submit"
+TermsOfUse.propTypes = {
+  onClick: PropTypes.func.isRequired
 };

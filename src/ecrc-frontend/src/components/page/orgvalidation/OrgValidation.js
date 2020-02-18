@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
-
-import "../page.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgvalidationtext/OrgValidationText";
 import SideCard from "../../base/sideCard/SideCard";
-import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
+import "../page.css";
 
 export default function OrgValidation({
   page: {

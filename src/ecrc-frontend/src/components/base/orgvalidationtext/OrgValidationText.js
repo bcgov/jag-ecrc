@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "../button/Button";
@@ -75,21 +76,21 @@ export default function OrgValidationText({
             </li>
             <li>
               <a href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration">
-                I'm an authorized contact
+                {"I'm an authorized contact"}
               </a>{" "}
               who is responsible for facilitating the criminal record check for
               my organization
             </li>
             <li>
               <a href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/employer-organizations">
-                I'm an employer organization
+                {"I'm an employer organization"}
               </a>{" "}
               and I want to learn more about registering with the Criminal
               Record Review Program (CRRP)
             </li>
             <li>
               <a href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/volunteer-organizations">
-                I'm a volunteer organization
+                {"I'm a volunteer organization"}
               </a>{" "}
               and I want to register with the CRRP
             </li>
