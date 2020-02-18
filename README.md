@@ -1,6 +1,6 @@
-# ecrc-starter
+# jag-ecrc
 
-Initial ECRC project to be moved one the final repo is ready
+Ministry of Attorney General - eCRC
 
 ## Frontend Folder Structure
 
