@@ -11,7 +11,8 @@ import Table from "../../composite/table/Table";
 export default function OrgVerification({
   page: {
     pageLayout: { header, sideCard1, sideCard2 },
-    org
+    org,
+    setOrg
   }
 }) {
   useEffect(() => {
@@ -22,8 +23,19 @@ export default function OrgVerification({
     alert("You verified the org!");
   };
 
-  const button = {
-    label: "Verify",
+  const back = () => {
+    setOrg({});
+  };
+
+  const continueButton = {
+    label: "Continue",
+    buttonStyle: "btn btn-primary",
+    buttonSize: "btn btn-sm",
+    type: "submit"
+  };
+
+  const cancelButton = {
+    label: "Back",
     buttonStyle: "btn btn-primary",
     buttonSize: "btn btn-sm",
     type: "submit"
@@ -48,8 +60,12 @@ export default function OrgVerification({
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
+          <p>NOT FINAL, probably some text here...</p>
           <Table table={table} />
-          <Button button={button} onClick={orgVerification} />
+          <div className="buttons">
+            <Button button={cancelButton} onClick={back} />
+            <Button button={continueButton} onClick={orgVerification} />
+          </div>
         </div>
         <div className="sidecard">
           <SideCard sideCard={sideCard1} />
