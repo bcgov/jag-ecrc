@@ -70,6 +70,9 @@ exports[`OrgVerification Component Matches the snapshot 1`] = `
     <div
       className="content col-md-8"
     >
+      <p>
+        NOT FINAL, probably some text here...
+      </p>
       <table>
         <thead>
           <tr>
@@ -109,13 +112,24 @@ Canada
           </tr>
         </tbody>
       </table>
-      <button
-        className="btn btn-primary btn btn-sm"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons"
       >
-        Verify
-      </button>
+        <button
+          className="btn btn-primary btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Back
+        </button>
+        <button
+          className="btn btn-primary btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Continue
+        </button>
+      </div>
     </div>
     <div
       className="sidecard"

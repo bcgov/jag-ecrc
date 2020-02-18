@@ -80,6 +80,7 @@ export default function OrgVerification({
 OrgVerification.propTypes = {
   page: PropTypes.shape({
     org: PropTypes.object.isRequired,
+    setOrg: PropTypes.func.isRequired,
     pageLayout: PropTypes.shape({
       header: PropTypes.shape({
         name: PropTypes.string.isRequired

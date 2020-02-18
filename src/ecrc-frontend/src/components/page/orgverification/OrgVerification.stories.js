@@ -40,14 +40,17 @@ const org = {
   orgApplicantRelationship: "Employee"
 };
 
+const setOrg = () => {};
+
 const page = {
   org,
+  setOrg,
   pageLayout
 };
 
-export const Default = () => <OrgVerification page={page} org={org} />;
+export const Default = () => <OrgVerification page={page} />;
 
-export const Mobile = () => <OrgVerification page={page} org={org} />;
+export const Mobile = () => <OrgVerification page={page} />;
 
 Mobile.story = {
   parameters: {
