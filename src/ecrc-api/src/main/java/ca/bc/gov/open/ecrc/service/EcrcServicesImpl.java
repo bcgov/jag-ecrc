@@ -37,7 +37,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	private EcrcProperties ecrcProps;
 
 	@Autowired
-	private EcrcWebMethodsServiceImpl ecrcWebMethodsService;
+	private EcrcWebMethodsService ecrcWebMethodsService;
 
 	private final Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
 

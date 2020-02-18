@@ -1,8 +1,10 @@
 package ca.bc.gov.open.ecrc.service;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javassist.NotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -73,7 +75,7 @@ public class EcrcServicesImplDoAuthenticateTest {
     EcrcServicesImpl ecrcServices;
 
     @Mock
-    EcrcWebMethodsServiceImpl ecrcWebMethodsService;
+    EcrcWebMethodsService ecrcWebMethodsService;
 
     @Mock
     EcrcProperties ecrcProperties;
@@ -86,7 +88,7 @@ public class EcrcServicesImplDoAuthenticateTest {
 
     @DisplayName("Success - ecrcService doAuthenticate")
     @Test
-    public void testDoAuthenticateResultSuccess() {
+    public void testDoAuthenticateResultSuccess() throws NotFoundException, EcrcServiceException {
         Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any())).thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
         serviceResult = ecrcServices.doAuthenticateUser("CRCE");
         Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());

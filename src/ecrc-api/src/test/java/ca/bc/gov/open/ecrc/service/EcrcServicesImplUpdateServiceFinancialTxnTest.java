@@ -26,7 +26,7 @@ public class EcrcServicesImplUpdateServiceFinancialTxnTest {
     EcrcServicesImpl ecrcServices;
 
     @Mock
-    EcrcWebMethodsServiceImpl ecrcWebMethodsService;
+    EcrcWebMethodsService ecrcWebMethodsService;
 
     @Mock
     EcrcProperties ecrcProperties;
