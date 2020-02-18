@@ -21,8 +21,9 @@ public class EcrcProperties {
 	private String doAuthenticateUserUri;
 	private String getNextSessionIdUri;
 	private String createNewCRCServiceUri;
-  private String getServiceFeeAmountUri;
+    private String getServiceFeeAmountUri;
 	private String createApplicantUri;
+	private String logPaymentFailureUri;
 
 	private String updateServiceFinancialTxnUri;
 
@@ -86,6 +87,14 @@ public class EcrcProperties {
 
 	public void setCreateApplicantUri(String createApplicantUri) {
 		this.createApplicantUri = createApplicantUri;
+	}
+
+	public String getLogPaymentFailureUri() {
+		return logPaymentFailureUri;
+	}
+
+	public void setLogPaymentFailureUri(String logPaymentFailureUri) {
+		this.logPaymentFailureUri = logPaymentFailureUri;
 	}
 
 }
