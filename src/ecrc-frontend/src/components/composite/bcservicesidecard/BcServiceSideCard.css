@@ -1,5 +1,9 @@
-p > button {
+p {
   display: flex;
+  flex-direction: column;
+}
+p > button {
+  align-self: flex-end;
 }
 
 .dark-button {

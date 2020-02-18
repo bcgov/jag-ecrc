@@ -21,9 +21,6 @@
 }
 
 .bluegrey-content {
-  width: 339px;
-  height: 126px;
-  background: inherit;
   background-color: rgba(241, 244, 250, 1);
   box-sizing: border-box;
   border-width: 4px;
@@ -40,7 +37,6 @@
 }
 
 .container-background {
-  width: 339px;
   height: 36px;
   background-color: rgba(56, 89, 138, 1);
   font-weight: 400;
@@ -63,6 +59,13 @@
   background-color: #38598a;
   border-bottom: solid 4px #fc0;
   color: #fff;
+  margin-bottom: 20px;
+  padding: 30px;
+  padding-top: 20px;
+  max-width: 400px;
+}
+
+.bluegrey-container {
   margin-bottom: 20px;
   padding: 30px;
   padding-top: 20px;
