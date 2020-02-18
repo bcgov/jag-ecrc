@@ -2,7 +2,7 @@ package ca.bc.gov.open.ecrc.service;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.objects.DoAuthenticateUser;
-import ca.bc.gov.open.ecrc.util.XMLStringUtil;
+import ca.bc.gov.open.ecrc.testutil.XMLStringUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.mockwebserver.MockResponse;
@@ -97,7 +97,7 @@ public class EcrcWebMethodsServiceImplDoAuthTest {
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, res.getStatusCode());
     }
 
-    @DisplayName("Failure - doAuthenticate call")
+    @DisplayName("Failure - doAuthenticate call general exception")
     @Test
     public void testDoAuthenticateCallFailure() {
         MockResponse mockResponse = new MockResponse();

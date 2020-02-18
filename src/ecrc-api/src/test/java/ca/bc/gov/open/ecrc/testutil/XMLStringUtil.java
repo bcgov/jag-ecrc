@@ -1,4 +1,4 @@
-package ca.bc.gov.open.ecrc.util;
+package ca.bc.gov.open.ecrc.testutil;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
