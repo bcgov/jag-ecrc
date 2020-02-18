@@ -1,9 +1,10 @@
 package ca.bc.gov.open.ecrc.controller;
 
-import ca.bc.gov.open.ecrc.EcrcServicesImpl;
+import ca.bc.gov.open.ecrc.service.EcrcServicesImpl;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javassist.NotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -32,7 +33,7 @@ public class DoAuthenticateUserControllerTest {
 	}
 	@DisplayName("Success - doAuthenticateUser controller")
 	@Test
-	public void testFoundValidOrg() throws EcrcServiceException {
+	public void testFoundValidOrg() throws EcrcServiceException, NotFoundException {
 		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(new ResponseEntity<>("SOMESTRING", HttpStatus.OK));
 		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
 		Assertions.assertEquals("SOMESTRING", result.getBody());
@@ -40,7 +41,7 @@ public class DoAuthenticateUserControllerTest {
 
 	@DisplayName("Failure - doAuthenticateUser controller")
 	@Test
-	public void testNotFoundValidOrg() throws EcrcServiceException {
+	public void testNotFoundValidOrg() throws EcrcServiceException, NotFoundException {
 		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND));
 		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
@@ -51,7 +52,7 @@ public class DoAuthenticateUserControllerTest {
 
 	@DisplayName("Error - doAuthenticateUser controller")
 	@Test
-	public void testServiceExceptionValidOrg() throws EcrcServiceException {
+	public void testServiceExceptionValidOrg() throws EcrcServiceException, NotFoundException {
 		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.BAD_REQUEST));
 		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");

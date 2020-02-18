@@ -1,6 +1,6 @@
 package ca.bc.gov.open.ecrc.controller;
 
-import ca.bc.gov.open.ecrc.EcrcServicesImpl;
+import ca.bc.gov.open.ecrc.service.EcrcServicesImpl;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
