@@ -21,7 +21,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 public class LinksController {
 	
 	@Autowired
-	private EcrcServices ecrcServices;
+	EcrcServices ecrcServices;
 	
 	@CrossOrigin(origins = "/**")
 	@GetMapping(value = "/links", produces = MediaType.APPLICATION_JSON_VALUE)
