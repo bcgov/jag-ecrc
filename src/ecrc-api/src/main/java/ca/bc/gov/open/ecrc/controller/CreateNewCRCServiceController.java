@@ -13,7 +13,6 @@ public class CreateNewCRCServiceController {
     @Autowired
     EcrcServices ecrcServices;
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value = "/createNewCRCService", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> createNewCRCService(@RequestBody(required=true) RequestNewCRCService requestNewCRCService) throws EcrcServiceException {
         return  ecrcServices.createNewCRCService(requestNewCRCService);
