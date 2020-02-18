@@ -1,4 +1,4 @@
-package ca.bc.gov.open.ecrc;
+package ca.bc.gov.open.ecrc.service;
 
 import java.util.ArrayList;
 
