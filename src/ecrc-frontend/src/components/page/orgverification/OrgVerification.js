@@ -19,9 +19,7 @@ export default function OrgVerification({
     window.scrollTo(0, 0);
   }, []);
 
-  const orgVerification = () => {
-    alert("You verified the org!");
-  };
+  const orgVerification = () => {};
 
   const back = () => {
     setOrg({});
@@ -92,7 +90,7 @@ export default function OrgVerification({
               <li>
                 You must have a BC Service Card Account. If you do not already
                 have a BC Service Card Account, you can initiate the process at
-                the{" "}
+                the
                 <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
                   BC Service Card website
                 </a>
