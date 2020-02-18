@@ -5,7 +5,6 @@ import { TextInput } from "../../base/textInput/TextInput";
 import { Button } from "../../base/button/Button";
 
 export const SimpleForm = ({ title, textInputs, buttons }) => {
-  console.log(title, textInputs, buttons);
   const inputList = textInputs.map(input => {
     return (
       <li key={input.id}>
