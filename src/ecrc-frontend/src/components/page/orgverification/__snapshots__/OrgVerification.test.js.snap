@@ -208,7 +208,9 @@ Canada
               className="submit-container"
               id="blue-section"
             >
-              <h2>
+              <h2
+                className="heading-style"
+              >
                 Contact Your Organization
               </h2>
               <div
@@ -247,7 +249,9 @@ Canada
               className="submit-container"
               id="blue-section"
             >
-              <h2>
+              <h2
+                className="heading-style"
+              >
                 Get a BC Services Card
               </h2>
               <div
