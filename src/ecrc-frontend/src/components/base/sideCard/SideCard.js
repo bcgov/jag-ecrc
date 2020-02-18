@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 
 import "./SideCard.css";
 
-export default function SideCard({ sideCard: { heading, content, type } }) {
+export default function SideCard({
+  sideCard: { heading, content, type, image, imageLink }
+}) {
   return (
     <div className="dashboard-spacing" style={{ position: "relative" }}>
       <div className="row">
@@ -30,16 +32,21 @@ export default function SideCard({ sideCard: { heading, content, type } }) {
           )}
           {type === "blue" && (
             <section id="blue-section" className="submit-container">
-              <h2>{heading}</h2>
+              <h2 className="heading-style">{heading}</h2>
               <div className="submit-content">
                 <p>{content}</p>
+                {image && (
+                  <a href={imageLink}>
+                    <img src={image} height="65px" width="310px" />
+                  </a>
+                )}
               </div>
             </section>
           )}
           {type === "bluegrey" && (
             <>
               <div id="bluegrey-section" className="container-background">
-                <h2 className="heading-style">{heading}</h2>
+                <h2 className="move-heading">{heading}</h2>
               </div>
               <div className="bluegrey-content submit-content">
                 <p className="content-style">{content}</p>
@@ -56,6 +63,8 @@ SideCard.propTypes = {
   sideCard: PropTypes.shape({
     heading: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
+    type: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    imageLink: PropTypes.string
   }).isRequired
 };

@@ -7,8 +7,7 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgvalidationtext/OrgValidationText";
 import SideCard from "../../base/sideCard/SideCard";
-import { Button } from "../../base/button/Button";
-import { TextInput } from "../../base/textInput/TextInput";
+import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 
 export default function OrgValidation({
   page: {
@@ -28,9 +27,10 @@ export default function OrgValidation({
   };
 
   const textInput = {
-    label: "Org Id",
+    label: "Access code",
     id: "orgId",
-    textInputStyle: "placeHolder"
+    textInputStyle: "placeHolder",
+    isRequired: true
   };
 
   const button = {
@@ -45,9 +45,12 @@ export default function OrgValidation({
       <Header header={header} />
       <div className="page">
         <div className="content">
-          <OrgValidationText />
-          <TextInput textInput={textInput} onChange={setOrgInput} />
-          <Button button={button} onClick={orgValidation} />
+          <OrgValidationText
+            textInput={textInput}
+            onChange={setOrgInput}
+            button={button}
+            onClick={orgValidation}
+          />
         </div>
         <div className="sidecard">
           <SideCard sideCard={sideCard1} />

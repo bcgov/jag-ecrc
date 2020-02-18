@@ -1,9 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Button from "../button/Button";
 
 import "./TermsOfUse.css";
 
-export default function TermsOfUse() {
+export default function TermsOfUse({ onClick }) {
   return (
     <div>
       <div style={{ width: "800px" }}>
@@ -12,14 +12,14 @@ export default function TermsOfUse() {
           download
           style={{ float: "right", marginRight: "-30px" }}
         >
-          <button class="btn btn-primary">
-            <i class="fa fa-download"></i> Download Terms of Use
+          <button className="btn btn-primary">
+            <i className="fa fa-download"></i> Download Terms of Use
           </button>
         </a>
         <h1>Terms of Use</h1>
       </div>
 
-      <section class="scroll-box">
+      <section className="scroll-box">
         <p>
           In these Terms of Use, “you” or “your” includes the individual using
           or accessing the Cannabis Licensing Application Portal (the “Site”) on
@@ -52,8 +52,8 @@ export default function TermsOfUse() {
 
         <h2>Disclaimer:</h2>
         <ol>
-          <b>
-            <li>
+          <li>
+            <b>
               Reasonable efforts have been made to provide accurate, complete
               and timely information regarding the Services and non-medical
               cannabis licensing in general. However, this is an area where law
@@ -67,9 +67,9 @@ export default function TermsOfUse() {
               decisions, you are strongly encouraged to refer to those official
               information sources rather than relying on the information
               provided on the Site.
-            </li>
-            <br />
-          </b>
+            </b>
+          </li>
+          <br />
           <li>
             THE SERVICES ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND
             INCLUDING WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE. USE OF THE
@@ -79,7 +79,7 @@ export default function TermsOfUse() {
           <li>
             NEITHER THE PROVINCE NOR THE PROVIDER OF ANY ASSOCIATED SERVICE
             WARRANTS:
-            <ol type="a">
+            <ol>
               <li>
                 THE ACCURACY, COMPLETENESS OR CURRENCY OF SERVICES OR ANY
                 ASSOCIATED INFORMATION, OR THAT ANY ERRORS WILL BE CORRECTED;
@@ -375,16 +375,21 @@ export default function TermsOfUse() {
       </section>
 
       <section>
-        <input type="checkbox" class="terms-cb" />
+        <input type="checkbox" className="terms-cb" />
         &nbsp;I have read and accept the above terms and conditions.
         <br />
       </section>
-      <section class="buttons">
-        <button class="btn btn-primary termsAccept"></button>
-        <a href="logout" tabindex="1">
-          Cancel and Exit
-        </a>
+      <section className="buttons">
+        <Button button={button} onClick={onClick} />
+        <a>Cancel and Exit</a>
       </section>
     </div>
   );
 }
+
+const button = {
+  label: "Continue",
+  buttonStyle: "btn btn-primary",
+  buttonSize: "btn btn-sm",
+  type: "submit"
+};
