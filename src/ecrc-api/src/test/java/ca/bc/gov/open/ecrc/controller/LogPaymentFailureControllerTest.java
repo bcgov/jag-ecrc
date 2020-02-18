@@ -13,7 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
 
-import ca.bc.gov.open.ecrc.EcrcServices;
+import ca.bc.gov.open.ecrc.service.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
 
