@@ -79,7 +79,7 @@ export default function TermsOfUse({ onClick }) {
           <li>
             NEITHER THE PROVINCE NOR THE PROVIDER OF ANY ASSOCIATED SERVICE
             WARRANTS:
-            <ol>
+            <ol type="a">
               <li>
                 THE ACCURACY, COMPLETENESS OR CURRENCY OF SERVICES OR ANY
                 ASSOCIATED INFORMATION, OR THAT ANY ERRORS WILL BE CORRECTED;
