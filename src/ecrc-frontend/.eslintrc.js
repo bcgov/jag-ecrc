@@ -20,6 +20,7 @@ module.exports = {
   rules: {
     "import/no-unresolved": "off",
     "react/jsx-filename-extension": "off",
+    "react/jsx-curly-brace-presence": "off",
     "prettier/prettier": ["error"]
   }
 };
