@@ -57,7 +57,6 @@ export default function OrgValidation({
           <SideCard sideCard={sideCard2} />
         </div>
       </div>
-      <TermsOfUse onClick={orgValidation} />
       <Footer />
     </main>
   );

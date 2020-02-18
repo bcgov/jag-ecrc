@@ -1,6 +1,7 @@
 import React from "react";
-import Button from "../button/Button";
-import TextInput from "../textInput/TextInput";
+import PropTypes from "prop-types";
+import { Button } from "../button/Button";
+import { TextInput } from "../textInput/TextInput";
 
 import "./OrgValidationText.css";
 
@@ -23,12 +24,12 @@ export default function OrgValidationText({
       </p>
       <div>
         <div>
-          <h3>I'm ready</h3>
+          <h3>{"I'm ready"}</h3>
           <p>
             To submit an online request for a criminal record check, you must:
           </p>
           <ul>
-            <li>Be at least 12 years of age as of today's date</li>
+            <li>{"Be at least 12 years of age as of today's date"}</li>
             <li>Have an access code provided by your organization</li>
             <li>
               Have your identity verified through an Electronic Verification
@@ -58,7 +59,7 @@ export default function OrgValidationText({
               <Button button={button} onClick={onClick} />
             </div>
           </div>
-          <div style={{ clear: "both" }}></div>
+          <div style={{ clear: "both" }} />
         </div>
         <br />
 
@@ -66,8 +67,8 @@ export default function OrgValidationText({
           <h3>I need more information</h3>
           <ul>
             <li>
-              <a href="volunteer">I'm an employee or a volunteer</a> and I want
-              to know{" "}
+              <a href="volunteer">{"I'm an employee or a volunteer"}</a> and I
+              want to know{" "}
               <a href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks">
                 why I need to apply for a criminal record check
               </a>
@@ -117,3 +118,21 @@ export default function OrgValidationText({
     </div>
   );
 }
+
+OrgValidationText.propTypes = {
+  button: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    buttonStyle: PropTypes.string.isRequired,
+    buttonSize: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired
+  }).isRequired,
+  textInput: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    textInputStyle: PropTypes.string,
+    value: PropTypes.string,
+    isRequired: PropTypes.bool
+  }).isRequired,
+  onChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired
+};
