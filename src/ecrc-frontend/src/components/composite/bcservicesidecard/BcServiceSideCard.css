@@ -1,0 +1,8 @@
+p > button {
+  display: flex;
+}
+
+.dark-button {
+  background-color: #2d476f;
+  border-color: #294266;
+}
