@@ -15,7 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.Link;
-import ca.bc.gov.open.ecrc.EcrcServices;
+import ca.bc.gov.open.ecrc.service.EcrcServices;
 
 /**
  * 
