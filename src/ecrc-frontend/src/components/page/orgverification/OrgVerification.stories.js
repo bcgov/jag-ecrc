@@ -37,6 +37,7 @@ const org = {
   cityNm: "Nowhere",
   provinceNm: "British Columbia",
   countryNm: "Canada",
+  contactPhoneNo: "250 123 4567",
   orgApplicantRelationship: "Employee"
 };
 

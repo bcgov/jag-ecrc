@@ -13,7 +13,7 @@ export default function Table({ table: { header, tableElements } }) {
     <table>
       <thead>
         <tr>
-          <th>{header}</th>
+          <th colSpan="2">{header}</th>
         </tr>
       </thead>
       <tbody>{tableComponents}</tbody>
