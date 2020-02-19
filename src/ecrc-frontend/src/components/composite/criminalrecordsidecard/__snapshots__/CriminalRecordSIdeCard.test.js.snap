@@ -36,17 +36,14 @@ exports[`CriminalRecordSideCard Component Matches the snapshot 1`] = `
         >
           <p>
             Learn more about the process
+            <button
+              className="btn btn-primary dark-button btn btn-md"
+              onClick={[Function]}
+              type="submit"
+            >
+              VISIT THE CRIMINAL RECORD REVIEW WEBSITE
+            </button>
           </p>
-          <a
-            href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
-          >
-            <img
-              alt="imagelink"
-              height="65px"
-              src="/images/visit-criminal-record-site.PNG"
-              width="310px"
-            />
-          </a>
         </div>
       </section>
     </div>

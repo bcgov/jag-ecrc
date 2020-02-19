@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-curly-newline */
 import React from "react";
 
 import SideCard from "../../base/sideCard/SideCard";
-import Button from "../../base/button/Button";
+import { Button } from "../../base/button/Button";
 
 export default function CriminalRecordSideCard() {
   const button = {
