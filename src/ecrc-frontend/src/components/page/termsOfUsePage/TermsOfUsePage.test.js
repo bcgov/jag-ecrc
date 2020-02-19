@@ -17,7 +17,11 @@ describe("TermOfUsePage Component", () => {
       pageLayout
     };
 
-    const termsOfUsePage = create(<TermsOfUsePage page={page} />);
+    const onContinueClick = () => jest.fn();
+
+    const termsOfUsePage = create(
+      <TermsOfUsePage page={page} onContinueClick={onContinueClick} />
+    );
     expect(termsOfUsePage.toJSON()).toMatchSnapshot();
   });
 });

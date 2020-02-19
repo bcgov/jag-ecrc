@@ -382,6 +382,7 @@ exports[`TermOfUsePage Component Matches the snapshot 1`] = `
         >
           <button
             className="btn btn-primary btn btn-sm"
+            onClick={[Function]}
             type="submit"
           >
             Continue
