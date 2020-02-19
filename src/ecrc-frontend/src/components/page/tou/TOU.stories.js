@@ -2,7 +2,7 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 
-import TermsOfUsePage from "./TermsOfUsePage";
+import TOU from "./TOU";
 
 const header = {
   name: "Terms of Use"
@@ -19,10 +19,6 @@ const page = {
 const onContinueClick = action("onButtonContinueClicked");
 
 storiesOf("Term Of Use page", module)
-  .add("Default", () => (
-    <TermsOfUsePage page={page} onContinueClick={onContinueClick} />
-  ))
+  .add("Default", () => <TOU page={page} onContinueClick={onContinueClick} />)
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
-  .add("Mobile", () => (
-    <TermsOfUsePage page={page} onContinueClick={onContinueClick} />
-  ));
+  .add("Mobile", () => <TOU page={page} onContinueClick={onContinueClick} />);

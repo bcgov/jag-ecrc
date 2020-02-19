@@ -6,7 +6,7 @@ import Footer from "../../base/footer/Footer";
 import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
 
-export default function TermsOfUsePage({
+export default function TOU({
   page: {
     pageLayout: { header }
   },
@@ -25,7 +25,7 @@ export default function TermsOfUsePage({
   );
 }
 
-TermsOfUsePage.propTypes = {
+TOU.propTypes = {
   page: PropTypes.shape({
     pageLayout: PropTypes.shape({
       header: PropTypes.shape({

@@ -1,9 +1,9 @@
 import React from "react";
 import { create } from "react-test-renderer";
 
-import TermsOfUsePage from "./TermsOfUsePage";
+import TOU from "./TOU";
 
-describe("TermOfUsePage Component", () => {
+describe("TermOfUse Page Component", () => {
   test("Matches the snapshot", () => {
     const header = {
       name: "Criminal Record Check"
@@ -19,9 +19,9 @@ describe("TermOfUsePage Component", () => {
 
     const onContinueClick = () => jest.fn();
 
-    const termsOfUsePage = create(
-      <TermsOfUsePage page={page} onContinueClick={onContinueClick} />
+    const termsOfUse = create(
+      <TOU page={page} onContinueClick={onContinueClick} />
     );
-    expect(termsOfUsePage.toJSON()).toMatchSnapshot();
+    expect(termsOfUse.toJSON()).toMatchSnapshot();
   });
 });
