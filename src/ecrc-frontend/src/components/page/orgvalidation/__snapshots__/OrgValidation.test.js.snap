@@ -311,7 +311,9 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
                   className="content-style"
                 >
                   Access code is specific to each organization. If you need help with the organization access code, please 
-                  <b>
+                  <b
+                    className="block"
+                  >
                     contact your organization.
                   </b>
                 </p>
