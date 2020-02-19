@@ -21,7 +21,7 @@ export default function OrgValidation({
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
       .then(res => {
-        history.push("/orgverification");
+        history.push("/ecrc/orgverification");
         setOrg(res.data.accessCodeResponse);
       })
       .catch();
