@@ -270,103 +270,107 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
     <div
       className="sidecard"
     >
-      <div
-        className="dashboard-spacing"
-        style={
-          Object {
-            "position": "relative",
-          }
-        }
-      >
+      <div>
         <div
-          className="row"
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
         >
           <div
-            className="col-12"
-            style={
-              Object {
-                "paddingTop": "30px",
-                "position": "relative",
-              }
-            }
+            className="row"
           >
-            <p />
-            <section
-              className="bluegrey-container"
-              id="bluegrey-section"
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
             >
-              <div
-                className="container-background bluegrey-heading"
+              <p />
+              <section
+                className="bluegrey-container"
+                id="bluegrey-section"
+              >
+                <div
+                  className="container-background bluegrey-heading"
+                >
+                  <h2
+                    className="heading-style"
+                  >
+                    Need help with an access code?
+                  </h2>
+                </div>
+                <div
+                  className="bluegrey-content"
+                >
+                  <p
+                    className="content-style"
+                  >
+                    Access code is specific to each organization. If you need help with the organization access code, please 
+                    <b
+                      className="block"
+                    >
+                      contact your organization.
+                    </b>
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
               >
                 <h2
                   className="heading-style"
                 >
-                  Need help with an access code?
+                  Why do I need to apply and consent to a criminal record check?
                 </h2>
-              </div>
-              <div
-                className="bluegrey-content"
-              >
-                <p
-                  className="content-style"
+                <div
+                  className="submit-content"
                 >
-                  Access code is specific to each organization. If you need help with the organization access code, please 
-                  <b
-                    className="block"
-                  >
-                    contact your organization.
-                  </b>
-                </p>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-      <div
-        className="dashboard-spacing"
-        style={
-          Object {
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-12"
-            style={
-              Object {
-                "paddingTop": "30px",
-                "position": "relative",
-              }
-            }
-          >
-            <p />
-            <section
-              className="submit-container"
-              id="blue-section"
-            >
-              <h2
-                className="heading-style"
-              >
-                Why do I need to apply and consent to a criminal record check?
-              </h2>
-              <div
-                className="submit-content"
-              >
-                <p>
-                  Learn more about the process
-                  <button
-                    className="btn btn-primary dark-button btn btn-md"
-                    onClick={[Function]}
-                    type="submit"
-                  >
-                    VISIT THE CRIMINAL RECORD REVIEW WEBSITE
-                  </button>
-                </p>
-              </div>
-            </section>
+                  <p>
+                    Learn more about the process
+                    <button
+                      className="btn btn-primary dark-button btn btn-md"
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      VISIT THE CRIMINAL RECORD REVIEW WEBSITE
+                    </button>
+                  </p>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
       </div>
