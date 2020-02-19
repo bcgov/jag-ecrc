@@ -4,7 +4,7 @@
 
 .scroll-box {
   overflow: auto;
-  width: 800px;
+  width: 100%;
   height: 500px;
   border: 1px solid;
   padding: 15px;
