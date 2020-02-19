@@ -13,7 +13,7 @@ export default function BcServiceSideCard() {
     type: "submit"
   };
 
-  const redirectButton = (
+  const bcservicesButton = (
     <Button
       key="bc-services-card-link"
       button={button}
@@ -29,7 +29,7 @@ export default function BcServiceSideCard() {
     heading: "Get a BC Services Card",
     content: [
       "B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.",
-      redirectButton
+      bcservicesButton
     ],
     type: "blue"
   };
