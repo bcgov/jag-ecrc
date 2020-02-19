@@ -3,8 +3,27 @@ import React from "react";
 import UsefulLinksSideCard from "./UsefulLinksSideCard";
 
 export default {
-  title: "UsefulLinksSIdeCard",
+  title: "UsefulLinksSideCard",
   component: UsefulLinksSideCard
 };
 
-export const Default = () => <UsefulLinksSideCard />;
+const links = [
+  {
+    name: "Home",
+    url: "/"
+  },
+  {
+    name: "Somewhere",
+    url: "/somewhere"
+  },
+  {
+    name: "Somewhere else",
+    url: "/somewhereelse"
+  },
+  {
+    name: "Somewhere with a long name for no reason",
+    url: "/here"
+  }
+];
+
+export const Default = () => <UsefulLinksSideCard sideCardLinks={links} />;

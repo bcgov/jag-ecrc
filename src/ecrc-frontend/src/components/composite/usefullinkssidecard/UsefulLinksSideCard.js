@@ -3,8 +3,15 @@ import SideCard from "../../base/sideCard/SideCard";
 import MenuItem from "../../base/menuItem/MenuItem";
 
 export default function UsefulLinksSideCard({ sideCardLinks }) {
-  const links = sideCardLinks.map(link => {
-    return <MenuItem menuItem={link} />;
+  const links = sideCardLinks.map(sideCardLink => {
+    return <MenuItem key={sideCardLink.name} menuItem={sideCardLink} />;
   });
-  return <SideCard />;
+
+  const usefulLinks = {
+    heading: "Useful Links",
+    content: [links],
+    type: "blue"
+  };
+
+  return <SideCard sideCard={usefulLinks} />;
 }
