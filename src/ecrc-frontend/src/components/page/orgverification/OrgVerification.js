@@ -7,6 +7,9 @@ import Footer from "../../base/footer/Footer";
 import SideCard from "../../base/sideCard/SideCard";
 import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
+import BcServiceSideCard from "../../composite/bcservicesidecard/BcServiceSideCard";
+import UsefulLinksSideCard from "../../composite/usefullinkssidecard/UsefulLinksSideCard";
+import ContactInformationSideCard from "../../composite/contactinformationsidecard/ContactInformationSideCard";
 
 export default function OrgVerification({
   page: {
@@ -24,6 +27,23 @@ export default function OrgVerification({
   const back = () => {
     setOrg({});
   };
+
+  const links = [
+    {
+      name: "I'm an employee or volunteer",
+      url: "/tbd"
+    },
+    {
+      name: "Electronic Identity Verification (EIV)",
+      url:
+        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+    },
+    {
+      name: "Results and Reconsideration",
+      url:
+        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+    }
+  ];
 
   const continueButton = {
     label: "Continue",
@@ -117,8 +137,9 @@ export default function OrgVerification({
           </div>
         </div>
         <div className="sidecard">
-          <SideCard sideCard={sideCard1} />
-          <SideCard sideCard={sideCard2} />
+          <BcServiceSideCard />
+          <UsefulLinksSideCard sideCardLinks={links} />
+          <ContactInformationSideCard />
         </div>
       </div>
       <Footer />

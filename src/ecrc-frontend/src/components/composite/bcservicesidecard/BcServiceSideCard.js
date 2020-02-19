@@ -12,7 +12,17 @@ export default function BcServiceSideCard() {
     type: "submit"
   };
 
-  const redirectButton = <Button button={button} onClick={{}} />;
+  const redirectButton = (
+    <Button
+      key="bc-services-card-link"
+      button={button}
+      onClick={() =>
+        window.open(
+          "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+        )
+      }
+    />
+  );
 
   const bcservice = {
     heading: "Get a BC Services Card",
@@ -23,5 +33,5 @@ export default function BcServiceSideCard() {
     type: "blue"
   };
 
-  return <SideCard sideCard={bcservice} />;
+  return <SideCard key="bc-services-card" sideCard={bcservice} />;
 }

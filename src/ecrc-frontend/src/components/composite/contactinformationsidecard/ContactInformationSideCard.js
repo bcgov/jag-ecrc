@@ -14,5 +14,5 @@ export default function ContactInformationSideCard() {
     type: "bluegrey"
   };
 
-  return <SideCard sideCard={contact} />;
+  return <SideCard key="contact-information" sideCard={contact} />;
 }
