@@ -5,8 +5,7 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgvalidationtext/OrgValidationText";
 import "../page.css";
-import AccessCodeSideCard from "../../composite/accesscodesidecard/AccessCodeSideCard";
-import CriminalRecordSideCard from "../../composite/criminalrecordsidecard/CriminalRecordSideCard";
+import SideCards from "../../composite/SideCards/SideCards";
 
 export default function OrgValidation({ page: { setOrg, header } }) {
   const [orgInput, setOrgInput] = useState("");
@@ -47,8 +46,8 @@ export default function OrgValidation({ page: { setOrg, header } }) {
           />
         </div>
         <div className="sidecard">
-          <AccessCodeSideCard />
-          <CriminalRecordSideCard />
+          <SideCards type={"accesscode"} />
+          <SideCards type={"criminalrecord"} />
         </div>
       </div>
       <Footer />

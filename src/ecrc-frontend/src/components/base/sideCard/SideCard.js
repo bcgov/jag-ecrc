@@ -67,7 +67,7 @@ export default function SideCard({
 SideCard.propTypes = {
   sideCard: PropTypes.shape({
     heading: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
+    content: PropTypes.array.isRequired,
     type: PropTypes.string.isRequired,
     image: PropTypes.string,
     imageLink: PropTypes.string

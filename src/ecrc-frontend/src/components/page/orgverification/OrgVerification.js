@@ -6,9 +6,7 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
-import BcServiceSideCard from "../../composite/bcservicesidecard/BcServiceSideCard";
-import UsefulLinksSideCard from "../../composite/usefullinkssidecard/UsefulLinksSideCard";
-import ContactInformationSideCard from "../../composite/contactinformationsidecard/ContactInformationSideCard";
+import SideCards from "../../composite/SideCards/SideCards";
 
 export default function OrgVerification({ page: { header, org, setOrg } }) {
   useEffect(() => {
@@ -130,9 +128,9 @@ export default function OrgVerification({ page: { header, org, setOrg } }) {
           </div>
         </div>
         <div className="sidecard">
-          <BcServiceSideCard />
-          <UsefulLinksSideCard sideCardLinks={links} />
-          <ContactInformationSideCard />
+          <SideCards type={"bcservice"} />
+          <SideCards type={"usefullinks"} sideCardLinks={links} />
+          <SideCards type={"contactinformation"} />
         </div>
       </div>
       <Footer />
