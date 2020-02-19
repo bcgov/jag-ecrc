@@ -95,6 +95,7 @@
 .dashboard-spacing {
   padding-left: 50px;
   padding-right: 50px;
+  max-width: 400px;
 }
 
 img {
