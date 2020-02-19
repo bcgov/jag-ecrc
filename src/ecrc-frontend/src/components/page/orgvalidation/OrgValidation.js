@@ -42,7 +42,7 @@ export default function OrgValidation({
     <main>
       <Header header={header} />
       <div className="page">
-        <div className="content">
+        <div className="content col-md-8">
           <OrgValidationText
             textInput={textInput}
             onChange={setOrgInput}

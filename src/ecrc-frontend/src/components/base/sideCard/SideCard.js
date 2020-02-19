@@ -49,9 +49,9 @@ export default function SideCard({
             </section>
           )}
           {type === "bluegrey" && (
-            <>
-              <div id="bluegrey-section" className="container-background">
-                <h2 className="move-heading">{heading}</h2>
+            <section id="bluegrey-section" className="bluegrey-container">
+              <div className="container-background bluegrey-heading">
+                <h2 className="heading-style">{heading}</h2>
               </div>
               <div className="bluegrey-content">
                 <p className="content-style">{content}</p>

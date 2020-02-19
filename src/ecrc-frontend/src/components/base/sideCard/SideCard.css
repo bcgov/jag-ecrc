@@ -29,8 +29,11 @@
   padding-top: 9px;
 }
 
+.bluegrey-heading {
+  padding-left: 15px;
+}
+
 .bluegrey-content {
-  width: 339px;
   height: auto;
   background: inherit;
   background-color: rgba(241, 244, 250, 1);
@@ -73,14 +76,12 @@
   color: #fff;
   margin-bottom: 20px;
   padding: 15px;
-  max-width: 400px;
+  /* max-width: 400px; */
 }
 
 .bluegrey-container {
   margin-bottom: 20px;
-  padding: 30px;
-  padding-top: 20px;
-  max-width: 400px;
+  /* max-width: 400px; */
 }
 
 .submit-container h2 {
