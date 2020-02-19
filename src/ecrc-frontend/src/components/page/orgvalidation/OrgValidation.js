@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -14,11 +15,13 @@ export default function OrgValidation({
   }
 }) {
   const [orgInput, setOrgInput] = useState("");
+  const history = useHistory();
 
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
       .then(res => {
+        history.push("/orgverification");
         setOrg(res.data.accessCodeResponse);
       })
       .catch();

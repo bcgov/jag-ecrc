@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import OrgValidation from "./components/page/orgvalidation/OrgValidation";
 import OrgVerification from "./components/page/orgverification/OrgVerification";
 
@@ -39,8 +40,18 @@ export default function App() {
 
   return (
     <div>
-      {!org.orgNm && <OrgValidation page={page} />}
-      {org.orgNm && <OrgVerification page={page} />}
+      {/* {!org.orgNm && <OrgValidation page={page} />}
+      {org.orgNm && <OrgVerification page={page} />} */}
+      <BrowserRouter>
+      <Switch>
+        <Route path="/orgvalidation">
+          <OrgValidation page={page} />
+        </Route>
+        <Route path="/orgverification">
+          <OrgVerification page={page} />
+        </Route>
+      </Switch>
+      </BrowserRouter>
     </div>
   );
 }
