@@ -16,6 +16,12 @@ import org.springframework.test.context.ContextConfiguration;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 
+/**
+ * Tests for get province list controller
+ *  
+ * @author sivakaruna
+ *
+ */
 @ContextConfiguration
 class GetProvinceListControllerTest {
 
