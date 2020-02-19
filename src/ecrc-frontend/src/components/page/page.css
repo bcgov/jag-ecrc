@@ -1,3 +1,8 @@
+main {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .page {
   width: 90%;
   margin-left: auto;
@@ -10,6 +15,11 @@
   flex-direction: column;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 575.98px) {

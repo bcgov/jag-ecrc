@@ -1,10 +1,11 @@
-# ecrc-starter
+# jag-ecrc
 
-Initial ECRC project to be moved one the final repo is ready
+Ministry of Attorney General - eCRC
 
 ## Frontend Folder Structure
 
 The folder structure for the frontend react application will be as follows:
+
 ```
 my-app
 ├── build
@@ -19,10 +20,11 @@ my-app
 ```
 
 - `build` is the location of the final, production-ready build.
--  `public` is where the static files will reside.
+- `public` is where the static files will reside.
 - `src` is where the dynamic files will reside.
 
 `src` will look something like this:
+
 ```
 src
 ├── components

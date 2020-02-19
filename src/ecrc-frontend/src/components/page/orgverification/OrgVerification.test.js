@@ -38,8 +38,11 @@ describe("OrgVerification Component", () => {
       orgApplicantRelationship: "Employee"
     };
 
+    const setOrg = () => {};
+
     const page = {
       org,
+      setOrg,
       pageLayout
     };
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import OrgValidation from "./components/page/orgvalidation/OrgValidation";
-import OrgValidation from "./components/page/orgverification/OrgVerification";
+import OrgVerification from "./components/page/orgverification/OrgVerification";
 
 export default function App() {
   const [org, setOrg] = useState({});
@@ -10,17 +10,19 @@ export default function App() {
   };
 
   const sideCard1 = {
-    heading: "Contact Your Organization",
+    heading: "Need help with an access code?",
     content:
-      "You require a valid Organization Code, supplied by the organization you are applying to. You must contact them in order to receive this code.",
-    type: "blue"
+      "Access code is specific to each organization. If you need help with the organization access code, please contact your organization.",
+    type: "bluegrey"
   };
 
   const sideCard2 = {
-    heading: "Get a BC Services Card",
-    content:
-      "B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.",
-    type: "blue"
+    heading: "Why do I need to apply and consent to a criminal record check?",
+    content: "Learn more about the process",
+    type: "blue",
+    image: "/images/visit-criminal-record-site.PNG",
+    imageLink:
+      "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
   };
 
   const pageLayout = {
@@ -38,7 +40,7 @@ export default function App() {
   return (
     <div>
       {!org.orgNm && <OrgValidation page={page} />}
-      {org.orgNm && <OrgVerifivation page={page} />}
+      {org.orgNm && <OrgVerification page={page} />}
     </div>
   );
 }

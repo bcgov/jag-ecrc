@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./TableElement.css";
 
@@ -10,3 +11,10 @@ export default function TableElement({ element: { name, value } }) {
     </tr>
   );
 }
+
+TableElement.propTypes = {
+  element: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired
+  }).isRequired
+};

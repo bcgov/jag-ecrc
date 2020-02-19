@@ -37,17 +37,21 @@ const org = {
   cityNm: "Nowhere",
   provinceNm: "British Columbia",
   countryNm: "Canada",
+  contactPhoneNo: "250 123 4567",
   orgApplicantRelationship: "Employee"
 };
 
+const setOrg = () => {};
+
 const page = {
   org,
+  setOrg,
   pageLayout
 };
 
-export const Default = () => <OrgVerification page={page} org={org} />;
+export const Default = () => <OrgVerification page={page} />;
 
-export const Mobile = () => <OrgVerification page={page} org={org} />;
+export const Mobile = () => <OrgVerification page={page} />;
 
 Mobile.story = {
   parameters: {
