@@ -92,4 +92,9 @@ public class EcrcServicesImpl implements EcrcServices {
 		return ecrcWebMethodsService.callWebMethodsService(_logPaymentFailureUri, new LogPaymentFailure());
 	}
 
+	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber) throws EcrcServiceException {
+		String _getNextInvoiceIdUri = String.format(ecrcProps.getGetNextInvoiceIdUri(), orgTicketNumber);
+		return ecrcWebMethodsService.callWebMethodsService(_getNextInvoiceIdUri, new GetNextInvoiceId());
+	}
+
 }
