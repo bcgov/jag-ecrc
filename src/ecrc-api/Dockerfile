@@ -30,8 +30,8 @@ FROM openjdk:8-jdk-slim
 ARG MVN_PROFILES
 ARG ECRC_SERVICE_NAME
 
-COPY --from=build /target/${ECRC_SERVICE_NAME}-*.jar /app/
+COPY --from=build /target/${ECRC_SERVICE_NAME}-*.jar /app/ecrc-api.jar
 
 
-CMD ["java", "-jar", "/app/ecrc-api-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "/app/ecrc-api.jar"]
 #############################################################################################
