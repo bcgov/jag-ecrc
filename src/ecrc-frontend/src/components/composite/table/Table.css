@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+}
+
+th {
+  background: white;
+  padding: 3px;
+  border: 5px solid white;
+}
+table tr:nth-child(even) {
+  background: rgba(241, 244, 250, 1);
+}
+
+table tr:nth-child(odd) {
+  background: rgba(225, 232, 242, 1);
+}

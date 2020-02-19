@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Component Matches the snapshot 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th
+        colSpan="2"
+      >
+        Org Info
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Org name
+      </td>
+      <td>
+        Test Org Name
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Org Address
+      </td>
+      <td>
+        123 Somewhere Lane
+No where
+British Columbia
+V9V 9V9
+Canada
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Applicant Relationship
+      </td>
+      <td>
+        Employee
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
