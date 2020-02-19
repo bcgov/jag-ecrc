@@ -15,13 +15,12 @@ export default function OrgValidation({
   }
 }) {
   const [orgInput, setOrgInput] = useState("");
-  const history = useHistory();
 
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
       .then(res => {
-        history.push("/ecrc/orgverification");
+        useHistory().push("/ecrc/orgverification");
         setOrg(res.data.accessCodeResponse);
       })
       .catch();
