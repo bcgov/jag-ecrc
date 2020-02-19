@@ -15,12 +15,16 @@ export default function OrgValidation({
   }
 }) {
   const [orgInput, setOrgInput] = useState("");
+  // method name needs to be capitalized due to react hooks gotcha
+  const GetHistory = () => {
+    return useHistory();
+  };
 
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
       .then(res => {
-        useHistory().push("/ecrc/orgverification");
+        GetHistory().push("/ecrc/orgverification");
         setOrg(res.data.accessCodeResponse);
       })
       .catch();
