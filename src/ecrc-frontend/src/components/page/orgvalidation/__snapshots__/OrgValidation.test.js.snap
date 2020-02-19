@@ -68,7 +68,7 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
     className="page"
   >
     <div
-      className="content"
+      className="content col-md-8"
     >
       <div>
         <p>
@@ -292,19 +292,28 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
           >
             <p />
             <section
-              className="submit-container"
-              id="blue-section"
+              className="bluegrey-container"
+              id="bluegrey-section"
             >
-              <h2
-                className="heading-style"
-              >
-                Contact Your Organization
-              </h2>
               <div
-                className="submit-content"
+                className="container-background bluegrey-heading"
               >
-                <p>
-                  You require a valid Organization Code, supplied by the organization you are applying to. You must contact them in order to receive this code.
+                <h2
+                  className="heading-style"
+                >
+                  Need help with an access code?
+                </h2>
+              </div>
+              <div
+                className="bluegrey-content"
+              >
+                <p
+                  className="content-style"
+                >
+                  Access code is specific to each organization. If you need help with the organization access code, please 
+                  <b>
+                    contact your organization.
+                  </b>
                 </p>
               </div>
             </section>
@@ -339,14 +348,24 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
               <h2
                 className="heading-style"
               >
-                Get a BC Services Card
+                Why do I need to apply and consent to a criminal record check?
               </h2>
               <div
                 className="submit-content"
               >
                 <p>
-                  B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.
+                  Learn more about the process
                 </p>
+                <a
+                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
+                >
+                  <img
+                    alt="imagelink"
+                    height="65px"
+                    src="/images/visit-criminal-record-site.PNG"
+                    width="310px"
+                  />
+                </a>
               </div>
             </section>
           </div>

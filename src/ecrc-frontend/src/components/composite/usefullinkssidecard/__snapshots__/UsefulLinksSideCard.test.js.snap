@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UsefulLinksSideCard Component Matches the snapshot 1`] = `
+<div
+  className="dashboard-spacing"
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-12"
+      style={
+        Object {
+          "paddingTop": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <p />
+      <section
+        className="submit-container"
+        id="blue-section"
+      >
+        <h2
+          className="heading-style"
+        >
+          Useful Links
+        </h2>
+        <div
+          className="submit-content"
+        >
+          <p>
+            <li
+              className="menuItem"
+            >
+              <a
+                href="/"
+              >
+                Home
+              </a>
+            </li>
+            <li
+              className="menuItem"
+            >
+              <a
+                href="/somewhere"
+              >
+                Somewhere
+              </a>
+            </li>
+            <li
+              className="menuItem"
+            >
+              <a
+                href="/somewhereelse"
+              >
+                Somewhere else
+              </a>
+            </li>
+            <li
+              className="menuItem"
+            >
+              <a
+                href="/here"
+              >
+                Somewhere with a long name for no reason
+              </a>
+            </li>
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;

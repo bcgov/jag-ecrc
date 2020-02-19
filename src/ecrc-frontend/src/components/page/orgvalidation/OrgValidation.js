@@ -4,7 +4,6 @@ import axios from "axios";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgvalidationtext/OrgValidationText";
-import SideCard from "../../base/sideCard/SideCard";
 import "../page.css";
 import AccessCodeSideCard from "../../composite/accesscodesidecard/AccessCodeSideCard";
 import CriminalRecordSideCard from "../../composite/criminalrecordsidecard/CriminalRecordSideCard";

@@ -2,7 +2,7 @@ import React from "react";
 
 import "./BcServiceSideCard.css";
 import SideCard from "../../base/sideCard/SideCard";
-import Button from "../../base/button/Button";
+import { Button } from "../../base/button/Button";
 
 export default function BcServiceSideCard() {
   const button = {

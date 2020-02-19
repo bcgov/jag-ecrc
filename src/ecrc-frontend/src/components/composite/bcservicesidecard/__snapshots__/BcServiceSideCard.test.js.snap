@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BcServiceSideCard Component Matches the snapshot 1`] = `
+<div
+  className="dashboard-spacing"
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-12"
+      style={
+        Object {
+          "paddingTop": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <p />
+      <section
+        className="submit-container"
+        id="blue-section"
+      >
+        <h2
+          className="heading-style"
+        >
+          Get a BC Services Card
+        </h2>
+        <div
+          className="submit-content"
+        >
+          <p>
+            B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.
+            <button
+              className="btn btn-primary dark-button btn btn-md"
+              onClick={[Function]}
+              type="submit"
+            >
+              READ MORE
+            </button>
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;

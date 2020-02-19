@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactInformationSideCard Component Matches the snapshot 1`] = `
+<div
+  className="dashboard-spacing"
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-12"
+      style={
+        Object {
+          "paddingTop": "30px",
+          "position": "relative",
+        }
+      }
+    >
+      <p />
+      <section
+        className="bluegrey-container"
+        id="bluegrey-section"
+      >
+        <div
+          className="container-background bluegrey-heading"
+        >
+          <h2
+            className="heading-style"
+          >
+            Contact Information
+          </h2>
+        </div>
+        <div
+          className="bluegrey-content"
+        >
+          <p
+            className="content-style"
+          >
+            Criminal Records Review Program staff are available Monday to Friday from 8:30 a.m. - 4:30 p.m.
+            <b>
+              Office:
+            </b>
+            Toll free - 1 855 587-0185 (press option 2)
+            <b>
+              Email:
+            </b>
+            criminalrecords@gov.bc.ca
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;
