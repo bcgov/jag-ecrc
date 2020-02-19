@@ -24,7 +24,7 @@ public class EcrcProperties {
     private String getServiceFeeAmountUri;
 	private String createApplicantUri;
 	private String logPaymentFailureUri;
-
+	private String getNextInvoiceIdUri;
 	private String updateServiceFinancialTxnUri;
 
 	public String getBaseUrl() {
@@ -95,6 +95,14 @@ public class EcrcProperties {
 
 	public void setLogPaymentFailureUri(String logPaymentFailureUri) {
 		this.logPaymentFailureUri = logPaymentFailureUri;
+	}
+
+	public String getGetNextInvoiceIdUri() {
+		return getNextInvoiceIdUri;
+	}
+
+	public void setGetNextInvoiceIdUri(String getNextInvoiceIdUri) {
+		this.getNextInvoiceIdUri = getNextInvoiceIdUri;
 	}
 
 }

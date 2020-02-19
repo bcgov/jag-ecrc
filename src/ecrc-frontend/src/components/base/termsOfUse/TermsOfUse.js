@@ -15,7 +15,7 @@ export default function TermsOfUse({ onClick }) {
 
   return (
     <div>
-      <div style={{ width: "800px" }}>
+      <div style={{ width: "100%" }}>
         <a
           href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820"
           download

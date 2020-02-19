@@ -39,6 +39,6 @@ public interface EcrcServices {
 
 	public ResponseEntity<String> logPaymentFailure(RequestLogPaymentFailure paymentFailure) throws EcrcServiceException;
 
-	//TODO - fill in other service method signatures here.
+	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber) throws EcrcServiceException;
 
 }
