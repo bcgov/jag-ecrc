@@ -1,0 +1,18 @@
+version: '3.7'
+services:  
+  #############################################################################################
+  ###                               ECRC-API                                                ###
+  #############################################################################################
+  ecrcapi:
+    build:
+      context: .
+      args:
+        - MVN_PROFILES=ecrc-api
+        - ECRC_SERVICE_NAME=ecrc-api
+    environment: 
+      - spring_profiles_active=cloud
+      - ECRC_BASEURL=${ECRC_BASEURL}
+      - ECRC_PASSWORD=${ECRC_PASSWORD}
+      - ECRC_USERNAME=${ECRC_USERNAME}
+    ports:
+      - "8086:8082"
