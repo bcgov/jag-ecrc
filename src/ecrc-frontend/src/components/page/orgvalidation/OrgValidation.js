@@ -6,13 +6,10 @@ import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgvalidationtext/OrgValidationText";
 import SideCard from "../../base/sideCard/SideCard";
 import "../page.css";
+import AccessCodeSideCard from "../../composite/accesscodesidecard/AccessCodeSideCard";
+import CriminalRecordSideCard from "../../composite/criminalrecordsidecard/CriminalRecordSideCard";
 
-export default function OrgValidation({
-  page: {
-    setOrg,
-    pageLayout: { header, sideCard1, sideCard2 }
-  }
-}) {
+export default function OrgValidation({ page: { setOrg, header } }) {
   const [orgInput, setOrgInput] = useState("");
 
   const orgValidation = () => {
@@ -51,8 +48,8 @@ export default function OrgValidation({
           />
         </div>
         <div className="sidecard">
-          <SideCard sideCard={sideCard1} />
-          <SideCard sideCard={sideCard2} />
+          <AccessCodeSideCard />
+          <CriminalRecordSideCard />
         </div>
       </div>
       <Footer />
@@ -63,18 +60,8 @@ export default function OrgValidation({
 OrgValidation.propTypes = {
   page: PropTypes.shape({
     setOrg: PropTypes.func.isRequired,
-    pageLayout: PropTypes.shape({
-      header: PropTypes.shape({
-        name: PropTypes.string.isRequired
-      }),
-      sideCard1: PropTypes.shape({
-        heading: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired
-      }),
-      sideCard2: PropTypes.shape({
-        heading: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired
-      })
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
     }).isRequired
   }).isRequired
 };

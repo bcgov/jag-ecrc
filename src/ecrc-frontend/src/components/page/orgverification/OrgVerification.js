@@ -4,20 +4,13 @@ import PropTypes from "prop-types";
 import "../page.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
-import SideCard from "../../base/sideCard/SideCard";
 import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
 import BcServiceSideCard from "../../composite/bcservicesidecard/BcServiceSideCard";
 import UsefulLinksSideCard from "../../composite/usefullinkssidecard/UsefulLinksSideCard";
 import ContactInformationSideCard from "../../composite/contactinformationsidecard/ContactInformationSideCard";
 
-export default function OrgVerification({
-  page: {
-    pageLayout: { header, sideCard1, sideCard2 },
-    org,
-    setOrg
-  }
-}) {
+export default function OrgVerification({ page: { header, org, setOrg } }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -151,18 +144,8 @@ OrgVerification.propTypes = {
   page: PropTypes.shape({
     org: PropTypes.object.isRequired,
     setOrg: PropTypes.func.isRequired,
-    pageLayout: PropTypes.shape({
-      header: PropTypes.shape({
-        name: PropTypes.string.isRequired
-      }),
-      sideCard1: PropTypes.shape({
-        heading: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired
-      }),
-      sideCard2: PropTypes.shape({
-        heading: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired
-      })
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
     }).isRequired
   }).isRequired
 };

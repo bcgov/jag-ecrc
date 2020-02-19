@@ -12,5 +12,5 @@ export default function CriminalRecordSideCard() {
       "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
   };
 
-  return <SideCard sideCard={criminalRecord} />;
+  return <SideCard key="criminal-record" sideCard={criminalRecord} />;
 }

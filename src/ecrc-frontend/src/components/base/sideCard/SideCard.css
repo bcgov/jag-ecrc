@@ -31,6 +31,11 @@
 
 .bluegrey-heading {
   padding-left: 15px;
+  padding-bottom: 9px;
+}
+
+.bluegrey-heading h2 {
+  margin-bottom: 0px;
 }
 
 .bluegrey-content {
@@ -52,7 +57,6 @@
 }
 
 .container-background {
-  height: 36px;
   background-color: rgba(56, 89, 138, 1);
   font-weight: 400;
   font-style: normal;
@@ -91,6 +95,10 @@
 .dashboard-spacing {
   padding-left: 50px;
   padding-right: 50px;
+}
+
+img {
+  max-width: 100%;
 }
 
 @media (max-width: 575.98px) {

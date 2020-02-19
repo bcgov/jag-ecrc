@@ -12,5 +12,5 @@ export default function AccessCodeSideCard() {
     type: "bluegrey"
   };
 
-  return <SideCard sideCard={accessCode} />;
+  return <SideCard key="access-code" sideCard={accessCode} />;
 }

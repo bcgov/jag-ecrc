@@ -7,7 +7,7 @@ li {
   list-style-type: none;
 }
 
-li a {
+.menuItem a {
   color: white;
 }
 

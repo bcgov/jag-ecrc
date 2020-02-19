@@ -15,7 +15,7 @@ export default function UsefulLinksSideCard({ sideCardLinks }) {
     type: "blue"
   };
 
-  return <SideCard sideCard={usefulLinks} />;
+  return <SideCard key="useful-links" sideCard={usefulLinks} />;
 }
 
 UsefulLinksSideCard.propTypes = {
