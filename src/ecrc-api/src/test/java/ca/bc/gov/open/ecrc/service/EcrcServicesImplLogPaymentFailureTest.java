@@ -1,0 +1,59 @@
+package ca.bc.gov.open.ecrc.service;
+
+import static org.mockito.ArgumentMatchers.any;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
+import javassist.NotFoundException;
+
+/**
+ * Tests for log payment failure service
+ * 
+ * @author sivakaruna
+ *
+ */
+class EcrcServicesImplLogPaymentFailureTest {
+
+	private ResponseEntity<String> serviceResult;
+	private final String result = "{\n" 
+			+ "		\"Message\": \"Success\",\n" 
+			+ "		\"ResponseCode\": \"0\"\n"
+			+ "	}";
+
+	@InjectMocks
+	EcrcServicesImpl ecrcServices;
+
+	@Mock
+	EcrcWebMethodsService ecrcWebMethodsService;
+
+	@Mock
+	EcrcProperties ecrcProperties;
+
+	@BeforeEach
+	public void initMocks() {
+		MockitoAnnotations.initMocks(this);
+		Mockito.when(ecrcProperties.getLogPaymentFailureUri()).thenReturn("/logPaymentFailure%s");
+	}
+
+	@DisplayName("Success - ecrcService logPaymentFailure")
+	@Test
+	public void testCreateApplicantResultSuccess() throws NotFoundException, EcrcServiceException {
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any()))
+				.thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
+		serviceResult = ecrcServices.logPaymentFailure(new RequestLogPaymentFailure());
+		Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());
+		Assertions.assertEquals(result, serviceResult.getBody());
+	}
+}
