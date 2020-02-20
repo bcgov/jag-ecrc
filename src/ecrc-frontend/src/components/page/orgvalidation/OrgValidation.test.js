@@ -1,7 +1,7 @@
 import React from "react";
 import { create } from "react-test-renderer";
 
-import OrgValidation from "./OrgValidation";
+import OrgValidation from "../orgValidation/OrgValidation";
 
 describe("OrgValidation Component", () => {
   test("Matches the snapshot", () => {

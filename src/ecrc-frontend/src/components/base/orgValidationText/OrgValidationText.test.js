@@ -1,7 +1,7 @@
 import React from "react";
 import { create } from "react-test-renderer";
 
-import OrgValidationText from "./OrgValidationText";
+import OrgValidationText from "../orgValidationText/OrgValidationText";
 
 describe("OrgValidationText Component", () => {
   const textInput = {

@@ -1,7 +1,7 @@
 import React from "react";
 import { create } from "react-test-renderer";
 
-import TableElement from "./TableElement";
+import TableElement from "../tableElement/TableElement";
 
 describe("TableElement Component", () => {
   test("Matches the snapshot", () => {
