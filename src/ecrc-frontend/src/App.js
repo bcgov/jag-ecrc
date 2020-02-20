@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import OrgValidation from "./components/page/orgvalidation/OrgValidation";
-import OrgVerification from "./components/page/orgverification/OrgVerification";
+import OrgValidation from "./components/page/orgValidation/OrgValidation";
+import OrgVerification from "./components/page/orgVerification/OrgVerification";
 
 export default function App() {
   const [org, setOrg] = useState({});

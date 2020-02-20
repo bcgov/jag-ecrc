@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
-import OrgValidationText from "../../base/orgvalidationtext/OrgValidationText";
+import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
-import SideCards from "../../composite/SideCards/SideCards";
+import SideCards from "../../composite/sideCards/SideCards";
 
 export default function OrgValidation({ page: { setOrg, header } }) {
   const [orgInput, setOrgInput] = useState("");
