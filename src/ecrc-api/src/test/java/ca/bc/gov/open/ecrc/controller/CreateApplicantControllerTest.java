@@ -3,6 +3,7 @@ package ca.bc.gov.open.ecrc.controller;
 import static org.mockito.Mockito.when;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,19 +12,19 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.ContextConfiguration;
 
 import ca.bc.gov.open.ecrc.service.EcrcServices;
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 
 /**
  * Tests for create applicant controller
- *  
+ * 
  * @author sivakaruna
  *
  */
-@ContextConfiguration
 class CreateApplicantControllerTest {
 
 	@BeforeEach
@@ -53,9 +54,14 @@ class CreateApplicantControllerTest {
 	void testFailure() throws EcrcServiceException {
 		RequestCreateApplicant request = new RequestCreateApplicant();
 		when(ecrcServices.createApplicant(request)).thenReturn(new ResponseEntity<>(
-				"{\"message\":\"Requested data not found\", \"responseCode\":1}", HttpStatus.NOT_FOUND));
+				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
+				HttpStatus.NOT_FOUND));
 		ResponseEntity<String> response = createApplicantController.createApplicant(request);
-		Assert.assertEquals("{\"message\":\"Requested data not found\", \"responseCode\":1}", response.getBody());
+		Assertions.assertEquals(
+				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
+				response.getBody());
 		Assert.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 	}
 
@@ -64,9 +70,14 @@ class CreateApplicantControllerTest {
 	void testError() throws EcrcServiceException {
 		RequestCreateApplicant request = new RequestCreateApplicant();
 		when(ecrcServices.createApplicant(request)).thenReturn(new ResponseEntity<>(
-				"{\"message\":\"Requested data not found\", \"responseCode\":1}", HttpStatus.BAD_REQUEST));
+				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
+				HttpStatus.BAD_REQUEST));
 		ResponseEntity<String> response = createApplicantController.createApplicant(request);
-		Assert.assertEquals("{\"message\":\"Requested data not found\", \"responseCode\":1}", response.getBody());
+		Assertions.assertEquals(
+				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
+				response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
 

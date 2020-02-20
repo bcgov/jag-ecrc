@@ -13,19 +13,12 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import ca.bc.gov.open.ecrc.service.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
-import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
+import ca.bc.gov.open.ecrc.service.EcrcServices;
 
-/**
- * Tests for log payment failure controller
- * 
- * @author sivakaruna
- *
- */
-class LogPaymentFailureControllerTest {
+class GetNextInvoiceIdControllerTest {
 
 	@BeforeEach
 	public void initMocks() {
@@ -36,27 +29,25 @@ class LogPaymentFailureControllerTest {
 	EcrcServices ecrcServices;
 
 	@InjectMocks
-	LogPaymentFailureController logPaymentFailureController = new LogPaymentFailureController();
+	GetNextInvoiceIdController getNextInvoiceIdController = new GetNextInvoiceIdController();
 
-	@DisplayName("Success - logPaymentFailure controller")
+	@DisplayName("Success - getNextInvoiceIdController controller")
 	@Test
 	void testSuccess() throws EcrcServiceException {
-		RequestLogPaymentFailure request = new RequestLogPaymentFailure();
-		when(ecrcServices.logPaymentFailure(request)).thenReturn(new ResponseEntity<String>("success", HttpStatus.OK));
-		ResponseEntity<String> response = logPaymentFailureController.logPaymentFailure(request);
+		when(ecrcServices.getNextInvoiceId("request")).thenReturn(new ResponseEntity<String>("success", HttpStatus.OK));
+		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request");
 		Assert.assertEquals("success", response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
 
-	@DisplayName("Failure - logPaymentFailure controller")
+	@DisplayName("Failure - getNextInvoiceIdController controller")
 	@Test
 	void testFailure() throws EcrcServiceException {
-		RequestLogPaymentFailure request = new RequestLogPaymentFailure();
-		when(ecrcServices.logPaymentFailure(request)).thenReturn(new ResponseEntity<>(
+		when(ecrcServices.getNextInvoiceId("request")).thenReturn(new ResponseEntity<>(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
 				HttpStatus.NOT_FOUND));
-		ResponseEntity<String> response = logPaymentFailureController.logPaymentFailure(request);
+		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request");
 		Assertions.assertEquals(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
@@ -64,15 +55,14 @@ class LogPaymentFailureControllerTest {
 		Assert.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 	}
 
-	@DisplayName("Error - logPaymentFailure controller")
+	@DisplayName("Error - getNextInvoiceIdController controller")
 	@Test
 	void testError() throws EcrcServiceException {
-		RequestLogPaymentFailure request = new RequestLogPaymentFailure();
-		when(ecrcServices.logPaymentFailure(request)).thenReturn(new ResponseEntity<>(
+		when(ecrcServices.getNextInvoiceId("request")).thenReturn(new ResponseEntity<>(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 				HttpStatus.BAD_REQUEST));
-		ResponseEntity<String> response = logPaymentFailureController.logPaymentFailure(request);
+		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request");
 		Assertions.assertEquals(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
