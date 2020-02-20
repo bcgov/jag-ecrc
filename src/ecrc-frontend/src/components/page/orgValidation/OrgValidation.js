@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -9,11 +10,16 @@ import SideCards from "../../composite/sideCards/SideCards";
 
 export default function OrgValidation({ page: { setOrg, header } }) {
   const [orgInput, setOrgInput] = useState("");
+  // method name needs to be capitalized due to react hooks gotcha
+  const GetHistory = () => {
+    return useHistory();
+  };
 
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
       .then(res => {
+        GetHistory().push("/ecrc/orgverification");
         setOrg(res.data.accessCodeResponse);
       })
       .catch();

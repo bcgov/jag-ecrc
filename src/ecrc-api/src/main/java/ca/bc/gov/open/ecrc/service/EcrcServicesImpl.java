@@ -1,25 +1,23 @@
 package ca.bc.gov.open.ecrc.service;
 
 
-import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
-import ca.bc.gov.open.ecrc.model.RequestUpdateServiceFinancialTxn;
+import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
+import ca.bc.gov.open.ecrc.model.*;
 import ca.bc.gov.open.ecrc.objects.*;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.util.ArrayList;
-
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
-import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
-import ca.bc.gov.open.ecrc.model.Link;
+import java.util.ArrayList;
+
+import static ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE;
 
 /**
  *
@@ -42,8 +40,12 @@ public class EcrcServicesImpl implements EcrcServices {
 	private final Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
 
 	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber) {
-		String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
-		return ecrcWebMethodsService.callWebMethodsService(_doAuthenticateUserUri, new DoAuthenticateUser());
+	    if (ecrcProps.getWhiteList().contains(orgTicketNumber.toLowerCase())) {
+            String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
+            return ecrcWebMethodsService.callWebMethodsService(_doAuthenticateUserUri, new DoAuthenticateUser());
+        } else {
+	        return new ResponseEntity<>(String.format(WEBSERVICE_ERROR_JSON_RESPONSE,"Org not on whitelist", WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.UNAUTHORIZED);
+        }
 	}
 
 	public ArrayList<Link> getLinks() {
