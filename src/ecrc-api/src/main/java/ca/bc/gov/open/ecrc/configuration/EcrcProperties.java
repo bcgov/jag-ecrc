@@ -26,6 +26,10 @@ public class EcrcProperties {
 	private String logPaymentFailureUri;
 	private String getNextInvoiceIdUri;
 	private String updateServiceFinancialTxnUri;
+	
+	//CORS properties
+	private String corsMapping;
+	private String corsAllowedOrigins;
 
 	public String getBaseUrl() {
 		return baseUrl;
@@ -103,6 +107,22 @@ public class EcrcProperties {
 
 	public void setGetNextInvoiceIdUri(String getNextInvoiceIdUri) {
 		this.getNextInvoiceIdUri = getNextInvoiceIdUri;
+	}
+
+	public String getCorsMapping() {
+		return corsMapping;
+	}
+
+	public void setCorsMapping(String corsMapping) {
+		this.corsMapping = corsMapping;
+	}
+
+	public String getCorsAllowedOrigins() {
+		return corsAllowedOrigins;
+	}
+
+	public void setCorsAllowedOrigins(String corsAllowedOrigins) {
+		this.corsAllowedOrigins = corsAllowedOrigins;
 	}
 
 }
