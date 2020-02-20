@@ -13,7 +13,7 @@ export default function SideCards({ type, sideCardLinks }) {
     heading: "Need help with an access code?",
     content: [
       "Access code is specific to each organization. If you need help with the organization access code, please ",
-      <b className="block">contact your organization.</b>
+      <b key="accesscode" className="block">contact your organization.</b>
     ],
     type: "bluegrey"
   };
@@ -52,9 +52,9 @@ export default function SideCards({ type, sideCardLinks }) {
     heading: "Contact Information",
     content: [
       "Criminal Records Review Program staff are available Monday to Friday from 8:30 a.m. - 4:30 p.m.",
-      <b>Office:</b>,
+      <b key="contactinformation-office">Office:</b>,
       "Toll free - 1 855 587-0185 (press option 2)",
-      <b>Email:</b>,
+      <b key="contactinformation-email">Email:</b>,
       "criminalrecords@gov.bc.ca"
     ],
     type: "bluegrey"
