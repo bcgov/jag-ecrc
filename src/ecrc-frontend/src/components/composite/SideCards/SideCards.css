@@ -1,0 +1,17 @@
+p {
+  display: flex;
+  flex-direction: column;
+}
+p > button {
+  align-self: flex-end;
+}
+
+.dark-button {
+  background-color: #2d476f;
+  border-color: #294266;
+  margin-right: 0px;
+}
+
+.block {
+  display: contents;
+}

@@ -68,7 +68,7 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
     className="page"
   >
     <div
-      className="content"
+      className="content col-md-8"
     >
       <div>
         <p>
@@ -270,85 +270,107 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
     <div
       className="sidecard"
     >
-      <div
-        className="dashboard-spacing"
-        style={
-          Object {
-            "position": "relative",
-          }
-        }
-      >
+      <div>
         <div
-          className="row"
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
         >
           <div
-            className="col-12"
-            style={
-              Object {
-                "paddingTop": "30px",
-                "position": "relative",
-              }
-            }
+            className="row"
           >
-            <p />
-            <section
-              className="submit-container"
-              id="blue-section"
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
             >
-              <h2
-                className="heading-style"
+              <p />
+              <section
+                className="bluegrey-container"
+                id="bluegrey-section"
               >
-                Contact Your Organization
-              </h2>
-              <div
-                className="submit-content"
-              >
-                <p>
-                  You require a valid Organization Code, supplied by the organization you are applying to. You must contact them in order to receive this code.
-                </p>
-              </div>
-            </section>
+                <div
+                  className="container-background bluegrey-heading"
+                >
+                  <h2
+                    className="heading-style"
+                  >
+                    Need help with an access code?
+                  </h2>
+                </div>
+                <div
+                  className="bluegrey-content"
+                >
+                  <p
+                    className="content-style"
+                  >
+                    Access code is specific to each organization. If you need help with the organization access code, please 
+                    <b
+                      className="block"
+                    >
+                      contact your organization.
+                    </b>
+                  </p>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
       </div>
-      <div
-        className="dashboard-spacing"
-        style={
-          Object {
-            "position": "relative",
-          }
-        }
-      >
+      <div>
         <div
-          className="row"
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
         >
           <div
-            className="col-12"
-            style={
-              Object {
-                "paddingTop": "30px",
-                "position": "relative",
-              }
-            }
+            className="row"
           >
-            <p />
-            <section
-              className="submit-container"
-              id="blue-section"
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
             >
-              <h2
-                className="heading-style"
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
               >
-                Get a BC Services Card
-              </h2>
-              <div
-                className="submit-content"
-              >
-                <p>
-                  B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.
-                </p>
-              </div>
-            </section>
+                <h2
+                  className="heading-style"
+                >
+                  Why do I need to apply and consent to a criminal record check?
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <p>
+                    Learn more about the process
+                    <button
+                      className="btn btn-primary dark-button btn btn-md"
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      VISIT THE CRIMINAL RECORD REVIEW WEBSITE
+                    </button>
+                  </p>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
       </div>

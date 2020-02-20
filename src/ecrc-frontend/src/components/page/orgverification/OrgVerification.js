@@ -4,17 +4,11 @@ import PropTypes from "prop-types";
 import "../page.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
-import SideCard from "../../base/sideCard/SideCard";
 import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
+import SideCards from "../../composite/SideCards/SideCards";
 
-export default function OrgVerification({
-  page: {
-    pageLayout: { header, sideCard1, sideCard2 },
-    org,
-    setOrg
-  }
-}) {
+export default function OrgVerification({ page: { header, org, setOrg } }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -24,6 +18,23 @@ export default function OrgVerification({
   const back = () => {
     setOrg({});
   };
+
+  const links = [
+    {
+      name: "I'm an employee or volunteer",
+      url: "/tbd"
+    },
+    {
+      name: "Electronic Identity Verification (EIV)",
+      url:
+        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+    },
+    {
+      name: "Results and Reconsideration",
+      url:
+        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+    }
+  ];
 
   const continueButton = {
     label: "Continue",
@@ -117,8 +128,9 @@ export default function OrgVerification({
           </div>
         </div>
         <div className="sidecard">
-          <SideCard sideCard={sideCard1} />
-          <SideCard sideCard={sideCard2} />
+          <SideCards type={"bcservice"} />
+          <SideCards type={"usefullinks"} sideCardLinks={links} />
+          <SideCards type={"contactinformation"} />
         </div>
       </div>
       <Footer />
@@ -130,18 +142,8 @@ OrgVerification.propTypes = {
   page: PropTypes.shape({
     org: PropTypes.object.isRequired,
     setOrg: PropTypes.func.isRequired,
-    pageLayout: PropTypes.shape({
-      header: PropTypes.shape({
-        name: PropTypes.string.isRequired
-      }),
-      sideCard1: PropTypes.shape({
-        heading: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired
-      }),
-      sideCard2: PropTypes.shape({
-        heading: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired
-      })
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
     }).isRequired
   }).isRequired
 };

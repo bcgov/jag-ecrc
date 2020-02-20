@@ -29,8 +29,16 @@
   padding-top: 9px;
 }
 
+.bluegrey-heading {
+  padding-left: 15px;
+  padding-bottom: 9px;
+}
+
+.bluegrey-heading h2 {
+  margin-bottom: 0px;
+}
+
 .bluegrey-content {
-  width: 339px;
   height: auto;
   background: inherit;
   background-color: rgba(241, 244, 250, 1);
@@ -49,8 +57,6 @@
 }
 
 .container-background {
-  width: 339px;
-  height: 36px;
   background-color: rgba(56, 89, 138, 1);
   font-weight: 400;
   font-style: normal;
@@ -74,7 +80,10 @@
   color: #fff;
   margin-bottom: 20px;
   padding: 15px;
-  max-width: 400px;
+}
+
+.bluegrey-container {
+  margin-bottom: 20px;
 }
 
 .submit-container h2 {
@@ -84,6 +93,11 @@
 .dashboard-spacing {
   padding-left: 50px;
   padding-right: 50px;
+  max-width: 400px;
+}
+
+img {
+  max-width: 100%;
 }
 
 @media (max-width: 575.98px) {

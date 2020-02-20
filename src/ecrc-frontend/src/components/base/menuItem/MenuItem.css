@@ -7,9 +7,8 @@ li {
   list-style-type: none;
 }
 
-li a {
-  color: #1a5a96;
-  text-decoration: none;
+.menuItem a {
+  color: white;
 }
 
 li a:hover {

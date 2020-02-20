@@ -6,7 +6,7 @@ import SideCard from "./SideCard";
 describe("SideCard Component", () => {
   const sideCardProps = {
     heading: "header",
-    content: "content",
+    content: ["content"],
     type: "notice"
   };
 
