@@ -6,9 +6,6 @@
   box-sizing: border-box;
   border-width: 3px;
   border-style: solid;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
   font-family: "myriad-pro", "sans serif";
   font-weight: 400;
   font-style: normal;
@@ -29,5 +26,4 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
-  padding-bottom: 0px;
 }

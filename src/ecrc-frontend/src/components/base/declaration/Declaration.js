@@ -45,10 +45,7 @@ export default function Declaration({ onApplicantNameChange }) {
       </section>
 
       <section className="declareSection" style={{ width: "475px" }}>
-        <TextInput
-          textInput={{ ...textInput }}
-          onChange={onApplicantNameChange}
-        />
+        <TextInput textInput={textInput} onChange={onApplicantNameChange} />
       </section>
     </div>
   );
