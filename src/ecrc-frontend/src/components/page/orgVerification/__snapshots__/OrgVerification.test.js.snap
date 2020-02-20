@@ -1,0 +1,443 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrgVerification Component Matches the snapshot 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="https://www2.gov.bc.ca"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div
+          className="navbar-brand"
+        >
+          Criminal Record Check
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        >
+          <div
+            className="navbar-nav"
+          >
+            <a
+              className="nav-item nav-link"
+              href="/"
+            >
+              Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Organization Information
+      </h1>
+      <p>
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it’s not, please do NOT proceed and contact the organization that has requested you to complete a criminal record check.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              Organization Information
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Organization Name
+            </td>
+            <td>
+              Test Org Name
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Address
+            </td>
+            <td>
+              123 Somewhere Lane
+Nowhere
+British Columbia
+undefined
+Canada
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Phone Number
+            </td>
+            <td>
+              250 123 4567
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              Organization Type
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Role
+            </td>
+            <td>
+              Employee
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <p>
+          To continue with your online criminal record check request, please ensure you meet the following criteria:
+        </p>
+        <ul>
+          <li>
+            You must have a BC Service Card Account. If you do not already have a BC Service Card Account, you can initiate the process at the
+            <a
+              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+            >
+              BC Service Card website
+            </a>
+            .
+          </li>
+          <li>
+            Pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for criminal record check, no payment is required.
+          </li>
+        </ul>
+        <p>
+          Once the criminal record check is complete, the organization noted above will receive the results.
+        </p>
+        <p>
+          By selecting continue, you are consenting to have your information released to this organization.
+        </p>
+      </div>
+      <div
+        className="buttons"
+      >
+        <button
+          className="btn btn-primary btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Back
+        </button>
+        <button
+          className="btn btn-primary btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+    <div
+      className="sidecard"
+    >
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  Get a BC Services Card
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <p>
+                    B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.
+                    <button
+                      className="btn btn-primary dark-button btn btn-md"
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      READ MORE
+                    </button>
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  Useful Links
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <p>
+                    <li
+                      className="menuItem"
+                    >
+                      <a
+                        href="/tbd"
+                      >
+                        I'm an employee or volunteer
+                      </a>
+                    </li>
+                    <li
+                      className="menuItem"
+                    >
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+                      >
+                        Electronic Identity Verification (EIV)
+                      </a>
+                    </li>
+                    <li
+                      className="menuItem"
+                    >
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+                      >
+                        Results and Reconsideration
+                      </a>
+                    </li>
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="bluegrey-container"
+                id="bluegrey-section"
+              >
+                <div
+                  className="container-background bluegrey-heading"
+                >
+                  <h2
+                    className="heading-style"
+                  >
+                    Contact Information
+                  </h2>
+                </div>
+                <div
+                  className="bluegrey-content"
+                >
+                  <p
+                    className="content-style"
+                  >
+                    Criminal Records Review Program staff are available Monday to Friday from 8:30 a.m. - 4:30 p.m.
+                    <b>
+                      Office:
+                    </b>
+                    Toll free - 1 855 587-0185 (press option 2)
+                    <b>
+                      Email:
+                    </b>
+                    criminalrecords@gov.bc.ca
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
