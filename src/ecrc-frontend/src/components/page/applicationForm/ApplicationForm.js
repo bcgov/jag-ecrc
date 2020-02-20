@@ -5,11 +5,19 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import SimpleForm from "../../composite/simpleForm/SimpleForm";
 
-export default function ApplicationForm({ page: { header, applicant } }) {
+export default function ApplicationForm({
+  page: {
+    header,
+    applicant: { firstName, middleName, lastName }
+  }
+}) {
   const applicantInformation = {
     title: "Applicant Information",
-    textInputs: [applicant.firstName, applicant.middleName, applicant.lastName]
+    textInputs: [firstName, middleName, lastName],
+    buttons: []
   };
+
+  console.log(applicantInformation);
 
   return (
     <main>
