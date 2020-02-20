@@ -1,7 +1,7 @@
 import React from "react";
 import { create } from "react-test-renderer";
 
-import SideCards from "../sideCards/SideCards";
+import SideCards from "./SideCards";
 
 describe("SideCards Component", () => {
   const links = [
