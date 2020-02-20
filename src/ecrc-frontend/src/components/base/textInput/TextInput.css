@@ -1,5 +1,10 @@
 @import "~@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css";
 
+.label {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .textinput_label {
   font-weight: 700;
   font-style: normal;
@@ -62,4 +67,9 @@
   color: red;
   font-weight: 500;
   font-size: 16px;
+}
+
+.note {
+  font-size: 14px;
+  font-weight: 400;
 }

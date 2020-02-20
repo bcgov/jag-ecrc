@@ -12,23 +12,31 @@ const header = {
 };
 
 const applicant = {
-  firstName: {
-    label: "First Name",
-    id: "firstName",
-    value: "First",
-    textInputStyle: "textinput_non_editable_gray"
+  firstName: "First",
+  middleName: "Middle",
+  lastName: "Last",
+  birthPlace: "",
+  birthDate: "1982-12-12",
+  sex: "Apache Attack Helicopter",
+  bcDLNumber: "",
+  phoneNumber: "",
+  emailAddress: "",
+  street: "123 Somewhere",
+  city: "Here",
+  province: "British Columbia",
+  postalCode: {
+    label: "V9V 9V9",
+    country: "Canada"
   },
-  middleName: {
-    label: "Middle Name",
-    id: "middleName",
-    value: "Middle",
-    textInputStyle: "textinput_non_editable_gray"
+  applicantPosition: {
+    label: "Applicant's position/Job Title",
+    id: "applicantPosition"
   },
-  lastName: {
-    label: "Last Name",
-    id: "lastName",
-    value: "Last",
-    textInputStyle: "textinput_non_editable_gray"
+  organizationFacility: {
+    label: "Organization Facility",
+    id: "organizationFacility",
+    note:
+      "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)"
   }
 };
 

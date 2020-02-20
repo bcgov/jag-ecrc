@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./TextInput.css";
 
 export const TextInput = ({
-  textInput: { label, id, textInputStyle, value, isRequired },
+  textInput: { label, id, note, textInputStyle, value, isRequired },
   onChange
 }) => {
   let asterisk = "";
@@ -16,11 +16,12 @@ export const TextInput = ({
   }
 
   const labelPart = (
-    <div>
+    <div className="label">
       <label className="textinput_label" htmlFor={id}>
         {label}
       </label>
       {asterisk}
+      <span className="note">&nbsp;{note}</span>
     </div>
   );
 
@@ -68,6 +69,7 @@ TextInput.propTypes = {
   textInput: PropTypes.shape({
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    note: PropTypes.string,
     textInputStyle: PropTypes.string,
     value: PropTypes.string,
     isRequired: PropTypes.bool
@@ -76,6 +78,7 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
+  note: "",
   onChange: () => {}
 };
 
