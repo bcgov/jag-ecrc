@@ -1,6 +1,9 @@
 package ca.bc.gov.open.ecrc.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import java.util.List;
 
 /**
  *
@@ -30,6 +33,9 @@ public class EcrcProperties {
 	//CORS properties
 	private String corsMapping;
 	private String corsAllowedOrigins;
+
+	@Value("#{'${ecrc.whitelist}'.split(',')}")
+	private List<String> whiteList;
 
 	public String getBaseUrl() {
 		return baseUrl;
@@ -125,4 +131,8 @@ public class EcrcProperties {
 		this.corsAllowedOrigins = corsAllowedOrigins;
 	}
 
+	public List<String> getWhiteList() { return whiteList; }
+
+	public void setWhiteList(List<String> whiteList) { this.whiteList = whiteList; }
+  
 }
