@@ -13,7 +13,9 @@ export default function SideCards({ type, sideCardLinks }) {
     heading: "Need help with an access code?",
     content: [
       "Access code is specific to each organization. If you need help with the organization access code, please ",
-      <b key="accesscode" className="block">contact your organization.</b>
+      <b key="accesscode" className="block">
+        contact your organization.
+      </b>
     ],
     type: "bluegrey"
   };
