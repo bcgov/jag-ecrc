@@ -2,6 +2,7 @@ package ca.bc.gov.open.ecrc.service;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
+import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
@@ -46,22 +47,29 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
 
         try {
             JSONObject obj = new JSONObject(objectMapper.writeValueAsString(responseBody.block()));
-            if (obj.getInt("responseCode") == EcrcExceptionConstants.WEBSERVICE_STATUS_CODE_SUCCESS) {
+            int respCode = obj.getInt("responseCode");
+            if (respCode == WebServiceStatusCodes.SUCCESS.getErrorCode()) {
                 return new ResponseEntity<>(obj.toString(), HttpStatus.OK);
+            } else if (respCode == WebServiceStatusCodes.NOTFOUND.getErrorCode()) {
+                return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                        EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, respCode), HttpStatus.NOT_FOUND);
+            } else if (respCode == WebServiceStatusCodes.ERROR.getErrorCode()) {
+                return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                        EcrcExceptionConstants.SERVICE_UNAVAILABLE, respCode), HttpStatus.SERVICE_UNAVAILABLE);
             } else {
                 return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-                        EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND);
+                        EcrcExceptionConstants.UNKNOWN_RESPONSE_CODE, respCode), HttpStatus.BAD_REQUEST);
             }
         } catch (JsonProcessingException e) {
             logger.error("Failed to convert to json processing exception");
             logger.debug("DEBUG Stack:", e);
             return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-                    EcrcExceptionConstants.CONVERT_TO_JSON_ERROR), HttpStatus.BAD_REQUEST);
+                    EcrcExceptionConstants.CONVERT_TO_JSON_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
             logger.error("Error in call to webMethods");
             logger.debug("DEBUG Stack:", e);
             return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-                    EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR), HttpStatus.BAD_REQUEST);
+                    EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
         }
     }
 }
