@@ -45,7 +45,14 @@ export default function Declaration({ onApplicantNameChange }) {
       </section>
 
       <section className="declareSection" style={{ width: "475px" }}>
+<<<<<<< refs/remotes/origin/master
         <TextInput textInput={textInput} onChange={onApplicantNameChange} />
+=======
+        <TextInput
+          textInput={{ ...textInput }}
+          onChange={onApplicantNameChange}
+        />
+>>>>>>> add declaration base component
       </section>
     </div>
   );
