@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-
 import "../page.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
-import SideCards from "../../composite/SideCards/SideCards";
+import SideCards from "../../composite/sideCards/SideCards";
 
 export default function OrgVerification({ page: { header, org, setOrg } }) {
   useEffect(() => {

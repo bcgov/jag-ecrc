@@ -1,5 +1,6 @@
 package ca.bc.gov.open.ecrc.controller;
 
+import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.service.EcrcServicesImpl;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
@@ -43,10 +44,10 @@ public class UpdateServiceFinancialTxnControllerTest {
     public void testNotFoundValidOrg() throws EcrcServiceException {
         updateServiceFinancialTxn = new RequestUpdateServiceFinancialTxn();
         Mockito.when(ecrcServices.updateServiceFinancialTxn(updateServiceFinancialTxn)).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-                EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.NOT_FOUND));
+                EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.NOT_FOUND));
         ResponseEntity<String> result = updateServiceFinancialTxnController.updateServiceFinancialTxn(updateServiceFinancialTxn);
         Assertions.assertEquals(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-                EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), result.getBody());
+                EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), result.getBody());
         Assertions.assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
     }
 
@@ -55,7 +56,7 @@ public class UpdateServiceFinancialTxnControllerTest {
     public void testServiceExceptionValidOrg() throws EcrcServiceException {
         updateServiceFinancialTxn = new RequestUpdateServiceFinancialTxn();
         Mockito.when(ecrcServices.updateServiceFinancialTxn(updateServiceFinancialTxn)).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-                EcrcExceptionConstants.DATA_NOT_FOUND_ERROR), HttpStatus.BAD_REQUEST));
+                EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.BAD_REQUEST));
         ResponseEntity<String> result = updateServiceFinancialTxnController.updateServiceFinancialTxn(updateServiceFinancialTxn);
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
     }
