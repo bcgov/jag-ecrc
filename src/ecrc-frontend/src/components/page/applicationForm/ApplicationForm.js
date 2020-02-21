@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import "./ApplicationForm.css";
@@ -30,6 +30,10 @@ export default function ApplicationForm({
     }
   }
 }) {
+  const [previousNames, setPreviousNames] = useState({
+    previousTwo: false,
+    previousThree: false
+  });
   const currentName = {
     firstName: {
       label: "First Name",
@@ -51,18 +55,48 @@ export default function ApplicationForm({
     }
   };
 
-  const previousName = {
+  const previousNameOne = {
     firstName: {
       label: "First Name",
-      id: "firstName"
+      id: "previousFirstNameOne"
     },
     middleName: {
       label: "Middle Name",
-      id: "middleName"
+      id: "previousMiddleNameOne"
     },
     lastName: {
       label: "Last Name",
-      id: "lastName"
+      id: "previousLastNameOne"
+    }
+  };
+
+  const previousNameTwo = {
+    firstName: {
+      label: "First Name",
+      id: "previousFirstNameTwo"
+    },
+    middleName: {
+      label: "Middle Name",
+      id: "previousMiddleNameTwo"
+    },
+    lastName: {
+      label: "Last Name",
+      id: "previousLastNameTwo"
+    }
+  };
+
+  const previousNameThree = {
+    firstName: {
+      label: "First Name",
+      id: "previousFirstNameOneThree"
+    },
+    middleName: {
+      label: "Middle Name",
+      id: "previousMiddleNameThree"
+    },
+    lastName: {
+      label: "Last Name",
+      id: "previousLastNameThree"
     }
   };
 
@@ -95,14 +129,12 @@ export default function ApplicationForm({
         label: "Primary Phone Number",
         id: "phoneNumber",
         note: "(Include area code)",
-        value: "XXX-XXX-XXXX",
         isRequired: true
       },
       {
         label: "Personal Email Address",
         id: "emailAddress",
         note: "We may use this to communicate with you about your application.",
-        value: "steve@example.com",
         isRequired: true
       }
     ],
@@ -163,6 +195,16 @@ export default function ApplicationForm({
     buttons: []
   };
 
+  const additionalNames = event => {
+    event.preventDefault();
+
+    if (!previousNames.previousTwo) {
+      setPreviousNames({ ...previousNames, previousTwo: true });
+    } else if (!previousNames.previousThree) {
+      setPreviousNames({ ...previousNames, previousThree: true });
+    }
+  };
+
   return (
     <main>
       <Header header={header} />
@@ -171,16 +213,27 @@ export default function ApplicationForm({
           <h1>Criminal Record Check - Application</h1>
           <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
           <div className="heading">
-            <span className="previousName">PREVIOUS NAME&nbsp;</span>
+            <span className="previousHeader">PREVIOUS NAME&nbsp;</span>
             <span className="note">
               Including alias, previous name and/or birthname
             </span>
           </div>
-          <FullName title={null} fullname={previousName} />
-          <span className="note">
-            If you have more than one previous name, please click here to add
-            them.
-          </span>
+          <FullName title={null} fullname={previousNameOne} />
+          {previousNames.previousTwo && (
+            <FullName title={null} fullname={previousNameTwo} />
+          )}
+          {previousNames.previousThree && (
+            <FullName title={null} fullname={previousNameThree} />
+          )}
+          {!previousNames.previousThree && (
+            <span className="heading note previousFooter">
+              If you have more than one previous name, please&nbsp;
+              <a href="#" onClick={event => additionalNames(event)}>
+                click here to add them
+              </a>
+              .
+            </span>
+          )}
           <SimpleForm simpleForm={applicantInformation} />
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />

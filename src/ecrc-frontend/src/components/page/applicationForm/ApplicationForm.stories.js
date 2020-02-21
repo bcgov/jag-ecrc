@@ -12,12 +12,12 @@ const header = {
 };
 
 const applicant = {
-  firstName: "First",
-  middleName: "Middle",
-  lastName: "Last",
+  firstName: "Robert",
+  middleName: "Norman",
+  lastName: "Ross",
   birthPlace: "",
-  birthDate: "1982-12-12",
-  sex: "Apache Attack Helicopter",
+  birthDate: "1942-10-29",
+  sex: "Male",
   bcDLNumber: "",
   phoneNumber: "",
   emailAddress: "",

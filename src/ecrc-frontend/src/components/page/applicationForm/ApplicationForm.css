@@ -5,9 +5,13 @@
   align-items: baseline;
 }
 
-.previousName {
+.previousHeader {
   font-size: 18px;
   font-weight: 600;
+}
+
+.previousFooter {
+  margin-top: -35px;
 }
 
 .note {
