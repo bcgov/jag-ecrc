@@ -101,7 +101,7 @@ export default function ApplicationForm({
       {
         label: "Personal Email Address",
         id: "emailAddress",
-        note: "We may use this to communicate with you about yourapplication.",
+        note: "We may use this to communicate with you about your application.",
         value: "steve@example.com",
         isRequired: true
       }
@@ -170,10 +170,12 @@ export default function ApplicationForm({
         <div className="content col-md-8">
           <h1>Criminal Record Check - Application</h1>
           <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
-          <span className="previousName">PREVIOUS NAME </span>
-          <span className="note">
-            Including alias, previous name and/or birthname
-          </span>
+          <div className="heading">
+            <span className="previousName">PREVIOUS NAME&nbsp;</span>
+            <span className="note">
+              Including alias, previous name and/or birthname
+            </span>
+          </div>
           <FullName title={null} fullname={previousName} />
           <span className="note">
             If you have more than one previous name, please click here to add

@@ -20,8 +20,8 @@ export const TextInput = ({
       <label className="textinput_label" htmlFor={id}>
         {label}
       </label>
-      {asterisk}
-      <span className="note">&nbsp;{note}</span>
+      {asterisk}&nbsp;
+      <span className="note">{note}</span>
     </div>
   );
 

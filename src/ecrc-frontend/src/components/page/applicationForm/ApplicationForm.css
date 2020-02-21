@@ -1,7 +1,13 @@
+.heading {
+  padding-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
 .previousName {
   font-size: 18px;
   font-weight: 600;
-  padding-left: 40px;
 }
 
 .note {

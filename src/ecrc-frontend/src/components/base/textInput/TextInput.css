@@ -3,6 +3,7 @@
 .label {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
 }
 
 .textinput_label {

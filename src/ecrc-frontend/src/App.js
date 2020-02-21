@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
-import OrgValidation from "./components/page/orgvalidation/OrgValidation";
-import OrgVerification from "./components/page/orgverification/OrgVerification";
+import OrgValidation from "./components/page/orgValidation/OrgValidation";
+import OrgVerification from "./components/page/orgVerification/OrgVerification";
 import ApplicationForm from "./components/page/applicationForm/ApplicationForm";
 
 export default function App() {

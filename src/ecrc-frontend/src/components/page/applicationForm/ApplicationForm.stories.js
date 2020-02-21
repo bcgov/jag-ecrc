@@ -24,20 +24,10 @@ const applicant = {
   street: "123 Somewhere",
   city: "Here",
   province: "British Columbia",
-  postalCode: {
-    label: "V9V 9V9",
-    country: "Canada"
-  },
-  applicantPosition: {
-    label: "Applicant's position/Job Title",
-    id: "applicantPosition"
-  },
-  organizationFacility: {
-    label: "Organization Facility",
-    id: "organizationFacility",
-    note:
-      "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)"
-  }
+  postalCode: "V9V 9V9",
+  country: "Canada",
+  applicantPosition: "",
+  organizationFacility: ""
 };
 
 const page = {
