@@ -3,6 +3,7 @@
 exports[`Footer Component Matches the snapshot 1`] = `
 <footer
   className="footer"
+  style={Object {}}
 >
   <nav
     className="navbar navbar-expand-lg navbar-dark"
