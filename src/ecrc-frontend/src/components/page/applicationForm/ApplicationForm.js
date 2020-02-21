@@ -6,6 +6,7 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import SimpleForm from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
+import SideCards from "../../composite/sideCards/SideCards";
 
 export default function ApplicationForm({
   page: {
@@ -34,6 +35,7 @@ export default function ApplicationForm({
     previousTwo: false,
     previousThree: false
   });
+
   const currentName = {
     firstName: {
       label: "First Name",
@@ -238,7 +240,10 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
         </div>
-        <div className="sidecard">Sidecards</div>
+        <div className="sidecard">
+          <SideCards type={"personalinformation"} />
+          <SideCards type={"collectionnotice"} />
+        </div>
       </div>
       <Footer />
     </main>
