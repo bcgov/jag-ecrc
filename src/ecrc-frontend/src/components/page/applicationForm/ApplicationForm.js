@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./ApplicationForm.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
-import SimpleForm from "../../composite/simpleForm/SimpleForm";
+import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
 import SideCards from "../../composite/sideCards/SideCards";
 
@@ -15,20 +15,15 @@ export default function ApplicationForm({
       firstName,
       middleName,
       lastName,
-      birthPlace,
       birthDate,
       sex,
-      bcDLNumber,
-      phoneNumber,
-      emailAddress,
       street,
       city,
       province,
       postalCode,
-      country,
-      applicantPosition,
-      organizationFacility
-    }
+      country
+    },
+    org: { schedule }
   }
 }) {
   const [previousNames, setPreviousNames] = useState({
@@ -149,16 +144,19 @@ export default function ApplicationForm({
       {
         label: "Applicant's position/Job Title",
         id: "applicantPosition"
-      },
-      {
-        label: "Organization Facility",
-        id: "organizationFacility",
-        note:
-          "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)"
       }
     ],
     buttons: []
   };
+
+  if (schedule === "D") {
+    positionInformation.textInputs.push({
+      label: "Organization Facility",
+      id: "organizationFacility",
+      note:
+        "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)"
+    });
+  }
 
   const address = {
     title: "Address",
@@ -252,3 +250,26 @@ export default function ApplicationForm({
     </main>
   );
 }
+
+ApplicationForm.propTypes = {
+  page: PropTypes.shape({
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }),
+    applicant: PropTypes.shape({
+      firstName: PropTypes.string.isRequired,
+      middleName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+      birthDate: PropTypes.string.isRequired,
+      sex: PropTypes.string.isRequired,
+      street: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      province: PropTypes.string.isRequired,
+      postalCode: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired
+    }),
+    org: PropTypes.shape({
+      schedule: PropTypes.string.isRequired
+    })
+  })
+};

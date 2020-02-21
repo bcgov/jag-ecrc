@@ -73,12 +73,14 @@ TextInput.propTypes = {
     textInputStyle: PropTypes.string,
     value: PropTypes.string,
     isRequired: PropTypes.bool
-  }).isRequired,
+  }),
   onChange: PropTypes.func
 };
 
 TextInput.defaultProps = {
-  note: "",
+  textInput: {
+    note: ""
+  },
   onChange: () => {}
 };
 

@@ -30,9 +30,14 @@ const applicant = {
   organizationFacility: ""
 };
 
+const org = {
+  schedule: "D"
+};
+
 const page = {
   header,
-  applicant
+  applicant,
+  org
 };
 
 export const Default = () => <ApplicationForm page={page} />;
