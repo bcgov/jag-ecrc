@@ -41,9 +41,11 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber) {
 	    if (ecrcProps.getWhiteList().contains(orgTicketNumber.toLowerCase())) {
+			logger.info("Provided org ticket number white listed");
             String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
             return ecrcWebMethodsService.callWebMethodsService(_doAuthenticateUserUri, new DoAuthenticateUser());
         } else {
+			logger.info("Provided org ticket number not white listed");
 	        return new ResponseEntity<>(String.format(WEBSERVICE_ERROR_JSON_RESPONSE,"Org not on whitelist", WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.UNAUTHORIZED);
         }
 	}
