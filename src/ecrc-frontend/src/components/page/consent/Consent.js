@@ -35,7 +35,13 @@ export default function Consent({
         <div className="content">
           <h1>Consent for Criminal Record Check</h1>
           <Declaration onApplicantNameChange={onApplicantNameChange} />
-          <div className="buttons">
+          <div
+            style={{
+              paddingLeft: "10px",
+              paddingTop: "20px",
+              textAlign: "right"
+            }}
+          >
             <Button
               button={backButton}
               onClick={() => {

@@ -44,7 +44,7 @@ export default function Declaration({ onApplicantNameChange }) {
         </span>
       </section>
 
-      <section className="declareSection" style={{ width: "475px" }}>
+      <section className="declareSection" style={{ maxWidth: "475px" }}>
         <TextInput textInput={textInput} onChange={onApplicantNameChange} />
       </section>
     </div>
