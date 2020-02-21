@@ -1,8 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default function Footer() {
+export default function Footer({ isSmallPage }) {
+  // used for pages with less content to keep footer attached to bottom of screen
+  const customStyling = {};
+
+  if (isSmallPage) {
+    customStyling.position = "fixed";
+    customStyling.left = 0;
+    customStyling.bottom = 0;
+    customStyling.width = "100%";
+    customStyling.textAlign = "center";
+  }
+
   return (
-    <footer className="footer">
+    <footer className="footer" style={customStyling}>
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container">
           <ul className="navbar-nav">
@@ -62,3 +74,11 @@ export default function Footer() {
     </footer>
   );
 }
+
+Footer.propTypes = {
+  isSmallPage: PropTypes.bool
+};
+
+Footer.defaultProps = {
+  isSmallPage: false
+};
