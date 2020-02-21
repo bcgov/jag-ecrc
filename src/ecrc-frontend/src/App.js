@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 import OrgValidation from "./components/page/orgValidation/OrgValidation";
 import OrgVerification from "./components/page/orgVerification/OrgVerification";
+import Transition from "./components/page/transition/Transition";
 
 export default function App() {
   const [org, setOrg] = useState({});
@@ -26,6 +27,9 @@ export default function App() {
           </Route>
           <Route path="/ecrc/orgverification">
             <OrgVerification page={page} />
+          </Route>
+          <Route path="/ecrc/transition">
+            <Transition header={header} />
           </Route>
         </Switch>
       </BrowserRouter>

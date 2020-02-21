@@ -1,8 +1,19 @@
 import React from "react";
 
-export default function Footer() {
+export default function Footer({ isSmallPage }) {
+  // used for pages with less content to keep footer attached to bottom of screen
+  let customStyling = {};
+
+  if (isSmallPage) {
+    customStyling.position = "fixed";
+    customStyling.left = 0;
+    customStyling.bottom = 0;
+    customStyling.width = "100%";
+    customStyling.textAlign = "center";
+  }
+
   return (
-    <footer className="footer">
+    <footer className="footer" style={customStyling}>
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container">
           <ul className="navbar-nav">
