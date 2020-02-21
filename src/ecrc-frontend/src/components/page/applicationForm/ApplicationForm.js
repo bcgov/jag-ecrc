@@ -230,6 +230,7 @@ export default function ApplicationForm({
               If you have more than one previous name, please&nbsp;
               <button
                 className="notAButton"
+                type="button"
                 onClick={event => additionalNames(event)}
               >
                 click here to add them
@@ -271,5 +272,5 @@ ApplicationForm.propTypes = {
     org: PropTypes.shape({
       schedule: PropTypes.string.isRequired
     })
-  })
+  }).isRequired
 };

@@ -1,0 +1,873 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationForm Component Matches the snapshot 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="https://www2.gov.bc.ca"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div
+          className="navbar-brand"
+        >
+          Criminal Record Check
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        >
+          <div
+            className="navbar-nav"
+          >
+            <a
+              className="nav-item nav-link"
+              href="/"
+            >
+              Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Criminal Record Check - Application
+      </h1>
+      <form
+        className="simpleForm"
+      >
+        <div
+          className="simpleForm_title"
+        >
+          PERSONAL INFORMATION
+        </div>
+        <ul>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="firstName"
+                >
+                  First Name
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="Robert"
+                id="firstName"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="middleName"
+                >
+                  Middle Name
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="Norman"
+                id="middleName"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="lastName"
+                >
+                  Last Name
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="Ross"
+                id="lastName"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+        </ul>
+      </form>
+      <div
+        className="heading"
+      >
+        <span
+          className="previousHeader"
+        >
+          PREVIOUS NAME 
+        </span>
+        <span
+          className="note"
+        >
+          Including alias, previous name and/or birthname
+        </span>
+      </div>
+      <form
+        className="simpleForm"
+      >
+        <ul>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="previousFirstNameOne"
+                >
+                  First Name
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                id="previousFirstNameOne"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="previousMiddleNameOne"
+                >
+                  Middle Name
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                id="previousMiddleNameOne"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="previousLastNameOne"
+                >
+                  Last Name
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                id="previousLastNameOne"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </li>
+        </ul>
+      </form>
+      <span
+        className="heading note previousFooter"
+      >
+        If you have more than one previous name, please 
+        <button
+          className="notAButton"
+          onClick={[Function]}
+          type="button"
+        >
+          click here to add them
+        </button>
+        .
+      </span>
+      <form
+        className="simpleForm"
+      >
+        <ul>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="birthPlace"
+                >
+                  City and Country of Birth
+                </label>
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                id="birthPlace"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="birthDate"
+                >
+                  Date of Birth
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="1942-10-29"
+                id="birthDate"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="sex"
+                >
+                  Sex
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="Male"
+                id="sex"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="bcDLNumber"
+                >
+                  BC Driver's Licence Number
+                </label>
+                
+                 
+                <span
+                  className="note"
+                >
+                  (Current or Expired)
+                </span>
+              </div>
+              <input
+                className="textinput_editable_white"
+                id="bcDLNumber"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="phoneNumber"
+                >
+                  Primary Phone Number
+                </label>
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
+                 
+                <span
+                  className="note"
+                >
+                  (Include area code)
+                </span>
+              </div>
+              <input
+                className="textinput_editable_white"
+                id="phoneNumber"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="emailAddress"
+                >
+                  Personal Email Address
+                </label>
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
+                 
+                <span
+                  className="note"
+                >
+                  We may use this to communicate with you about your application.
+                </span>
+              </div>
+              <input
+                className="textinput_editable_white"
+                id="emailAddress"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </li>
+        </ul>
+      </form>
+      <form
+        className="simpleForm"
+      >
+        <div
+          className="simpleForm_title"
+        >
+          Position Information
+        </div>
+        <ul>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="applicantPosition"
+                >
+                  Applicant's position/Job Title
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                id="applicantPosition"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="organizationFacility"
+                >
+                  Organization Facility
+                </label>
+                
+                 
+                <span
+                  className="note"
+                >
+                  (Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)
+                </span>
+              </div>
+              <input
+                className="textinput_editable_white"
+                id="organizationFacility"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </li>
+        </ul>
+      </form>
+      <form
+        className="simpleForm"
+      >
+        <div
+          className="simpleForm_title"
+        >
+          Address
+        </div>
+        <ul>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="street"
+                >
+                  Street
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="123 Somewhere"
+                id="street"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="city"
+                >
+                  City
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="Here"
+                id="city"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="province"
+                >
+                  Province
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="British Columbia"
+                id="province"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="postalCode"
+                >
+                  Postal Code
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="V9V 9V9"
+                id="postalCode"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="country"
+                >
+                  Country
+                </label>
+                
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="Canada"
+                id="country"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+            </div>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div
+      className="sidecard"
+    >
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  Update your personal information
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <p>
+                    If you find an error in your personal information, please contact 
+                    <a
+                      className="link"
+                      href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                    >
+                      Service BC
+                    </a>
+                     ,
+                    <a
+                      className="link"
+                      href="https://www.icbc.com/Pages/default.aspx"
+                    >
+                      ICBC
+                    </a>
+                     or 
+                    <a
+                      className="link"
+                      href="https://www.addresschange.gov.bc.ca/"
+                    >
+                      AddressChangeBC
+                    </a>
+                     to correct it.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="notice-section"
+                style={
+                  Object {
+                    "backgroundColor": "#F2F2F2",
+                    "border": "none",
+                    "color": "#000",
+                  }
+                }
+              >
+                <h2
+                  style={
+                    Object {
+                      "color": "#000",
+                    }
+                  }
+                >
+                  Collection Notice
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <p>
+                    The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                    <a
+                      href="mailto:criminalrecords@gov.bc.ca"
+                    >
+                      criminalrecords@gov.bc.ca
+                    </a>
+                     or by telephone at 1- 855-587-0185 (option 2).
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
