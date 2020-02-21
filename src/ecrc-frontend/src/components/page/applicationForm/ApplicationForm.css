@@ -18,3 +18,17 @@
   font-size: 14px;
   font-weight: 400;
 }
+
+.notAButton {
+  background: none;
+  border: none;
+  padding: 0px;
+  color: #1a5a96;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.notAButton:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}

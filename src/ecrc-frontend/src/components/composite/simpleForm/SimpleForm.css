@@ -9,10 +9,10 @@
 .simpleForm_title {
   width: 100%;
   background-color: rgba(56, 89, 138, 1);
-  height: 36px;
   overflow: hidden;
   padding-left: 20px;
   padding-top: 5px;
+  padding-bottom: 5px;
   color: white;
   font-size: 18px;
   font-weight: 600;

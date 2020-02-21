@@ -230,9 +230,12 @@ export default function ApplicationForm({
           {!previousNames.previousThree && (
             <span className="heading note previousFooter">
               If you have more than one previous name, please&nbsp;
-              <a href="#" onClick={event => additionalNames(event)}>
+              <button
+                className="notAButton"
+                onClick={event => additionalNames(event)}
+              >
                 click here to add them
-              </a>
+              </button>
               .
             </span>
           )}
