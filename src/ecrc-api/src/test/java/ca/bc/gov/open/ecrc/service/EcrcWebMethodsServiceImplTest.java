@@ -22,6 +22,7 @@ public class EcrcWebMethodsServiceImplTest {
     private final String jsonResp = "{\"accessCodeResponse\":{\"ticketFoundYn\":\"Y\",\"contactSurnameNm\":\"ANOTHERRIDICULOUSLYLONGSURNAMETOBEENTERE\",\"cityNm\":\"VANCOUVER\",\"defaultScheduleTypeCd\":\"WBSD\",\"alreadyUsedYn\":\"N\",\"provinceNm\":\"BRITISH COLUMBIA\",\"orgApplicantRelationship\":\"EMPLOYEE\",\"countryNm\":\"CANADA\",\"validDateRangeYn\":\"Y\",\"defaultCrcScopeLevelCd\":\"WWCA\",\"orgNm\":\"ORGNAME\\n\",\"contactFirstNm\":\"ASDFASDFASDFASFSADF\",\"contactPhoneNo\":\"604\",\"addressLine1\":\"55 SEVENTH AVE\",\"addressLine2\":\"\",\"contactFaxNo\":\"604\",\"orgPartyId\":47430,\"postalCodeTxt\":\"V8V 7V6\"},\"scheduleTypes\":{\"scheduleType\":[{\"crcScheduleTypeDsc\":\"SCHEDULE D - WEB EIV\",\"crcScheduleTypeCd\":\"WBSD\"}]},\"message\":\"Success\",\"scopeLevels\":{\"scopeLevel\":[{\"crcScopeLevelCd\":\"WWCH\",\"crcScopeLevelDsc\":\"CHILDREN\"},{\"crcScopeLevelCd\":\"WWCA\",\"crcScopeLevelDsc\":\"CHILDREN AND VULNERABLE ADULTS\"},{\"crcScopeLevelCd\":\"WWAD\",\"crcScopeLevelDsc\":\"VULNERABLE ADULTS\"}]},\"responseCode\":0}";
     private final String jsonNotFoundResp = "{\"message\":\"Requested data not found\", \"responseCode\":1}";
     private final String jsonServiceUnavailableResp = "{\"message\":\"Service unavailable returned\", \"responseCode\":-1}";
+    private final String jsonUnknownResp = "{\"message\":\"Unknown response code return\", \"responseCode\":6}";
     public static MockWebServer mockBackEnd;
     @InjectMocks
     @Spy
@@ -100,13 +101,28 @@ public class EcrcWebMethodsServiceImplTest {
         Assertions.assertEquals(jsonServiceUnavailableResp, res.getBody());
     }
 
+    @DisplayName("Unknown Response - webMethods call")
+    @Test
+    public void testWebMethodsCallUnknown() throws JsonProcessingException {
+        Mockito.when(objectMapper.writeValueAsString(any())).thenReturn(jsonUnknownResp);
+        MockResponse mockResponse = new MockResponse();
+        mockResponse.setBody(successResponseObject());
+        mockResponse.addHeader("content-type: application/xml;");
+        mockResponse.setResponseCode(200);
+        mockBackEnd.enqueue(mockResponse);
+        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser());
+        Assertions.assertEquals(HttpStatus.BAD_REQUEST , res.getStatusCode());
+        Assertions.assertEquals(jsonUnknownResp, res.getBody());
+    }
+
     @DisplayName("Failure - webMethods call bad json")
     @Test
     public void testWebMethodsCallJsonFailure() throws JsonProcessingException {
         Mockito.when(objectMapper.writeValueAsString(any())).thenThrow(new JsonProcessingException("BROKEN"){});
         MockResponse mockResponse = new MockResponse();
-        mockResponse.setBody("SOMEXML");
-        mockResponse.setResponseCode(400);
+        mockResponse.setBody(successResponseObject());
+        mockResponse.addHeader("content-type: application/xml;");
+        mockResponse.setResponseCode(200);
         mockBackEnd.enqueue(mockResponse);
         ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser());
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, res.getStatusCode());
