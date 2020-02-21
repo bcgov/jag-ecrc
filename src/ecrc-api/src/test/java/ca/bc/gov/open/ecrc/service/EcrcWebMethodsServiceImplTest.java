@@ -18,9 +18,10 @@ import java.lang.reflect.Method;
 
 import static org.mockito.ArgumentMatchers.any;
 
-public class EcrcWebMethodsServiceImplDoAuthTest {
-    private final String jsonResp = "{\"accessCodeResponse\":{\"ticketFoundYn\":\"Y\",\"contactSurnameNm\":\"ANOTHERRIDICULOUSLYLONGSURNAMETOBEENTERE\",\"cityNm\":\"VANCOUVER\",\"defaultScheduleTypeCd\":\"WBSD\",\"alreadyUsedYn\":\"N\",\"provinceNm\":\"BRITISH COLUMBIA\",\"orgApplicantRelationship\":\"EMPLOYEE\",\"countryNm\":\"CANADA\",\"validDateRangeYn\":\"Y\",\"defaultCrcScopeLevelCd\":\"WWCA\",\"orgNm\":\"VANCOUVER COASTAL HEALTH - VANCOUVER ACUTE VOLUNTEERS\\n\",\"contactFirstNm\":\"ASDFASDFASDFASFSADF\",\"contactPhoneNo\":\"604\",\"addressLine1\":\"55 SEVENTH AVE\",\"addressLine2\":\"\",\"contactFaxNo\":\"604\",\"orgPartyId\":47430,\"postalCodeTxt\":\"V8V 7V6\"},\"scheduleTypes\":{\"scheduleType\":[{\"crcScheduleTypeDsc\":\"SCHEDULE D - WEB EIV\",\"crcScheduleTypeCd\":\"WBSD\"}]},\"message\":\"Success\",\"scopeLevels\":{\"scopeLevel\":[{\"crcScopeLevelCd\":\"WWCH\",\"crcScopeLevelDsc\":\"CHILDREN\"},{\"crcScopeLevelCd\":\"WWCA\",\"crcScopeLevelDsc\":\"CHILDREN AND VULNERABLE ADULTS\"},{\"crcScopeLevelCd\":\"WWAD\",\"crcScopeLevelDsc\":\"VULNERABLE ADULTS\"}]},\"responseCode\":0}";
+public class EcrcWebMethodsServiceImplTest {
+    private final String jsonResp = "{\"accessCodeResponse\":{\"ticketFoundYn\":\"Y\",\"contactSurnameNm\":\"ANOTHERRIDICULOUSLYLONGSURNAMETOBEENTERE\",\"cityNm\":\"VANCOUVER\",\"defaultScheduleTypeCd\":\"WBSD\",\"alreadyUsedYn\":\"N\",\"provinceNm\":\"BRITISH COLUMBIA\",\"orgApplicantRelationship\":\"EMPLOYEE\",\"countryNm\":\"CANADA\",\"validDateRangeYn\":\"Y\",\"defaultCrcScopeLevelCd\":\"WWCA\",\"orgNm\":\"ORGNAME\\n\",\"contactFirstNm\":\"ASDFASDFASDFASFSADF\",\"contactPhoneNo\":\"604\",\"addressLine1\":\"55 SEVENTH AVE\",\"addressLine2\":\"\",\"contactFaxNo\":\"604\",\"orgPartyId\":47430,\"postalCodeTxt\":\"V8V 7V6\"},\"scheduleTypes\":{\"scheduleType\":[{\"crcScheduleTypeDsc\":\"SCHEDULE D - WEB EIV\",\"crcScheduleTypeCd\":\"WBSD\"}]},\"message\":\"Success\",\"scopeLevels\":{\"scopeLevel\":[{\"crcScopeLevelCd\":\"WWCH\",\"crcScopeLevelDsc\":\"CHILDREN\"},{\"crcScopeLevelCd\":\"WWCA\",\"crcScopeLevelDsc\":\"CHILDREN AND VULNERABLE ADULTS\"},{\"crcScopeLevelCd\":\"WWAD\",\"crcScopeLevelDsc\":\"VULNERABLE ADULTS\"}]},\"responseCode\":0}";
     private final String jsonNotFoundResp = "{\"message\":\"Requested data not found\", \"responseCode\":1}";
+    private final String jsonServiceUnavailableResp = "{\"message\":\"Service unavailable returned\", \"responseCode\":-1}";
     public static MockWebServer mockBackEnd;
     @InjectMocks
     @Spy
@@ -57,9 +58,9 @@ public class EcrcWebMethodsServiceImplDoAuthTest {
         postConstruct.invoke(ecrcWebMethodsService);
     }
 
-    @DisplayName("Success - doAuthenticate call")
+    @DisplayName("Success - webMethods call")
     @Test
-    public void testDoAuthenticateCallSuccess() throws JsonProcessingException {
+    public void testWebMethodsCallSuccess() throws JsonProcessingException {
         Mockito.when(objectMapper.writeValueAsString(any())).thenReturn(jsonResp);
         MockResponse mockResponse = new MockResponse();
         mockResponse.setBody(successResponseObject());
@@ -71,9 +72,9 @@ public class EcrcWebMethodsServiceImplDoAuthTest {
         Assertions.assertEquals(jsonResp, res.getBody());
     }
 
-    @DisplayName("Not Found - doAuthenticate call")
+    @DisplayName("Not Found - webMethods call")
     @Test
-    public void testDoAuthenticateCallNotFound() throws JsonProcessingException {
+    public void testWebMethodsCallNotFound() throws JsonProcessingException {
         Mockito.when(objectMapper.writeValueAsString(any())).thenReturn(jsonNotFoundResp);
         MockResponse mockResponse = new MockResponse();
         mockResponse.setBody(successResponseObject());
@@ -85,9 +86,23 @@ public class EcrcWebMethodsServiceImplDoAuthTest {
         Assertions.assertEquals(jsonNotFoundResp, res.getBody());
     }
 
-    @DisplayName("Failure - doAuthenticate call bad json")
+    @DisplayName("Service Unavailable - webMethods call")
     @Test
-    public void testDoAuthenticateCallJsonFailure() throws JsonProcessingException {
+    public void testWebMethodsCallServiceUnavailable() throws JsonProcessingException {
+        Mockito.when(objectMapper.writeValueAsString(any())).thenReturn(jsonServiceUnavailableResp);
+        MockResponse mockResponse = new MockResponse();
+        mockResponse.setBody(successResponseObject());
+        mockResponse.addHeader("content-type: application/xml;");
+        mockResponse.setResponseCode(200);
+        mockBackEnd.enqueue(mockResponse);
+        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser());
+        Assertions.assertEquals(HttpStatus.SERVICE_UNAVAILABLE, res.getStatusCode());
+        Assertions.assertEquals(jsonServiceUnavailableResp, res.getBody());
+    }
+
+    @DisplayName("Failure - webMethods call bad json")
+    @Test
+    public void testWebMethodsCallJsonFailure() throws JsonProcessingException {
         Mockito.when(objectMapper.writeValueAsString(any())).thenThrow(new JsonProcessingException("BROKEN"){});
         MockResponse mockResponse = new MockResponse();
         mockResponse.setBody("SOMEXML");
@@ -97,9 +112,9 @@ public class EcrcWebMethodsServiceImplDoAuthTest {
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, res.getStatusCode());
     }
 
-    @DisplayName("Failure - doAuthenticate call general exception")
+    @DisplayName("Failure - webMethods call general exception")
     @Test
-    public void testDoAuthenticateCallFailure() {
+    public void testWebMethodsCallFailure() {
         MockResponse mockResponse = new MockResponse();
         mockResponse.setBody("SOMEXML");
         mockResponse.setResponseCode(400);
