@@ -14,7 +14,8 @@ export default function Transition({ header }) {
             You are being redirected to the legacy online criminal record check
             (eCRC) application. You will be required to re-enter your access
             code to continue. If you are not redirected automatically, please
-            click <a href="jsgdsg">here</a>
+            click
+            <a href="jsgdsg">here</a>
             {"."}
           </p>
           <br />
@@ -27,7 +28,7 @@ export default function Transition({ header }) {
           </p>
         </div>
       </div>
-      <Footer isSmallPage={true} />
+      <Footer isSmallPage />
     </main>
   );
 }
