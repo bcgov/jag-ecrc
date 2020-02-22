@@ -9,7 +9,7 @@ import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
 
-export default function OrgVerification({ page: { header, org, setOrg } }) {
+export default function OrgVerification({ page: { header, org } }) {
   const history = useHistory();
 
   useEffect(() => {

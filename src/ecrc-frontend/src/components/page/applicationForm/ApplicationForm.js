@@ -7,7 +7,7 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
-import Button from "../../base/button/Button";
+import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 
 export default function ApplicationForm({

@@ -2,6 +2,7 @@ import React from "react";
 import { create } from "react-test-renderer";
 
 import OrgValidation from "./OrgValidation";
+import { MemoryRouter } from "react-router-dom";
 
 describe("OrgValidation Component", () => {
   test("Matches the snapshot", () => {
@@ -16,7 +17,11 @@ describe("OrgValidation Component", () => {
       header
     };
 
-    const orgValidationPage = create(<OrgValidation page={page} />);
+    const orgValidationPage = create(
+      <MemoryRouter>
+        <OrgValidation page={page} />
+      </MemoryRouter>
+    );
     expect(orgValidationPage.toJSON()).toMatchSnapshot();
   });
 });

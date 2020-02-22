@@ -2,6 +2,7 @@ import React from "react";
 import { create } from "react-test-renderer";
 
 import ApplicationForm from "./ApplicationForm";
+import { MemoryRouter } from "react-router-dom";
 
 describe("ApplicationForm Component", () => {
   test("Matches the snapshot", () => {
@@ -38,7 +39,11 @@ describe("ApplicationForm Component", () => {
       org
     };
 
-    const applicationPage = create(<ApplicationForm page={page} />);
+    const applicationPage = create(
+      <MemoryRouter>
+        <ApplicationForm page={page} />
+      </MemoryRouter>
+    );
     expect(applicationPage.toJSON()).toMatchSnapshot();
   });
 });

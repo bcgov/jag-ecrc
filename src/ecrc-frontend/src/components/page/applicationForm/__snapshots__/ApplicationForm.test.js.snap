@@ -663,6 +663,24 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
         </ul>
       </form>
+      <div
+        className="buttons"
+      >
+        <button
+          className="btn btn-primary btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Cancel
+        </button>
+        <button
+          className="btn btn-primary btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Continue
+        </button>
+      </div>
     </div>
     <div
       className="sidecard"
