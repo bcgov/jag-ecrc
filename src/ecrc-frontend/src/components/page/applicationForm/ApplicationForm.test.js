@@ -1,8 +1,8 @@
 import React from "react";
 import { create } from "react-test-renderer";
+import { MemoryRouter } from "react-router-dom";
 
 import ApplicationForm from "./ApplicationForm";
-import { MemoryRouter } from "react-router-dom";
 
 describe("ApplicationForm Component", () => {
   test("Matches the snapshot", () => {

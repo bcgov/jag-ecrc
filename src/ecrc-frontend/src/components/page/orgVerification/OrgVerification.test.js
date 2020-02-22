@@ -1,8 +1,8 @@
 import React from "react";
 import { create } from "react-test-renderer";
+import { MemoryRouter } from "react-router-dom";
 
 import OrgVerification from "./OrgVerification";
-import { MemoryRouter } from "react-router-dom";
 
 describe("OrgVerification Component", () => {
   test("Matches the snapshot", () => {
