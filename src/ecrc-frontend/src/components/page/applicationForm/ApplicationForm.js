@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
 import "./ApplicationForm.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
+import Button from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 
 export default function ApplicationForm({
@@ -30,6 +32,8 @@ export default function ApplicationForm({
     previousTwo: false,
     previousThree: false
   });
+
+  const history = useHistory();
 
   const currentName = {
     firstName: {
@@ -195,6 +199,26 @@ export default function ApplicationForm({
     buttons: []
   };
 
+  const continueButton = {
+    label: "Continue",
+    buttonStyle: "btn btn-primary",
+    buttonSize: "btn btn-sm",
+    type: "submit"
+  };
+
+  const cancelButton = {
+    label: "Cancel",
+    buttonStyle: "btn btn-primary",
+    buttonSize: "btn btn-sm",
+    type: "submit"
+  };
+
+  const applicationVerification = () => {};
+
+  const back = () => {
+    history.push("/ecrc");
+  };
+
   const additionalNames = event => {
     event.preventDefault();
 
@@ -241,6 +265,10 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={applicantInformation} />
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
+          <div className="buttons">
+            <Button button={cancelButton} onClick={back} />
+            <Button button={continueButton} onClick={applicationVerification} />
+          </div>
         </div>
         <div className="sidecard">
           <SideCards type={"personalinformation"} />

@@ -1,4 +1,5 @@
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
 
 import ApplicationForm from "./ApplicationForm";
 
@@ -40,4 +41,8 @@ const page = {
   org
 };
 
-export const Default = () => <ApplicationForm page={page} />;
+export const Default = () => (
+  <MemoryRouter>
+    <ApplicationForm page={page} />
+  </MemoryRouter>
+);
