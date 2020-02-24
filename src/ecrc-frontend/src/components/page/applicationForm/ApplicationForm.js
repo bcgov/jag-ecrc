@@ -25,6 +25,7 @@ export default function ApplicationForm({
       postalCode,
       country
     },
+    setApplicant,
     org: { schedule }
   }
 }) {
@@ -32,6 +33,10 @@ export default function ApplicationForm({
     previousTwo: false,
     previousThree: false
   });
+
+  const [birthPlace, setBirthPlace] = useState("");
+  const [driversLicNo, setDriversLicNo] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const history = useHistory();
 
@@ -107,7 +112,8 @@ export default function ApplicationForm({
       {
         label: "City and Country of Birth",
         id: "birthPlace",
-        isRequired: true
+        isRequired: true,
+        onChange: setBirthPlace
       },
       {
         label: "Date of Birth",
@@ -124,13 +130,15 @@ export default function ApplicationForm({
       {
         label: "BC Driver's Licence Number",
         id: "bcDLNumber",
-        note: "(Current or Expired)"
+        note: "(Current or Expired)",
+        onChange: setDriversLicNo
       },
       {
         label: "Primary Phone Number",
         id: "phoneNumber",
         note: "(Include area code)",
-        isRequired: true
+        isRequired: true,
+        onChange: setPhoneNumber
       },
       {
         label: "Personal Email Address",
@@ -213,7 +221,23 @@ export default function ApplicationForm({
     type: "submit"
   };
 
-  const applicationVerification = () => {};
+  const applicationVerification = () => {
+    setApplicant({
+      firstName,
+      middleName,
+      lastName,
+      birthDate,
+      sex,
+      street,
+      city,
+      province,
+      postalCode,
+      country,
+      birthPlace,
+      driversLicNo,
+      phoneNumber
+    });
+  };
 
   const back = () => {
     history.push("/");

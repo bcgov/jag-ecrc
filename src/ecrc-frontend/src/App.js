@@ -7,16 +7,15 @@ import Transition from "./components/page/transition/Transition";
 import TOU from "./components/page/tou/TOU";
 
 export default function App() {
-  const [org, setOrg] = useState({});
+  const [org, setOrg] = useState(
+    JSON.parse(sessionStorage.getItem("org")) || {}
+  );
+  const [applicant, setApplicant] = useState(
+    JSON.parse(sessionStorage.getItem("applicant")) || {}
+  );
 
   const header = {
     name: "Criminal Record Check"
-  };
-
-  const page = {
-    org,
-    setOrg,
-    header
   };
 
   return (
@@ -25,19 +24,19 @@ export default function App() {
         <Switch>
           <Redirect exact from="/" to="/ecrc" />
           <Route exact path="/ecrc">
-            <OrgValidation page={page} />
+            <OrgValidation page={{ header, setOrg }} />
           </Route>
           <Route path="/ecrc/orgverification">
-            <OrgVerification page={page} />
+            <OrgVerification page={{ header, org }} />
           </Route>
           <Route path="/ecrc/applicationform">
-            <ApplicationForm page={page} />
+            <ApplicationForm page={{ header, org, applicant, setApplicant }} />
           </Route>
           <Route path="/ecrc/transition">
             <Transition header={header} />
           </Route>
           <Route path="/ecrc/termsofuse">
-            <TOU page={page} />
+            <TOU page={{ header }} />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -8,8 +8,6 @@ import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
-import { useHistory } from "react-router-dom";
-import { getOrg, clearOrg } from "../../../helpers/session";
 
 export default function OrgVerification({ page: { header, org } }) {
   const history = useHistory();
@@ -18,16 +16,11 @@ export default function OrgVerification({ page: { header, org } }) {
     window.scrollTo(0, 0);
   }, []);
 
-  const history = useHistory();
-
-  const org = getOrg();
-
-  const orgVerification = () => {
+  const orgVerified = () => {
     history.push("/ecrc/termsofuse");
   };
 
   const back = () => {
-    clearOrg();
     history.push("/");
   };
 
@@ -136,7 +129,7 @@ export default function OrgVerification({ page: { header, org } }) {
           </div>
           <div className="buttons">
             <Button button={cancelButton} onClick={back} />
-            <Button button={continueButton} onClick={orgVerification} />
+            <Button button={continueButton} onClick={orgVerified} />
           </div>
         </div>
         <div className="sidecard">
