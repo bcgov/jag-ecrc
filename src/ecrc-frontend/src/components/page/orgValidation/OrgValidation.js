@@ -15,9 +15,14 @@ export default function OrgValidation({ page: { setOrg, header } }) {
     return useHistory();
   };
 
+  const jwt = require("jsonwebtoken");
+  const token = jwt.sign({ foo: "bar" }, "secret", { expiresIn: "2h" });
+
   const orgValidation = () => {
     axios
-      .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
+      .get(
+        `http://localhost:8082/ecrc/doAuthenticateUser?orgTicketId=${orgInput}&token=${token}`
+      )
       .then(res => {
         GetHistory().push("/ecrc/orgverification");
         setOrg(res.data.accessCodeResponse);
