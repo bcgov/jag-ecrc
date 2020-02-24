@@ -15,14 +15,16 @@ export default function Transition({ header }) {
             You are being redirected to the legacy online criminal record check
             (eCRC) application. You will be required to re-enter your access
             code to continue. If you are not redirected automatically, please
-            click <a href="jsgdsg">here</a>
+            click <a href="https://justice.gov.bc.ca/eCRC/home.htm">here</a>
             {"."}
           </p>
           <br />
           <p>
             We are transitioning our client organizations currently using
             Equifax for identity verification to a new process through a{" "}
-            <a href="hsgdhgs">BC Services Card account</a>
+            <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
+              BC Services Card account
+            </a>
             {". Your organization hasn't"} been transitioned to the new system
             yet.
           </p>
