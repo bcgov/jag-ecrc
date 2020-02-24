@@ -101,4 +101,9 @@ public class EcrcServicesImpl implements EcrcServices {
 		return ecrcWebMethodsService.callWebMethodsService(_getNextInvoiceIdUri, new GetNextInvoiceId());
 	}
 
+	public ResponseEntity<String> initiatePayment(RequestPayment paymentInfo) throws EcrcServiceException {
+		// TODO Implement Service logic
+		return null;
+	}
+
 }
