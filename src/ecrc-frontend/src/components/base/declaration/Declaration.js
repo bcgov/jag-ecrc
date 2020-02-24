@@ -59,7 +59,7 @@ export default function Declaration({
 }
 
 Declaration.propTypes = {
-  textInput: PropTypes.shape,
+  textInput: PropTypes.object,
   checkFirstBox: PropTypes.func,
   checkSecondBox: PropTypes.func,
   checkThirdBox: PropTypes.func,
@@ -67,7 +67,7 @@ Declaration.propTypes = {
 };
 
 Declaration.defaultProps = {
-  textInput: {},
+  textInput: { id: "", label: "" },
   checkFirstBox: () => {},
   checkSecondBox: () => {},
   checkThirdBox: () => {}

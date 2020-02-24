@@ -48,18 +48,14 @@ export default function Consent({ page: { header }, onContinueClick }) {
   };
 
   const contactSideCard = {
-    heading: (
-      <div style={{ fontSize: "22px" }}>
-        Contact the Criminal Records Review Program
-      </div>
-    ),
+    heading: "Contact the Criminal Records Review Program",
     content: [],
     type: "contact",
     isWide: true
   };
 
   const noticeSideCard = {
-    heading: <div style={{ fontSize: "22px" }}>Collection Notice:</div>,
+    heading: "Collection Notice",
     content: [
       <div style={{ fontSize: "12px" }}>
         The Security Programs Division(SPD) will collect your personal
@@ -111,8 +107,8 @@ export default function Consent({ page: { header }, onContinueClick }) {
         </div>
 
         <div className="sidecard">
-          <SideCard sideCard={contactSideCard} />
-          <SideCard sideCard={noticeSideCard} />
+          <SideCard key="contact" sideCard={contactSideCard} />
+          <SideCard key="collectionnotice" sideCard={noticeSideCard} />
         </div>
       </div>
       <Footer />
