@@ -32,6 +32,10 @@ export const ContactInformation = () => (
   <SideCards type={"contactinformation"} />
 );
 export const CriminalRecord = () => <SideCards type={"criminalrecord"} />;
+export const PersonalInformation = () => (
+  <SideCards type={"personalinformation"} />
+);
+export const CollectionNotice = () => <SideCards type={"collectionnotice"} />;
 export const UsefulLinks = () => (
   <SideCards type={"usefullinks"} sideCardLinks={links} />
 );

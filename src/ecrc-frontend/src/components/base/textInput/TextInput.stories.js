@@ -47,4 +47,12 @@ storiesOf("TextInput", module)
       }}
       {...actionData}
     />
+  ))
+  .add("note", () => (
+    <TextInput
+      textInput={{
+        ...textInput,
+        note: "(This is a note)"
+      }}
+    />
   ));

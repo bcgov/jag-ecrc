@@ -1,215 +1,194 @@
 {
-	"info": {
-		"_postman_id": "bdc8f329-c6e1-4ad8-8b95-54c94d359c2e",
-		"name": "eCRC DEV OS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "doAuth",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/doAuthenticateUser?orgTicketId=crce",
-					"protocol": "http",
-					"host": [
-						"ecrc-api-pipeline-wednesday-zbam91-dev",
-						"pathfinder",
-						"bcgov"
-					],
-					"path": [
-						"ecrc",
-						"doAuthenticateUser"
-					],
-					"query": [
-						{
-							"key": "orgTicketId",
-							"value": "crce"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getSession",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/getNextSessionId?orgTicketId=crce",
-					"protocol": "http",
-					"host": [
-						"ecrc-api-pipeline-wednesday-zbam91-dev",
-						"pathfinder",
-						"bcgov"
-					],
-					"path": [
-						"ecrc",
-						"getNextSessionId"
-					],
-					"query": [
-						{
-							"key": "orgTicketId",
-							"value": "crce"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getProvs",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/getProvinceList",
-					"protocol": "http",
-					"host": [
-						"ecrc-api-pipeline-wednesday-zbam91-dev",
-						"pathfinder",
-						"bcgov"
-					],
-					"path": [
-						"ecrc",
-						"getProvinceList"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getLinks",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/links",
-					"protocol": "http",
-					"host": [
-						"ecrc-api-pipeline-wednesday-zbam91-dev",
-						"pathfinder",
-						"bcgov"
-					],
-					"path": [
-						"ecrc",
-						"links"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "postCreateCRC",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"orgTicketNumber\":\"crce\"\r\n    , \"schedule_Type_Cd\":\"EE\"\r\n    , \"scope_Level_Cd\":\"EE\"\r\n    , \"appl_Party_Id\":\"123\"\r\n    , \"org_Appl_To_Pay\":\"org_Appl_To_Pay\"\r\n    , \"applicant_Posn\":\"applicant_Posn\"\r\n    , \"child_Care_Fac_Nm\":\"child_Care_Fac_Nm\"\r\n    , \"governing_Body_Nm\":\"governing_Body_Nm\"\r\n    , \"session_Id\":\"123\"\r\n    , \"invoice_Id\":\"123\"\r\n    , \"auth_Release_EIV_Vendor_YN\":\"auth_Release_EIV_Vendor_YN\"\r\n    , \"auth_Conduct_CRC_Check_YN\":\"auth_Conduct_CRC_Check_YN\"\r\n    , \"auth_Release_To_Org_YN\":\"auth_Release_To_Org_YN\"\r\n    , \"appl_Identity_Verified_EIV_YN\":\"appl_Identity_Verified_EIV_YN\"\r\n    , \"eivPassDetailsResults\":\"eivPassDetailsResults\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/createNewCRCService",
-					"protocol": "http",
-					"host": [
-						"ecrc-api-pipeline-wednesday-zbam91-dev",
-						"pathfinder",
-						"bcgov"
-					],
-					"path": [
-						"ecrc",
-						"createNewCRCService"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getFeeAmount",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/getServiceFeeAmount?orgTicketId=crce&scheduleTypeCd=WBSD&scopeLevelCd=WWCH",
-					"protocol": "http",
-					"host": [
-						"ecrc-api-pipeline-wednesday-zbam91-dev",
-						"pathfinder",
-						"bcgov"
-					],
-					"path": [
-						"ecrc",
-						"getServiceFeeAmount"
-					],
-					"query": [
-						{
-							"key": "orgTicketId",
-							"value": "crce"
-						},
-						{
-							"key": "scheduleTypeCd",
-							"value": "WBSD"
-						},
-						{
-							"key": "scopeLevelCd",
-							"value": "WWCH"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "postUpdateFinancial",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"OrgTicketNumber\":\"crce\",\r\n    \"Appl_Party_Id\":\"123\",\r\n    \"Service_Id\":\"123\",\r\n    \"CC_Authorization\":\"cC_Authorization\",\r\n    \"Payment_Date\":\"1/1/2020\",\r\n    \"Payor_Type_Cd\":\"CDE\",\r\n    \"Payment_Status_Cd\":\"CDE\",\r\n    \"Session_Id\":\"123\",\r\n    \"Invoice_Id\":\"123\",\r\n    \"Transaction_Id\":\"123\",\r\n    \"Transaction_Amount\":\"28\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/updateServiceFinancialTxn",
-					"protocol": "http",
-					"host": [
-						"ecrc-api-pipeline-wednesday-zbam91-dev",
-						"pathfinder",
-						"bcgov"
-					],
-					"path": [
-						"ecrc",
-						"updateServiceFinancialTxn"
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"protocolProfileBehavior": {}
+  "info": {
+    "_postman_id": "bdc8f329-c6e1-4ad8-8b95-54c94d359c2e",
+    "name": "eCRC DEV OS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "doAuth",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/doAuthenticateUser?orgTicketId=crce",
+          "protocol": "http",
+          "host": [
+            "ecrc-api-pipeline-wednesday-zbam91-dev",
+            "pathfinder",
+            "bcgov"
+          ],
+          "path": ["ecrc", "doAuthenticateUser"],
+          "query": [
+            {
+              "key": "orgTicketId",
+              "value": "crce"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getSession",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/getNextSessionId?orgTicketId=crce",
+          "protocol": "http",
+          "host": [
+            "ecrc-api-pipeline-wednesday-zbam91-dev",
+            "pathfinder",
+            "bcgov"
+          ],
+          "path": ["ecrc", "getNextSessionId"],
+          "query": [
+            {
+              "key": "orgTicketId",
+              "value": "crce"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getProvs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/getProvinceList",
+          "protocol": "http",
+          "host": [
+            "ecrc-api-pipeline-wednesday-zbam91-dev",
+            "pathfinder",
+            "bcgov"
+          ],
+          "path": ["ecrc", "getProvinceList"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLinks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/links",
+          "protocol": "http",
+          "host": [
+            "ecrc-api-pipeline-wednesday-zbam91-dev",
+            "pathfinder",
+            "bcgov"
+          ],
+          "path": ["ecrc", "links"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "postCreateCRC",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"orgTicketNumber\":\"crce\"\r\n    , \"schedule_Type_Cd\":\"EE\"\r\n    , \"scope_Level_Cd\":\"EE\"\r\n    , \"appl_Party_Id\":\"123\"\r\n    , \"org_Appl_To_Pay\":\"org_Appl_To_Pay\"\r\n    , \"applicant_Posn\":\"applicant_Posn\"\r\n    , \"child_Care_Fac_Nm\":\"child_Care_Fac_Nm\"\r\n    , \"governing_Body_Nm\":\"governing_Body_Nm\"\r\n    , \"session_Id\":\"123\"\r\n    , \"invoice_Id\":\"123\"\r\n    , \"auth_Release_EIV_Vendor_YN\":\"auth_Release_EIV_Vendor_YN\"\r\n    , \"auth_Conduct_CRC_Check_YN\":\"auth_Conduct_CRC_Check_YN\"\r\n    , \"auth_Release_To_Org_YN\":\"auth_Release_To_Org_YN\"\r\n    , \"appl_Identity_Verified_EIV_YN\":\"appl_Identity_Verified_EIV_YN\"\r\n    , \"eivPassDetailsResults\":\"eivPassDetailsResults\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/createNewCRCService",
+          "protocol": "http",
+          "host": [
+            "ecrc-api-pipeline-wednesday-zbam91-dev",
+            "pathfinder",
+            "bcgov"
+          ],
+          "path": ["ecrc", "createNewCRCService"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getFeeAmount",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/getServiceFeeAmount?orgTicketId=crce&scheduleTypeCd=WBSD&scopeLevelCd=WWCH",
+          "protocol": "http",
+          "host": [
+            "ecrc-api-pipeline-wednesday-zbam91-dev",
+            "pathfinder",
+            "bcgov"
+          ],
+          "path": ["ecrc", "getServiceFeeAmount"],
+          "query": [
+            {
+              "key": "orgTicketId",
+              "value": "crce"
+            },
+            {
+              "key": "scheduleTypeCd",
+              "value": "WBSD"
+            },
+            {
+              "key": "scopeLevelCd",
+              "value": "WWCH"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "postUpdateFinancial",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"OrgTicketNumber\":\"crce\",\r\n    \"Appl_Party_Id\":\"123\",\r\n    \"Service_Id\":\"123\",\r\n    \"CC_Authorization\":\"cC_Authorization\",\r\n    \"Payment_Date\":\"1/1/2020\",\r\n    \"Payor_Type_Cd\":\"CDE\",\r\n    \"Payment_Status_Cd\":\"CDE\",\r\n    \"Session_Id\":\"123\",\r\n    \"Invoice_Id\":\"123\",\r\n    \"Transaction_Id\":\"123\",\r\n    \"Transaction_Amount\":\"28\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://ecrc-api-pipeline-wednesday-zbam91-dev.pathfinder.bcgov/ecrc/updateServiceFinancialTxn",
+          "protocol": "http",
+          "host": [
+            "ecrc-api-pipeline-wednesday-zbam91-dev",
+            "pathfinder",
+            "bcgov"
+          ],
+          "path": ["ecrc", "updateServiceFinancialTxn"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
 }

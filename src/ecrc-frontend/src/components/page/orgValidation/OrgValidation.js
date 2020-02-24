@@ -11,9 +11,7 @@ import SideCards from "../../composite/sideCards/SideCards";
 export default function OrgValidation({ page: { setOrg, header } }) {
   const [orgInput, setOrgInput] = useState("");
   // method name needs to be capitalized due to react hooks gotcha
-  const GetHistory = () => {
-    return useHistory();
-  };
+  const history = useHistory();
 
   const jwt = require("jsonwebtoken");
   const token = jwt.sign({ foo: "bar" }, "secret", { expiresIn: "2h" });
@@ -24,7 +22,7 @@ export default function OrgValidation({ page: { setOrg, header } }) {
         `http://localhost:8082/ecrc/doAuthenticateUser?orgTicketId=${orgInput}&token=${token}`
       )
       .then(res => {
-        GetHistory().push("/ecrc/orgverification");
+        history.push("/ecrc/orgverification");
         setOrg(res.data.accessCodeResponse);
       })
       .catch();

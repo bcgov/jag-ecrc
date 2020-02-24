@@ -73,7 +73,7 @@ exports[`Transition Page Component Matches the snapshot 1`] = `
       <p>
         You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
         <a
-          href="jsgdsg"
+          href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
           here
         </a>
@@ -84,7 +84,7 @@ exports[`Transition Page Component Matches the snapshot 1`] = `
         We are transitioning our client organizations currently using Equifax for identity verification to a new process through a
          
         <a
-          href="hsgdhgs"
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
         >
           BC Services Card account
         </a>

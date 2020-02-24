@@ -1,0 +1,34 @@
+.heading {
+  padding-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.previousHeader {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.previousFooter {
+  margin-top: -35px;
+}
+
+.note {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.notAButton {
+  background: none;
+  border: none;
+  padding: 0px;
+  color: #1a5a96;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.notAButton:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}

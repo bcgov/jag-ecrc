@@ -12,7 +12,9 @@ exports[`SimpleForm Component Matches the snapshot 1`] = `
   <ul>
     <li>
       <div>
-        <div>
+        <div
+          className="label"
+        >
           <label
             className="textinput_label"
             htmlFor="textInput1"
@@ -20,6 +22,10 @@ exports[`SimpleForm Component Matches the snapshot 1`] = `
             label1
           </label>
           
+           
+          <span
+            className="note"
+          />
         </div>
         <input
           className="textinput_editable_white"
@@ -31,7 +37,9 @@ exports[`SimpleForm Component Matches the snapshot 1`] = `
     </li>
     <li>
       <div>
-        <div>
+        <div
+          className="label"
+        >
           <label
             className="textinput_label"
             htmlFor="textInput3"
@@ -44,6 +52,10 @@ exports[`SimpleForm Component Matches the snapshot 1`] = `
           >
             *
           </span>
+           
+          <span
+            className="note"
+          />
         </div>
         <input
           className="textinput_editable_gray"
