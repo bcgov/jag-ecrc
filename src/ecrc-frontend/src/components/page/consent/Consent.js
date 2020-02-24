@@ -16,18 +16,22 @@ export default function Consent({ page: { header }, onContinueClick }) {
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [thirdBoxChecked, setThirdBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
+  const [applicantName, setApplicantName] = useState("");
 
   useEffect(() => {
     if (firstBoxChecked && secondBoxChecked && thirdBoxChecked) {
       setInputEnabled("textinput_editable_white");
-      setContinueBtnEnabled(true);
+      if (applicantName !== "") {
+        setContinueBtnEnabled(true);
+      } else {
+        setContinueBtnEnabled(false);
+      }
     } else {
       setInputEnabled("textinput_non_editable_gray");
       setContinueBtnEnabled(false);
     }
-  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked]);
+  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked, applicantName]);
 
-  const onApplicantNameChange = () => {};
   const backButton = {
     label: "Back",
     buttonStyle: "btn ecrc_accessary_btn",
@@ -93,7 +97,7 @@ export default function Consent({ page: { header }, onContinueClick }) {
                 checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
                 checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
                 textInput={textInput}
-                onApplicantNameChange={() => onApplicantNameChange()}
+                onApplicantNameChange={setApplicantName}
               />
               <div
                 style={{
