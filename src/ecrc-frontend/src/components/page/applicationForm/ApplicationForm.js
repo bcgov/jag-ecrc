@@ -216,7 +216,7 @@ export default function ApplicationForm({
   const applicationVerification = () => {};
 
   const back = () => {
-    history.push("/ecrc");
+    history.push("/");
   };
 
   const additionalNames = event => {

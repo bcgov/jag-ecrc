@@ -51,7 +51,7 @@ const buttons = [
 ];
 
 const simpleForm = {
-  title: "simple form title that i too long for mobile",
+  title: "simple form title",
   textInputs,
   buttons
 };
