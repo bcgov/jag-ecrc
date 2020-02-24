@@ -6,16 +6,25 @@ import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
+import { useHistory } from "react-router-dom";
+import { getOrg, clearOrg } from "../../../helpers/session";
 
-export default function OrgVerification({ page: { header, org, setOrg } }) {
+export default function OrgVerification({ page: { header } }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const orgVerification = () => {};
+  const history = useHistory();
+
+  const org = getOrg();
+
+  const orgVerification = () => {
+    history.push("/ecrc/termsofuse");
+  };
 
   const back = () => {
-    setOrg({});
+    clearOrg();
+    history.push("/");
   };
 
   const links = [

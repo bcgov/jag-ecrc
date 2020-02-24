@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 import OrgValidation from "./components/page/orgValidation/OrgValidation";
 import OrgVerification from "./components/page/orgVerification/OrgVerification";
 import Transition from "./components/page/transition/Transition";
+import TOU from "./components/page/tou/TOU";
 
 export default function App() {
   const [org, setOrg] = useState({});
@@ -30,6 +31,9 @@ export default function App() {
           </Route>
           <Route path="/ecrc/transition">
             <Transition header={header} />
+          </Route>
+          <Route path="/ecrc/termsofuse">
+            <TOU page={page} />
           </Route>
         </Switch>
       </BrowserRouter>

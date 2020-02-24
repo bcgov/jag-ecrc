@@ -7,22 +7,25 @@ import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
+import { setOrg } from "../../../helpers/session";
 
-export default function OrgValidation({ page: { setOrg, header } }) {
+export default function OrgValidation({ page: { header } }) {
   const [orgInput, setOrgInput] = useState("");
   // method name needs to be capitalized due to react hooks gotcha
-  const GetHistory = () => {
-    return useHistory();
-  };
+  const history = useHistory();
 
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
       .then(res => {
-        GetHistory().push("/ecrc/orgverification");
+        console.log(res);
         setOrg(res.data.accessCodeResponse);
+        // sessionStorage.setItem("org", JSON.stringify(res.data.accessCodeResponse));
+        history.push("/ecrc/orgverification");
       })
-      .catch();
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   const textInput = {

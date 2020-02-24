@@ -5,13 +5,15 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
+import { useHistory } from "react-router-dom";
 
-export default function TOU({
-  page: {
-    pageLayout: { header }
-  },
-  onContinueClick
-}) {
+export default function TOU({ page: { header } }) {
+  const history = useHistory();
+
+  const onContinueClick = () => {
+    history.push("/");
+  };
+
   return (
     <main>
       <Header header={header} />

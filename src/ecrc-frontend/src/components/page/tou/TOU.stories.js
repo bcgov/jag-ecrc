@@ -8,17 +8,11 @@ const header = {
   name: "Terms of Use"
 };
 
-const pageLayout = {
+const page = {
   header
 };
 
-const page = {
-  pageLayout
-};
-
-const onContinueClick = action("onButtonContinueClicked");
-
 storiesOf("Term Of Use page", module)
-  .add("Default", () => <TOU page={page} onContinueClick={onContinueClick} />)
+  .add("Default", () => <TOU page={page} />)
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
-  .add("Mobile", () => <TOU page={page} onContinueClick={onContinueClick} />);
+  .add("Mobile", () => <TOU page={page} />);
