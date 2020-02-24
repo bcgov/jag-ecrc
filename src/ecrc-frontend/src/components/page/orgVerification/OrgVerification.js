@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
+
 import "../page.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -9,7 +11,9 @@ import SideCards from "../../composite/sideCards/SideCards";
 import { useHistory } from "react-router-dom";
 import { getOrg, clearOrg } from "../../../helpers/session";
 
-export default function OrgVerification({ page: { header } }) {
+export default function OrgVerification({ page: { header, org } }) {
+  const history = useHistory();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

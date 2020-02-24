@@ -88,6 +88,51 @@ export default function SideCards({ type, sideCardLinks }) {
     type: "blue"
   };
 
+  // PERSONAL INFORMATION
+  const personalInformation = {
+    heading: "Update your personal information",
+    content: [
+      "If you find an error in your personal information, please contact ",
+      <a
+        key="serviceBC"
+        className="link"
+        href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+      >
+        Service BC
+      </a>,
+      " ,",
+      <a
+        key="icbc"
+        className="link"
+        href="https://www.icbc.com/Pages/default.aspx"
+      >
+        ICBC
+      </a>,
+      " or ",
+      <a
+        key="addressChangeBC"
+        className="link"
+        href="https://www.addresschange.gov.bc.ca/"
+      >
+        AddressChangeBC
+      </a>,
+      " to correct it."
+    ],
+    type: "blue"
+  };
+
+  const collectionNotice = {
+    heading: "Collection Notice",
+    content: [
+      "The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to ",
+      <a key="criminalRecordsEmail" href="mailto:criminalrecords@gov.bc.ca">
+        criminalrecords@gov.bc.ca
+      </a>,
+      " or by telephone at 1- 855-587-0185 (option 2)."
+    ],
+    type: "notice"
+  };
+
   // USEFUL LINKS SIDECARD
   const links = sideCardLinks.map(sideCardLink => {
     return <MenuItem key={sideCardLink.name} menuItem={sideCardLink} />;
@@ -112,6 +157,12 @@ export default function SideCards({ type, sideCardLinks }) {
       )}
       {type === "criminalrecord" && (
         <SideCard key="criminalrecord" sideCard={criminalRecord} />
+      )}
+      {type === "personalinformation" && (
+        <SideCard key="personalinformation" sideCard={personalInformation} />
+      )}
+      {type === "collectionnotice" && (
+        <SideCard key="collectionnotice" sideCard={collectionNotice} />
       )}
       {type === "usefullinks" && (
         <SideCard key="usefullink" sideCard={usefulLinks} />
