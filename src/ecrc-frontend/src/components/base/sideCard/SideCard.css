@@ -98,6 +98,12 @@
   max-width: 400px;
 }
 
+.contact-dashboard-spacing {
+  padding-left: 50px;
+  padding-right: 50px;
+  max-width: 520px;
+}
+
 img {
   max-width: 100%;
 }
@@ -107,4 +113,11 @@ img {
     padding-left: 10px;
     padding-right: 10px;
   }
+}
+
+.contact-title {
+  text-align: right;
+  width: 80px;
+  padding-right: 10px;
+  font-weight: 600;
 }

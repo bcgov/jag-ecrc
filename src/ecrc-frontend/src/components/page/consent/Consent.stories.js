@@ -8,12 +8,8 @@ const header = {
   name: "Criminal Record Check"
 };
 
-const pageLayout = {
-  header
-};
-
 const page = {
-  pageLayout
+  header
 };
 
 const onContinueClick = action("onButtonContinueClicked");

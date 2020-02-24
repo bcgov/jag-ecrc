@@ -35,4 +35,15 @@ storiesOf("Button", module)
       }}
       {...actionData}
     />
+  ))
+  .add("Disabled", () => (
+    <Button
+      button={{
+        ...button,
+        buttonStyle: "btn btn-warning",
+        buttonSize: "btn btn-sm",
+        disabled: true
+      }}
+      {...actionData}
+    />
   ));

@@ -33,4 +33,18 @@ storiesOf("SideCard", module)
         type: "bluegrey"
       }}
     />
+  ))
+  .add("contact", () => (
+    <SideCard
+      sideCard={{
+        ...sideCard,
+        heading: (
+          <div style={{ fontSize: "22px" }}>
+            Contact the Criminal Records Review Program
+          </div>
+        ),
+        content: [],
+        type: "contact"
+      }}
+    />
   ));
