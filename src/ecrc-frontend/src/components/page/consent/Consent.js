@@ -14,17 +14,18 @@ export default function Consent({ page: { header }, onContinueClick }) {
   );
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
+  const [thirdBoxChecked, setThirdBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
 
   useEffect(() => {
-    if (firstBoxChecked && secondBoxChecked) {
+    if (firstBoxChecked && secondBoxChecked && thirdBoxChecked) {
       setInputEnabled("textinput_editable_white");
       setContinueBtnEnabled(true);
     } else {
       setInputEnabled("textinput_non_editable_gray");
       setContinueBtnEnabled(false);
     }
-  }, [firstBoxChecked, secondBoxChecked]);
+  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked]);
 
   const onApplicantNameChange = () => {};
   const backButton = {
@@ -90,6 +91,7 @@ export default function Consent({ page: { header }, onContinueClick }) {
               <Declaration
                 checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
                 checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
+                checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
                 textInput={textInput}
                 onApplicantNameChange={() => onApplicantNameChange()}
               />

@@ -7,7 +7,8 @@ export default function Declaration({
   textInput,
   onApplicantNameChange,
   checkFirstBox,
-  checkSecondBox
+  checkSecondBox,
+  checkThirdBox
 }) {
   return (
     <div>
@@ -42,6 +43,13 @@ export default function Declaration({
           suspended or revoked.
         </span>
       </section>
+      <section className="declareSection">
+        <input type="checkbox" onClick={checkThirdBox} />
+        <span className="declaration-cb">
+          The third checkbox for my application and will provide as necessary is
+          complete.
+        </span>
+      </section>
 
       <section className="declareSection" style={{ maxWidth: "475px" }}>
         <TextInput textInput={textInput} onChange={onApplicantNameChange} />
@@ -54,11 +62,13 @@ Declaration.propTypes = {
   textInput: PropTypes.shape,
   checkFirstBox: PropTypes.func,
   checkSecondBox: PropTypes.func,
+  checkThirdBox: PropTypes.func,
   onApplicantNameChange: PropTypes.func.isRequired
 };
 
 Declaration.defaultProps = {
   textInput: {},
   checkFirstBox: () => {},
-  checkSecondBox: () => {}
+  checkSecondBox: () => {},
+  checkThirdBox: () => {}
 };
