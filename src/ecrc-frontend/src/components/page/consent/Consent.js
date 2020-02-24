@@ -88,38 +88,31 @@ export default function Consent({ page: { header }, onContinueClick }) {
     <main>
       <Header header={header} />
       <div className="page">
-        <div className="row">
-          <div className="col-7">
-            <div className="content">
-              <h1>Consent for Criminal Record Check</h1>
-              <Declaration
-                checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
-                checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
-                checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
-                textInput={textInput}
-                onApplicantNameChange={setApplicantName}
-              />
-              <div
-                style={{
-                  paddingLeft: "10px",
-                  paddingTop: "20px",
-                  textAlign: "right"
-                }}
-              >
-                <Button
-                  button={backButton}
-                  onClick={() => {
-                    window.history.back();
-                  }}
-                />
-                <Button button={continueButton} onClick={onContinueClick} />
-              </div>
-            </div>
+        <div className="content col-md-8">
+          <h1>Consent for Criminal Record Check</h1>
+          <Declaration
+            style={{ paddingBottom: "30px" }}
+            checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
+            checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
+            checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
+            textInput={textInput}
+            onApplicantNameChange={setApplicantName}
+          />
+          <br />
+          <div className="buttons" style={{ paddingLeft: "20px" }}>
+            <Button
+              button={backButton}
+              onClick={() => {
+                window.history.back();
+              }}
+            />
+            <Button button={continueButton} onClick={onContinueClick} />
           </div>
-          <div className="col-5">
-            <SideCard sideCard={contactSideCard} />
-            <SideCard sideCard={noticeSideCard} />
-          </div>
+        </div>
+
+        <div className="sidecard">
+          <SideCard sideCard={contactSideCard} />
+          <SideCard sideCard={noticeSideCard} />
         </div>
       </div>
       <Footer />
