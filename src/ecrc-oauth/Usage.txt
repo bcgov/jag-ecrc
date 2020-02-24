@@ -1,0 +1,15 @@
+Usage
+
+
+1.	Before user has been authenticated, SPA calls oauth-api for redirect to IdP to sign in.  (http://localhost:8082/oauth/idpRedirect)
+2.	User signs in (and authorizes the application, if needed).
+3.	IdP returns user to SPA with Authorization Code. (return endpoint defined in OAUTH_RETURN_URI). 
+4.	JavaScript code in SPA sends the Authorization Code to a to oauth-api endpoint.  (http://localhost:8082/oauth/login)
+5.	The REST API Server sends a request to the IdP Server containing the Authorization Code (and usually also a Client ID and Client Secret which identify the REST API Server to the IdP server).
+6.	The IdP validates the Authorization Code and sends the Access Token, ID Token and Refresh token to the oauth-api.
+7.  The oauth-api stores the Access Token,  ID Token, and Refresh token in its memory. 
+8.  The oauth-api Extract the Access token, and calls the IdP /userinfo. 
+9.  The oauth-api creates a new JWT token with a secret shared with the front end. 
+10. The oauth-api inserts the Access Token and theuser info into its own Token and sends back to the SPA 
+11.	For every request the SPA makes to the REST API Server, it includes the Access Token the oauth-api gave it. 
+12. If oauth-api needs to request a resources from the IdP server, it uses the stored Access Token and client secrets to make that request.
