@@ -14,7 +14,6 @@ export const Button = ({
     buttonType = type;
   }
 
-  console.log(`disabled={disabled}`);
   return (
     <button
       className={`${buttonStyle} ${buttonSize}`}
@@ -36,12 +35,6 @@ Button.propTypes = {
     disabled: PropTypes.bool
   }).isRequired,
   onClick: PropTypes.func.isRequired
-};
-
-Button.defaultProps = {
-  button: PropTypes.shape({
-    disabled: false
-  })
 };
 
 export default Button;

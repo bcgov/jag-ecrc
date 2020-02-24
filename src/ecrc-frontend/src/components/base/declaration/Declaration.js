@@ -51,7 +51,7 @@ export default function Declaration({
 }
 
 Declaration.propTypes = {
-  textInput: PropTypes.object,
+  textInput: PropTypes.shape,
   checkFirstBox: PropTypes.func,
   checkSecondBox: PropTypes.func,
   onApplicantNameChange: PropTypes.func.isRequired
