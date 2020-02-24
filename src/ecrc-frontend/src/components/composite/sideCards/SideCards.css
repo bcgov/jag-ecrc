@@ -14,3 +14,7 @@ p > button {
 .block {
   display: contents;
 }
+
+.link {
+  color: white;
+}

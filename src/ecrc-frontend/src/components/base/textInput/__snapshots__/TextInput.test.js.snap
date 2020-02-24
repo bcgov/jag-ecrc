@@ -2,7 +2,9 @@
 
 exports[`TextInput Component Matches the snapshot 1`] = `
 <div>
-  <div>
+  <div
+    className="label"
+  >
     <label
       className="textinput_label"
       htmlFor="textInputId"
@@ -10,6 +12,10 @@ exports[`TextInput Component Matches the snapshot 1`] = `
       button label
     </label>
     
+     
+    <span
+      className="note"
+    />
   </div>
   <input
     className="textinput_editable_white"

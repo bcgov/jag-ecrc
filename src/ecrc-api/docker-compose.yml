@@ -1,5 +1,5 @@
-version: '3.7'
-services:  
+version: "3.7"
+services:
   #############################################################################################
   ###                               ECRC-API                                                ###
   #############################################################################################
@@ -9,7 +9,7 @@ services:
       args:
         - MVN_PROFILES=ecrc-api
         - ECRC_SERVICE_NAME=ecrc-api
-    environment: 
+    environment:
       - spring_profiles_active=cloud
       - ECRC_BASEURL=${ECRC_BASEURL}
       - ECRC_PASSWORD=${ECRC_PASSWORD}
