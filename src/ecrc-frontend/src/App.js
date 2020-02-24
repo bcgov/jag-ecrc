@@ -3,14 +3,15 @@ import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 import OrgValidation from "./components/page/orgValidation/OrgValidation";
 import OrgVerification from "./components/page/orgVerification/OrgVerification";
 <<<<<<< refs/remotes/origin/master
+<<<<<<< refs/remotes/origin/master
 import ApplicationForm from "./components/page/applicationForm/ApplicationForm";
 =======
 <<<<<<< refs/remotes/origin/master
 >>>>>>> update
-import Transition from "./components/page/transition/Transition";
 =======
-import Consent from "./components/page/consent/Consent";
 >>>>>>> update
+import Transition from "./components/page/transition/Transition";
+import Consent from "./components/page/consent/Consent";
 
 export default function App() {
   const [org, setOrg] = useState({});
@@ -37,18 +38,20 @@ export default function App() {
             <OrgVerification page={page} />
           </Route>
 <<<<<<< refs/remotes/origin/master
+<<<<<<< refs/remotes/origin/master
           <Route path="/ecrc/applicationform">
             <ApplicationForm page={page} />
           </Route>
 =======
 <<<<<<< refs/remotes/origin/master
 >>>>>>> update
+=======
+>>>>>>> update
           <Route path="/ecrc/transition">
             <Transition header={header} />
-=======
+          </Route>
           <Route path="/ecrc/consent">
             <Consent page={page} />
->>>>>>> update
           </Route>
         </Switch>
       </BrowserRouter>
