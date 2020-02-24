@@ -29,11 +29,8 @@ export default function TOU({ page: { header } }) {
 
 TOU.propTypes = {
   page: PropTypes.shape({
-    pageLayout: PropTypes.shape({
-      header: PropTypes.shape({
-        name: PropTypes.string.isRequired
-      })
-    }).isRequired
-  }).isRequired,
-  onContinueClick: PropTypes.func.isRequired
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    })
+  }).isRequired
 };

@@ -14,7 +14,10 @@ export default function OrgVerification({ page: { header, org } }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    if (!org.orgNm) {
+      history.push("/");
+    }
+  }, [history, org.orgNm]);
 
   const orgVerified = () => {
     history.push("/ecrc/termsofuse");
@@ -146,7 +149,6 @@ export default function OrgVerification({ page: { header, org } }) {
 OrgVerification.propTypes = {
   page: PropTypes.shape({
     org: PropTypes.object.isRequired,
-    setOrg: PropTypes.func.isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired

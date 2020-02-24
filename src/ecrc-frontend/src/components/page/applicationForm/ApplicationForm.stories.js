@@ -2,6 +2,7 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 
 import ApplicationForm from "./ApplicationForm";
+import { action } from "@storybook/addon-actions";
 
 export default {
   title: "ApplicationForm",
@@ -31,6 +32,10 @@ const applicant = {
   organizationFacility: ""
 };
 
+const setApplicant = applicant => {
+  console.log(applicant);
+};
+
 const org = {
   schedule: "D"
 };
@@ -38,7 +43,8 @@ const org = {
 const page = {
   header,
   applicant,
-  org
+  org,
+  setApplicant
 };
 
 export const Default = () => (

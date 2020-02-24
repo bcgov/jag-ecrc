@@ -237,6 +237,8 @@ export default function ApplicationForm({
       driversLicNo,
       phoneNumber
     });
+
+    history.push("/");
   };
 
   const back = () => {
@@ -321,6 +323,7 @@ ApplicationForm.propTypes = {
       postalCode: PropTypes.string.isRequired,
       country: PropTypes.string.isRequired
     }),
+    setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({
       schedule: PropTypes.string.isRequired
     })
