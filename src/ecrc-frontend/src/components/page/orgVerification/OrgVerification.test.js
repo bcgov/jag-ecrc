@@ -1,5 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
+import { MemoryRouter } from "react-router-dom";
 
 import OrgVerification from "./OrgVerification";
 
@@ -27,7 +28,11 @@ describe("OrgVerification Component", () => {
       header
     };
 
-    const orgValidationPage = create(<OrgVerification page={page} org={org} />);
+    const orgValidationPage = create(
+      <MemoryRouter>
+        <OrgVerification page={page} org={org} />
+      </MemoryRouter>
+    );
     expect(orgValidationPage.toJSON()).toMatchSnapshot();
   });
 });

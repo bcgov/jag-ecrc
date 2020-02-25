@@ -63,7 +63,9 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
       >
         <div>
           <div>
-            <div>
+            <div
+              className="label"
+            >
               <label
                 className="textinput_label"
                 htmlFor="orgId"
@@ -76,6 +78,10 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
               >
                 *
               </span>
+               
+              <span
+                className="note"
+              />
             </div>
             <input
               className="textinput_editable_white"

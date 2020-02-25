@@ -3,7 +3,9 @@ package ca.bc.gov.open.ecrc.configuration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -38,6 +40,8 @@ public class EcrcProperties {
 
 	@Value("#{'${ecrc.whitelist}'.split(',')}")
 	private List<String> whiteList;
+	
+	private Map<String, String> links = new HashMap<String, String>();
 
 	public String getBaseUrl() {
 		return baseUrl;
@@ -151,6 +155,13 @@ public class EcrcProperties {
 
 	public void setGetSinglePaymentUri(String getSinglePaymentUri) {
 		this.getSinglePaymentUri = getSinglePaymentUri;
+
+	public Map<String, String> getLinks() {
+		return links;
+	}
+
+	public void setLinks(Map<String, String> links) {
+		this.links = links;
 	}
   
 }

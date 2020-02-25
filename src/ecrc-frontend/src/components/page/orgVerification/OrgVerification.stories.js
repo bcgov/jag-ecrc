@@ -1,4 +1,5 @@
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
 
 import OrgVerification from "./OrgVerification";
 
@@ -29,9 +30,17 @@ const page = {
   header
 };
 
-export const Default = () => <OrgVerification page={page} />;
+export const Default = () => (
+  <MemoryRouter>
+    <OrgVerification page={page} />
+  </MemoryRouter>
+);
 
-export const Mobile = () => <OrgVerification page={page} />;
+export const Mobile = () => (
+  <MemoryRouter>
+    <OrgVerification page={page} />
+  </MemoryRouter>
+);
 
 Mobile.story = {
   parameters: {

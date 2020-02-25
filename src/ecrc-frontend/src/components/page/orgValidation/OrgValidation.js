@@ -11,15 +11,13 @@ import SideCards from "../../composite/sideCards/SideCards";
 export default function OrgValidation({ page: { setOrg, header } }) {
   const [orgInput, setOrgInput] = useState("");
   // method name needs to be capitalized due to react hooks gotcha
-  const GetHistory = () => {
-    return useHistory();
-  };
+  const history = useHistory();
 
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
       .then(res => {
-        GetHistory().push("/ecrc/orgverification");
+        history.push("/ecrc/orgverification");
         setOrg(res.data.accessCodeResponse);
       })
       .catch();
