@@ -13,6 +13,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import ca.bc.gov.open.ecrc.constants.PaymentServiceConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
@@ -42,13 +43,15 @@ class PaymentControllerTest {
 	@Test
 	void testSuccess() throws EcrcServiceException {
 		RequestPaymentService request = new RequestPaymentService();
-		String responseStr = "{" + "\"respMsg\": \"success\"," + "\"respCode\": \"0\","
-				+ "\"respValue\": \"https://web.na.bambora.com/scripts/payment/payment.asp"
-				+ "?merchant_id=changeme&trnType=P&trnOrderNumber=12&errorPage=abe&declinedPage=abd"
-				+ "&approvedPage=abc&ref1=abc&ref2=abc&trnAmount=123.00"
-				+ "&hashValue=BB85DE3C6E7288168420B0DA3E692A37&hashExpiry=202002241118\"}";
-		when(paymentService.initiatePayment(request)).thenReturn(new ResponseEntity<String>(responseStr, HttpStatus.OK));
-		ResponseEntity<String> response = paymentController.initiatePayment(request);
+		
+		String responseStr = String.format(PaymentServiceConstants.PAYMENT_SERVICE_JSON_RESPONSE,
+				PaymentServiceConstants.PAYMENT_SERVICE_RESP_MSG_OK, WebServiceStatusCodes.SUCCESS.getErrorCode(),
+				"https://web.na.bambora.com/scripts/payment/payment.asp"
+						+ "?merchant_id=changeme&trnType=P&trnOrderNumber=12&errorPage=abe&declinedPage=abd"
+						+ "&approvedPage=abc&ref1=abc&ref2=abc&trnAmount=123.00"
+						+ "&hashValue=BB85DE3C6E7288168420B0DA3E692A37&hashExpiry=202002241118");
+		when(paymentService.createPaymentUrl(request)).thenReturn(new ResponseEntity<String>(responseStr, HttpStatus.OK));
+		ResponseEntity<String> response = paymentController.createPaymentUrl(request);
 		Assert.assertEquals(responseStr, response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -59,8 +62,8 @@ class PaymentControllerTest {
 		RequestPaymentService request = new RequestPaymentService();
 		String responseStr = String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode());
-		when(paymentService.initiatePayment(request)).thenReturn(new ResponseEntity<>(responseStr, HttpStatus.NOT_FOUND));
-		ResponseEntity<String> response = paymentController.initiatePayment(request);
+		when(paymentService.createPaymentUrl(request)).thenReturn(new ResponseEntity<>(responseStr, HttpStatus.NOT_FOUND));
+		ResponseEntity<String> response = paymentController.createPaymentUrl(request);
 		Assertions.assertEquals(responseStr, response.getBody());
 		Assert.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 	}
@@ -71,9 +74,9 @@ class PaymentControllerTest {
 		RequestPaymentService request = new RequestPaymentService();
 		String responseStr = String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode());
-		when(paymentService.initiatePayment(request))
+		when(paymentService.createPaymentUrl(request))
 				.thenReturn(new ResponseEntity<>(responseStr, HttpStatus.BAD_REQUEST));
-		ResponseEntity<String> response = paymentController.initiatePayment(request);
+		ResponseEntity<String> response = paymentController.createPaymentUrl(request);
 		Assertions.assertEquals(responseStr, response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}

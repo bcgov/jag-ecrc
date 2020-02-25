@@ -31,9 +31,7 @@ public class EcrcProperties {
 	private String logPaymentFailureUri;
 	private String getNextInvoiceIdUri;
 	private String updateServiceFinancialTxnUri;
-	private String paymentUrl;
-	private String getSinglePaymentUri;
-	
+		
 	//CORS properties
 	private String corsMapping;
 	private String corsAllowedOrigins;
@@ -42,6 +40,12 @@ public class EcrcProperties {
 	private List<String> whiteList;
 	
 	private Map<String, String> links = new HashMap<String, String>();
+	
+	//Payment properties
+	private String paymentUrl;
+	private String paymentMerchantId;
+	private String paymentHashkey;
+	private String paymentReturnUri;
 
 	public String getBaseUrl() {
 		return baseUrl;
@@ -141,6 +145,14 @@ public class EcrcProperties {
 
 	public void setWhiteList(List<String> whiteList) { this.whiteList = whiteList; }
 
+	public Map<String, String> getLinks() {
+		return links;
+	}
+
+	public void setLinks(Map<String, String> links) {
+		this.links = links;
+	}
+	
 	public String getPaymentUrl() {
 		return paymentUrl;
 	}
@@ -149,20 +161,28 @@ public class EcrcProperties {
 		this.paymentUrl = paymentUrl;
 	}
 
-	public String getGetSinglePaymentUri() {
-		return getSinglePaymentUri;
+	public String getPaymentMerchantId() {
+		return paymentMerchantId;
 	}
 
-	public void setGetSinglePaymentUri(String getSinglePaymentUri) {
-		this.getSinglePaymentUri = getSinglePaymentUri;
+	public void setPaymentMerchantId(String paymentMerchantId) {
+		this.paymentMerchantId = paymentMerchantId;
 	}
 
-	public Map<String, String> getLinks() {
-		return links;
+	public String getPaymentHashkey() {
+		return paymentHashkey;
 	}
 
-	public void setLinks(Map<String, String> links) {
-		this.links = links;
+	public void setPaymentHashkey(String paymentHashkey) {
+		this.paymentHashkey = paymentHashkey;
+	}
+
+	public String getPaymentReturnUri() {
+		return paymentReturnUri;
+	}
+
+	public void setPaymentReturnUri(String paymentReturnUri) {
+		this.paymentReturnUri = paymentReturnUri;
 	}
   
 }

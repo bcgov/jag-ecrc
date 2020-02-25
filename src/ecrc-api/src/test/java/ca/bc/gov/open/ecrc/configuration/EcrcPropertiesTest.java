@@ -34,6 +34,10 @@ class EcrcPropertiesTest {
 		Assert.assertEquals("usename", ecrcProperties.getUsername());
 		Assert.assertEquals("abc", ecrcProperties.getWhiteList().get(0));
 		Assert.assertEquals("https://test1.ca", ecrcProperties.getLinks().get("test1"));
+		Assert.assertEquals("1234", ecrcProperties.getPaymentHashkey());
+		Assert.assertEquals("123", ecrcProperties.getPaymentMerchantId());
+		Assert.assertEquals("http://return.com", ecrcProperties.getPaymentReturnUri());
+		Assert.assertEquals("http://test.com", ecrcProperties.getPaymentUrl());
 	}
 
 }

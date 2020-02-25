@@ -1,5 +1,7 @@
 package ca.bc.gov.open.ecrc.model;
 
+import ca.bc.gov.open.ecrc.constants.PaymentServiceConstants;
+
 /**
  * Object for requesting payment
  * 
@@ -8,23 +10,12 @@ package ca.bc.gov.open.ecrc.model;
  */
 public class RequestPaymentService {
 
-	private String transType;
 	private String invoiceNumber;
-	private String approvedPage;
-	private String declinedPage;
-	private String errorPage;
 	private String totalItemsAmount;
-	private String minutesToExpire;
 	private String serviceIdRef1;
 	private String partyIdRef2;
-
-	public String getTransType() {
-		return transType;
-	}
-
-	public void setTransType(String transType) {
-		this.transType = transType;
-	}
+	private String merchantId;
+	private String returnUri;
 
 	public String getInvoiceNumber() {
 		return invoiceNumber;
@@ -34,44 +25,12 @@ public class RequestPaymentService {
 		this.invoiceNumber = invoiceNumber;
 	}
 
-	public String getApprovedPage() {
-		return approvedPage;
-	}
-
-	public void setApprovedPage(String approvedPage) {
-		this.approvedPage = approvedPage;
-	}
-
-	public String getDeclinedPage() {
-		return declinedPage;
-	}
-
-	public void setDeclinedPage(String declinedPage) {
-		this.declinedPage = declinedPage;
-	}
-
-	public String getErrorPage() {
-		return errorPage;
-	}
-
-	public void setErrorPage(String errorPage) {
-		this.errorPage = errorPage;
-	}
-
 	public String getTotalItemsAmount() {
 		return totalItemsAmount;
 	}
 
 	public void setTotalItemsAmount(String totalItemsAmount) {
 		this.totalItemsAmount = totalItemsAmount;
-	}
-
-	public String getMinutesToExpire() {
-		return minutesToExpire;
-	}
-
-	public void setMinutesToExpire(String minutesToExpire) {
-		this.minutesToExpire = minutesToExpire;
 	}
 
 	public String getServiceIdRef1() {
@@ -90,15 +49,34 @@ public class RequestPaymentService {
 		this.partyIdRef2 = partyIdRef2;
 	}
 
+	public String getMerchantId() {
+		return merchantId;
+	}
+
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
+	}
+
+	public String getReturnUri() {
+		return returnUri;
+	}
+
+	public void setReturnUri(String returnUri) {
+		this.returnUri = returnUri;
+	}
+
 	public String toQueryString() {
-        return 	"?transType=" + transType +
-        		"&invoiceNumber=" + invoiceNumber +
-        		"&approvedPage=" + approvedPage +
-        		"&declinedPage=" + declinedPage +
-        		"&errorPage=" + errorPage +
-        		"&totalItemsAmount=" + totalItemsAmount +
-        		"&minutesToExpire=" + minutesToExpire +
-        		"&ref1=" + serviceIdRef1 +
-        		"&ref2=" + partyIdRef2;
-    }
+
+		return PaymentServiceConstants.BAMBORA_PARAM_MERCHANT_ID + "=" + merchantId 
+				+ "&" + PaymentServiceConstants.BAMBORA_PARAM_TRANS_TYPE + "=" + PaymentServiceConstants.BamboraTransType.P
+				+ "&" + PaymentServiceConstants.BAMBORA_PARAM_TRANS_ORDER_NUMBER + "=" + invoiceNumber 
+				+ "&" + PaymentServiceConstants.BAMBORA_PARAM_ERROR_PAGE + "=" + returnUri 
+				+ "&" + PaymentServiceConstants.BAMBORA_PARAM_DECL_PAGE + "=" + returnUri 
+				+ "&" + PaymentServiceConstants.BAMBORA_PARAM_APPV_PAGE + "=" + returnUri 
+				+ "&" + PaymentServiceConstants.BAMBORA_PARAM_REF1 + "=" + serviceIdRef1 
+				+ "&" + PaymentServiceConstants.BAMBORA_PARAM_REF2 + "=" + partyIdRef2 
+				+ "&" + PaymentServiceConstants.BAMBORA_PARAM_TRANS_AMOUNT + "="
+				+ String.format(PaymentServiceConstants.PAYMENT_AMOUNT_FORMAT, Double.parseDouble(totalItemsAmount));
+		
+	}
 }
