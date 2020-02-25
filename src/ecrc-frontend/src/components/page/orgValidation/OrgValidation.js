@@ -22,7 +22,7 @@ export default function OrgValidation({ page: { header, setOrg } }) {
         history.push("/ecrc/orgverification");
       })
       .catch(error => {
-        console.log(error);
+        // TODO: This may just be a redirect to Transition, need to confirm expected use
         setOrgError("Please enter a valid org code");
       });
   };

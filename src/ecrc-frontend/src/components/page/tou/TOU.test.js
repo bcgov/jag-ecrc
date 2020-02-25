@@ -1,8 +1,8 @@
 import React from "react";
 import { create } from "react-test-renderer";
+import { MemoryRouter } from "react-router-dom";
 
 import TOU from "./TOU";
-import { MemoryRouter } from "react-router-dom";
 
 describe("TermOfUse Page Component", () => {
   test("Matches the snapshot", () => {
