@@ -18,12 +18,14 @@ export default function OrgValidation({ page: { header, setOrg } }) {
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}`)
       .then(res => {
         setOrg(res.data.accessCodeResponse);
-        // sessionStorage.setItem("org", JSON.stringify(res.data.accessCodeResponse));
         history.push("/ecrc/orgverification");
       })
       .catch(error => {
-        // TODO: This may just be a redirect to Transition, need to confirm expected use
-        setOrgError("Please enter a valid org code");
+        if (error.response.status === 404) {
+          setOrgError("Please enter a valid org code");
+        } else if (error.response.status === 401) {
+          history.push("/ecrc/transition");
+        }
       });
   };
 
