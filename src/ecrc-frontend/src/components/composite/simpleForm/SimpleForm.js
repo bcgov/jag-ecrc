@@ -47,6 +47,7 @@ SimpleForm.propTypes = {
         label: PropTypes.string.isRequired,
         textInputStyle: PropTypes.string,
         value: PropTypes.string,
+        errorMsg: PropTypes.string,
         onChange: PropTypes.func,
         isRequired: PropTypes.bool
       })

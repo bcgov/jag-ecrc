@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
@@ -35,8 +35,16 @@ export default function ApplicationForm({
   });
 
   const [birthPlace, setBirthPlace] = useState("");
+  const [birthPlaceError, setBirthPlaceError] = useState("");
   const [driversLicNo, setDriversLicNo] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumberError, setPhoneNumberError] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [jobTitleError, setJobTitleError] = useState("");
+  const [organizationFacility, setOrganizationFacility] = useState("");
+  const [organizationFacilityError, setOrganizationFacilityError] = useState(
+    ""
+  );
 
   const history = useHistory();
 
@@ -113,6 +121,7 @@ export default function ApplicationForm({
         label: "City and Country of Birth",
         id: "birthPlace",
         isRequired: true,
+        errorMsg: birthPlaceError,
         onChange: setBirthPlace
       },
       {
@@ -138,6 +147,7 @@ export default function ApplicationForm({
         id: "phoneNumber",
         note: "(Include area code)",
         isRequired: true,
+        errorMsg: phoneNumberError,
         onChange: setPhoneNumber
       },
       {
@@ -155,7 +165,10 @@ export default function ApplicationForm({
     textInputs: [
       {
         label: "Applicant's position/Job Title",
-        id: "applicantPosition"
+        id: "applicantPosition",
+        isRequired: true,
+        errorMsg: jobTitleError,
+        onChange: setJobTitle
       }
     ],
     buttons: []
@@ -166,7 +179,9 @@ export default function ApplicationForm({
       label: "Organization Facility",
       id: "organizationFacility",
       note:
-        "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)"
+        "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)",
+      errorMsg: organizationFacilityError,
+      onChange: setOrganizationFacility
     });
   }
 
@@ -222,6 +237,22 @@ export default function ApplicationForm({
   };
 
   const applicationVerification = () => {
+    if (birthPlace === "") {
+      setBirthPlaceError("Please enter a city and country of birth");
+    }
+
+    if (phoneNumber === "") {
+      setPhoneNumberError("Please enter your primary phone number");
+    }
+
+    if (jobTitle === "") {
+      setJobTitleError("Please enter your position/job title");
+    }
+
+    if (schedule === "D" && organizationFacility === "") {
+      setOrganizationFacilityError("Please enter your organization facility");
+    }
+
     setApplicant({
       firstName,
       middleName,
@@ -235,7 +266,9 @@ export default function ApplicationForm({
       country,
       birthPlace,
       driversLicNo,
-      phoneNumber
+      phoneNumber,
+      jobTitle,
+      organizationFacility
     });
 
     history.push("/");
