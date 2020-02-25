@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  * @author sivakaruna
  *
  */
-class RequestPaymentTest {
+class RequestPaymentServiceTest {
 
 	private final String expectedQueryString = "?"
 			+ "transType=transType"
@@ -27,7 +27,7 @@ class RequestPaymentTest {
 	@DisplayName("Success - payment request queryString")
 	@Test
 	public void generateQueryStringTest() {
-		RequestPayment paymentInfo = new RequestPayment();
+		RequestPaymentService paymentInfo = new RequestPaymentService();
 
 		paymentInfo.setApprovedPage("approvedPage");
 		paymentInfo.setDeclinedPage("declinedPage");

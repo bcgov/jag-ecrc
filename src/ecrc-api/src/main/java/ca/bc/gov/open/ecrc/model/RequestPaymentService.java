@@ -6,7 +6,7 @@ package ca.bc.gov.open.ecrc.model;
  * @author sivakaruna
  *
  */
-public class RequestPayment {
+public class RequestPaymentService {
 
 	private String transType;
 	private String invoiceNumber;
@@ -98,7 +98,7 @@ public class RequestPayment {
         		"&errorPage=" + errorPage +
         		"&totalItemsAmount=" + totalItemsAmount +
         		"&minutesToExpire=" + minutesToExpire +
-        		"&serviceIdRef1=" + serviceIdRef1 +
-        		"&partyIdRef2=" + partyIdRef2;
+        		"&ref1=" + serviceIdRef1 +
+        		"&ref2=" + partyIdRef2;
     }
 }

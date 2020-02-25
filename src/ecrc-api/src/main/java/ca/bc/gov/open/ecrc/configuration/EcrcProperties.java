@@ -29,6 +29,8 @@ public class EcrcProperties {
 	private String logPaymentFailureUri;
 	private String getNextInvoiceIdUri;
 	private String updateServiceFinancialTxnUri;
+	private String paymentUrl;
+	private String getSinglePaymentUri;
 	
 	//CORS properties
 	private String corsMapping;
@@ -134,5 +136,21 @@ public class EcrcProperties {
 	public List<String> getWhiteList() { return whiteList; }
 
 	public void setWhiteList(List<String> whiteList) { this.whiteList = whiteList; }
+
+	public String getPaymentUrl() {
+		return paymentUrl;
+	}
+
+	public void setPaymentUrl(String paymentUrl) {
+		this.paymentUrl = paymentUrl;
+	}
+
+	public String getGetSinglePaymentUri() {
+		return getSinglePaymentUri;
+	}
+
+	public void setGetSinglePaymentUri(String getSinglePaymentUri) {
+		this.getSinglePaymentUri = getSinglePaymentUri;
+	}
   
 }

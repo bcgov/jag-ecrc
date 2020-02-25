@@ -6,7 +6,6 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
-import ca.bc.gov.open.ecrc.model.RequestPayment;
 import ca.bc.gov.open.ecrc.model.Link;
 import ca.bc.gov.open.ecrc.model.RequestUpdateServiceFinancialTxn;
 import javassist.NotFoundException;
@@ -42,6 +41,4 @@ public interface EcrcServices {
 
 	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber) throws EcrcServiceException;
 	
-	public ResponseEntity<String> initiatePayment(RequestPayment paymentInfo) throws EcrcServiceException;
-
 }
