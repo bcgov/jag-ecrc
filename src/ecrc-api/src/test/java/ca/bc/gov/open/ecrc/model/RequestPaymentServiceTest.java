@@ -21,8 +21,8 @@ class RequestPaymentServiceTest {
 			+ "&errorPage=errorPage"
 			+ "&totalItemsAmount=totalItemsAmount"
 			+ "&minutesToExpire=minutesToExpire"
-			+ "&serviceIdRef1=serviceIdRef1"
-			+ "&partyIdRef2=partyIdRef2";
+			+ "&ref1=serviceIdRef1"
+			+ "&ref2=partyIdRef2";
 
 	@DisplayName("Success - payment request queryString")
 	@Test
