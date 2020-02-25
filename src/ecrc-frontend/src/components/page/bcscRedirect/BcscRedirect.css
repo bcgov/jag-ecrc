@@ -1,0 +1,24 @@
+.option {
+  width: 100%;
+  background-color: rgba(239, 243, 252, 1);
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(190, 206, 243, 1);
+  border-radius: 6px;
+  min-height: 70px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  color: #003366;
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 20px;
+  line-height: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.option:hover {
+  background-color: rgba(227, 234, 249, 1);
+}

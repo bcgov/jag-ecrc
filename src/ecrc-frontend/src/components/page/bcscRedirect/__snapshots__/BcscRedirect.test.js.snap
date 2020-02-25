@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Consent Page Component Matches the snapshot 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="https://www2.gov.bc.ca"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div
+          className="navbar-brand"
+        >
+          Criminal Record Check
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        >
+          <div
+            className="navbar-nav"
+          >
+            <a
+              className="nav-item nav-link"
+              href="/"
+            >
+              Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        BC Service Card Application
+      </h1>
+      <p>
+        Workers of a cannabis retail store must register with the Province. Workers must also pass security screening every two years.
+      </p>
+      <p>
+        Cannabis retail store application and licensing fees do not cover worker registration costs. Workers must apply to register and are responsible for the cost. Licence applicants and licensees can pay workers' registration costs if they wish.
+      </p>
+      <h3>
+        To register as a Cannabis Worker online, you must log in with your BC Service Card Account.
+      </h3>
+      <p>
+        Please select an option below:
+      </p>
+      <div
+        className="option"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-8"
+            style={
+              Object {
+                "marginBottom": "10px",
+              }
+            }
+          >
+            I’m a B.C. resident with a BC Services Card Account.
+          </div>
+          <div
+            className="col-sm-4"
+          >
+            <button
+              className="btn ecrc_common_btn btn"
+              onClick={[Function]}
+              type="button"
+            >
+              LOGIN
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="option"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-8"
+            style={
+              Object {
+                "marginBottom": "10px",
+              }
+            }
+          >
+            I’m a B.C. resident but I don't have a BC Services Card Account.
+          </div>
+          <div
+            className="col-sm-4"
+          >
+            <button
+              className="btn ecrc_common_btn btn"
+              onClick={[Function]}
+              type="button"
+            >
+              SET UP ACCOUNT
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="option"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-8"
+            style={
+              Object {
+                "marginBottom": "10px",
+              }
+            }
+          >
+            I’m not a B.C. resident, send me a Cannabis Worker Registration form.
+          </div>
+          <div
+            className="col-sm-4"
+          >
+            <button
+              className="btn ecrc_common_btn btn"
+              onClick={[Function]}
+              type="button"
+            >
+              REQUEST FORM
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sidecard"
+    >
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  Get a BC Services Card
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <p>
+                    B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.
+                    <button
+                      className="btn btn-primary dark-button btn btn-md"
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      READ MORE
+                    </button>
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  Applicants Without a BC Services Card
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <p>
+                    Applicants who haven’t lived in B.C.for at least six months or who live outside the province must 
+                    <a
+                      className="link"
+                      href="mailto: temp@temp.com"
+                    >
+                      email
+                    </a>
+                     the Liquor and Cannabis Regulation Branch for a Worker Registration Application Form.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+    style={Object {}}
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;

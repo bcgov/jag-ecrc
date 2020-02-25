@@ -39,3 +39,6 @@ export const CollectionNotice = () => <SideCards type={"collectionnotice"} />;
 export const UsefulLinks = () => (
   <SideCards type={"usefullinks"} sideCardLinks={links} />
 );
+export const withoutBCServiceCard = () => (
+  <SideCards type={"withoutBCServiceCard"} />
+);
