@@ -155,6 +155,7 @@ public class EcrcProperties {
 
 	public void setGetSinglePaymentUri(String getSinglePaymentUri) {
 		this.getSinglePaymentUri = getSinglePaymentUri;
+	}
 
 	public Map<String, String> getLinks() {
 		return links;
