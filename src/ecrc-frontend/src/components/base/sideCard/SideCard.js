@@ -67,7 +67,7 @@ export default function SideCard({
               <h2 className="heading-style">{heading}</h2>
               <div className="submit-content">
                 <div style={{ fontSize: "16px" }}>
-                  For question about criminal record checks, contact the
+                  For questions about criminal record checks, contact the
                   Criminal Records Review Program Monday to Friday, 8:30 a.m. -
                   4:30 p.m.
                 </div>
