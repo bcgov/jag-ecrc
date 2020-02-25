@@ -184,6 +184,7 @@ export default function ApplicationForm({
       id: "organizationFacility",
       note:
         "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)",
+      isRequired: true,
       errorMsg: organizationFacilityError,
       onChange: setOrganizationFacility
     });
