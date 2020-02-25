@@ -221,7 +221,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
                     }
                   }
                 >
-                  For question about criminal record checks, contact the Criminal Records Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
+                  For questions about criminal record checks, contact the Criminal Records Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
                 </div>
                 <div
                   style={
