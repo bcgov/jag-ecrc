@@ -33,7 +33,7 @@ class EcrcPropertiesTest {
 		Assert.assertEquals("updateServiceFinancialTxn", ecrcProperties.getUpdateServiceFinancialTxnUri());
 		Assert.assertEquals("usename", ecrcProperties.getUsername());
 		Assert.assertEquals("abc", ecrcProperties.getWhiteList().get(0));
-
+		Assert.assertEquals("https://test1.ca", ecrcProperties.getLinks().get("test1"));
 	}
 
 }
