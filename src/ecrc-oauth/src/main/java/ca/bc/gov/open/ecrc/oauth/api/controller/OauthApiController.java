@@ -15,15 +15,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nimbusds.oauth2.sdk.token.AccessToken;
+import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
+import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 
 import ca.bc.gov.open.ecrc.oauth.api.configuration.OauthApiProperties;
 import ca.bc.gov.open.ecrc.oauth.api.exception.OauthServiceException;
-import ca.bc.gov.open.ecrc.oauth.api.model.JwtUserDto;
 import ca.bc.gov.open.ecrc.oauth.api.service.OauthServicesImpl;
 import ca.bc.gov.open.ecrc.oauth.api.util.JwtTokenGenerator;
 import ch.qos.logback.classic.Logger;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 
 
 @Configuration
@@ -61,10 +60,10 @@ public class OauthApiController {
 	
 	/*
 	 * 
-	 * Uses authorization code provided at /idpRedirect to generate token which is stored in 
-	 * memory. Responds to SPA with new JWT.  
+	 * Uses authorization code provided from call to /idpRedirect and used to generate access token stored in 
+	 * memory. 
 	 * 
-	 * https://connect2id.com/products/nimbus-oauth-openid-connect-sdk/examples/oauth/token-request
+	 * Responds to SPA with new JWT (complete with userInfo and access_Token as claims).   
 	 * 
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -72,23 +71,21 @@ public class OauthApiController {
 		
 		System.out.println("login called... Authorization code being used to generate token = " + authCode);
 		
+		// Using the response from the IdP server, strip out the access token and add it to a new JWT token along with the userInfo. 
 		
-		AccessToken resp = null; 
+		AccessToken accessToken = null; 
 		try {
-			resp = oauthServices.getToken(authCode);
+			accessToken = oauthServices.getToken(authCode);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			e.printStackTrace();
 			throw new OauthServiceException("Error generating client token. ", e);
 		}
 		
-		// TODO
-		// Using the response from the IdP server, strip out the access token and add it to a new JWT token and
-		// return to caller. 
-		//return resp.toString();
+		UserInfo userInfo = oauthServices.getUserInfo((BearerAccessToken)accessToken);
 		
-
-        return JwtTokenGenerator.generateToken(oauthProps.getFesecret()); 
+		// TODO - The JWT should be past as in the response header, e.g. resp.setHeader("Authorization", "Bearer " + token); 
+        return JwtTokenGenerator.generateToken(userInfo, accessToken, oauthProps.getFesecret()); 
 		
 	}
 

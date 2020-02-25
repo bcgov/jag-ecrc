@@ -26,9 +26,14 @@ import com.nimbusds.oauth2.sdk.TokenResponse;
 import com.nimbusds.oauth2.sdk.auth.ClientAuthentication;
 import com.nimbusds.oauth2.sdk.auth.ClientSecretBasic;
 import com.nimbusds.oauth2.sdk.auth.Secret;
+import com.nimbusds.oauth2.sdk.http.HTTPResponse;
 import com.nimbusds.oauth2.sdk.id.ClientID;
 import com.nimbusds.oauth2.sdk.id.State;
 import com.nimbusds.oauth2.sdk.token.AccessToken;
+import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
+import com.nimbusds.openid.connect.sdk.UserInfoRequest;
+import com.nimbusds.openid.connect.sdk.UserInfoResponse;
+import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 
 import ca.bc.gov.open.ecrc.oauth.api.configuration.OauthApiProperties;
 import ca.bc.gov.open.ecrc.oauth.api.exception.OauthServiceException;
@@ -145,4 +150,39 @@ public class OauthServicesImpl implements OauthServices {
 		
 	}
 
+	@Override
+	public UserInfo getUserInfo(BearerAccessToken accessToken) throws OauthServiceException {
+	
+		try {
+
+			HTTPResponse httpResponse = new UserInfoRequest(new URI(oauthProps.getIdp() + "/userinfo"),
+					(BearerAccessToken) accessToken).toHTTPRequest().send();
+
+			// Parse the response
+			UserInfoResponse userInfoResponse = null;
+			try {
+				userInfoResponse = UserInfoResponse.parse(httpResponse);
+			} catch (ParseException e) {
+				logger.error(e.getMessage(), e);
+				e.printStackTrace();
+				throw new OauthServiceException("Error parsing userinfo data returned from server. ", e);
+			}
+
+			// The request failed, e.g. due to invalid or expired token
+			if (!userInfoResponse.indicatesSuccess()) {
+				logger.error("Invalid response received from server when requesting userinfo. " + "code: "
+						+ userInfoResponse.toErrorResponse().getErrorObject().getCode() + "desc: "
+						+ userInfoResponse.toErrorResponse().getErrorObject().getDescription());
+				throw new OauthServiceException("Invalid response returned from server for userinfo request.");
+			}
+
+			// Extract the claims
+			return userInfoResponse.toSuccessResponse().getUserInfo();
+
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			e.printStackTrace();
+			throw new OauthServiceException(e.getMessage(), e);
+		}
+	}
 }
