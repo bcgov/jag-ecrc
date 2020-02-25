@@ -18,10 +18,7 @@ export const TextInput = ({
 
   const labelPart = (
     <div className="label">
-      <label
-        className={`textinput_label ${errorMsg ? "error" : ""}`}
-        htmlFor={id}
-      >
+      <label className="textinput_label" htmlFor={id}>
         {label}
       </label>
       {asterisk}&nbsp;

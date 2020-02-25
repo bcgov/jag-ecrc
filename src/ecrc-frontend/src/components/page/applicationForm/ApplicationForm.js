@@ -26,7 +26,7 @@ export default function ApplicationForm({
       country
     },
     setApplicant,
-    org: { schedule }
+    org: { defaultScheduleTypeCd }
   }
 }) {
   const [previousNames, setPreviousNames] = useState({
@@ -39,6 +39,8 @@ export default function ApplicationForm({
   const [driversLicNo, setDriversLicNo] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [emailAddressError, setEmailAddressError] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [jobTitleError, setJobTitleError] = useState("");
   const [organizationFacility, setOrganizationFacility] = useState("");
@@ -154,7 +156,9 @@ export default function ApplicationForm({
         label: "Personal Email Address",
         id: "emailAddress",
         note: "We may use this to communicate with you about your application.",
-        isRequired: true
+        isRequired: true,
+        errorMsg: emailAddressError,
+        onChange: setEmailAddress
       }
     ],
     buttons: []
@@ -174,7 +178,7 @@ export default function ApplicationForm({
     buttons: []
   };
 
-  if (schedule === "D") {
+  if (defaultScheduleTypeCd === "WBSD") {
     positionInformation.textInputs.push({
       label: "Organization Facility",
       id: "organizationFacility",
@@ -245,31 +249,44 @@ export default function ApplicationForm({
       setPhoneNumberError("Please enter your primary phone number");
     }
 
+    if (emailAddress === "") {
+      setEmailAddressError("Please enter your personal email address");
+    }
+
     if (jobTitle === "") {
       setJobTitleError("Please enter your position/job title");
     }
 
-    if (schedule === "D" && organizationFacility === "") {
+    if (defaultScheduleTypeCd === "WBSD" && organizationFacility === "") {
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
-    setApplicant({
-      firstName,
-      middleName,
-      lastName,
-      birthDate,
-      sex,
-      street,
-      city,
-      province,
-      postalCode,
-      country,
-      birthPlace,
-      driversLicNo,
-      phoneNumber,
-      jobTitle,
-      organizationFacility
-    });
+    if (
+      birthPlace != "" &&
+      phoneNumber != "" &&
+      emailAddress != "" &&
+      jobTitle != "" &&
+      !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "")
+    ) {
+      setApplicant({
+        firstName,
+        middleName,
+        lastName,
+        birthDate,
+        sex,
+        street,
+        city,
+        province,
+        postalCode,
+        country,
+        birthPlace,
+        driversLicNo,
+        phoneNumber,
+        emailAddress,
+        jobTitle,
+        organizationFacility
+      });
+    }
 
     history.push("/");
   };
