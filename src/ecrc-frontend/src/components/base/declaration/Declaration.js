@@ -59,7 +59,14 @@ export default function Declaration({
 }
 
 Declaration.propTypes = {
-  textInput: PropTypes.object,
+  textInput: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    note: PropTypes.string,
+    textInputStyle: PropTypes.string,
+    value: PropTypes.string,
+    isRequired: PropTypes.bool
+  }),
   checkFirstBox: PropTypes.func,
   checkSecondBox: PropTypes.func,
   checkThirdBox: PropTypes.func,
