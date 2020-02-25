@@ -243,7 +243,7 @@ export default function ApplicationForm({
 
   const applicationVerification = () => {
     if (birthPlace === "") {
-      setBirthPlaceError("Please enter a city and country of birth");
+      setBirthPlaceError("Please enter your city and country of birth");
     }
 
     if (phoneNumber === "") {
