@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
  */
 class RequestPaymentServiceTest {
 
-	private final String expectedQueryString = "?merchant_id=123"
+	private final String expectedQueryString = "merchant_id=123"
 			+ "&trnType=P"
 			+ "&trnOrderNumber=invoiceNumber"
 			+ "&errorPage=http://return.com"
