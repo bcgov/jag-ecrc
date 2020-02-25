@@ -11,6 +11,7 @@ exports[`Declaration Component Matches the snapshot 1`] = `
     className="declareSection"
   >
     <input
+      onClick={[Function]}
       type="checkbox"
     />
     <span
@@ -23,6 +24,7 @@ exports[`Declaration Component Matches the snapshot 1`] = `
     className="declareSection"
   >
     <input
+      onClick={[Function]}
       type="checkbox"
     />
     <span
@@ -33,9 +35,22 @@ exports[`Declaration Component Matches the snapshot 1`] = `
   </section>
   <section
     className="declareSection"
+  >
+    <input
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="declaration-cb"
+    >
+      The third checkbox for my application and will provide as necessary is complete.
+    </span>
+  </section>
+  <section
+    className="declareSection"
     style={
       Object {
-        "width": "475px",
+        "maxWidth": "475px",
       }
     }
   >
@@ -45,9 +60,9 @@ exports[`Declaration Component Matches the snapshot 1`] = `
       >
         <label
           className="textinput_label"
-          htmlFor="textInputId"
+          htmlFor=""
         >
-          Applicant Name
+          
         </label>
         
          
@@ -57,7 +72,7 @@ exports[`Declaration Component Matches the snapshot 1`] = `
       </div>
       <input
         className="textinput_editable_white"
-        id="textInputId"
+        id=""
         onChange={[Function]}
         type="text"
       />

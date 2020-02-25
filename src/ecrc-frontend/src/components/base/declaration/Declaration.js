@@ -3,18 +3,18 @@ import PropTypes from "prop-types";
 import { TextInput } from "../textInput/TextInput";
 import "./Declaration.css";
 
-export default function Declaration({ onApplicantNameChange }) {
-  const textInput = {
-    label: "Applicant Name",
-    id: "textInputId",
-    textInputStyle: "textinput_editable_white"
-  };
-
+export default function Declaration({
+  textInput,
+  onApplicantNameChange,
+  checkFirstBox,
+  checkSecondBox,
+  checkThirdBox
+}) {
   return (
     <div>
       <div className="declareTitle">DECLARATION AND CONSENT</div>
       <section className="declareSection">
-        <input type="checkbox" />
+        <input type="checkbox" onClick={checkFirstBox} />
         <span className="declaration-cb">
           I, the undersigned, do hereby consent to the collection and disclosure
           by the Royal Canadian Mounted Police (RCMP) and other law enforcement
@@ -32,7 +32,7 @@ export default function Declaration({ onApplicantNameChange }) {
         </span>
       </section>
       <section className="declareSection">
-        <input type="checkbox" />
+        <input type="checkbox" onClick={checkSecondBox} />
         <span className="declaration-cb">
           I certify that, to the best of my knowledge, the information I have
           provided on my application and will provide as necessary is complete,
@@ -43,8 +43,15 @@ export default function Declaration({ onApplicantNameChange }) {
           suspended or revoked.
         </span>
       </section>
+      <section className="declareSection">
+        <input type="checkbox" onClick={checkThirdBox} />
+        <span className="declaration-cb">
+          The third checkbox for my application and will provide as necessary is
+          complete.
+        </span>
+      </section>
 
-      <section className="declareSection" style={{ width: "475px" }}>
+      <section className="declareSection" style={{ maxWidth: "475px" }}>
         <TextInput textInput={textInput} onChange={onApplicantNameChange} />
       </section>
     </div>
@@ -52,5 +59,23 @@ export default function Declaration({ onApplicantNameChange }) {
 }
 
 Declaration.propTypes = {
+  textInput: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    note: PropTypes.string,
+    textInputStyle: PropTypes.string,
+    value: PropTypes.string,
+    isRequired: PropTypes.bool
+  }),
+  checkFirstBox: PropTypes.func,
+  checkSecondBox: PropTypes.func,
+  checkThirdBox: PropTypes.func,
   onApplicantNameChange: PropTypes.func.isRequired
+};
+
+Declaration.defaultProps = {
+  textInput: { id: "", label: "" },
+  checkFirstBox: () => {},
+  checkSecondBox: () => {},
+  checkThirdBox: () => {}
 };
