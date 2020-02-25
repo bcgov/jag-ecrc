@@ -149,6 +149,9 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
               readOnly={true}
               type="text"
             />
+            <span
+              className="error"
+            />
           </div>
         </section>
       </div>

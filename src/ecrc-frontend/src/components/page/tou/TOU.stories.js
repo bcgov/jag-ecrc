@@ -1,5 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { MemoryRouter } from "react-router-dom";
 
 import TOU from "./TOU";
 
@@ -12,6 +13,14 @@ const page = {
 };
 
 storiesOf("Term Of Use page", module)
-  .add("Default", () => <TOU page={page} />)
+  .add("Default", () => (
+    <MemoryRouter>
+      <TOU page={page} />
+    </MemoryRouter>
+  ))
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
-  .add("Mobile", () => <TOU page={page} />);
+  .add("Mobile", () => (
+    <MemoryRouter>
+      <TOU page={page} />
+    </MemoryRouter>
+  ));
