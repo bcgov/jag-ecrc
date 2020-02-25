@@ -10,20 +10,20 @@ import SideCards from "../../composite/sideCards/SideCards";
 
 export default function OrgValidation({ page: { header, setOrg } }) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
-  // method name needs to be capitalized due to react hooks gotcha
   const history = useHistory();
+  const [orgError, setOrgError] = useState("");
 
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}`)
       .then(res => {
-        console.log(res);
         setOrg(res.data.accessCodeResponse);
         // sessionStorage.setItem("org", JSON.stringify(res.data.accessCodeResponse));
         history.push("/ecrc/orgverification");
       })
       .catch(error => {
         console.log(error);
+        setOrgError("Please enter a valid org code");
       });
   };
 
@@ -31,7 +31,8 @@ export default function OrgValidation({ page: { header, setOrg } }) {
     label: "Access code",
     id: "orgId",
     textInputStyle: "placeHolder",
-    isRequired: true
+    isRequired: true,
+    errorMsg: orgError
   };
 
   const button = {

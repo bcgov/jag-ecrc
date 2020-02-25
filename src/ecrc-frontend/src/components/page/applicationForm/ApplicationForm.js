@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
@@ -262,10 +262,10 @@ export default function ApplicationForm({
     }
 
     if (
-      birthPlace != "" &&
-      phoneNumber != "" &&
-      emailAddress != "" &&
-      jobTitle != "" &&
+      birthPlace !== "" &&
+      phoneNumber !== "" &&
+      emailAddress !== "" &&
+      jobTitle !== "" &&
       !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "")
     ) {
       setApplicant({
@@ -286,9 +286,9 @@ export default function ApplicationForm({
         jobTitle,
         organizationFacility
       });
-    }
 
-    history.push("/");
+      history.push("/");
+    }
   };
 
   const back = () => {
@@ -375,7 +375,7 @@ ApplicationForm.propTypes = {
     }),
     setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({
-      schedule: PropTypes.string.isRequired
+      defaultScheduleTypeCd: PropTypes.string.isRequired
     })
   }).isRequired
 };
