@@ -8,26 +8,33 @@ import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
 
-export default function OrgValidation({ page: { setOrg, header } }) {
-  const [orgInput, setOrgInput] = useState("");
-  // method name needs to be capitalized due to react hooks gotcha
+export default function OrgValidation({ page: { header, setOrg } }) {
+  const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const history = useHistory();
+  const [orgError, setOrgError] = useState("");
 
   const orgValidation = () => {
     axios
-      .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgInput}`)
+      .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}`)
       .then(res => {
-        history.push("/ecrc/orgverification");
         setOrg(res.data.accessCodeResponse);
+        history.push("/ecrc/orgverification");
       })
-      .catch();
+      .catch(error => {
+        if (error.response.status === 404) {
+          setOrgError("Please enter a valid org code");
+        } else if (error.response.status === 401) {
+          history.push("/ecrc/transition");
+        }
+      });
   };
 
   const textInput = {
     label: "Access code",
     id: "orgId",
     textInputStyle: "placeHolder",
-    isRequired: true
+    isRequired: true,
+    errorMsg: orgError
   };
 
   const button = {
@@ -44,7 +51,7 @@ export default function OrgValidation({ page: { setOrg, header } }) {
         <div className="content col-md-8">
           <OrgValidationText
             textInput={textInput}
-            onChange={setOrgInput}
+            onChange={setOrgTicketNumber}
             button={button}
             onClick={orgValidation}
           />

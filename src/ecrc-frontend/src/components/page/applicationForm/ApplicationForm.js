@@ -25,13 +25,28 @@ export default function ApplicationForm({
       postalCode,
       country
     },
-    org: { schedule }
+    setApplicant,
+    org: { defaultScheduleTypeCd }
   }
 }) {
   const [previousNames, setPreviousNames] = useState({
     previousTwo: false,
     previousThree: false
   });
+
+  const [birthPlace, setBirthPlace] = useState("");
+  const [birthPlaceError, setBirthPlaceError] = useState("");
+  const [driversLicNo, setDriversLicNo] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumberError, setPhoneNumberError] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [emailAddressError, setEmailAddressError] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [jobTitleError, setJobTitleError] = useState("");
+  const [organizationFacility, setOrganizationFacility] = useState("");
+  const [organizationFacilityError, setOrganizationFacilityError] = useState(
+    ""
+  );
 
   const history = useHistory();
 
@@ -107,7 +122,9 @@ export default function ApplicationForm({
       {
         label: "City and Country of Birth",
         id: "birthPlace",
-        isRequired: true
+        isRequired: true,
+        errorMsg: birthPlaceError,
+        onChange: setBirthPlace
       },
       {
         label: "Date of Birth",
@@ -124,19 +141,24 @@ export default function ApplicationForm({
       {
         label: "BC Driver's Licence Number",
         id: "bcDLNumber",
-        note: "(Current or Expired)"
+        note: "(Current or Expired)",
+        onChange: setDriversLicNo
       },
       {
         label: "Primary Phone Number",
         id: "phoneNumber",
         note: "(Include area code)",
-        isRequired: true
+        isRequired: true,
+        errorMsg: phoneNumberError,
+        onChange: setPhoneNumber
       },
       {
         label: "Personal Email Address",
         id: "emailAddress",
         note: "We may use this to communicate with you about your application.",
-        isRequired: true
+        isRequired: true,
+        errorMsg: emailAddressError,
+        onChange: setEmailAddress
       }
     ],
     buttons: []
@@ -147,18 +169,24 @@ export default function ApplicationForm({
     textInputs: [
       {
         label: "Applicant's position/Job Title",
-        id: "applicantPosition"
+        id: "applicantPosition",
+        isRequired: true,
+        errorMsg: jobTitleError,
+        onChange: setJobTitle
       }
     ],
     buttons: []
   };
 
-  if (schedule === "D") {
+  if (defaultScheduleTypeCd === "WBSD") {
     positionInformation.textInputs.push({
       label: "Organization Facility",
       id: "organizationFacility",
       note:
-        "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)"
+        "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)",
+      isRequired: true,
+      errorMsg: organizationFacilityError,
+      onChange: setOrganizationFacility
     });
   }
 
@@ -213,7 +241,56 @@ export default function ApplicationForm({
     type: "submit"
   };
 
-  const applicationVerification = () => {};
+  const applicationVerification = () => {
+    if (birthPlace === "") {
+      setBirthPlaceError("Please enter your city and country of birth");
+    }
+
+    if (phoneNumber === "") {
+      setPhoneNumberError("Please enter your primary phone number");
+    }
+
+    if (emailAddress === "") {
+      setEmailAddressError("Please enter your personal email address");
+    }
+
+    if (jobTitle === "") {
+      setJobTitleError("Please enter your position/job title");
+    }
+
+    if (defaultScheduleTypeCd === "WBSD" && organizationFacility === "") {
+      setOrganizationFacilityError("Please enter your organization facility");
+    }
+
+    if (
+      birthPlace !== "" &&
+      phoneNumber !== "" &&
+      emailAddress !== "" &&
+      jobTitle !== "" &&
+      !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "")
+    ) {
+      setApplicant({
+        firstName,
+        middleName,
+        lastName,
+        birthDate,
+        sex,
+        street,
+        city,
+        province,
+        postalCode,
+        country,
+        birthPlace,
+        driversLicNo,
+        phoneNumber,
+        emailAddress,
+        jobTitle,
+        organizationFacility
+      });
+
+      history.push("/");
+    }
+  };
 
   const back = () => {
     history.push("/");
@@ -297,8 +374,9 @@ ApplicationForm.propTypes = {
       postalCode: PropTypes.string.isRequired,
       country: PropTypes.string.isRequired
     }),
+    setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({
-      schedule: PropTypes.string.isRequired
+      defaultScheduleTypeCd: PropTypes.string.isRequired
     })
   }).isRequired
 };

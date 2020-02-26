@@ -1,5 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
+import { MemoryRouter } from "react-router-dom";
 
 import TOU from "./TOU";
 
@@ -9,18 +10,16 @@ describe("TermOfUse Page Component", () => {
       name: "Criminal Record Check"
     };
 
-    const pageLayout = {
-      header
-    };
-
     const page = {
-      pageLayout
+      header
     };
 
     const onContinueClick = () => jest.fn();
 
     const termsOfUse = create(
-      <TOU page={page} onContinueClick={onContinueClick} />
+      <MemoryRouter>
+        <TOU page={page} onContinueClick={onContinueClick} />
+      </MemoryRouter>
     );
     expect(termsOfUse.toJSON()).toMatchSnapshot();
   });

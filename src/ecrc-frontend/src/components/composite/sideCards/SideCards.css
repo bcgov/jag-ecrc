@@ -17,4 +17,9 @@ p > button {
 
 .link {
   color: white;
+  font-weight: 600;
+}
+
+.link:hover {
+  color: white;
 }
