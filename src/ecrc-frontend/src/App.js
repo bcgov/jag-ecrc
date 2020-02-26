@@ -44,7 +44,7 @@ export default function App() {
             <Consent page={{ header }} />
           </Route>
           <Route path="/ecrc/bcscRedirect">
-            <BcscRedirect page={page} />
+            <BcscRedirect page={{ header }} />
           </Route>
         </Switch>
       </BrowserRouter>
