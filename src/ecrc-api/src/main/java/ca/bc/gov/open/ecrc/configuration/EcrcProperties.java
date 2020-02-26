@@ -41,7 +41,7 @@ public class EcrcProperties {
 	//OAUTH Properties
 	private String oauthIdp;
 	private String oauthClientId;
-	private String oauthClientSecret;
+	private String oauthSecret;
 	private String oauthScope;
 	private String oauthReturnUri;
 	private String oauthFeSecret; // secret shared with the front end
@@ -181,12 +181,12 @@ public class EcrcProperties {
 		this.oauthClientId = oauthClientId;
 	}
 
-	public String getOauthClientSecret() {
-		return oauthClientSecret;
+	public String getOauthSecret() {
+		return oauthSecret;
 	}
 
-	public void setOauthClientSecret(String oauthClientSecret) {
-		this.oauthClientSecret = oauthClientSecret;
+	public void setOauthSecret(String oauthSecret) {
+		this.oauthSecret = oauthSecret;
 	}
 
 	public String getOauthScope() {
