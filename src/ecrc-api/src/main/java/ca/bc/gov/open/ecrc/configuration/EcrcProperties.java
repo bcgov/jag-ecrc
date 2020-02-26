@@ -28,7 +28,7 @@ public class EcrcProperties {
 	private String doAuthenticateUserUri;
 	private String getNextSessionIdUri;
 	private String createNewCRCServiceUri;
-    private String getServiceFeeAmountUri;
+	private String getServiceFeeAmountUri;
 	private String createApplicantUri;
 	private String logPaymentFailureUri;
 	private String getNextInvoiceIdUri;
@@ -50,6 +50,12 @@ public class EcrcProperties {
 	private List<String> whiteList;
 	
 	private Map<String, String> links = new HashMap<String, String>();
+	
+	//Payment properties
+	private String paymentUrl;
+	private String getSinglePaymentUri;
+	private String paymentUsername;
+	private String paymentPassword;
 
 	public String getServerPort() {
 		return serverPort;
@@ -164,6 +170,38 @@ public class EcrcProperties {
 	public void setLinks(Map<String, String> links) {
 		this.links = links;
 	}
+	
+	public String getPaymentUrl() {
+		return paymentUrl;
+	}
+
+	public void setPaymentUrl(String paymentUrl) {
+		this.paymentUrl = paymentUrl;
+	}
+
+	public String getGetSinglePaymentUri() {
+		return getSinglePaymentUri;
+	}
+
+	public void setGetSinglePaymentUri(String getSinglePaymentUri) {
+		this.getSinglePaymentUri = getSinglePaymentUri;
+	}
+
+	public String getPaymentUsername() {
+		return paymentUsername;
+	}
+
+	public void setPaymentUsername(String paymentUsername) {
+		this.paymentUsername = paymentUsername;
+	}
+
+	public String getPaymentPassword() {
+		return paymentPassword;
+	}
+
+	public void setPaymentPassword(String paymentPassword) {
+		this.paymentPassword = paymentPassword;
+  }
 
 	public String getOauthIdp() {
 		return oauthIdp;
