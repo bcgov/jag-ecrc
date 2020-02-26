@@ -21,7 +21,7 @@ export default function Consent({ page: { header }, onContinueClick }) {
   useEffect(() => {
     if (firstBoxChecked && secondBoxChecked && thirdBoxChecked) {
       setInputEnabled("textinput_editable_white");
-      if (applicantName !== "") {
+      if (applicantName) {
         setContinueBtnEnabled(true);
       } else {
         setContinueBtnEnabled(false);

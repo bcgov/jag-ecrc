@@ -3,7 +3,7 @@ import { create } from "react-test-renderer";
 
 import BcscRedirect from "./BcscRedirect";
 
-describe("Consent Page Component", () => {
+describe("BcscRedirect Page Component", () => {
   test("Matches the snapshot", () => {
     const header = {
       name: "Criminal Record Check"
@@ -13,7 +13,7 @@ describe("Consent Page Component", () => {
       header
     };
 
-    const consent = create(<BcscRedirect page={page} />);
-    expect(consent.toJSON()).toMatchSnapshot();
+    const bcscRedirect = create(<BcscRedirect page={page} />);
+    expect(bcscRedirect.toJSON()).toMatchSnapshot();
   });
 });
