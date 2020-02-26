@@ -69,17 +69,23 @@ export default function BcscRedirect({ page: { header } }) {
           <p>Please select an option below:</p>
           <div className="option">
             <div className="row">
-              <div className="col-sm-8" style={{ marginBottom: "10px" }}>
+              <div
+                className="col-lg-8 col-md-12 "
+                style={{ marginBottom: "10px" }}
+              >
                 I’m a B.C. resident with a BC Services Card Account.
               </div>
-              <div className="col-sm-4">
+              <div className="col-md-4">
                 <Button button={loginBtn} onClick={onLoginClick} />
               </div>
             </div>
           </div>
           <div className="option">
             <div className="row">
-              <div className="col-sm-8" style={{ marginBottom: "10px" }}>
+              <div
+                className="col-lg-8 col-md-12"
+                style={{ marginBottom: "10px" }}
+              >
                 I’m a B.C. resident but I don&apos;t have a BC Services Card
                 Account.
               </div>
@@ -94,7 +100,10 @@ export default function BcscRedirect({ page: { header } }) {
           </div>
           <div className="option">
             <div className="row">
-              <div className="col-sm-8" style={{ marginBottom: "10px" }}>
+              <div
+                className="col-lg-8 col-md-12"
+                style={{ marginBottom: "10px" }}
+              >
                 I’m not a B.C. resident, send me a Cannabis Worker Registration
                 form.
               </div>

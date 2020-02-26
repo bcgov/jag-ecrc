@@ -92,7 +92,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
           className="row"
         >
           <div
-            className="col-sm-8"
+            className="col-lg-8 col-md-12 "
             style={
               Object {
                 "marginBottom": "10px",
@@ -102,7 +102,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
             I’m a B.C. resident with a BC Services Card Account.
           </div>
           <div
-            className="col-sm-4"
+            className="col-md-4"
           >
             <button
               className="btn ecrc_common_btn btn"
@@ -121,7 +121,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
           className="row"
         >
           <div
-            className="col-sm-8"
+            className="col-lg-8 col-md-12"
             style={
               Object {
                 "marginBottom": "10px",
@@ -150,7 +150,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
           className="row"
         >
           <div
-            className="col-sm-8"
+            className="col-lg-8 col-md-12"
             style={
               Object {
                 "marginBottom": "10px",
