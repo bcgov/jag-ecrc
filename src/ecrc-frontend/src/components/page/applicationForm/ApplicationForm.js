@@ -29,6 +29,7 @@ export default function ApplicationForm({
     org: { defaultScheduleTypeCd }
   }
 }) {
+  const [toHome, setToHome] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: false,
     previousThree: false
@@ -306,7 +307,7 @@ export default function ApplicationForm({
   };
 
   const back = () => {
-    return <Redirect to="/" />;
+    setToHome(true);
   };
 
   const additionalNames = event => {
@@ -318,6 +319,10 @@ export default function ApplicationForm({
       setPreviousNames({ ...previousNames, previousThree: true });
     }
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <main>

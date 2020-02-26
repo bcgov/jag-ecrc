@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
@@ -8,9 +8,15 @@ import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
 
 export default function TOU({ page: { header } }) {
+  const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
+
   const onContinueClick = () => {
-    return <Redirect to="/ecrc/bcscRedirect" />;
+    setToBCSCRedirect(true);
   };
+
+  if (toBCSCRedirect) {
+    return <Redirect to="/ecrc/bcscRedirect" />;
+  }
 
   return (
     <main>

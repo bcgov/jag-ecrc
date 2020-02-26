@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -10,20 +10,23 @@ import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
 
 export default function OrgVerification({ page: { header, org } }) {
-  const orgVerified = () => {
-    return <Redirect to="/ecrc/termsofuse" />;
-  };
-
-  const back = () => {
-    return <Redirect to="/" />;
-  };
+  const [toHome, setToHome] = useState(false);
+  const [toTOU, setToTOU] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     if (!org.orgNm) {
-      back();
+      setToHome(true);
     }
   }, [org.orgNm]);
+
+  const orgVerified = () => {
+    setToTOU(true);
+  };
+
+  const back = () => {
+    setToHome(true);
+  };
 
   const links = [
     {
@@ -81,6 +84,14 @@ export default function OrgVerification({ page: { header, org } }) {
     header: "Organization Type",
     tableElements: organizationTypeElements
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
+
+  if (toTOU) {
+    return <Redirect to="/ecrc/termsofuse" />;
+  }
 
   return (
     <main>

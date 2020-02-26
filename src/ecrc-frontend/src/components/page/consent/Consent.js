@@ -10,6 +10,9 @@ import "../page.css";
 import SideCard from "../../base/sideCard/SideCard";
 
 export default function Consent({ page: { header } }) {
+  const [toHome, setToHome] = useState(false);
+  const [toApplicationForm, setToApplicationForm] = useState(false);
+
   const [inputEnabled, setInputEnabled] = useState(
     "textinput_non_editable_gray"
   );
@@ -81,6 +84,14 @@ export default function Consent({ page: { header } }) {
     textInputStyle: inputEnabled
   };
 
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
+
+  if (toApplicationForm) {
+    return <Redirect to="/ecrc/applicationform" />;
+  }
+
   return (
     <main>
       <Header header={header} />
@@ -100,13 +111,13 @@ export default function Consent({ page: { header } }) {
             <Button
               button={backButton}
               onClick={() => {
-                return <Redirect to="/" />;
+                setToHome(true);
               }}
             />
             <Button
               button={continueButton}
               onClick={() => {
-                return <Redirect to="/ecrc/applicationform" />;
+                setToApplicationForm(true);
               }}
             />
           </div>

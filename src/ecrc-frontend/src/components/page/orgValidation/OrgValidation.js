@@ -11,23 +11,21 @@ import SideCards from "../../composite/sideCards/SideCards";
 export default function OrgValidation({ page: { header, setOrg } }) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
-
-  const transition = () => {
-    return <Redirect from="/" to="/ecrc/transition" />;
-  };
+  const [toTransition, setToTransition] = useState(false);
+  const [toOrgVerification, setToOrgVerification] = useState(false);
 
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}`)
       .then(res => {
         setOrg(res.data.accessCodeResponse);
-        return <Redirect from="/" to="/ecrc/orgverification" />;
+        setToOrgVerification(true);
       })
       .catch(error => {
         if (error.response.status === 404) {
           setOrgError("Please enter a valid org code");
         } else if (error.response.status === 401) {
-          transition();
+          setToTransition(true);
         }
       });
   };
@@ -46,6 +44,14 @@ export default function OrgValidation({ page: { header, setOrg } }) {
     buttonSize: "btn btn-sm",
     type: "submit"
   };
+
+  if (toOrgVerification) {
+    return <Redirect to="/ecrc/orgverification" />;
+  }
+
+  if (toTransition) {
+    return <Redirect to="/ecrc/transition" />;
+  }
 
   return (
     <main>
