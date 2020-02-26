@@ -28,7 +28,7 @@ public class EcrcProperties {
 	private String doAuthenticateUserUri;
 	private String getNextSessionIdUri;
 	private String createNewCRCServiceUri;
-  private String getServiceFeeAmountUri;
+	private String getServiceFeeAmountUri;
 	private String createApplicantUri;
 	private String logPaymentFailureUri;
 	private String getNextInvoiceIdUri;
@@ -51,7 +51,7 @@ public class EcrcProperties {
 	
 	private Map<String, String> links = new HashMap<String, String>();
 	
-  //Payment properties
+	//Payment properties
 	private String paymentUrl;
 	private String getSinglePaymentUri;
 	private String paymentUsername;
