@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
@@ -9,6 +10,9 @@ import "../page.css";
 import SideCard from "../../base/sideCard/SideCard";
 
 export default function Consent({ page: { header }, onContinueClick }) {
+  const [toHome, setToHome] = useState(false);
+  const [toApplicationForm, setToApplicationForm] = useState(false);
+
   const [inputEnabled, setInputEnabled] = useState(
     "textinput_non_editable_gray"
   );
@@ -82,6 +86,8 @@ export default function Consent({ page: { header }, onContinueClick }) {
 
   return (
     <main>
+      {toHome ? <Redirect to="/" /> : null}
+      {toApplicationForm ? <Redirect to="/ecrc/applicationform" /> : null}
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">

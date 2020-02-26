@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import "./ApplicationForm.css";
 import Header from "../../base/header/Header";
@@ -29,6 +29,7 @@ export default function ApplicationForm({
     org: { defaultScheduleTypeCd }
   }
 }) {
+  const [toHome, setToHome] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: false,
     previousThree: false
@@ -47,8 +48,6 @@ export default function ApplicationForm({
   const [organizationFacilityError, setOrganizationFacilityError] = useState(
     ""
   );
-
-  const history = useHistory();
 
   const updateInput = (input, setInput, setError) => {
     setInput(input);
@@ -307,12 +306,12 @@ export default function ApplicationForm({
         organizationFacility
       });
 
-      history.push("/");
+      //TODO: Redirect to bambora here...
     }
   };
 
   const back = () => {
-    history.push("/");
+    setToHome(true);
   };
 
   const additionalNames = event => {
@@ -327,6 +326,7 @@ export default function ApplicationForm({
 
   return (
     <main>
+      {toHome ? <Redirect to="/" /> : null}
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">

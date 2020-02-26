@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -8,14 +8,15 @@ import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
 
 export default function TOU({ page: { header } }) {
-  const history = useHistory();
+  const [toHome, setToHome] = useState(false);
 
   const onContinueClick = () => {
-    history.push("/");
+    setToHome(true);
   };
 
   return (
     <main>
+      {toHome ? <Redirect to="/" /> : null}
       <Header header={header} />
       <div className="page">
         <div className="content">

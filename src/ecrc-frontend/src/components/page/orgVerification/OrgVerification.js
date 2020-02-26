@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
 
 import "../page.css";
 import Header from "../../base/header/Header";
@@ -10,21 +10,22 @@ import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
 
 export default function OrgVerification({ page: { header, org } }) {
-  const history = useHistory();
+  const [toHome, setToHome] = useState(false);
+  const [toTOU, setToTOU] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     if (!org.orgNm) {
-      history.push("/");
+      setToHome(true);
     }
-  }, [history, org.orgNm]);
+  }, [org.orgNm]);
 
   const orgVerified = () => {
-    history.push("/ecrc/termsofuse");
+    setToTOU(true);
   };
 
   const back = () => {
-    history.push("/");
+    setToHome(true);
   };
 
   const links = [
@@ -86,6 +87,8 @@ export default function OrgVerification({ page: { header, org } }) {
 
   return (
     <main>
+      {toHome ? <Redirect to="/" /> : null}
+      {toTOU ? <Redirect to="/ecrc/termsofuse" /> : null}
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
