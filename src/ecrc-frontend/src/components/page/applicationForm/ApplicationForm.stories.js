@@ -19,7 +19,7 @@ const applicant = {
   birthPlace: "",
   birthDate: "1942-10-29",
   sex: "Male",
-  bcDLNumber: "",
+  driversLicNo: "",
   phoneNumber: "",
   emailAddress: "",
   street: "123 Somewhere",

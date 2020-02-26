@@ -61,6 +61,13 @@ export default function InformationReview({
     }
   ];
 
+  if (driversLicNo) {
+    personalInfoElement.push({
+      name: "BC Driver's Licence Number",
+      value: driversLicNo
+    });
+  }
+
   const personalInfoTable = {
     header: "Personal Information",
     tableElements: personalInfoElement

@@ -1,0 +1,334 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InformationReview Component Matches the snapshot 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="https://www2.gov.bc.ca"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div
+          className="navbar-brand"
+        >
+          Criminal Record Check
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        >
+          <div
+            className="navbar-nav"
+          >
+            <a
+              className="nav-item nav-link"
+              href="/"
+            >
+              Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              Personal Information
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              First Name
+            </td>
+            <td>
+              Robert
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Middle Name
+            </td>
+            <td>
+              Norman
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Last Name
+            </td>
+            <td>
+              Ross
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Birth Place
+            </td>
+            <td>
+              Daytona Beach, Florida
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Birth Date
+            </td>
+            <td>
+              1942-10-29
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Sex
+            </td>
+            <td>
+              Male
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Primary Phone Number
+            </td>
+            <td>
+              2501234567
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Personal Email Address
+            </td>
+            <td>
+              bob.ross@example.com
+            </td>
+          </tr>
+          <tr>
+            <td>
+              BC Driver's Licence Number
+            </td>
+            <td>
+              1234567
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              Position Information
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Job Title
+            </td>
+            <td>
+              Painter
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              Address
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Street
+            </td>
+            <td>
+              123 Somewhere
+            </td>
+          </tr>
+          <tr>
+            <td>
+              City
+            </td>
+            <td>
+              Here
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Province
+            </td>
+            <td>
+              British Columbia
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Postal Code
+            </td>
+            <td>
+              V9V 9V9
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Country
+            </td>
+            <td>
+              Canada
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Some kind of checkbox? IIRC
+      </p>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Back
+      </button>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Confirm
+      </button>
+    </div>
+    <div
+      className="sidecard"
+    >
+      sidecard
+    </div>
+  </div>
+  <footer
+    className="footer"
+    style={Object {}}
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;

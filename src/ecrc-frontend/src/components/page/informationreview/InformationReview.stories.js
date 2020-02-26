@@ -19,7 +19,7 @@ const applicant = {
   birthPlace: "Daytona Beach, Florida",
   birthDate: "1942-10-29",
   sex: "Male",
-  bcDLNumber: "",
+  driversLicNo: "1234567",
   phoneNumber: "2501234567",
   emailAddress: "bob.ross@example.com",
   street: "123 Somewhere",
