@@ -61,7 +61,7 @@ export default function Consent({ page: { header }, onContinueClick }) {
   const noticeSideCard = {
     heading: "Collection Notice",
     content: [
-      <div key="collectionText" style={{ fontSize: "12px" }}>
+      <div key="noticeCollection" style={{ fontSize: "12px" }}>
         The Security Programs Division(SPD) will collect your personal
         information for the purpose of fulfilling the requirements of the
         Cannabis Control and Licensing Act(CCLA) and associated regulations in

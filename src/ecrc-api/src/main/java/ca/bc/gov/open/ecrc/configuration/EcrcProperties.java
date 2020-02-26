@@ -18,6 +18,8 @@ import java.util.Map;
  */
 @ConfigurationProperties(prefix = "ecrc")
 public class EcrcProperties {
+	
+	private String serverPort; 
 
 	private String baseUrl;
 	private String username;
@@ -35,11 +37,27 @@ public class EcrcProperties {
 	//CORS properties
 	private String corsMapping;
 	private String corsAllowedOrigins;
+	
+	//OAUTH Properties
+	private String oauthIdp;
+	private String oauthClientId;
+	private String oauthSecret;
+	private String oauthScope;
+	private String oauthReturnUri;
+	private String oauthFeSecret; // secret shared with the front end
 
 	@Value("#{'${ecrc.whitelist}'.split(',')}")
 	private List<String> whiteList;
 	
 	private Map<String, String> links = new HashMap<String, String>();
+
+	public String getServerPort() {
+		return serverPort;
+	}
+
+	public void setServerPort(String serverPort) {
+		this.serverPort = serverPort;
+	}
 
 	public String getBaseUrl() {
 		return baseUrl;
@@ -145,6 +163,54 @@ public class EcrcProperties {
 
 	public void setLinks(Map<String, String> links) {
 		this.links = links;
+	}
+
+	public String getOauthIdp() {
+		return oauthIdp;
+	}
+
+	public void setOauthIdp(String oauthIdp) {
+		this.oauthIdp = oauthIdp;
+	}
+
+	public String getOauthClientId() {
+		return oauthClientId;
+	}
+
+	public void setOauthClientId(String oauthClientId) {
+		this.oauthClientId = oauthClientId;
+	}
+
+	public String getOauthSecret() {
+		return oauthSecret;
+	}
+
+	public void setOauthSecret(String oauthSecret) {
+		this.oauthSecret = oauthSecret;
+	}
+
+	public String getOauthScope() {
+		return oauthScope;
+	}
+
+	public void setOauthScope(String oauthScope) {
+		this.oauthScope = oauthScope;
+	}
+
+	public String getOauthReturnUri() {
+		return oauthReturnUri;
+	}
+
+	public void setOauthReturnUri(String oauthReturnUri) {
+		this.oauthReturnUri = oauthReturnUri;
+	}
+
+	public String getOauthFeSecret() {
+		return oauthFeSecret;
+	}
+
+	public void setOauthFeSecret(String oauthFeSecret) {
+		this.oauthFeSecret = oauthFeSecret;
 	}
   
 }
