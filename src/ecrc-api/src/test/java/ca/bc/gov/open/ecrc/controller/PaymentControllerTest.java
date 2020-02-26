@@ -47,8 +47,8 @@ class PaymentControllerTest {
 				+ "?merchant_id=changeme&trnType=P&trnOrderNumber=12&errorPage=abe&declinedPage=abd"
 				+ "&approvedPage=abc&ref1=abc&ref2=abc&trnAmount=123.00"
 				+ "&hashValue=BB85DE3C6E7288168420B0DA3E692A37&hashExpiry=202002241118\"}";
-		when(paymentService.initiatePayment(request)).thenReturn(new ResponseEntity<String>(responseStr, HttpStatus.OK));
-		ResponseEntity<String> response = paymentController.initiatePayment(request);
+		when(paymentService.createPaymentUrl(request)).thenReturn(new ResponseEntity<String>(responseStr, HttpStatus.OK));
+		ResponseEntity<String> response = paymentController.createPaymentUrl(request);
 		Assert.assertEquals(responseStr, response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -59,8 +59,8 @@ class PaymentControllerTest {
 		RequestPaymentService request = new RequestPaymentService();
 		String responseStr = String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode());
-		when(paymentService.initiatePayment(request)).thenReturn(new ResponseEntity<>(responseStr, HttpStatus.NOT_FOUND));
-		ResponseEntity<String> response = paymentController.initiatePayment(request);
+		when(paymentService.createPaymentUrl(request)).thenReturn(new ResponseEntity<>(responseStr, HttpStatus.NOT_FOUND));
+		ResponseEntity<String> response = paymentController.createPaymentUrl(request);
 		Assertions.assertEquals(responseStr, response.getBody());
 		Assert.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 	}
@@ -71,9 +71,9 @@ class PaymentControllerTest {
 		RequestPaymentService request = new RequestPaymentService();
 		String responseStr = String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode());
-		when(paymentService.initiatePayment(request))
+		when(paymentService.createPaymentUrl(request))
 				.thenReturn(new ResponseEntity<>(responseStr, HttpStatus.BAD_REQUEST));
-		ResponseEntity<String> response = paymentController.initiatePayment(request);
+		ResponseEntity<String> response = paymentController.createPaymentUrl(request);
 		Assertions.assertEquals(responseStr, response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}

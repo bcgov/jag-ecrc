@@ -34,6 +34,11 @@ import reactor.core.publisher.Mono;
 @Configuration
 @EnableConfigurationProperties(EcrcProperties.class)
 public class EcrcPaymentServiceImpl implements EcrcPaymentService {
+	
+	public static final String PAYMENT_MINUTES_TO_EXPIRE = "30";
+	
+	// Bambora Transaction type (Purchase)
+	public static final String PAYMENT_BAMBORA_TRANSACTION_TYPE = "P";
 
 	@Autowired
 	private EcrcProperties ecrcProps;
@@ -48,11 +53,17 @@ public class EcrcPaymentServiceImpl implements EcrcPaymentService {
 	@PostConstruct
 	public void InitService() {
 
-		this.webClient = WebClient.create(ecrcProps.getPaymentUrl());
+		this.webClient = WebClient.builder().baseUrl(ecrcProps.getPaymentUrl())
+				.defaultHeaders(
+						header -> header.setBasicAuth(ecrcProps.getPaymentUsername(), ecrcProps.getPaymentPassword()))
+				.build();
 	}
 
-	public ResponseEntity<String> initiatePayment(RequestPaymentService paymentInfo) throws EcrcServiceException {
+	public ResponseEntity<String> createPaymentUrl(RequestPaymentService paymentInfo) throws EcrcServiceException {
 
+		paymentInfo.setMinutesToExpire(PAYMENT_MINUTES_TO_EXPIRE);
+		paymentInfo.setTransType(PAYMENT_BAMBORA_TRANSACTION_TYPE);
+		
 		String _getPaymentServiceUri = String.format(ecrcProps.getGetSinglePaymentUri(), paymentInfo.toQueryString());
 
 		Mono<?> responseBody = this.webClient.get().uri(_getPaymentServiceUri).retrieve()

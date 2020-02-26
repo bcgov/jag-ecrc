@@ -14,6 +14,6 @@ import ca.bc.gov.open.ecrc.model.RequestPaymentService;
 */
 public interface EcrcPaymentService {
 	
-	public ResponseEntity<String> initiatePayment(RequestPaymentService paymentInfo) throws EcrcServiceException;
+	public ResponseEntity<String> createPaymentUrl(RequestPaymentService paymentInfo) throws EcrcServiceException;
 
 }

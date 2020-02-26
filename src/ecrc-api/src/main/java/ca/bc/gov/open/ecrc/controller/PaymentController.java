@@ -29,11 +29,11 @@ public class PaymentController {
 
 	Logger logger = LoggerFactory.getLogger(PaymentController.class);
 
-	@GetMapping(value = "/payment", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> initiatePayment(@RequestBody RequestPaymentService paymentInfo) throws EcrcServiceException {
+	@GetMapping(value = "/getPaymentUrl", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> createPaymentUrl(@RequestBody RequestPaymentService paymentInfo) throws EcrcServiceException {
 		//TODO: Extract guid generated from front end
 		logger.info("Payment request received {}", UUID.randomUUID().toString());
-		return paymentService.initiatePayment(paymentInfo);
+		return paymentService.createPaymentUrl(paymentInfo);
 		
 	}
 }
