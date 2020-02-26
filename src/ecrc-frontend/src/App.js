@@ -4,19 +4,19 @@ import OrgValidation from "./components/page/orgValidation/OrgValidation";
 import OrgVerification from "./components/page/orgVerification/OrgVerification";
 import ApplicationForm from "./components/page/applicationForm/ApplicationForm";
 import Transition from "./components/page/transition/Transition";
+import TOU from "./components/page/tou/TOU";
 import Consent from "./components/page/consent/Consent";
 
 export default function App() {
-  const [org, setOrg] = useState({});
+  const [org, setOrg] = useState(
+    JSON.parse(sessionStorage.getItem("org")) || {}
+  );
+  const [applicant, setApplicant] = useState(
+    JSON.parse(sessionStorage.getItem("applicant")) || {}
+  );
 
   const header = {
     name: "Criminal Record Check"
-  };
-
-  const page = {
-    org,
-    setOrg,
-    header
   };
 
   return (
@@ -25,19 +25,22 @@ export default function App() {
         <Switch>
           <Redirect exact from="/" to="/ecrc" />
           <Route exact path="/ecrc">
-            <OrgValidation page={page} />
+            <OrgValidation page={{ header, setOrg }} />
           </Route>
           <Route path="/ecrc/orgverification">
-            <OrgVerification page={page} />
+            <OrgVerification page={{ header, org }} />
           </Route>
           <Route path="/ecrc/applicationform">
-            <ApplicationForm page={page} />
+            <ApplicationForm page={{ header, org, applicant, setApplicant }} />
           </Route>
           <Route path="/ecrc/transition">
             <Transition header={header} />
           </Route>
+          <Route path="/ecrc/termsofuse">
+            <TOU page={{ header }} />
+          </Route>
           <Route path="/ecrc/consent">
-            <Consent page={page} />
+            <Consent page={{ header }} />
           </Route>
         </Switch>
       </BrowserRouter>

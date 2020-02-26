@@ -29,14 +29,16 @@ describe("ApplicationForm Component", () => {
       organizationFacility: ""
     };
 
+    const setApplicant = () => {};
     const org = {
-      schedule: "D"
+      defaultScheduleTypeCd: "WBSD"
     };
 
     const page = {
       header,
       applicant,
-      org
+      org,
+      setApplicant
     };
 
     const applicationPage = create(

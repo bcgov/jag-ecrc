@@ -76,6 +76,9 @@ exports[`Declaration Component Matches the snapshot 1`] = `
         onChange={[Function]}
         type="text"
       />
+      <span
+        className="error"
+      />
     </div>
   </section>
 </div>
