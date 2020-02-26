@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
 import { Button } from "../../base/button/Button";
+import SideCards from "../../composite/sideCards/SideCards";
 
 export default function InformationReview({
   page: {
@@ -29,6 +30,8 @@ export default function InformationReview({
     }
   }
 }) {
+  const [boxChecked, setBoxChecked] = useState(false);
+
   const personalInfoElement = [
     { name: "First Name", value: firstName },
     {
@@ -124,10 +127,12 @@ export default function InformationReview({
     label: "Confirm",
     buttonStyle: "btn btn-primary",
     buttonSize: "btn btn-sm",
-    type: "submit"
+    type: "submit",
+    disabled: !boxChecked
   };
 
   const confirm = () => {
+    // TODO: Check if volunteer, if yes, success, else, cont.
     // TODO: everything required to build payment link, and redirect to said link
   };
 
@@ -148,11 +153,29 @@ export default function InformationReview({
           <Table table={personalInfoTable} />
           <Table table={positionInfoTable} />
           <Table table={addressTable} />
-          <p>Some kind of checkbox? IIRC</p>
+          <section className="declareSection">
+            <input
+              type="checkbox"
+              onClick={() => {
+                setBoxChecked(!boxChecked);
+              }}
+            />
+            <span className="declaration-cb">
+              I certify that, to the best of my knowledge, the information I
+              have provided on my application and will provide as necessary is
+              complete, honest and accurate. I understand that a false statement
+              or omission of facts herein may lead to a denial of a cannabis
+              workers registration. I am also aware that later discovery of an
+              omission or misrepresentation may be grounds for any finding of
+              suitability to be suspended or revoked.
+            </span>
+          </section>
           <Button button={cancelButton} onClick={back} />
           <Button button={confirmButton} onClick={confirm} />
         </div>
-        <div className="sidecard">sidecard</div>
+        <div className="sidecard">
+          <SideCards type={"collectionnotice"} />
+        </div>
       </div>
       <Footer />
     </main>

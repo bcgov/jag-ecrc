@@ -47,7 +47,7 @@ export default function App() {
           <Route path="/ecrc/bcscRedirect">
             <BcscRedirect page={{ header }} />
           </Route>
-          <Route path="/ecrc/inforeview">
+          <Route path="/ecrc/informationreview">
             <InformationReview page={{ header, applicant }} />
           </Route>
         </Switch>
