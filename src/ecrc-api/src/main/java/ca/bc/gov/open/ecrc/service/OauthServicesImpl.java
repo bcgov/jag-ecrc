@@ -100,7 +100,7 @@ public class OauthServicesImpl implements OauthServices {
 			
 			// The credentials to authenticate the client at the token endpoint
 			ClientID clientID = new ClientID(ecrcProps.getOauthClientId());
-			Secret clientSecret = new Secret(ecrcProps.getOauthClientSecret());
+			Secret clientSecret = new Secret(ecrcProps.getOauthSecret());
 			ClientAuthentication clientAuth = new ClientSecretBasic(clientID, clientSecret);
 			
 			AuthorizationGrant codeGrant = new AuthorizationCodeGrant(code, callback);
