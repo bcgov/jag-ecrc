@@ -43,12 +43,6 @@ export default function Consent({ page: { header } }) {
     type: "submit"
   };
 
-  const onCancelClicked = () => {
-    window.location.replace(
-      "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
-    );
-  };
-
   const continueButton = {
     label: "Continue",
     buttonStyle: "btn ecrc_go_btn",
@@ -115,7 +109,7 @@ export default function Consent({ page: { header } }) {
           <br />
           <div className="buttons" style={{ paddingLeft: "20px" }}>
             <Button
-              button={backButton}
+              button={cancelButton}
               onClick={() => {
                 setToHome(true);
               }}

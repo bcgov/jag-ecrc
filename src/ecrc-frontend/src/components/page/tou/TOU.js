@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
@@ -10,7 +10,6 @@ import "../page.css";
 export default function TOU({ page: { header } }) {
   const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
-  const history = useHistory();
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
   const [reachedEnd, setReachedEnd] = useState(false);
@@ -30,6 +29,7 @@ export default function TOU({ page: { header } }) {
   if (toBCSCRedirect) {
     return <Redirect to="/ecrc/bcscRedirect" />;
   }
+
   const termOfUseOnScroll = event => {
     const { scrollHeight, scrollTop, clientHeight } = event.target;
     if (!reachedEnd) {
