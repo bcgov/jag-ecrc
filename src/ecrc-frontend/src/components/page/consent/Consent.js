@@ -9,7 +9,7 @@ import { Button } from "../../base/button/Button";
 import "../page.css";
 import SideCard from "../../base/sideCard/SideCard";
 
-export default function Consent({ page: { header }, onContinueClick }) {
+export default function Consent({ page: { header } }) {
   const [toHome, setToHome] = useState(false);
   const [toApplicationForm, setToApplicationForm] = useState(false);
 
@@ -132,6 +132,5 @@ Consent.propTypes = {
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired
-  }).isRequired,
-  onContinueClick: PropTypes.func.isRequired
+  }).isRequired
 };

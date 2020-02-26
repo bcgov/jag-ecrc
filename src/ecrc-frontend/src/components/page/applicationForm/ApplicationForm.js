@@ -306,7 +306,7 @@ export default function ApplicationForm({
         organizationFacility
       });
 
-      //TODO: Redirect to bambora here...
+      // TODO: Redirect to bambora here...
     }
   };
 

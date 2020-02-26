@@ -31,9 +31,7 @@ const applicant = {
   organizationFacility: ""
 };
 
-const setApplicant = app => {
-  console.log(app);
-};
+const setApplicant = () => {};
 
 const org = {
   defaultScheduleTypeCd: "WBSD"
