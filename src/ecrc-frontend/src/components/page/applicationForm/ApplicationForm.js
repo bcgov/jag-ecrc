@@ -50,6 +50,11 @@ export default function ApplicationForm({
 
   const history = useHistory();
 
+  const updateInput = (input, setInput, setError) => {
+    setInput(input);
+    setError("");
+  };
+
   const currentName = {
     firstName: {
       label: "First Name",
@@ -124,7 +129,9 @@ export default function ApplicationForm({
         id: "birthPlace",
         isRequired: true,
         errorMsg: birthPlaceError,
-        onChange: setBirthPlace
+        onChange: event => {
+          updateInput(event, setBirthPlace, setBirthPlaceError);
+        }
       },
       {
         label: "Date of Birth",
@@ -150,7 +157,9 @@ export default function ApplicationForm({
         note: "(Include area code)",
         isRequired: true,
         errorMsg: phoneNumberError,
-        onChange: setPhoneNumber
+        onChange: event => {
+          updateInput(event, setPhoneNumber, setPhoneNumberError);
+        }
       },
       {
         label: "Personal Email Address",
@@ -158,7 +167,9 @@ export default function ApplicationForm({
         note: "We may use this to communicate with you about your application.",
         isRequired: true,
         errorMsg: emailAddressError,
-        onChange: setEmailAddress
+        onChange: event => {
+          updateInput(event, setEmailAddress, setEmailAddressError);
+        }
       }
     ],
     buttons: []
@@ -172,7 +183,9 @@ export default function ApplicationForm({
         id: "applicantPosition",
         isRequired: true,
         errorMsg: jobTitleError,
-        onChange: setJobTitle
+        onChange: event => {
+          updateInput(event, setJobTitle, setJobTitleError);
+        }
       }
     ],
     buttons: []
@@ -186,7 +199,13 @@ export default function ApplicationForm({
         "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)",
       isRequired: true,
       errorMsg: organizationFacilityError,
-      onChange: setOrganizationFacility
+      onChange: event => {
+        updateInput(
+          event,
+          setOrganizationFacility,
+          setOrganizationFacilityError
+        );
+      }
     });
   }
 
@@ -242,23 +261,23 @@ export default function ApplicationForm({
   };
 
   const applicationVerification = () => {
-    if (birthPlace === "") {
+    if (!birthPlace) {
       setBirthPlaceError("Please enter your city and country of birth");
     }
 
-    if (phoneNumber === "") {
+    if (!phoneNumber) {
       setPhoneNumberError("Please enter your primary phone number");
     }
 
-    if (emailAddress === "") {
+    if (!emailAddress) {
       setEmailAddressError("Please enter your personal email address");
     }
 
-    if (jobTitle === "") {
+    if (!jobTitle) {
       setJobTitleError("Please enter your position/job title");
     }
 
-    if (defaultScheduleTypeCd === "WBSD" && organizationFacility === "") {
+    if (defaultScheduleTypeCd === "WBSD" && !organizationFacility) {
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
