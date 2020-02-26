@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -8,11 +8,15 @@ import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
 
 export default function TOU({ page: { header } }) {
-  const history = useHistory();
+  const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
 
   const onContinueClick = () => {
-    history.push("/");
+    setToBCSCRedirect(true);
   };
+
+  if (toBCSCRedirect) {
+    return <Redirect to="/ecrc/bcscRedirect" />;
+  }
 
   return (
     <main>
