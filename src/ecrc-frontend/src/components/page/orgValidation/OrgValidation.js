@@ -7,14 +7,20 @@ import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
+import { isAuthenticated } from "../../../modules/AuthenticationHelper";
+
+const jwt = require("jsonwebtoken");
 
 export default function OrgValidation({ page: { setOrg, header } }) {
   const [orgInput, setOrgInput] = useState("");
   // method name needs to be capitalized due to react hooks gotcha
   const history = useHistory();
 
-  const jwt = require("jsonwebtoken");
-  const token = jwt.sign({ foo: "bar" }, "secret", { expiresIn: "2h" });
+  var token = jwt.sign({ foo: "bar" }, "shhhhh", { expiresIn: "1m" });
+
+  sessionStorage.setItem("jwt", token);
+
+  isAuthenticated();
 
   const orgValidation = () => {
     axios
