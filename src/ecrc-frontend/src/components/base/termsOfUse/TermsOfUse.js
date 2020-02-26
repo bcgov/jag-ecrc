@@ -425,5 +425,9 @@ export default function TermsOfUse({
 }
 
 TermsOfUse.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onContinueClick: PropTypes.func.isRequired,
+  checkFirstBox: PropTypes.func.isRequired,
+  checkSecondBox: PropTypes.func.isRequired,
+  termOfUseOnScroll: PropTypes.func.isRequired,
+  continueBtnEnabled: PropTypes.bool.isRequired
 };

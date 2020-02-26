@@ -31,10 +31,9 @@ export default function TOU({ page: { header } }) {
     return <Redirect to="/ecrc/bcscRedirect" />;
   }
   const termOfUseOnScroll = event => {
-    console.log("event = " + event);
-    var target = event.target;
+    const { scrollHeight, scrollTop, clientHeight } = event.target;
     if (!reachedEnd) {
-      if (target.scrollHeight - target.scrollTop <= target.clientHeight + 5) {
+      if (scrollHeight - scrollTop <= clientHeight + 5) {
         setReachedEnd(true);
       }
     }
