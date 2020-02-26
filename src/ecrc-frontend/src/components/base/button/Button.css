@@ -29,3 +29,19 @@
   background-color: rgba(242, 242, 242, 1);
   border-color: rgba(204, 204, 204, 1);
 }
+
+.ecrc_common_btn {
+  color: white;
+  width: 139px;
+  height: 40px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  background-color: rgb(0, 51, 102);
+  padding: 0;
+}
+
+.ecrc_common_btn:hover {
+  background-color: rgba(43, 91, 164, 1);
+  color: white;
+}
