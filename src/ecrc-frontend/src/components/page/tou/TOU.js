@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
 
-export default function TOU({
-  page: {
-    pageLayout: { header }
-  },
-  onContinueClick
-}) {
+export default function TOU({ page: { header } }) {
+  const history = useHistory();
+
+  const onContinueClick = () => {
+    history.push("/");
+  };
+
   return (
     <main>
       <Header header={header} />
@@ -27,11 +29,8 @@ export default function TOU({
 
 TOU.propTypes = {
   page: PropTypes.shape({
-    pageLayout: PropTypes.shape({
-      header: PropTypes.shape({
-        name: PropTypes.string.isRequired
-      })
-    }).isRequired
-  }).isRequired,
-  onContinueClick: PropTypes.func.isRequired
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    })
+  }).isRequired
 };
