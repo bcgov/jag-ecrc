@@ -1,0 +1,9 @@
+.user-confirm-content {
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 270px;
+}
+
+.btn {
+  margin-right: 20px;
+}
