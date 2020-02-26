@@ -105,10 +105,15 @@ export default function Consent({ page: { header }, onContinueClick }) {
             <Button
               button={backButton}
               onClick={() => {
-                window.history.back();
+                setToHome(true);
               }}
             />
-            <Button button={continueButton} onClick={onContinueClick} />
+            <Button
+              button={continueButton}
+              onClick={() => {
+                setToApplicationForm(true);
+              }}
+            />
           </div>
         </div>
 
