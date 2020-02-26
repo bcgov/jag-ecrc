@@ -7,6 +7,7 @@ import Transition from "./components/page/transition/Transition";
 import TOU from "./components/page/tou/TOU";
 import Consent from "./components/page/consent/Consent";
 import BcscRedirect from "./components/page/bcscRedirect/BcscRedirect";
+import Success from "./components/page/success/Success";
 
 export default function App() {
   const [org, setOrg] = useState(
@@ -45,6 +46,9 @@ export default function App() {
           </Route>
           <Route path="/ecrc/bcscRedirect">
             <BcscRedirect page={{ header }} />
+          </Route>
+          <Route path="/ecrc/success">
+            <Success page={{ header }} />
           </Route>
         </Switch>
       </BrowserRouter>
