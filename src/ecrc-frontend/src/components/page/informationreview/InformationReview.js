@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
-import Button from "../../base/button/Button";
+import { Button } from "../../base/button/Button";
 
 export default function InformationReview({
   page: {
@@ -71,6 +72,13 @@ export default function InformationReview({
       value: jobTitle
     }
   ];
+
+  if (organizationFacility) {
+    positionInfoElement.push({
+      name: "Organization Facility",
+      value: organizationFacility
+    });
+  }
 
   const positionInfoTable = {
     header: "Position Information",
@@ -143,3 +151,29 @@ export default function InformationReview({
     </main>
   );
 }
+
+InformationReview.propTypes = {
+  page: PropTypes.shape({
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }),
+    applicant: PropTypes.shape({
+      firstName: PropTypes.string.isRequired,
+      middleName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+      birthDate: PropTypes.string.isRequired,
+      sex: PropTypes.string.isRequired,
+      street: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      province: PropTypes.string.isRequired,
+      postalCode: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired,
+      birthPlace: PropTypes.string.isRequired,
+      driversLicNo: PropTypes.string,
+      phoneNumber: PropTypes.string.isRequired,
+      emailAddress: PropTypes.string.isRequired,
+      jobTitle: PropTypes.string.isRequired,
+      organizationFacility: PropTypes.string
+    })
+  }).isRequired
+};

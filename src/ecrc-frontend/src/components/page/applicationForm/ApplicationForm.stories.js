@@ -27,7 +27,7 @@ const applicant = {
   province: "British Columbia",
   postalCode: "V9V 9V9",
   country: "Canada",
-  applicantPosition: "",
+  jobTitle: "",
   organizationFacility: ""
 };
 
