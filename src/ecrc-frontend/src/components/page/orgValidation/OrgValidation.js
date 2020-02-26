@@ -12,6 +12,10 @@ export default function OrgValidation({ page: { header, setOrg } }) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
 
+  const transition = () => {
+    return <Redirect from="/" to="/ecrc/transition" />;
+  };
+
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}`)
@@ -23,7 +27,7 @@ export default function OrgValidation({ page: { header, setOrg } }) {
         if (error.response.status === 404) {
           setOrgError("Please enter a valid org code");
         } else if (error.response.status === 401) {
-          return <Redirect from="/" to="/ecrc/transition" />;
+          transition();
         }
       });
   };
