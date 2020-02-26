@@ -5,12 +5,32 @@ import { Button } from "../button/Button";
 
 import "./TermsOfUse.css";
 
-export default function TermsOfUse({ onClick }) {
+export default function TermsOfUse({
+  onContinueClick,
+  checkFirstBox,
+  checkSecondBox,
+  termOfUseOnScroll,
+  continueBtnEnabled
+}) {
   const button = {
     label: "Continue",
-    buttonStyle: "btn btn-primary",
-    buttonSize: "btn btn-sm",
+    buttonStyle: "btn ecrc_go_btn",
+    buttonSize: "btn ",
+    type: "submit",
+    disabled: !continueBtnEnabled
+  };
+
+  const cancelButton = {
+    label: "Cancel and Exit",
+    buttonStyle: "btn ecrc_accessary_btn",
+    buttonSize: "btn",
     type: "submit"
+  };
+
+  const onCancelClicked = () => {
+    window.location.replace(
+      "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
+    );
   };
 
   return (
@@ -28,7 +48,7 @@ export default function TermsOfUse({ onClick }) {
         <h1>Terms of Use</h1>
       </div>
 
-      <section className="scroll-box">
+      <section className="scroll-box" onScroll={termOfUseOnScroll}>
         <p>
           In these Terms of Use, “you” or “your” includes the individual using
           or accessing the Cannabis Licensing Application Portal (the “Site”) on
@@ -384,13 +404,21 @@ export default function TermsOfUse({ onClick }) {
       </section>
 
       <section>
-        <input type="checkbox" className="terms-cb" />
+        <input type="checkbox" className="terms-cb" onClick={checkFirstBox} />
         &nbsp;I have read and accept the above terms and conditions.
         <br />
+        <br />
+        <p>
+          By submitting your email address, you agree the eCRC can use it to
+          communicate with you about your registration.
+        </p>
+        <input type="checkbox" className="terms-cb" onClick={checkSecondBox} />
+        &nbsp;I authorize use of my email address to communicate with me about
+        my registration.
       </section>
       <section className="buttons">
-        <Button button={button} onClick={onClick} />
-        <p>Cancel and Exit</p>
+        <Button button={cancelButton} onClick={onCancelClicked} />
+        <Button button={button} onClick={onContinueClick} />
       </section>
     </div>
   );

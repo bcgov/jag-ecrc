@@ -36,11 +36,17 @@ export default function Consent({ page: { header } }) {
     }
   }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked, applicantName]);
 
-  const backButton = {
-    label: "Back",
+  const cancelButton = {
+    label: "Cancel and Exit",
     buttonStyle: "btn ecrc_accessary_btn",
     buttonSize: "btn",
     type: "submit"
+  };
+
+  const onCancelClicked = () => {
+    window.location.replace(
+      "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
+    );
   };
 
   const continueButton = {
