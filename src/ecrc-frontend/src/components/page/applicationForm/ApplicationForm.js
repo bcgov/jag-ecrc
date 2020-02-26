@@ -29,7 +29,6 @@ export default function ApplicationForm({
     org: { defaultScheduleTypeCd }
   }
 }) {
-  const [toHome, setToHome] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: false,
     previousThree: false
@@ -48,11 +47,6 @@ export default function ApplicationForm({
   const [organizationFacilityError, setOrganizationFacilityError] = useState(
     ""
   );
-
-  const updateInput = (input, setInput, setError) => {
-    setInput(input);
-    setError("");
-  };
 
   const currentName = {
     firstName: {
@@ -129,7 +123,8 @@ export default function ApplicationForm({
         isRequired: true,
         errorMsg: birthPlaceError,
         onChange: event => {
-          updateInput(event, setBirthPlace, setBirthPlaceError);
+          setBirthPlace(event);
+          setBirthPlaceError("");
         }
       },
       {
@@ -157,7 +152,8 @@ export default function ApplicationForm({
         isRequired: true,
         errorMsg: phoneNumberError,
         onChange: event => {
-          updateInput(event, setPhoneNumber, setPhoneNumberError);
+          setPhoneNumber(event);
+          setPhoneNumberError("");
         }
       },
       {
@@ -167,7 +163,8 @@ export default function ApplicationForm({
         isRequired: true,
         errorMsg: emailAddressError,
         onChange: event => {
-          updateInput(event, setEmailAddress, setEmailAddressError);
+          setEmailAddress(event);
+          setEmailAddressError("");
         }
       }
     ],
@@ -183,7 +180,8 @@ export default function ApplicationForm({
         isRequired: true,
         errorMsg: jobTitleError,
         onChange: event => {
-          updateInput(event, setJobTitle, setJobTitleError);
+          setJobTitle(event);
+          setJobTitleError("");
         }
       }
     ],
@@ -199,11 +197,8 @@ export default function ApplicationForm({
       isRequired: true,
       errorMsg: organizationFacilityError,
       onChange: event => {
-        updateInput(
-          event,
-          setOrganizationFacility,
-          setOrganizationFacilityError
-        );
+        setOrganizationFacility(event);
+        setOrganizationFacilityError("");
       }
     });
   }
@@ -311,7 +306,7 @@ export default function ApplicationForm({
   };
 
   const back = () => {
-    setToHome(true);
+    return <Redirect to="/" />;
   };
 
   const additionalNames = event => {
@@ -326,7 +321,6 @@ export default function ApplicationForm({
 
   return (
     <main>
-      {toHome ? <Redirect to="/" /> : null}
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">

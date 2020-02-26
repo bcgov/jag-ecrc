@@ -8,15 +8,12 @@ import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
 
 export default function TOU({ page: { header } }) {
-  const [toHome, setToHome] = useState(false);
-
   const onContinueClick = () => {
-    setToHome(true);
+    return <Redirect to="/ecrc/bcscRedirect" />;
   };
 
   return (
     <main>
-      {toHome ? <Redirect to="/" /> : null}
       <Header header={header} />
       <div className="page">
         <div className="content">

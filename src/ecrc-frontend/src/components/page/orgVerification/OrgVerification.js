@@ -10,22 +10,19 @@ import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
 
 export default function OrgVerification({ page: { header, org } }) {
-  const [toHome, setToHome] = useState(false);
-  const [toTOU, setToTOU] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
     if (!org.orgNm) {
-      setToHome(true);
+      return <Redirect to="/" />;
     }
   }, [org.orgNm]);
 
   const orgVerified = () => {
-    setToTOU(true);
+    return <Redirect to="/ecrc/termsofuse" />;
   };
 
   const back = () => {
-    setToHome(true);
+    return <Redirect to="/" />;
   };
 
   const links = [
@@ -87,8 +84,6 @@ export default function OrgVerification({ page: { header, org } }) {
 
   return (
     <main>
-      {toHome ? <Redirect to="/" /> : null}
-      {toTOU ? <Redirect to="/ecrc/termsofuse" /> : null}
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
