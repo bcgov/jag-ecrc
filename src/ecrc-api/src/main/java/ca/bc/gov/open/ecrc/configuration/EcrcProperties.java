@@ -18,6 +18,8 @@ import java.util.Map;
  */
 @ConfigurationProperties(prefix = "ecrc")
 public class EcrcProperties {
+	
+	private String serverPort; 
 
 	private String baseUrl;
 	private String username;
@@ -26,7 +28,7 @@ public class EcrcProperties {
 	private String doAuthenticateUserUri;
 	private String getNextSessionIdUri;
 	private String createNewCRCServiceUri;
-    private String getServiceFeeAmountUri;
+	private String getServiceFeeAmountUri;
 	private String createApplicantUri;
 	private String logPaymentFailureUri;
 	private String getNextInvoiceIdUri;
@@ -35,17 +37,39 @@ public class EcrcProperties {
 	//CORS properties
 	private String corsMapping;
 	private String corsAllowedOrigins;
+	
+	//OAUTH Properties
+	private String oauthIdp;
+	private String oauthClientId;
+	private String oauthSecret;
+	private String oauthScope;
+	private String oauthReturnUri;
+	private String oauthFeSecret; // secret shared with the front end
 
-    //JWT properties
-    private String jwtHeader;
-    private String jwtPrefix;
-    private String jwtSecret;
-    private String jwtRole;
+  //JWT properties
+  private String jwtHeader;
+  private String jwtPrefix;
+  private String jwtSecret;
+  private String jwtRole;
 
 	@Value("#{'${ecrc.whitelist}'.split(',')}")
 	private List<String> whiteList;
 	
 	private Map<String, String> links = new HashMap<String, String>();
+	
+	//Payment properties
+	private String paymentUrl;
+	private String getSinglePaymentUri;
+	private String paymentUsername;
+	private String paymentPassword;
+
+	public String getServerPort() {
+		return serverPort;
+	}
+
+	public void setServerPort(String serverPort) {
+		this.serverPort = serverPort;
+	}
 
 	public String getBaseUrl() {
 		return baseUrl;
@@ -153,20 +177,101 @@ public class EcrcProperties {
 		this.links = links;
 	}
 
-    public String getJwtHeader() { return jwtHeader; }
 
-    public void setJwtHeader(String jwtHeader) {  this.jwtHeader = jwtHeader; }
+  public String getJwtHeader() { return jwtHeader; }
 
-    public String getJwtPrefix() { return jwtPrefix; }
+  public void setJwtHeader(String jwtHeader) {  this.jwtHeader = jwtHeader; }
 
-    public void setJwtPrefix(String jwtPrefix) { this.jwtPrefix = jwtPrefix; }
+  public String getJwtPrefix() { return jwtPrefix; }
 
-    public String getJwtSecret() { return jwtSecret;  }
+  public void setJwtPrefix(String jwtPrefix) { this.jwtPrefix = jwtPrefix; }
 
-    public void setJwtSecret(String jwtSecret) { this.jwtSecret = jwtSecret; }
+  public String getJwtSecret() { return jwtSecret;  }
 
-    public String getJwtRole() { return jwtRole; }
+  public void setJwtSecret(String jwtSecret) { this.jwtSecret = jwtSecret; }
 
-    public void setJwtRole(String jwtRole) { this.jwtRole = jwtRole; }
+  public String getJwtRole() { return jwtRole; }
+
+  public void setJwtRole(String jwtRole) { this.jwtRole = jwtRole; }
+	
+	public String getPaymentUrl() {
+		return paymentUrl;
+	}
+
+	public void setPaymentUrl(String paymentUrl) {
+		this.paymentUrl = paymentUrl;
+	}
+
+	public String getGetSinglePaymentUri() {
+		return getSinglePaymentUri;
+	}
+
+	public void setGetSinglePaymentUri(String getSinglePaymentUri) {
+		this.getSinglePaymentUri = getSinglePaymentUri;
+	}
+
+	public String getPaymentUsername() {
+		return paymentUsername;
+	}
+
+	public void setPaymentUsername(String paymentUsername) {
+		this.paymentUsername = paymentUsername;
+	}
+
+	public String getPaymentPassword() {
+		return paymentPassword;
+	}
+
+	public void setPaymentPassword(String paymentPassword) {
+		this.paymentPassword = paymentPassword;
+  }
+
+	public String getOauthIdp() {
+		return oauthIdp;
+	}
+
+	public void setOauthIdp(String oauthIdp) {
+		this.oauthIdp = oauthIdp;
+	}
+
+	public String getOauthClientId() {
+		return oauthClientId;
+	}
+
+	public void setOauthClientId(String oauthClientId) {
+		this.oauthClientId = oauthClientId;
+	}
+
+	public String getOauthSecret() {
+		return oauthSecret;
+	}
+
+	public void setOauthSecret(String oauthSecret) {
+		this.oauthSecret = oauthSecret;
+	}
+
+	public String getOauthScope() {
+		return oauthScope;
+	}
+
+	public void setOauthScope(String oauthScope) {
+		this.oauthScope = oauthScope;
+	}
+
+	public String getOauthReturnUri() {
+		return oauthReturnUri;
+	}
+
+	public void setOauthReturnUri(String oauthReturnUri) {
+		this.oauthReturnUri = oauthReturnUri;
+	}
+
+	public String getOauthFeSecret() {
+		return oauthFeSecret;
+	}
+
+	public void setOauthFeSecret(String oauthFeSecret) {
+		this.oauthFeSecret = oauthFeSecret;
+	}
   
 }

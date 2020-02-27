@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
 
 import "../page.css";
 import Header from "../../base/header/Header";
@@ -10,16 +10,22 @@ import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
 
 export default function OrgVerification({ page: { header, org } }) {
-  const history = useHistory();
+  const [toHome, setToHome] = useState(false);
+  const [toTOU, setToTOU] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    if (!org.orgNm) {
+      setToHome(true);
+    }
+  }, [org.orgNm]);
 
-  const orgVerification = () => {};
+  const orgVerified = () => {
+    setToTOU(true);
+  };
 
   const back = () => {
-    history.push("/");
+    setToHome(true);
   };
 
   const links = [
@@ -79,6 +85,14 @@ export default function OrgVerification({ page: { header, org } }) {
     tableElements: organizationTypeElements
   };
 
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
+
+  if (toTOU) {
+    return <Redirect to="/ecrc/termsofuse" />;
+  }
+
   return (
     <main>
       <Header header={header} />
@@ -127,7 +141,7 @@ export default function OrgVerification({ page: { header, org } }) {
           </div>
           <div className="buttons">
             <Button button={cancelButton} onClick={back} />
-            <Button button={continueButton} onClick={orgVerification} />
+            <Button button={continueButton} onClick={orgVerified} />
           </div>
         </div>
         <div className="sidecard">
@@ -144,7 +158,6 @@ export default function OrgVerification({ page: { header, org } }) {
 OrgVerification.propTypes = {
   page: PropTypes.shape({
     org: PropTypes.object.isRequired,
-    setOrg: PropTypes.func.isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired

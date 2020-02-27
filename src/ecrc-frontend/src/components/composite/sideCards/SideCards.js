@@ -88,6 +88,18 @@ export default function SideCards({ type, sideCardLinks }) {
     type: "blue"
   };
 
+  const withoutBCServiceCard = {
+    heading: "Applicants Without a BC Services Card",
+    content: [
+      "Applicants who haven’t lived in B.C.for at least six months or who live outside the province must ",
+      <a key="serviceBC" className="link" href="mailto: temp@temp.com">
+        email
+      </a>,
+      " the Liquor and Cannabis Regulation Branch for a Worker Registration Application Form."
+    ],
+    type: "blue"
+  };
+
   // PERSONAL INFORMATION
   const personalInformation = {
     heading: "Update your personal information",
@@ -166,6 +178,9 @@ export default function SideCards({ type, sideCardLinks }) {
       )}
       {type === "usefullinks" && (
         <SideCard key="usefullink" sideCard={usefulLinks} />
+      )}
+      {type === "withoutBCServiceCard" && (
+        <SideCard key="withoutBCServiceCard" sideCard={withoutBCServiceCard} />
       )}
     </div>
   );

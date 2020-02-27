@@ -17,12 +17,32 @@ const actionData = {
 
 storiesOf("Button", module)
   .add("Default", () => <Button button={button} {...actionData} />)
+  .add("ecrc", () => (
+    <Button
+      button={{
+        ...button,
+        buttonStyle: "ecrc_go_btn"
+      }}
+      {...actionData}
+    />
+  ))
   .add("Warning", () => (
     <Button
       button={{
         ...button,
         buttonStyle: "btn btn-warning",
         buttonSize: "btn btn-sm"
+      }}
+      {...actionData}
+    />
+  ))
+  .add("Disabled", () => (
+    <Button
+      button={{
+        ...button,
+        buttonStyle: "btn btn-warning",
+        buttonSize: "btn btn-sm",
+        disabled: true
       }}
       {...actionData}
     />

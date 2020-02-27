@@ -16,6 +16,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<nimbus.oauth.version>7.0.3</nimbus.oauth.version>
+		<jjwt.version>0.6.0</jjwt.version>
+		<javax.mail.version>1.4</javax.mail.version>
 	</properties>
 
 	<dependencies>
@@ -110,6 +113,25 @@
 			<version>4.0.1</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.nimbusds</groupId>
+			<artifactId>oauth2-oidc-sdk</artifactId>
+			<version>${nimbus.oauth.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>${jjwt.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${javax.mail.version}</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

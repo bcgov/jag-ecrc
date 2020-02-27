@@ -55,4 +55,12 @@ storiesOf("TextInput", module)
         note: "(This is a note)"
       }}
     />
+  ))
+  .add("error", () => (
+    <TextInput
+      textInput={{
+        ...textInput,
+        errorMsg: "There was an error"
+      }}
+    />
   ));
