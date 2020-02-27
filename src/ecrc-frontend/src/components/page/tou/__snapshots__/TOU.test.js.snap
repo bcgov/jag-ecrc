@@ -104,6 +104,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
         </div>
         <section
           className="scroll-box"
+          onScroll={[Function]}
         >
           <p>
             In these Terms of Use, “you” or “your” includes the individual using or accessing the Cannabis Licensing Application Portal (the “Site”) on their own behalf, as well as any applicant (“Applicant”) for a cannabis retail store licence (“Retailer Licence”) and/or a cannabis marketing licence (“Marketing Licence”) that you represent.
@@ -372,24 +373,40 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
         <section>
           <input
             className="terms-cb"
+            onClick={[Function]}
             type="checkbox"
           />
            I have read and accept the above terms and conditions.
           <br />
+          <br />
+          <p>
+            By submitting your email address, you agree the eCRC can use it to communicate with you about your registration.
+          </p>
+          <input
+            className="terms-cb"
+            onClick={[Function]}
+            type="checkbox"
+          />
+           I authorize use of my email address to communicate with me about my registration.
         </section>
         <section
           className="buttons"
         >
           <button
-            className="btn btn-primary btn btn-sm"
+            className="btn ecrc_accessary_btn btn"
+            onClick={[Function]}
+            type="submit"
+          >
+            Cancel and Exit
+          </button>
+          <button
+            className="btn ecrc_go_btn btn "
+            disabled={true}
             onClick={[Function]}
             type="submit"
           >
             Continue
           </button>
-          <p>
-            Cancel and Exit
-          </p>
         </section>
       </div>
     </div>
