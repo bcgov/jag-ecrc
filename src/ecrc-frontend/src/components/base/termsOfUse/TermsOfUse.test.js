@@ -5,7 +5,15 @@ import TermsOfUse from "./TermsOfUse";
 
 describe("TermsOfUse Component", () => {
   test("Matches the snapshot", () => {
-    const termsOfUse = create(<TermsOfUse onClick={() => jest.fn()} />);
+    const termsOfUse = create(
+      <TermsOfUse
+        onContinueClick={() => jest.fn()}
+        onCancelClick={() => jest.fn()}
+        checkFirstBox={() => jest.fn()}
+        checkSecondBox={() => jest.fn()}
+        termOfUseOnScroll={() => jest.fn()}
+      />
+    );
     expect(termsOfUse.toJSON()).toMatchSnapshot();
   });
 });

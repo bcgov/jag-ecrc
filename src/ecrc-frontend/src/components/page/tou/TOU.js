@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
@@ -9,6 +9,18 @@ import "../page.css";
 
 export default function TOU({ page: { header } }) {
   const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
+  const [secondBoxChecked, setSecondBoxChecked] = useState(false);
+  const [firstBoxChecked, setFirstBoxChecked] = useState(false);
+  const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
+  const [reachedEnd, setReachedEnd] = useState(false);
+
+  useEffect(() => {
+    if (firstBoxChecked && secondBoxChecked && reachedEnd) {
+      setContinueBtnEnabled(true);
+    } else {
+      setContinueBtnEnabled(false);
+    }
+  }, [firstBoxChecked, secondBoxChecked, reachedEnd]);
 
   const onContinueClick = () => {
     setToBCSCRedirect(true);
@@ -17,13 +29,25 @@ export default function TOU({ page: { header } }) {
   if (toBCSCRedirect) {
     return <Redirect to="/ecrc/bcscRedirect" />;
   }
+  const termOfUseOnScroll = event => {
+    const { scrollHeight, scrollTop, clientHeight } = event.target;
+    if (!reachedEnd && scrollHeight - scrollTop <= clientHeight + 5) {
+      setReachedEnd(true);
+    }
+  };
 
   return (
     <main>
       <Header header={header} />
       <div className="page">
         <div className="content">
-          <TermsOfUse onClick={onContinueClick} />
+          <TermsOfUse
+            onContinueClick={onContinueClick}
+            termOfUseOnScroll={termOfUseOnScroll}
+            checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
+            checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
+            continueBtnEnabled={continueBtnEnabled}
+          />
         </div>
       </div>
       <Footer />

@@ -36,8 +36,8 @@ export default function Consent({ page: { header } }) {
     }
   }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked, applicantName]);
 
-  const backButton = {
-    label: "Back",
+  const cancelButton = {
+    label: "Cancel and Exit",
     buttonStyle: "btn ecrc_accessary_btn",
     buttonSize: "btn",
     type: "submit"
@@ -58,7 +58,7 @@ export default function Consent({ page: { header } }) {
   };
 
   if (toHome) {
-    return <Redirect to="/" />;
+    return <Redirect to="/hosthome" />;
   }
 
   if (toApplicationForm) {
@@ -82,7 +82,7 @@ export default function Consent({ page: { header } }) {
           <br />
           <div className="buttons" style={{ paddingLeft: "20px" }}>
             <Button
-              button={backButton}
+              button={cancelButton}
               onClick={() => {
                 setToHome(true);
               }}
