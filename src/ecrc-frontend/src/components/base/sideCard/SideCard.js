@@ -30,7 +30,7 @@ export default function SideCard({
             >
               <h2 style={{ color: "#000" }}>{heading}</h2>
               <div className="submit-content">
-                <p>{content}</p>
+                <span>{content}</span>
               </div>
             </section>
           )}
@@ -38,7 +38,7 @@ export default function SideCard({
             <section id="blue-section" className="submit-container">
               <h2 className="heading-style">{heading}</h2>
               <div className="submit-content">
-                <p>{content}</p>
+                <span>{content}</span>
                 {image && (
                   <a href={imageLink}>
                     <img
@@ -58,7 +58,7 @@ export default function SideCard({
                 <h2 className="heading-style">{heading}</h2>
               </div>
               <div className="bluegrey-content">
-                <p className="content-style">{content}</p>
+                <span className="content-style">{content}</span>
               </div>
             </section>
           )}

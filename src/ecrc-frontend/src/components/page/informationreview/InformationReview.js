@@ -188,6 +188,7 @@ export default function InformationReview({
           <Table table={personalInfoTable} />
           <Table table={positionInfoTable} />
           <Table table={addressTable} />
+          <div className="declareTitle">DECLARATION</div>
           <section className="declareSection">
             <input
               type="checkbox"
