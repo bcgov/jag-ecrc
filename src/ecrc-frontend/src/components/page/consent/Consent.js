@@ -23,6 +23,10 @@ export default function Consent({ page: { header } }) {
   const [applicantName, setApplicantName] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (firstBoxChecked && secondBoxChecked && thirdBoxChecked) {
       setInputEnabled("textinput_editable_white");
       if (applicantName) {

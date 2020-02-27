@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
@@ -49,6 +49,10 @@ export default function ApplicationForm({
   const [organizationFacilityError, setOrganizationFacilityError] = useState(
     ""
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const currentName = {
     firstName: {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -33,6 +33,10 @@ export default function InformationReview({
 }) {
   const [toBack, setToBack] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const personalInfoElement = [
     { name: "First Name", value: firstName },
