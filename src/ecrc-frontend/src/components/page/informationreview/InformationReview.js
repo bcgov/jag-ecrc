@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
@@ -30,6 +31,7 @@ export default function InformationReview({
     }
   }
 }) {
+  const [toBack, setToBack] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
   const personalInfoElement = [
@@ -141,7 +143,7 @@ export default function InformationReview({
   ];
 
   const confirmButton = {
-    label: "Confirm",
+    label: "SUBMIT",
     buttonStyle: "btn btn-primary",
     buttonSize: "btn btn-sm",
     type: "submit",
@@ -154,19 +156,31 @@ export default function InformationReview({
   };
 
   const cancelButton = {
-    label: "Back",
-    buttonStyle: "btn btn-primary",
+    label: "EDIT APPLICATION",
+    buttonStyle: "btn ecrc_accessary_btn",
     buttonSize: "btn btn-sm",
     type: "submit"
   };
 
-  const back = () => {};
+  const edit = () => {
+    setToBack(true);
+  };
+
+  if (toBack) {
+    return <Redirect to="/ecrc/applicationform" />;
+  }
 
   return (
     <main>
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
+          <h1>Information Review</h1>
+          <p>TEXT TO BE CONFIRMED</p>
+          <p>
+            Please confirm that the information provided s accurate. If it is
+            not, please do NOT proceed and contact __________
+          </p>
           <Table table={personalInfoTable} />
           <Table table={positionInfoTable} />
           <Table table={addressTable} />
@@ -187,8 +201,10 @@ export default function InformationReview({
               suitability to be suspended or revoked.
             </span>
           </section>
-          <Button button={cancelButton} onClick={back} />
-          <Button button={confirmButton} onClick={confirm} />
+          <div className="buttons">
+            <Button button={cancelButton} onClick={edit} />
+            <Button button={confirmButton} onClick={confirm} />
+          </div>
         </div>
         <div className="sidecard">
           <SideCards type={"usefullinks"} sideCardLinks={links} />
