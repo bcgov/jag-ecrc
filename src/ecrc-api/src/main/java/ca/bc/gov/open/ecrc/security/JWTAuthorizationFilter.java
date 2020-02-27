@@ -21,7 +21,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;
 
-public class JWTAuthorizationFilter extends OncePerRequestFilter {
+public class JWTAuthorizationFilter  extends OncePerRequestFilter {
 
     private EcrcProperties ecrcProps;
 

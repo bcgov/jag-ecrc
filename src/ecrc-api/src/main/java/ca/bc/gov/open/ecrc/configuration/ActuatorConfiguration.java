@@ -12,11 +12,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * @author sivakaruna
  *
  */
-//@Configuration
+@Configuration
 @Order(200)
 public class ActuatorConfiguration extends WebSecurityConfigurerAdapter {
 
-	//@Override
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.requestMatcher(EndpointRequest.toAnyEndpoint())
