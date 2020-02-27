@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-curly-newline */
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -53,11 +54,11 @@ export default function SideCards({ type, sideCardLinks }) {
   const contact = {
     heading: "Contact the Criminal Records Review Program",
     content: [
-      <div style={{ fontSize: "16px" }}>
+      <div key="contactText" style={{ fontSize: "16px" }}>
         For questions about criminal record checks, contact the Criminal Records
         Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
       </div>,
-      <div style={{ paddingTop: "20px" }}>
+      <div key="contactInfo" style={{ paddingTop: "20px" }}>
         <div>
           <span className="contact-title">Fax: </span> 250 356-1889
         </div>

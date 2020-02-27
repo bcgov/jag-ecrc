@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import "./UserConfirmation.css";
-import { Redirect } from "react-router-dom";
 
 export default function UserConfirmation({ header }) {
   const [toConsent, setToConsent] = useState(false);
