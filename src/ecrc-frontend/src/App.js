@@ -53,7 +53,7 @@ export default function App() {
             <Success page={{ header }} />
           </Route>
           <Route path="/ecrc/informationreview">
-            <InformationReview page={{ header, applicant }} />
+            <InformationReview page={{ header, applicant, org }} />
           </Route>
           <Route path="/ecrc/userconfirmation">
             <UserConfirmation header={header} />

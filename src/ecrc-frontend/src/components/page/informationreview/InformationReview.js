@@ -28,10 +28,12 @@ export default function InformationReview({
       emailAddress,
       jobTitle,
       organizationFacility
-    }
+    },
+    org: { orgApplicantRelationship }
   }
 }) {
   const [toBack, setToBack] = useState(false);
+  const [toSuccess, setToSuccess] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
   useEffect(() => {
@@ -156,6 +158,9 @@ export default function InformationReview({
 
   const confirm = () => {
     // TODO: Check if volunteer, if yes, success, else, cont.
+    if (orgApplicantRelationship === "VOLUNTEER") {
+      setToSuccess(true);
+    }
     // TODO: everything required to build payment link, and redirect to said link
   };
 
@@ -172,6 +177,10 @@ export default function InformationReview({
 
   if (toBack) {
     return <Redirect to="/ecrc/applicationform" />;
+  }
+
+  if (toSuccess) {
+    return <Redirect to="/ecrc/success" />;
   }
 
   return (
