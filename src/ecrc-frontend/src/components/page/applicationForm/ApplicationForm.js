@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import "./ApplicationForm.css";
 import Header from "../../base/header/Header";
@@ -29,6 +29,8 @@ export default function ApplicationForm({
     org: { defaultScheduleTypeCd }
   }
 }) {
+  const [toHome, setToHome] = useState(false);
+  const [toInfoReview, setToInfoReview] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: false,
     previousThree: false
@@ -48,7 +50,9 @@ export default function ApplicationForm({
     ""
   );
 
-  const history = useHistory();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const currentName = {
     firstName: {
@@ -124,7 +128,10 @@ export default function ApplicationForm({
         id: "birthPlace",
         isRequired: true,
         errorMsg: birthPlaceError,
-        onChange: setBirthPlace
+        onChange: event => {
+          setBirthPlace(event);
+          setBirthPlaceError("");
+        }
       },
       {
         label: "Date of Birth",
@@ -150,7 +157,10 @@ export default function ApplicationForm({
         note: "(Include area code)",
         isRequired: true,
         errorMsg: phoneNumberError,
-        onChange: setPhoneNumber
+        onChange: event => {
+          setPhoneNumber(event);
+          setPhoneNumberError("");
+        }
       },
       {
         label: "Personal Email Address",
@@ -158,7 +168,10 @@ export default function ApplicationForm({
         note: "We may use this to communicate with you about your application.",
         isRequired: true,
         errorMsg: emailAddressError,
-        onChange: setEmailAddress
+        onChange: event => {
+          setEmailAddress(event);
+          setEmailAddressError("");
+        }
       }
     ],
     buttons: []
@@ -172,7 +185,10 @@ export default function ApplicationForm({
         id: "applicantPosition",
         isRequired: true,
         errorMsg: jobTitleError,
-        onChange: setJobTitle
+        onChange: event => {
+          setJobTitle(event);
+          setJobTitleError("");
+        }
       }
     ],
     buttons: []
@@ -186,7 +202,10 @@ export default function ApplicationForm({
         "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)",
       isRequired: true,
       errorMsg: organizationFacilityError,
-      onChange: setOrganizationFacility
+      onChange: event => {
+        setOrganizationFacility(event);
+        setOrganizationFacilityError("");
+      }
     });
   }
 
@@ -242,23 +261,23 @@ export default function ApplicationForm({
   };
 
   const applicationVerification = () => {
-    if (birthPlace === "") {
+    if (!birthPlace) {
       setBirthPlaceError("Please enter your city and country of birth");
     }
 
-    if (phoneNumber === "") {
+    if (!phoneNumber) {
       setPhoneNumberError("Please enter your primary phone number");
     }
 
-    if (emailAddress === "") {
+    if (!emailAddress) {
       setEmailAddressError("Please enter your personal email address");
     }
 
-    if (jobTitle === "") {
+    if (!jobTitle) {
       setJobTitleError("Please enter your position/job title");
     }
 
-    if (defaultScheduleTypeCd === "WBSD" && organizationFacility === "") {
+    if (defaultScheduleTypeCd === "WBSD" && !organizationFacility) {
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
@@ -288,12 +307,12 @@ export default function ApplicationForm({
         organizationFacility
       });
 
-      history.push("/");
+      setToInfoReview(true);
     }
   };
 
   const back = () => {
-    history.push("/");
+    setToHome(true);
   };
 
   const additionalNames = event => {
@@ -305,6 +324,14 @@ export default function ApplicationForm({
       setPreviousNames({ ...previousNames, previousThree: true });
     }
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
+
+  if (toInfoReview) {
+    return <Redirect to="/ecrc/informationreview" />;
+  }
 
   return (
     <main>

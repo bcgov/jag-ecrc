@@ -8,6 +8,8 @@ import TOU from "./components/page/tou/TOU";
 import Consent from "./components/page/consent/Consent";
 import BcscRedirect from "./components/page/bcscRedirect/BcscRedirect";
 import Success from "./components/page/success/Success";
+import InformationReview from "./components/page/informationreview/InformationReview";
+import UserConfirmation from "./components/page/userConfirmation/UserConfirmation";
 
 export default function App() {
   const [org, setOrg] = useState(
@@ -50,6 +52,20 @@ export default function App() {
           <Route path="/ecrc/success">
             <Success page={{ header }} />
           </Route>
+          <Route path="/ecrc/informationreview">
+            <InformationReview page={{ header, applicant }} />
+          </Route>
+          <Route path="/ecrc/userconfirmation">
+            <UserConfirmation header={header} />
+          </Route>
+          <Route
+            path="/hosthome"
+            component={() => {
+              window.location.href =
+                "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check";
+              return null;
+            }}
+          />
         </Switch>
       </BrowserRouter>
     </div>

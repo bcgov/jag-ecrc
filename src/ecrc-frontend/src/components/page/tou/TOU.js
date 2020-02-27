@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -8,10 +8,36 @@ import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
 
 export default function TOU({ page: { header } }) {
-  const history = useHistory();
+  const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
+  const [secondBoxChecked, setSecondBoxChecked] = useState(false);
+  const [firstBoxChecked, setFirstBoxChecked] = useState(false);
+  const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
+  const [reachedEnd, setReachedEnd] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    if (firstBoxChecked && secondBoxChecked && reachedEnd) {
+      setContinueBtnEnabled(true);
+    } else {
+      setContinueBtnEnabled(false);
+    }
+  }, [firstBoxChecked, secondBoxChecked, reachedEnd]);
 
   const onContinueClick = () => {
-    history.push("/");
+    setToBCSCRedirect(true);
+  };
+
+  if (toBCSCRedirect) {
+    return <Redirect to="/ecrc/bcscRedirect" />;
+  }
+  const termOfUseOnScroll = event => {
+    const { scrollHeight, scrollTop, clientHeight } = event.target;
+    if (!reachedEnd && scrollHeight - scrollTop <= clientHeight + 5) {
+      setReachedEnd(true);
+    }
   };
 
   return (
@@ -19,7 +45,13 @@ export default function TOU({ page: { header } }) {
       <Header header={header} />
       <div className="page">
         <div className="content">
-          <TermsOfUse onClick={onContinueClick} />
+          <TermsOfUse
+            onContinueClick={onContinueClick}
+            termOfUseOnScroll={termOfUseOnScroll}
+            checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
+            checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
+            continueBtnEnabled={continueBtnEnabled}
+          />
         </div>
       </div>
       <Footer />

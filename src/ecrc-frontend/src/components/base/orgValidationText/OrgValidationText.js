@@ -29,7 +29,7 @@ export default function OrgValidationText({
           <p>
             To submit an online request for a criminal record check, you must:
           </p>
-          <ul>
+          <ul className="bodyList">
             <li>{"Be at least 12 years of age as of today's date"}</li>
             <li>Have an access code provided by your organization</li>
             <li>
@@ -66,7 +66,7 @@ export default function OrgValidationText({
 
         <div>
           <h3>I need more information</h3>
-          <ul>
+          <ul className="bodyList">
             <li>
               <a href="volunteer">{"I'm an employee or a volunteer"}</a> and I
               want to know{" "}

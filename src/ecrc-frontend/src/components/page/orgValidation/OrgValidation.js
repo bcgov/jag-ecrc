@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -10,21 +10,26 @@ import SideCards from "../../composite/sideCards/SideCards";
 
 export default function OrgValidation({ page: { header, setOrg } }) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
-  const history = useHistory();
   const [orgError, setOrgError] = useState("");
+  const [toTransition, setToTransition] = useState(false);
+  const [toOrgVerification, setToOrgVerification] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const orgValidation = () => {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}`)
       .then(res => {
         setOrg(res.data.accessCodeResponse);
-        history.push("/ecrc/orgverification");
+        setToOrgVerification(true);
       })
       .catch(error => {
         if (error.response.status === 404) {
           setOrgError("Please enter a valid org code");
         } else if (error.response.status === 401) {
-          history.push("/ecrc/transition");
+          setToTransition(true);
         }
       });
   };
@@ -43,6 +48,14 @@ export default function OrgValidation({ page: { header, setOrg } }) {
     buttonSize: "btn btn-sm",
     type: "submit"
   };
+
+  if (toOrgVerification) {
+    return <Redirect to="/ecrc/orgverification" />;
+  }
+
+  if (toTransition) {
+    return <Redirect to="/ecrc/transition" />;
+  }
 
   return (
     <main>
