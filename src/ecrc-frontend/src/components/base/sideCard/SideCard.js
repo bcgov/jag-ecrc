@@ -62,31 +62,6 @@ export default function SideCard({
               </div>
             </section>
           )}
-          {type === "contact" && (
-            <section id="blue-section" className="submit-container">
-              <h2 className="heading-style">{heading}</h2>
-              <div className="submit-content">
-                <div style={{ fontSize: "16px" }}>
-                  For questions about criminal record checks, contact the
-                  Criminal Records Review Program Monday to Friday, 8:30 a.m. -
-                  4:30 p.m.
-                </div>
-                <div style={{ paddingTop: "20px" }}>
-                  <div>
-                    <span className="contact-title">Fax: </span> 250 356-1889
-                  </div>
-                  <div>
-                    <span className="contact-title">Office: </span>
-                    Toll free - 1 855 587-0185 (press option 2)
-                  </div>
-                  <div>
-                    <span className="contact-title">Email: </span>
-                    criminalrecords@gov.bc.ca
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
         </div>
       </div>
     </div>

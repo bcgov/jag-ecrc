@@ -15,6 +15,10 @@ p > button {
   display: contents;
 }
 
+.email {
+  color: white;
+}
+
 .link {
   color: white;
   font-weight: 600;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
@@ -10,6 +10,10 @@ import "../page.css";
 import "./BcscRedirect.css";
 
 export default function BcscRedirect({ page: { header } }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const loginBtn = {
     label: "LOGIN",
     buttonStyle: "btn ecrc_common_btn",

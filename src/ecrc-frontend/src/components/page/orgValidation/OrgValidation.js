@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
@@ -22,6 +22,10 @@ export default function OrgValidation({ page: { header, setOrg } }) {
   sessionStorage.setItem("jwt", token);
 
   isAuthenticated();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const orgValidation = () => {
     axios

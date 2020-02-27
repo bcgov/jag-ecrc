@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
@@ -30,6 +30,7 @@ export default function ApplicationForm({
   }
 }) {
   const [toHome, setToHome] = useState(false);
+  const [toInfoReview, setToInfoReview] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: false,
     previousThree: false
@@ -48,6 +49,10 @@ export default function ApplicationForm({
   const [organizationFacilityError, setOrganizationFacilityError] = useState(
     ""
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const currentName = {
     firstName: {
@@ -302,7 +307,7 @@ export default function ApplicationForm({
         organizationFacility
       });
 
-      // TODO: Redirect to bambora here...
+      setToInfoReview(true);
     }
   };
 
@@ -322,6 +327,10 @@ export default function ApplicationForm({
 
   if (toHome) {
     return <Redirect to="/" />;
+  }
+
+  if (toInfoReview) {
+    return <Redirect to="/ecrc/informationreview" />;
   }
 
   return (

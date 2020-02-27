@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -6,6 +7,7 @@ import { Button } from "../../base/button/Button";
 import "./UserConfirmation.css";
 
 export default function UserConfirmation({ header }) {
+  const [toConsent, setToConsent] = useState(false);
   const yesButton = {
     label: "Yes",
     buttonStyle: "btn btn-primary",
@@ -19,6 +21,10 @@ export default function UserConfirmation({ header }) {
     buttonSize: "btn",
     type: "submit"
   };
+
+  if (toConsent) {
+    return <Redirect to="/ecrc/consent" />;
+  }
 
   return (
     <main>
@@ -34,7 +40,7 @@ export default function UserConfirmation({ header }) {
           <p>Is this correct?</p>
           <div className="row">
             <div className="col-md-12">
-              <Button button={yesButton} onClick={() => {}} />
+              <Button button={yesButton} onClick={() => setToConsent(true)} />
               <Button button={noButton} onClick={() => {}} />
               <br />
             </div>
