@@ -43,7 +43,7 @@ export default function InformationReview({
       value: lastName
     },
     {
-      name: "Birth Place",
+      name: "City and Country of Birth",
       value: birthPlace
     },
     {
@@ -53,32 +53,24 @@ export default function InformationReview({
     {
       name: "Sex",
       value: sex
-    },
-    {
-      name: "Primary Phone Number",
-      value: phoneNumber
-    },
-    {
-      name: "Personal Email Address",
-      value: emailAddress
     }
   ];
 
   if (driversLicNo) {
     personalInfoElement.push({
-      name: "BC Driver's Licence Number",
+      name: "BC Driver's Licence",
       value: driversLicNo
     });
   }
 
   const personalInfoTable = {
-    header: "Personal Information",
+    header: "PERSONAL INFORMATION",
     tableElements: personalInfoElement
   };
 
   const positionInfoElement = [
     {
-      name: "Job Title",
+      name: "Your Position/Job Title",
       value: jobTitle
     }
   ];
@@ -91,7 +83,7 @@ export default function InformationReview({
   }
 
   const positionInfoTable = {
-    header: "Position Information",
+    header: "POSITION WITH ORGANIZATION",
     tableElements: positionInfoElement
   };
 
@@ -115,13 +107,38 @@ export default function InformationReview({
     {
       name: "Country",
       value: country
+    },
+    {
+      name: "Primary Phone Number",
+      value: phoneNumber
+    },
+    {
+      name: "Personal Email Address",
+      value: emailAddress
     }
   ];
 
   const addressTable = {
-    header: "Address",
+    header: "CONTACT INFORMATION",
     tableElements: addressElement
   };
+
+  const links = [
+    {
+      name: "I'm an employee or volunteer",
+      url: "/tbd"
+    },
+    {
+      name: "Electronic Identity Verification (EIV)",
+      url:
+        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+    },
+    {
+      name: "Results and Reconsideration",
+      url:
+        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+    }
+  ];
 
   const confirmButton = {
     label: "Confirm",
@@ -174,6 +191,8 @@ export default function InformationReview({
           <Button button={confirmButton} onClick={confirm} />
         </div>
         <div className="sidecard">
+          <SideCards type={"usefullinks"} sideCardLinks={links} />
+          <SideCards type={"contactinformation"} />
           <SideCards type={"collectionnotice"} />
         </div>
       </div>

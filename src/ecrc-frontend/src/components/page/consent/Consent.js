@@ -7,7 +7,7 @@ import Footer from "../../base/footer/Footer";
 import Declaration from "../../base/declaration/Declaration";
 import { Button } from "../../base/button/Button";
 import "../page.css";
-import SideCard from "../../base/sideCard/SideCard";
+import SideCards from "../../composite/sideCards/SideCards";
 
 export default function Consent({ page: { header } }) {
   const [toHome, setToHome] = useState(false);
@@ -49,33 +49,6 @@ export default function Consent({ page: { header } }) {
     buttonSize: "btn",
     type: "submit",
     disabled: !continueBtnEnabled
-  };
-
-  const contactSideCard = {
-    heading: "Contact the Criminal Records Review Program",
-    content: [],
-    type: "contact",
-    isWide: true
-  };
-
-  const noticeSideCard = {
-    heading: "Collection Notice",
-    content: [
-      <div key="noticeCollection" style={{ fontSize: "12px" }}>
-        The Security Programs Division(SPD) will collect your personal
-        information for the purpose of fulfilling the requirements of the
-        Cannabis Control and Licensing Act(CCLA) and associated regulations in
-        accordance with Sections 26(a) and(c) of the Freedom of Information and
-        Protection of Privacy Act.Should you have any questions about the
-        collection, use, or disclosure of personal information, please contact
-        the Senior Policy Analyst, Security Programs Division via mail to PO Box
-        9217 Stn Prov Govt Victoria, BC V8W 9J1; email to
-        cannabissecurityscreening@gov.bc.ca; or by telephone at 1 - 855 - 587 -
-        0185.
-      </div>
-    ],
-    type: "notice",
-    isWide: true
   };
 
   const textInput = {
@@ -124,8 +97,8 @@ export default function Consent({ page: { header } }) {
         </div>
 
         <div className="sidecard">
-          <SideCard key="contact" sideCard={contactSideCard} />
-          <SideCard key="collectionnotice" sideCard={noticeSideCard} />
+          <SideCards type="contactinformation" />
+          <SideCards type="collectionnotice" />
         </div>
       </div>
       <Footer />

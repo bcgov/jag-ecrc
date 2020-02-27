@@ -51,15 +51,33 @@ export default function SideCards({ type, sideCardLinks }) {
 
   // CONTACT INFORMATION SIDECARD
   const contact = {
-    heading: "Contact Information",
+    heading: "Contact the Criminal Records Review Program",
     content: [
-      "Criminal Records Review Program staff are available Monday to Friday from 8:30 a.m. - 4:30 p.m.",
-      <b key="contactinformation-office">Office:</b>,
-      "Toll free - 1 855 587-0185 (press option 2)",
-      <b key="contactinformation-email">Email:</b>,
-      "criminalrecords@gov.bc.ca"
+      <div style={{ fontSize: "16px" }}>
+        For questions about criminal record checks, contact the Criminal Records
+        Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
+      </div>,
+      <div style={{ paddingTop: "20px" }}>
+        <div>
+          <span className="contact-title">Fax: </span> 250 356-1889
+        </div>
+        <div>
+          <span className="contact-title">Office: </span>
+          Toll free - 1 855 587-0185 (press option 2)
+        </div>
+        <div>
+          <span className="contact-title">Email: </span>
+          <a
+            key="criminalRecordsEmail"
+            className="email"
+            href="mailto:criminalrecords@gov.bc.ca"
+          >
+            criminalrecords@gov.bc.ca
+          </a>
+        </div>
+      </div>
     ],
-    type: "bluegrey"
+    type: "blue"
   };
 
   // CRIMINAL RECORD SIDECARD
@@ -136,13 +154,26 @@ export default function SideCards({ type, sideCardLinks }) {
   const collectionNotice = {
     heading: "Collection Notice",
     content: [
-      "The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to ",
-      <a key="criminalRecordsEmail" href="mailto:criminalrecords@gov.bc.ca">
-        criminalrecords@gov.bc.ca
-      </a>,
-      " or by telephone at 1- 855-587-0185 (option 2)."
+      <div key="collectionNotice" style={{ fontSize: "12px" }}>
+        The Security Programs Division will collect your personal information
+        for the purpose of fulfilling the criminal record check requirements of
+        the Criminal Records Review Act (CRRA) and in accordance with sections
+        26(a) and (c) of the Freedom of Information and Protection of Privacy
+        Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect
+        personal information under section 26(e) of FoIPPA for the purpose of
+        evaluating the Criminal Records Review Program and activities to better
+        serve you. Should you have any questions about the collection, use, or
+        disclosure of personal information, please contact the Criminal Records
+        Review Program, Security Programs Division via mail to PO Box 9217 Stn
+        Prov Govt Victoria, BC V8W 9J1; email to&nbsp;
+        <a key="criminalRecordsEmail" href="mailto:criminalrecords@gov.bc.ca">
+          criminalrecords@gov.bc.ca
+        </a>
+        &nbsp;or by telephone at 1- 855-587-0185 (option 2).
+      </div>
     ],
-    type: "notice"
+    type: "notice",
+    isWide: true
   };
 
   // USEFUL LINKS SIDECARD
