@@ -15,6 +15,10 @@ export default function TOU({ page: { header } }) {
   const [reachedEnd, setReachedEnd] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (firstBoxChecked && secondBoxChecked && reachedEnd) {
       setContinueBtnEnabled(true);
     } else {

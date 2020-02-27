@@ -7,6 +7,7 @@ import Transition from "./components/page/transition/Transition";
 import TOU from "./components/page/tou/TOU";
 import Consent from "./components/page/consent/Consent";
 import BcscRedirect from "./components/page/bcscRedirect/BcscRedirect";
+import InformationReview from "./components/page/informationreview/InformationReview";
 import UserConfirmation from "./components/page/userConfirmation/UserConfirmation";
 
 export default function App() {
@@ -46,6 +47,9 @@ export default function App() {
           </Route>
           <Route path="/ecrc/bcscRedirect">
             <BcscRedirect page={{ header }} />
+          </Route>
+          <Route path="/ecrc/informationreview">
+            <InformationReview page={{ header, applicant }} />
           </Route>
           <Route path="/ecrc/userconfirmation">
             <UserConfirmation header={header} />
