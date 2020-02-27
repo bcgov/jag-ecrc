@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./TextInput.css";
 
 export const TextInput = ({
-  textInput: { label, id, note, textInputStyle, value, isRequired },
+  textInput: { label, id, note, textInputStyle, value, isRequired, errorMsg },
   onChange
 }) => {
   let asterisk = "";
@@ -49,6 +49,7 @@ export const TextInput = ({
           readOnly
           onChange={onChange}
         />
+        <span className="error">{errorMsg}</span>
       </div>
     );
 
@@ -62,6 +63,7 @@ export const TextInput = ({
         defaultValue={value}
         onChange={event => onChange(event.target.value)}
       />
+      <span className="error">{errorMsg}</span>
     </div>
   );
 };
@@ -73,14 +75,16 @@ TextInput.propTypes = {
     note: PropTypes.string,
     textInputStyle: PropTypes.string,
     value: PropTypes.string,
-    isRequired: PropTypes.bool
+    isRequired: PropTypes.bool,
+    errorMsg: PropTypes.string
   }),
   onChange: PropTypes.func
 };
 
 TextInput.defaultProps = {
   textInput: {
-    note: ""
+    note: "",
+    errorMsg: ""
   },
   onChange: () => {}
 };

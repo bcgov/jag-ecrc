@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -11,10 +11,11 @@ import { isAuthenticated } from "../../../modules/AuthenticationHelper";
 
 const jwt = require("jsonwebtoken");
 
-export default function OrgValidation({ page: { setOrg, header } }) {
-  const [orgInput, setOrgInput] = useState("");
-  // method name needs to be capitalized due to react hooks gotcha
-  const history = useHistory();
+export default function OrgValidation({ page: { header, setOrg } }) {
+  const [orgTicketNumber, setOrgTicketNumber] = useState("");
+  const [orgError, setOrgError] = useState("");
+  const [toTransition, setToTransition] = useState(false);
+  const [toOrgVerification, setToOrgVerification] = useState(false);
 
   var token = jwt.sign({ foo: "bar" }, "shhhhh", { expiresIn: "1m" });
 
@@ -25,20 +26,27 @@ export default function OrgValidation({ page: { setOrg, header } }) {
   const orgValidation = () => {
     axios
       .get(
-        `http://localhost:8082/ecrc/doAuthenticateUser?orgTicketId=${orgInput}&token=${token}`
+        `/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}&token=${token}`
       )
       .then(res => {
-        history.push("/ecrc/orgverification");
         setOrg(res.data.accessCodeResponse);
+        setToOrgVerification(true);
       })
-      .catch();
+      .catch(error => {
+        if (error.response.status === 404) {
+          setOrgError("Please enter a valid org code");
+        } else if (error.response.status === 401) {
+          setToTransition(true);
+        }
+      });
   };
 
   const textInput = {
     label: "Access code",
     id: "orgId",
     textInputStyle: "placeHolder",
-    isRequired: true
+    isRequired: true,
+    errorMsg: orgError
   };
 
   const button = {
@@ -48,6 +56,14 @@ export default function OrgValidation({ page: { setOrg, header } }) {
     type: "submit"
   };
 
+  if (toOrgVerification) {
+    return <Redirect to="/ecrc/orgverification" />;
+  }
+
+  if (toTransition) {
+    return <Redirect to="/ecrc/transition" />;
+  }
+
   return (
     <main>
       <Header header={header} />
@@ -55,7 +71,7 @@ export default function OrgValidation({ page: { setOrg, header } }) {
         <div className="content col-md-8">
           <OrgValidationText
             textInput={textInput}
-            onChange={setOrgInput}
+            onChange={setOrgTicketNumber}
             button={button}
             onClick={orgValidation}
           />

@@ -107,6 +107,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <span
+                className="error"
+              />
             </div>
           </li>
           <li>
@@ -134,6 +137,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <span
+                className="error"
+              />
             </div>
           </li>
           <li>
@@ -160,6 +166,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
+              />
+              <span
+                className="error"
               />
             </div>
           </li>
@@ -206,6 +215,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <span
+                className="error"
+              />
             </div>
           </li>
           <li>
@@ -231,6 +243,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <span
+                className="error"
+              />
             </div>
           </li>
           <li>
@@ -255,6 +270,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 id="previousLastNameOne"
                 onChange={[Function]}
                 type="text"
+              />
+              <span
+                className="error"
               />
             </div>
           </li>
@@ -305,6 +323,11 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <span
+                className="error"
+              >
+                
+              </span>
             </div>
           </li>
           <li>
@@ -331,6 +354,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
+              />
+              <span
+                className="error"
               />
             </div>
           </li>
@@ -359,6 +385,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <span
+                className="error"
+              />
             </div>
           </li>
           <li>
@@ -385,6 +414,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 id="bcDLNumber"
                 onChange={[Function]}
                 type="text"
+              />
+              <span
+                className="error"
               />
             </div>
           </li>
@@ -418,6 +450,11 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <span
+                className="error"
+              >
+                
+              </span>
             </div>
           </li>
           <li>
@@ -450,6 +487,11 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <span
+                className="error"
+              >
+                
+              </span>
             </div>
           </li>
         </ul>
@@ -474,7 +516,12 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 >
                   Applicant's position/Job Title
                 </label>
-                
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
                  
                 <span
                   className="note"
@@ -486,6 +533,11 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <span
+                className="error"
+              >
+                
+              </span>
             </div>
           </li>
           <li>
@@ -499,7 +551,12 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 >
                   Organization Facility
                 </label>
-                
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
                  
                 <span
                   className="note"
@@ -513,6 +570,11 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <span
+                className="error"
+              >
+                
+              </span>
             </div>
           </li>
         </ul>
@@ -551,6 +613,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <span
+                className="error"
+              />
             </div>
           </li>
           <li>
@@ -577,6 +642,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
+              />
+              <span
+                className="error"
               />
             </div>
           </li>
@@ -605,6 +673,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <span
+                className="error"
+              />
             </div>
           </li>
           <li>
@@ -632,6 +703,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <span
+                className="error"
+              />
             </div>
           </li>
           <li>
@@ -658,6 +732,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
+              />
+              <span
+                className="error"
               />
             </div>
           </li>

@@ -31,17 +31,28 @@ const applicant = {
   organizationFacility: ""
 };
 
+const setApplicant = () => {};
+
 const org = {
-  schedule: "D"
+  defaultScheduleTypeCd: "WBSD"
 };
 
 const page = {
   header,
   applicant,
-  org
+  org,
+  setApplicant
 };
 
-export const Default = () => (
+export const NonScheduleD = () => (
+  <MemoryRouter>
+    <ApplicationForm
+      page={{ ...page, org: { defaultScheduleTypeCd: "WBSC" } }}
+    />
+  </MemoryRouter>
+);
+
+export const ScheduleD = () => (
   <MemoryRouter>
     <ApplicationForm page={page} />
   </MemoryRouter>

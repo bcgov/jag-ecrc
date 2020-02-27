@@ -15,7 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.Map;
 
 import static ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE;
 
@@ -50,15 +50,8 @@ public class EcrcServicesImpl implements EcrcServices {
         }
 	}
 
-	public ArrayList<Link> getLinks() {
-		//TODO: replace hard coded links with actual links
-		ArrayList<Link> linkList = new ArrayList<Link>();
-		Link link1 = new Link("test1", "www.google.com");
-		Link link2 = new Link("test2", "www.google.ca");
-		linkList.add(link1);
-		linkList.add(link2);
-
-		return linkList;
+	public Map<String, String> getLinks() {
+		return ecrcProps.getLinks();
 	}
 
 	public ResponseEntity<String> getProvinceList() throws EcrcServiceException {
