@@ -13,7 +13,7 @@ export default function TermsOfUse({
   termOfUseOnScroll,
   continueBtnEnabled
 }) {
-  const [toHostHome, setToHome] = useState(false);
+  const [toHostHome, setToHostHome] = useState(false);
 
   const button = {
     label: "Continue",
@@ -31,7 +31,7 @@ export default function TermsOfUse({
   };
 
   const onCancelClicked = () => {
-    setToHome(true);
+    setToHostHome(true);
   };
 
   if (toHostHome) {
