@@ -15,7 +15,7 @@ export default function UserConfirmation({ header }) {
 
   const noButton = {
     label: "No",
-    buttonStyle: "btn btn-primary",
+    buttonStyle: "btn ecrc_accessary_btn",
     buttonSize: "btn",
     type: "submit"
   };
