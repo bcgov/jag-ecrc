@@ -50,6 +50,14 @@ export default function App() {
           <Route path="/ecrc/userconfirmation">
             <UserConfirmation header={header} />
           </Route>
+          <Route
+            path="/hosthome"
+            component={() => {
+              window.location.href =
+                "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check";
+              return null;
+            }}
+          />
         </Switch>
       </BrowserRouter>
     </div>
