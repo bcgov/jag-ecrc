@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React from "react";
+import { Redirect } from "react-router-dom";
+
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Button } from "../button/Button";
-
 import "./TermsOfUse.css";
 
 export default function TermsOfUse({
@@ -12,6 +13,8 @@ export default function TermsOfUse({
   termOfUseOnScroll,
   continueBtnEnabled
 }) {
+  const [toHostHome, setToHome] = useState(false);
+
   const button = {
     label: "Continue",
     buttonStyle: "btn ecrc_go_btn",
@@ -28,10 +31,12 @@ export default function TermsOfUse({
   };
 
   const onCancelClicked = () => {
-    window.location.replace(
-      "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
-    );
+    setToHome(true);
   };
+
+  if (toHostHome) {
+    return <Redirect to="/hosthome" />;
+  }
 
   return (
     <div>
