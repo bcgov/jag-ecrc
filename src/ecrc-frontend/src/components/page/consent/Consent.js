@@ -85,7 +85,7 @@ export default function Consent({ page: { header } }) {
   };
 
   if (toHome) {
-    return <Redirect to="/ecrc" />;
+    return <Redirect to="/hosthome" />;
   }
 
   if (toApplicationForm) {
