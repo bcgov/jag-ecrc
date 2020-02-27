@@ -429,5 +429,9 @@ TermsOfUse.propTypes = {
   checkFirstBox: PropTypes.func.isRequired,
   checkSecondBox: PropTypes.func.isRequired,
   termOfUseOnScroll: PropTypes.func.isRequired,
-  continueBtnEnabled: PropTypes.bool.isRequired
+  continueBtnEnabled: PropTypes.bool
+};
+
+TermsOfUse.defaultProps = {
+  continueBtnEnabled: false
 };
