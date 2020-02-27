@@ -88,7 +88,9 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
             <p>
               To submit an online request for a criminal record check, you must:
             </p>
-            <ul>
+            <ul
+              className="bodyList"
+            >
               <li>
                 Be at least 12 years of age as of today's date
               </li>
@@ -200,7 +202,9 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
             <h3>
               I need more information
             </h3>
-            <ul>
+            <ul
+              className="bodyList"
+            >
               <li>
                 <a
                   href="volunteer"

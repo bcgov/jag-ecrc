@@ -66,7 +66,7 @@ export default function OrgValidationText({
 
         <div>
           <h3>I need more information</h3>
-          <ul>
+          <ul className="bodyList">
             <li>
               <a href="volunteer">{"I'm an employee or a volunteer"}</a> and I
               want to know{" "}
