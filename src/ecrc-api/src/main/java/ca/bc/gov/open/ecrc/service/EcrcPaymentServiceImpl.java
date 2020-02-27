@@ -34,11 +34,17 @@ import reactor.core.publisher.Mono;
 @Configuration
 @EnableConfigurationProperties(EcrcProperties.class)
 public class EcrcPaymentServiceImpl implements EcrcPaymentService {
-	
+
 	public static final String PAYMENT_MINUTES_TO_EXPIRE = "30";
-	
+
 	// Bambora Transaction type (Purchase)
 	public static final String PAYMENT_BAMBORA_TRANSACTION_TYPE = "P";
+
+	public static final String PAYMENT_REF1_PREFIX = "Service Id: ";
+
+	public static final String PAYMENT_REF2_PREFIX = "CRRP - Org Party Id: ";
+
+	public static final String PAYMENT_SUCCESS_RESPONSE = "{\"paymentUrl\":\"%s\", \"message\":\"%s\", \"responseCode\":%d}";
 
 	@Autowired
 	private EcrcProperties ecrcProps;
@@ -63,7 +69,9 @@ public class EcrcPaymentServiceImpl implements EcrcPaymentService {
 
 		paymentInfo.setMinutesToExpire(PAYMENT_MINUTES_TO_EXPIRE);
 		paymentInfo.setTransType(PAYMENT_BAMBORA_TRANSACTION_TYPE);
-		
+		paymentInfo.setServiceIdRef1(PAYMENT_REF1_PREFIX + paymentInfo.getServiceIdRef1());
+		paymentInfo.setPartyIdRef2(PAYMENT_REF2_PREFIX + paymentInfo.getPartyIdRef2());
+
 		String _getPaymentServiceUri = String.format(ecrcProps.getGetSinglePaymentUri(), paymentInfo.toQueryString());
 
 		Mono<?> responseBody = this.webClient.get().uri(_getPaymentServiceUri).retrieve()
@@ -74,7 +82,9 @@ public class EcrcPaymentServiceImpl implements EcrcPaymentService {
 			int respCode = obj.getInt("respCode");
 			String respMsg = obj.getString("respMsg");
 			if (respCode == WebServiceStatusCodes.SUCCESS.getErrorCode()) {
-				return new ResponseEntity<>(obj.toString(), HttpStatus.OK);
+				return new ResponseEntity<>(
+						String.format(PAYMENT_SUCCESS_RESPONSE, obj.getString("respValue"), respMsg, respCode),
+						HttpStatus.OK);
 			} else if (respCode == WebServiceStatusCodes.NOTFOUND.getErrorCode()) {
 				return new ResponseEntity<>(
 						String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE, respMsg, respCode),
