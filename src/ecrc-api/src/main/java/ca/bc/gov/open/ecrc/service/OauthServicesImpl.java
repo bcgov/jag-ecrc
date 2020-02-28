@@ -29,7 +29,6 @@ import com.nimbusds.oauth2.sdk.auth.Secret;
 import com.nimbusds.oauth2.sdk.http.HTTPResponse;
 import com.nimbusds.oauth2.sdk.id.ClientID;
 import com.nimbusds.oauth2.sdk.id.State;
-import com.nimbusds.oauth2.sdk.token.AccessToken;
 import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 import com.nimbusds.openid.connect.sdk.UserInfoRequest;
 import com.nimbusds.openid.connect.sdk.UserInfoResponse;
@@ -89,7 +88,7 @@ public class OauthServicesImpl implements OauthServices {
 			
 	}
 
-	public AccessToken getToken(String authCode) throws OauthServiceException {
+	public AccessTokenResponse getToken(String authCode) throws OauthServiceException {
 		
 		logger.debug("Calling getToken");
 		
@@ -127,20 +126,13 @@ public class OauthServicesImpl implements OauthServices {
 			}
 
 			if (!response.indicatesSuccess()) {
-			    // We got an error response...
 			    TokenErrorResponse errorResponse = response.toErrorResponse();
 			    logger.error(errorResponse.toString());
 				throw new OauthServiceException("Token Error Response from IdP server: " + errorResponse.toString() );
 			}
-			
 
-			AccessTokenResponse successResponse = response.toSuccessResponse();
-
-			// Get the access token, the server may also return a refresh token (depends on scope. If contains offline_access, it will!)
-			AccessToken accessToken = successResponse.getTokens().getAccessToken();
-			//RefreshToken refreshToken = successResponse.getTokens().getRefreshToken();
-			
-			return accessToken;
+			// Respond with the complete token returned from the IdP.
+			return response.toSuccessResponse();
 			
 		} catch (URISyntaxException e) {
 			logger.error(e.getMessage(), e);
