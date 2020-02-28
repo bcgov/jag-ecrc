@@ -47,6 +47,12 @@ public class EcrcProperties {
 	private String oauthFeSecret; // secret shared with the front end
 	private int oauthJwtExpiry;
 
+  //JWT properties
+  private String jwtHeader;
+  private String jwtPrefix;
+  private String jwtSecret;
+  private String jwtRole;
+
 	@Value("#{'${ecrc.whitelist}'.split(',')}")
 	private List<String> whiteList;
 	
@@ -171,6 +177,23 @@ public class EcrcProperties {
 	public void setLinks(Map<String, String> links) {
 		this.links = links;
 	}
+
+
+  public String getJwtHeader() { return jwtHeader; }
+
+  public void setJwtHeader(String jwtHeader) {  this.jwtHeader = jwtHeader; }
+
+  public String getJwtPrefix() { return jwtPrefix; }
+
+  public void setJwtPrefix(String jwtPrefix) { this.jwtPrefix = jwtPrefix; }
+
+  public String getJwtSecret() { return jwtSecret;  }
+
+  public void setJwtSecret(String jwtSecret) { this.jwtSecret = jwtSecret; }
+
+  public String getJwtRole() { return jwtRole; }
+
+  public void setJwtRole(String jwtRole) { this.jwtRole = jwtRole; }
 	
 	public String getPaymentUrl() {
 		return paymentUrl;
