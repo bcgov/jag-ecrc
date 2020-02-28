@@ -45,6 +45,7 @@ public class EcrcProperties {
 	private String oauthScope;
 	private String oauthReturnUri;
 	private String oauthFeSecret; // secret shared with the front end
+	private int oauthJwtExpiry;
 
 	@Value("#{'${ecrc.whitelist}'.split(',')}")
 	private List<String> whiteList;
@@ -250,5 +251,13 @@ public class EcrcProperties {
 	public void setOauthFeSecret(String oauthFeSecret) {
 		this.oauthFeSecret = oauthFeSecret;
 	}
-  
+
+	public int getOauthJwtExpiry() {
+		return oauthJwtExpiry;
+	}
+
+	public void setOauthJwtExpiry(String oautJwtExpiry) {
+		this.oauthJwtExpiry = Integer.parseInt(oautJwtExpiry);
+	}
+	
 }
