@@ -29,7 +29,9 @@ export default function InformationReview({
       jobTitle,
       organizationFacility
     },
-    org: { orgApplicantRelationship }
+    org: { orgApplicantRelationship },
+    saveApplicant,
+    saveOrg
   }
 }) {
   const [toBack, setToBack] = useState(false);
@@ -160,6 +162,10 @@ export default function InformationReview({
     // TODO: Check if volunteer, if yes, success, else, cont.
     if (orgApplicantRelationship === "VOLUNTEER") {
       setToSuccess(true);
+    } else {
+      saveApplicant();
+      saveOrg();
+      console.log("Saved");
     }
     // TODO: everything required to build payment link, and redirect to said link
   };

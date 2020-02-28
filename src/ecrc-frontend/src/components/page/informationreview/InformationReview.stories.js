@@ -31,9 +31,19 @@ const applicant = {
   organizationFacility: ""
 };
 
+const org = {
+  orgApplicantRelationship: "EMPLOYEE"
+};
+
+const saveApplicant = () => {};
+const saveOrg = () => {};
+
 const page = {
   header,
-  applicant
+  applicant,
+  org,
+  saveApplicant,
+  saveOrg
 };
 
 export const NonScheduleD = () => (

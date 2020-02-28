@@ -19,6 +19,14 @@ export default function App() {
     JSON.parse(sessionStorage.getItem("applicant")) || {}
   );
 
+  const saveOrg = () => {
+    sessionStorage.setItem("org", JSON.stringify(org));
+  };
+
+  const saveApplicant = () => {
+    sessionStorage.setItem("applicant", JSON.stringify(applicant));
+  };
+
   const header = {
     name: "Criminal Record Check"
   };
@@ -50,10 +58,12 @@ export default function App() {
             <BcscRedirect page={{ header }} />
           </Route>
           <Route path="/ecrc/success">
-            <Success page={{ header }} />
+            <Success page={{ header, applicant }} />
           </Route>
           <Route path="/ecrc/informationreview">
-            <InformationReview page={{ header, applicant, org }} />
+            <InformationReview
+              page={{ header, applicant, org, saveOrg, saveApplicant }}
+            />
           </Route>
           <Route path="/ecrc/userconfirmation">
             <UserConfirmation header={header} />

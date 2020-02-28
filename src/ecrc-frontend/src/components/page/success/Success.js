@@ -3,7 +3,12 @@ import React from "react";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 
-export default function Success({ page: { header } }) {
+export default function Success({
+  page: {
+    header,
+    applicant: { firstName, lastName, birthDate }
+  }
+}) {
   return (
     <main>
       <Header header={header} />
