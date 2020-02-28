@@ -5,11 +5,11 @@ import { SimpleForm } from "../simpleForm/SimpleForm";
 
 export default function FullName({
   title,
-  fullname: { firstName, middleName, lastName }
+  fullname: { legalFirstNm, legalSecondNm, legalSurnameNm }
 }) {
   const name = {
     title,
-    textInputs: [firstName, middleName, lastName],
+    textInputs: [legalFirstNm, legalSecondNm, legalSurnameNm],
     buttons: []
   };
 
@@ -19,19 +19,19 @@ export default function FullName({
 FullName.propTypes = {
   title: PropTypes.string,
   fullname: PropTypes.shape({
-    firstName: PropTypes.shape({
+    legalFirstNm: PropTypes.shape({
       label: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
       value: PropTypes.string,
       textInputStyle: PropTypes.string
     }),
-    middleName: PropTypes.shape({
+    legalSecondNm: PropTypes.shape({
       label: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
       value: PropTypes.string,
       textInputStyle: PropTypes.string
     }),
-    lastName: PropTypes.shape({
+    legalSurnameNm: PropTypes.shape({
       label: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
       value: PropTypes.string,

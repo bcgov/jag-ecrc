@@ -14,16 +14,16 @@ export default function ApplicationForm({
   page: {
     header,
     applicant: {
-      firstName,
-      middleName,
-      lastName,
-      birthDate,
-      sex,
-      street,
-      city,
-      province,
-      postalCode,
-      country
+      legalFirstNm,
+      legalSecondNm,
+      legalSurnameNm,
+      birthDt,
+      genderTxt,
+      addressLine1,
+      cityNm,
+      provinceNm,
+      postalCodeTxt,
+      countryNm
     },
     setApplicant,
     org: { defaultScheduleTypeCd }
@@ -55,68 +55,68 @@ export default function ApplicationForm({
   }, []);
 
   const currentName = {
-    firstName: {
+    legalFirstNm: {
       label: "First Name",
-      id: "firstName",
-      value: firstName,
+      id: "legalFirstNm",
+      value: legalFirstNm,
       textInputStyle: "textinput_non_editable_gray"
     },
-    middleName: {
+    legalSecondNm: {
       label: "Middle Name",
-      id: "middleName",
-      value: middleName,
+      id: "legalSecondNm",
+      value: legalSecondNm,
       textInputStyle: "textinput_non_editable_gray"
     },
-    lastName: {
+    legalSurnameNm: {
       label: "Last Name",
-      id: "lastName",
-      value: lastName,
+      id: "legalSurnameNm",
+      value: legalSurnameNm,
       textInputStyle: "textinput_non_editable_gray"
     }
   };
 
   const previousNameOne = {
-    firstName: {
+    legalFirstNm: {
       label: "First Name",
-      id: "previousFirstNameOne"
+      id: "previouslegalFirstNmOne"
     },
-    middleName: {
+    legalSecondNm: {
       label: "Middle Name",
-      id: "previousMiddleNameOne"
+      id: "previouslegalSecondNmOne"
     },
-    lastName: {
+    legalSurnameNm: {
       label: "Last Name",
-      id: "previousLastNameOne"
+      id: "previouslegalSurnameNmOne"
     }
   };
 
   const previousNameTwo = {
-    firstName: {
+    legalFirstNm: {
       label: "First Name",
-      id: "previousFirstNameTwo"
+      id: "previouslegalFirstNmTwo"
     },
-    middleName: {
+    legalSecondNm: {
       label: "Middle Name",
-      id: "previousMiddleNameTwo"
+      id: "previouslegalSecondNmTwo"
     },
-    lastName: {
+    legalSurnameNm: {
       label: "Last Name",
-      id: "previousLastNameTwo"
+      id: "previouslegalSurnameNmTwo"
     }
   };
 
   const previousNameThree = {
-    firstName: {
+    legalFirstNm: {
       label: "First Name",
-      id: "previousFirstNameOneThree"
+      id: "previouslegalFirstNmOneThree"
     },
-    middleName: {
+    legalSecondNm: {
       label: "Middle Name",
-      id: "previousMiddleNameThree"
+      id: "previouslegalSecondNmThree"
     },
-    lastName: {
+    legalSurnameNm: {
       label: "Last Name",
-      id: "previousLastNameThree"
+      id: "previouslegalSurnameNmThree"
     }
   };
 
@@ -135,14 +135,14 @@ export default function ApplicationForm({
       },
       {
         label: "Date of Birth",
-        id: "birthDate",
-        value: birthDate,
+        id: "birthDt",
+        value: birthDt,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "Sex",
-        id: "sex",
-        value: sex,
+        id: "genderTxt",
+        value: genderTxt,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
@@ -214,32 +214,32 @@ export default function ApplicationForm({
     textInputs: [
       {
         label: "Street",
-        id: "street",
-        value: street,
+        id: "addressLine1",
+        value: addressLine1,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "City",
-        id: "city",
-        value: city,
+        id: "cityNm",
+        value: cityNm,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "Province",
-        id: "province",
-        value: province,
+        id: "provinceNm",
+        value: provinceNm,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "Postal Code",
-        id: "postalCode",
-        value: postalCode,
+        id: "postalCodeTxt",
+        value: postalCodeTxt,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "Country",
-        id: "country",
-        value: country,
+        id: "countryNm",
+        value: countryNm,
         textInputStyle: "textinput_non_editable_gray"
       }
     ],
@@ -289,16 +289,16 @@ export default function ApplicationForm({
       !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "")
     ) {
       setApplicant({
-        firstName,
-        middleName,
-        lastName,
-        birthDate,
-        sex,
-        street,
-        city,
-        province,
-        postalCode,
-        country,
+        legalFirstNm,
+        legalSecondNm,
+        legalSurnameNm,
+        birthDt,
+        genderTxt,
+        addressLine1,
+        cityNm,
+        provinceNm,
+        postalCodeTxt,
+        countryNm,
         birthPlace,
         driversLicNo,
         phoneNumber,
@@ -390,16 +390,16 @@ ApplicationForm.propTypes = {
       name: PropTypes.string.isRequired
     }),
     applicant: PropTypes.shape({
-      firstName: PropTypes.string.isRequired,
-      middleName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
-      birthDate: PropTypes.string.isRequired,
-      sex: PropTypes.string.isRequired,
-      street: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      province: PropTypes.string.isRequired,
-      postalCode: PropTypes.string.isRequired,
-      country: PropTypes.string.isRequired
+      legalFirstNm: PropTypes.string.isRequired,
+      legalSecondNm: PropTypes.string.isRequired,
+      legalSurnameNm: PropTypes.string.isRequired,
+      birthDt: PropTypes.string.isRequired,
+      genderTxt: PropTypes.string.isRequired,
+      addressLine1: PropTypes.string.isRequired,
+      cityNm: PropTypes.string.isRequired,
+      provinceNm: PropTypes.string.isRequired,
+      postalCodeTxt: PropTypes.string.isRequired,
+      countryNm: PropTypes.string.isRequired
     }),
     setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({

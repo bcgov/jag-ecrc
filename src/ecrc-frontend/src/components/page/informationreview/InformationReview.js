@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -12,16 +13,16 @@ export default function InformationReview({
   page: {
     header,
     applicant: {
-      firstName,
-      middleName,
-      lastName,
-      birthDate,
-      sex,
-      street,
-      city,
-      province,
-      postalCode,
-      country,
+      legalFirstNm,
+      legalSecondNm,
+      legalSurnameNm,
+      birthDt,
+      genderTxt,
+      addressLine1,
+      cityNm,
+      provinceNm,
+      postalCodeTxt,
+      countryNm,
       birthPlace,
       driversLicNo,
       phoneNumber,
@@ -43,14 +44,14 @@ export default function InformationReview({
   }, []);
 
   const personalInfoElement = [
-    { name: "First Name", value: firstName },
+    { name: "First Name", value: legalFirstNm },
     {
       name: "Middle Name",
-      value: middleName
+      value: legalSecondNm
     },
     {
       name: "Last Name",
-      value: lastName
+      value: legalSurnameNm
     },
     {
       name: "City and Country of Birth",
@@ -58,11 +59,11 @@ export default function InformationReview({
     },
     {
       name: "Birth Date",
-      value: birthDate
+      value: birthDt
     },
     {
       name: "Sex",
-      value: sex
+      value: genderTxt
     }
   ];
 
@@ -100,23 +101,23 @@ export default function InformationReview({
   const addressElement = [
     {
       name: "Street",
-      value: street
+      value: addressLine1
     },
     {
       name: "City",
-      value: city
+      value: cityNm
     },
     {
       name: "Province",
-      value: province
+      value: provinceNm
     },
     {
       name: "Postal Code",
-      value: postalCode
+      value: postalCodeTxt
     },
     {
       name: "Country",
-      value: country
+      value: countryNm
     },
     {
       name: "Primary Phone Number",
@@ -166,6 +167,79 @@ export default function InformationReview({
       saveApplicant();
       saveOrg();
       console.log("Saved");
+
+      // CALL THAT API
+      const apiFOrm = {
+        legalFirstNm: "Robert",
+        legalSecondNm: "Norman",
+        legalSurnameNm: "Ross",
+        birthDt: "1942/10/29",
+        genderTxt: "M",
+        addressLine1: "123 Somewhere",
+        cityNm: "Here",
+        provinceNm: "British Columbia",
+        postalCodeTxt: "V9V 9V9",
+        countryNm: "Canada",
+        orgTicketNumber: "crce",
+        callPurpose: "CRC"
+      };
+
+      console.log(JSON.stringify(apiFOrm));
+      console.log(apiFOrm);
+
+      Promise.all([
+        axios.post("/ecrc/createApplicant", apiFOrm),
+        axios.get(
+          `/ecrc/getNextSessionId?orgTicketId=${apiFOrm.orgTicketNumber}`
+        ),
+        axios.get(
+          `/ecrc/getNextInvoiceId?orgTicketId=${apiFOrm.orgTicketNumber}`
+        ),
+        axios.get(
+          `/ecrc/getServiceFeeAmount?orgTicketId=${apiFOrm.orgTicketNumber}&scheduleTypeCd=WBSD&scopeLevelCd=WWCH`
+        )
+      ]).then(all => {
+        console.log(all[0].data.partyId);
+        console.log(all[1].data.sessionId);
+        console.log(all[2].data.invoiceId);
+        console.log(all[3].data.serviceFeeAmount);
+
+        const newCRC = {
+          orgTicketNumber: apiFOrm.orgTicketNumber,
+          schedule_Type_Cd: "WBSD",
+          scope_Level_Cd: "WWCH",
+          appl_Party_Id: all[0].data.partyId,
+          org_Appl_To_Pay: "A",
+          applicant_Posn: "Wrkr",
+          child_Care_Fac_Nm: "child_Care_Fac_Nm",
+          governing_Body_Nm: "governing_Body_Nm",
+          session_Id: all[1].data.sessionId,
+          invoice_Id: all[2].data.invoiceId,
+          auth_Release_EIV_Vendor_YN: "Y",
+          auth_Conduct_CRC_Check_YN: "Y",
+          auth_Release_To_Org_YN: "Y",
+          appl_Identity_Verified_EIV_YN: "Y",
+          eivPassDetailsResults: "eivPassDetailsResults"
+        };
+
+        axios.post("/ecrc/createNewCRCService", newCRC).then(res => {
+          const createURL = {
+            invoiceNumber: all[2].data.invoiceId,
+            approvedPage: "http://localhost:3000/ecrc/success",
+            declinedPage: "http://localhost:3000/ecrc/success",
+            errorPage: "http://localhost:3000/ecrc/success",
+            totalItemsAmount: all[3].data.serviceFeeAmount,
+            serviceIdRef1: res.data.serviceId,
+            partyIdRef2: all[0].data.partyId
+          };
+
+          console.log(createURL);
+
+          axios.post("/ecrc/getPaymentUrl", createURL).then(res => {
+            console.log(res.data);
+          });
+        });
+      });
     }
     // TODO: everything required to build payment link, and redirect to said link
   };
@@ -243,16 +317,16 @@ InformationReview.propTypes = {
       name: PropTypes.string.isRequired
     }),
     applicant: PropTypes.shape({
-      firstName: PropTypes.string.isRequired,
-      middleName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
-      birthDate: PropTypes.string.isRequired,
-      sex: PropTypes.string.isRequired,
-      street: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      province: PropTypes.string.isRequired,
-      postalCode: PropTypes.string.isRequired,
-      country: PropTypes.string.isRequired,
+      legalFirstNm: PropTypes.string.isRequired,
+      legalSecondNm: PropTypes.string.isRequired,
+      legalSurnameNm: PropTypes.string.isRequired,
+      birthDt: PropTypes.string.isRequired,
+      genderTxt: PropTypes.string.isRequired,
+      addressLine1: PropTypes.string.isRequired,
+      cityNm: PropTypes.string.isRequired,
+      provinceNm: PropTypes.string.isRequired,
+      postalCodeTxt: PropTypes.string.isRequired,
+      countryNm: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string.isRequired,

@@ -55,7 +55,9 @@ export default function App() {
             <Consent page={{ header }} />
           </Route>
           <Route path="/ecrc/bcscRedirect">
-            <BcscRedirect page={{ header }} />
+            <BcscRedirect
+              page={{ header, setApplicant, saveApplicant, saveOrg }}
+            />
           </Route>
           <Route path="/ecrc/success">
             <Success page={{ header, applicant }} />

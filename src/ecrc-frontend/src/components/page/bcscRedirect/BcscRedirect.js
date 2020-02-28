@@ -5,11 +5,14 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+import Applicant from "../../../bcsc";
 
 import "../page.css";
 import "./BcscRedirect.css";
 
-export default function BcscRedirect({ page: { header } }) {
+export default function BcscRedirect({
+  page: { header, setApplicant, saveApplicant, saveOrg }
+}) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -36,7 +39,11 @@ export default function BcscRedirect({ page: { header } }) {
   };
 
   const onLoginClick = () => {
-    window.open("https://support.wwf.org.uk", "_blank");
+    // window.open("https://support.wwf.org.uk", "_blank");
+    const applicant = Applicant();
+    setApplicant(applicant);
+    saveApplicant();
+    saveOrg();
   };
 
   const onAccountClick = () => {
