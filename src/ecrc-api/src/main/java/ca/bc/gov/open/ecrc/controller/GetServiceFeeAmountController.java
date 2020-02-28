@@ -21,11 +21,11 @@ public class GetServiceFeeAmountController {
     Logger logger = LoggerFactory.getLogger(GetServiceFeeAmountController.class);
 
     @GetMapping(value = "/getServiceFeeAmount", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getServiceFeeAmount(@RequestParam(required=true) String orgTicketId,
+    public ResponseEntity<String> getServiceFeeAmount(@RequestParam(required=true) String orgTicketNumber,
             @RequestParam(required=true) String scheduleTypeCd,
             @RequestParam(required=true) String scopeLevelCd) throws EcrcServiceException {
         //TODO: Extract guid generated from front end
         logger.info("Get fee amount request received {}", UUID.randomUUID().toString());
-        return ecrcServices.getServiceFeeAmount(orgTicketId,scheduleTypeCd,scopeLevelCd);
+        return ecrcServices.getServiceFeeAmount(orgTicketNumber,scheduleTypeCd,scopeLevelCd);
     }
 }

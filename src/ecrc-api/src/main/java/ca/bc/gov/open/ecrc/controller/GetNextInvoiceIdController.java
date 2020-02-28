@@ -22,9 +22,9 @@ public class GetNextInvoiceIdController {
     Logger logger = LoggerFactory.getLogger(GetNextInvoiceIdController.class);
 
     @GetMapping(value = "/getNextInvoiceId", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getNextInvoiceId(@RequestParam(required=true) String orgTicketId) throws EcrcServiceException {
+    public ResponseEntity<String> getNextInvoiceId(@RequestParam(required=true) String orgTicketNumber) throws EcrcServiceException {
         //TODO: Extract guid generated from front end
         logger.info("Get next invoice id request received {}", UUID.randomUUID().toString());
-        return ecrcServices.getNextInvoiceId(orgTicketId);
+        return ecrcServices.getNextInvoiceId(orgTicketNumber);
     }
 }
