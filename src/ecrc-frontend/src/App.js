@@ -18,6 +18,9 @@ export default function App() {
   const [applicant, setApplicant] = useState(
     JSON.parse(sessionStorage.getItem("applicant")) || {}
   );
+  const [applicationInfo, setApplicationInfo] = useState(
+    JSON.parse(sessionStorage.getItem("applicationInfo")) || {}
+  );
 
   const saveOrg = () => {
     sessionStorage.setItem("org", JSON.stringify(org));
@@ -25,6 +28,10 @@ export default function App() {
 
   const saveApplicant = () => {
     sessionStorage.setItem("applicant", JSON.stringify(applicant));
+  };
+
+  const saveApplicationInfo = () => {
+    sessionStorage.setItem("applicationInfo", JSON.stringify(applicationInfo));
   };
 
   const header = {
@@ -60,11 +67,19 @@ export default function App() {
             />
           </Route>
           <Route path="/ecrc/success">
-            <Success page={{ header, applicant }} />
+            <Success page={{ header, applicant, org, applicationInfo }} />
           </Route>
           <Route path="/ecrc/informationreview">
             <InformationReview
-              page={{ header, applicant, org, saveOrg, saveApplicant }}
+              page={{
+                header,
+                applicant,
+                org,
+                setApplicationInfo,
+                saveOrg,
+                saveApplicant,
+                saveApplicationInfo
+              }}
             />
           </Route>
           <Route path="/ecrc/userconfirmation">

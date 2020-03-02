@@ -36,8 +36,10 @@ export default function InformationReview({
       defaultScheduleTypeCd,
       defaultCrcScopeLevelCd
     },
+    setApplicationInfo,
     saveApplicant,
-    saveOrg
+    saveOrg,
+    saveApplicationInfo
   }
 }) {
   const [toBack, setToBack] = useState(false);
@@ -193,6 +195,7 @@ export default function InformationReview({
       };
 
       let partyId;
+      let sessionId;
       let invoiceId;
       let serviceFeeAmount;
 
@@ -206,7 +209,7 @@ export default function InformationReview({
       ])
         .then(all => {
           partyId = all[0].data.partyId;
-          const sessionId = all[1].data.sessionId;
+          sessionId = all[1].data.sessionId;
           invoiceId = all[2].data.invoiceId;
           serviceFeeAmount = all[3].data.serviceFeeAmount;
 
@@ -215,7 +218,7 @@ export default function InformationReview({
           // governing_body_Nm?
           // eivPassDetailsResults?
           const newCRC = {
-            orgTicketNumber: orgTicketNumber,
+            orgTicketNumber,
             schedule_Type_Cd: defaultScheduleTypeCd,
             scope_Level_Cd: defaultCrcScopeLevelCd,
             appl_Party_Id: partyId,
@@ -235,13 +238,25 @@ export default function InformationReview({
           return axios.post("/ecrc/createNewCRCService", newCRC);
         })
         .then(res => {
+          const serviceId = res.data.serviceId;
+
+          setApplicationInfo({
+            partyId,
+            sessionId,
+            invoiceId,
+            serviceFeeAmount,
+            serviceId
+          });
+
+          saveApplicationInfo();
+
           const createURL = {
             invoiceNumber: invoiceId,
             approvedPage: "http://localhost:3000/ecrc/success",
             declinedPage: "http://localhost:3000/ecrc/success",
             errorPage: "http://localhost:3000/ecrc/success",
             totalItemsAmount: serviceFeeAmount,
-            serviceIdRef1: res.data.serviceId,
+            serviceIdRef1: serviceId,
             partyIdRef2: partyId
           };
 
@@ -249,6 +264,7 @@ export default function InformationReview({
         })
         .then(res => {
           console.log(res.data.paymentUrl);
+          window.location.href = res.data.paymentUrl;
         });
     }
   };
@@ -342,6 +358,14 @@ InformationReview.propTypes = {
       emailAddress: PropTypes.string.isRequired,
       jobTitle: PropTypes.string.isRequired,
       organizationFacility: PropTypes.string
-    })
+    }),
+    org: PropTypes.shape({
+      orgApplicantRelationship: PropTypes.string.isRequired,
+      orgTicketNumber: PropTypes.string.isRequired,
+      defaultScheduleTypeCd: PropTypes.string.isRequired,
+      defaultCrcScopeLevelCd: PropTypes.string.isRequired
+    }),
+    saveApplicant: PropTypes.func.isRequired,
+    saveOrg: PropTypes.func.isRequired
   }).isRequired
 };
