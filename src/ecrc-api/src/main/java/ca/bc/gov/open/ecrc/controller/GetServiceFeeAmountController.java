@@ -20,7 +20,7 @@ public class GetServiceFeeAmountController {
 
     Logger logger = LoggerFactory.getLogger(GetServiceFeeAmountController.class);
 
-    @GetMapping(value = "/getServiceFeeAmount", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/private/getServiceFeeAmount", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getServiceFeeAmount(@RequestParam(required=true) String orgTicketNumber,
             @RequestParam(required=true) String scheduleTypeCd,
             @RequestParam(required=true) String scopeLevelCd) throws EcrcServiceException {

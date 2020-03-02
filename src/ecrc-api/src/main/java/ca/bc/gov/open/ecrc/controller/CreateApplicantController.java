@@ -28,7 +28,7 @@ public class CreateApplicantController {
 
 	Logger logger = LoggerFactory.getLogger(CreateApplicantController.class);
 
-	@PostMapping(value = "/createApplicant", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/private/createApplicant", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createApplicant(@RequestBody RequestCreateApplicant applicantInfo) throws EcrcServiceException {
 		//TODO: Extract guid generated from front end
 		logger.info("Create applicant request received {}", UUID.randomUUID().toString());

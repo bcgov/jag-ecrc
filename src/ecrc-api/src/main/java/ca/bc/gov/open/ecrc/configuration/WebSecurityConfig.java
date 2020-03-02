@@ -26,8 +26,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
               .antMatchers("/login**").permitAll()
               .antMatchers("/authorize**").permitAll()
               .antMatchers("/auth-callback**").permitAll()
+              .antMatchers("/private/**").hasAuthority(ecrcProps.getJwtAuthorizedRole())
               .antMatchers("/initialHandshake**").permitAll()
-              .antMatchers("/createApplicant**").hasAuthority(ecrcProps.getJwtAuthorizedRole())
               .antMatchers("/public/**").hasAuthority(ecrcProps.getJwtRole())
               .anyRequest().authenticated();
    }
