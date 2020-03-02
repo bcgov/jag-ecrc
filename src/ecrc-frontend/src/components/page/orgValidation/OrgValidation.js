@@ -22,7 +22,7 @@ export default function OrgValidation({ page: { header, setOrg } }) {
     axios
       .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}`)
       .then(res => {
-        setOrg(res.data.accessCodeResponse);
+        setOrg({ ...res.data.accessCodeResponse, orgTicketNumber });
         setToOrgVerification(true);
       })
       .catch(error => {

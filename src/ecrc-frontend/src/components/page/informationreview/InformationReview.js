@@ -30,7 +30,12 @@ export default function InformationReview({
       jobTitle,
       organizationFacility
     },
-    org: { orgApplicantRelationship },
+    org: {
+      orgApplicantRelationship,
+      orgTicketNumber,
+      defaultScheduleTypeCd,
+      defaultCrcScopeLevelCd
+    },
     saveApplicant,
     saveOrg
   }
@@ -170,78 +175,82 @@ export default function InformationReview({
 
       // CALL THAT API
       const apiFOrm = {
-        legalFirstNm: "Robert",
-        legalSecondNm: "Norman",
-        legalSurnameNm: "Ross",
-        birthDt: "1942/10/29",
-        genderTxt: "M",
-        addressLine1: "123 Somewhere",
-        cityNm: "Here",
-        provinceNm: "British Columbia",
-        postalCodeTxt: "V9V 9V9",
-        countryNm: "Canada",
-        orgTicketNumber: "crce",
-        callPurpose: "CRC"
+        orgTicketNumber,
+        callPurpose: "CRC",
+        legalSurnameNm,
+        legalFirstNm,
+        legalSecondNm,
+        birthDt,
+        genderTxt,
+        birthPlace,
+        phoneNumber,
+        addressLine1,
+        cityNm,
+        provinceNm,
+        countryNm,
+        postalCodeTxt,
+        driversLicNo
       };
 
-      console.log(JSON.stringify(apiFOrm));
-      console.log(apiFOrm);
+      let partyId;
+      let invoiceId;
+      let serviceFeeAmount;
 
       Promise.all([
         axios.post("/ecrc/createApplicant", apiFOrm),
+        axios.get(`/ecrc/getNextSessionId?orgTicketId=${orgTicketNumber}`),
+        axios.get(`/ecrc/getNextInvoiceId?orgTicketId=${orgTicketNumber}`),
         axios.get(
-          `/ecrc/getNextSessionId?orgTicketId=${apiFOrm.orgTicketNumber}`
-        ),
-        axios.get(
-          `/ecrc/getNextInvoiceId?orgTicketId=${apiFOrm.orgTicketNumber}`
-        ),
-        axios.get(
-          `/ecrc/getServiceFeeAmount?orgTicketId=${apiFOrm.orgTicketNumber}&scheduleTypeCd=WBSD&scopeLevelCd=WWCH`
+          `/ecrc/getServiceFeeAmount?orgTicketId=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}`
         )
-      ]).then(all => {
-        console.log(all[0].data.partyId);
-        console.log(all[1].data.sessionId);
-        console.log(all[2].data.invoiceId);
-        console.log(all[3].data.serviceFeeAmount);
+      ])
+        .then(all => {
+          partyId = all[0].data.partyId;
+          const sessionId = all[1].data.sessionId;
+          invoiceId = all[2].data.invoiceId;
+          serviceFeeAmount = all[3].data.serviceFeeAmount;
 
-        const newCRC = {
-          orgTicketNumber: apiFOrm.orgTicketNumber,
-          schedule_Type_Cd: "WBSD",
-          scope_Level_Cd: "WWCH",
-          appl_Party_Id: all[0].data.partyId,
-          org_Appl_To_Pay: "A",
-          applicant_Posn: "Wrkr",
-          child_Care_Fac_Nm: "child_Care_Fac_Nm",
-          governing_Body_Nm: "governing_Body_Nm",
-          session_Id: all[1].data.sessionId,
-          invoice_Id: all[2].data.invoiceId,
-          auth_Release_EIV_Vendor_YN: "Y",
-          auth_Conduct_CRC_Check_YN: "Y",
-          auth_Release_To_Org_YN: "Y",
-          appl_Identity_Verified_EIV_YN: "Y",
-          eivPassDetailsResults: "eivPassDetailsResults"
-        };
+          // NEED CLARIFICATION:
+          // child_Care_Fac_Nm?
+          // governing_body_Nm?
+          // eivPassDetailsResults?
+          const newCRC = {
+            orgTicketNumber: orgTicketNumber,
+            schedule_Type_Cd: defaultScheduleTypeCd,
+            scope_Level_Cd: defaultCrcScopeLevelCd,
+            appl_Party_Id: partyId,
+            org_Appl_To_Pay: "A",
+            applicant_Posn: jobTitle,
+            child_Care_Fac_Nm: "child_Care_Fac_Nm",
+            governing_Body_Nm: "governing_Body_Nm",
+            session_Id: sessionId,
+            invoice_Id: invoiceId,
+            auth_Release_EIV_Vendor_YN: "Y",
+            auth_Conduct_CRC_Check_YN: "Y",
+            auth_Release_To_Org_YN: "Y",
+            appl_Identity_Verified_EIV_YN: "Y",
+            eivPassDetailsResults: "eivPassDetailsResults"
+          };
 
-        axios.post("/ecrc/createNewCRCService", newCRC).then(res => {
+          return axios.post("/ecrc/createNewCRCService", newCRC);
+        })
+        .then(res => {
           const createURL = {
-            invoiceNumber: all[2].data.invoiceId,
+            invoiceNumber: invoiceId,
             approvedPage: "http://localhost:3000/ecrc/success",
             declinedPage: "http://localhost:3000/ecrc/success",
             errorPage: "http://localhost:3000/ecrc/success",
-            totalItemsAmount: all[3].data.serviceFeeAmount,
+            totalItemsAmount: serviceFeeAmount,
             serviceIdRef1: res.data.serviceId,
-            partyIdRef2: all[0].data.partyId
+            partyIdRef2: partyId
           };
 
-          console.log(createURL);
-
-          axios.post("/ecrc/getPaymentUrl", createURL).then(res => {
-            console.log(res.data);
-          });
+          return axios.post("/ecrc/getPaymentUrl", createURL);
+        })
+        .then(res => {
+          console.log(res.data.paymentUrl);
         });
-      });
     }
-    // TODO: everything required to build payment link, and redirect to said link
   };
 
   const cancelButton = {
