@@ -1,3 +1,6 @@
+import React from "react";
+import { Redirect } from "react-router-dom";
+
 const jwt = require("jsonwebtoken");
 
 export function isAuthenticated() {
@@ -6,7 +9,7 @@ export function isAuthenticated() {
   // verify a token symmetric
   jwt.verify(token, "shhhhh", (err, decoded) => {
     if (err) {
-      console.log("deal with error here");
+      window.location.replace("http://www.google.ca");
       return;
     }
 
