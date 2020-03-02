@@ -110,7 +110,7 @@ public class OauthController {
 		}
 		
 		// Send the new FE JWT in the response body to the caller. 
-        return JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedTokens, ecrcProps.getOauthFeSecret(), ecrcProps.getOauthJwtExpiry()); 
+        return JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedTokens, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtRole());
 		
 	}
 
