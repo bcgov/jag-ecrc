@@ -55,7 +55,8 @@ public class OauthServicesImpl implements OauthServices {
 
 	private final Logger logger = LoggerFactory.getLogger(OauthServicesImpl.class);
 
-	public URI getIDPRedirect() throws URISyntaxException {
+
+	public URI getIDPRedirect(String redirectUrl) throws URISyntaxException {
 		
 		logger.debug("Calling getIDPRedirect");
 		
@@ -69,7 +70,7 @@ public class OauthServicesImpl implements OauthServices {
 		Scope scope = new Scope(ecrcProps.getOauthScope());
 
 		// The client callback URI, typically pre-registered with the server
-		URI callback = new URI(ecrcProps.getOauthReturnUri());
+		URI callback = new URI(redirectUrl);
 
 		// Generate random state string for pairing the response to the request
 		State state = new State();
@@ -86,6 +87,11 @@ public class OauthServicesImpl implements OauthServices {
 		// Use this URI to send the end-user's browser to the server
 		return request.toURI();	
 			
+	}
+
+	@Override
+	public URI getIDPRedirect() throws URISyntaxException {
+		return null;
 	}
 
 	public AccessTokenResponse getToken(String authCode) throws OauthServiceException {
