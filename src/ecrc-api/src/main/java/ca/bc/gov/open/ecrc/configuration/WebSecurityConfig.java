@@ -22,8 +22,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
          http.csrf().disable()
               .addFilterAfter(new JWTAuthorizationFilter(ecrcProps), UsernamePasswordAuthenticationFilter.class)
-               .authorizeRequests()
-               .antMatchers("/initialHandshake**").permitAll()
-               .anyRequest().authenticated();
+              .authorizeRequests()
+              .antMatchers("/login**").permitAll()
+              .antMatchers("/authorize**").permitAll()
+              .antMatchers("/auth-callback**").permitAll()
+              .antMatchers("/initialHandshake**").permitAll()
+              .anyRequest().authenticated();
    }
 }
