@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
+import Table from "../../composite/table/Table";
 
 export default function Success({
   page: {
@@ -26,6 +27,18 @@ export default function Success({
   const paymentInfo = queryString.parse(location.search);
   console.log(paymentInfo);
 
+  const receiptInfo = [{ name: "Service Number", value: serviceId }];
+
+  if (orgApplicantRelationship != "VOLUNTEER") {
+    receiptInfo.push({ name: "Card Type", value: paymentInfo.cardType });
+    receiptInfo.push({ name: "Date/Time", value: paymentInfo.trnDate });
+    receiptInfo.push({ name: "Amount", value: paymentInfo.trnAmount });
+  }
+
+  const receiptInfoTable = {
+    header: "APPLICATION INFORMATION",
+    tableElements: receiptInfo
+  };
   // IF PaymentFailure: LogPaumentFailure
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
@@ -47,6 +60,8 @@ export default function Success({
 
           {legalFirstNm}
           {legalSurnameNm}
+
+          <Table table={receiptInfoTable} />
 
           {/* On payment: invoice details for failure success? Tables? */}
         </div>
