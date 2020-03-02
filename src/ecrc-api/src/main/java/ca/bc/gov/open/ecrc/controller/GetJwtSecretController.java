@@ -1,8 +1,5 @@
 package ca.bc.gov.open.ecrc.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +23,9 @@ public class GetJwtSecretController {
 	private EcrcServices ecrcServices;
 	
 	@RequestMapping(value = "/initialHandshake", method = RequestMethod.GET) 
-	public ResponseEntity<String> getJwtSecret(HttpServletRequest Request, HttpServletResponse response) {
+	public ResponseEntity<String> getJwtSecret() {
 		try {
-			return new ResponseEntity<String>(ecrcServices.getJwtSecret(), HttpStatus.OK);		
+			return new ResponseEntity<>(ecrcServices.getJwtSecret(), HttpStatus.OK);		
 		} catch (EcrcServiceException e) {
 			logger.debug("DEBUG Stack:", e);
 			return new ResponseEntity<>(
