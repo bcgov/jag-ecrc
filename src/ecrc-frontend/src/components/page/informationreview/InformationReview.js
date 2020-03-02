@@ -168,87 +168,88 @@ export default function InformationReview({
 
   const confirm = () => {
     // TODO: Check if volunteer, if yes, success, else, cont.
-    if (orgApplicantRelationship === "VOLUNTEER") {
-      setToSuccess(true);
-    } else {
-      saveApplicant();
-      saveOrg();
-      console.log("Saved");
+    // CALL THAT API
+    const createApplicantInfo = {
+      orgTicketNumber,
+      callPurpose: "CRC",
+      legalSurnameNm,
+      legalFirstNm,
+      legalSecondNm,
+      birthDt,
+      genderTxt,
+      birthPlace,
+      phoneNumber,
+      addressLine1,
+      cityNm,
+      provinceNm,
+      countryNm,
+      postalCodeTxt,
+      driversLicNo
+    };
 
-      // CALL THAT API
-      const apiFOrm = {
-        orgTicketNumber,
-        callPurpose: "CRC",
-        legalSurnameNm,
-        legalFirstNm,
-        legalSecondNm,
-        birthDt,
-        genderTxt,
-        birthPlace,
-        phoneNumber,
-        addressLine1,
-        cityNm,
-        provinceNm,
-        countryNm,
-        postalCodeTxt,
-        driversLicNo
-      };
+    let partyId;
+    let sessionId;
+    let invoiceId;
+    let serviceFeeAmount;
+    let serviceId;
 
-      let partyId;
-      let sessionId;
-      let invoiceId;
-      let serviceFeeAmount;
+    Promise.all([
+      axios.post("/ecrc/createApplicant", createApplicantInfo),
+      axios.get(`/ecrc/getNextSessionId?orgTicketId=${orgTicketNumber}`),
+      axios.get(`/ecrc/getNextInvoiceId?orgTicketId=${orgTicketNumber}`),
+      axios.get(
+        `/ecrc/getServiceFeeAmount?orgTicketId=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}`
+      )
+    ])
+      .then(all => {
+        partyId = all[0].data.partyId;
+        sessionId = all[1].data.sessionId;
+        invoiceId = all[2].data.invoiceId;
+        serviceFeeAmount = all[3].data.serviceFeeAmount;
 
-      Promise.all([
-        axios.post("/ecrc/createApplicant", apiFOrm),
-        axios.get(`/ecrc/getNextSessionId?orgTicketId=${orgTicketNumber}`),
-        axios.get(`/ecrc/getNextInvoiceId?orgTicketId=${orgTicketNumber}`),
-        axios.get(
-          `/ecrc/getServiceFeeAmount?orgTicketId=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}`
-        )
-      ])
-        .then(all => {
-          partyId = all[0].data.partyId;
-          sessionId = all[1].data.sessionId;
-          invoiceId = all[2].data.invoiceId;
-          serviceFeeAmount = all[3].data.serviceFeeAmount;
+        // NEED CLARIFICATION:
+        // child_Care_Fac_Nm?
+        // governing_body_Nm?
+        // eivPassDetailsResults?
+        const newCRC = {
+          orgTicketNumber,
+          schedule_Type_Cd: defaultScheduleTypeCd,
+          scope_Level_Cd: defaultCrcScopeLevelCd,
+          appl_Party_Id: partyId,
+          org_Appl_To_Pay: "A",
+          applicant_Posn: jobTitle,
+          child_Care_Fac_Nm: "child_Care_Fac_Nm",
+          governing_Body_Nm: "governing_Body_Nm",
+          session_Id: sessionId,
+          invoice_Id: invoiceId,
+          auth_Release_EIV_Vendor_YN: "Y",
+          auth_Conduct_CRC_Check_YN: "Y",
+          auth_Release_To_Org_YN: "Y",
+          appl_Identity_Verified_EIV_YN: "Y",
+          eivPassDetailsResults: "eivPassDetailsResults"
+        };
 
-          // NEED CLARIFICATION:
-          // child_Care_Fac_Nm?
-          // governing_body_Nm?
-          // eivPassDetailsResults?
-          const newCRC = {
-            orgTicketNumber,
-            schedule_Type_Cd: defaultScheduleTypeCd,
-            scope_Level_Cd: defaultCrcScopeLevelCd,
-            appl_Party_Id: partyId,
-            org_Appl_To_Pay: "A",
-            applicant_Posn: jobTitle,
-            child_Care_Fac_Nm: "child_Care_Fac_Nm",
-            governing_Body_Nm: "governing_Body_Nm",
-            session_Id: sessionId,
-            invoice_Id: invoiceId,
-            auth_Release_EIV_Vendor_YN: "Y",
-            auth_Conduct_CRC_Check_YN: "Y",
-            auth_Release_To_Org_YN: "Y",
-            appl_Identity_Verified_EIV_YN: "Y",
-            eivPassDetailsResults: "eivPassDetailsResults"
-          };
+        return axios.post("/ecrc/createNewCRCService", newCRC);
+      })
+      .then(res => {
+        serviceId = res.data.serviceId;
 
-          return axios.post("/ecrc/createNewCRCService", newCRC);
-        })
-        .then(res => {
-          const serviceId = res.data.serviceId;
+        const appInfo = {
+          partyId,
+          sessionId,
+          invoiceId,
+          serviceFeeAmount,
+          serviceId
+        };
 
-          setApplicationInfo({
-            partyId,
-            sessionId,
-            invoiceId,
-            serviceFeeAmount,
-            serviceId
-          });
+        setApplicationInfo(appInfo);
 
-          saveApplicationInfo();
+        if (orgApplicantRelationship === "VOLUNTEER") {
+          setToSuccess(true);
+        } else {
+          saveApplicant();
+          saveOrg();
+          saveApplicationInfo(appInfo);
 
           const createURL = {
             invoiceNumber: invoiceId,
@@ -260,13 +261,11 @@ export default function InformationReview({
             partyIdRef2: partyId
           };
 
-          return axios.post("/ecrc/getPaymentUrl", createURL);
-        })
-        .then(res => {
-          console.log(res.data.paymentUrl);
-          window.location.href = res.data.paymentUrl;
-        });
-    }
+          axios.post("/ecrc/getPaymentUrl", createURL).then(res => {
+            window.location.href = res.data.paymentUrl;
+          });
+        }
+      });
   };
 
   const cancelButton = {

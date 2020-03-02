@@ -22,16 +22,19 @@ export default function App() {
     JSON.parse(sessionStorage.getItem("applicationInfo")) || {}
   );
 
-  const saveOrg = () => {
-    sessionStorage.setItem("org", JSON.stringify(org));
+  const saveOrg = (orgInfo = org) => {
+    console.log(orgInfo);
+    sessionStorage.setItem("org", JSON.stringify(orgInfo));
   };
 
-  const saveApplicant = () => {
-    sessionStorage.setItem("applicant", JSON.stringify(applicant));
+  const saveApplicant = (applicantInfo = applicant) => {
+    console.log(applicantInfo);
+    sessionStorage.setItem("applicant", JSON.stringify(applicantInfo));
   };
 
-  const saveApplicationInfo = () => {
-    sessionStorage.setItem("applicationInfo", JSON.stringify(applicationInfo));
+  const saveApplicationInfo = (appInfo = applicationInfo) => {
+    console.log(appInfo);
+    sessionStorage.setItem("applicationInfo", JSON.stringify(appInfo));
   };
 
   const header = {

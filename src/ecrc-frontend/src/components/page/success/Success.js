@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -11,7 +12,7 @@ export default function Success({
   page: {
     header,
     applicant: { legalFirstNm, legalSurnameNm },
-    org: { orgApplicantRelationship },
+    org: { orgApplicantRelationship, orgTicketNumber },
     applicationInfo: {
       partyId,
       sessionId,
@@ -27,10 +28,13 @@ export default function Success({
   const paymentInfo = queryString.parse(location.search);
   console.log(paymentInfo);
 
-  const receiptInfo = [{ name: "Service Number", value: serviceId }];
+  const receiptInfo = [
+    { name: "Service Number", value: serviceId },
+    { name: "First Name", value: legalFirstNm },
+    { name: "Last Name", value: legalSurnameNm }
+  ];
 
-  if (orgApplicantRelationship != "VOLUNTEER") {
-    receiptInfo.push({ name: "Card Type", value: paymentInfo.cardType });
+  if (orgApplicantRelationship !== "VOLUNTEER") {
     receiptInfo.push({ name: "Date/Time", value: paymentInfo.trnDate });
     receiptInfo.push({ name: "Amount", value: paymentInfo.trnAmount });
   }
@@ -40,6 +44,24 @@ export default function Success({
     tableElements: receiptInfo
   };
   // IF PaymentFailure: LogPaumentFailure
+  if (paymentInfo.trnApproved === "0") {
+    const logFailure = {
+      orgTicketNumber,
+      serviceId,
+      applPartyId: partyId,
+      sessionId,
+      invoiceId,
+      serviceFeeAmount,
+      bcepErrorMsg: paymentInfo.messageText
+    };
+
+    console.log(logFailure);
+
+    axios.post("/ecrc/logPaymentFailure", logFailure).then(res => {
+      console.log(res);
+      console.log("We didid a thing");
+    });
+  }
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
 

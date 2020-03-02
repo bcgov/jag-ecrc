@@ -42,8 +42,8 @@ export default function BcscRedirect({
     // window.open("https://support.wwf.org.uk", "_blank");
     const applicant = Applicant();
     setApplicant(applicant);
-    saveApplicant();
     saveOrg();
+    saveApplicant(applicant);
   };
 
   const onAccountClick = () => {
