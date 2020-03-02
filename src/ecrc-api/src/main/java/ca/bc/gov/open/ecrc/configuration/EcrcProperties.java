@@ -47,11 +47,12 @@ public class EcrcProperties {
 	private String oauthFeSecret; // secret shared with the front end
 	private int oauthJwtExpiry;
 
-  //JWT properties
-  private String jwtHeader;
-  private String jwtPrefix;
-  private String jwtSecret;
-  private String jwtRole;
+	// JWT properties
+	private String jwtHeader;
+	private String jwtPrefix;
+	private String jwtSecret;
+	private String jwtRole;
+	private String jwtAuthorizedRole;
 
 	@Value("#{'${ecrc.whitelist}'.split(',')}")
 	private List<String> whiteList;
@@ -195,6 +196,14 @@ public class EcrcProperties {
 
   public void setJwtRole(String jwtRole) { this.jwtRole = jwtRole; }
 	
+	public String getJwtAuthorizedRole() {
+		return jwtAuthorizedRole;
+	}
+
+	public void setJwtAuthorizedRole(String jwtAuthorizedRole) {
+		this.jwtAuthorizedRole = jwtAuthorizedRole;
+	}
+
 	public String getPaymentUrl() {
 		return paymentUrl;
 	}
