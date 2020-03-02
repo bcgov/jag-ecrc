@@ -23,6 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
          http.csrf().disable()
               .addFilterAfter(new JWTAuthorizationFilter(ecrcProps), UsernamePasswordAuthenticationFilter.class)
                .authorizeRequests()
+               .antMatchers("/initialHandshake**").permitAll()
                .anyRequest().authenticated();
    }
 }
