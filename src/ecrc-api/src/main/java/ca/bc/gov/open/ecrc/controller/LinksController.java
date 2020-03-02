@@ -29,7 +29,7 @@ public class LinksController {
 	@Autowired
 	EcrcServices ecrcServices;
 
-	@GetMapping(value = "/links", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/public/links", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> getLinks() {
 		try {
 			return new ResponseEntity<>(ecrcServices.getLinks(), HttpStatus.OK);
