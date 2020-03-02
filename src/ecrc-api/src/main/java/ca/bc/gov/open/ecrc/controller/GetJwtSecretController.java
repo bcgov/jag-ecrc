@@ -14,6 +14,12 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 
+/**
+ * Endpoint that provides the jwt secret from the properties file.
+ * 
+ * @author BrendanBeachBCJ
+ *
+ */
 @RestController
 public class GetJwtSecretController {
 	
