@@ -36,6 +36,18 @@ export default function ApplicationForm({
     previousThree: false
   });
 
+  const [alias1FirstNm, setAlias1FirstNm] = useState("");
+  const [alias1SecondNm, setAlias1SecondNm] = useState("");
+  const [alias1SurnameNm, setAlias1SurnameNm] = useState("");
+
+  const [alias2FirstNm, setAlias2FirstNm] = useState("");
+  const [alias2SecondNm, setAlias2SecondNm] = useState("");
+  const [alias2SurnameNm, setAlias2SurnameNm] = useState("");
+
+  const [alias3FirstNm, setAlias3FirstNm] = useState("");
+  const [alias3SecondNm, setAlias3SecondNm] = useState("");
+  const [alias3SurnameNm, setAlias3SurnameNm] = useState("");
+
   const [birthPlace, setBirthPlace] = useState("");
   const [birthPlaceError, setBirthPlaceError] = useState("");
   const [driversLicNo, setDriversLicNo] = useState("");
@@ -78,45 +90,72 @@ export default function ApplicationForm({
   const previousNameOne = {
     legalFirstNm: {
       label: "First Name",
-      id: "previouslegalFirstNmOne"
+      id: "alias1FirstNm",
+      onChange: event => {
+        setAlias1FirstNm(event);
+      }
     },
     legalSecondNm: {
       label: "Middle Name",
-      id: "previouslegalSecondNmOne"
+      id: "alias1SeocndNm",
+      onChange: event => {
+        setAlias1SecondNm(event);
+      }
     },
     legalSurnameNm: {
       label: "Last Name",
-      id: "previouslegalSurnameNmOne"
+      id: "alias1SurnameNm",
+      onChange: event => {
+        setAlias1SurnameNm(event);
+      }
     }
   };
 
   const previousNameTwo = {
     legalFirstNm: {
       label: "First Name",
-      id: "previouslegalFirstNmTwo"
+      id: "alias2FirstNm",
+      onChange: event => {
+        setAlias2FirstNm(event);
+      }
     },
     legalSecondNm: {
       label: "Middle Name",
-      id: "previouslegalSecondNmTwo"
+      id: "alias2SecondNm",
+      onChange: event => {
+        setAlias2SecondNm(event);
+      }
     },
     legalSurnameNm: {
       label: "Last Name",
-      id: "previouslegalSurnameNmTwo"
+      id: "alias2SurnameNm",
+      onChange: event => {
+        setAlias2SurnameNm(event);
+      }
     }
   };
 
   const previousNameThree = {
     legalFirstNm: {
       label: "First Name",
-      id: "previouslegalFirstNmOneThree"
+      id: "alias3FirstNm",
+      onChange: event => {
+        setAlias3FirstNm(event);
+      }
     },
     legalSecondNm: {
       label: "Middle Name",
-      id: "previouslegalSecondNmThree"
+      id: "alias3SecondNm",
+      onChange: event => {
+        setAlias3SecondNm(event);
+      }
     },
     legalSurnameNm: {
       label: "Last Name",
-      id: "previouslegalSurnameNmThree"
+      id: "alias3SurnameNm",
+      onChange: event => {
+        setAlias3SurnameNm(event);
+      }
     }
   };
 
@@ -292,6 +331,15 @@ export default function ApplicationForm({
         legalFirstNm,
         legalSecondNm,
         legalSurnameNm,
+        alias1FirstNm,
+        alias1SecondNm,
+        alias1SurnameNm,
+        alias2FirstNm,
+        alias2SecondNm,
+        alias2SurnameNm,
+        alias3FirstNm,
+        alias3SecondNm,
+        alias3SurnameNm,
         birthDt,
         genderTxt,
         addressLine1,

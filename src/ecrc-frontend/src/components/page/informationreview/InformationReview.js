@@ -16,6 +16,15 @@ export default function InformationReview({
       legalFirstNm,
       legalSecondNm,
       legalSurnameNm,
+      alias1FirstNm,
+      alias1SecondNm,
+      alias1SurnameNm,
+      alias2FirstNm,
+      alias2SecondNm,
+      alias2SurnameNm,
+      alias3FirstNm,
+      alias3SecondNm,
+      alias3SurnameNm,
       birthDt,
       genderTxt,
       addressLine1,
@@ -84,6 +93,67 @@ export default function InformationReview({
   const personalInfoTable = {
     header: "PERSONAL INFORMATION",
     tableElements: personalInfoElement
+  };
+
+  const previousNamesElement = [];
+
+  if (alias1FirstNm || alias1SecondNm || alias1SurnameNm) {
+    previousNamesElement.push({
+      key: "alias1FirstNm",
+      name: "First Name",
+      value: alias1FirstNm
+    });
+    previousNamesElement.push({
+      key: "alias1SecondNm",
+      name: "Middle Name",
+      value: alias1SecondNm
+    });
+    previousNamesElement.push({
+      key: "alias1SurnameNm",
+      name: "Last Name",
+      value: alias1SurnameNm
+    });
+  }
+
+  if (alias2FirstNm || alias2SecondNm || alias2SurnameNm) {
+    previousNamesElement.push({
+      key: "alias2FirstNm",
+      name: "First Name",
+      value: alias2FirstNm
+    });
+    previousNamesElement.push({
+      key: "alias2SecondNm",
+      name: "Middle Name",
+      value: alias2SecondNm
+    });
+    previousNamesElement.push({
+      key: "alias2SurnameNm",
+      name: "Last Name",
+      value: alias2SurnameNm
+    });
+  }
+
+  if (alias3FirstNm || alias3SecondNm || alias3SurnameNm) {
+    previousNamesElement.push({
+      key: "alias3FirstNm",
+      name: "First Name",
+      value: alias3FirstNm
+    });
+    previousNamesElement.push({
+      key: "alias3SecondNm",
+      name: "Middle Name",
+      value: alias3SecondNm
+    });
+    previousNamesElement.push({
+      key: "alias3SurnameNm",
+      name: "Last Name",
+      value: alias3SurnameNm
+    });
+  }
+
+  const previousNamesTable = {
+    header: "PREVIOUS NAMES",
+    tableElements: previousNamesElement
   };
 
   const positionInfoElement = [
@@ -178,6 +248,15 @@ export default function InformationReview({
       birthDt,
       genderTxt,
       birthPlace,
+      alias1FirstNm,
+      alias1SecondNm,
+      alias1SurnameNm,
+      alias2FirstNm,
+      alias2SecondNm,
+      alias2SurnameNm,
+      alias3FirstNm,
+      alias3SecondNm,
+      alias3SurnameNm,
       phoneNumber,
       addressLine1,
       cityNm,
@@ -299,6 +378,9 @@ export default function InformationReview({
             not, please do NOT proceed and contact __________
           </p>
           <Table table={personalInfoTable} />
+          {previousNamesElement.length > 0 ? (
+            <Table table={previousNamesTable} />
+          ) : null}
           <Table table={positionInfoTable} />
           <Table table={addressTable} />
           <div className="declareTitle">DECLARATION</div>

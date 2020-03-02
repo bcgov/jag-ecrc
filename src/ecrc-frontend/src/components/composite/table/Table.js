@@ -6,7 +6,7 @@ import TableElement from "../../base/tableElement/TableElement";
 
 export default function Table({ table: { header, tableElements } }) {
   const tableComponents = tableElements.map(element => {
-    return <TableElement key={element.name} element={element} />;
+    return <TableElement key={element.key || element.name} element={element} />;
   });
 
   return (
