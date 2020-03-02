@@ -73,7 +73,7 @@ public class OauthController {
 	}
 
 	@ResponseStatus(code = HttpStatus.FOUND)
-	@RequestMapping(value = "/getBCSCUrl", method = RequestMethod.GET)
+	@RequestMapping(value = "/public/getBCSCUrl", method = RequestMethod.GET)
 	public ResponseEntity<String> getBCSCUrl() throws OauthServiceException {
 		//TODO: Extract guid generated from front end
 		logger.info("BCSC URL request received {}", UUID.randomUUID().toString());

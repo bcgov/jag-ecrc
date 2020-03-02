@@ -4,35 +4,34 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import ca.bc.gov.open.ecrc.service.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
+import ca.bc.gov.open.ecrc.service.EcrcServices;
 
 /**
- * 
- * Controller for links for side bar navigation.
+ * Endpoint that provides the jwt secret from the properties file.
  * 
  * @author BrendanBeachBCJ
  *
  */
 @RestController
-public class LinksController {
-
-	private final Logger logger = LoggerFactory.getLogger(LinksController.class);
-
+public class GetJwtSecretController {
+	
+	private final Logger logger = LoggerFactory.getLogger(GetJwtSecretController.class);
+	
 	@Autowired
-	EcrcServices ecrcServices;
-
-	@GetMapping(value = "/public/links", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> getLinks() {
+	private EcrcServices ecrcServices;
+	
+	@RequestMapping(value = "/initialHandshake", method = RequestMethod.GET) 
+	public ResponseEntity<String> getJwtSecret() {
 		try {
-			return new ResponseEntity<>(ecrcServices.getLinks(), HttpStatus.OK);
+			return new ResponseEntity<>(ecrcServices.getJwtSecret(), HttpStatus.OK);		
 		} catch (EcrcServiceException e) {
 			logger.debug("DEBUG Stack:", e);
 			return new ResponseEntity<>(
@@ -41,5 +40,4 @@ public class LinksController {
 					HttpStatus.NOT_FOUND);
 		}
 	}
-
 }
