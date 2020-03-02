@@ -1,6 +1,7 @@
 import React from "react";
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -34,12 +35,20 @@ export default function Success({
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
+          {/* Volunteer / Payment Success / Payment Failure Heading */}
+
+          <h1>
+            {orgApplicantRelationship === "VOLUNTEER"
+              ? "Application Approved"
+              : paymentInfo.messageId === "804"
+              ? "Payment Failed"
+              : "Payment Approved"}
+          </h1>
+
           {legalFirstNm}
           {legalSurnameNm}
-          {paymentInfo.messageId === "804" ||
-          orgApplicantRelationship === "VOLUNTEER"
-            ? "FAILURE"
-            : "Success?"}
+
+          {/* On payment: invoice details for failure success? Tables? */}
         </div>
         <div className="sidecard">Sidecards!</div>
       </div>
@@ -47,3 +56,25 @@ export default function Success({
     </main>
   );
 }
+
+Success.propTypes = {
+  page: PropTypes.shape({
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }),
+    applicant: PropTypes.shape({
+      legalFirstNm: PropTypes.string.isRequired,
+      legalSurnameNm: PropTypes.string.isRequired
+    }),
+    org: PropTypes.shape({
+      orgApplicantRelationship: PropTypes.string.isRequired
+    }),
+    applicationInfo: PropTypes.shape({
+      partyId: PropTypes.string.isRequired,
+      sessionId: PropTypes.string.isRequired,
+      invoiceId: PropTypes.string.isRequired,
+      serviceFeeAmount: PropTypes.string,
+      serviceId: PropTypes.string.isRequired
+    })
+  })
+};

@@ -143,6 +143,8 @@ BcscRedirect.propTypes = {
   page: PropTypes.shape({
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
-    })
+    }),
+    saveApplicant: PropTypes.func.isRequired,
+    saveOrg: PropTypes.func.isRequired
   }).isRequired
 };

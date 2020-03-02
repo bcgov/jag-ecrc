@@ -365,7 +365,9 @@ InformationReview.propTypes = {
       defaultScheduleTypeCd: PropTypes.string.isRequired,
       defaultCrcScopeLevelCd: PropTypes.string.isRequired
     }),
+    setApplicationInfo: PropTypes.func.isRequired,
     saveApplicant: PropTypes.func.isRequired,
-    saveOrg: PropTypes.func.isRequired
+    saveOrg: PropTypes.func.isRequired,
+    saveApplicationInfo: PropTypes.func.isRequired
   }).isRequired
 };
