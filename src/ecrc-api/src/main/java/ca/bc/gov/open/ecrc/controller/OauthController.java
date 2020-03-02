@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +25,8 @@ import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
 import ca.bc.gov.open.ecrc.util.AES256;
 import ca.bc.gov.open.ecrc.util.JwtTokenGenerator;
 import ch.qos.logback.classic.Logger;
+
+import java.util.UUID;
 
 /**
  * 
@@ -68,7 +71,22 @@ public class OauthController {
 			throw new OauthServiceException("Configuration Error");
 		}
 	}
-	
+
+	@ResponseStatus(code = HttpStatus.FOUND)
+	@RequestMapping(value = "/getBCSCUrl", method = RequestMethod.GET)
+	public ResponseEntity<String> getBCSCUrl() throws OauthServiceException {
+		//TODO: Extract guid generated from front end
+		logger.info("BCSC URL request received {}", UUID.randomUUID().toString());
+
+		try {
+			return new ResponseEntity(oauthServices.getIDPRedirect().toString(), HttpStatus.OK);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			e.printStackTrace();
+			throw new OauthServiceException("Configuration Error");
+		}
+	}
+
 	/*
 	 * 
 	 * Uses authorization code provided back from call to /authorize to generate access token from IdP. 
@@ -110,7 +128,7 @@ public class OauthController {
 		}
 		
 		// Send the new FE JWT in the response body to the caller. 
-        return JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedTokens, ecrcProps.getOauthFeSecret(), ecrcProps.getOauthJwtExpiry()); 
+        return JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedTokens, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtRole());
 		
 	}
 
