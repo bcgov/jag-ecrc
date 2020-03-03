@@ -52,12 +52,12 @@ public class OauthController {
 
 	@ResponseStatus(code = HttpStatus.FOUND)
 	@RequestMapping(value = "/protected/getBCSCUrl", method = RequestMethod.GET)
-	public ResponseEntity<String> getBCSCUrl(@RequestParam(name = "redirectUrl", required = true) String redirectUrl) throws OauthServiceException {
+	public ResponseEntity<String> getBCSCUrl() throws OauthServiceException {
 		//TODO: Extract guid generated from front end
 		logger.info("BCSC URL request received {}", UUID.randomUUID().toString());
 
 		try {
-			return new ResponseEntity(oauthServices.getIDPRedirect(redirectUrl).toString(), HttpStatus.OK);
+			return new ResponseEntity(oauthServices.getIDPRedirect().toString(), HttpStatus.OK);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			e.printStackTrace();
@@ -73,14 +73,14 @@ public class OauthController {
 	 * 
 	 */
 	@RequestMapping(value = "/protected/login", method = RequestMethod.GET)
-	public String login(@RequestParam(name = "code", required = true) String authCode, @RequestParam(name = "redirectUrl", required = true) String redirectUrl) throws OauthServiceException {
+	public String login(@RequestParam(name = "code", required = true) String authCode) throws OauthServiceException {
 
 		//TODO: Extract guid generated from front end
 		logger.info("Login URL request received {}", UUID.randomUUID().toString());
 		
 		AccessTokenResponse token = null; 
 		try {
-			token = oauthServices.getToken(authCode, redirectUrl);
+			token = oauthServices.getToken(authCode);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			e.printStackTrace();
