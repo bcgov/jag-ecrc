@@ -44,7 +44,6 @@ public class EcrcProperties {
 	private String oauthSecret;
 	private String oauthScope;
 	private String oauthReturnUri;
-	private String oauthFeSecret; // secret shared with the front end
 	private int oauthJwtExpiry;
 
 	// JWT properties
@@ -274,14 +273,6 @@ public class EcrcProperties {
 
 	public void setOauthReturnUri(String oauthReturnUri) {
 		this.oauthReturnUri = oauthReturnUri;
-	}
-
-	public String getOauthFeSecret() {
-		return oauthFeSecret;
-	}
-
-	public void setOauthFeSecret(String oauthFeSecret) {
-		this.oauthFeSecret = oauthFeSecret;
 	}
 
 	public int getOauthJwtExpiry() {
