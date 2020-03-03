@@ -65,3 +65,5 @@ export const ScheduleD = () => (
     />
   </MemoryRouter>
 );
+
+// TODO: Add more stories for aliases
