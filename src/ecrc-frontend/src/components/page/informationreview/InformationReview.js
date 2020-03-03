@@ -426,6 +426,15 @@ InformationReview.propTypes = {
       legalFirstNm: PropTypes.string.isRequired,
       legalSecondNm: PropTypes.string.isRequired,
       legalSurnameNm: PropTypes.string.isRequired,
+      alias1FirstNm: PropTypes.string,
+      alias1SecondNm: PropTypes.string,
+      alias1SurnameNm: PropTypes.string,
+      alias2FirstNm: PropTypes.string,
+      alias2SecondNm: PropTypes.string,
+      alias2SurnameNm: PropTypes.string,
+      alias3FirstNm: PropTypes.string,
+      alias3SecondNm: PropTypes.string,
+      alias3SurnameNm: PropTypes.string,
       birthDt: PropTypes.string.isRequired,
       genderTxt: PropTypes.string.isRequired,
       addressLine1: PropTypes.string.isRequired,
@@ -450,5 +459,21 @@ InformationReview.propTypes = {
     saveApplicant: PropTypes.func.isRequired,
     saveOrg: PropTypes.func.isRequired,
     saveApplicationInfo: PropTypes.func.isRequired
-  }).isRequired
+  })
+};
+
+InformationReview.defaultProps = {
+  page: {
+    applicant: {
+      alias1FirstNm: "",
+      alias1SecondNm: "",
+      alias1SurnameNm: "",
+      alias2FirstNm: "",
+      alias2SecondNm: "",
+      alias2SurnameNm: "",
+      alias3FirstNm: "",
+      alias3SecondNm: "",
+      alias3SurnameNm: ""
+    }
+  }
 };

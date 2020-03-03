@@ -23,8 +23,7 @@ export default function Success({
   }
 }) {
   const location = useLocation();
-  // LogPaymentFailure when?
-  // UpdateServiceFinancialTxn when?
+
   const paymentInfo = queryString.parse(location.search);
   console.log(paymentInfo);
 
@@ -93,11 +92,9 @@ export default function Success({
           {/* Volunteer / Payment Success / Payment Failure Heading */}
 
           <h1>
-            {orgApplicantRelationship === "VOLUNTEER"
-              ? "Application Approved"
-              : paymentInfo.messageId === "804"
-              ? "Payment Failed"
-              : "Payment Approved"}
+            {orgApplicantRelationship === "VOLUNTEER" && "Application Approved"}
+            {paymentInfo.trnApproved === "0" && "Payment Failed"}
+            {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
           {paymentInfo.trnApproved === "1" && (
             <div>
@@ -108,13 +105,16 @@ export default function Success({
           )}
           <div>
             The service number below can be used to help locate your file.
-            Please <b>contact your organization</b> sould you have a question
-            about your application for a criminal record check.
+            Please
+            <b> contact your organization </b>
+            sould you have a question about your application for a criminal
+            record check.
           </div>
           <Table table={receiptInfoTable} />
           <span>
-            Once complete, the results will be provided directly to {orgNm} that
-            is the organization requesting the check.
+            Once complete, the results will be provided directly to
+            {orgNm}
+            that is the organization requesting the check.
           </span>
         </div>
         <div className="sidecard">Sidecards?</div>
@@ -134,7 +134,9 @@ Success.propTypes = {
       legalSurnameNm: PropTypes.string.isRequired
     }),
     org: PropTypes.shape({
-      orgApplicantRelationship: PropTypes.string.isRequired
+      orgApplicantRelationship: PropTypes.string.isRequired,
+      orgTicketNumber: PropTypes.string.isRequired,
+      orgNm: PropTypes.string.isRequired
     }),
     applicationInfo: PropTypes.shape({
       partyId: PropTypes.string.isRequired,
