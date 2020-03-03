@@ -64,6 +64,26 @@ export default function Success({
   }
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
+  if (paymentInfo.trnApproved === "1") {
+    const logSuccess = {
+      orgTicketNumber,
+      applPartyId: partyId,
+      serviceId,
+      // cC_Authorization?
+      paymentDate: paymentInfo.trnDate,
+      // payor_Type_Cd?
+      // payment_Status_Cd?
+      sessionId,
+      invoiceId,
+      // transactionId:
+      transactionAmount: paymentInfo.trnAmount
+    };
+
+    axios.post("/ecrc/updateServiceFinancialTxn", logSuccess).then(res => {
+      console.log(res);
+      console.log("Saved a thing");
+    });
+  }
 
   return (
     <main>
