@@ -104,6 +104,9 @@ export default function Success({
               Program ad the Ministry of Justice.
             </p>
           )}
+          {paymentInfo.trnApproved === "0" && (
+            <p>Your payment has failed. Try again?</p>
+          )}
           <p>
             The service number below can be used to help locate your file.
             Please

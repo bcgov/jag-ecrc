@@ -344,6 +344,9 @@ export default function InformationReview({
             window.location.href = urlResponse.data.paymentUrl;
           });
         }
+      })
+      .catch(error => {
+        console.log(error);
       });
   };
 

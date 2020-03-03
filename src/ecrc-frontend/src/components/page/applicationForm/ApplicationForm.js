@@ -35,6 +35,7 @@ export default function ApplicationForm({
     previousTwo: false,
     previousThree: false
   });
+  const [displayMailing, setDisplayMailing] = useState(false);
 
   const [alias1FirstNm, setAlias1FirstNm] = useState("");
   const [alias1SecondNm, setAlias1SecondNm] = useState("");
@@ -285,6 +286,38 @@ export default function ApplicationForm({
     buttons: []
   };
 
+  const mailing = {
+    title: "Mailing Address",
+    textInputs: [
+      {
+        label: "Street",
+        id: "addressLine1",
+        value: addressLine1
+      },
+      {
+        label: "City",
+        id: "cityNm",
+        value: cityNm
+      },
+      {
+        label: "Province",
+        id: "provinceNm",
+        value: provinceNm
+      },
+      {
+        label: "Postal Code",
+        id: "postalCodeTxt",
+        value: postalCodeTxt
+      },
+      {
+        label: "Country",
+        id: "countryNm",
+        value: countryNm
+      }
+    ],
+    buttons: []
+  };
+
   const continueButton = {
     label: "Continue",
     buttonStyle: "btn btn-primary",
@@ -327,6 +360,8 @@ export default function ApplicationForm({
       jobTitle !== "" &&
       !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "")
     ) {
+      // TODO: Option to save address fields based on if mailing address added...
+
       setApplicant({
         legalFirstNm,
         legalSecondNm,
@@ -376,7 +411,7 @@ export default function ApplicationForm({
   const mailingAddress = event => {
     event.preventDefault();
 
-    console.log("Address");
+    setDisplayMailing(true);
   };
 
   if (toHome) {
@@ -423,6 +458,7 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={applicantInformation} />
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
+          {displayMailing && <SimpleForm simpleForm={mailing} />}
           <section>
             If your mailing address is different from the address above,&nbsp;
             <button
