@@ -471,8 +471,8 @@ export default function ApplicationForm({
             .
           </section>
           <section>
-            Entering your mailing address in this application woun't update your
-            BC Services Card Address. To update your BC Services Card
+            Entering your mailing address in this application woun&apos;t update
+            your BC Services Card Address. To update your BC Services Card
             information you must contact Service BC, ICBC, or AddressChangeBC
           </section>
           <div className="buttons">

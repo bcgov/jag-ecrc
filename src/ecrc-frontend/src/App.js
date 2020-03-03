@@ -61,7 +61,7 @@ export default function App() {
           <Route path="/ecrc/termsofuse">
             <TOU page={{ header }} />
           </Route>
-          <Route path="/ecrc/consent">
+          <Route path="/ecrc/consentpage">
             <Consent page={{ header }} />
           </Route>
           <Route path="/ecrc/bcscRedirect">
@@ -85,7 +85,7 @@ export default function App() {
               }}
             />
           </Route>
-          <Route path="/ecrc/userconfirmation">
+          <Route path="/ecrc/consent">
             <UserConfirmation header={header} />
           </Route>
           <Route
