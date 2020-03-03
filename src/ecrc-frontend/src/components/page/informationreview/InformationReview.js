@@ -310,8 +310,8 @@ export default function InformationReview({
 
         return axios.post("/ecrc/createNewCRCService", newCRC);
       })
-      .then(res => {
-        serviceId = res.data.serviceId;
+      .then(crcResponse => {
+        serviceId = crcResponse.data.serviceId;
 
         const appInfo = {
           partyId,
@@ -340,8 +340,8 @@ export default function InformationReview({
             partyIdRef2: partyId
           };
 
-          axios.post("/ecrc/getPaymentUrl", createURL).then(res => {
-            window.location.href = res.data.paymentUrl;
+          axios.post("/ecrc/getPaymentUrl", createURL).then(urlResponse => {
+            window.location.href = urlResponse.data.paymentUrl;
           });
         }
       });

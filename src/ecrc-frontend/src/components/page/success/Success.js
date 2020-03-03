@@ -40,7 +40,8 @@ export default function Success({
 
   const receiptInfoTable = {
     header: "APPLICATION INFORMATION",
-    tableElements: receiptInfo
+    tableElements: receiptInfo,
+    tableStyle: "white"
   };
   // IF PaymentFailure: LogPaumentFailure
   if (paymentInfo.trnApproved === "0") {
@@ -145,5 +146,5 @@ Success.propTypes = {
       serviceFeeAmount: PropTypes.string,
       serviceId: PropTypes.string.isRequired
     })
-  })
+  }).isRequired
 };
