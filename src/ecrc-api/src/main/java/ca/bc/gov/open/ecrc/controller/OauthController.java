@@ -97,7 +97,7 @@ public class OauthController {
 		//TODO: Extract guid generated from front end
 		logger.info("Login URL request received {}", UUID.randomUUID().toString());
 		
-		AccessTokenResponse token = null; 
+		AccessTokenResponse token = null;  
 		try {
 			token = oauthServices.getToken(authCode);
 		} catch (Exception e) {
