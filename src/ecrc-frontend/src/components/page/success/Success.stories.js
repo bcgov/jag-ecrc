@@ -18,7 +18,9 @@ const applicant = {
 };
 
 const org = {
-  orgApplicantRelationship: "EMPLOYEE"
+  orgApplicantRelationship: "EMPLOYEE",
+  orgTicketNumber: "pbs",
+  orgNm: "Public Broadcast Network"
 };
 
 const applicationInfo = {

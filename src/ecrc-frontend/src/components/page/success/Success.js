@@ -69,13 +69,13 @@ export default function Success({
       orgTicketNumber,
       applPartyId: partyId,
       serviceId,
-      // cC_Authorization?
+      cCAuthorization: paymentInfo.trnOrderNumber,
       paymentDate: paymentInfo.trnDate,
-      // payor_Type_Cd?
-      // payment_Status_Cd?
+      payorTypeCd: "A",
+      paymentStatusCd: "A",
       sessionId,
       invoiceId,
-      // transactionId:
+      transactionId: paymentInfo.trnOrderNumber,
       transactionAmount: paymentInfo.trnAmount
     };
 
@@ -98,24 +98,24 @@ export default function Success({
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
           {paymentInfo.trnApproved === "1" && (
-            <div>
+            <p>
               Your payment has been approved and a request to conduct a criminal
               record check has been submited to the Criminal Records Review
               Program ad the Ministry of Justice.
-            </div>
+            </p>
           )}
-          <div>
+          <p>
             The service number below can be used to help locate your file.
             Please
             <b> contact your organization </b>
             sould you have a question about your application for a criminal
             record check.
-          </div>
+          </p>
           <Table table={receiptInfoTable} />
           <span>
-            Once complete, the results will be provided directly to
+            Once complete, the results will be provided directly to&nbsp;
             {orgNm}
-            that is the organization requesting the check.
+            &nbsp;that is the organization requesting the check.
           </span>
         </div>
         <div className="sidecard">Sidecards?</div>

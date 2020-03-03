@@ -249,7 +249,7 @@ export default function ApplicationForm({
   }
 
   const address = {
-    title: "Address",
+    title: "Current Address",
     textInputs: [
       {
         label: "Street",
@@ -373,6 +373,12 @@ export default function ApplicationForm({
     }
   };
 
+  const mailingAddress = event => {
+    event.preventDefault();
+
+    console.log("Address");
+  };
+
   if (toHome) {
     return <Redirect to="/" />;
   }
@@ -417,6 +423,22 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={applicantInformation} />
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
+          <section>
+            If your mailing address is different from the address above,&nbsp;
+            <button
+              className="notAButton"
+              type="button"
+              onClick={event => mailingAddress(event)}
+            >
+              click here
+            </button>
+            .
+          </section>
+          <section>
+            Entering your mailing address in this application woun't update your
+            BC Services Card Address. To update your BC Services Card
+            information you must contact Service BC, ICBC, or AddressChangeBC
+          </section>
           <div className="buttons">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />
