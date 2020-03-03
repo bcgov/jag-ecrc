@@ -76,7 +76,7 @@ public class OauthController {
 		logger.info("BCSC URL request received {}", UUID.randomUUID().toString());
 
 		try {
-			return new ResponseEntity(oauthServices.getIDPRedirect().toString(), HttpStatus.OK);
+			return new ResponseEntity<String>(oauthServices.getIDPRedirect().toString(), HttpStatus.OK);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			e.printStackTrace();
