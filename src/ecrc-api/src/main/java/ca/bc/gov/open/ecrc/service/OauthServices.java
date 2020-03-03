@@ -18,9 +18,9 @@ import ca.bc.gov.open.ecrc.exception.OauthServiceException;
  */
 public interface OauthServices {
 
-	public URI getIDPRedirect() throws URISyntaxException;
+	public URI getIDPRedirect(String redirectUrl) throws URISyntaxException;
 	
-	public AccessTokenResponse getToken(String code) throws OauthServiceException;
+	public AccessTokenResponse getToken(String code, String redirectUrl) throws OauthServiceException;
 
 	public UserInfo getUserInfo(BearerAccessToken accessToken) throws OauthServiceException;
 

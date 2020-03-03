@@ -23,12 +23,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
          http.csrf().disable()
               .addFilterAfter(new JWTAuthorizationFilter(ecrcProps), UsernamePasswordAuthenticationFilter.class)
               .authorizeRequests()
-              .antMatchers("/login**").permitAll()
-              .antMatchers("/authorize**").permitAll()
-              .antMatchers("/auth-callback**").permitAll()
-              .antMatchers("/private/**").hasAuthority(ecrcProps.getJwtAuthorizedRole())
               .antMatchers("/initialHandshake**").permitAll()
-              .antMatchers("/public/**").hasAuthority(ecrcProps.getJwtRole())
+              .antMatchers("/protected/**").hasAuthority(ecrcProps.getJwtRole())
+              .antMatchers("/private/**").hasAuthority(ecrcProps.getJwtAuthorizedRole())
               .anyRequest().authenticated();
    }
 }

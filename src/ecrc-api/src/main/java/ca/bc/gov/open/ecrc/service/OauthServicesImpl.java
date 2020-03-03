@@ -55,7 +55,6 @@ public class OauthServicesImpl implements OauthServices {
 
 	private final Logger logger = LoggerFactory.getLogger(OauthServicesImpl.class);
 
-
 	public URI getIDPRedirect(String redirectUrl) throws URISyntaxException {
 		
 		logger.debug("Calling getIDPRedirect");
@@ -89,19 +88,14 @@ public class OauthServicesImpl implements OauthServices {
 			
 	}
 
-	@Override
-	public URI getIDPRedirect() throws URISyntaxException {
-		return null;
-	}
-
-	public AccessTokenResponse getToken(String authCode) throws OauthServiceException {
+	public AccessTokenResponse getToken(String authCode, String redirectUrl) throws OauthServiceException {
 		
 		logger.debug("Calling getToken");
 		
 		AuthorizationCode code = new AuthorizationCode(authCode);
 		try {
 			
-			URI callback = new URI(ecrcProps.getOauthReturnUri());
+			URI callback = new URI(redirectUrl);
 			
 			// The credentials to authenticate the client at the token endpoint
 			ClientID clientID = new ClientID(ecrcProps.getOauthClientId());
