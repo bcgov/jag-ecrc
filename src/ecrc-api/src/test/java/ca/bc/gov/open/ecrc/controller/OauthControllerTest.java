@@ -53,7 +53,7 @@ class OauthControllerTest {
 		Mockito.when(ecrcProperties.getJwtAuthorizedRole()).thenReturn("role");
 	}
 
-	@DisplayName("Success - getBCSCUrl oauth controller")
+	@DisplayName("Success - authenticate oauth controller")
 	@Test
 	void testAuthenticateSuccess() throws OauthServiceException, URISyntaxException {
 		HttpServletRequest request = mock(HttpServletRequest.class);
@@ -62,7 +62,7 @@ class OauthControllerTest {
 		oauthController.authenticate(request, response);
 	}
 
-	@DisplayName("Error - getBCSCUrl oauth controller")
+	@DisplayName("Error - authenticate oauth controller")
 	@Test
 	void testAuthenticateError() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getIDPRedirect()).thenReturn(null);
