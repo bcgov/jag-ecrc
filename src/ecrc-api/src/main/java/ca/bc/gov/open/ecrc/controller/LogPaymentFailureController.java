@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +27,7 @@ public class LogPaymentFailureController {
 
 	Logger logger = LoggerFactory.getLogger(LogPaymentFailureController.class);
 
-	@GetMapping(value = "/logPaymentFailure", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/logPaymentFailure", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> logPaymentFailure(@RequestBody(required=true) RequestLogPaymentFailure paymentFailure)
 			throws EcrcServiceException {
 		//TODO: Extract guid generated from front end

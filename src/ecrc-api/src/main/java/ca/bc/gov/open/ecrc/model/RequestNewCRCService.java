@@ -14,9 +14,6 @@ public class RequestNewCRCService {
     private String governing_Body_Nm;
     private String session_Id;
     private String invoice_Id;
-
-
-
     private String auth_Release_EIV_Vendor_YN;
     private String auth_Conduct_CRC_Check_YN;
     private String auth_Release_To_Org_YN;
@@ -145,21 +142,21 @@ public class RequestNewCRCService {
 
 
     public String toQueryString() {
-        return "? " +
+        return "?" +
                 "OrgTicketNumber=" + orgTicketNumber +
-                "& Schedule_Type_Cd=" + schedule_Type_Cd +
-                "& Scope_Level_Cd=" + scope_Level_Cd +
-                "& Appl_Party_Id=" + appl_Party_Id  +
-                "& Org_Appl_To_Pay=" + org_Appl_To_Pay +
-                "& Applicant_Posn=" + applicant_Posn +
-                "& Child_Care_Fac_Nm=" + child_Care_Fac_Nm +
-                "& Governing_Body_Nm=" + governing_Body_Nm +
-                "& Session_Id=" + session_Id +
-                "& Invoice_Id=" + invoice_Id +
-                "& Auth_Release_EIV_Vendor_YN=" + auth_Release_EIV_Vendor_YN +
-                "& Auth_Conduct_CRC_Check_YN=" + auth_Conduct_CRC_Check_YN +
-                "& Auth_Release_To_Org_YN=" + auth_Release_To_Org_YN +
-                "& Appl_Identity_Verified_EIV_YN=" + appl_Identity_Verified_EIV_YN +
-                "& EivPassDetailsResults=" + eivPassDetailsResults;
+                "&Schedule_Type_Cd=" + schedule_Type_Cd +
+                "&Scope_Level_Cd=" + scope_Level_Cd +
+                "&Appl_Party_Id=" + appl_Party_Id  +
+                "&Org_Appl_To_Pay=" + org_Appl_To_Pay +
+                "&Applicant_Posn=" + applicant_Posn +
+                "&Child_Care_Fac_Nm=" + child_Care_Fac_Nm +
+                "&Governing_Body_Nm=" + governing_Body_Nm +
+                "&Session_Id=" + session_Id +
+                "&Invoice_Id=" + invoice_Id +
+                "&Auth_Release_EIV_Vendor_YN=" + auth_Release_EIV_Vendor_YN +
+                "&Auth_Conduct_CRC_Check_YN=" + auth_Conduct_CRC_Check_YN +
+                "&Auth_Release_To_Org_YN=" + auth_Release_To_Org_YN +
+                "&Appl_Identity_Verified_EIV_YN=" + appl_Identity_Verified_EIV_YN +
+                "&EivPassDetailsResults=" + eivPassDetailsResults;
     }
 }
