@@ -261,7 +261,7 @@ export default function ApplicationForm({
   }
 
   const address = {
-    title: "Current Address",
+    title: "Current Street Address",
     textInputs: [
       {
         label: "Street",
@@ -298,7 +298,7 @@ export default function ApplicationForm({
   };
 
   const mailing = {
-    title: "Mailing Address",
+    title: "Current Mailing Address",
     textInputs: [
       {
         label: "Street",
@@ -469,9 +469,12 @@ export default function ApplicationForm({
     }
   };
 
-  const mailingAddress = event => {
-    event.preventDefault();
-
+  const mailingAddress = () => {
+    setMailingAddressLine1(addressLine1);
+    setMailingCity(cityNm);
+    setMailingProvince(provinceNm);
+    setMailingPostalCode(postalCodeTxt);
+    setMailingCountry(countryNm);
     setDisplayMailing(true);
   };
 
@@ -520,17 +523,17 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
           {displayMailing && <SimpleForm simpleForm={mailing} />}
-          <section>
-            If your mailing address is different from the address above,&nbsp;
-            <button
-              className="notAButton"
-              type="button"
-              onClick={event => mailingAddress(event)}
-            >
-              click here
-            </button>
-            .
-          </section>
+          {!displayMailing && (
+            <p>
+              Is your current street address the same as your mailing address?
+              <input
+                type="checkbox"
+                onClick={() => {
+                  mailingAddress();
+                }}
+              />
+            </p>
+          )}
           <section>
             Entering your mailing address in this application will not update
             your BC Services Card Address. To update your BC Services Card
