@@ -1,4 +1,4 @@
-/* @import "~@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css"; */
+@import "../node_modules/@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css";
 
 .ecrc_go_btn {
   background-color: rgb(0, 51, 102);

@@ -1,4 +1,4 @@
-/* @import "~@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css"; */
+@import "../node_modules/@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css";
 
 .label {
   display: flex;
