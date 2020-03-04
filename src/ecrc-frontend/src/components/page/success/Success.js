@@ -25,7 +25,6 @@ export default function Success({
   const location = useLocation();
 
   const paymentInfo = queryString.parse(location.search);
-  console.log(paymentInfo);
 
   const receiptInfo = [
     { name: "Service Number", value: serviceId },
@@ -63,11 +62,8 @@ export default function Success({
       bcepErrorMsg: paymentInfo.messageText
     };
 
-    console.log(logFailure);
-
     axios.post("/ecrc/logPaymentFailure", logFailure).then(res => {
       console.log(res);
-      console.log("We didid a thing");
     });
   }
 
@@ -87,13 +83,10 @@ export default function Success({
       transaction_Amount: paymentInfo.trnAmount
     };
 
-    console.log(JSON.stringify(logSuccess));
-
     axios
       .post("/ecrc/updateServiceFinancialTxn", logSuccess)
       .then(res => {
         console.log(res);
-        console.log("Saved a thing");
       })
       .catch(error => {
         console.log(error);
@@ -105,8 +98,6 @@ export default function Success({
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
-          {/* Volunteer / Payment Success / Payment Failure Heading */}
-
           <h1>
             {orgApplicantRelationship === "VOLUNTEER" &&
               "Application Submitted"}
