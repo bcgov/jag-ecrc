@@ -68,7 +68,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content"
     >
       <h1>
         Consent for Criminal Record Check

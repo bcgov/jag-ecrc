@@ -73,7 +73,7 @@ export default function Consent({ page: { header } }) {
     <main>
       <Header header={header} />
       <div className="page">
-        <div className="content col-md-8">
+        <div className="content">
           <h1>Consent for Criminal Record Check</h1>
           <Declaration
             style={{ paddingBottom: "30px" }}
