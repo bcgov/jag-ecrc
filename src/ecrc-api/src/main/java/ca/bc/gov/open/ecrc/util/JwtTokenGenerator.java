@@ -8,6 +8,7 @@ import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import net.minidev.json.JSONObject;
 
 /**
  *
@@ -28,13 +29,13 @@ public class JwtTokenGenerator {
 	 * @param expiryTime
 	 * @return
 	 */
-	public static String generateFEAccessToken(UserInfo userInfo, String encryptedToken, String secret, int expiryTime, String authority) {
+	public static String generateFEAccessToken(JSONObject userInfo, String encryptedToken, String secret, int expiryTime, String authority) {
 
 		String token = null;
 		try {
 			// per == persisted IdP token
 			token = Jwts.builder()
-					.claim("userInfo", userInfo.toJSONObject())
+					.claim("userInfo", userInfo)
 					.claim("per", encryptedToken)
 					.claim("authorities", Arrays.asList(authority))
 					.setExpiration(new Date(System.currentTimeMillis() + expiryTime))

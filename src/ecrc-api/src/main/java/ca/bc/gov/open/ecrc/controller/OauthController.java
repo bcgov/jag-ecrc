@@ -3,6 +3,7 @@ package ca.bc.gov.open.ecrc.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.minidev.json.JSONObject;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -107,7 +108,7 @@ public class OauthController {
 		}
 		
 		// Fetch corresponding Userinfo from the IdP server.  
-		UserInfo userInfo = oauthServices.getUserInfo((BearerAccessToken)token.toSuccessResponse().getTokens().getAccessToken());
+		JSONObject userInfo = oauthServices.getUserInfo((BearerAccessToken)token.toSuccessResponse().getTokens().getAccessToken());
 		
 		// Encrypt the token received from the IdP. This token contains the accessToken, the refreshToken, and the ID Token. This block 
 		// must be decrypted and used for subsequent calls back to the IdP from this layer (e.g. /refreshToken). 
