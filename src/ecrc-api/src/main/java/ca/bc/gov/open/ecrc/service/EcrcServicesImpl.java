@@ -6,6 +6,8 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.*;
 import ca.bc.gov.open.ecrc.objects.*;
+import ca.bc.gov.open.ecrc.util.EcrcUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +45,8 @@ public class EcrcServicesImpl implements EcrcServices {
 	    if (ecrcProps.getWhiteList().contains(orgTicketNumber.toLowerCase())) {
 			logger.info("Provided org ticket number white listed");
             String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
-            return ecrcWebMethodsService.callWebMethodsService(_doAuthenticateUserUri, new DoAuthenticateUser());
+			_doAuthenticateUserUri = EcrcUtil.encodeUriSpaces(_doAuthenticateUserUri);
+			return ecrcWebMethodsService.callWebMethodsService(_doAuthenticateUserUri, new DoAuthenticateUser());
         } else {
 			logger.info("Provided org ticket number not white listed");
 	        return new ResponseEntity<>(String.format(WEBSERVICE_ERROR_JSON_RESPONSE,"Org not on whitelist", WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.UNAUTHORIZED);
