@@ -63,6 +63,17 @@ export default function ApplicationForm({
     ""
   );
 
+  const [mailingAddressLine1, setMailingAddressLine1] = useState("");
+  const [mailingAddressLine1Error, setMailingAddressLine1Error] = useState("");
+  const [mailingCity, setMailingCity] = useState("");
+  const [mailingCityError, setMailingCityError] = useState("");
+  const [mailingProvince, setMailingProvince] = useState("");
+  const [mailingProvinceError, setMailingProvinceError] = useState("");
+  const [mailingPostalCode, setMailingPostalCode] = useState("");
+  const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
+  const [mailingCountry, setMailingCountry] = useState("");
+  const [mailingCountryError, setMailingCountryError] = useState("");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -292,27 +303,57 @@ export default function ApplicationForm({
       {
         label: "Street",
         id: "addressLine1",
-        value: addressLine1
+        value: mailingAddressLine1,
+        isRequired: true,
+        errorMsg: mailingAddressLine1Error,
+        onChange: event => {
+          setMailingAddressLine1(event);
+          setMailingAddressLine1Error("");
+        }
       },
       {
         label: "City",
         id: "cityNm",
-        value: cityNm
+        value: mailingCity,
+        isRequired: true,
+        errorMsg: mailingCityError,
+        onChange: event => {
+          setMailingCity(event);
+          setMailingCityError("");
+        }
       },
       {
         label: "Province",
         id: "provinceNm",
-        value: provinceNm
+        value: mailingProvince,
+        isRequired: true,
+        errorMsg: mailingProvinceError,
+        onChange: event => {
+          setMailingProvince(event);
+          setMailingProvinceError("");
+        }
       },
       {
         label: "Postal Code",
         id: "postalCodeTxt",
-        value: postalCodeTxt
+        value: mailingPostalCode,
+        isRequired: true,
+        errorMsg: mailingPostalCodeError,
+        onChange: event => {
+          setMailingPostalCode(event);
+          setMailingPostalCodeError("");
+        }
       },
       {
         label: "Country",
         id: "countryNm",
-        value: countryNm
+        value: mailingCountry,
+        isRequired: true,
+        errorMsg: mailingCountryError,
+        onChange: event => {
+          setMailingCountry(event);
+          setMailingCountryError("");
+        }
       }
     ],
     buttons: []
@@ -353,6 +394,26 @@ export default function ApplicationForm({
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
+    if (!mailingAddressLine1) {
+      setJobTitleError("Please enter your PO box or street address");
+    }
+
+    if (!mailingCity) {
+      setJobTitleError("Please enter your city");
+    }
+
+    if (!mailingProvince) {
+      setJobTitleError("Please enter your province");
+    }
+
+    if (!mailingPostalCode) {
+      setJobTitleError("Please enter your postal code");
+    }
+
+    if (!mailingCountry) {
+      setJobTitleError("Please enter your country");
+    }
+
     if (
       birthPlace !== "" &&
       phoneNumber !== "" &&
@@ -377,11 +438,11 @@ export default function ApplicationForm({
         alias3SurnameNm,
         birthDt,
         genderTxt,
-        addressLine1,
-        cityNm,
-        provinceNm,
-        postalCodeTxt,
-        countryNm,
+        addressLine1: mailingAddressLine1,
+        cityNm: mailingCity,
+        provinceNm: mailingProvince,
+        postalCodeTxt: mailingPostalCode,
+        countryNm: mailingCountry,
         birthPlace,
         driversLicNo,
         phoneNumber,
@@ -471,7 +532,7 @@ export default function ApplicationForm({
             .
           </section>
           <section>
-            Entering your mailing address in this application woun&apos;t update
+            Entering your mailing address in this application will not update
             your BC Services Card Address. To update your BC Services Card
             information you must contact Service BC, ICBC, or AddressChangeBC
           </section>
