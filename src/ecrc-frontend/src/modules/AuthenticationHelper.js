@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 const jwt = require("jsonwebtoken");
 
 export function isAuthenticated() {
