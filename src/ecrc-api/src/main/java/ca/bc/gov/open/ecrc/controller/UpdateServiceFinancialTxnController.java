@@ -22,7 +22,7 @@ public class UpdateServiceFinancialTxnController {
 
     Logger logger = LoggerFactory.getLogger(UpdateServiceFinancialTxnController.class);
 
-    @PostMapping(value = "/updateServiceFinancialTxn", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/private/updateServiceFinancialTxn", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> updateServiceFinancialTxn(@RequestBody(required=true) RequestUpdateServiceFinancialTxn requestUpdateServiceFinancialTxn) throws EcrcServiceException {
         //TODO: Extract guid generated from front end
         logger.info("Update service transaction request received {}", UUID.randomUUID().toString());

@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,7 +29,7 @@ public class PaymentController {
 
 	Logger logger = LoggerFactory.getLogger(PaymentController.class);
 
-	@GetMapping(value = "/getPaymentUrl", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/private/createPaymentUrl", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createPaymentUrl(@RequestBody RequestPaymentService paymentInfo) throws EcrcServiceException {
 		//TODO: Extract guid generated from front end
 		logger.info("Payment request received {}", UUID.randomUUID().toString());

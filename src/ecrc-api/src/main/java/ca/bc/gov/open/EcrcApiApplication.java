@@ -9,5 +9,4 @@ public class EcrcApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EcrcApiApplication.class, args);
 	}
-
 }

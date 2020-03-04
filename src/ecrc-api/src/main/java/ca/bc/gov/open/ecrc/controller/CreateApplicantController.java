@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +28,7 @@ public class CreateApplicantController {
 
 	Logger logger = LoggerFactory.getLogger(CreateApplicantController.class);
 
-	@GetMapping(value = "/createApplicant", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/private/createApplicant", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createApplicant(@RequestBody RequestCreateApplicant applicantInfo) throws EcrcServiceException {
 		//TODO: Extract guid generated from front end
 		logger.info("Create applicant request received {}", UUID.randomUUID().toString());
