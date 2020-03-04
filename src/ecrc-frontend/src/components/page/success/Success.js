@@ -30,12 +30,20 @@ export default function Success({
   const receiptInfo = [
     { name: "Service Number", value: serviceId },
     { name: "First Name", value: legalFirstNm },
-    { name: "Last Name", value: legalSurnameNm }
+    { name: "Last Name", value: legalSurnameNm },
+    { name: "Organization", value: orgNm }
   ];
+
+  if (paymentInfo.trnApproved === "1") {
+    receiptInfo.push({ name: "Amount", value: paymentInfo.trnAmount });
+  }
 
   if (orgApplicantRelationship !== "VOLUNTEER") {
     receiptInfo.push({ name: "Date/Time", value: paymentInfo.trnDate });
-    receiptInfo.push({ name: "Amount", value: paymentInfo.trnAmount });
+    receiptInfo.push({
+      name: "Transaction ID",
+      value: paymentInfo.trnOrderNumber
+    });
   }
 
   const receiptInfoTable = {
@@ -93,33 +101,44 @@ export default function Success({
           {/* Volunteer / Payment Success / Payment Failure Heading */}
 
           <h1>
-            {orgApplicantRelationship === "VOLUNTEER" && "Application Approved"}
-            {paymentInfo.trnApproved === "0" && "Payment Failed"}
+            {orgApplicantRelationship === "VOLUNTEER" &&
+              "Application Submitted"}
+            {paymentInfo.trnApproved === "0" && "Payment Declined"}
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
-          {paymentInfo.trnApproved === "1" && (
-            <p>
-              Your payment has been approved and a request to conduct a criminal
-              record check has been submited to the Criminal Records Review
-              Program ad the Ministry of Justice.
-            </p>
+          {paymentInfo.trnApproved !== "0" && (
+            <>
+              <p>
+                Thank you for submitting your application to the Criminal
+                Records Review Program.
+              </p>
+              <p>
+                Your application will be reviewed shortly. Once complete, the
+                results will be provided directly to the requesting
+                organization. We will contact you if further information is
+                required.
+              </p>
+            </>
           )}
           {paymentInfo.trnApproved === "0" && (
-            <p>Your payment has failed. Try again?</p>
+            <>
+              <p>
+                Unfortunately, your payment transaction was declined. Please
+                ensure you have the correct credit card information:
+              </p>
+              <ul>
+                <li>16 digit credit card number</li>
+                <li>3 digit CVD number</li>
+                <li>Non-expired date</li>
+                <li>Availale funds to transfer</li>
+              </ul>
+              <p>
+                You may try again. Otherwise, please refer to our website for
+                submission options.
+              </p>
+            </>
           )}
-          <p>
-            The service number below can be used to help locate your file.
-            Please
-            <b> contact your organization </b>
-            sould you have a question about your application for a criminal
-            record check.
-          </p>
           <Table table={receiptInfoTable} />
-          <span>
-            Once complete, the results will be provided directly to&nbsp;
-            {orgNm}
-            &nbsp;that is the organization requesting the check.
-          </span>
         </div>
         <div className="sidecard">Sidecards?</div>
       </div>
