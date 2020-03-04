@@ -122,23 +122,24 @@ export default function Success({
           )}
           {paymentInfo.trnApproved === "0" && (
             <>
-              <p>
+              <span>
                 Unfortunately, your payment transaction was declined. Please
                 ensure you have the correct credit card information:
-              </p>
-              <ul>
+              </span>
+              <ul className="bodyList">
                 <li>16 digit credit card number</li>
                 <li>3 digit CVD number</li>
                 <li>Non-expired date</li>
                 <li>Availale funds to transfer</li>
               </ul>
-              <p>
+              <span>
                 You may try again. Otherwise, please refer to our website for
                 submission options.
-              </p>
+              </span>
             </>
           )}
           <Table table={receiptInfoTable} />
+          <div>Print Download Email?</div>
         </div>
         <div className="sidecard">Sidecards?</div>
       </div>
