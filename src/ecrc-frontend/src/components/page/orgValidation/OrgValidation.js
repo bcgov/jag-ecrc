@@ -17,7 +17,7 @@ export default function OrgValidation({ page: { header, setOrg } }) {
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
 
-  var token = jwt.sign({ foo: "bar" }, "shhhhh", { expiresIn: "1m" });
+  let token = jwt.sign({ foo: "bar" }, "shhhhh", { expiresIn: "1m" });
 
   sessionStorage.setItem("jwt", token);
 
