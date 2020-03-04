@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RequestUpdateServiceFinancialTxnTest {
-    private final String expectedQueryString = "? " +
+    private final String expectedQueryString = "?" +
             "OrgTicketNumber=orgTicketNumber" +
             "&Appl_Party_Id=appl_Party_Id" +
             "&Service_Id=service_Id" +
