@@ -75,22 +75,29 @@ export default function Success({
   if (paymentInfo.trnApproved === "1") {
     const logSuccess = {
       orgTicketNumber,
-      applPartyId: partyId,
-      serviceId,
-      cCAuthorization: paymentInfo.trnOrderNumber,
-      paymentDate: paymentInfo.trnDate,
-      payorTypeCd: "A",
-      paymentStatusCd: "A",
-      sessionId,
-      invoiceId,
-      transactionId: paymentInfo.trnOrderNumber,
-      transactionAmount: paymentInfo.trnAmount
+      appl_Party_Id: String(partyId),
+      service_Id: String(serviceId),
+      cC_Authorization: paymentInfo.trnOrderNumber,
+      payment_Date: paymentInfo.trnDate,
+      payor_Type_Cd: "A",
+      payment_Status_Cd: "A",
+      session_Id: sessionId,
+      invoice_Id: invoiceId,
+      transaction_Id: paymentInfo.trnOrderNumber,
+      transaction_Amount: paymentInfo.trnAmount
     };
 
-    axios.post("/ecrc/updateServiceFinancialTxn", logSuccess).then(res => {
-      console.log(res);
-      console.log("Saved a thing");
-    });
+    console.log(JSON.stringify(logSuccess));
+
+    axios
+      .post("/ecrc/updateServiceFinancialTxn", logSuccess)
+      .then(res => {
+        console.log(res);
+        console.log("Saved a thing");
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   return (
