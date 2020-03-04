@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -71,10 +72,10 @@ export default function BcscRedirect({ page: { header } }) {
             Account.
           </p>
           <p>
-            Only cards <b>with a photo</b> are accepted. If it's your first time
-            using your Card to access any online service, you need to set up
-            your account for use online by completing a one-time security check
-            to{" "}
+            Only cards <b>with a photo</b> are accepted. If it&apos;s your first
+            time using your Card to access any online service, you need to set
+            up your account for use online by completing a one-time security
+            check to{" "}
             <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
               verify your identity
             </a>
