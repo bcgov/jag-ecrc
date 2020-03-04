@@ -34,6 +34,12 @@ import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
 
 import static org.mockito.ArgumentMatchers.any;
 
+/**
+ * Tests for oauth controller
+ * 
+ * @author sivakaruna
+ *
+ */
 class OauthControllerTest {
 
 	@Mock
