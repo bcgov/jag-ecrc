@@ -16,7 +16,7 @@ const page = {
 storiesOf("BcscRedirect page", module)
   .add("Default", () => (
     <MemoryRouter>
-      <BcscRedirect page={page} />{" "}
+      <BcscRedirect page={page} />
     </MemoryRouter>
   ))
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
