@@ -58,8 +58,7 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
      * @param claims
      */
     private void setUpSpringAuthentication(Claims claims) {
-        @SuppressWarnings("unchecked")
-        List authorities = ((List<?>) claims
+        List<SimpleGrantedAuthority> authorities = ((List<?>) claims
                 .get("authorities")).stream()
                 .map(authority -> new SimpleGrantedAuthority((String) authority))
                 .collect(Collectors.toList());

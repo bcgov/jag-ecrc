@@ -125,11 +125,11 @@ public class EcrcPaymentServiceImplTest {
 		Assertions.assertEquals(serviceUnknownResp, res.getBody());
 	}
 
-	@SuppressWarnings("serial")
 	@DisplayName("Failure - webMethods call bad json")
 	@Test
 	public void testWebMethodsCallJsonFailure() throws JsonProcessingException, EcrcServiceException {
 		Mockito.when(objectMapper.writeValueAsString(any())).thenThrow(new JsonProcessingException("BROKEN") {
+			private static final long serialVersionUID = 1L;
 		});
 		MockResponse mockResponse = new MockResponse();
 		mockResponse.addHeader("content-type: application/xml;");
