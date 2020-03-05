@@ -69,7 +69,10 @@ class OauthControllerTest {
 		HttpServletRequest request = mock(HttpServletRequest.class);
 		HttpServletResponse response = mock(HttpServletResponse.class);
 		when(oauthServices.getIDPRedirect()).thenReturn(new URI("test"));
-		oauthController.authenticate(request, response);
+
+		Assertions.assertDoesNotThrow(() -> {
+			oauthController.authenticate(request, response);
+		});
 	}
 
 	@DisplayName("Error - authenticate oauth controller")

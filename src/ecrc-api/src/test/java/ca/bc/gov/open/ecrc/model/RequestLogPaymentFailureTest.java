@@ -34,13 +34,13 @@ class RequestLogPaymentFailureTest {
 		requestLogPaymentFailure.setServiceId("serviceId");
 		requestLogPaymentFailure.setSessionId("sessionId");
 
-		Assertions.assertEquals(requestLogPaymentFailure.getApplPartyId(), "applPartyId");
-		Assertions.assertEquals(requestLogPaymentFailure.getBcepErrorMsg(), "bcepErrorMsg");
-		Assertions.assertEquals(requestLogPaymentFailure.getInvoiceId(), "invoiceId");
-		Assertions.assertEquals(requestLogPaymentFailure.getOrgTicketNumber(), "orgTicketNumber");
-		Assertions.assertEquals(requestLogPaymentFailure.getServiceFeeAmount(), "serviceFeeAmount");
-		Assertions.assertEquals(requestLogPaymentFailure.getServiceId(), "serviceId");
-		Assertions.assertEquals(requestLogPaymentFailure.getSessionId(), "sessionId");
+		Assertions.assertEquals("applPartyId", requestLogPaymentFailure.getApplPartyId());
+		Assertions.assertEquals("bcepErrorMsg", requestLogPaymentFailure.getBcepErrorMsg());
+		Assertions.assertEquals("invoiceId", requestLogPaymentFailure.getInvoiceId());
+		Assertions.assertEquals("orgTicketNumber", requestLogPaymentFailure.getOrgTicketNumber());
+		Assertions.assertEquals("serviceFeeAmount", requestLogPaymentFailure.getServiceFeeAmount());
+		Assertions.assertEquals("serviceId", requestLogPaymentFailure.getServiceId());
+		Assertions.assertEquals("sessionId", requestLogPaymentFailure.getSessionId());
 
 		Assertions.assertEquals(expectedQueryString, requestLogPaymentFailure.toQueryString());
 	}

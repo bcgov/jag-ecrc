@@ -39,22 +39,22 @@ public class RequestNewCRCServiceTest {
         requestNewCRCService.setAppl_Identity_Verified_EIV_YN("appl_Identity_Verified_EIV_YN");
         requestNewCRCService.setEivPassDetailsResults("eivPassDetailsResults");
 
-		Assertions.assertEquals(requestNewCRCService.getOrgTicketNumber(), "orgTicketNumber");
-		Assertions.assertEquals(requestNewCRCService.getSchedule_Type_Cd(), "schedule_Type_Cd");
-		Assertions.assertEquals(requestNewCRCService.getScope_Level_Cd(), "scope_Level_Cd");
-		Assertions.assertEquals(requestNewCRCService.getAppl_Party_Id(), "appl_Party_Id");
-		Assertions.assertEquals(requestNewCRCService.getOrg_Appl_To_Pay(), "org_Appl_To_Pay");
-		Assertions.assertEquals(requestNewCRCService.getApplicant_Posn(), "applicant_Posn");
-		Assertions.assertEquals(requestNewCRCService.getChild_Care_Fac_Nm(), "child_Care_Fac_Nm");
-		Assertions.assertEquals(requestNewCRCService.getGoverning_Body_Nm(), "governing_Body_Nm");
-		Assertions.assertEquals(requestNewCRCService.getSession_Id(), "session_Id");
-		Assertions.assertEquals(requestNewCRCService.getInvoice_Id(), "invoice_Id");
-		Assertions.assertEquals(requestNewCRCService.getAuth_Release_EIV_Vendor_YN(), "auth_Release_EIV_Vendor_YN");
-		Assertions.assertEquals(requestNewCRCService.getAuth_Conduct_CRC_Check_YN(), "auth_Conduct_CRC_Check_YN");
-		Assertions.assertEquals(requestNewCRCService.getAuth_Release_To_Org_YN(), "auth_Release_To_Org_YN");
-		Assertions.assertEquals(requestNewCRCService.getAppl_Identity_Verified_EIV_YN(),
-				"appl_Identity_Verified_EIV_YN");
-		Assertions.assertEquals(requestNewCRCService.getEivPassDetailsResults(), "eivPassDetailsResults");
+		Assertions.assertEquals("orgTicketNumber", requestNewCRCService.getOrgTicketNumber());
+		Assertions.assertEquals("schedule_Type_Cd", requestNewCRCService.getSchedule_Type_Cd());
+		Assertions.assertEquals("scope_Level_Cd", requestNewCRCService.getScope_Level_Cd());
+		Assertions.assertEquals("appl_Party_Id", requestNewCRCService.getAppl_Party_Id());
+		Assertions.assertEquals("org_Appl_To_Pay", requestNewCRCService.getOrg_Appl_To_Pay());
+		Assertions.assertEquals("applicant_Posn", requestNewCRCService.getApplicant_Posn());
+		Assertions.assertEquals("child_Care_Fac_Nm", requestNewCRCService.getChild_Care_Fac_Nm());
+		Assertions.assertEquals("governing_Body_Nm", requestNewCRCService.getGoverning_Body_Nm());
+		Assertions.assertEquals("session_Id", requestNewCRCService.getSession_Id());
+		Assertions.assertEquals("invoice_Id", requestNewCRCService.getInvoice_Id());
+		Assertions.assertEquals("auth_Release_EIV_Vendor_YN", requestNewCRCService.getAuth_Release_EIV_Vendor_YN());
+		Assertions.assertEquals("auth_Conduct_CRC_Check_YN", requestNewCRCService.getAuth_Conduct_CRC_Check_YN());
+		Assertions.assertEquals("auth_Release_To_Org_YN", requestNewCRCService.getAuth_Release_To_Org_YN());
+		Assertions.assertEquals("appl_Identity_Verified_EIV_YN",
+				requestNewCRCService.getAppl_Identity_Verified_EIV_YN());
+		Assertions.assertEquals("eivPassDetailsResults", requestNewCRCService.getEivPassDetailsResults());
         
         Assertions.assertEquals(expectedQueryString, requestNewCRCService.toQueryString());
     }

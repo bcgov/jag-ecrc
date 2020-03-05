@@ -31,17 +31,17 @@ public class RequestUpdateServiceFinancialTxnTest {
         requestUpdateServiceFinancialTxn.setTransaction_Id("transaction_Id");
         requestUpdateServiceFinancialTxn.setTransaction_Amount("transaction_Amount");
         
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getOrgTicketNumber(), "orgTicketNumber");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getAppl_Party_Id(), "appl_Party_Id");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getService_Id(), "service_Id");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getcC_Authorization(), "cC_Authorization");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getPayment_Date(), "payment_Date");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getPayor_Type_Cd(), "payor_Type_Cd");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getPayment_Status_Cd(), "payment_Status_Cd");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getSession_Id(), "session_Id");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getInvoice_Id(), "invoice_Id");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getTransaction_Id(), "transaction_Id");
-		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getTransaction_Amount(), "transaction_Amount");
+		Assertions.assertEquals("orgTicketNumber", requestUpdateServiceFinancialTxn.getOrgTicketNumber());
+		Assertions.assertEquals("appl_Party_Id", requestUpdateServiceFinancialTxn.getAppl_Party_Id());
+		Assertions.assertEquals("service_Id", requestUpdateServiceFinancialTxn.getService_Id());
+		Assertions.assertEquals("cC_Authorization", requestUpdateServiceFinancialTxn.getcC_Authorization());
+		Assertions.assertEquals("payment_Date", requestUpdateServiceFinancialTxn.getPayment_Date());
+		Assertions.assertEquals("payor_Type_Cd", requestUpdateServiceFinancialTxn.getPayor_Type_Cd());
+		Assertions.assertEquals("payment_Status_Cd", requestUpdateServiceFinancialTxn.getPayment_Status_Cd());
+		Assertions.assertEquals("session_Id", requestUpdateServiceFinancialTxn.getSession_Id());
+		Assertions.assertEquals("invoice_Id", requestUpdateServiceFinancialTxn.getInvoice_Id());
+		Assertions.assertEquals("transaction_Id", requestUpdateServiceFinancialTxn.getTransaction_Id());
+		Assertions.assertEquals("transaction_Amount", requestUpdateServiceFinancialTxn.getTransaction_Amount());
 
         Assertions.assertEquals(expectedQueryString, requestUpdateServiceFinancialTxn.toQueryString());
     }

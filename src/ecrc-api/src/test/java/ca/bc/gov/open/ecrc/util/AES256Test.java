@@ -31,14 +31,14 @@ public class AES256Test {
 	@Test
 	public void testDecryptError() {
 		String decryptedString = AES256.decrypt(null, secret);
-		assertEquals(decryptedString, null);
+		assertEquals(null, decryptedString);
 	}
 	
 	@DisplayName("Error - encrypt error")
 	@Test
 	public void testEncryptError() {
 		String encryptedString = AES256.encrypt(null, secret);
-		assertEquals(encryptedString, null);
+		assertEquals(null, encryptedString);
 	}
 	
 	
