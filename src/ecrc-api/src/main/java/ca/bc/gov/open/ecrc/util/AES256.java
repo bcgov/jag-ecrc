@@ -77,16 +77,4 @@ public class AES256 {
 		return null;
 	}
 
-	/**
-	 * 
-	 * Test only
-	 * 
-	 * @param args
-	 * @throws Exception
-	 */
-	public static void main(String[] args) throws Exception {
-		String enc = AES256.encrypt("HelloWorld", "Sercet");
-		System.out.println("Encrypted : " + enc);
-		System.out.println("Decrypted : " + AES256.decrypt(enc, "Secret"));
-	}
 }
