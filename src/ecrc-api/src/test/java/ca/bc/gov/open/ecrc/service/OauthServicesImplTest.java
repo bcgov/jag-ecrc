@@ -40,7 +40,8 @@ class OauthServicesImplTest {
 	private final String jsonTokenErrorResp = "{\"refresh_token\":\"def.def.def\"," + "\"scope\":\"scope\","
 			+ "\"id_token\":\"ghi.ghi.ghi\"," + "\"token_type\":\"Bearer\"}";
 
-	private final String jsonUserSuccessResp = "{ \"sub\": \"123\", \"name\": \"Test Test\", \"email\": \"test@test.com\" }";
+	private final String jwtSuccessResp = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiYmlydGhkYXRlIjoidGVzdCIsImdlbmRlciI6ImZlbWFsZSIsImlzcyI6InRlc3QiLCJnaXZlbl9uYW1lIjoiQ1JDIiwiZ2l2ZW5fbmFtZXMiOiJDUkMgdGVzdCIsImRpc3BsYXlfbmFtZSI6IkNSQyB0ZXN0IiwiYXVkIjoidGVzdCIsInRyYW5zYWN0aW9uX2lkZW50aWZpZXIiOiJ0ZXN0IiwiaWRlbnRpdHlfYXNzdXJhbmNlX2xldmVsIjozLCJmYW1pbHlfbmFtZSI6IlRIUkVFIiwiaWF0IjoxNTgzNDMyMzI2LCJqdGkiOiJ0ZXN0IiwiZXhwIjoxNTgzNDM2ODgzfQ.X7SZI94VheWf_-94C4Up0s6EBrgfeC225CAxTvLAYyY\n";
+
 	private final String jsonUserErrorResp = "{}";
 
 	@InjectMocks
@@ -139,17 +140,17 @@ class OauthServicesImplTest {
 			oauthServices.getToken("test");
 		});
 	}
-	//TODO: this test has become much more complicated
-	//@DisplayName("Success - getUserInfo oauth service")
-	//@Test
+
+	@DisplayName("Success - getUserInfo oauth service")
+	@Test
 	void testGetUserInfoSuccess() throws OauthServiceException {
 		MockResponse mockResponse = new MockResponse();
-		mockResponse.setBody(jsonUserSuccessResp);
-		mockResponse.addHeader("content-type: application/json;");
+		mockResponse.setBody(jwtSuccessResp);
+		mockResponse.addHeader("content-type: application/jwt;charset=ISO-8859-1");
 		mockResponse.setResponseCode(200);
 		mockBackEnd.enqueue(mockResponse);
 		JSONObject response = oauthServices.getUserInfo(new BearerAccessToken());
-		Assertions.assertEquals("123", response.get("sub"));
+		Assertions.assertEquals("test", response.get("sub"));
 	}
 
 	@DisplayName("Failure - getUserInfo oauth service")
