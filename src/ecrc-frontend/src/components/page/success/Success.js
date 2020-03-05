@@ -19,7 +19,8 @@ export default function Success({
       invoiceId,
       serviceFeeAmount,
       serviceId
-    }
+    },
+    saveApplicationInfo
   }
 }) {
   const location = useLocation();
@@ -93,6 +94,38 @@ export default function Success({
       });
   }
 
+  const retryPayment = () => {
+    axios
+      .get(`/ecrc/getNextInvoiceId?orgTicketId=${orgTicketNumber}`)
+      .then(invoiceResponse => {
+        invoiceId = invoiceResponse.data.invoiceId;
+
+        saveApplicationInfo({
+          partyId,
+          sessionId,
+          invoiceId,
+          serviceFeeAmount,
+          serviceId
+        });
+
+        const createURL = {
+          invoiceNumber: invoiceId,
+          approvedPage: "http://localhost:3000/ecrc/success",
+          declinedPage: "http://localhost:3000/ecrc/success",
+          errorPage: "http://localhost:3000/ecrc/success",
+          totalItemsAmount: serviceFeeAmount,
+          serviceIdRef1: serviceId,
+          partyIdRef2: partyId
+        };
+
+        return axios.post("/ecrc/getPaymentUrl", createURL);
+      })
+      .then(urlResponse => {
+        const paymentUrl = urlResponse.data.paymentUrl;
+        window.location.href = paymentUrl;
+      });
+  };
+
   return (
     <main>
       <Header header={header} />
@@ -130,10 +163,16 @@ export default function Success({
                 <li>Non-expired date</li>
                 <li>Availale funds to transfer</li>
               </ul>
-              <span>
-                You may try again. Otherwise, please refer to our website for
-                submission options.
-              </span>
+              <p>
+                <button
+                  className="notAButton"
+                  type="button"
+                  onClick={() => retryPayment()}
+                >
+                  Click here to try again
+                </button>
+                . Otherwise, please refer to our website for submission options.
+              </p>
             </>
           )}
           <Table table={receiptInfoTable} />

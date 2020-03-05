@@ -395,23 +395,23 @@ export default function ApplicationForm({
     }
 
     if (!mailingAddressLine1) {
-      setJobTitleError("Please enter your PO box or street address");
+      setMailingAddressLine1Error("Please enter your PO box or street address");
     }
 
     if (!mailingCity) {
-      setJobTitleError("Please enter your city");
+      setMailingCityError("Please enter your city");
     }
 
     if (!mailingProvince) {
-      setJobTitleError("Please enter your province");
+      setMailingProvinceError("Please enter your province");
     }
 
     if (!mailingPostalCode) {
-      setJobTitleError("Please enter your postal code");
+      setMailingPostalCodeError("Please enter your postal code");
     }
 
     if (!mailingCountry) {
-      setJobTitleError("Please enter your country");
+      setMailingCountryError("Please enter your country");
     }
 
     if (
@@ -475,7 +475,6 @@ export default function ApplicationForm({
     setMailingProvince(provinceNm);
     setMailingPostalCode(postalCodeTxt);
     setMailingCountry(countryNm);
-    setDisplayMailing(true);
   };
 
   if (toHome) {
@@ -522,18 +521,17 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={applicantInformation} />
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
-          {displayMailing && <SimpleForm simpleForm={mailing} />}
-          {!displayMailing && (
-            <p>
-              Is your current street address the same as your mailing address?
-              <input
-                type="checkbox"
-                onClick={() => {
-                  mailingAddress();
-                }}
-              />
-            </p>
-          )}
+          <p>
+            Is your current street address the same as your mailing
+            address?&nbsp;
+            <input
+              type="checkbox"
+              onClick={() => {
+                mailingAddress();
+              }}
+            />
+          </p>
+          <SimpleForm simpleForm={mailing} />
           <section>
             Entering your mailing address in this application will not update
             your BC Services Card Address. To update your BC Services Card
