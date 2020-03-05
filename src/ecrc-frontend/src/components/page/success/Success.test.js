@@ -28,11 +28,14 @@ describe("Success Page Component", () => {
     serviceId: "987"
   };
 
+  const saveApplicationInfo = () => {};
+
   const page = {
     header,
     applicant,
     org,
-    applicationInfo
+    applicationInfo,
+    saveApplicationInfo
   };
 
   const succesUrl =
@@ -57,7 +60,7 @@ describe("Success Page Component", () => {
   test("Matches the SuccessfulPayment snapshot", () => {
     const successPayment = create(
       <MemoryRouter initialEntries={[succesUrl]}>
-        <Success page />
+        <Success page={page} />
       </MemoryRouter>
     );
     expect(successPayment.toJSON()).toMatchSnapshot();
@@ -65,7 +68,7 @@ describe("Success Page Component", () => {
   test("Matches the FailedPayment snapshot", () => {
     const failedPayment = create(
       <MemoryRouter initialEntries={[failureUrl]}>
-        <Success page />
+        <Success page={page} />
       </MemoryRouter>
     );
     expect(failedPayment.toJSON()).toMatchSnapshot();

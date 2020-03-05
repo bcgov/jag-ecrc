@@ -218,7 +218,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       style={
                         Object {
@@ -265,7 +265,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
                         </a>
                       </div>
                     </div>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -317,7 +317,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       style={
                         Object {
@@ -333,7 +333,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
                       </a>
                        or by telephone at 1- 855-587-0185 (option 2).
                     </div>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>

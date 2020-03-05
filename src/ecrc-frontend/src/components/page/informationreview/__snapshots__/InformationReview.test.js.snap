@@ -238,6 +238,11 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
         </tbody>
       </table>
+      <div
+        className="declareTitle"
+      >
+        DECLARATION
+      </div>
       <section
         className="declareSection"
       >
@@ -308,7 +313,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <li
                       className="menuItem"
                     >
@@ -336,7 +341,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                         Results and Reconsideration
                       </a>
                     </li>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -377,7 +382,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       style={
                         Object {
@@ -424,7 +429,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                         </a>
                       </div>
                     </div>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -476,7 +481,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       style={
                         Object {
@@ -492,7 +497,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                       </a>
                        or by telephone at 1- 855-587-0185 (option 2).
                     </div>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>

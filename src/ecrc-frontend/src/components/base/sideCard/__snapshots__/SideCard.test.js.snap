@@ -45,9 +45,9 @@ exports[`SideCard Component Renders as expected 1`] = `
         <div
           className="submit-content"
         >
-          <p>
+          <span>
             content
-          </p>
+          </span>
         </div>
       </section>
     </div>

@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FullName Component Matches the snapshot 1`] = `
+<form
+  className="simpleForm"
+>
+  <div
+    className="simpleForm_title"
+  >
+    Full Name
+  </div>
+  <ul>
+    <li>
+      <div>
+        <div
+          className="label"
+        >
+          <label
+            className="textinput_label"
+            htmlFor="firstName"
+          >
+            First Name
+          </label>
+          
+           
+          <span
+            className="note"
+          />
+        </div>
+        <input
+          className="textinput_non_editable_gray"
+          defaultValue="First"
+          id="firstName"
+          onChange={[Function]}
+          readOnly={true}
+          type="text"
+        />
+        <span
+          className="error"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <div
+          className="label"
+        >
+          <label
+            className="textinput_label"
+            htmlFor="middleName"
+          >
+            Middle Name
+          </label>
+          
+           
+          <span
+            className="note"
+          />
+        </div>
+        <input
+          className="textinput_non_editable_gray"
+          defaultValue="Middle"
+          id="middleName"
+          onChange={[Function]}
+          readOnly={true}
+          type="text"
+        />
+        <span
+          className="error"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <div
+          className="label"
+        >
+          <label
+            className="textinput_label"
+            htmlFor="lastName"
+          >
+            Last Name
+          </label>
+          
+           
+          <span
+            className="note"
+          />
+        </div>
+        <input
+          className="textinput_non_editable_gray"
+          defaultValue="Last"
+          id="lastName"
+          onChange={[Function]}
+          readOnly={true}
+          type="text"
+        />
+        <span
+          className="error"
+        />
+      </div>
+    </li>
+  </ul>
+</form>
+`;

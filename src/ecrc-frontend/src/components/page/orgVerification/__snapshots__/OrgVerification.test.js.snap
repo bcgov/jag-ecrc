@@ -219,7 +219,7 @@ Canada
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.
                     <button
                       className="btn btn-primary dark-button btn btn-md"
@@ -228,7 +228,7 @@ Canada
                     >
                       READ MORE
                     </button>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -269,7 +269,7 @@ Canada
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <li
                       className="menuItem"
                     >
@@ -297,7 +297,7 @@ Canada
                         Results and Reconsideration
                       </a>
                     </li>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -338,7 +338,7 @@ Canada
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       style={
                         Object {
@@ -385,7 +385,7 @@ Canada
                         </a>
                       </div>
                     </div>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
