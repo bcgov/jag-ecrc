@@ -32,18 +32,25 @@ const applicant = {
 };
 
 const org = {
-  orgApplicantRelationship: "EMPLOYEE"
+  orgApplicantRelationship: "EMPLOYEE",
+  orgTicketNumber: "crce",
+  defaultScheduleTypeCd: "WBSD",
+  defaultCrcScopeLevelCd: "WWCH"
 };
 
+const setApplicationInfo = () => {};
 const saveApplicant = () => {};
 const saveOrg = () => {};
+const saveApplicationInfo = () => {};
 
 const page = {
   header,
   applicant,
   org,
+  setApplicationInfo,
   saveApplicant,
-  saveOrg
+  saveOrg,
+  saveApplicationInfo
 };
 
 export const NonScheduleD = () => (

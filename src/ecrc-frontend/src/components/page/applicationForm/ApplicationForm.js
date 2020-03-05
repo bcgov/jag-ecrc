@@ -35,7 +35,6 @@ export default function ApplicationForm({
     previousTwo: false,
     previousThree: false
   });
-  const [displayMailing, setDisplayMailing] = useState(false);
 
   const [alias1FirstNm, setAlias1FirstNm] = useState("");
   const [alias1SecondNm, setAlias1SecondNm] = useState("");

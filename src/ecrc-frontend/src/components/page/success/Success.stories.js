@@ -31,11 +31,14 @@ const applicationInfo = {
   serviceId: "987"
 };
 
+const saveApplicationInfo = () => {};
+
 const page = {
   header,
   applicant,
   org,
-  applicationInfo
+  applicationInfo,
+  saveApplicationInfo
 };
 
 const succesUrl =

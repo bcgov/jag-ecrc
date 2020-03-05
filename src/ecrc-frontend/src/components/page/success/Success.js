@@ -98,18 +98,18 @@ export default function Success({
     axios
       .get(`/ecrc/getNextInvoiceId?orgTicketId=${orgTicketNumber}`)
       .then(invoiceResponse => {
-        invoiceId = invoiceResponse.data.invoiceId;
+        const newInvoiceId = invoiceResponse.data.invoiceId;
 
         saveApplicationInfo({
           partyId,
           sessionId,
-          invoiceId,
+          invoiceId: newInvoiceId,
           serviceFeeAmount,
           serviceId
         });
 
         const createURL = {
-          invoiceNumber: invoiceId,
+          invoiceNumber: newInvoiceId,
           approvedPage: "http://localhost:3000/ecrc/success",
           declinedPage: "http://localhost:3000/ecrc/success",
           errorPage: "http://localhost:3000/ecrc/success",
@@ -121,8 +121,7 @@ export default function Success({
         return axios.post("/ecrc/getPaymentUrl", createURL);
       })
       .then(urlResponse => {
-        const paymentUrl = urlResponse.data.paymentUrl;
-        window.location.href = paymentUrl;
+        window.location.href = urlResponse.data.paymentUrl;
       });
   };
 
@@ -205,6 +204,7 @@ Success.propTypes = {
       invoiceId: PropTypes.string.isRequired,
       serviceFeeAmount: PropTypes.string,
       serviceId: PropTypes.string.isRequired
-    })
+    }),
+    saveApplicationInfo: PropTypes.func.isRequired
   }).isRequired
 };
