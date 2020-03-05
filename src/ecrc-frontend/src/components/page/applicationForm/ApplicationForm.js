@@ -301,7 +301,7 @@ export default function ApplicationForm({
     textInputs: [
       {
         label: "Street",
-        id: "addressLine1",
+        id: "mailingAddressLine1",
         value: mailingAddressLine1,
         isRequired: true,
         errorMsg: mailingAddressLine1Error,
@@ -312,7 +312,7 @@ export default function ApplicationForm({
       },
       {
         label: "City",
-        id: "cityNm",
+        id: "mailingCityNm",
         value: mailingCity,
         isRequired: true,
         errorMsg: mailingCityError,
@@ -323,7 +323,7 @@ export default function ApplicationForm({
       },
       {
         label: "Province",
-        id: "provinceNm",
+        id: "mailingProvinceNm",
         value: mailingProvince,
         isRequired: true,
         errorMsg: mailingProvinceError,
@@ -334,7 +334,7 @@ export default function ApplicationForm({
       },
       {
         label: "Postal Code",
-        id: "postalCodeTxt",
+        id: "mailingPostalCodeTxt",
         value: mailingPostalCode,
         isRequired: true,
         errorMsg: mailingPostalCodeError,
@@ -345,7 +345,7 @@ export default function ApplicationForm({
       },
       {
         label: "Country",
-        id: "countryNm",
+        id: "mailingCountryNm",
         value: mailingCountry,
         isRequired: true,
         errorMsg: mailingCountryError,
