@@ -32,13 +32,11 @@ export function storeValidator() {
 }
 
 export function generateJWTToken(payload) {
-  console.log("imn ereer");
   const validator = sessionStorage.getItem("validator");
 
   if (!validator) return false;
 
   const token = jwt.sign(payload, validator, { expiresIn: "2h" });
-  console.log("token is ", token);
 
   return token;
 }

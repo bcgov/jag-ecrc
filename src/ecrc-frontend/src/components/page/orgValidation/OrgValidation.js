@@ -23,8 +23,6 @@ export default function OrgValidation({ page: { header, setOrg } }) {
     const payload = { authorities: ["ROLE"] };
     const token = generateJWTToken(payload);
 
-    console.log(token);
-
     axios
       .get(
         `/ecrc/protected/doAuthenticateUser?orgTicketNumber=${orgTicketNumber}`,
@@ -39,7 +37,6 @@ export default function OrgValidation({ page: { header, setOrg } }) {
         setToOrgVerification(true);
       })
       .catch(error => {
-        console.log(error);
         if (error.response.status === 404) {
           setOrgError("Please enter a valid org code");
         } else if (error.response.status === 401) {
