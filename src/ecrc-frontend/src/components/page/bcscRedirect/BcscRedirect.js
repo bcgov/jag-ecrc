@@ -12,7 +12,7 @@ import "../page.css";
 import "./BcscRedirect.css";
 
 export default function BcscRedirect({ page: { header } }) {
-  const [toHome, setToHome] = useState(false);
+  const [toHostHome, setToHostHome] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -49,7 +49,7 @@ export default function BcscRedirect({ page: { header } }) {
     );
   };
 
-  if (toHome) {
+  if (toHostHome) {
     return <Redirect to="/hosthome" />;
   }
 
@@ -118,7 +118,7 @@ export default function BcscRedirect({ page: { header } }) {
             <Button
               button={cancelButton}
               onClick={() => {
-                setToHome(true);
+                setToHostHome(true);
               }}
             />
           </div>
