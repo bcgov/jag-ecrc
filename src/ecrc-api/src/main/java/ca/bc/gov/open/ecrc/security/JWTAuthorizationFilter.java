@@ -48,7 +48,7 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
     }
 
     private Claims validateToken(HttpServletRequest request) {
-        String jwtToken = request.getHeader(ecrcProps.getJwtHeader()).replace(ecrcProps.getJwtPrefix(), "");
+        String jwtToken = request.getHeader(ecrcProps.getJwtHeader()).replace(ecrcProps.getJwtPrefix(), "").trim();
         return Jwts.parser().setSigningKey(ecrcProps.getJwtSecret().getBytes()).parseClaimsJws(jwtToken).getBody();
     }
 
@@ -58,8 +58,7 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
      * @param claims
      */
     private void setUpSpringAuthentication(Claims claims) {
-        @SuppressWarnings("unchecked")
-        List authorities = ((List<?>) claims
+        List<SimpleGrantedAuthority> authorities = ((List<?>) claims
                 .get("authorities")).stream()
                 .map(authority -> new SimpleGrantedAuthority((String) authority))
                 .collect(Collectors.toList());

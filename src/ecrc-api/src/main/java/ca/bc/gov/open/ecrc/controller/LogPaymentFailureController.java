@@ -31,7 +31,7 @@ public class LogPaymentFailureController {
 	public ResponseEntity<String> logPaymentFailure(@RequestBody(required=true) RequestLogPaymentFailure paymentFailure)
 			throws EcrcServiceException {
 		//TODO: Extract guid generated from front end
-		logger.info("Log payment failure request received {}", UUID.randomUUID().toString());
+		logger.info("Log payment failure request received {}", UUID.randomUUID());
 		return ecrcServices.logPaymentFailure(paymentFailure);
 
 	}

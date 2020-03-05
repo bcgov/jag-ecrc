@@ -63,3 +63,7 @@ This project uses Jest for snapshot component testing. Snapshot tests are a very
 ### `npm run test`
 
 Launches the test runner in the interactive watch mode.
+
+## Environment Variables
+
+In order to ensure the app runs successfully, you will be required to set some environment variables as specified in the `.env.example` file. Please setup a `.env.development` file for local dev and populate the fields shown with the appropriate values.

@@ -7,9 +7,7 @@ import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
-import { isAuthenticated } from "../../../modules/AuthenticationHelper";
-
-const jwt = require("jsonwebtoken");
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 export default function OrgValidation({ page: { header, setOrg } }) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
@@ -17,26 +15,31 @@ export default function OrgValidation({ page: { header, setOrg } }) {
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
 
-  const token = jwt.sign({ foo: "bar" }, "shhhhh", { expiresIn: "1m" });
-
-  sessionStorage.setItem("jwt", token);
-
-  isAuthenticated();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const orgValidation = () => {
+    const payload = { authorities: ["ROLE"] };
+    const token = generateJWTToken(payload);
+
+    console.log(token);
+
     axios
       .get(
-        `/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}&token=${token}`
+        `/ecrc/protected/doAuthenticateUser?orgTicketNumber=${orgTicketNumber}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
       )
       .then(res => {
         setOrg(res.data.accessCodeResponse);
         setToOrgVerification(true);
       })
       .catch(error => {
+        console.log(error);
         if (error.response.status === 404) {
           setOrgError("Please enter a valid org code");
         } else if (error.response.status === 401) {

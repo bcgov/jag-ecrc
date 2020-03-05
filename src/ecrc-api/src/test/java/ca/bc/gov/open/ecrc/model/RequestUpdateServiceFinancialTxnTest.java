@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RequestUpdateServiceFinancialTxnTest {
-    private final String expectedQueryString = "? " +
+    private final String expectedQueryString = "?" +
             "OrgTicketNumber=orgTicketNumber" +
             "&Appl_Party_Id=appl_Party_Id" +
             "&Service_Id=service_Id" +
@@ -30,6 +30,18 @@ public class RequestUpdateServiceFinancialTxnTest {
         requestUpdateServiceFinancialTxn.setInvoice_Id("invoice_Id");
         requestUpdateServiceFinancialTxn.setTransaction_Id("transaction_Id");
         requestUpdateServiceFinancialTxn.setTransaction_Amount("transaction_Amount");
+        
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getOrgTicketNumber(), "orgTicketNumber");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getAppl_Party_Id(), "appl_Party_Id");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getService_Id(), "service_Id");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getcC_Authorization(), "cC_Authorization");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getPayment_Date(), "payment_Date");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getPayor_Type_Cd(), "payor_Type_Cd");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getPayment_Status_Cd(), "payment_Status_Cd");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getSession_Id(), "session_Id");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getInvoice_Id(), "invoice_Id");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getTransaction_Id(), "transaction_Id");
+		Assertions.assertEquals(requestUpdateServiceFinancialTxn.getTransaction_Amount(), "transaction_Amount");
 
         Assertions.assertEquals(expectedQueryString, requestUpdateServiceFinancialTxn.toQueryString());
     }

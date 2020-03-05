@@ -9,6 +9,7 @@ import java.net.URISyntaxException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.minidev.json.JSONObject;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,11 +23,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.nimbusds.oauth2.sdk.AccessTokenResponse;
-import com.nimbusds.oauth2.sdk.id.Subject;
+
 import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 import com.nimbusds.oauth2.sdk.token.RefreshToken;
 import com.nimbusds.oauth2.sdk.token.Tokens;
-import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.OauthServiceException;
@@ -34,6 +34,12 @@ import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
 
 import static org.mockito.ArgumentMatchers.any;
 
+/**
+ * Tests for oauth controller
+ * 
+ * @author sivakaruna
+ *
+ */
 class OauthControllerTest {
 
 	@Mock
@@ -44,6 +50,8 @@ class OauthControllerTest {
 
 	@InjectMocks
 	OauthController oauthController = new OauthController();
+	
+	JSONObject userInfo;
 
 	@BeforeEach
 	public void initMocks() {
@@ -51,6 +59,8 @@ class OauthControllerTest {
 		Mockito.when(ecrcProperties.getJwtSecret()).thenReturn("secret");
 		Mockito.when(ecrcProperties.getOauthJwtExpiry()).thenReturn(300);
 		Mockito.when(ecrcProperties.getJwtAuthorizedRole()).thenReturn("role");
+		userInfo = new JSONObject();
+		userInfo.put("sub", "test");
 	}
 
 	@DisplayName("Success - authenticate oauth controller")
@@ -92,7 +102,8 @@ class OauthControllerTest {
 	@DisplayName("Success - login oauth controller")
 	@Test
 	void testLoginSuccess() throws OauthServiceException, URISyntaxException {
-		when(oauthServices.getUserInfo(any())).thenReturn(new UserInfo(new Subject("test")));
+		
+		when(oauthServices.getUserInfo(any())).thenReturn(userInfo);
 		when(oauthServices.getToken(any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
 		String response = oauthController.login("test");
@@ -123,7 +134,7 @@ class OauthControllerTest {
 	@Test
 	void testLoginError3() throws OauthServiceException, URISyntaxException {
 		Mockito.when(ecrcProperties.getOauthSecret()).thenThrow(new NullPointerException());
-		when(oauthServices.getUserInfo(any())).thenReturn(new UserInfo(new Subject("test")));
+		when(oauthServices.getUserInfo(any())).thenReturn(userInfo);
 		when(oauthServices.getToken(any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
 		Assertions.assertThrows(OauthServiceException.class, () -> {

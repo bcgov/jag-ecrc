@@ -94,7 +94,7 @@ public class EcrcServicesImpl implements EcrcServices {
 		return ecrcWebMethodsService.callWebMethodsService(_getNextInvoiceIdUri, new GetNextInvoiceId());
 	}
 
-	public String getJwtSecret() throws EcrcServiceException {
+	public String getJwtSecret() {
 		return ecrcProps.getJwtSecret();
 	}
 }

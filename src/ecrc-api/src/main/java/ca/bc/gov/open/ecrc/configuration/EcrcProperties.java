@@ -45,6 +45,9 @@ public class EcrcProperties {
 	private String oauthScope;
 	private String oauthReturnUri;
 	private int oauthJwtExpiry;
+	private String oauthTokenPath;
+	private String oauthUserinfoPath;
+	private String oauthAuthorizePath;
 
 	// JWT properties
 	private String jwtHeader;
@@ -282,5 +285,17 @@ public class EcrcProperties {
 	public void setOauthJwtExpiry(String oautJwtExpiry) {
 		this.oauthJwtExpiry = Integer.parseInt(oautJwtExpiry);
 	}
-	
+
+	public String getOauthTokenPath() { return oauthTokenPath; }
+
+	public void setOauthTokenPath(String oauthTokenPath) { this.oauthTokenPath = oauthTokenPath; }
+
+	public String getOauthUserinfoPath() { return oauthUserinfoPath; }
+
+	public void setOauthUserinfoPath(String oauthUserinfoPath) { this.oauthUserinfoPath = oauthUserinfoPath; }
+
+	public String getOauthAuthorizePath() { return oauthAuthorizePath; }
+
+	public void setOauthAuthorizePath(String oauthAuthorizePath) { this.oauthAuthorizePath = oauthAuthorizePath; }
+
 }

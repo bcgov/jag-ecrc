@@ -23,7 +23,7 @@ public class GetNextSessionIdController {
     @GetMapping(value = "/private/getNextSessionId", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getNextSessionId(@RequestParam(required=true) String orgTicketNumber) throws EcrcServiceException {
         //TODO: Extract guid generated from front end
-        logger.info("Get next session id request received {}", UUID.randomUUID().toString());
+        logger.info("Get next session id request received {}", UUID.randomUUID());
         return ecrcServices.getNextSessionId(orgTicketNumber);
     }
 }

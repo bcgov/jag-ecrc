@@ -102,7 +102,7 @@ public class RequestUpdateServiceFinancialTxn {
     }
 
     public String toQueryString() {
-        return "? " +
+        return "?" +
                 "OrgTicketNumber=" + orgTicketNumber +
                 "&Appl_Party_Id=" + appl_Party_Id +
                 "&Service_Id=" + service_Id +
