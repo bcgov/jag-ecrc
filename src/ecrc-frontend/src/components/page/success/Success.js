@@ -2,11 +2,14 @@ import React from "react";
 import axios from "axios";
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
+import Button from "../../base/button/Button";
 
 export default function Success({
   page: {
@@ -47,6 +50,7 @@ export default function Success({
   }
 
   const receiptInfoTable = {
+    id: "print",
     header: "APPLICATION INFORMATION",
     tableElements: receiptInfo,
     tableStyle: "white"
@@ -93,6 +97,20 @@ export default function Success({
         console.log(error);
       });
   }
+
+  const printButton = {
+    label: "Print",
+    buttonStyle: "btn btn-primary",
+    buttonSize: "btn btn-sm",
+    type: "submit"
+  };
+
+  const printAppInfo = () => {
+    // window.print();
+    const doc = new jsPDF();
+    doc.autoTable({ theme: "plain", html: "#print" });
+    doc.save(`app${serviceId}.pdf`);
+  };
 
   const retryPayment = () => {
     axios
@@ -174,8 +192,11 @@ export default function Success({
               </p>
             </>
           )}
-          <Table table={receiptInfoTable} />
-          <div>Print Download Email?</div>
+          <div className="print">
+            <Table table={receiptInfoTable} />
+          </div>
+          <Button button={printButton} onClick={printAppInfo} />
+          <div>Download Email?</div>
         </div>
         <div className="sidecard">Sidecards?</div>
       </div>

@@ -286,10 +286,10 @@ export default function InformationReview({
         invoiceId = all[2].data.invoiceId;
         serviceFeeAmount = all[3].data.serviceFeeAmount;
 
-        // NEED CLARIFICATION:
-        // child_Care_Fac_Nm?
-        // governing_body_Nm?
-        // eivPassDetailsResults?
+        // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
+        // child_Care_Fac_Nm - Name entered if Sched D
+        // governing_body_Nm - Org name from orgVal, who owns fac
+        // eivPassDetailsResults - Just a string, not needed
         const newCRC = {
           orgTicketNumber,
           schedule_Type_Cd: defaultScheduleTypeCd,

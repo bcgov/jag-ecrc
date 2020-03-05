@@ -5,14 +5,14 @@ import "./Table.css";
 import TableElement from "../../base/tableElement/TableElement";
 
 export default function Table({
-  table: { header, tableElements, tableStyle }
+  table: { id, header, tableElements, tableStyle }
 }) {
   const tableComponents = tableElements.map(element => {
     return <TableElement key={element.key || element.name} element={element} />;
   });
 
   return (
-    <table className={tableStyle}>
+    <table id={id} className={tableStyle}>
       <thead>
         <tr>
           <th colSpan="2">{header}</th>
