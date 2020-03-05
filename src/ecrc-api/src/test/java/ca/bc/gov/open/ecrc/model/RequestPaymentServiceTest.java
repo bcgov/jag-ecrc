@@ -39,15 +39,15 @@ class RequestPaymentServiceTest {
 		paymentInfo.setTotalItemsAmount("totalItemsAmount");
 		paymentInfo.setTransType("transType");
 		
-		Assertions.assertEquals(paymentInfo.getApprovedPage(), "approvedPage");
-		Assertions.assertEquals(paymentInfo.getDeclinedPage(), "declinedPage");
-		Assertions.assertEquals(paymentInfo.getErrorPage(), "errorPage");
-		Assertions.assertEquals(paymentInfo.getInvoiceNumber(), "invoiceNumber");
-		Assertions.assertEquals(paymentInfo.getMinutesToExpire(), "minutesToExpire");
-		Assertions.assertEquals(paymentInfo.getPartyIdRef2(), "partyIdRef2");
-		Assertions.assertEquals(paymentInfo.getServiceIdRef1(), "serviceIdRef1");
-		Assertions.assertEquals(paymentInfo.getTotalItemsAmount(), "totalItemsAmount");
-		Assertions.assertEquals(paymentInfo.getTransType(), "transType");
+		Assertions.assertEquals("approvedPage", paymentInfo.getApprovedPage());
+		Assertions.assertEquals("declinedPage", paymentInfo.getDeclinedPage());
+		Assertions.assertEquals("errorPage", paymentInfo.getErrorPage());
+		Assertions.assertEquals("invoiceNumber", paymentInfo.getInvoiceNumber());
+		Assertions.assertEquals("minutesToExpire", paymentInfo.getMinutesToExpire());
+		Assertions.assertEquals("partyIdRef2", paymentInfo.getPartyIdRef2());
+		Assertions.assertEquals("serviceIdRef1", paymentInfo.getServiceIdRef1());
+		Assertions.assertEquals("totalItemsAmount", paymentInfo.getTotalItemsAmount());
+		Assertions.assertEquals("transType", paymentInfo.getTransType());
 
 		Assertions.assertEquals(expectedQueryString, paymentInfo.toQueryString());
 	}
