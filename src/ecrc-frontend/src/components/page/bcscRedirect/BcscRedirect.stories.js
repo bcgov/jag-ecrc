@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { MemoryRouter } from "react-router-dom";
 
 import BcscRedirect from "./BcscRedirect";
 
@@ -12,6 +14,14 @@ const page = {
 };
 
 storiesOf("BcscRedirect page", module)
-  .add("Default", () => <BcscRedirect page={page} />)
+  .add("Default", () => (
+    <MemoryRouter>
+      <BcscRedirect page={page} />
+    </MemoryRouter>
+  ))
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
-  .add("Mobile", () => <BcscRedirect page={page} />);
+  .add("Mobile", () => (
+    <MemoryRouter>
+      <BcscRedirect page={page} />
+    </MemoryRouter>
+  ));

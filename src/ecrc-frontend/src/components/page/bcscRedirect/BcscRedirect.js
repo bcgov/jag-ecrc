@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+/* eslint-disable react/jsx-one-expression-per-line */
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
@@ -10,33 +12,34 @@ import "../page.css";
 import "./BcscRedirect.css";
 
 export default function BcscRedirect({ page: { header } }) {
+  const [toHostHome, setToHostHome] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const loginBtn = {
-    label: "LOGIN",
-    buttonStyle: "btn ecrc_common_btn",
+    label: "Login with a BC Services Card",
+    buttonStyle: "btn ecrc_btn_login_bcsc",
     buttonSize: "btn",
     type: "button"
   };
 
   const accountBtn = {
-    label: "SET UP ACCOUNT",
-    buttonStyle: "btn ecrc_common_btn",
+    label: "Find how to apply",
+    buttonStyle: "btn ecrc_bscs_apply_btn",
     buttonSize: "btn",
     type: "button"
   };
 
-  const requestBtn = {
-    label: "REQUEST FORM",
-    buttonStyle: "btn ecrc_common_btn",
+  const cancelButton = {
+    label: "Cancel and Exit",
+    buttonStyle: "btn ecrc_accessary_btn",
     buttonSize: "btn",
-    type: "button"
+    type: "submit"
   };
 
   const onLoginClick = () => {
-    window.open("https://support.wwf.org.uk", "_blank");
+    window.open("", "_blank");
   };
 
   const onAccountClick = () => {
@@ -46,40 +49,49 @@ export default function BcscRedirect({ page: { header } }) {
     );
   };
 
-  const onRequestClick = () => {
-    window.location.href = "mailto:cannabis.worker@gov.bc.ca";
-  };
+  if (toHostHome) {
+    return <Redirect to="/hosthome" />;
+  }
 
   return (
     <main>
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
-          <h1>BC Service Card Application</h1>
+          <h1>Apply for a Criminal Record Check</h1>
           <p>
-            Workers of a cannabis retail store must register with the Province.
-            Workers must also pass security screening every two years.
+            Now, that you have confirmed the organization you work or plan to
+            work for, the next step is to complete a criminal record check
+            application.
           </p>
           <p>
-            Cannabis retail store application and licensing fees do not cover
-            worker registration costs. Workers must apply to register and are
-            responsible for the cost. Licence applicants and licensees can pay
-            workers&apos; registration costs if they wish.
+            To apply for a criminal record check online, you must use your{" "}
+            <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
+              BC Services Card
+            </a>{" "}
+            Account.
           </p>
-          <h3>
-            To register as a Cannabis Worker online, you must log in with your
-            BC Service Card Account.
-          </h3>
+          <p>
+            Only cards <b>with a photo</b> are accepted. If it&apos;s your first
+            time using your Card to access any online service, you need to set
+            up your account for use online by completing a one-time security
+            check to{" "}
+            <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
+              verify your identity
+            </a>
+          </p>
+
           <p>Please select an option below:</p>
           <div className="option">
             <div className="row">
               <div
-                className="col-lg-8 col-md-12 "
+                className="col-lg-6 col-md-12 "
                 style={{ marginBottom: "10px" }}
               >
-                I’m a B.C. resident with a BC Services Card Account.
+                I have a BC Services Card{" "}
+                <span className="underlineText">with a photo</span>
               </div>
-              <div className="col-md-4">
+              <div className="col-lg-6 col-md-4 alignRight">
                 <Button button={loginBtn} onClick={onLoginClick} />
               </div>
             </div>
@@ -90,10 +102,10 @@ export default function BcscRedirect({ page: { header } }) {
                 className="col-lg-8 col-md-12"
                 style={{ marginBottom: "10px" }}
               >
-                I’m a B.C. resident but I don&apos;t have a BC Services Card
-                Account.
+                I <span className="underlineText">DON’T</span> have a BC
+                Services Card, or I have one without a photo
               </div>
-              <div className="col-sm-4">
+              <div className="col-lg-4 col-md-12 col-sm-12 alignRight">
                 <Button
                   button={accountBtn}
                   onClick={onAccountClick}
@@ -102,23 +114,13 @@ export default function BcscRedirect({ page: { header } }) {
               </div>
             </div>
           </div>
-          <div className="option">
-            <div className="row">
-              <div
-                className="col-lg-8 col-md-12"
-                style={{ marginBottom: "10px" }}
-              >
-                I’m not a B.C. resident, send me a Cannabis Worker Registration
-                form.
-              </div>
-              <div className="col-sm-4">
-                <Button
-                  button={requestBtn}
-                  onClick={onRequestClick}
-                  className="btn"
-                />
-              </div>
-            </div>
+          <div style={{ marginTop: "40px" }}>
+            <Button
+              button={cancelButton}
+              onClick={() => {
+                setToHostHome(true);
+              }}
+            />
           </div>
         </div>
 

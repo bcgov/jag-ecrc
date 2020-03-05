@@ -4,7 +4,7 @@
   border-bottom: none;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  padding-left: 20px;
+  padding-left: 52px;
   padding-right: 20px;
   padding-bottom: 10px;
   color: #fff !important;
@@ -81,7 +81,7 @@
   border-bottom: solid 4px #fc0;
   color: #fff;
   margin-bottom: 20px;
-  padding: 15px;
+  padding: 30px;
 }
 
 .bluegrey-container {
@@ -101,7 +101,7 @@
 .wide-dashboard-spacing {
   padding-left: 50px;
   padding-right: 50px;
-  max-width: 520px;
+  max-width: 458px;
 }
 
 img {

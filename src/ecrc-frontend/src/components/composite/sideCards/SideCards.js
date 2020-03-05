@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-curly-newline */
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
+import { FaIdCard, FaQuestion } from "react-icons/fa";
 import PropTypes from "prop-types";
 
 import "./SideCards.css";
@@ -21,33 +22,43 @@ export default function SideCards({ type, sideCardLinks }) {
     type: "bluegrey"
   };
 
-  // BCSC SIDECARD
-  const bcscbutton = {
-    label: "READ MORE",
-    buttonStyle: "btn btn-primary dark-button",
-    buttonSize: "btn btn-md",
-    type: "submit"
-  };
-
-  const bcservicesButton = (
-    <Button
-      key="bc-services-card-link"
-      button={bcscbutton}
-      onClick={() =>
-        window.open(
-          "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-        )
-      }
-    />
-  );
-
   const bcservice = {
-    heading: "Get a BC Services Card",
+    heading: (
+      <div className="row">
+        <div className="round-icon-wrapper">
+          <FaIdCard className="side-card-icon" />
+        </div>
+        <span className="sideCardTitle col-lg-9">
+          Using the BC Services Card
+        </span>
+      </div>
+    ),
     content: [
-      "B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.",
-      bcservicesButton
+      <div className="side-card-text">
+        If you have a BC Services Card, you must use it to log in to the online
+        security verification page.
+      </div>,
+      <p>
+        <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
+          <div className="side-card-link">
+            Learn more about the BC Services Card.
+          </div>
+        </a>
+      </p>,
+      <div className="side-card-text">
+        Eligibility for a BC Services Card is the same as for the Medical
+        Services Plan(MSP).
+      </div>,
+      <p>
+        <a href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible">
+          <div className="side-card-link">
+            Learn more about BC Services Card eligibility.
+          </div>
+        </a>
+      </p>
     ],
-    type: "blue"
+    type: "blue",
+    isWide: true
   };
 
   // CONTACT INFORMATION SIDECARD
@@ -108,15 +119,36 @@ export default function SideCards({ type, sideCardLinks }) {
   };
 
   const withoutBCServiceCard = {
-    heading: "Applicants Without a BC Services Card",
+    heading: (
+      <div className="row">
+        <div className="round-icon-wrapper">
+          <FaQuestion className="side-card-icon" />
+        </div>
+        <span className="sideCardTitle col-lg-9">
+          Applicants Without a BC Services Card with a photo
+        </span>
+      </div>
+    ),
     content: [
-      "Applicants who haven’t lived in B.C.for at least six months or who live outside the province must ",
-      <a key="serviceBC" className="link" href="mailto: temp@temp.com">
-        email
-      </a>,
-      " the Liquor and Cannabis Regulation Branch for a Worker Registration Application Form."
+      <div className="side-card-text">
+        Applicants who do not have a BC Services Card must apply offline to
+        complete a criminal record check.
+      </div>,
+      <div className="side-card-text">
+        <br />
+        Please <b>contact your organization</b> and request a criminal record
+        form.
+      </div>,
+      <p>
+        <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
+          <div className="side-card-link">
+            Learn more about how to apply for a criminal record check offline.
+          </div>
+        </a>
+      </p>
     ],
-    type: "blue"
+    type: "blue",
+    isWide: true
   };
 
   // PERSONAL INFORMATION
