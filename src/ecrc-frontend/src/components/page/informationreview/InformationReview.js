@@ -287,9 +287,7 @@ export default function InformationReview({
         serviceFeeAmount = all[3].data.serviceFeeAmount;
 
         // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
-        // child_Care_Fac_Nm - Name entered if Sched D
-        // governing_body_Nm - Org name from orgVal, who owns fac
-        // eivPassDetailsResults - Just a string, not needed
+        // eivPassDetailsResults - String returned from equifax, not used in this app
         const newCRC = {
           orgTicketNumber,
           schedule_Type_Cd: defaultScheduleTypeCd,
