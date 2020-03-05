@@ -30,18 +30,6 @@ export default function SideCards({ type, sideCardLinks }) {
     type: "submit"
   };
 
-  const bcservicesButton = (
-    <Button
-      key="bc-services-card-link"
-      button={bcscbutton}
-      onClick={() =>
-        window.open(
-          "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-        )
-      }
-    />
-  );
-
   const bcservice = {
     heading: (
       <div className="row">
@@ -54,24 +42,24 @@ export default function SideCards({ type, sideCardLinks }) {
       </div>
     ),
     content: [
-      <div class="side-card-text">
+      <div className="side-card-text">
         If you have a BC Services Card, you must use it to log in to the online
         security verification page.
       </div>,
       <p>
         <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
-          <div class="side-card-link">
+          <div className="side-card-link">
             Learn more about the BC Services Card.
           </div>
         </a>
       </p>,
-      <div class="side-card-text">
+      <div className="side-card-text">
         Eligibility for a BC Services Card is the same as for the Medical
         Services Plan(MSP).
       </div>,
       <p>
         <a href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible">
-          <div class="side-card-link">
+          <div className="side-card-link">
             Learn more about BC Services Card eligibility.
           </div>
         </a>
@@ -150,18 +138,18 @@ export default function SideCards({ type, sideCardLinks }) {
       </div>
     ),
     content: [
-      <div class="side-card-text">
+      <div className="side-card-text">
         Applicants who do not have a BC Services Card must apply offline to
         complete a criminal record check.
       </div>,
-      <div class="side-card-text">
+      <div className="side-card-text">
         <br />
         Please <b>contact your organization</b> and request a criminal record
         form.
       </div>,
       <p>
         <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
-          <div class="side-card-link">
+          <div className="side-card-link">
             Learn more about how to apply for a criminal record check offline.
           </div>
         </a>
