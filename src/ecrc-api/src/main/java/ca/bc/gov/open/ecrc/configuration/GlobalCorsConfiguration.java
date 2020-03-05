@@ -16,12 +16,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableConfigurationProperties(EcrcProperties.class)
 public class GlobalCorsConfiguration {
-	
-	@Autowired
-	private EcrcProperties ecrcProps;
 
 	@Bean
-	public WebMvcConfigurer corsConfigurer() {
+	public WebMvcConfigurer corsConfigurer(EcrcProperties ecrcProps) {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {

@@ -31,7 +31,7 @@ public class CreateApplicantController {
 	@PostMapping(value = "/private/createApplicant", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createApplicant(@RequestBody RequestCreateApplicant applicantInfo) throws EcrcServiceException {
 		//TODO: Extract guid generated from front end
-		logger.info("Create applicant request received {}", UUID.randomUUID().toString());
+		logger.info("Create applicant request received {}", UUID.randomUUID());
 		return ecrcServices.createApplicant(applicantInfo);
 		
 	}

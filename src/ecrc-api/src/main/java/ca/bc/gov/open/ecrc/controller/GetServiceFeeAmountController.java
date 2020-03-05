@@ -25,7 +25,7 @@ public class GetServiceFeeAmountController {
             @RequestParam(required=true) String scheduleTypeCd,
             @RequestParam(required=true) String scopeLevelCd) throws EcrcServiceException {
         //TODO: Extract guid generated from front end
-        logger.info("Get fee amount request received {}", UUID.randomUUID().toString());
+        logger.info("Get fee amount request received {}", UUID.randomUUID());
         return ecrcServices.getServiceFeeAmount(orgTicketNumber,scheduleTypeCd,scopeLevelCd);
     }
 }

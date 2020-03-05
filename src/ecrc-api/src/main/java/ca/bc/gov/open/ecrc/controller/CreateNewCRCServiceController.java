@@ -22,7 +22,7 @@ public class CreateNewCRCServiceController {
     @PostMapping(value = "/private/createNewCRCService", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> createNewCRCService(@RequestBody(required=true) RequestNewCRCService requestNewCRCService) throws EcrcServiceException {
         //TODO: Extract guid generated from front end
-        logger.info("Create new crc request received {}", UUID.randomUUID().toString());
+        logger.info("Create new crc request received {}", UUID.randomUUID());
         return  ecrcServices.createNewCRCService(requestNewCRCService);
     }
 }

@@ -20,7 +20,7 @@ public class ActuatorConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.requestMatcher(EndpointRequest.toAnyEndpoint())
-				.authorizeRequests((requests) -> requests.anyRequest().permitAll());
+				.authorizeRequests(requests -> requests.anyRequest().permitAll());
 	}
 
 }
