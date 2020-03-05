@@ -5,7 +5,7 @@ import "@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { storeValidator } from "../src/modules/AuthenticationHelper";
+import { storeValidator } from "./modules/AuthenticationHelper";
 
 if (process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;

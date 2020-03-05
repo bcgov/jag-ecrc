@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import axios from "axios";
+
 const jwt = require("jsonwebtoken");
 
 export function isAuthenticated() {
@@ -13,9 +14,9 @@ export function isAuthenticated() {
     if (err) {
       return false;
     }
-
-    return true;
   });
+
+  return true;
 }
 
 export function storeValidator() {
