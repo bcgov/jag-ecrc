@@ -69,6 +69,32 @@ class RequestCreateApplicantTest {
 		requestCreateApplicant.setPostalCodeTxt("postalCodeTxt");
 		requestCreateApplicant.setProvinceNm("provinceNm");
 
+		Assertions.assertEquals(requestCreateApplicant.getAddressLine1(), "addressLine1");
+		Assertions.assertEquals(requestCreateApplicant.getAddressLine2(), "addressLine2");
+		Assertions.assertEquals(requestCreateApplicant.getAlias1FirstNm(), "alias1FirstNm");
+		Assertions.assertEquals(requestCreateApplicant.getAlias1SecondNm(), "alias1SecondNm");
+		Assertions.assertEquals(requestCreateApplicant.getAlias1SurnameNm(), "alias1SurnameNm");
+		Assertions.assertEquals(requestCreateApplicant.getAlias2FirstNm(), "alias2FirstNm");
+		Assertions.assertEquals(requestCreateApplicant.getAlias2SecondNm(), "alias2SecondNm");
+		Assertions.assertEquals(requestCreateApplicant.getAlias2SurnameNm(), "alias2SurnameNm");
+		Assertions.assertEquals(requestCreateApplicant.getAlias3FirstNm(), "alias3FirstNm");
+		Assertions.assertEquals(requestCreateApplicant.getAlias3SecondNm(), "alias3SecondNm");
+		Assertions.assertEquals(requestCreateApplicant.getAlias3SurnameNm(), "alias3SurnameNm");
+		Assertions.assertEquals(requestCreateApplicant.getBirthDt(), "birthDt");
+		Assertions.assertEquals(requestCreateApplicant.getBirthPlace(), "birthPlace");
+		Assertions.assertEquals(requestCreateApplicant.getCallPurpose(), "callPurpose");
+		Assertions.assertEquals(requestCreateApplicant.getCityNm(), "cityNm");
+		Assertions.assertEquals(requestCreateApplicant.getCountryNm(), "countryNm");
+		Assertions.assertEquals(requestCreateApplicant.getDriversLicNo(), "driversLicNo");
+		Assertions.assertEquals(requestCreateApplicant.getGenderTxt(), "genderTxt");
+		Assertions.assertEquals(requestCreateApplicant.getLegalFirstNm(), "legalFirstNm");
+		Assertions.assertEquals(requestCreateApplicant.getLegalSecondNm(), "legalSecondNm");
+		Assertions.assertEquals(requestCreateApplicant.getLegalSurnameNm(), "legalSurnameNm");
+		Assertions.assertEquals(requestCreateApplicant.getOrgTicketNumber(), "orgTicketNumber");
+		Assertions.assertEquals(requestCreateApplicant.getPhoneNumber(), "phoneNumber");
+		Assertions.assertEquals(requestCreateApplicant.getPostalCodeTxt(), "postalCodeTxt");
+		Assertions.assertEquals(requestCreateApplicant.getProvinceNm(), "provinceNm");
+
 		Assertions.assertEquals(expectedQueryString, requestCreateApplicant.toQueryString());
 	}
 

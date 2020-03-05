@@ -34,6 +34,14 @@ class RequestLogPaymentFailureTest {
 		requestLogPaymentFailure.setServiceId("serviceId");
 		requestLogPaymentFailure.setSessionId("sessionId");
 
+		Assertions.assertEquals(requestLogPaymentFailure.getApplPartyId(), "applPartyId");
+		Assertions.assertEquals(requestLogPaymentFailure.getBcepErrorMsg(), "bcepErrorMsg");
+		Assertions.assertEquals(requestLogPaymentFailure.getInvoiceId(), "invoiceId");
+		Assertions.assertEquals(requestLogPaymentFailure.getOrgTicketNumber(), "orgTicketNumber");
+		Assertions.assertEquals(requestLogPaymentFailure.getServiceFeeAmount(), "serviceFeeAmount");
+		Assertions.assertEquals(requestLogPaymentFailure.getServiceId(), "serviceId");
+		Assertions.assertEquals(requestLogPaymentFailure.getSessionId(), "sessionId");
+
 		Assertions.assertEquals(expectedQueryString, requestLogPaymentFailure.toQueryString());
 	}
 
