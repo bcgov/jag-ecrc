@@ -30,6 +30,8 @@ export default function Success({
 
   const paymentInfo = queryString.parse(location.search);
 
+  console.log(paymentInfo);
+
   const receiptInfo = [
     { name: "Service Number", value: serviceId },
     { name: "First Name", value: legalFirstNm },
@@ -73,18 +75,20 @@ export default function Success({
   }
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
+  // cC_Authorization - Unsure, defer to Shaun
+  // payor_Type_Cd - based on application type O for ONETIME, A otherwise
   if (paymentInfo.trnApproved === "1") {
     const logSuccess = {
       orgTicketNumber,
-      appl_Party_Id: String(partyId),
-      service_Id: String(serviceId),
-      cC_Authorization: paymentInfo.trnOrderNumber,
+      appl_Party_Id: partyId,
+      service_Id: serviceId,
+      cC_Authorization: paymentInfo.trnId,
       payment_Date: paymentInfo.trnDate,
       payor_Type_Cd: "A",
       payment_Status_Cd: "A",
       session_Id: sessionId,
       invoice_Id: invoiceId,
-      transaction_Id: paymentInfo.trnOrderNumber,
+      transaction_Id: paymentInfo.trnId,
       transaction_Amount: paymentInfo.trnAmount
     };
 
@@ -119,6 +123,7 @@ export default function Success({
   const downloadPDF = () => {
     const doc = new jsPDF();
     doc.autoTable({ theme: "plain", html: "#print" });
+    // File name format from Jason Lee
     doc.save(`app${serviceId}.pdf`);
   };
 
@@ -231,11 +236,11 @@ Success.propTypes = {
       orgNm: PropTypes.string.isRequired
     }),
     applicationInfo: PropTypes.shape({
-      partyId: PropTypes.string.isRequired,
-      sessionId: PropTypes.string.isRequired,
-      invoiceId: PropTypes.string.isRequired,
-      serviceFeeAmount: PropTypes.string,
-      serviceId: PropTypes.string.isRequired
+      partyId: PropTypes.number.isRequired,
+      sessionId: PropTypes.number.isRequired,
+      invoiceId: PropTypes.number.isRequired,
+      serviceFeeAmount: PropTypes.number,
+      serviceId: PropTypes.number.isRequired
     }),
     saveApplicationInfo: PropTypes.func.isRequired
   }).isRequired

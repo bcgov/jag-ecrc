@@ -287,7 +287,7 @@ export default function InformationReview({
         serviceFeeAmount = all[3].data.serviceFeeAmount;
 
         // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
-        // eivPassDetailsResults - String returned from equifax, not used in this app
+        // eivPassDetailsResults - String returned from equifax, see Shaun
         const newCRC = {
           orgTicketNumber,
           schedule_Type_Cd: defaultScheduleTypeCd,
