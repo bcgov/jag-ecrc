@@ -25,6 +25,7 @@ export default function Table({
 
 Table.propTypes = {
   table: PropTypes.shape({
+    id: PropTypes.string,
     header: PropTypes.string.isRequired,
     tableElements: PropTypes.arrayOf(
       PropTypes.shape({
@@ -39,6 +40,7 @@ Table.propTypes = {
 
 Table.defaultProps = {
   table: {
+    id: "",
     tableStyle: ""
   }
 };

@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import React from "react";
 import axios from "axios";
 import queryString from "query-string";
@@ -9,7 +10,7 @@ import PropTypes from "prop-types";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
-import Button from "../../base/button/Button";
+import { Button } from "../../base/button/Button";
 
 export default function Success({
   page: {
