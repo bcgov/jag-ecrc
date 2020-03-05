@@ -14,9 +14,11 @@ export function isAuthenticated() {
     if (err) {
       return false;
     }
+
+    return true;
   });
 
-  return true;
+  return false;
 }
 
 export function storeValidator() {
