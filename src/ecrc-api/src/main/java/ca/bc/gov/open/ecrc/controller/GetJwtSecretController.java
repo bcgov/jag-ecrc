@@ -5,8 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
@@ -28,7 +27,7 @@ public class GetJwtSecretController {
 	@Autowired
 	private EcrcServices ecrcServices;
 	
-	@RequestMapping(value = "/initialHandshake", method = RequestMethod.GET) 
+	@GetMapping(value = "/initialHandshake")
 	public ResponseEntity<String> getJwtSecret() {
 		try {
 			return new ResponseEntity<>(ecrcServices.getJwtSecret(), HttpStatus.OK);		

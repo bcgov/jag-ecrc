@@ -29,7 +29,7 @@ public class DoAuthenticateUserController {
 	@GetMapping(value = "/protected/doAuthenticateUser", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> doAuthenticateUser(@RequestParam(required=true) String orgTicketNumber) throws EcrcServiceException, NotFoundException {
 		//TODO: Extract guid generated from front end
-		logger.info("Do Authenticate request received {}", UUID.randomUUID().toString());
+		logger.info("Do Authenticate request received {}", UUID.randomUUID());
 		return  ecrcServices.doAuthenticateUser(orgTicketNumber);
 
 	}
