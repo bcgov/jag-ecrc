@@ -763,7 +763,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="addressLine1"
+                  htmlFor="mailingAddressLine1"
                 >
                   Street
                 </label>
@@ -781,7 +781,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_editable_white"
                 defaultValue=""
-                id="addressLine1"
+                id="mailingAddressLine1"
                 onChange={[Function]}
                 type="text"
               />
@@ -799,7 +799,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="cityNm"
+                  htmlFor="mailingCityNm"
                 >
                   City
                 </label>
@@ -817,7 +817,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_editable_white"
                 defaultValue=""
-                id="cityNm"
+                id="mailingCityNm"
                 onChange={[Function]}
                 type="text"
               />
@@ -835,7 +835,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="provinceNm"
+                  htmlFor="mailingProvinceNm"
                 >
                   Province
                 </label>
@@ -853,7 +853,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_editable_white"
                 defaultValue=""
-                id="provinceNm"
+                id="mailingProvinceNm"
                 onChange={[Function]}
                 type="text"
               />
@@ -871,7 +871,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="postalCodeTxt"
+                  htmlFor="mailingPostalCodeTxt"
                 >
                   Postal Code
                 </label>
@@ -889,7 +889,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_editable_white"
                 defaultValue=""
-                id="postalCodeTxt"
+                id="mailingPostalCodeTxt"
                 onChange={[Function]}
                 type="text"
               />
@@ -907,7 +907,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="countryNm"
+                  htmlFor="mailingCountryNm"
                 >
                   Country
                 </label>
@@ -925,7 +925,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_editable_white"
                 defaultValue=""
-                id="countryNm"
+                id="mailingCountryNm"
                 onChange={[Function]}
                 type="text"
               />

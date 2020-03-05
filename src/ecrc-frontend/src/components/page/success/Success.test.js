@@ -21,11 +21,11 @@ describe("Success Page Component", () => {
   };
 
   const applicationInfo = {
-    partyId: "123",
-    sessionId: "456",
-    invoiceId: "789",
-    serviceFeeAmount: "60",
-    serviceId: "987"
+    partyId: 123,
+    sessionId: 456,
+    invoiceId: 789,
+    serviceFeeAmount: 60,
+    serviceId: 987
   };
 
   const saveApplicationInfo = () => {};

@@ -31,8 +31,6 @@ export default function Success({
 
   const paymentInfo = queryString.parse(location.search);
 
-  console.log(paymentInfo);
-
   const receiptInfo = [
     { name: "Service Number", value: serviceId },
     { name: "First Name", value: legalFirstNm },
@@ -71,7 +69,7 @@ export default function Success({
     };
 
     axios.post("/ecrc/logPaymentFailure", logFailure).then(res => {
-      console.log(res);
+      // console.log(res);
     });
   }
 
@@ -96,10 +94,10 @@ export default function Success({
     axios
       .post("/ecrc/updateServiceFinancialTxn", logSuccess)
       .then(res => {
-        console.log(res);
+        // console.log(res);
       })
       .catch(error => {
-        console.log(error);
+        // console.log(error);
       });
   }
 

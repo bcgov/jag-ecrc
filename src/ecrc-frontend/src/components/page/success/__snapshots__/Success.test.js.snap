@@ -102,71 +102,90 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
-      <table
-        className="white"
+      <div
+        className="print"
       >
-        <thead>
-          <tr>
-            <th
-              colSpan="2"
-            >
-              APPLICATION INFORMATION
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Service Number
-            </td>
-            <td>
-              987
-            </td>
-          </tr>
-          <tr>
-            <td>
-              First Name
-            </td>
-            <td>
-              Robert
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Last Name
-            </td>
-            <td>
-              Ross
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Organization
-            </td>
-            <td>
-              Public Broadcast Network
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Date/Time
-            </td>
-            <td>
-              3/2/2020 8:43:52 AM
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Transaction ID
-            </td>
-            <td>
-              2946
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <table
+          className="white"
+          id="print"
+        >
+          <thead>
+            <tr>
+              <th
+                colSpan="2"
+              >
+                APPLICATION INFORMATION
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Service Number
+              </td>
+              <td>
+                987
+              </td>
+            </tr>
+            <tr>
+              <td>
+                First Name
+              </td>
+              <td>
+                Robert
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Last Name
+              </td>
+              <td>
+                Ross
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Organization
+              </td>
+              <td>
+                Public Broadcast Network
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Date/Time
+              </td>
+              <td>
+                3/2/2020 8:43:52 AM
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Transaction ID
+              </td>
+              <td>
+                2946
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Print
+      </button>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Download
+      </button>
       <div>
-        Print Download Email?
+        Download Email?
       </div>
     </div>
     <div
@@ -334,79 +353,98 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
-      <table
-        className="white"
+      <div
+        className="print"
       >
-        <thead>
-          <tr>
-            <th
-              colSpan="2"
-            >
-              APPLICATION INFORMATION
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Service Number
-            </td>
-            <td>
-              987
-            </td>
-          </tr>
-          <tr>
-            <td>
-              First Name
-            </td>
-            <td>
-              Robert
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Last Name
-            </td>
-            <td>
-              Ross
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Organization
-            </td>
-            <td>
-              Public Broadcast Network
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Amount
-            </td>
-            <td>
-              28.00
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Date/Time
-            </td>
-            <td>
-              3/4/2020 1:01:36 PM
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Transaction ID
-            </td>
-            <td>
-              2991
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <table
+          className="white"
+          id="print"
+        >
+          <thead>
+            <tr>
+              <th
+                colSpan="2"
+              >
+                APPLICATION INFORMATION
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Service Number
+              </td>
+              <td>
+                987
+              </td>
+            </tr>
+            <tr>
+              <td>
+                First Name
+              </td>
+              <td>
+                Robert
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Last Name
+              </td>
+              <td>
+                Ross
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Organization
+              </td>
+              <td>
+                Public Broadcast Network
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Amount
+              </td>
+              <td>
+                28.00
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Date/Time
+              </td>
+              <td>
+                3/4/2020 1:01:36 PM
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Transaction ID
+              </td>
+              <td>
+                2991
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Print
+      </button>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Download
+      </button>
       <div>
-        Print Download Email?
+        Download Email?
       </div>
     </div>
     <div
@@ -574,55 +612,74 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
-      <table
-        className="white"
+      <div
+        className="print"
       >
-        <thead>
-          <tr>
-            <th
-              colSpan="2"
-            >
-              APPLICATION INFORMATION
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Service Number
-            </td>
-            <td>
-              987
-            </td>
-          </tr>
-          <tr>
-            <td>
-              First Name
-            </td>
-            <td>
-              Robert
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Last Name
-            </td>
-            <td>
-              Ross
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Organization
-            </td>
-            <td>
-              Public Broadcast Network
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <table
+          className="white"
+          id="print"
+        >
+          <thead>
+            <tr>
+              <th
+                colSpan="2"
+              >
+                APPLICATION INFORMATION
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Service Number
+              </td>
+              <td>
+                987
+              </td>
+            </tr>
+            <tr>
+              <td>
+                First Name
+              </td>
+              <td>
+                Robert
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Last Name
+              </td>
+              <td>
+                Ross
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Organization
+              </td>
+              <td>
+                Public Broadcast Network
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Print
+      </button>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Download
+      </button>
       <div>
-        Print Download Email?
+        Download Email?
       </div>
     </div>
     <div
