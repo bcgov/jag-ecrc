@@ -22,14 +22,6 @@ export default function SideCards({ type, sideCardLinks }) {
     type: "bluegrey"
   };
 
-  // BCSC SIDECARD
-  const bcscbutton = {
-    label: "READ MORE",
-    buttonStyle: "btn btn-primary dark-button",
-    buttonSize: "btn btn-md",
-    type: "submit"
-  };
-
   const bcservice = {
     heading: (
       <div className="row">
