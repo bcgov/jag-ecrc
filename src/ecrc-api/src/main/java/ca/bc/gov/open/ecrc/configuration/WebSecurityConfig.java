@@ -20,12 +20,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-         http.csrf().disable()
-              .addFilterAfter(new JWTAuthorizationFilter(ecrcProps), UsernamePasswordAuthenticationFilter.class)
-              .authorizeRequests()
-              .antMatchers("/initialHandshake**").permitAll()
-              .antMatchers("/protected/**").hasAuthority(ecrcProps.getJwtRole())
-              .antMatchers("/private/**").hasAuthority(ecrcProps.getJwtAuthorizedRole())
-              .anyRequest().authenticated();
+        http.cors()
+                .and()
+                .csrf().disable()
+                .addFilterAfter(new JWTAuthorizationFilter(ecrcProps), UsernamePasswordAuthenticationFilter.class)
+                .authorizeRequests()
+                .antMatchers("/initialHandshake**").permitAll()
+                .antMatchers("/protected/**").hasAuthority(ecrcProps.getJwtRole())
+                .antMatchers("/private/**").hasAuthority(ecrcProps.getJwtAuthorizedRole())
+                .anyRequest().authenticated();
    }
 }
