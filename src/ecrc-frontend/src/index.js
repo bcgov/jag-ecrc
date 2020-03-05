@@ -11,6 +11,7 @@ if (process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 }
 
+// get the initial validator from backend and store it for subsequent requests (for JWT)
 storeValidator();
 
 ReactDOM.render(<App />, document.getElementById("root"));
