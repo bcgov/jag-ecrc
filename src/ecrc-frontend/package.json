@@ -7,6 +7,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "jspdf": "^1.5.3",
+    "jspdf-autotable": "^3.2.13",
     "query-string": "^6.11.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

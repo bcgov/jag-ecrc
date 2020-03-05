@@ -106,7 +106,17 @@ export default function Success({
   };
 
   const printAppInfo = () => {
-    // window.print();
+    window.print();
+  };
+
+  const pdfButton = {
+    label: "Download",
+    buttonStyle: "btn btn-primary",
+    buttonSize: "btn btn-sm",
+    type: "submit"
+  };
+
+  const downloadPDF = () => {
     const doc = new jsPDF();
     doc.autoTable({ theme: "plain", html: "#print" });
     doc.save(`app${serviceId}.pdf`);
@@ -196,6 +206,7 @@ export default function Success({
             <Table table={receiptInfoTable} />
           </div>
           <Button button={printButton} onClick={printAppInfo} />
+          <Button button={pdfButton} onClick={downloadPDF} />
           <div>Download Email?</div>
         </div>
         <div className="sidecard">Sidecards?</div>
