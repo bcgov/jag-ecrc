@@ -16,7 +16,24 @@ export default function App() {
     JSON.parse(sessionStorage.getItem("org")) || {}
   );
   const [applicant, setApplicant] = useState(
-    JSON.parse(sessionStorage.getItem("applicant")) || {}
+    JSON.parse(sessionStorage.getItem("applicant")) || {
+      legalFirstNm: "Robert",
+      legalSecondNm: "Norman",
+      legalSurnameNm: "Ross",
+      birthPlace: "",
+      birthDt: "1942-10-29",
+      genderTxt: "Male",
+      driversLicNo: "",
+      phoneNumber: "",
+      emailAddress: "",
+      addressLine1: "123 Somewhere",
+      cityNm: "Here",
+      provinceNm: "British Columbia",
+      postalCodeTxt: "V9V 9V9",
+      countryNm: "Canada",
+      jobTitle: "",
+      organizationFacility: ""
+    }
   );
   const [applicationInfo, setApplicationInfo] = useState(
     JSON.parse(sessionStorage.getItem("applicationInfo")) || {}
