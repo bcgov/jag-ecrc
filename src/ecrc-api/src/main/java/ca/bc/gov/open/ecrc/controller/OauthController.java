@@ -99,6 +99,8 @@ public class OauthController {
 			throw new OauthServiceException("Error generating client token. ", e);
 		}
 		
+		// TODO - validate tokens received from BCSC. 
+		
 		// Fetch corresponding Userinfo from the IdP server.  
 		JSONObject userInfo = oauthServices.getUserInfo((BearerAccessToken)token.toSuccessResponse().getTokens().getAccessToken());
 		
