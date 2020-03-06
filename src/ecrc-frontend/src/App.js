@@ -16,24 +16,7 @@ export default function App() {
     JSON.parse(sessionStorage.getItem("org")) || {}
   );
   const [applicant, setApplicant] = useState(
-    JSON.parse(sessionStorage.getItem("applicant")) || {
-      legalFirstNm: "Robert",
-      legalSecondNm: "Norman",
-      legalSurnameNm: "Ross",
-      birthPlace: "",
-      birthDt: "1942-10-29",
-      genderTxt: "Male",
-      driversLicNo: "",
-      phoneNumber: "",
-      emailAddress: "",
-      addressLine1: "123 Somewhere",
-      cityNm: "Here",
-      provinceNm: "British Columbia",
-      postalCodeTxt: "V9V 9V9",
-      countryNm: "Canada",
-      jobTitle: "",
-      organizationFacility: ""
-    }
+    JSON.parse(sessionStorage.getItem("applicant")) || {}
   );
   const [applicationInfo, setApplicationInfo] = useState(
     JSON.parse(sessionStorage.getItem("applicationInfo")) || {}
@@ -76,12 +59,10 @@ export default function App() {
             <TOU page={{ header }} />
           </Route>
           <Route path="/ecrc/consent">
-            <UserConfirmation header={{ header }} />
+            <UserConfirmation page={{ header, setApplicant }} />
           </Route>
           <Route path="/ecrc/bcscRedirect">
-            <BcscRedirect
-              page={{ header, setApplicant, saveApplicant, saveOrg }}
-            />
+            <BcscRedirect page={{ header, saveOrg }} />
           </Route>
           <Route path="/ecrc/success">
             <Success
@@ -108,7 +89,7 @@ export default function App() {
             />
           </Route>
           <Route path="/ecrc/userconfirmation">
-            <Consent page={header} />
+            <Consent page={{ header }} />
           </Route>
           <Route
             path="/hosthome"
