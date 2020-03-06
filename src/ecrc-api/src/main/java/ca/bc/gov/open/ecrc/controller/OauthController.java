@@ -106,7 +106,7 @@ public class OauthController {
 		// must be decrypted and used for subsequent calls back to the IdP from this layer (e.g. /refreshToken). 
 	    String encryptedTokens = null; 
 	    try {
-			encryptedTokens = AES256.encrypt(token.toJSONObject().toJSONString(), ecrcProps.getOauthSecret());
+			encryptedTokens = AES256.encrypt(token.toJSONObject().toJSONString());
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			throw new OauthServiceException("Error encrypting token. ", e);

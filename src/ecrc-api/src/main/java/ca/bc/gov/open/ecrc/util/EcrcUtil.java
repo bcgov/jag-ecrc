@@ -8,6 +8,7 @@ package ca.bc.gov.open.ecrc.util;
 *
 */
 public class EcrcUtil {
+	private EcrcUtil() { throw new IllegalStateException("Utility class"); }
 
 	public static final String SPACE = " ";
 	public static final String ENCODED_SPACE = "%20";

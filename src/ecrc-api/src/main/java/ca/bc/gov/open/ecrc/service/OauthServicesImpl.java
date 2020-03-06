@@ -112,22 +112,10 @@ public class OauthServicesImpl implements OauthServices {
 			// Make the token request
 			TokenRequest request = new TokenRequest(tokenEndpoint, clientAuth, codeGrant);
 			
-			TokenResponse response;
-			try {
-				response = TokenResponse.parse(request.toHTTPRequest().send());
-			} catch (ParseException e) {
-				logger.error(e.getMessage(), e);
-				e.printStackTrace();
-				throw new OauthServiceException("Parse Exception", e);
-			} catch (IOException e) {
-				logger.error(e.getMessage(), e);
-				e.printStackTrace();
-				throw new OauthServiceException("Error comunicating with IdP server", e);
-			}
+			TokenResponse response = TokenResponse.parse(request.toHTTPRequest().send());
 
 			if (!response.indicatesSuccess()) {
 			    TokenErrorResponse errorResponse = response.toErrorResponse();
-			    logger.error(errorResponse.toString());
 				throw new OauthServiceException("Token Error Response from IdP server: " + errorResponse.toString() );
 			}
 
@@ -135,9 +123,11 @@ public class OauthServicesImpl implements OauthServices {
 			return response.toSuccessResponse();
 			
 		} catch (URISyntaxException e) {
-			logger.error(e.getMessage(), e);
-			e.printStackTrace();
 			throw new OauthServiceException(e.getMessage(), e);
+		} catch (ParseException e) {
+			throw new OauthServiceException("Parse Exception", e);
+		} catch (IOException e) {
+			throw new OauthServiceException("Error comunicating with IdP server", e);
 		}
 		
 	}
@@ -148,34 +138,24 @@ public class OauthServicesImpl implements OauthServices {
 
 			// Build the IdP endpoint for user info data
 			HTTPResponse httpResponse = new UserInfoRequest(new URI(ecrcProps.getOauthIdp() + ecrcProps.getOauthUserinfoPath()),
-					(BearerAccessToken) accessToken).toHTTPRequest().send();
+					accessToken).toHTTPRequest().send();
 
 			// Parse the response
-			UserInfoResponse userInfoResponse = null;
-			try {
-				userInfoResponse = UserInfoResponse.parse(httpResponse);
-			} catch (ParseException e) {
-				logger.error(e.getMessage(), e);
-				e.printStackTrace();
-				throw new OauthServiceException("Error parsing userinfo data returned from server. ", e);
-			}
+			UserInfoResponse userInfoResponse = UserInfoResponse.parse(httpResponse);
 
 			// The request failed, e.g. due to invalid or expired token
 			if (!userInfoResponse.indicatesSuccess()) {
-				logger.error("Invalid response received from server when requesting userinfo. " + "code: "
-						+ userInfoResponse.toErrorResponse().getErrorObject().getCode() + "desc: "
-						+ userInfoResponse.toErrorResponse().getErrorObject().getDescription());
 				throw new OauthServiceException("Invalid response returned from server for userinfo request.");
 			}
 
 			// Extract the claims
 			return userInfoResponse.toSuccessResponse().getUserInfoJWT().getJWTClaimsSet().toJSONObject();
-
+		} catch (ParseException e) {
+				throw new OauthServiceException("Error parsing userinfo data returned from server. ", e);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
-			e.printStackTrace();
 			throw new OauthServiceException(e.getMessage(), e);
 		}
+
 	}
 }
 

@@ -6,6 +6,10 @@ package ca.bc.gov.open.ecrc.exception;
  */
 public final class EcrcExceptionConstants {
 
+	private EcrcExceptionConstants() {
+		throw new AssertionError();
+	}
+
 	public static final String WEBSERVICE_ERROR_JSON_RESPONSE = "{\"message\":\"%s\", \"responseCode\":%d}";
 
 	public static final String CONVERT_TO_JSON_ERROR = "Could not convert to JSON object";

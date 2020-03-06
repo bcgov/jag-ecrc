@@ -132,17 +132,4 @@ class OauthControllerTest {
 			oauthController.login("test");
 		});
 	}
-
-	@DisplayName("Error - login oauth controller")
-	@Test
-	void testLoginError3() throws OauthServiceException, URISyntaxException {
-		Mockito.when(ecrcProperties.getOauthSecret()).thenThrow(new NullPointerException());
-		when(oauthServices.getUserInfo(any())).thenReturn(userInfo);
-		when(oauthServices.getToken(any()))
-				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
-		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthController.login("test");
-		});
-	}
-
 }

@@ -1,12 +1,14 @@
 package ca.bc.gov.open.ecrc.util;
 
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Date;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import net.minidev.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -15,7 +17,8 @@ import net.minidev.json.JSONObject;
  * @author shaunmillargov
  */
 public class JwtTokenGenerator {
-	
+	private JwtTokenGenerator() { throw new IllegalStateException("Utility class"); }
+	private static Logger logger = LoggerFactory.getLogger(JwtTokenGenerator.class);
 	/**
 	 * Generates a JWT token for Front end API access.
 	 * 
@@ -37,9 +40,9 @@ public class JwtTokenGenerator {
 					.claim("per", encryptedToken)
 					.claim("authorities", Arrays.asList(authority))
 					.setExpiration(new Date(System.currentTimeMillis() + expiryTime))
-					.signWith(SignatureAlgorithm.HS256, secret.getBytes("UTF-8")).compact();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+					.signWith(SignatureAlgorithm.HS256, secret.getBytes(StandardCharsets.UTF_8)).compact();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
 		}
 
 		return token;

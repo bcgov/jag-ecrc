@@ -16,9 +16,6 @@ import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 @Configuration
 @EnableConfigurationProperties(EcrcProperties.class)
 public class JwtTokenValidator {
-	
-	//@Autowired
-	//private EcrcProperties ecrcProps;
 
     /**
      * 	
