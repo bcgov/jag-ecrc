@@ -48,6 +48,7 @@ public class EcrcProperties {
 	private String oauthTokenPath;
 	private String oauthUserinfoPath;
 	private String oauthAuthorizePath;
+	private String oauthWellKnown;
 
 	// JWT properties
 	private String jwtHeader;
@@ -297,5 +298,13 @@ public class EcrcProperties {
 	public String getOauthAuthorizePath() { return oauthAuthorizePath; }
 
 	public void setOauthAuthorizePath(String oauthAuthorizePath) { this.oauthAuthorizePath = oauthAuthorizePath; }
+	
+	public String getOauthWellKnown() {
+		return oauthWellKnown;
+	}
+
+	public void setOauthWellKnown(String oauthWellKnown) {
+		this.oauthWellKnown = oauthWellKnown;
+	}
 
 }
