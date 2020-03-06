@@ -116,8 +116,9 @@ img {
 }
 
 .contact-title {
-  text-align: right;
-  width: 80px;
+  text-align: left;
+  width: 60px;
   padding-right: 10px;
   font-weight: 600;
+  display: inline-block;
 }
