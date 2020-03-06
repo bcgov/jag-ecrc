@@ -14,9 +14,6 @@ public class RequestNewCRCService {
     private String governing_Body_Nm;
     private String session_Id;
     private String invoice_Id;
-
-
-
     private String auth_Release_EIV_Vendor_YN;
     private String auth_Conduct_CRC_Check_YN;
     private String auth_Release_To_Org_YN;

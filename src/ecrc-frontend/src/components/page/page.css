@@ -27,3 +27,15 @@ main {
     flex-direction: column;
   }
 }
+
+@media print {
+  body {
+    visibility: hidden;
+  }
+
+  .print {
+    width: 100%;
+    visibility: visible;
+    margin-left: 1cm;
+  }
+}

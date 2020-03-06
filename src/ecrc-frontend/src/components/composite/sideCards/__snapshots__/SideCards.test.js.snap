@@ -39,7 +39,7 @@ exports[`SideCards Component AccessCode sidecard 1`] = `
           <div
             className="bluegrey-content"
           >
-            <p
+            <span
               className="content-style"
             >
               Access code is specific to each organization. If you need help with the organization access code, please 
@@ -48,7 +48,7 @@ exports[`SideCards Component AccessCode sidecard 1`] = `
               >
                 contact your organization.
               </b>
-            </p>
+            </span>
           </div>
         </section>
       </div>
@@ -92,7 +92,7 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
           <div
             className="submit-content"
           >
-            <p>
+            <span>
               <li
                 className="menuItem"
               >
@@ -129,7 +129,7 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
                   Somewhere with a long name for no reason
                 </a>
               </li>
-            </p>
+            </span>
           </div>
         </section>
       </div>
@@ -204,7 +204,7 @@ exports[`SideCards Component BcServices sidecard 1`] = `
           <div
             className="submit-content"
           >
-            <p>
+            <span>
               <div
                 className="side-card-text"
               >
@@ -237,7 +237,7 @@ exports[`SideCards Component BcServices sidecard 1`] = `
                   </div>
                 </a>
               </p>
-            </p>
+            </span>
           </div>
         </section>
       </div>
@@ -312,7 +312,7 @@ exports[`SideCards Component ContactInformation sidecard 1`] = `
           <div
             className="submit-content"
           >
-            <p>
+            <span>
               <div
                 className="side-card-text"
               >
@@ -409,7 +409,7 @@ exports[`SideCards Component ContactInformation sidecard 1`] = `
                   </a>
                 </div>
               </div>
-            </p>
+            </span>
           </div>
         </section>
       </div>
@@ -453,7 +453,7 @@ exports[`SideCards Component CriminalRecord sidecard 1`] = `
           <div
             className="submit-content"
           >
-            <p>
+            <span>
               Learn more about the process
               <button
                 className="btn btn-primary dark-button btn btn-md"
@@ -462,7 +462,7 @@ exports[`SideCards Component CriminalRecord sidecard 1`] = `
               >
                 VISIT THE CRIMINAL RECORD REVIEW WEBSITE
               </button>
-            </p>
+            </span>
           </div>
         </section>
       </div>

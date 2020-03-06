@@ -14,3 +14,11 @@ table tr:nth-child(even) {
 table tr:nth-child(odd) {
   background: rgba(225, 232, 242, 1);
 }
+
+.white tr:nth-child(even) {
+  background: white;
+}
+
+.white tr:nth-child(odd) {
+  background: white;
+}

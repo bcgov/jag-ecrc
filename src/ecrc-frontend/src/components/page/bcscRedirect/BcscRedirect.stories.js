@@ -9,8 +9,11 @@ const header = {
   name: "BC Services Card"
 };
 
+const saveOrg = () => {};
+
 const page = {
-  header
+  header,
+  saveOrg
 };
 
 storiesOf("BcscRedirect page", module)

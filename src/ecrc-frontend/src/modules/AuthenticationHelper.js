@@ -43,3 +43,11 @@ export function generateJWTToken(payload) {
 
   return token;
 }
+
+export function accessJWTToken(token) {
+  const validator = sessionStorage.getItem("validator");
+
+  const payload = jwt.verify(token, validator);
+
+  return payload;
+}

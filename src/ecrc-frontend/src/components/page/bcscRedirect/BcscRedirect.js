@@ -13,7 +13,7 @@ import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 import "../page.css";
 import "./BcscRedirect.css";
 
-export default function BcscRedirect({ page: { header } }) {
+export default function BcscRedirect({ page: { header, saveOrg } }) {
   const [toHostHome, setToHostHome] = useState(false);
   const [bcscUrl, setBcscUrl] = useState("");
 
@@ -57,6 +57,8 @@ export default function BcscRedirect({ page: { header } }) {
   };
 
   const onLoginClick = () => {
+    saveOrg();
+    // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");
   };
 
@@ -156,6 +158,7 @@ BcscRedirect.propTypes = {
   page: PropTypes.shape({
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
-    })
+    }),
+    saveOrg: PropTypes.func.isRequired
   }).isRequired
 };

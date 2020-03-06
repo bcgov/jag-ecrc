@@ -7,6 +7,7 @@ import Transition from "./components/page/transition/Transition";
 import TOU from "./components/page/tou/TOU";
 import Consent from "./components/page/consent/Consent";
 import BcscRedirect from "./components/page/bcscRedirect/BcscRedirect";
+import Success from "./components/page/success/Success";
 import InformationReview from "./components/page/informationreview/InformationReview";
 import UserConfirmation from "./components/page/userConfirmation/UserConfirmation";
 
@@ -17,6 +18,21 @@ export default function App() {
   const [applicant, setApplicant] = useState(
     JSON.parse(sessionStorage.getItem("applicant")) || {}
   );
+  const [applicationInfo, setApplicationInfo] = useState(
+    JSON.parse(sessionStorage.getItem("applicationInfo")) || {}
+  );
+
+  const saveOrg = (orgInfo = org) => {
+    sessionStorage.setItem("org", JSON.stringify(orgInfo));
+  };
+
+  const saveApplicant = (applicantInfo = applicant) => {
+    sessionStorage.setItem("applicant", JSON.stringify(applicantInfo));
+  };
+
+  const saveApplicationInfo = (appInfo = applicationInfo) => {
+    sessionStorage.setItem("applicationInfo", JSON.stringify(appInfo));
+  };
 
   const header = {
     name: "Criminal Record Check"
@@ -43,16 +59,37 @@ export default function App() {
             <TOU page={{ header }} />
           </Route>
           <Route path="/ecrc/consent">
-            <UserConfirmation header={{ header }} />
+            <UserConfirmation page={{ header, setApplicant }} />
           </Route>
           <Route path="/ecrc/bcscRedirect">
-            <BcscRedirect page={{ header }} />
+            <BcscRedirect page={{ header, saveOrg }} />
+          </Route>
+          <Route path="/ecrc/success">
+            <Success
+              page={{
+                header,
+                applicant,
+                org,
+                applicationInfo,
+                saveApplicationInfo
+              }}
+            />
           </Route>
           <Route path="/ecrc/informationreview">
-            <InformationReview page={{ header, applicant }} />
+            <InformationReview
+              page={{
+                header,
+                applicant,
+                org,
+                setApplicationInfo,
+                saveOrg,
+                saveApplicant,
+                saveApplicationInfo
+              }}
+            />
           </Route>
           <Route path="/ecrc/userconfirmation">
-            <Consent page={header} />
+            <Consent page={{ header }} />
           </Route>
           <Route
             path="/hosthome"

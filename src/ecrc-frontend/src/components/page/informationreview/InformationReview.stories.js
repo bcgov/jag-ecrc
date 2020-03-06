@@ -13,27 +13,44 @@ const header = {
 };
 
 const applicant = {
-  firstName: "Robert",
-  middleName: "Norman",
-  lastName: "Ross",
+  legalFirstNm: "Robert",
+  legalSecondNm: "Norman",
+  legalSurnameNm: "Ross",
   birthPlace: "Daytona Beach, Florida",
-  birthDate: "1942-10-29",
-  sex: "Male",
+  birthDt: "1942-10-29",
+  genderTxt: "Male",
   driversLicNo: "1234567",
   phoneNumber: "2501234567",
   emailAddress: "bob.ross@example.com",
-  street: "123 Somewhere",
-  city: "Here",
-  province: "British Columbia",
-  postalCode: "V9V 9V9",
-  country: "Canada",
+  addressLine1: "123 Somewhere",
+  cityNm: "Here",
+  provinceNm: "British Columbia",
+  postalCodeTxt: "V9V 9V9",
+  countryNm: "Canada",
   jobTitle: "Painter",
   organizationFacility: ""
 };
 
+const org = {
+  orgApplicantRelationship: "EMPLOYEE",
+  orgTicketNumber: "crce",
+  defaultScheduleTypeCd: "WBSD",
+  defaultCrcScopeLevelCd: "WWCH"
+};
+
+const setApplicationInfo = () => {};
+const saveApplicant = () => {};
+const saveOrg = () => {};
+const saveApplicationInfo = () => {};
+
 const page = {
   header,
-  applicant
+  applicant,
+  org,
+  setApplicationInfo,
+  saveApplicant,
+  saveOrg,
+  saveApplicationInfo
 };
 
 export const NonScheduleD = () => (
@@ -55,3 +72,5 @@ export const ScheduleD = () => (
     />
   </MemoryRouter>
 );
+
+// TODO: Add more stories for aliases

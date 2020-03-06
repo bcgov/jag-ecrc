@@ -257,7 +257,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       className="side-card-text"
                     >
@@ -290,7 +290,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                         </div>
                       </a>
                     </p>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -362,7 +362,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       className="side-card-text"
                     >
@@ -389,7 +389,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                         </div>
                       </a>
                     </p>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>

@@ -8,19 +8,19 @@ export default {
 };
 
 const fullname = {
-  firstName: {
+  legalFirstNm: {
     label: "First Name",
     id: "firstName",
     value: "First",
     textInputStyle: "textinput_non_editable_gray"
   },
-  middleName: {
+  legalSecondNm: {
     label: "Middle Name",
     id: "middleName",
     value: "Middle",
     textInputStyle: "textinput_non_editable_gray"
   },
-  lastName: {
+  legalSurnameNm: {
     label: "Last Name",
     id: "lastName",
     value: "Last",

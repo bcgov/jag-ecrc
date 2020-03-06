@@ -33,7 +33,7 @@ export default function OrgValidation({ page: { header, setOrg } }) {
         }
       )
       .then(res => {
-        setOrg(res.data.accessCodeResponse);
+        setOrg({ ...res.data.accessCodeResponse, orgTicketNumber });
         setToOrgVerification(true);
       })
       .catch(error => {

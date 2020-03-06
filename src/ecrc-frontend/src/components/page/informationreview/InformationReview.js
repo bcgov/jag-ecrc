@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -12,26 +13,46 @@ export default function InformationReview({
   page: {
     header,
     applicant: {
-      firstName,
-      middleName,
-      lastName,
-      birthDate,
-      sex,
-      street,
-      city,
-      province,
-      postalCode,
-      country,
+      legalFirstNm,
+      legalSecondNm,
+      legalSurnameNm,
+      alias1FirstNm,
+      alias1SecondNm,
+      alias1SurnameNm,
+      alias2FirstNm,
+      alias2SecondNm,
+      alias2SurnameNm,
+      alias3FirstNm,
+      alias3SecondNm,
+      alias3SurnameNm,
+      birthDt,
+      genderTxt,
+      addressLine1,
+      cityNm,
+      provinceNm,
+      postalCodeTxt,
+      countryNm,
       birthPlace,
       driversLicNo,
       phoneNumber,
       emailAddress,
       jobTitle,
       organizationFacility
-    }
+    },
+    org: {
+      orgApplicantRelationship,
+      orgTicketNumber,
+      defaultScheduleTypeCd,
+      defaultCrcScopeLevelCd
+    },
+    setApplicationInfo,
+    saveApplicant,
+    saveOrg,
+    saveApplicationInfo
   }
 }) {
   const [toBack, setToBack] = useState(false);
+  const [toSuccess, setToSuccess] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
   useEffect(() => {
@@ -39,14 +60,14 @@ export default function InformationReview({
   }, []);
 
   const personalInfoElement = [
-    { name: "First Name", value: firstName },
+    { name: "First Name", value: legalFirstNm },
     {
       name: "Middle Name",
-      value: middleName
+      value: legalSecondNm
     },
     {
       name: "Last Name",
-      value: lastName
+      value: legalSurnameNm
     },
     {
       name: "City and Country of Birth",
@@ -54,11 +75,11 @@ export default function InformationReview({
     },
     {
       name: "Birth Date",
-      value: birthDate
+      value: birthDt
     },
     {
       name: "Sex",
-      value: sex
+      value: genderTxt
     }
   ];
 
@@ -72,6 +93,67 @@ export default function InformationReview({
   const personalInfoTable = {
     header: "PERSONAL INFORMATION",
     tableElements: personalInfoElement
+  };
+
+  const previousNamesElement = [];
+
+  if (alias1FirstNm || alias1SecondNm || alias1SurnameNm) {
+    previousNamesElement.push({
+      key: "alias1FirstNm",
+      name: "First Name",
+      value: alias1FirstNm
+    });
+    previousNamesElement.push({
+      key: "alias1SecondNm",
+      name: "Middle Name",
+      value: alias1SecondNm
+    });
+    previousNamesElement.push({
+      key: "alias1SurnameNm",
+      name: "Last Name",
+      value: alias1SurnameNm
+    });
+  }
+
+  if (alias2FirstNm || alias2SecondNm || alias2SurnameNm) {
+    previousNamesElement.push({
+      key: "alias2FirstNm",
+      name: "First Name",
+      value: alias2FirstNm
+    });
+    previousNamesElement.push({
+      key: "alias2SecondNm",
+      name: "Middle Name",
+      value: alias2SecondNm
+    });
+    previousNamesElement.push({
+      key: "alias2SurnameNm",
+      name: "Last Name",
+      value: alias2SurnameNm
+    });
+  }
+
+  if (alias3FirstNm || alias3SecondNm || alias3SurnameNm) {
+    previousNamesElement.push({
+      key: "alias3FirstNm",
+      name: "First Name",
+      value: alias3FirstNm
+    });
+    previousNamesElement.push({
+      key: "alias3SecondNm",
+      name: "Middle Name",
+      value: alias3SecondNm
+    });
+    previousNamesElement.push({
+      key: "alias3SurnameNm",
+      name: "Last Name",
+      value: alias3SurnameNm
+    });
+  }
+
+  const previousNamesTable = {
+    header: "PREVIOUS NAMES",
+    tableElements: previousNamesElement
   };
 
   const positionInfoElement = [
@@ -96,23 +178,23 @@ export default function InformationReview({
   const addressElement = [
     {
       name: "Street",
-      value: street
+      value: addressLine1
     },
     {
       name: "City",
-      value: city
+      value: cityNm
     },
     {
       name: "Province",
-      value: province
+      value: provinceNm
     },
     {
       name: "Postal Code",
-      value: postalCode
+      value: postalCodeTxt
     },
     {
       name: "Country",
-      value: country
+      value: countryNm
     },
     {
       name: "Primary Phone Number",
@@ -156,7 +238,147 @@ export default function InformationReview({
 
   const confirm = () => {
     // TODO: Check if volunteer, if yes, success, else, cont.
-    // TODO: everything required to build payment link, and redirect to said link
+    // CALL THAT API
+    const token = sessionStorage.getItem("jwt");
+
+    const createApplicantInfo = {
+      orgTicketNumber,
+      callPurpose: "CRC",
+      legalSurnameNm,
+      legalFirstNm,
+      legalSecondNm,
+      birthDt,
+      genderTxt,
+      birthPlace,
+      alias1FirstNm,
+      alias1SecondNm,
+      alias1SurnameNm,
+      alias2FirstNm,
+      alias2SecondNm,
+      alias2SurnameNm,
+      alias3FirstNm,
+      alias3SecondNm,
+      alias3SurnameNm,
+      phoneNumber,
+      addressLine1,
+      cityNm,
+      provinceNm,
+      countryNm,
+      postalCodeTxt,
+      driversLicNo
+    };
+
+    let partyId;
+    let sessionId;
+    let invoiceId;
+    let serviceFeeAmount;
+    let serviceId;
+
+    Promise.all([
+      axios.post("/ecrc/private/createApplicant", createApplicantInfo, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }),
+      axios.get(
+        `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      ),
+      axios.get(
+        `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      ),
+      axios.get(
+        `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+    ])
+      .then(all => {
+        partyId = all[0].data.partyId;
+        sessionId = all[1].data.sessionId;
+        invoiceId = all[2].data.invoiceId;
+        serviceFeeAmount = all[3].data.serviceFeeAmount;
+
+        // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
+        // eivPassDetailsResults - String returned from equifax, see Shaun
+        const newCRC = {
+          orgTicketNumber,
+          schedule_Type_Cd: defaultScheduleTypeCd,
+          scope_Level_Cd: defaultCrcScopeLevelCd,
+          appl_Party_Id: partyId,
+          org_Appl_To_Pay: "A",
+          applicant_Posn: jobTitle,
+          child_Care_Fac_Nm: "child_Care_Fac_Nm",
+          governing_Body_Nm: "governing_Body_Nm",
+          session_Id: sessionId,
+          invoice_Id: invoiceId,
+          auth_Release_EIV_Vendor_YN: "Y",
+          auth_Conduct_CRC_Check_YN: "Y",
+          auth_Release_To_Org_YN: "Y",
+          appl_Identity_Verified_EIV_YN: "Y",
+          eivPassDetailsResults: "eivPassDetailsResults"
+        };
+
+        return axios.post("/ecrc/private/createNewCRCService", newCRC, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+      })
+      .then(crcResponse => {
+        serviceId = crcResponse.data.serviceId;
+
+        const appInfo = {
+          partyId,
+          sessionId,
+          invoiceId,
+          serviceFeeAmount,
+          serviceId
+        };
+
+        setApplicationInfo(appInfo);
+
+        if (orgApplicantRelationship === "VOLUNTEER") {
+          setToSuccess(true);
+        } else {
+          saveApplicant();
+          saveOrg();
+          saveApplicationInfo(appInfo);
+
+          const createURL = {
+            invoiceNumber: invoiceId,
+            approvedPage: "http://localhost:3000/ecrc/success",
+            declinedPage: "http://localhost:3000/ecrc/success",
+            errorPage: "http://localhost:3000/ecrc/success",
+            totalItemsAmount: serviceFeeAmount,
+            serviceIdRef1: serviceId,
+            partyIdRef2: partyId
+          };
+
+          axios
+            .post("/ecrc/private/createPaymentUrl", createURL, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            })
+            .then(urlResponse => {
+              window.location.href = urlResponse.data.paymentUrl;
+            });
+        }
+      })
+      .catch(() => {});
   };
 
   const cancelButton = {
@@ -174,6 +396,10 @@ export default function InformationReview({
     return <Redirect to="/ecrc/applicationform" />;
   }
 
+  if (toSuccess) {
+    return <Redirect to="/ecrc/success" />;
+  }
+
   return (
     <main>
       <Header header={header} />
@@ -186,8 +412,12 @@ export default function InformationReview({
             not, please do NOT proceed and contact __________
           </p>
           <Table table={personalInfoTable} />
+          {previousNamesElement.length > 0 ? (
+            <Table table={previousNamesTable} />
+          ) : null}
           <Table table={positionInfoTable} />
           <Table table={addressTable} />
+          <div className="declareTitle">DECLARATION</div>
           <section className="declareSection">
             <input
               type="checkbox"
@@ -227,22 +457,57 @@ InformationReview.propTypes = {
       name: PropTypes.string.isRequired
     }),
     applicant: PropTypes.shape({
-      firstName: PropTypes.string.isRequired,
-      middleName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
-      birthDate: PropTypes.string.isRequired,
-      sex: PropTypes.string.isRequired,
-      street: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      province: PropTypes.string.isRequired,
-      postalCode: PropTypes.string.isRequired,
-      country: PropTypes.string.isRequired,
+      legalFirstNm: PropTypes.string.isRequired,
+      legalSecondNm: PropTypes.string.isRequired,
+      legalSurnameNm: PropTypes.string.isRequired,
+      alias1FirstNm: PropTypes.string,
+      alias1SecondNm: PropTypes.string,
+      alias1SurnameNm: PropTypes.string,
+      alias2FirstNm: PropTypes.string,
+      alias2SecondNm: PropTypes.string,
+      alias2SurnameNm: PropTypes.string,
+      alias3FirstNm: PropTypes.string,
+      alias3SecondNm: PropTypes.string,
+      alias3SurnameNm: PropTypes.string,
+      birthDt: PropTypes.string.isRequired,
+      genderTxt: PropTypes.string.isRequired,
+      addressLine1: PropTypes.string.isRequired,
+      cityNm: PropTypes.string.isRequired,
+      provinceNm: PropTypes.string.isRequired,
+      postalCodeTxt: PropTypes.string.isRequired,
+      countryNm: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string.isRequired,
       emailAddress: PropTypes.string.isRequired,
       jobTitle: PropTypes.string.isRequired,
       organizationFacility: PropTypes.string
-    })
-  }).isRequired
+    }),
+    org: PropTypes.shape({
+      orgApplicantRelationship: PropTypes.string.isRequired,
+      orgTicketNumber: PropTypes.string.isRequired,
+      defaultScheduleTypeCd: PropTypes.string.isRequired,
+      defaultCrcScopeLevelCd: PropTypes.string.isRequired
+    }),
+    setApplicationInfo: PropTypes.func.isRequired,
+    saveApplicant: PropTypes.func.isRequired,
+    saveOrg: PropTypes.func.isRequired,
+    saveApplicationInfo: PropTypes.func.isRequired
+  })
+};
+
+InformationReview.defaultProps = {
+  page: {
+    applicant: {
+      alias1FirstNm: "",
+      alias1SecondNm: "",
+      alias1SurnameNm: "",
+      alias2FirstNm: "",
+      alias2SecondNm: "",
+      alias2SurnameNm: "",
+      alias3FirstNm: "",
+      alias3SecondNm: "",
+      alias3SurnameNm: ""
+    }
+  }
 };

@@ -4,13 +4,15 @@ import PropTypes from "prop-types";
 import "./Table.css";
 import TableElement from "../../base/tableElement/TableElement";
 
-export default function Table({ table: { header, tableElements } }) {
+export default function Table({
+  table: { id, header, tableElements, tableStyle }
+}) {
   const tableComponents = tableElements.map(element => {
-    return <TableElement key={element.name} element={element} />;
+    return <TableElement key={element.key || element.name} element={element} />;
   });
 
   return (
-    <table>
+    <table id={id} className={tableStyle}>
       <thead>
         <tr>
           <th colSpan="2">{header}</th>
@@ -23,12 +25,22 @@ export default function Table({ table: { header, tableElements } }) {
 
 Table.propTypes = {
   table: PropTypes.shape({
+    id: PropTypes.string,
     header: PropTypes.string.isRequired,
     tableElements: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        value: PropTypes.string.isRequired
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+          .isRequired
       }).isRequired
-    )
-  }).isRequired
+    ),
+    tableStyle: PropTypes.string
+  })
+};
+
+Table.defaultProps = {
+  table: {
+    id: "",
+    tableStyle: ""
+  }
 };

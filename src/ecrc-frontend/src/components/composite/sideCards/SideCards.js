@@ -31,10 +31,12 @@ export default function SideCards({ type, sideCardLinks }) {
   const bcservice = {
     heading: (
       <div className="row">
-        <div className="round-icon-wrapper">
+        <div key="bcServiceIcon" className="round-icon-wrapper">
           <FaIdCard className="side-card-icon" />
         </div>
-        <div className="sideCardTitle">Using the BC Services Card</div>
+        <div key="bcServiceHeader" className="sideCardTitle">
+          Using the BC Services Card
+        </div>
       </div>
     ),
     content: [
@@ -69,10 +71,10 @@ export default function SideCards({ type, sideCardLinks }) {
   const contact = {
     heading: (
       <div className="row">
-        <div className="round-icon-wrapper">
+        <div key="contactIcon" className="round-icon-wrapper">
           <FaEnvelope className="side-card-icon" />
         </div>
-        <div className="sideCardTitle">
+        <div key="contactHeader" className="sideCardTitle">
           Contact the Criminal Records Review Program
         </div>
       </div>
@@ -140,10 +142,10 @@ export default function SideCards({ type, sideCardLinks }) {
   const withoutBCServiceCard = {
     heading: (
       <div className="row">
-        <div className="round-icon-wrapper">
+        <div key="withoutBCServiceCardIcon" className="round-icon-wrapper">
           <FaQuestion className="side-card-icon" />
         </div>
-        <div className="sideCardTitle">
+        <div key="withoutBCServiceCardHeader" className="sideCardTitle">
           Applicants Without a BC Services Card with a photo
         </div>
       </div>

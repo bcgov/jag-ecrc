@@ -89,7 +89,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="firstName"
+                  htmlFor="legalFirstNm"
                 >
                   First Name
                 </label>
@@ -102,7 +102,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Robert"
-                id="firstName"
+                id="legalFirstNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -119,7 +119,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="middleName"
+                  htmlFor="legalSecondNm"
                 >
                   Middle Name
                 </label>
@@ -132,7 +132,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Norman"
-                id="middleName"
+                id="legalSecondNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -149,7 +149,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="lastName"
+                  htmlFor="legalSurnameNm"
                 >
                   Last Name
                 </label>
@@ -162,7 +162,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Ross"
-                id="lastName"
+                id="legalSurnameNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -199,7 +199,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="previousFirstNameOne"
+                  htmlFor="alias1FirstNm"
                 >
                   First Name
                 </label>
@@ -211,7 +211,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
-                id="previousFirstNameOne"
+                id="alias1FirstNm"
                 onChange={[Function]}
                 type="text"
               />
@@ -227,7 +227,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="previousMiddleNameOne"
+                  htmlFor="alias1SeocndNm"
                 >
                   Middle Name
                 </label>
@@ -239,7 +239,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
-                id="previousMiddleNameOne"
+                id="alias1SeocndNm"
                 onChange={[Function]}
                 type="text"
               />
@@ -255,7 +255,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="previousLastNameOne"
+                  htmlFor="alias1SurnameNm"
                 >
                   Last Name
                 </label>
@@ -267,7 +267,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
-                id="previousLastNameOne"
+                id="alias1SurnameNm"
                 onChange={[Function]}
                 type="text"
               />
@@ -337,7 +337,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="birthDate"
+                  htmlFor="birthDt"
                 >
                   Date of Birth
                 </label>
@@ -350,7 +350,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="1942-10-29"
-                id="birthDate"
+                id="birthDt"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -367,7 +367,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="sex"
+                  htmlFor="genderTxt"
                 >
                   Sex
                 </label>
@@ -380,7 +380,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Male"
-                id="sex"
+                id="genderTxt"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -585,7 +585,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <div
           className="simpleForm_title"
         >
-          Address
+          Current Street Address
         </div>
         <ul>
           <li>
@@ -595,7 +595,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="street"
+                  htmlFor="addressLine1"
                 >
                   Street
                 </label>
@@ -608,7 +608,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="123 Somewhere"
-                id="street"
+                id="addressLine1"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -625,7 +625,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="city"
+                  htmlFor="cityNm"
                 >
                   City
                 </label>
@@ -638,7 +638,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Here"
-                id="city"
+                id="cityNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -655,7 +655,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="province"
+                  htmlFor="provinceNm"
                 >
                   Province
                 </label>
@@ -668,7 +668,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="British Columbia"
-                id="province"
+                id="provinceNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -685,7 +685,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="postalCode"
+                  htmlFor="postalCodeTxt"
                 >
                   Postal Code
                 </label>
@@ -698,7 +698,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="V9V 9V9"
-                id="postalCode"
+                id="postalCodeTxt"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -715,7 +715,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="country"
+                  htmlFor="countryNm"
                 >
                   Country
                 </label>
@@ -728,7 +728,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Canada"
-                id="country"
+                id="countryNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -740,6 +740,207 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
         </ul>
       </form>
+      <p>
+        Is your current street address the same as your mailing address? 
+        <input
+          onClick={[Function]}
+          type="checkbox"
+        />
+      </p>
+      <form
+        className="simpleForm"
+      >
+        <div
+          className="simpleForm_title"
+        >
+          Current Mailing Address
+        </div>
+        <ul>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="mailingAddressLine1"
+                >
+                  Street
+                </label>
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                defaultValue=""
+                id="mailingAddressLine1"
+                onChange={[Function]}
+                type="text"
+              />
+              <span
+                className="error"
+              >
+                
+              </span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="mailingCityNm"
+                >
+                  City
+                </label>
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                defaultValue=""
+                id="mailingCityNm"
+                onChange={[Function]}
+                type="text"
+              />
+              <span
+                className="error"
+              >
+                
+              </span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="mailingProvinceNm"
+                >
+                  Province
+                </label>
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                defaultValue=""
+                id="mailingProvinceNm"
+                onChange={[Function]}
+                type="text"
+              />
+              <span
+                className="error"
+              >
+                
+              </span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="mailingPostalCodeTxt"
+                >
+                  Postal Code
+                </label>
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                defaultValue=""
+                id="mailingPostalCodeTxt"
+                onChange={[Function]}
+                type="text"
+              />
+              <span
+                className="error"
+              >
+                
+              </span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div
+                className="label"
+              >
+                <label
+                  className="textinput_label"
+                  htmlFor="mailingCountryNm"
+                >
+                  Country
+                </label>
+                <span
+                  className="mandatory"
+                  id="asterisk"
+                >
+                  *
+                </span>
+                 
+                <span
+                  className="note"
+                />
+              </div>
+              <input
+                className="textinput_editable_white"
+                defaultValue=""
+                id="mailingCountryNm"
+                onChange={[Function]}
+                type="text"
+              />
+              <span
+                className="error"
+              >
+                
+              </span>
+            </div>
+          </li>
+        </ul>
+      </form>
+      <section>
+        Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact Service BC, ICBC, or AddressChangeBC
+      </section>
       <div
         className="buttons"
       >
@@ -796,7 +997,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     If you find an error in your personal information, please contact 
                     <a
                       className="link"
@@ -819,7 +1020,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                       AddressChangeBC
                     </a>
                      to correct it.
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -871,7 +1072,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       style={
                         Object {
@@ -887,7 +1088,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                       </a>
                        or by telephone at 1- 855-587-0185 (option 2).
                     </div>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>

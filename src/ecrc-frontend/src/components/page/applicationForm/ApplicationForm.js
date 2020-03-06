@@ -14,16 +14,16 @@ export default function ApplicationForm({
   page: {
     header,
     applicant: {
-      firstName,
-      middleName,
-      lastName,
-      birthDate,
-      sex,
-      street,
-      city,
-      province,
-      postalCode,
-      country
+      legalFirstNm,
+      legalSecondNm,
+      legalSurnameNm,
+      birthDt,
+      genderTxt,
+      addressLine1,
+      cityNm,
+      provinceNm,
+      postalCodeTxt,
+      countryNm
     },
     setApplicant,
     org: { defaultScheduleTypeCd }
@@ -35,6 +35,18 @@ export default function ApplicationForm({
     previousTwo: false,
     previousThree: false
   });
+
+  const [alias1FirstNm, setAlias1FirstNm] = useState("");
+  const [alias1SecondNm, setAlias1SecondNm] = useState("");
+  const [alias1SurnameNm, setAlias1SurnameNm] = useState("");
+
+  const [alias2FirstNm, setAlias2FirstNm] = useState("");
+  const [alias2SecondNm, setAlias2SecondNm] = useState("");
+  const [alias2SurnameNm, setAlias2SurnameNm] = useState("");
+
+  const [alias3FirstNm, setAlias3FirstNm] = useState("");
+  const [alias3SecondNm, setAlias3SecondNm] = useState("");
+  const [alias3SurnameNm, setAlias3SurnameNm] = useState("");
 
   const [birthPlace, setBirthPlace] = useState("");
   const [birthPlaceError, setBirthPlaceError] = useState("");
@@ -50,73 +62,111 @@ export default function ApplicationForm({
     ""
   );
 
+  const [mailingAddressLine1, setMailingAddressLine1] = useState("");
+  const [mailingAddressLine1Error, setMailingAddressLine1Error] = useState("");
+  const [mailingCity, setMailingCity] = useState("");
+  const [mailingCityError, setMailingCityError] = useState("");
+  const [mailingProvince, setMailingProvince] = useState("");
+  const [mailingProvinceError, setMailingProvinceError] = useState("");
+  const [mailingPostalCode, setMailingPostalCode] = useState("");
+  const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
+  const [mailingCountry, setMailingCountry] = useState("");
+  const [mailingCountryError, setMailingCountryError] = useState("");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const currentName = {
-    firstName: {
+    legalFirstNm: {
       label: "First Name",
-      id: "firstName",
-      value: firstName,
+      id: "legalFirstNm",
+      value: legalFirstNm,
       textInputStyle: "textinput_non_editable_gray"
     },
-    middleName: {
+    legalSecondNm: {
       label: "Middle Name",
-      id: "middleName",
-      value: middleName,
+      id: "legalSecondNm",
+      value: legalSecondNm,
       textInputStyle: "textinput_non_editable_gray"
     },
-    lastName: {
+    legalSurnameNm: {
       label: "Last Name",
-      id: "lastName",
-      value: lastName,
+      id: "legalSurnameNm",
+      value: legalSurnameNm,
       textInputStyle: "textinput_non_editable_gray"
     }
   };
 
   const previousNameOne = {
-    firstName: {
+    legalFirstNm: {
       label: "First Name",
-      id: "previousFirstNameOne"
+      id: "alias1FirstNm",
+      onChange: event => {
+        setAlias1FirstNm(event);
+      }
     },
-    middleName: {
+    legalSecondNm: {
       label: "Middle Name",
-      id: "previousMiddleNameOne"
+      id: "alias1SeocndNm",
+      onChange: event => {
+        setAlias1SecondNm(event);
+      }
     },
-    lastName: {
+    legalSurnameNm: {
       label: "Last Name",
-      id: "previousLastNameOne"
+      id: "alias1SurnameNm",
+      onChange: event => {
+        setAlias1SurnameNm(event);
+      }
     }
   };
 
   const previousNameTwo = {
-    firstName: {
+    legalFirstNm: {
       label: "First Name",
-      id: "previousFirstNameTwo"
+      id: "alias2FirstNm",
+      onChange: event => {
+        setAlias2FirstNm(event);
+      }
     },
-    middleName: {
+    legalSecondNm: {
       label: "Middle Name",
-      id: "previousMiddleNameTwo"
+      id: "alias2SecondNm",
+      onChange: event => {
+        setAlias2SecondNm(event);
+      }
     },
-    lastName: {
+    legalSurnameNm: {
       label: "Last Name",
-      id: "previousLastNameTwo"
+      id: "alias2SurnameNm",
+      onChange: event => {
+        setAlias2SurnameNm(event);
+      }
     }
   };
 
   const previousNameThree = {
-    firstName: {
+    legalFirstNm: {
       label: "First Name",
-      id: "previousFirstNameOneThree"
+      id: "alias3FirstNm",
+      onChange: event => {
+        setAlias3FirstNm(event);
+      }
     },
-    middleName: {
+    legalSecondNm: {
       label: "Middle Name",
-      id: "previousMiddleNameThree"
+      id: "alias3SecondNm",
+      onChange: event => {
+        setAlias3SecondNm(event);
+      }
     },
-    lastName: {
+    legalSurnameNm: {
       label: "Last Name",
-      id: "previousLastNameThree"
+      id: "alias3SurnameNm",
+      onChange: event => {
+        setAlias3SurnameNm(event);
+      }
     }
   };
 
@@ -135,14 +185,14 @@ export default function ApplicationForm({
       },
       {
         label: "Date of Birth",
-        id: "birthDate",
-        value: birthDate,
+        id: "birthDt",
+        value: birthDt,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "Sex",
-        id: "sex",
-        value: sex,
+        id: "genderTxt",
+        value: genderTxt,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
@@ -210,37 +260,99 @@ export default function ApplicationForm({
   }
 
   const address = {
-    title: "Address",
+    title: "Current Street Address",
     textInputs: [
       {
         label: "Street",
-        id: "street",
-        value: street,
+        id: "addressLine1",
+        value: addressLine1,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "City",
-        id: "city",
-        value: city,
+        id: "cityNm",
+        value: cityNm,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "Province",
-        id: "province",
-        value: province,
+        id: "provinceNm",
+        value: provinceNm,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "Postal Code",
-        id: "postalCode",
-        value: postalCode,
+        id: "postalCodeTxt",
+        value: postalCodeTxt,
         textInputStyle: "textinput_non_editable_gray"
       },
       {
         label: "Country",
-        id: "country",
-        value: country,
+        id: "countryNm",
+        value: countryNm,
         textInputStyle: "textinput_non_editable_gray"
+      }
+    ],
+    buttons: []
+  };
+
+  const mailing = {
+    title: "Current Mailing Address",
+    textInputs: [
+      {
+        label: "Street",
+        id: "mailingAddressLine1",
+        value: mailingAddressLine1,
+        isRequired: true,
+        errorMsg: mailingAddressLine1Error,
+        onChange: event => {
+          setMailingAddressLine1(event);
+          setMailingAddressLine1Error("");
+        }
+      },
+      {
+        label: "City",
+        id: "mailingCityNm",
+        value: mailingCity,
+        isRequired: true,
+        errorMsg: mailingCityError,
+        onChange: event => {
+          setMailingCity(event);
+          setMailingCityError("");
+        }
+      },
+      {
+        label: "Province",
+        id: "mailingProvinceNm",
+        value: mailingProvince,
+        isRequired: true,
+        errorMsg: mailingProvinceError,
+        onChange: event => {
+          setMailingProvince(event);
+          setMailingProvinceError("");
+        }
+      },
+      {
+        label: "Postal Code",
+        id: "mailingPostalCodeTxt",
+        value: mailingPostalCode,
+        isRequired: true,
+        errorMsg: mailingPostalCodeError,
+        onChange: event => {
+          setMailingPostalCode(event);
+          setMailingPostalCodeError("");
+        }
+      },
+      {
+        label: "Country",
+        id: "mailingCountryNm",
+        value: mailingCountry,
+        isRequired: true,
+        errorMsg: mailingCountryError,
+        onChange: event => {
+          setMailingCountry(event);
+          setMailingCountryError("");
+        }
       }
     ],
     buttons: []
@@ -281,6 +393,26 @@ export default function ApplicationForm({
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
+    if (!mailingAddressLine1) {
+      setMailingAddressLine1Error("Please enter your PO box or street address");
+    }
+
+    if (!mailingCity) {
+      setMailingCityError("Please enter your city");
+    }
+
+    if (!mailingProvince) {
+      setMailingProvinceError("Please enter your province");
+    }
+
+    if (!mailingPostalCode) {
+      setMailingPostalCodeError("Please enter your postal code");
+    }
+
+    if (!mailingCountry) {
+      setMailingCountryError("Please enter your country");
+    }
+
     if (
       birthPlace !== "" &&
       phoneNumber !== "" &&
@@ -288,17 +420,28 @@ export default function ApplicationForm({
       jobTitle !== "" &&
       !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "")
     ) {
+      // TODO: Option to save address fields based on if mailing address added...
+
       setApplicant({
-        firstName,
-        middleName,
-        lastName,
-        birthDate,
-        sex,
-        street,
-        city,
-        province,
-        postalCode,
-        country,
+        legalFirstNm,
+        legalSecondNm,
+        legalSurnameNm,
+        alias1FirstNm,
+        alias1SecondNm,
+        alias1SurnameNm,
+        alias2FirstNm,
+        alias2SecondNm,
+        alias2SurnameNm,
+        alias3FirstNm,
+        alias3SecondNm,
+        alias3SurnameNm,
+        birthDt,
+        genderTxt,
+        addressLine1: mailingAddressLine1,
+        cityNm: mailingCity,
+        provinceNm: mailingProvince,
+        postalCodeTxt: mailingPostalCode,
+        countryNm: mailingCountry,
         birthPlace,
         driversLicNo,
         phoneNumber,
@@ -323,6 +466,14 @@ export default function ApplicationForm({
     } else if (!previousNames.previousThree) {
       setPreviousNames({ ...previousNames, previousThree: true });
     }
+  };
+
+  const mailingAddress = () => {
+    setMailingAddressLine1(addressLine1);
+    setMailingCity(cityNm);
+    setMailingProvince(provinceNm);
+    setMailingPostalCode(postalCodeTxt);
+    setMailingCountry(countryNm);
   };
 
   if (toHome) {
@@ -369,6 +520,22 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={applicantInformation} />
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
+          <p>
+            Is your current street address the same as your mailing
+            address?&nbsp;
+            <input
+              type="checkbox"
+              onClick={() => {
+                mailingAddress();
+              }}
+            />
+          </p>
+          <SimpleForm simpleForm={mailing} />
+          <section>
+            Entering your mailing address in this application will not update
+            your BC Services Card Address. To update your BC Services Card
+            information you must contact Service BC, ICBC, or AddressChangeBC
+          </section>
           <div className="buttons">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />
@@ -390,16 +557,16 @@ ApplicationForm.propTypes = {
       name: PropTypes.string.isRequired
     }),
     applicant: PropTypes.shape({
-      firstName: PropTypes.string.isRequired,
-      middleName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
-      birthDate: PropTypes.string.isRequired,
-      sex: PropTypes.string.isRequired,
-      street: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      province: PropTypes.string.isRequired,
-      postalCode: PropTypes.string.isRequired,
-      country: PropTypes.string.isRequired
+      legalFirstNm: PropTypes.string.isRequired,
+      legalSecondNm: PropTypes.string.isRequired,
+      legalSurnameNm: PropTypes.string.isRequired,
+      birthDt: PropTypes.string.isRequired,
+      genderTxt: PropTypes.string.isRequired,
+      addressLine1: PropTypes.string.isRequired,
+      cityNm: PropTypes.string.isRequired,
+      provinceNm: PropTypes.string.isRequired,
+      postalCodeTxt: PropTypes.string.isRequired,
+      countryNm: PropTypes.string.isRequired
     }),
     setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({

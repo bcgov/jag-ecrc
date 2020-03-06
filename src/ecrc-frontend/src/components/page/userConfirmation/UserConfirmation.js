@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -6,15 +7,80 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import "./UserConfirmation.css";
-import { generateJWTToken } from "../../../modules/AuthenticationHelper";
+import {
+  generateJWTToken,
+  accessJWTToken
+} from "../../../modules/AuthenticationHelper";
 
-export default function UserConfirmation({ header }) {
+export default function UserConfirmation({ page: { header, setApplicant } }) {
   const [toConsent, setToConsent] = useState(false);
-  const [code, setCode] = useState("");
+  const [user, setUser] = useState({});
+  const [fullName, setFullName] = useState("");
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    setCode(urlParams.get("code"));
+    const code = urlParams.get("code");
+
+    const payload = { authorities: ["ROLE"] };
+    const token = generateJWTToken(payload);
+
+    axios
+      .get(`/ecrc/protected/login?code=${code}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(res => {
+        sessionStorage.setItem("jwt", res.data);
+
+        const {
+          userInfo: {
+            birthdate,
+            address: { street_address, country, locality, region, postal_code },
+            gender,
+            given_name,
+            given_names,
+            family_name,
+            identity_assurance_level
+          }
+        } = accessJWTToken(res.data);
+
+        // TODO Check identity assurance level
+        if (identity_assurance_level < 3) {
+          // DO SOMETHING
+        }
+
+        // Convert gender text
+        const genderTxt = gender === "female" ? "F" : "M";
+
+        // Convert country name
+        // TODO ensure we only get CA back from BCSC to hardcode
+        const countryNm = country === "CA" ? "CANADA" : "Fail Country";
+
+        // Convert date format
+        const birthDt = birthdate.split("-").join("/");
+
+        // Convert province name
+        // TODO: Implement properly for all provinces
+        const provinceNm =
+          region === "BC" ? "BRITISH COLUMBIA" : "Fail Province";
+
+        setUser({
+          legalFirstNm: given_name,
+          legalSecondNm: given_names,
+          legalSurnameNm: family_name,
+          birthDt,
+          genderTxt,
+          addressLine1: street_address,
+          cityNm: locality,
+          provinceNm,
+          postalCodeTxt: postal_code,
+          countryNm
+        });
+
+        setFullName(`${given_name} ${family_name}`);
+      })
+      .catch(() => {});
     window.scrollTo(0, 0);
   }, []);
 
@@ -33,24 +99,12 @@ export default function UserConfirmation({ header }) {
   };
 
   function onYesClick() {
-    const payload = { authorities: ["ROLE"] };
-    const token = generateJWTToken(payload);
-
-    axios
-      .get(`/ecrc/protected/login?code=${code}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      .then(res => {
-        sessionStorage.setItem("jwt", res.data);
-        setToConsent(true);
-      })
-      .catch(() => {});
+    setApplicant(user);
+    setToConsent(true);
   }
 
   if (toConsent) {
-    return <Redirect to="/ecrc/consent" />;
+    return <Redirect to="/ecrc/userconfirmation" />;
   }
 
   return (
@@ -63,7 +117,7 @@ export default function UserConfirmation({ header }) {
             provided.
           </strong>
           <p />
-          <p>Temp name</p>
+          <p>{fullName}</p>
           <p>Is this correct?</p>
           <div className="row">
             <div className="col-md-12">
@@ -80,7 +134,10 @@ export default function UserConfirmation({ header }) {
 }
 
 UserConfirmation.propTypes = {
-  header: PropTypes.shape({
-    name: PropTypes.string.isRequired
+  page: PropTypes.shape({
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }).isRequired,
+    setApplicant: PropTypes.func.isRequired
   }).isRequired
 };

@@ -250,7 +250,7 @@ Canada
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       className="side-card-text"
                     >
@@ -283,7 +283,7 @@ Canada
                         </div>
                       </a>
                     </p>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -324,7 +324,7 @@ Canada
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <li
                       className="menuItem"
                     >
@@ -352,7 +352,7 @@ Canada
                         Results and Reconsideration
                       </a>
                     </li>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -424,7 +424,7 @@ Canada
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       className="side-card-text"
                     >
@@ -521,7 +521,7 @@ Canada
                         </a>
                       </div>
                     </div>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
