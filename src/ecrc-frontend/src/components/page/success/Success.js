@@ -209,7 +209,7 @@ export default function Success({
           <Button button={printButton} onClick={printAppInfo} />
           <Button button={pdfButton} onClick={downloadPDF} />
         </div>
-        <div className="sidecard"></div>
+        <div className="sidecard" />
       </div>
       <Footer />
     </main>
