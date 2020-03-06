@@ -36,13 +36,15 @@ p > button {
   background-color: #7596c8;
   text-align: center;
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .sideCardTitle {
   font-size: 20px;
   font-weight: Semi-bold;
   display: inline-block;
+  width: 70%;
 }
 
 .side-card-text {

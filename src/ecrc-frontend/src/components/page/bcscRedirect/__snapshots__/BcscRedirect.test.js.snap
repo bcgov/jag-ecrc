@@ -247,11 +247,11 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                         />
                       </svg>
                     </div>
-                    <span
-                      className="sideCardTitle col-lg-9"
+                    <div
+                      className="sideCardTitle"
                     >
                       Using the BC Services Card
-                    </span>
+                    </div>
                   </div>
                 </h2>
                 <div
@@ -352,11 +352,11 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                         />
                       </svg>
                     </div>
-                    <span
-                      className="sideCardTitle col-lg-9"
+                    <div
+                      className="sideCardTitle"
                     >
                       Applicants Without a BC Services Card with a photo
-                    </span>
+                    </div>
                   </div>
                 </h2>
                 <div
