@@ -9,8 +9,11 @@ describe("BcscRedirect Page Component", () => {
       name: "Criminal Record Check"
     };
 
+    const saveOrg = () => {};
+
     const page = {
-      header
+      header,
+      saveOrg
     };
 
     const bcscRedirect = create(<BcscRedirect page={page} />);

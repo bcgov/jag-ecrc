@@ -257,7 +257,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-                  <p>
+                  <span>
                     <div
                       className="side-card-text"
                     >
@@ -290,7 +290,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                         </div>
                       </a>
                     </p>
-                  </p>
+                  </span>
                 </div>
               </section>
             </div>
@@ -362,19 +362,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                 <div
                   className="submit-content"
                 >
-<<<<<<< HEAD
                   <span>
-                    Applicants who haven’t lived in B.C.for at least six months or who live outside the province must 
-                    <a
-                      className="link"
-                      href="mailto: temp@temp.com"
-                    >
-                      email
-                    </a>
-                     the Liquor and Cannabis Regulation Branch for a Worker Registration Application Form.
-                  </span>
-=======
-                  <p>
                     <div
                       className="side-card-text"
                     >
@@ -401,8 +389,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                         </div>
                       </a>
                     </p>
-                  </p>
->>>>>>> master
+                  </span>
                 </div>
               </section>
             </div>

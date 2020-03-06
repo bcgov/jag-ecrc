@@ -204,7 +204,7 @@ exports[`SideCards Component BcServices sidecard 1`] = `
           <div
             className="submit-content"
           >
-            <p>
+            <span>
               <div
                 className="side-card-text"
               >
@@ -237,7 +237,7 @@ exports[`SideCards Component BcServices sidecard 1`] = `
                   </div>
                 </a>
               </p>
-            </p>
+            </span>
           </div>
         </section>
       </div>
