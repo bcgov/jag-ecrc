@@ -184,15 +184,10 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       >
         Download
       </button>
-      <div>
-        Download Email?
-      </div>
     </div>
     <div
       className="sidecard"
-    >
-      Sidecards?
-    </div>
+    />
   </div>
   <footer
     className="footer"
@@ -443,15 +438,10 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       >
         Download
       </button>
-      <div>
-        Download Email?
-      </div>
     </div>
     <div
       className="sidecard"
-    >
-      Sidecards?
-    </div>
+    />
   </div>
   <footer
     className="footer"
@@ -678,15 +668,10 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       >
         Download
       </button>
-      <div>
-        Download Email?
-      </div>
     </div>
     <div
       className="sidecard"
-    >
-      Sidecards?
-    </div>
+    />
   </div>
   <footer
     className="footer"
