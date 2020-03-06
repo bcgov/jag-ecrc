@@ -7,14 +7,11 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
-import Applicant from "../../../bcsc";
 
 import "../page.css";
 import "./BcscRedirect.css";
 
-export default function BcscRedirect({
-  page: { header, setApplicant, saveApplicant, saveOrg }
-}) {
+export default function BcscRedirect({ page: { header, saveOrg } }) {
   const [toHostHome, setToHostHome] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,11 +39,8 @@ export default function BcscRedirect({
   };
 
   const onLoginClick = () => {
-    // window.open("https://support.wwf.org.uk", "_blank");
-    const applicant = Applicant();
-    setApplicant(applicant);
     saveOrg();
-    saveApplicant(applicant);
+    // REDIRECT TO BCSC
   };
 
   const onAccountClick = () => {
@@ -146,7 +140,6 @@ BcscRedirect.propTypes = {
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }),
-    saveApplicant: PropTypes.func.isRequired,
     saveOrg: PropTypes.func.isRequired
   }).isRequired
 };

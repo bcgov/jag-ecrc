@@ -68,9 +68,10 @@ export default function Success({
       bcepErrorMsg: paymentInfo.messageText
     };
 
-    axios.post("/ecrc/logPaymentFailure", logFailure).then(res => {
-      // console.log(res);
-    });
+    axios
+      .post("/ecrc/logPaymentFailure", logFailure)
+      .then(() => {})
+      .catch(() => {});
   }
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
@@ -93,12 +94,8 @@ export default function Success({
 
     axios
       .post("/ecrc/private/updateServiceFinancialTxn", logSuccess)
-      .then(res => {
-        // console.log(res);
-      })
-      .catch(error => {
-        // console.log(error);
-      });
+      .then(() => {})
+      .catch(() => {});
   }
 
   const printButton = {
