@@ -44,17 +44,26 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
           }
         } = accessJWTToken(res.data);
 
+        const genderTxt = gender === "female" ? "F" : "M";
+
+        const countryNm = country === "CA" ? "CANADA" : "Fail Country";
+
+        const birthDt = birthdate.split("-").join("/");
+
+        const provinceNm =
+          region === "BC" ? "BRITISH COLUMBIA" : "Fail Province";
+
         setUser({
           legalFirstNm: given_name,
           legalSecondNm: given_names,
           legalSurnameNm: family_name,
-          birthDt: birthdate,
-          genderTxt: gender,
+          birthDt,
+          genderTxt,
           addressLine1: street_address,
           cityNm: locality,
-          provinceNm: region,
+          provinceNm,
           postalCodeTxt: postal_code,
-          countryNm: country
+          countryNm
         });
 
         setFullName(`${given_name} ${family_name}`);

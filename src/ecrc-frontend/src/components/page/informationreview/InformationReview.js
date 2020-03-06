@@ -59,9 +59,6 @@ export default function InformationReview({
     window.scrollTo(0, 0);
   }, []);
 
-  const token =
-    "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySW5mbyI6eyJzdWIiOiIzTUQ0RDVBTDNTM1VLS1hSU05MUjVUR1FWWldXVjZBRSIsImJpcnRoZGF0ZSI6IjIwMDAtMDctMTkiLCJhZGRyZXNzIjp7InN0cmVldF9hZGRyZXNzIjoiOTE4LTE2NTggTElUVExFIEdST1ZFIiwiY291bnRyeSI6IkNBIiwibG9jYWxpdHkiOiJSRVZFTFNUT0tFIiwicmVnaW9uIjoiQkMiLCJwb3N0YWxfY29kZSI6IlYwRSA4VDgifSwiZ2VuZGVyIjoiZmVtYWxlIiwiaXNzIjoiaHR0cHM6Ly9pZHRlc3QuZ292LmJjLmNhL29hdXRoMi8iLCJnaXZlbl9uYW1lIjoiQ1JDIiwiZ2l2ZW5fbmFtZXMiOiJDUkMgRWxzeSIsImRpc3BsYXlfbmFtZSI6IkNSQyBUSFJFRSIsImF1ZCI6InVybi5jYS5iYy5nb3YuanVzdGljZS5lY3JjLmRldiIsInRyYW5zYWN0aW9uX2lkZW50aWZpZXIiOiJmNzA1NzUyZC0xNzkxLTRlYmYtODljNC04NjM3ZjQ3ODVjZDkiLCJpZGVudGl0eV9hc3N1cmFuY2VfbGV2ZWwiOjMsImZhbWlseV9uYW1lIjoiVEhSRUUiLCJpYXQiOjE1ODM0NDQwOTAsImp0aSI6IjFmYmFmNDQ3LTI4OGUtNDMxNy04OGFjLTM4ZWM3MDQyMzA1OSJ9LCJwZXIiOiJOanZIVk5QTVpPYjd3ZlBGb3NPd1ZqL0UyTUVqbHpCUDRGUnZ0OTJQVHY5bERBaUErbFlYeVlHUnl3UUEzb2ora1BOSjcrN3BWdm1lZG52eURKdUlwYTZ2T1BOVHpGTkJlSENsQ2Vrb3RJWHFlaU84ZVJVamUycHRuZ24xbDNQRWFCWXFiMHdpNTE3SGt2RnVEelpsRUJnRXBxNEVUQlA3RkVUcE9kMnpqY0pReUtuaGJuT2RndzVUc092MWk2OFQzUDhYUTRmTjVuOUYzN3cwbXk5TDhPNHd3dzJVdzJkVXNDSEhaU2tUZmJSa0M2UmtDOFk0VEY1anBIMUttejNyZlpuZUZyZ1FuM2lrZjV6Ukk1MUhBMFowam4yM3VNVzZ6WWR0a3ZrRGc0WlJYZUgxWW5yY2tsZGU3VHhxdmFiemhQUU0rYTJFTCtJdWpwdE9IZkl1aXJrcmdjTjVZcldDWmlrTTdGSTY2L0poUXJSZ3A0SURSa2c3TUpHY1prdGUwWmdSb0dDTjFoeEZCSTFPQkEzUXhPRWlPdXhNZTJtOUl0RC9FVzVWZXJHSTFJOE9NUWFuQzlaeHFwUDhtakRGZng1NzVvbHJiUnlWYTNhVGhxZnp6NUNMZkNoaldwRFB6N0NVYjBlVGt3VXh2Tk56Smk4djBVMVFROHlDcTR6cG93Y0JlNHRGMkVOM2U4QVJEVTFudEZCQTcwbDZnNms5RWRoOUF5OGY1Z3VCTlZZemNEWWhBbmtvTi9wTDdEcFZzNzkvcWNLdzQydk5mRzlVQWJJZ0l0YlRTYi9sZi92cHRCSDVuN2tGVDczNmVEbnZyYTV0dDBXZVNrZE04QU1SbHBiZEhxSGg4emdwV3ZQRE1Lai91QlMwRi9Ha3RtTWxjZEZBMS90b0FXdkp0OE41dldpcnY4VXhyMFFQckQ3c29KQStvcGN1aENhRGZSeTZ3U0lBanQ4UnpFU0w4dUJCdS9rczczSlNIQVFCb1VoL1RMd3d3NDlRcVVENFZSYThIUnZNN2diM2RCU0FlS0Uwd2Zud1gzQ3lNV2t1R1JNa3JRQWQyVVl6R3NXeGZ3MkpvQ21oUHNOeUU4eXBBOWNjL2NGYmtGY0ZBSG12by9XUWsrRk40cTdEdWhGSmlHYlQxZG5vUlNIeEttQUZOR1ZTVzNOcmpoRGliL1p1K0hXV1EvcEI4ZDRhZXU3aldueXZHU2htR1lvTDlEc1pTbHRiL1A1S2xRekV5WGllUTluRzArZWlOREtsbXhqWWtrMkZUMW0zWWZlMjNaN2VFaHFNRjRpaDk2dkdiTUtHQURhZUQrUEp3dUlHT0VjbXFKVHR5TjBzSXFML0ZsbnBzNUJjeFE1WDBQZllmNWVUWUtHanZOdzR4RkVaR01oRTJwTmh5V1JuRi9PbmpibURVT2pIOG11WXAvMGpuRVBTSGIxWG9Ra3Btc21XSVBQY3hvbkJHUlFHZ2lsVVZGRlZPakIreGtieklIWHdvbjRVUXI4L1ZTMENQVDZzaXVCSEhwWGIxZ0wvbElxTXBSbmFNUUJ2N0t2N3hpU0lxK1VWVzFDWFlmZVgwektPUmVGQ2w3Y09qYktRN0MzaVJ0N0VlbmthQ0lkelc0UDFQRWJkM2pjUExPeHI5emxScFppRytrM3M4MEJKbERtdXRDaVpxUjhUZWxYYjd2eDJUT2hUMjhWRFJ0bkIwU2lvV0xORFIxeTNlL0JZUWhiT1BtZ3FUVTQ5TnVWTHEvUnoxSGd3SEIzR0hxN29CZ3ZLN1JtcmgzR0lpekpMY1hBYmVRMmZrSlRnaVE0MVJkSHZkYStOOUxvZFV6Q3F4dTJQSTVjZDRSZ1dWaTVOR2JKcXdNMWJFSlVTd2pMMEN0R3I1RFgrTE5WVkpDZ1Z5dHFJa0Z1NzhSbVZYMzJxVzZwdSt2WmdXY0FETTliMXJNdGNaUmZvQ3BLeUFuRHNPMHdOZGdFL05pbVhseXpnZ1lVdWhzTDlvZzhycnlmT2JZZ3FpbXRGWDJoUFBPU2R2U3FXQVZyNjRsQlM1UHVWanU4eVY1WWxXWkYzaHpOZ3p0NE0wWHZtbk0vRUk4emNWaFFGQ0E1dk9td3VueDJrWlkvU1lqMmJuUlBCbld3aFVRSG1hRlFhR29Nb1d4SnRPYnl2S28yek5wOExlcGtFaGNoazZBMzZoeWlZYjNjeldCVFNVZzRRcUVienVsQitMY3RjQzJ2VTkzQkt4MFVpaUlmVTd6ZzlZWk9PcXdCZjE4QUdoVnNSUGF4NHV1L1A5UVFmd3o3dE5sUGxFOG95TnRnQ1JlTTBlV3ZvR2RGMlBpNnV1ejROV1pzTldMdS9JU25VWVJqYzdJVi9mR1JOZjFFY0Q4QmZiTTB2c0J4WldTaXo4UTd0QWx2cEpzV2dLU0JlcVVoVGhDRFVlcVd4WitRTzBBaThMTUtjWSsrKzhXdHVlaFFjdUdSMU8yeGpGb0FsamlOZ2ZiY2ZBaXlJOEE9PSIsImF1dGhvcml0aWVzIjpbIkF1dGhvcml6ZWQiXSwiZXhwIjo5OTk5OTk5OTk5fQ.yyjv-2WSsryXvC1UkKEfeNr88bPs66TjAakbu56TWVc";
-
   const personalInfoElement = [
     { name: "First Name", value: legalFirstNm },
     {
@@ -242,6 +239,8 @@ export default function InformationReview({
   const confirm = () => {
     // TODO: Check if volunteer, if yes, success, else, cont.
     // CALL THAT API
+    const token = sessionStorage.getItem("jwt");
+
     const createApplicantInfo = {
       orgTicketNumber,
       callPurpose: "CRC",
@@ -269,6 +268,8 @@ export default function InformationReview({
       driversLicNo
     };
 
+    console.log(createApplicantInfo);
+
     let partyId;
     let sessionId;
     let invoiceId;
@@ -276,15 +277,11 @@ export default function InformationReview({
     let serviceId;
 
     Promise.all([
-      axios.post(
-        "/ecrc/private/createApplicant",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        },
-        createApplicantInfo
-      ),
+      axios.post("/ecrc/private/createApplicant", createApplicantInfo, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }),
       axios.get(
         `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}`,
         {
@@ -336,15 +333,11 @@ export default function InformationReview({
           eivPassDetailsResults: "eivPassDetailsResults"
         };
 
-        return axios.post(
-          "/ecrc/private/createNewCRCService",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          },
-          newCRC
-        );
+        return axios.post("/ecrc/private/createNewCRCService", newCRC, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
       })
       .then(crcResponse => {
         serviceId = crcResponse.data.serviceId;
@@ -377,21 +370,19 @@ export default function InformationReview({
           };
 
           axios
-            .post(
-              "/ecrc/private/getPaymentUrl",
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`
-                }
-              },
-              createURL
-            )
+            .post("/ecrc/private/createPaymentUrl", createURL, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            })
             .then(urlResponse => {
               window.location.href = urlResponse.data.paymentUrl;
             });
         }
       })
-      .catch(() => {});
+      .catch(error => {
+        console.log(error.response);
+      });
   };
 
   const cancelButton = {
