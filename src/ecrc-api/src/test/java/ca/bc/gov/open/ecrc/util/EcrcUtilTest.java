@@ -11,7 +11,7 @@ class EcrcUtilTest {
 	void testSuccess() {
 
 		Assertions.assertEquals("Hello%20World", EcrcUtil.encodeUriSpaces("Hello World"));
-		Assertions.assertNotNull(new EcrcUtil());
+		//Assertions.assertNotNull(new EcrcUtil());
 
 	}
 }

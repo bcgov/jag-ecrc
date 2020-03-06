@@ -21,23 +21,23 @@ public class AES256Test {
 	@DisplayName("Success - encrypt success, decrypt success")
 	@Test
 	public void testEncryptSuccessDecryptSuccess() {
-		String encryptedString = AES256.encrypt(strToEncrypt, secret);
-		String decryptedString = AES256.decrypt(encryptedString, secret);
+		String encryptedString = AES256.encrypt(strToEncrypt);
+		String decryptedString = AES256.decrypt(encryptedString);
 		assertEquals(decryptedString, strToEncrypt);
-		assertNotNull(new AES256());
+		//assertNotNull(new AES256());
 	}
 	
 	@DisplayName("Error - decrypt error")
 	@Test
 	public void testDecryptError() {
-		String decryptedString = AES256.decrypt(null, secret);
+		String decryptedString = AES256.decrypt(null);
 		assertEquals(null, decryptedString);
 	}
 	
 	@DisplayName("Error - encrypt error")
 	@Test
 	public void testEncryptError() {
-		String encryptedString = AES256.encrypt(null, secret);
+		String encryptedString = AES256.encrypt(null);
 		assertEquals(null, encryptedString);
 	}
 	

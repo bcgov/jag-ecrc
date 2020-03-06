@@ -30,7 +30,7 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
 
     private WebClient webClient = null;
 
-    private final Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(EcrcWebMethodsServiceImpl.class);
 
     @Autowired
     ObjectMapper objectMapper;
