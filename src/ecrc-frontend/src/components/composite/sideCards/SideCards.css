@@ -27,3 +27,37 @@ p > button {
 .link:hover {
   color: white;
 }
+
+.round-icon-wrapper {
+  height: 48px;
+  line-height: 55px;
+  width: 48px;
+  border-radius: 48px;
+  background-color: #7596c8;
+  text-align: center;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.sideCardTitle {
+  font-size: 20px;
+  font-weight: Semi-bold;
+  display: inline-block;
+}
+
+.side-card-text {
+  font-size: 14px;
+}
+
+.side-card-link {
+  font-size: 14px;
+  color: white;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.side-card-icon {
+  width: 35px;
+  height: 35px;
+  padding-bottom: 10px;
+}

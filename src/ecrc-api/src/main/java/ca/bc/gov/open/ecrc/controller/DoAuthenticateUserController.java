@@ -26,11 +26,11 @@ public class DoAuthenticateUserController {
 
 	Logger logger = LoggerFactory.getLogger(DoAuthenticateUserController.class);
 
-	@GetMapping(value = "/doAuthenticateUser", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> doAuthenticateUser(@RequestParam(required=true) String orgTicketId) throws EcrcServiceException, NotFoundException {
+	@GetMapping(value = "/protected/doAuthenticateUser", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> doAuthenticateUser(@RequestParam(required=true) String orgTicketNumber) throws EcrcServiceException, NotFoundException {
 		//TODO: Extract guid generated from front end
-		logger.info("Do Authenticate request received {}", UUID.randomUUID().toString());
-		return  ecrcServices.doAuthenticateUser(orgTicketId);
+		logger.info("Do Authenticate request received {}", UUID.randomUUID());
+		return  ecrcServices.doAuthenticateUser(orgTicketNumber);
 
 	}
 }

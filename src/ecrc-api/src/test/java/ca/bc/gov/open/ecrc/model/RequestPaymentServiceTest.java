@@ -38,6 +38,16 @@ class RequestPaymentServiceTest {
 		paymentInfo.setServiceIdRef1("serviceIdRef1");
 		paymentInfo.setTotalItemsAmount("totalItemsAmount");
 		paymentInfo.setTransType("transType");
+		
+		Assertions.assertEquals("approvedPage", paymentInfo.getApprovedPage());
+		Assertions.assertEquals("declinedPage", paymentInfo.getDeclinedPage());
+		Assertions.assertEquals("errorPage", paymentInfo.getErrorPage());
+		Assertions.assertEquals("invoiceNumber", paymentInfo.getInvoiceNumber());
+		Assertions.assertEquals("minutesToExpire", paymentInfo.getMinutesToExpire());
+		Assertions.assertEquals("partyIdRef2", paymentInfo.getPartyIdRef2());
+		Assertions.assertEquals("serviceIdRef1", paymentInfo.getServiceIdRef1());
+		Assertions.assertEquals("totalItemsAmount", paymentInfo.getTotalItemsAmount());
+		Assertions.assertEquals("transType", paymentInfo.getTransType());
 
 		Assertions.assertEquals(expectedQueryString, paymentInfo.toQueryString());
 	}

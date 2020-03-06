@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import "@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { storeValidator } from "./modules/AuthenticationHelper";
 
 if (process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 }
+
+// get the initial validator from backend and store it for subsequent requests (for JWT)
+storeValidator();
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

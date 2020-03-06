@@ -34,6 +34,17 @@ class EcrcPropertiesTest {
 		Assert.assertEquals("usename", ecrcProperties.getUsername());
 		Assert.assertEquals("abc", ecrcProperties.getWhiteList().get(0));
 		Assert.assertEquals("https://test1.ca", ecrcProperties.getLinks().get("test1"));
+		Assert.assertEquals("header", ecrcProperties.getJwtHeader());
+		Assert.assertEquals("prefix", ecrcProperties.getJwtPrefix());
+		Assert.assertEquals("secret", ecrcProperties.getJwtSecret());
+		Assert.assertEquals("role", ecrcProperties.getJwtRole());
+		Assert.assertEquals("/getSinglePaymentURL", ecrcProperties.getGetSinglePaymentUri());
+		Assert.assertEquals("bcsc", ecrcProperties.getOauthIdp());
+		Assert.assertEquals("1234", ecrcProperties.getOauthClientId());
+		Assert.assertEquals("5678", ecrcProperties.getOauthSecret());
+		Assert.assertEquals("api", ecrcProperties.getOauthScope());
+		Assert.assertEquals("returnuri", ecrcProperties.getOauthReturnUri());
+		Assert.assertEquals(3000, ecrcProperties.getOauthJwtExpiry());
 	}
 
 }

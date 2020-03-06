@@ -21,6 +21,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.RequestPaymentService;
 import ca.bc.gov.open.ecrc.model.ResponsePaymentService;
+import ca.bc.gov.open.ecrc.util.EcrcUtil;
 import reactor.core.publisher.Mono;
 
 /**
@@ -73,6 +74,8 @@ public class EcrcPaymentServiceImpl implements EcrcPaymentService {
 		paymentInfo.setPartyIdRef2(PAYMENT_REF2_PREFIX + paymentInfo.getPartyIdRef2());
 
 		String _getPaymentServiceUri = String.format(ecrcProps.getGetSinglePaymentUri(), paymentInfo.toQueryString());
+
+		_getPaymentServiceUri = EcrcUtil.encodeUriSpaces(_getPaymentServiceUri);
 
 		Mono<?> responseBody = this.webClient.get().uri(_getPaymentServiceUri).retrieve()
 				.bodyToMono(ResponsePaymentService.class);

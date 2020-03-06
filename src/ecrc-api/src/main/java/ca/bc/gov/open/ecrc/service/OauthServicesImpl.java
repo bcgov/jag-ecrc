@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import net.minidev.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +30,9 @@ import com.nimbusds.oauth2.sdk.auth.Secret;
 import com.nimbusds.oauth2.sdk.http.HTTPResponse;
 import com.nimbusds.oauth2.sdk.id.ClientID;
 import com.nimbusds.oauth2.sdk.id.State;
-import com.nimbusds.oauth2.sdk.token.AccessToken;
 import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 import com.nimbusds.openid.connect.sdk.UserInfoRequest;
 import com.nimbusds.openid.connect.sdk.UserInfoResponse;
-import com.nimbusds.openid.connect.sdk.claims.UserInfo;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.OauthServiceException;
@@ -61,7 +60,7 @@ public class OauthServicesImpl implements OauthServices {
 		logger.debug("Calling getIDPRedirect");
 		
 		// The authorisation endpoint of IDP the server
-		URI authzEndpoint = new URI(ecrcProps.getOauthIdp() + "/authorize");
+		URI authzEndpoint = new URI(ecrcProps.getOauthIdp() + ecrcProps.getOauthAuthorizePath());
 
 		// The client identifier provisioned by the server
 		ClientID clientID = new ClientID(ecrcProps.getOauthClientId());
@@ -89,7 +88,7 @@ public class OauthServicesImpl implements OauthServices {
 			
 	}
 
-	public AccessToken getToken(String authCode) throws OauthServiceException {
+	public AccessTokenResponse getToken(String authCode) throws OauthServiceException {
 		
 		logger.debug("Calling getToken");
 		
@@ -106,7 +105,7 @@ public class OauthServicesImpl implements OauthServices {
 			AuthorizationGrant codeGrant = new AuthorizationCodeGrant(code, callback);
 			
 			// The IDP token endpoint
-			URI tokenEndpoint = new URI(ecrcProps.getOauthIdp() + "/token");
+			URI tokenEndpoint = new URI(ecrcProps.getOauthIdp() + ecrcProps.getOauthTokenPath());
 			
 			//authorization_code == grant_type
 
@@ -127,20 +126,13 @@ public class OauthServicesImpl implements OauthServices {
 			}
 
 			if (!response.indicatesSuccess()) {
-			    // We got an error response...
 			    TokenErrorResponse errorResponse = response.toErrorResponse();
 			    logger.error(errorResponse.toString());
 				throw new OauthServiceException("Token Error Response from IdP server: " + errorResponse.toString() );
 			}
-			
 
-			AccessTokenResponse successResponse = response.toSuccessResponse();
-
-			// Get the access token, the server may also return a refresh token (depends on scope. If contains offline_access, it will!)
-			AccessToken accessToken = successResponse.getTokens().getAccessToken();
-			//RefreshToken refreshToken = successResponse.getTokens().getRefreshToken();
-			
-			return accessToken;
+			// Respond with the complete token returned from the IdP.
+			return response.toSuccessResponse();
 			
 		} catch (URISyntaxException e) {
 			logger.error(e.getMessage(), e);
@@ -150,12 +142,12 @@ public class OauthServicesImpl implements OauthServices {
 		
 	}
 
-	public UserInfo getUserInfo(BearerAccessToken accessToken) throws OauthServiceException {
+	public JSONObject getUserInfo(BearerAccessToken accessToken) throws OauthServiceException {
 	
 		try {
 
 			// Build the IdP endpoint for user info data
-			HTTPResponse httpResponse = new UserInfoRequest(new URI(ecrcProps.getOauthIdp() + "/userinfo"),
+			HTTPResponse httpResponse = new UserInfoRequest(new URI(ecrcProps.getOauthIdp() + ecrcProps.getOauthUserinfoPath()),
 					(BearerAccessToken) accessToken).toHTTPRequest().send();
 
 			// Parse the response
@@ -177,7 +169,7 @@ public class OauthServicesImpl implements OauthServices {
 			}
 
 			// Extract the claims
-			return userInfoResponse.toSuccessResponse().getUserInfo();
+			return userInfoResponse.toSuccessResponse().getUserInfoJWT().getJWTClaimsSet().toJSONObject();
 
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);

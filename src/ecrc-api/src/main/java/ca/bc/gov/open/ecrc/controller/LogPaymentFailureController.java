@@ -27,11 +27,11 @@ public class LogPaymentFailureController {
 
 	Logger logger = LoggerFactory.getLogger(LogPaymentFailureController.class);
 
-	@PostMapping(value = "/logPaymentFailure", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/private/logPaymentFailure", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> logPaymentFailure(@RequestBody(required=true) RequestLogPaymentFailure paymentFailure)
 			throws EcrcServiceException {
 		//TODO: Extract guid generated from front end
-		logger.info("Log payment failure request received {}", UUID.randomUUID().toString());
+		logger.info("Log payment failure request received {}", UUID.randomUUID());
 		return ecrcServices.logPaymentFailure(paymentFailure);
 
 	}

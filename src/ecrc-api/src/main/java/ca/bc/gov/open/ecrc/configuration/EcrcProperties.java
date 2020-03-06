@@ -44,7 +44,17 @@ public class EcrcProperties {
 	private String oauthSecret;
 	private String oauthScope;
 	private String oauthReturnUri;
-	private String oauthFeSecret; // secret shared with the front end
+	private int oauthJwtExpiry;
+	private String oauthTokenPath;
+	private String oauthUserinfoPath;
+	private String oauthAuthorizePath;
+
+	// JWT properties
+	private String jwtHeader;
+	private String jwtPrefix;
+	private String jwtSecret;
+	private String jwtRole;
+	private String jwtAuthorizedRole;
 
 	@Value("#{'${ecrc.whitelist}'.split(',')}")
 	private List<String> whiteList;
@@ -170,7 +180,32 @@ public class EcrcProperties {
 	public void setLinks(Map<String, String> links) {
 		this.links = links;
 	}
+
+
+  public String getJwtHeader() { return jwtHeader; }
+
+  public void setJwtHeader(String jwtHeader) {  this.jwtHeader = jwtHeader; }
+
+  public String getJwtPrefix() { return jwtPrefix; }
+
+  public void setJwtPrefix(String jwtPrefix) { this.jwtPrefix = jwtPrefix; }
+
+  public String getJwtSecret() { return jwtSecret;  }
+
+  public void setJwtSecret(String jwtSecret) { this.jwtSecret = jwtSecret; }
+
+  public String getJwtRole() { return jwtRole; }
+
+  public void setJwtRole(String jwtRole) { this.jwtRole = jwtRole; }
 	
+	public String getJwtAuthorizedRole() {
+		return jwtAuthorizedRole;
+	}
+
+	public void setJwtAuthorizedRole(String jwtAuthorizedRole) {
+		this.jwtAuthorizedRole = jwtAuthorizedRole;
+	}
+
 	public String getPaymentUrl() {
 		return paymentUrl;
 	}
@@ -243,12 +278,24 @@ public class EcrcProperties {
 		this.oauthReturnUri = oauthReturnUri;
 	}
 
-	public String getOauthFeSecret() {
-		return oauthFeSecret;
+	public int getOauthJwtExpiry() {
+		return oauthJwtExpiry;
 	}
 
-	public void setOauthFeSecret(String oauthFeSecret) {
-		this.oauthFeSecret = oauthFeSecret;
+	public void setOauthJwtExpiry(String oautJwtExpiry) {
+		this.oauthJwtExpiry = Integer.parseInt(oautJwtExpiry);
 	}
-  
+
+	public String getOauthTokenPath() { return oauthTokenPath; }
+
+	public void setOauthTokenPath(String oauthTokenPath) { this.oauthTokenPath = oauthTokenPath; }
+
+	public String getOauthUserinfoPath() { return oauthUserinfoPath; }
+
+	public void setOauthUserinfoPath(String oauthUserinfoPath) { this.oauthUserinfoPath = oauthUserinfoPath; }
+
+	public String getOauthAuthorizePath() { return oauthAuthorizePath; }
+
+	public void setOauthAuthorizePath(String oauthAuthorizePath) { this.oauthAuthorizePath = oauthAuthorizePath; }
+
 }

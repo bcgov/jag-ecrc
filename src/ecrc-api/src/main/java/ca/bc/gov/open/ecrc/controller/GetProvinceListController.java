@@ -25,10 +25,10 @@ public class GetProvinceListController {
 
 	Logger logger = LoggerFactory.getLogger(GetProvinceListController.class);
 
-	@GetMapping(value = "/getProvinceList", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/protected/getProvinceList", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> getProvinceList() throws EcrcServiceException {
 		//TODO: Extract guid generated from front end
-		logger.info("Get province list request received {}", UUID.randomUUID().toString());
+		logger.info("Get province list request received {}", UUID.randomUUID());
 		return ecrcServices.getProvinceList();
 
 	}

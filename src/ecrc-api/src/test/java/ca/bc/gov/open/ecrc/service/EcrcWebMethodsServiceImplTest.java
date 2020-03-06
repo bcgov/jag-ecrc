@@ -54,7 +54,7 @@ public class EcrcWebMethodsServiceImplTest {
         Mockito.when(ecrcProperties.getUsername()).thenReturn("username");
         Mockito.when(ecrcProperties.getPassword()).thenReturn("password");
 
-        Method postConstruct =  EcrcWebMethodsServiceImpl.class.getDeclaredMethod("InitService",null); // methodName,parameters
+        Method postConstruct =  EcrcWebMethodsServiceImpl.class.getDeclaredMethod("InitService"); // methodName
         postConstruct.setAccessible(true);
         postConstruct.invoke(ecrcWebMethodsService);
     }
@@ -115,10 +115,12 @@ public class EcrcWebMethodsServiceImplTest {
         Assertions.assertEquals(jsonUnknownResp, res.getBody());
     }
 
-    @DisplayName("Failure - webMethods call bad json")
+	@DisplayName("Failure - webMethods call bad json")
     @Test
     public void testWebMethodsCallJsonFailure() throws JsonProcessingException {
-        Mockito.when(objectMapper.writeValueAsString(any())).thenThrow(new JsonProcessingException("BROKEN"){});
+		Mockito.when(objectMapper.writeValueAsString(any())).thenThrow(new JsonProcessingException("BROKEN") {
+			private static final long serialVersionUID = 1L;
+		});
         MockResponse mockResponse = new MockResponse();
         mockResponse.setBody(successResponseObject());
         mockResponse.addHeader("content-type: application/xml;");

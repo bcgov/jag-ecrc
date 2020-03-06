@@ -71,17 +71,35 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
       className="content col-md-8"
     >
       <h1>
-        BC Service Card Application
+        Apply for a Criminal Record Check
       </h1>
       <p>
-        Workers of a cannabis retail store must register with the Province. Workers must also pass security screening every two years.
+        Now, that you have confirmed the organization you work or plan to work for, the next step is to complete a criminal record check application.
       </p>
       <p>
-        Cannabis retail store application and licensing fees do not cover worker registration costs. Workers must apply to register and are responsible for the cost. Licence applicants and licensees can pay workers' registration costs if they wish.
+        To apply for a criminal record check online, you must use your
+         
+        <a
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+        >
+          BC Services Card
+        </a>
+         
+        Account.
       </p>
-      <h3>
-        To register as a Cannabis Worker online, you must log in with your BC Service Card Account.
-      </h3>
+      <p>
+        Only cards 
+        <b>
+          with a photo
+        </b>
+         are accepted. If it's your first time using your Card to access any online service, you need to set up your account for use online by completing a one-time security check to
+         
+        <a
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+        >
+          verify your identity
+        </a>
+      </p>
       <p>
         Please select an option below:
       </p>
@@ -92,24 +110,30 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
           className="row"
         >
           <div
-            className="col-lg-8 col-md-12 "
+            className="col-lg-6 col-md-12 "
             style={
               Object {
                 "marginBottom": "10px",
               }
             }
           >
-            I’m a B.C. resident with a BC Services Card Account.
+            I have a BC Services Card
+             
+            <span
+              className="underlineText"
+            >
+              with a photo
+            </span>
           </div>
           <div
-            className="col-md-4"
+            className="col-lg-6 col-md-4 alignRight"
           >
             <button
-              className="btn ecrc_common_btn btn"
+              className="btn ecrc_btn_login_bcsc btn"
               onClick={[Function]}
               type="button"
             >
-              LOGIN
+              Login with a BC Services Card
             </button>
           </div>
         </div>
@@ -128,49 +152,41 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
               }
             }
           >
-            I’m a B.C. resident but I don't have a BC Services Card Account.
+            I 
+            <span
+              className="underlineText"
+            >
+              DON’T
+            </span>
+             have a BC Services Card, or I have one without a photo
           </div>
           <div
-            className="col-sm-4"
+            className="col-lg-4 col-md-12 col-sm-12 alignRight"
           >
             <button
-              className="btn ecrc_common_btn btn"
+              className="btn ecrc_bscs_apply_btn btn"
               onClick={[Function]}
               type="button"
             >
-              SET UP ACCOUNT
+              Find how to apply
             </button>
           </div>
         </div>
       </div>
       <div
-        className="option"
+        style={
+          Object {
+            "marginTop": "40px",
+          }
+        }
       >
-        <div
-          className="row"
+        <button
+          className="btn ecrc_accessary_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
-          <div
-            className="col-lg-8 col-md-12"
-            style={
-              Object {
-                "marginBottom": "10px",
-              }
-            }
-          >
-            I’m not a B.C. resident, send me a Cannabis Worker Registration form.
-          </div>
-          <div
-            className="col-sm-4"
-          >
-            <button
-              className="btn ecrc_common_btn btn"
-              onClick={[Function]}
-              type="button"
-            >
-              REQUEST FORM
-            </button>
-          </div>
-        </div>
+          Cancel and Exit
+        </button>
       </div>
     </div>
     <div
@@ -178,7 +194,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -205,21 +221,76 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                 <h2
                   className="heading-style"
                 >
-                  Get a BC Services Card
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 576 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                        />
+                      </svg>
+                    </div>
+                    <span
+                      className="sideCardTitle col-lg-9"
+                    >
+                      Using the BC Services Card
+                    </span>
+                  </div>
                 </h2>
                 <div
                   className="submit-content"
                 >
-                  <span>
-                    B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.
-                    <button
-                      className="btn btn-primary dark-button btn btn-md"
-                      onClick={[Function]}
-                      type="submit"
+                  <p>
+                    <div
+                      className="side-card-text"
                     >
-                      READ MORE
-                    </button>
-                  </span>
+                      If you have a BC Services Card, you must use it to log in to the online security verification page.
+                    </div>
+                    <p>
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                      >
+                        <div
+                          className="side-card-link"
+                        >
+                          Learn more about the BC Services Card.
+                        </div>
+                      </a>
+                    </p>
+                    <div
+                      className="side-card-text"
+                    >
+                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                    </div>
+                    <p>
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                      >
+                        <div
+                          className="side-card-link"
+                        >
+                          Learn more about BC Services Card eligibility.
+                        </div>
+                      </a>
+                    </p>
+                  </p>
                 </div>
               </section>
             </div>
@@ -228,7 +299,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
       </div>
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -255,11 +326,43 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                 <h2
                   className="heading-style"
                 >
-                  Applicants Without a BC Services Card
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 384 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                        />
+                      </svg>
+                    </div>
+                    <span
+                      className="sideCardTitle col-lg-9"
+                    >
+                      Applicants Without a BC Services Card with a photo
+                    </span>
+                  </div>
                 </h2>
                 <div
                   className="submit-content"
                 >
+<<<<<<< HEAD
                   <span>
                     Applicants who haven’t lived in B.C.for at least six months or who live outside the province must 
                     <a
@@ -270,6 +373,36 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                     </a>
                      the Liquor and Cannabis Regulation Branch for a Worker Registration Application Form.
                   </span>
+=======
+                  <p>
+                    <div
+                      className="side-card-text"
+                    >
+                      Applicants who do not have a BC Services Card must apply offline to complete a criminal record check.
+                    </div>
+                    <div
+                      className="side-card-text"
+                    >
+                      <br />
+                      Please 
+                      <b>
+                        contact your organization
+                      </b>
+                       and request a criminal record form.
+                    </div>
+                    <p>
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                      >
+                        <div
+                          className="side-card-link"
+                        >
+                          Learn more about how to apply for a criminal record check offline.
+                        </div>
+                      </a>
+                    </p>
+                  </p>
+>>>>>>> master
                 </div>
               </section>
             </div>

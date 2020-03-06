@@ -7,6 +7,7 @@ import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 export default function OrgValidation({ page: { header, setOrg } }) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
@@ -19,8 +20,18 @@ export default function OrgValidation({ page: { header, setOrg } }) {
   }, []);
 
   const orgValidation = () => {
+    const payload = { authorities: ["ROLE"] };
+    const token = generateJWTToken(payload);
+
     axios
-      .get(`/ecrc/doAuthenticateUser?orgTicketId=${orgTicketNumber}`)
+      .get(
+        `/ecrc/protected/doAuthenticateUser?orgTicketNumber=${orgTicketNumber}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
       .then(res => {
         setOrg({ ...res.data.accessCodeResponse, orgTicketNumber });
         setToOrgVerification(true);

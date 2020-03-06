@@ -187,7 +187,7 @@ Canada
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -214,21 +214,76 @@ Canada
                 <h2
                   className="heading-style"
                 >
-                  Get a BC Services Card
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 576 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                        />
+                      </svg>
+                    </div>
+                    <span
+                      className="sideCardTitle col-lg-9"
+                    >
+                      Using the BC Services Card
+                    </span>
+                  </div>
                 </h2>
                 <div
                   className="submit-content"
                 >
-                  <span>
-                    B.C. residents who have lived in the province for at least six months must use a BC Services Card to log in to the online qualification tool. Learn how to get a card.
-                    <button
-                      className="btn btn-primary dark-button btn btn-md"
-                      onClick={[Function]}
-                      type="submit"
+                  <p>
+                    <div
+                      className="side-card-text"
                     >
-                      READ MORE
-                    </button>
-                  </span>
+                      If you have a BC Services Card, you must use it to log in to the online security verification page.
+                    </div>
+                    <p>
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                      >
+                        <div
+                          className="side-card-link"
+                        >
+                          Learn more about the BC Services Card.
+                        </div>
+                      </a>
+                    </p>
+                    <div
+                      className="side-card-text"
+                    >
+                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                    </div>
+                    <p>
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                      >
+                        <div
+                          className="side-card-link"
+                        >
+                          Learn more about BC Services Card eligibility.
+                        </div>
+                      </a>
+                    </p>
+                  </p>
                 </div>
               </section>
             </div>

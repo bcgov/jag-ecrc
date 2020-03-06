@@ -1,5 +1,3 @@
-@import "../../../../node_modules/@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css";
-
 .ecrc_go_btn {
   background-color: rgb(0, 51, 102);
   width: 132px;
@@ -42,6 +40,36 @@
 }
 
 .ecrc_common_btn:hover {
+  background-color: rgba(43, 91, 164, 1);
+  color: white;
+}
+
+.ecrc_btn_login_bcsc {
+  color: white;
+  width: 240px;
+  height: 40px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  background-color: rgb(0, 51, 102);
+}
+
+.ecrc_btn_login_bcsc:hover {
+  background-color: rgba(43, 91, 164, 1);
+  color: white;
+}
+
+.ecrc_bscs_apply_btn {
+  color: white;
+  width: 160px;
+  height: 40px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  background-color: rgb(0, 51, 102);
+}
+
+.ecrc_bscs_apply_btn:hover {
   background-color: rgba(43, 91, 164, 1);
   color: white;
 }

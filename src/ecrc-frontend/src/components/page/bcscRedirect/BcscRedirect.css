@@ -22,3 +22,11 @@
 .option:hover {
   background-color: rgba(227, 234, 249, 1);
 }
+
+.underlineText {
+  text-decoration: underline;
+}
+
+.alignRight {
+  text-align: right;
+}
