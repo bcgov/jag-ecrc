@@ -2,19 +2,37 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 import "../page.css";
 import "./BcscRedirect.css";
 
 export default function BcscRedirect({ page: { header, saveOrg } }) {
   const [toHostHome, setToHostHome] = useState(false);
+  const [bcscUrl, setBcscUrl] = useState("");
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const payload = { authorities: ["ROLE"] };
+    const token = generateJWTToken(payload);
+
+    axios
+      .get(`/ecrc/protected/getBCSCUrl`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(res => {
+        setBcscUrl(res.data);
+      })
+      .catch(() => {});
   }, []);
 
   const loginBtn = {
@@ -41,6 +59,7 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
   const onLoginClick = () => {
     saveOrg();
     // REDIRECT TO BCSC
+    window.open(bcscUrl, "_self");
   };
 
   const onAccountClick = () => {

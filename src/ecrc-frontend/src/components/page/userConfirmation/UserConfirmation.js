@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
+import axios from "axios";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import "./UserConfirmation.css";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 export default function UserConfirmation({ header }) {
   const [toConsent, setToConsent] = useState(false);
+  const [code, setCode] = useState("");
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    setCode(urlParams.get("code"));
+    window.scrollTo(0, 0);
+  }, []);
+
   const yesButton = {
     label: "Yes",
     buttonStyle: "btn btn-primary",
@@ -21,6 +31,23 @@ export default function UserConfirmation({ header }) {
     buttonSize: "btn",
     type: "submit"
   };
+
+  function onYesClick() {
+    const payload = { authorities: ["ROLE"] };
+    const token = generateJWTToken(payload);
+
+    axios
+      .get(`/ecrc/protected/login?code=${code}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(res => {
+        sessionStorage.setItem("jwt", res.data);
+        setToConsent(true);
+      })
+      .catch(() => {});
+  }
 
   if (toConsent) {
     return <Redirect to="/ecrc/consent" />;
@@ -40,7 +67,7 @@ export default function UserConfirmation({ header }) {
           <p>Is this correct?</p>
           <div className="row">
             <div className="col-md-12">
-              <Button button={yesButton} onClick={() => setToConsent(true)} />
+              <Button button={yesButton} onClick={() => onYesClick()} />
               <Button button={noButton} onClick={() => {}} />
               <br />
             </div>
