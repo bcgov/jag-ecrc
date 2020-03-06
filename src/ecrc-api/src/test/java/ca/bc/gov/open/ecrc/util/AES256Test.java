@@ -24,7 +24,6 @@ public class AES256Test {
 		String encryptedString = AES256.encrypt(strToEncrypt);
 		String decryptedString = AES256.decrypt(encryptedString);
 		assertEquals(decryptedString, strToEncrypt);
-		//assertNotNull(new AES256());
 	}
 	
 	@DisplayName("Error - decrypt error")

@@ -20,8 +20,6 @@ class JwtTokenGeneratorTest {
 
 		String result = JwtTokenGenerator.generateFEAccessToken(new JSONObject(), "abc", "secret", 0, "role");
 		Assertions.assertTrue(result.length() > 0);
-		//Assertions.assertNotNull(new JwtTokenGenerator());
-
 	}
 
 }

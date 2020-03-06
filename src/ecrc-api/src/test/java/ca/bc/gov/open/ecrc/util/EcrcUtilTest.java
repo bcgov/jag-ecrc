@@ -9,9 +9,6 @@ class EcrcUtilTest {
 	@DisplayName("Success - encodeUriSpaces EcrcUtil")
 	@Test
 	void testSuccess() {
-
 		Assertions.assertEquals("Hello%20World", EcrcUtil.encodeUriSpaces("Hello World"));
-		//Assertions.assertNotNull(new EcrcUtil());
-
 	}
 }
