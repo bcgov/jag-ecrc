@@ -349,9 +349,7 @@ export default function InformationReview({
             });
         }
       })
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(() => {});
   };
 
   const cancelButton = {
