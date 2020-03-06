@@ -72,7 +72,7 @@ export default function SideCards({ type, sideCardLinks }) {
         <div className="round-icon-wrapper">
           <FaEnvelope className="side-card-icon" />
         </div>
-        <div className="sideCardTitle col-lg-9">
+        <div className="sideCardTitle">
           Contact the Criminal Records Review Program
         </div>
       </div>

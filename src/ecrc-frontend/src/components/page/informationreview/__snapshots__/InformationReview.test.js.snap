@@ -398,11 +398,11 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                         />
                       </svg>
                     </div>
-                    <span
-                      className="sideCardTitle col-lg-9"
+                    <div
+                      className="sideCardTitle"
                     >
                       Contact the Criminal Records Review Program
-                    </span>
+                    </div>
                   </div>
                 </h2>
                 <div
