@@ -75,7 +75,7 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
       </strong>
       <p />
       <p>
-        Temp name
+        
       </p>
       <p>
         Is this correct?

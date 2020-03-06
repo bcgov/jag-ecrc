@@ -9,7 +9,14 @@ describe("User Confirmation Page Component", () => {
       name: "Criminal Record Check"
     };
 
-    const userConfirmation = create(<UserConfirmation header={header} />);
+    const setApplicant = () => {};
+
+    const page = {
+      header,
+      setApplicant
+    };
+
+    const userConfirmation = create(<UserConfirmation page={page} />);
     expect(userConfirmation.toJSON()).toMatchSnapshot();
   });
 });

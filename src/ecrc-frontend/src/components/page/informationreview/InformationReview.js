@@ -268,8 +268,6 @@ export default function InformationReview({
       driversLicNo
     };
 
-    console.log(createApplicantInfo);
-
     let partyId;
     let sessionId;
     let invoiceId;
@@ -380,9 +378,7 @@ export default function InformationReview({
             });
         }
       })
-      .catch(error => {
-        console.log(error.response);
-      });
+      .catch(() => {});
   };
 
   const cancelButton = {

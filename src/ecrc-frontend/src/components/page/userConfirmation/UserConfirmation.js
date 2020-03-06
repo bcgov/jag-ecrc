@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -44,12 +45,23 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
           }
         } = accessJWTToken(res.data);
 
+        // TODO Check identity assurance level
+        if (identity_assurance_level < 3) {
+          // DO SOMETHING
+        }
+
+        // Convert gender text
         const genderTxt = gender === "female" ? "F" : "M";
 
+        // Convert country name
+        // TODO ensure we only get CA back from BCSC to hardcode
         const countryNm = country === "CA" ? "CANADA" : "Fail Country";
 
+        // Convert date format
         const birthDt = birthdate.split("-").join("/");
 
+        // Convert province name
+        // TODO: Implement properly for all provinces
         const provinceNm =
           region === "BC" ? "BRITISH COLUMBIA" : "Fail Province";
 
@@ -87,7 +99,6 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
   };
 
   function onYesClick() {
-    console.log(user);
     setApplicant(user);
     setToConsent(true);
   }
@@ -123,7 +134,10 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 }
 
 UserConfirmation.propTypes = {
-  header: PropTypes.shape({
-    name: PropTypes.string.isRequired
+  page: PropTypes.shape({
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }).isRequired,
+    setApplicant: PropTypes.func.isRequired
   }).isRequired
 };
