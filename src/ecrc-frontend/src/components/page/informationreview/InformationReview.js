@@ -273,11 +273,15 @@ export default function InformationReview({
     let serviceId;
 
     Promise.all([
-      axios.post("/ecrc/createApplicant", createApplicantInfo),
-      axios.get(`/ecrc/getNextSessionId?orgTicketId=${orgTicketNumber}`),
-      axios.get(`/ecrc/getNextInvoiceId?orgTicketId=${orgTicketNumber}`),
+      axios.post("/ecrc/private/createApplicant", createApplicantInfo),
       axios.get(
-        `/ecrc/getServiceFeeAmount?orgTicketId=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}`
+        `/ecrc/private/getNextSessionId?orgTicketId=${orgTicketNumber}`
+      ),
+      axios.get(
+        `/ecrc/private/getNextInvoiceId?orgTicketId=${orgTicketNumber}`
+      ),
+      axios.get(
+        `/ecrc/private/getServiceFeeAmount?orgTicketId=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}`
       )
     ])
       .then(all => {
@@ -306,7 +310,7 @@ export default function InformationReview({
           eivPassDetailsResults: "eivPassDetailsResults"
         };
 
-        return axios.post("/ecrc/createNewCRCService", newCRC);
+        return axios.post("/ecrc/private/createNewCRCService", newCRC);
       })
       .then(crcResponse => {
         serviceId = crcResponse.data.serviceId;
@@ -338,9 +342,11 @@ export default function InformationReview({
             partyIdRef2: partyId
           };
 
-          axios.post("/ecrc/getPaymentUrl", createURL).then(urlResponse => {
-            window.location.href = urlResponse.data.paymentUrl;
-          });
+          axios
+            .post("/ecrc/private/getPaymentUrl", createURL)
+            .then(urlResponse => {
+              window.location.href = urlResponse.data.paymentUrl;
+            });
         }
       })
       .catch(error => {

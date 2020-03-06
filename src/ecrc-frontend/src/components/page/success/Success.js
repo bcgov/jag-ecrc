@@ -92,7 +92,7 @@ export default function Success({
     };
 
     axios
-      .post("/ecrc/updateServiceFinancialTxn", logSuccess)
+      .post("/ecrc/private/updateServiceFinancialTxn", logSuccess)
       .then(res => {
         // console.log(res);
       })
@@ -128,7 +128,7 @@ export default function Success({
 
   const retryPayment = () => {
     axios
-      .get(`/ecrc/getNextInvoiceId?orgTicketId=${orgTicketNumber}`)
+      .get(`/ecrc/private/getNextInvoiceId?orgTicketId=${orgTicketNumber}`)
       .then(invoiceResponse => {
         const newInvoiceId = invoiceResponse.data.invoiceId;
 
@@ -150,7 +150,7 @@ export default function Success({
           partyIdRef2: partyId
         };
 
-        return axios.post("/ecrc/getPaymentUrl", createURL);
+        return axios.post("/ecrc/private/getPaymentUrl", createURL);
       })
       .then(urlResponse => {
         window.location.href = urlResponse.data.paymentUrl;
