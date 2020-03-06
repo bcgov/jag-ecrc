@@ -70,7 +70,8 @@ export default function SideCard({
 
 SideCard.propTypes = {
   sideCard: PropTypes.shape({
-    heading: PropTypes.string.isRequired,
+    heading: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+      .isRequired,
     content: PropTypes.array.isRequired,
     type: PropTypes.string.isRequired,
     image: PropTypes.string,
