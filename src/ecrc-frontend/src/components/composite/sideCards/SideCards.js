@@ -1,7 +1,13 @@
 /* eslint-disable react/jsx-curly-newline */
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
-import { FaIdCard, FaQuestion } from "react-icons/fa";
+import {
+  FaIdCard,
+  FaQuestion,
+  FaEnvelope,
+  FaFax,
+  FaPhone
+} from "react-icons/fa";
 import PropTypes from "prop-types";
 
 import "./SideCards.css";
@@ -28,9 +34,7 @@ export default function SideCards({ type, sideCardLinks }) {
         <div className="round-icon-wrapper">
           <FaIdCard className="side-card-icon" />
         </div>
-        <span className="sideCardTitle col-lg-9">
-          Using the BC Services Card
-        </span>
+        <div className="sideCardTitle">Using the BC Services Card</div>
       </div>
     ),
     content: [
@@ -63,22 +67,36 @@ export default function SideCards({ type, sideCardLinks }) {
 
   // CONTACT INFORMATION SIDECARD
   const contact = {
-    heading: "Contact the Criminal Records Review Program",
+    heading: (
+      <div className="row">
+        <div className="round-icon-wrapper">
+          <FaEnvelope className="side-card-icon" />
+        </div>
+        <div className="sideCardTitle">
+          Contact the Criminal Records Review Program
+        </div>
+      </div>
+    ),
     content: [
-      <div key="contactText" style={{ fontSize: "16px" }}>
+      <div key="contactText" className="side-card-text">
         For questions about criminal record checks, contact the Criminal Records
         Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
       </div>,
-      <div key="contactInfo" style={{ paddingTop: "20px" }}>
+      <div key="contactInfo" className="side-card-text">
+        <br />
         <div>
-          <span className="contact-title">Fax: </span> 250 356-1889
+          <FaFax />
+          &nbsp;<div className="contact-title">Fax: </div>
+          (250)356-1889
         </div>
         <div>
-          <span className="contact-title">Office: </span>
+          <FaPhone />
+          &nbsp;<div className="contact-title">Office: </div>
           Toll free - 1 855 587-0185 (press option 2)
         </div>
         <div>
-          <span className="contact-title">Email: </span>
+          <FaEnvelope /> &nbsp;
+          <div className="contact-title">Email: </div>
           <a
             key="criminalRecordsEmail"
             className="email"
@@ -89,7 +107,8 @@ export default function SideCards({ type, sideCardLinks }) {
         </div>
       </div>
     ],
-    type: "blue"
+    type: "blue",
+    isWide: true
   };
 
   // CRIMINAL RECORD SIDECARD
@@ -124,9 +143,9 @@ export default function SideCards({ type, sideCardLinks }) {
         <div className="round-icon-wrapper">
           <FaQuestion className="side-card-icon" />
         </div>
-        <span className="sideCardTitle col-lg-9">
+        <div className="sideCardTitle">
           Applicants Without a BC Services Card with a photo
-        </span>
+        </div>
       </div>
     ),
     content: [
