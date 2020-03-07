@@ -124,8 +124,17 @@ export default function Success({
   };
 
   const retryPayment = () => {
+    const token = sessionStorage.getItem("jwt");
+
     axios
-      .get(`/ecrc/private/getNextInvoiceId?orgTicketId=${orgTicketNumber}`)
+      .get(
+        `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
       .then(invoiceResponse => {
         const newInvoiceId = invoiceResponse.data.invoiceId;
 
@@ -147,7 +156,9 @@ export default function Success({
           partyIdRef2: partyId
         };
 
-        return axios.post("/ecrc/private/getPaymentUrl", createURL);
+        return axios.post("/ecrc/private/createPaymentUrl", createURL, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
       })
       .then(urlResponse => {
         window.location.href = urlResponse.data.paymentUrl;
