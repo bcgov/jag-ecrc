@@ -423,9 +423,9 @@ export default function ApplicationForm({
     return re.test(phone);
   };
 
-  const validateEmail = email => {
+  const validateEmail = emailTxt => {
     const re = /[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    return re.test(email);
+    return re.test(emailTxt);
   };
 
   const validatePostalCode = postalCode => {
@@ -659,23 +659,27 @@ ApplicationForm.propTypes = {
     org: PropTypes.shape({
       defaultScheduleTypeCd: PropTypes.string.isRequired
     })
-  }).isRequired
+  })
 };
 
 ApplicationForm.defaultProps = {
-  alias1FirstNm: "",
-  alias1SecondNm: "",
-  alias1SurnameNm: "",
-  alias2FirstNm: "",
-  alias2SecondNm: "",
-  alias2SurnameNm: "",
-  alias3FirstNm: "",
-  alias3SecondNm: "",
-  alias3SurnameNm: "",
-  birthPlace: "",
-  driversLicNo: "",
-  phoneNumber: "",
-  emailAddress: "",
-  jobTitle: "",
-  organizationFacility: ""
+  page: {
+    applicant: {
+      alias1FirstNm: "",
+      alias1SecondNm: "",
+      alias1SurnameNm: "",
+      alias2FirstNm: "",
+      alias2SecondNm: "",
+      alias2SurnameNm: "",
+      alias3FirstNm: "",
+      alias3SecondNm: "",
+      alias3SurnameNm: "",
+      birthPlace: "",
+      driversLicNo: "",
+      phoneNumber: "",
+      emailAddress: "",
+      jobTitle: "",
+      organizationFacility: ""
+    }
+  }
 };
