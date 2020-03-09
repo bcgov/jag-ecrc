@@ -17,6 +17,8 @@ import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.OauthServiceException;
+import ca.bc.gov.open.ecrc.model.ValidationResponse;
+import ca.bc.gov.open.ecrc.service.ECRCJWTValidationServiceImpl;
 import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
 import ca.bc.gov.open.ecrc.util.AES256;
 import ca.bc.gov.open.ecrc.util.JwtTokenGenerator;
@@ -43,6 +45,9 @@ public class OauthController {
 	
 	@Autowired
 	private EcrcProperties ecrcProps;
+	
+	@Autowired
+	private ECRCJWTValidationServiceImpl tokenServices;
 	
 	private final Logger logger = (Logger) LoggerFactory.getLogger(OauthController.class);
 
@@ -86,7 +91,7 @@ public class OauthController {
 	 * 
 	 */
 	@GetMapping(value = "/protected/login")
-	public String login(@RequestParam(name = "code", required = true) String authCode) throws OauthServiceException {
+	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode) throws OauthServiceException {
 
 		//TODO: Extract guid generated from front end
 		logger.info("Login URL request received {}", UUID.randomUUID());
@@ -95,11 +100,17 @@ public class OauthController {
 		try {
 			token = oauthServices.getToken(authCode);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
-			throw new OauthServiceException("Error generating client token. ", e);
+			logger.error("Error while calling Oauth2 /token endpoint. " + e.getMessage(), e);
+			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
 		}
 		
-		// TODO - validate tokens received from BCSC. 
+		// Validate tokens received from BCSC. 
+		logger.debug("Validating ID token received from BCSC...");
+		ValidationResponse valResp = tokenServices.validateBCSCIDToken((String)token.toSuccessResponse().getCustomParameters().get("id_token"));
+		if (!valResp.isValid()) {
+			logger.error("ID token failed to validate. Error: " + valResp.getMessage());
+			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
+		}
 		
 		// Fetch corresponding Userinfo from the IdP server.  
 		JSONObject userInfo = oauthServices.getUserInfo((BearerAccessToken)token.toSuccessResponse().getTokens().getAccessToken());
@@ -110,12 +121,13 @@ public class OauthController {
 	    try {
 			encryptedTokens = AES256.encrypt(token.toJSONObject().toJSONString());
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
-			throw new OauthServiceException("Error encrypting token. ", e);
+			logger.error("Error encrypting token. " + e.getMessage(), e);
+			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
 		}
 		
 		// Send the new FE JWT in the response body to the caller. 
-        return JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedTokens, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
+	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedTokens, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
+        return new ResponseEntity<>(feTokenResponse, HttpStatus.OK);
 		
 	}
 

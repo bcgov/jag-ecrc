@@ -6,6 +6,8 @@ import java.text.ParseException;
 import java.util.Arrays;
 import java.util.HashSet;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -55,11 +57,14 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	@Autowired
 	private OIDCConfigurationService oidcConfigService;
 	
+	private Logger logger = LoggerFactory.getLogger(ECRCJWTValidationServiceImpl.class);
+	
 	/**
 	 * Validate BCSC Access Token 
 	 */
 	@Override
 	public ValidationResponse validateBCSCAccessToken(String token) { 
+		logger.debug("validateBCSCAccessToken called. Token = " + token);
 		return validateBCSCToken(token, BCSC_ACCESS_TOKEN_CLAIMS);
 	}
 	
@@ -68,6 +73,7 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	 */
 	@Override
 	public ValidationResponse validateBCSCIDToken(String token) {
+		logger.debug("validateBCSCIDToken called. Token = " + token);
 		return validateBCSCToken(token, BCSC_ID_TOKEN_CLAIMS);
 	}
 	
@@ -101,7 +107,7 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 		try {
 			keySource = new RemoteJWKSet<>(new URL(oidcConfigService.getConfig().getJwksUri()));
 		} catch (MalformedURLException e1) {
-			System.out.println("Unable to instantiate Remote JWK set from remote server. " + e1.getMessage());
+			logger.error("Unable to instantiate Remote JWK set from remote server. " + e1.getMessage());
 			val.setMessage(e1.getMessage());
 			e1.printStackTrace();
 		}
@@ -126,7 +132,9 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 		SecurityContext ctx = null; // optional context parameter, not required here
 		try {
 			jwtProcessor.process(token, ctx);
+			logger.debug("Token Ok");
 		} catch (ParseException | BadJOSEException | JOSEException e) {
+			logger.error("Token FAILED validation. " + e.getMessage(), e);
 			val.setMessage(e.getMessage());
 			val.setValid(false);
 			e.printStackTrace();
