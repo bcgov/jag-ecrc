@@ -3,6 +3,8 @@ package ca.bc.gov.open.ecrc.service;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +27,8 @@ import ca.bc.gov.open.ecrc.model.OIDCConfiguration;
 @Configuration
 @EnableConfigurationProperties(EcrcProperties.class)
 public class OIDCConfigurationService {
+	
+	private Logger logger = LoggerFactory.getLogger(OIDCConfigurationService.class);
 	
 	private OIDCConfiguration config = null; 
 	
@@ -55,7 +59,7 @@ public class OIDCConfigurationService {
 			uri = new URI(ecrcProps.getOauthWellKnown());
 			config = restTemplate.getForObject(uri, OIDCConfiguration.class);
 		} catch (URISyntaxException e2) {
-			System.out.println("Unable to load remote server Well-Known configuration endpoint. " + e2.getMessage()); 
+			logger.error("Unable to load remote server Well-Known configuration endpoint. Check Oauth2 well-known endpoint configuration. " + e2.getMessage(), e2); 
 			e2.printStackTrace();
 		}
 	}
