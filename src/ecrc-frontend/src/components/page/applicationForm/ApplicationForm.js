@@ -405,7 +405,9 @@ export default function ApplicationForm({
     if (!emailAddress) {
       setEmailAddressError("Please enter your personal email address");
     } else if (!validateEmail(emailAddress)) {
-      setEmailAddressError("Please enter a valid email address");
+      setEmailAddressError(
+        "Please enter a valid email address eg. name@company.ca"
+      );
     }
 
     if (!jobTitle) {
@@ -428,8 +430,10 @@ export default function ApplicationForm({
       setMailingProvinceError("Please enter your province");
     }
 
-    if (!mailingPostalCode) {
-      setMailingPostalCodeError("Please enter your postal code");
+    if (!validatePostalCode(mailingPostalCode)) {
+      setMailingPostalCodeError(
+        "Please enter a valid postal code in the form V9V 9V9"
+      );
     }
 
     if (

@@ -101,6 +101,11 @@ TextInput.propTypes = {
     note: PropTypes.string,
     textInputStyle: PropTypes.string,
     value: PropTypes.string,
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired
+      })
+    ),
     isRequired: PropTypes.bool,
     errorMsg: PropTypes.string
   }),
