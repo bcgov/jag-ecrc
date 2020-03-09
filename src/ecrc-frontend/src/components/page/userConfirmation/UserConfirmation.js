@@ -64,7 +64,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
         const regionMap = new Map([
           ["BC", "BRITISH COLUMBIA"],
           ["AB", "ALBERTA"],
-          ["NL", "NEWFOUNDLAND AND LABRADOR"],
+          ["NL", "NEWFOUNDLAND"],
           ["PE", "PRINCE EDWARD ISLAND"],
           ["NS", "NOVA SCOTIA"],
           ["NB", "NEW BRUNSWICK"],
@@ -73,7 +73,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
           ["MB", "MANITOBA"],
           ["SK", "SASKATCHEWAN"],
           ["YT", "YUKON"],
-          ["NT", "NORTHWEST TERRITORIES"],
+          ["NT", "NORTH WEST TERRITORIES"],
           ["NU", "NUNAVUT"]
         ]);
 
