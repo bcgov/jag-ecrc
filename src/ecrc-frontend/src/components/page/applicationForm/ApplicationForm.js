@@ -25,7 +25,22 @@ export default function ApplicationForm({
       cityNm,
       provinceNm,
       postalCodeTxt,
-      countryNm
+      countryNm,
+      alias1FirstNm,
+      alias1SecondNm,
+      alias1SurnameNm,
+      alias2FirstNm,
+      alias2SecondNm,
+      alias2SurnameNm,
+      alias3FirstNm,
+      alias3SecondNm,
+      alias3SurnameNm,
+      birthPlace
+      // driversLicNo,
+      // phoneNumber,
+      // emailAddress,
+      // jobTitle,
+      // organizationFacility
     },
     setApplicant,
     org: { defaultScheduleTypeCd }
@@ -38,19 +53,19 @@ export default function ApplicationForm({
     previousThree: false
   });
 
-  const [alias1FirstNm, setAlias1FirstNm] = useState("");
-  const [alias1SecondNm, setAlias1SecondNm] = useState("");
-  const [alias1SurnameNm, setAlias1SurnameNm] = useState("");
+  const [alias1First, setAlias1First] = useState(alias1FirstNm || "");
+  const [alias1Second, setAlias1Second] = useState(alias1SecondNm || "");
+  const [alias1Surname, setAlias1Surname] = useState(alias1SurnameNm || "");
 
-  const [alias2FirstNm, setAlias2FirstNm] = useState("");
-  const [alias2SecondNm, setAlias2SecondNm] = useState("");
-  const [alias2SurnameNm, setAlias2SurnameNm] = useState("");
+  const [alias2First, setAlias2First] = useState(alias2FirstNm || "");
+  const [alias2Second, setAlias2Second] = useState(alias2SecondNm || "");
+  const [alias2Surname, setAlias2Surname] = useState(alias2SurnameNm || "");
 
-  const [alias3FirstNm, setAlias3FirstNm] = useState("");
-  const [alias3SecondNm, setAlias3SecondNm] = useState("");
-  const [alias3SurnameNm, setAlias3SurnameNm] = useState("");
+  const [alias3First, setAlias3First] = useState(alias3FirstNm || "");
+  const [alias3Second, setAlias3Second] = useState(alias3SecondNm || "");
+  const [alias3Surname, setAlias3Surname] = useState(alias3SurnameNm || "");
 
-  const [birthPlace, setBirthPlace] = useState("");
+  const [birthLoc, setBirthLoc] = useState(birthPlace || "");
   const [birthPlaceError, setBirthPlaceError] = useState("");
   const [driversLicNo, setDriversLicNo] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -116,23 +131,26 @@ export default function ApplicationForm({
   const previousNameOne = {
     legalFirstNm: {
       label: "First Name",
-      id: "alias1FirstNm",
+      id: "alias1First",
+      value: alias1First,
       onChange: event => {
-        setAlias1FirstNm(event);
+        setAlias1First(event);
       }
     },
     legalSecondNm: {
       label: "Middle Name",
-      id: "alias1SeocndNm",
+      id: "alias1Seocnd",
+      value: alias1Second,
       onChange: event => {
-        setAlias1SecondNm(event);
+        setAlias1Second(event);
       }
     },
     legalSurnameNm: {
       label: "Last Name",
-      id: "alias1SurnameNm",
+      id: "alias1Surname",
+      value: alias1Surname,
       onChange: event => {
-        setAlias1SurnameNm(event);
+        setAlias1Surname(event);
       }
     }
   };
@@ -140,23 +158,26 @@ export default function ApplicationForm({
   const previousNameTwo = {
     legalFirstNm: {
       label: "First Name",
-      id: "alias2FirstNm",
+      id: "alias2First",
+      value: alias2First,
       onChange: event => {
-        setAlias2FirstNm(event);
+        setAlias2First(event);
       }
     },
     legalSecondNm: {
       label: "Middle Name",
-      id: "alias2SecondNm",
+      id: "alias2Second",
+      value: alias2Second,
       onChange: event => {
-        setAlias2SecondNm(event);
+        setAlias2Second(event);
       }
     },
     legalSurnameNm: {
       label: "Last Name",
-      id: "alias2SurnameNm",
+      id: "alias2Surname",
+      value: alias2Surname,
       onChange: event => {
-        setAlias2SurnameNm(event);
+        setAlias2Surname(event);
       }
     }
   };
@@ -164,23 +185,26 @@ export default function ApplicationForm({
   const previousNameThree = {
     legalFirstNm: {
       label: "First Name",
-      id: "alias3FirstNm",
+      id: "alias3First",
+      value: alias3FirstNm,
       onChange: event => {
-        setAlias3FirstNm(event);
+        setAlias3First(event);
       }
     },
     legalSecondNm: {
       label: "Middle Name",
-      id: "alias3SecondNm",
+      id: "alias3Second",
+      value: alias3Second,
       onChange: event => {
-        setAlias3SecondNm(event);
+        setAlias3Second(event);
       }
     },
     legalSurnameNm: {
       label: "Last Name",
-      id: "alias3SurnameNm",
+      id: "alias3Surname",
+      value: alias3Surname,
       onChange: event => {
-        setAlias3SurnameNm(event);
+        setAlias3Surname(event);
       }
     }
   };
@@ -190,11 +214,12 @@ export default function ApplicationForm({
     textInputs: [
       {
         label: "City and Country of Birth",
-        id: "birthPlace",
+        id: "birthLoc",
         isRequired: true,
+        value: birthLoc,
         errorMsg: birthPlaceError,
         onChange: event => {
-          setBirthPlace(event);
+          setBirthLoc(event);
           setBirthPlaceError("");
         }
       },
@@ -219,6 +244,7 @@ export default function ApplicationForm({
       {
         label: "Primary Phone Number",
         id: "phoneNumber",
+        placeholder: "123 456 7890",
         note: "(Include area code)",
         isRequired: true,
         errorMsg: phoneNumberError,
@@ -231,6 +257,7 @@ export default function ApplicationForm({
         label: "Personal Email Address",
         id: "emailAddress",
         note: "We may use this to communicate with you about your application.",
+        placeholder: "example@test.com",
         isRequired: true,
         errorMsg: emailAddressError,
         onChange: event => {
@@ -352,6 +379,7 @@ export default function ApplicationForm({
         label: "Postal Code",
         id: "mailingPostalCodeTxt",
         value: mailingPostalCode,
+        placeholder: "V9V 9V9",
         isRequired: true,
         errorMsg: mailingPostalCodeError,
         onChange: event => {
@@ -383,13 +411,18 @@ export default function ApplicationForm({
     type: "submit"
   };
 
+  const validatePhoneNumber = phone => {
+    const re = /1?[ \-(]*\d{3}[ \-)]*\d{3}[ -]*\d{4}/;
+    return re.test(phone);
+  };
+
   const validateEmail = email => {
     const re = /[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return re.test(email);
   };
 
   const validatePostalCode = postalCode => {
-    const re = /[A-Z][0-9][A-Z](?:[ -]*)[0-9][A-Z][0-9]/;
+    const re = /[A-Z][0-9][A-Z][ -]*[0-9][A-Z][0-9]/;
     return re.test(postalCode.toUpperCase());
   };
 
@@ -400,6 +433,10 @@ export default function ApplicationForm({
 
     if (!phoneNumber) {
       setPhoneNumberError("Please enter your primary phone number");
+    } else if (!validatePhoneNumber(phoneNumber)) {
+      setPhoneNumberError(
+        "Please enter a phone number in the form XXX XXX-XXXX"
+      );
     }
 
     if (!emailAddress) {
@@ -439,10 +476,15 @@ export default function ApplicationForm({
     if (
       birthPlace !== "" &&
       phoneNumber !== "" &&
+      validatePhoneNumber(phoneNumber) &&
       emailAddress !== "" &&
       validateEmail(emailAddress) &&
       jobTitle !== "" &&
-      !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "")
+      !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "") &&
+      mailingAddressLine1 !== "" &&
+      mailingCity !== "" &&
+      mailingProvince !== "" &&
+      validatePostalCode(mailingPostalCode)
     ) {
       // TODO: Option to save address fields based on if mailing address added...
 
@@ -450,15 +492,15 @@ export default function ApplicationForm({
         legalFirstNm,
         legalSecondNm,
         legalSurnameNm,
-        alias1FirstNm,
-        alias1SecondNm,
-        alias1SurnameNm,
-        alias2FirstNm,
-        alias2SecondNm,
-        alias2SurnameNm,
-        alias3FirstNm,
-        alias3SecondNm,
-        alias3SurnameNm,
+        alias1FirstNm: alias1First,
+        alias1SecondNm: alias1Second,
+        alias1SurnameNm: alias1Surname,
+        alias2FirstNm: alias2First,
+        alias2SecondNm: alias2Second,
+        alias2SurnameNm: alias2Surname,
+        alias3FirstNm: alias3First,
+        alias3SecondNm: alias3Second,
+        alias3SurnameNm: alias3Surname,
         birthDt,
         genderTxt,
         addressLine1: mailingAddressLine1,

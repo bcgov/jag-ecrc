@@ -10,6 +10,7 @@ export const TextInput = ({
     note,
     textInputStyle,
     value,
+    placeholder,
     options,
     isRequired,
     errorMsg
@@ -87,6 +88,7 @@ export const TextInput = ({
         type="text"
         id={id}
         defaultValue={value}
+        placeholder={placeholder}
         onChange={event => onChange(event.target.value)}
       />
       <span className="error">{errorMsg}</span>
@@ -101,6 +103,7 @@ TextInput.propTypes = {
     note: PropTypes.string,
     textInputStyle: PropTypes.string,
     value: PropTypes.string,
+    placeholder: PropTypes.string,
     options: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired
@@ -114,6 +117,7 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   textInput: {
+    placeholder: "",
     note: "",
     errorMsg: ""
   },
