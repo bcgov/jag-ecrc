@@ -35,12 +35,12 @@ export default function ApplicationForm({
       alias3FirstNm,
       alias3SecondNm,
       alias3SurnameNm,
-      birthPlace
-      // driversLicNo,
-      // phoneNumber,
-      // emailAddress,
-      // jobTitle,
-      // organizationFacility
+      birthPlace,
+      driversLicNo,
+      phoneNumber,
+      emailAddress,
+      jobTitle,
+      organizationFacility
     },
     setApplicant,
     org: { defaultScheduleTypeCd }
@@ -67,14 +67,16 @@ export default function ApplicationForm({
 
   const [birthLoc, setBirthLoc] = useState(birthPlace || "");
   const [birthPlaceError, setBirthPlaceError] = useState("");
-  const [driversLicNo, setDriversLicNo] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [driversLicence, setDriversLicence] = useState(driversLicNo || "");
+  const [phoneNum, setPhoneNum] = useState(phoneNumber || "");
   const [phoneNumberError, setPhoneNumberError] = useState("");
-  const [emailAddress, setEmailAddress] = useState("");
+  const [email, setEmail] = useState(emailAddress || "");
   const [emailAddressError, setEmailAddressError] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
+  const [job, setJob] = useState(jobTitle || "");
   const [jobTitleError, setJobTitleError] = useState("");
-  const [organizationFacility, setOrganizationFacility] = useState("");
+  const [organizationLocation, setOrganizationLocation] = useState(
+    organizationFacility || ""
+  );
   const [organizationFacilityError, setOrganizationFacilityError] = useState(
     ""
   );
@@ -90,10 +92,10 @@ export default function ApplicationForm({
 
   const [provinces, setProvinces] = useState([]);
 
-  const payload = { authorities: ["ROLE"] };
-  const token = generateJWTToken(payload);
-
   useEffect(() => {
+    const payload = { authorities: ["ROLE"] };
+    const token = generateJWTToken(payload);
+
     axios
       .get("/ecrc/protected/getProvinceList", {
         headers: {
@@ -238,18 +240,20 @@ export default function ApplicationForm({
       {
         label: "BC Driver's Licence Number",
         id: "bcDLNumber",
+        value: driversLicence,
         note: "(Current or Expired)",
-        onChange: setDriversLicNo
+        onChange: setDriversLicence
       },
       {
         label: "Primary Phone Number",
         id: "phoneNumber",
         placeholder: "123 456 7890",
+        value: phoneNum,
         note: "(Include area code)",
         isRequired: true,
         errorMsg: phoneNumberError,
         onChange: event => {
-          setPhoneNumber(event);
+          setPhoneNum(event);
           setPhoneNumberError("");
         }
       },
@@ -258,10 +262,11 @@ export default function ApplicationForm({
         id: "emailAddress",
         note: "We may use this to communicate with you about your application.",
         placeholder: "example@test.com",
+        value: email,
         isRequired: true,
         errorMsg: emailAddressError,
         onChange: event => {
-          setEmailAddress(event);
+          setEmail(event);
           setEmailAddressError("");
         }
       }
@@ -275,10 +280,11 @@ export default function ApplicationForm({
       {
         label: "Applicant's position/Job Title",
         id: "applicantPosition",
+        value: job,
         isRequired: true,
         errorMsg: jobTitleError,
         onChange: event => {
-          setJobTitle(event);
+          setJob(event);
           setJobTitleError("");
         }
       }
@@ -290,12 +296,13 @@ export default function ApplicationForm({
     positionInformation.textInputs.push({
       label: "Organization Facility",
       id: "organizationFacility",
+      value: organizationLocation,
       note:
         "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)",
       isRequired: true,
       errorMsg: organizationFacilityError,
       onChange: event => {
-        setOrganizationFacility(event);
+        setOrganizationLocation(event);
         setOrganizationFacilityError("");
       }
     });
@@ -427,31 +434,31 @@ export default function ApplicationForm({
   };
 
   const applicationVerification = () => {
-    if (!birthPlace) {
+    if (!birthLoc) {
       setBirthPlaceError("Please enter your city and country of birth");
     }
 
-    if (!phoneNumber) {
+    if (!phoneNum) {
       setPhoneNumberError("Please enter your primary phone number");
-    } else if (!validatePhoneNumber(phoneNumber)) {
+    } else if (!validatePhoneNumber(phoneNum)) {
       setPhoneNumberError(
         "Please enter a phone number in the form XXX XXX-XXXX"
       );
     }
 
-    if (!emailAddress) {
+    if (!email) {
       setEmailAddressError("Please enter your personal email address");
-    } else if (!validateEmail(emailAddress)) {
+    } else if (!validateEmail(email)) {
       setEmailAddressError(
         "Please enter a valid email address eg. name@company.ca"
       );
     }
 
-    if (!jobTitle) {
+    if (!job) {
       setJobTitleError("Please enter your position/job title");
     }
 
-    if (defaultScheduleTypeCd === "WBSD" && !organizationFacility) {
+    if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
@@ -474,13 +481,13 @@ export default function ApplicationForm({
     }
 
     if (
-      birthPlace !== "" &&
-      phoneNumber !== "" &&
-      validatePhoneNumber(phoneNumber) &&
-      emailAddress !== "" &&
-      validateEmail(emailAddress) &&
-      jobTitle !== "" &&
-      !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "") &&
+      birthLoc !== "" &&
+      phoneNum !== "" &&
+      validatePhoneNumber(phoneNum) &&
+      email !== "" &&
+      validateEmail(email) &&
+      job !== "" &&
+      !(defaultScheduleTypeCd === "WBSD" && organizationLocation === "") &&
       mailingAddressLine1 !== "" &&
       mailingCity !== "" &&
       mailingProvince !== "" &&
@@ -508,12 +515,12 @@ export default function ApplicationForm({
         provinceNm: mailingProvince,
         postalCodeTxt: mailingPostalCode,
         countryNm,
-        birthPlace,
-        driversLicNo,
-        phoneNumber,
-        emailAddress,
-        jobTitle,
-        organizationFacility
+        birthPlace: birthLoc,
+        driversLicNo: driversLicence,
+        phoneNumber: phoneNum,
+        emailAddress: email,
+        jobTitle: job,
+        organizationFacility: organizationLocation
       });
 
       setToInfoReview(true);
@@ -631,11 +638,44 @@ ApplicationForm.propTypes = {
       cityNm: PropTypes.string.isRequired,
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
-      countryNm: PropTypes.string.isRequired
+      countryNm: PropTypes.string.isRequired,
+      alias1FirstNm: PropTypes.string,
+      alias1SecondNm: PropTypes.string,
+      alias1SurnameNm: PropTypes.string,
+      alias2FirstNm: PropTypes.string,
+      alias2SecondNm: PropTypes.string,
+      alias2SurnameNm: PropTypes.string,
+      alias3FirstNm: PropTypes.string,
+      alias3SecondNm: PropTypes.string,
+      alias3SurnameNm: PropTypes.string,
+      birthPlace: PropTypes.string,
+      driversLicNo: PropTypes.string,
+      phoneNumber: PropTypes.string,
+      emailAddress: PropTypes.string,
+      jobTitle: PropTypes.string,
+      organizationFacility: PropTypes.string
     }),
     setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({
       defaultScheduleTypeCd: PropTypes.string.isRequired
     })
   }).isRequired
+};
+
+ApplicationForm.defaultProps = {
+  alias1FirstNm: "",
+  alias1SecondNm: "",
+  alias1SurnameNm: "",
+  alias2FirstNm: "",
+  alias2SecondNm: "",
+  alias2SurnameNm: "",
+  alias3FirstNm: "",
+  alias3SecondNm: "",
+  alias3SurnameNm: "",
+  birthPlace: "",
+  driversLicNo: "",
+  phoneNumber: "",
+  emailAddress: "",
+  jobTitle: "",
+  organizationFacility: ""
 };
