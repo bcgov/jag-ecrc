@@ -61,9 +61,26 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
         const birthDt = birthdate.split("-").join("/");
 
         // Convert province name
-        // TODO: Implement properly for all provinces
-        const provinceNm =
-          region === "BC" ? "BRITISH COLUMBIA" : "Fail Province";
+        const regionMap = new Map([
+          ["BC", "BRITISH COLUMBIA"],
+          ["AB", "ALBERTA"],
+          ["NL", "NEWFOUNDLAND AND LABRADOR"],
+          ["PE", "PRINCE ENDWARD ISLAND"],
+          ["NS", "NOVA SCOTIA"],
+          ["NB", "NEW BRUNSWICK"],
+          ["QC", "QUEBEC"],
+          ["ON", "ONTARIO"],
+          ["MB", "MANITOBA"],
+          ["SK", "SASKATCHEWAN"],
+          ["YT", "YUKON"],
+          ["NT", "NORTHWEST TERRITORIES"],
+          ["NU", "NUNAVUT"]
+        ]);
+
+        let provinceNm = regionMap.get(region);
+        if (provinceNm === undefined) {
+          provinceNm = "Invalid Province";
+        }
 
         setUser({
           legalFirstNm: given_name,
