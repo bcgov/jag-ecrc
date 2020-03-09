@@ -65,7 +65,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
           ["BC", "BRITISH COLUMBIA"],
           ["AB", "ALBERTA"],
           ["NL", "NEWFOUNDLAND AND LABRADOR"],
-          ["PE", "PRINCE ENDWARD ISLAND"],
+          ["PE", "PRINCE EDWARD ISLAND"],
           ["NS", "NOVA SCOTIA"],
           ["NB", "NEW BRUNSWICK"],
           ["QC", "QUEBEC"],
