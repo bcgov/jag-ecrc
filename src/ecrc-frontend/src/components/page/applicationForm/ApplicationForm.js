@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import axios from "axios";
 import { Redirect } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "./ApplicationForm.css";
 import Header from "../../base/header/Header";
@@ -9,6 +10,7 @@ import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 export default function ApplicationForm({
   page: {
@@ -70,10 +72,23 @@ export default function ApplicationForm({
   const [mailingProvinceError, setMailingProvinceError] = useState("");
   const [mailingPostalCode, setMailingPostalCode] = useState("");
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
-  const [mailingCountry, setMailingCountry] = useState("");
-  const [mailingCountryError, setMailingCountryError] = useState("");
+
+  const [provinces, setProvinces] = useState([]);
+
+  const payload = { authorities: ["ROLE"] };
+  const token = generateJWTToken(payload);
 
   useEffect(() => {
+    axios
+      .get("/ecrc/protected/getProvinceList", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(res => {
+        setProvinces(res.data.provinces.province);
+      });
+
     window.scrollTo(0, 0);
   }, []);
 
@@ -325,10 +340,11 @@ export default function ApplicationForm({
         label: "Province",
         id: "mailingProvinceNm",
         value: mailingProvince,
+        options: provinces,
         isRequired: true,
         errorMsg: mailingProvinceError,
         onChange: event => {
-          setMailingProvince(event);
+          setMailingProvince(event.target.value);
           setMailingProvinceError("");
         }
       },
@@ -346,13 +362,8 @@ export default function ApplicationForm({
       {
         label: "Country",
         id: "mailingCountryNm",
-        value: mailingCountry,
-        isRequired: true,
-        errorMsg: mailingCountryError,
-        onChange: event => {
-          setMailingCountry(event);
-          setMailingCountryError("");
-        }
+        value: countryNm,
+        textInputStyle: "textinput_non_editable_gray"
       }
     ],
     buttons: []
@@ -372,6 +383,16 @@ export default function ApplicationForm({
     type: "submit"
   };
 
+  const validateEmail = email => {
+    const re = /[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    return re.test(email);
+  };
+
+  const validatePostalCode = postalCode => {
+    const re = /[A-Z][0-9][A-Z](?:[ -]*)[0-9][A-Z][0-9]/;
+    return re.test(postalCode.toUpperCase());
+  };
+
   const applicationVerification = () => {
     if (!birthPlace) {
       setBirthPlaceError("Please enter your city and country of birth");
@@ -383,6 +404,8 @@ export default function ApplicationForm({
 
     if (!emailAddress) {
       setEmailAddressError("Please enter your personal email address");
+    } else if (!validateEmail(emailAddress)) {
+      setEmailAddressError("Please enter a valid email address");
     }
 
     if (!jobTitle) {
@@ -409,14 +432,11 @@ export default function ApplicationForm({
       setMailingPostalCodeError("Please enter your postal code");
     }
 
-    if (!mailingCountry) {
-      setMailingCountryError("Please enter your country");
-    }
-
     if (
       birthPlace !== "" &&
       phoneNumber !== "" &&
       emailAddress !== "" &&
+      validateEmail(emailAddress) &&
       jobTitle !== "" &&
       !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "")
     ) {
@@ -441,7 +461,7 @@ export default function ApplicationForm({
         cityNm: mailingCity,
         provinceNm: mailingProvince,
         postalCodeTxt: mailingPostalCode,
-        countryNm: mailingCountry,
+        countryNm,
         birthPlace,
         driversLicNo,
         phoneNumber,
@@ -473,7 +493,6 @@ export default function ApplicationForm({
     setMailingCity(cityNm);
     setMailingProvince(provinceNm);
     setMailingPostalCode(postalCodeTxt);
-    setMailingCountry(countryNm);
   };
 
   if (toHome) {

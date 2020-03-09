@@ -4,7 +4,16 @@ import PropTypes from "prop-types";
 import "./TextInput.css";
 
 export const TextInput = ({
-  textInput: { label, id, note, textInputStyle, value, isRequired, errorMsg },
+  textInput: {
+    label,
+    id,
+    note,
+    textInputStyle,
+    value,
+    options,
+    isRequired,
+    errorMsg
+  },
   onChange
 }) => {
   let asterisk = "";
@@ -52,6 +61,23 @@ export const TextInput = ({
         <span className="error">{errorMsg}</span>
       </div>
     );
+
+  if (options) {
+    return (
+      <div>
+        {labelPart}
+        <select className={textStyle} id={id} value={value} onChange={onChange}>
+          {options.map(item => {
+            return (
+              <option key={item.name} value={item.name}>
+                {item.name}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+    );
+  }
 
   return (
     <div>
