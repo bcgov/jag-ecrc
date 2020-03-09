@@ -113,7 +113,13 @@ public class OauthController {
 		}
 		
 		// Fetch corresponding Userinfo from the IdP server.  
-		JSONObject userInfo = oauthServices.getUserInfo((BearerAccessToken)token.toSuccessResponse().getTokens().getAccessToken());
+		JSONObject userInfo = null; 
+		try {
+			userInfo = oauthServices.getUserInfo((BearerAccessToken)token.toSuccessResponse().getTokens().getAccessToken());
+		} catch (OauthServiceException e) {
+			logger.error("Error fetching userinfo. " + e.getMessage(), e);
+			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
+		}
 		
 		// Encrypt the token received from the IdP. This token contains the accessToken, the refreshToken, and the ID Token. This block 
 		// must be decrypted and used for subsequent calls back to the IdP from this layer (e.g. /refreshToken). 
