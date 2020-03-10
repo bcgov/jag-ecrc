@@ -37,7 +37,7 @@ public class JwtTokenGenerator {
 			// per == persisted IdP token
 			token = Jwts.builder()
 					.claim("userInfo", userInfo)
-					.claim("per", encryptedToken)
+					//.claim("per", encryptedToken)
 					.claim("authorities", Arrays.asList(authority))
 					.setExpiration(new Date(System.currentTimeMillis() + expiryTime))
 					.signWith(SignatureAlgorithm.HS256, secret.getBytes(StandardCharsets.UTF_8)).compact();
