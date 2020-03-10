@@ -25,7 +25,7 @@ describe("OrgVerification Component", () => {
     org
   };
 
-  //Mock Window functions
+  // Mock window function
   window.scrollTo = jest.fn();
 
   let useEffect;
@@ -35,7 +35,7 @@ describe("OrgVerification Component", () => {
   };
 
   beforeEach(() => {
-    /* mocking useEffect */
+    // Mocking useEffect
     useEffect = jest.spyOn(React, "useEffect");
     mockUseEffect();
   });
