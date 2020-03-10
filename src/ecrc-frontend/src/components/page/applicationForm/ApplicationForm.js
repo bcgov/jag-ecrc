@@ -49,8 +49,10 @@ export default function ApplicationForm({
   const [toHome, setToHome] = useState(false);
   const [toInfoReview, setToInfoReview] = useState(false);
   const [previousNames, setPreviousNames] = useState({
-    previousTwo: false,
-    previousThree: false
+    previousTwo:
+      alias2FirstNm || alias2SecondNm || alias2SurnameNm ? true : false,
+    previousThree:
+      alias3FirstNm || alias3SecondNm || alias3SurnameNm ? true : false
   });
 
   const [alias1First, setAlias1First] = useState(alias1FirstNm || "");
@@ -576,7 +578,7 @@ export default function ApplicationForm({
           {previousNames.previousThree && (
             <FullName title={null} fullname={previousNameThree} />
           )}
-          {!previousNames.previousThree && (
+          {(!previousNames.previousTwo || !previousNames.previousThree) && (
             <span className="heading note previousFooter">
               If you have more than one previous name, please&nbsp;
               <button
