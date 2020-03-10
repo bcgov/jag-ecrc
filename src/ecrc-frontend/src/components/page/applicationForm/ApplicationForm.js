@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import axios from "axios";
 import { Redirect } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "./ApplicationForm.css";
 import Header from "../../base/header/Header";
@@ -9,6 +10,7 @@ import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 export default function ApplicationForm({
   page: {
@@ -23,7 +25,22 @@ export default function ApplicationForm({
       cityNm,
       provinceNm,
       postalCodeTxt,
-      countryNm
+      countryNm,
+      alias1FirstNm,
+      alias1SecondNm,
+      alias1SurnameNm,
+      alias2FirstNm,
+      alias2SecondNm,
+      alias2SurnameNm,
+      alias3FirstNm,
+      alias3SecondNm,
+      alias3SurnameNm,
+      birthPlace,
+      driversLicNo,
+      phoneNumber,
+      emailAddress,
+      jobTitle,
+      organizationFacility
     },
     setApplicant,
     org: { defaultScheduleTypeCd }
@@ -32,32 +49,34 @@ export default function ApplicationForm({
   const [toHome, setToHome] = useState(false);
   const [toInfoReview, setToInfoReview] = useState(false);
   const [previousNames, setPreviousNames] = useState({
-    previousTwo: false,
-    previousThree: false
+    previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
+    previousThree: alias3FirstNm || alias3SecondNm || alias3SurnameNm
   });
 
-  const [alias1FirstNm, setAlias1FirstNm] = useState("");
-  const [alias1SecondNm, setAlias1SecondNm] = useState("");
-  const [alias1SurnameNm, setAlias1SurnameNm] = useState("");
+  const [alias1First, setAlias1First] = useState(alias1FirstNm || "");
+  const [alias1Second, setAlias1Second] = useState(alias1SecondNm || "");
+  const [alias1Surname, setAlias1Surname] = useState(alias1SurnameNm || "");
 
-  const [alias2FirstNm, setAlias2FirstNm] = useState("");
-  const [alias2SecondNm, setAlias2SecondNm] = useState("");
-  const [alias2SurnameNm, setAlias2SurnameNm] = useState("");
+  const [alias2First, setAlias2First] = useState(alias2FirstNm || "");
+  const [alias2Second, setAlias2Second] = useState(alias2SecondNm || "");
+  const [alias2Surname, setAlias2Surname] = useState(alias2SurnameNm || "");
 
-  const [alias3FirstNm, setAlias3FirstNm] = useState("");
-  const [alias3SecondNm, setAlias3SecondNm] = useState("");
-  const [alias3SurnameNm, setAlias3SurnameNm] = useState("");
+  const [alias3First, setAlias3First] = useState(alias3FirstNm || "");
+  const [alias3Second, setAlias3Second] = useState(alias3SecondNm || "");
+  const [alias3Surname, setAlias3Surname] = useState(alias3SurnameNm || "");
 
-  const [birthPlace, setBirthPlace] = useState("");
+  const [birthLoc, setBirthLoc] = useState(birthPlace || "");
   const [birthPlaceError, setBirthPlaceError] = useState("");
-  const [driversLicNo, setDriversLicNo] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [driversLicence, setDriversLicence] = useState(driversLicNo || "");
+  const [phoneNum, setPhoneNum] = useState(phoneNumber || "");
   const [phoneNumberError, setPhoneNumberError] = useState("");
-  const [emailAddress, setEmailAddress] = useState("");
+  const [email, setEmail] = useState(emailAddress || "");
   const [emailAddressError, setEmailAddressError] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
+  const [job, setJob] = useState(jobTitle || "");
   const [jobTitleError, setJobTitleError] = useState("");
-  const [organizationFacility, setOrganizationFacility] = useState("");
+  const [organizationLocation, setOrganizationLocation] = useState(
+    organizationFacility || ""
+  );
   const [organizationFacilityError, setOrganizationFacilityError] = useState(
     ""
   );
@@ -70,10 +89,23 @@ export default function ApplicationForm({
   const [mailingProvinceError, setMailingProvinceError] = useState("");
   const [mailingPostalCode, setMailingPostalCode] = useState("");
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
-  const [mailingCountry, setMailingCountry] = useState("");
-  const [mailingCountryError, setMailingCountryError] = useState("");
+
+  const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
+    const payload = { authorities: ["ROLE"] };
+    const token = generateJWTToken(payload);
+
+    axios
+      .get("/ecrc/protected/getProvinceList", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(res => {
+        setProvinces(res.data.provinces.province);
+      });
+
     window.scrollTo(0, 0);
   }, []);
 
@@ -101,23 +133,26 @@ export default function ApplicationForm({
   const previousNameOne = {
     legalFirstNm: {
       label: "First Name",
-      id: "alias1FirstNm",
+      id: "alias1First",
+      value: alias1First,
       onChange: event => {
-        setAlias1FirstNm(event);
+        setAlias1First(event);
       }
     },
     legalSecondNm: {
       label: "Middle Name",
-      id: "alias1SeocndNm",
+      id: "alias1Seocnd",
+      value: alias1Second,
       onChange: event => {
-        setAlias1SecondNm(event);
+        setAlias1Second(event);
       }
     },
     legalSurnameNm: {
       label: "Last Name",
-      id: "alias1SurnameNm",
+      id: "alias1Surname",
+      value: alias1Surname,
       onChange: event => {
-        setAlias1SurnameNm(event);
+        setAlias1Surname(event);
       }
     }
   };
@@ -125,23 +160,26 @@ export default function ApplicationForm({
   const previousNameTwo = {
     legalFirstNm: {
       label: "First Name",
-      id: "alias2FirstNm",
+      id: "alias2First",
+      value: alias2First,
       onChange: event => {
-        setAlias2FirstNm(event);
+        setAlias2First(event);
       }
     },
     legalSecondNm: {
       label: "Middle Name",
-      id: "alias2SecondNm",
+      id: "alias2Second",
+      value: alias2Second,
       onChange: event => {
-        setAlias2SecondNm(event);
+        setAlias2Second(event);
       }
     },
     legalSurnameNm: {
       label: "Last Name",
-      id: "alias2SurnameNm",
+      id: "alias2Surname",
+      value: alias2Surname,
       onChange: event => {
-        setAlias2SurnameNm(event);
+        setAlias2Surname(event);
       }
     }
   };
@@ -149,23 +187,26 @@ export default function ApplicationForm({
   const previousNameThree = {
     legalFirstNm: {
       label: "First Name",
-      id: "alias3FirstNm",
+      id: "alias3First",
+      value: alias3FirstNm,
       onChange: event => {
-        setAlias3FirstNm(event);
+        setAlias3First(event);
       }
     },
     legalSecondNm: {
       label: "Middle Name",
-      id: "alias3SecondNm",
+      id: "alias3Second",
+      value: alias3Second,
       onChange: event => {
-        setAlias3SecondNm(event);
+        setAlias3Second(event);
       }
     },
     legalSurnameNm: {
       label: "Last Name",
-      id: "alias3SurnameNm",
+      id: "alias3Surname",
+      value: alias3Surname,
       onChange: event => {
-        setAlias3SurnameNm(event);
+        setAlias3Surname(event);
       }
     }
   };
@@ -175,11 +216,12 @@ export default function ApplicationForm({
     textInputs: [
       {
         label: "City and Country of Birth",
-        id: "birthPlace",
+        id: "birthLoc",
         isRequired: true,
+        value: birthLoc,
         errorMsg: birthPlaceError,
         onChange: event => {
-          setBirthPlace(event);
+          setBirthLoc(event);
           setBirthPlaceError("");
         }
       },
@@ -198,17 +240,20 @@ export default function ApplicationForm({
       {
         label: "BC Driver's Licence Number",
         id: "bcDLNumber",
+        value: driversLicence,
         note: "(Current or Expired)",
-        onChange: setDriversLicNo
+        onChange: setDriversLicence
       },
       {
         label: "Primary Phone Number",
         id: "phoneNumber",
+        placeholder: "123 456 7890",
+        value: phoneNum,
         note: "(Include area code)",
         isRequired: true,
         errorMsg: phoneNumberError,
         onChange: event => {
-          setPhoneNumber(event);
+          setPhoneNum(event);
           setPhoneNumberError("");
         }
       },
@@ -216,10 +261,12 @@ export default function ApplicationForm({
         label: "Personal Email Address",
         id: "emailAddress",
         note: "We may use this to communicate with you about your application.",
+        placeholder: "example@test.com",
+        value: email,
         isRequired: true,
         errorMsg: emailAddressError,
         onChange: event => {
-          setEmailAddress(event);
+          setEmail(event);
           setEmailAddressError("");
         }
       }
@@ -233,10 +280,11 @@ export default function ApplicationForm({
       {
         label: "Applicant's position/Job Title",
         id: "applicantPosition",
+        value: job,
         isRequired: true,
         errorMsg: jobTitleError,
         onChange: event => {
-          setJobTitle(event);
+          setJob(event);
           setJobTitleError("");
         }
       }
@@ -248,12 +296,13 @@ export default function ApplicationForm({
     positionInformation.textInputs.push({
       label: "Organization Facility",
       id: "organizationFacility",
+      value: organizationLocation,
       note:
         "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)",
       isRequired: true,
       errorMsg: organizationFacilityError,
       onChange: event => {
-        setOrganizationFacility(event);
+        setOrganizationLocation(event);
         setOrganizationFacilityError("");
       }
     });
@@ -325,10 +374,11 @@ export default function ApplicationForm({
         label: "Province",
         id: "mailingProvinceNm",
         value: mailingProvince,
+        options: provinces,
         isRequired: true,
         errorMsg: mailingProvinceError,
         onChange: event => {
-          setMailingProvince(event);
+          setMailingProvince(event.target.value);
           setMailingProvinceError("");
         }
       },
@@ -336,6 +386,7 @@ export default function ApplicationForm({
         label: "Postal Code",
         id: "mailingPostalCodeTxt",
         value: mailingPostalCode,
+        placeholder: "V9V 9V9",
         isRequired: true,
         errorMsg: mailingPostalCodeError,
         onChange: event => {
@@ -346,13 +397,8 @@ export default function ApplicationForm({
       {
         label: "Country",
         id: "mailingCountryNm",
-        value: mailingCountry,
-        isRequired: true,
-        errorMsg: mailingCountryError,
-        onChange: event => {
-          setMailingCountry(event);
-          setMailingCountryError("");
-        }
+        value: countryNm,
+        textInputStyle: "textinput_non_editable_gray"
       }
     ],
     buttons: []
@@ -372,24 +418,47 @@ export default function ApplicationForm({
     type: "submit"
   };
 
+  const validatePhoneNumber = phone => {
+    const re = /1?[ \-(]*\d{3}[ \-)]*\d{3}[ -]*\d{4}/;
+    return re.test(phone);
+  };
+
+  const validateEmail = emailTxt => {
+    const re = /[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    return re.test(emailTxt);
+  };
+
+  const validatePostalCode = postalCode => {
+    const re = /[A-Z][0-9][A-Z][ -]*[0-9][A-Z][0-9]/;
+    return re.test(postalCode.toUpperCase());
+  };
+
   const applicationVerification = () => {
-    if (!birthPlace) {
+    if (!birthLoc) {
       setBirthPlaceError("Please enter your city and country of birth");
     }
 
-    if (!phoneNumber) {
+    if (!phoneNum) {
       setPhoneNumberError("Please enter your primary phone number");
+    } else if (!validatePhoneNumber(phoneNum)) {
+      setPhoneNumberError(
+        "Please enter a phone number in the form XXX XXX-XXXX"
+      );
     }
 
-    if (!emailAddress) {
+    if (!email) {
       setEmailAddressError("Please enter your personal email address");
+    } else if (!validateEmail(email)) {
+      setEmailAddressError(
+        "Please enter a valid email address eg. name@company.ca"
+      );
     }
 
-    if (!jobTitle) {
+    if (!job) {
       setJobTitleError("Please enter your position/job title");
     }
 
-    if (defaultScheduleTypeCd === "WBSD" && !organizationFacility) {
+    if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
@@ -405,20 +474,24 @@ export default function ApplicationForm({
       setMailingProvinceError("Please enter your province");
     }
 
-    if (!mailingPostalCode) {
-      setMailingPostalCodeError("Please enter your postal code");
-    }
-
-    if (!mailingCountry) {
-      setMailingCountryError("Please enter your country");
+    if (!validatePostalCode(mailingPostalCode)) {
+      setMailingPostalCodeError(
+        "Please enter a valid postal code in the form V9V 9V9"
+      );
     }
 
     if (
-      birthPlace !== "" &&
-      phoneNumber !== "" &&
-      emailAddress !== "" &&
-      jobTitle !== "" &&
-      !(defaultScheduleTypeCd === "WBSD" && organizationFacility === "")
+      birthLoc !== "" &&
+      phoneNum !== "" &&
+      validatePhoneNumber(phoneNum) &&
+      email !== "" &&
+      validateEmail(email) &&
+      job !== "" &&
+      !(defaultScheduleTypeCd === "WBSD" && organizationLocation === "") &&
+      mailingAddressLine1 !== "" &&
+      mailingCity !== "" &&
+      mailingProvince !== "" &&
+      validatePostalCode(mailingPostalCode)
     ) {
       // TODO: Option to save address fields based on if mailing address added...
 
@@ -426,28 +499,28 @@ export default function ApplicationForm({
         legalFirstNm,
         legalSecondNm,
         legalSurnameNm,
-        alias1FirstNm,
-        alias1SecondNm,
-        alias1SurnameNm,
-        alias2FirstNm,
-        alias2SecondNm,
-        alias2SurnameNm,
-        alias3FirstNm,
-        alias3SecondNm,
-        alias3SurnameNm,
+        alias1FirstNm: alias1First,
+        alias1SecondNm: alias1Second,
+        alias1SurnameNm: alias1Surname,
+        alias2FirstNm: alias2First,
+        alias2SecondNm: alias2Second,
+        alias2SurnameNm: alias2Surname,
+        alias3FirstNm: alias3First,
+        alias3SecondNm: alias3Second,
+        alias3SurnameNm: alias3Surname,
         birthDt,
         genderTxt,
         addressLine1: mailingAddressLine1,
         cityNm: mailingCity,
         provinceNm: mailingProvince,
         postalCodeTxt: mailingPostalCode,
-        countryNm: mailingCountry,
-        birthPlace,
-        driversLicNo,
-        phoneNumber,
-        emailAddress,
-        jobTitle,
-        organizationFacility
+        countryNm,
+        birthPlace: birthLoc,
+        driversLicNo: driversLicence,
+        phoneNumber: phoneNum,
+        emailAddress: email,
+        jobTitle: job,
+        organizationFacility: organizationLocation
       });
 
       setToInfoReview(true);
@@ -473,7 +546,6 @@ export default function ApplicationForm({
     setMailingCity(cityNm);
     setMailingProvince(provinceNm);
     setMailingPostalCode(postalCodeTxt);
-    setMailingCountry(countryNm);
   };
 
   if (toHome) {
@@ -504,7 +576,7 @@ export default function ApplicationForm({
           {previousNames.previousThree && (
             <FullName title={null} fullname={previousNameThree} />
           )}
-          {!previousNames.previousThree && (
+          {(!previousNames.previousTwo || !previousNames.previousThree) && (
             <span className="heading note previousFooter">
               If you have more than one previous name, please&nbsp;
               <button
@@ -566,11 +638,48 @@ ApplicationForm.propTypes = {
       cityNm: PropTypes.string.isRequired,
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
-      countryNm: PropTypes.string.isRequired
+      countryNm: PropTypes.string.isRequired,
+      alias1FirstNm: PropTypes.string,
+      alias1SecondNm: PropTypes.string,
+      alias1SurnameNm: PropTypes.string,
+      alias2FirstNm: PropTypes.string,
+      alias2SecondNm: PropTypes.string,
+      alias2SurnameNm: PropTypes.string,
+      alias3FirstNm: PropTypes.string,
+      alias3SecondNm: PropTypes.string,
+      alias3SurnameNm: PropTypes.string,
+      birthPlace: PropTypes.string,
+      driversLicNo: PropTypes.string,
+      phoneNumber: PropTypes.string,
+      emailAddress: PropTypes.string,
+      jobTitle: PropTypes.string,
+      organizationFacility: PropTypes.string
     }),
     setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({
       defaultScheduleTypeCd: PropTypes.string.isRequired
     })
-  }).isRequired
+  })
+};
+
+ApplicationForm.defaultProps = {
+  page: {
+    applicant: {
+      alias1FirstNm: "",
+      alias1SecondNm: "",
+      alias1SurnameNm: "",
+      alias2FirstNm: "",
+      alias2SecondNm: "",
+      alias2SurnameNm: "",
+      alias3FirstNm: "",
+      alias3SecondNm: "",
+      alias3SurnameNm: "",
+      birthPlace: "",
+      driversLicNo: "",
+      phoneNumber: "",
+      emailAddress: "",
+      jobTitle: "",
+      organizationFacility: ""
+    }
+  }
 };

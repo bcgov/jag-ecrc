@@ -4,7 +4,17 @@ import PropTypes from "prop-types";
 import "./TextInput.css";
 
 export const TextInput = ({
-  textInput: { label, id, note, textInputStyle, value, isRequired, errorMsg },
+  textInput: {
+    label,
+    id,
+    note,
+    textInputStyle,
+    value,
+    placeholder,
+    options,
+    isRequired,
+    errorMsg
+  },
   onChange
 }) => {
   let asterisk = "";
@@ -53,6 +63,23 @@ export const TextInput = ({
       </div>
     );
 
+  if (options) {
+    return (
+      <div>
+        {labelPart}
+        <select className={textStyle} id={id} value={value} onChange={onChange}>
+          {options.map(item => {
+            return (
+              <option key={item.name} value={item.name}>
+                {item.name}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+    );
+  }
+
   return (
     <div>
       {labelPart}
@@ -61,6 +88,7 @@ export const TextInput = ({
         type="text"
         id={id}
         defaultValue={value}
+        placeholder={placeholder}
         onChange={event => onChange(event.target.value)}
       />
       <span className="error">{errorMsg}</span>
@@ -75,6 +103,12 @@ TextInput.propTypes = {
     note: PropTypes.string,
     textInputStyle: PropTypes.string,
     value: PropTypes.string,
+    placeholder: PropTypes.string,
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired
+      })
+    ),
     isRequired: PropTypes.bool,
     errorMsg: PropTypes.string
   }),
@@ -83,6 +117,7 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   textInput: {
+    placeholder: "",
     note: "",
     errorMsg: ""
   },

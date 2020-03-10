@@ -199,7 +199,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="alias1FirstNm"
+                  htmlFor="alias1First"
                 >
                   First Name
                 </label>
@@ -211,7 +211,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
-                id="alias1FirstNm"
+                defaultValue=""
+                id="alias1First"
                 onChange={[Function]}
                 type="text"
               />
@@ -227,7 +228,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="alias1SeocndNm"
+                  htmlFor="alias1Seocnd"
                 >
                   Middle Name
                 </label>
@@ -239,7 +240,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
-                id="alias1SeocndNm"
+                defaultValue=""
+                id="alias1Seocnd"
                 onChange={[Function]}
                 type="text"
               />
@@ -255,7 +257,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="alias1SurnameNm"
+                  htmlFor="alias1Surname"
                 >
                   Last Name
                 </label>
@@ -267,7 +269,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
-                id="alias1SurnameNm"
+                defaultValue=""
+                id="alias1Surname"
                 onChange={[Function]}
                 type="text"
               />
@@ -302,7 +305,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               >
                 <label
                   className="textinput_label"
-                  htmlFor="birthPlace"
+                  htmlFor="birthLoc"
                 >
                   City and Country of Birth
                 </label>
@@ -319,7 +322,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
-                id="birthPlace"
+                defaultValue=""
+                id="birthLoc"
                 onChange={[Function]}
                 type="text"
               />
@@ -411,6 +415,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
+                defaultValue=""
                 id="bcDLNumber"
                 onChange={[Function]}
                 type="text"
@@ -446,8 +451,10 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
+                defaultValue=""
                 id="phoneNumber"
                 onChange={[Function]}
+                placeholder="123 456 7890"
                 type="text"
               />
               <span
@@ -483,8 +490,10 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
+                defaultValue=""
                 id="emailAddress"
                 onChange={[Function]}
+                placeholder="example@test.com"
                 type="text"
               />
               <span
@@ -529,6 +538,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
+                defaultValue=""
                 id="applicantPosition"
                 onChange={[Function]}
                 type="text"
@@ -566,6 +576,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               </div>
               <input
                 className="textinput_editable_white"
+                defaultValue=""
                 id="organizationFacility"
                 onChange={[Function]}
                 type="text"
@@ -850,18 +861,12 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   className="note"
                 />
               </div>
-              <input
+              <select
                 className="textinput_editable_white"
-                defaultValue=""
                 id="mailingProvinceNm"
                 onChange={[Function]}
-                type="text"
+                value=""
               />
-              <span
-                className="error"
-              >
-                
-              </span>
             </div>
           </li>
           <li>
@@ -891,6 +896,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 defaultValue=""
                 id="mailingPostalCodeTxt"
                 onChange={[Function]}
+                placeholder="V9V 9V9"
                 type="text"
               />
               <span
@@ -911,29 +917,23 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 >
                   Country
                 </label>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </div>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
+                className="textinput_non_editable_gray"
+                defaultValue="Canada"
                 id="mailingCountryNm"
                 onChange={[Function]}
+                readOnly={true}
                 type="text"
               />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
         </ul>

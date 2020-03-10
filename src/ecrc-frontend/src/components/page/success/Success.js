@@ -119,8 +119,7 @@ export default function Success({
   const downloadPDF = () => {
     const doc = new jsPDF();
     doc.autoTable({ theme: "plain", html: "#print" });
-    // File name format from Jason Lee
-    doc.save(`app${serviceId}.pdf`);
+    doc.save(`${serviceId}${legalSurnameNm}${legalFirstNm}.pdf`);
   };
 
   const retryPayment = () => {
