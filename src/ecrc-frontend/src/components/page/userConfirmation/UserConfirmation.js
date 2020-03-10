@@ -36,7 +36,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
         const {
           userInfo: {
             birthdate,
-            address: { street_address, country, locality, region, postal_code },
+            address: { street_address, locality, region, postal_code },
             gender,
             given_name,
             given_names,
@@ -52,10 +52,6 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 
         // Convert gender text
         const genderTxt = gender === "female" ? "F" : "M";
-
-        // Convert country name
-        // TODO ensure we only get CA back from BCSC to hardcode
-        const countryNm = country === "CA" ? "CANADA" : "Fail Country";
 
         // Convert date format
         const birthDt = birthdate.split("-").join("/");
@@ -92,7 +88,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
           cityNm: locality,
           provinceNm,
           postalCodeTxt: postal_code,
-          countryNm
+          countryNm: "CANADA"
         });
 
         setFullName(`${given_name} ${family_name}`);
