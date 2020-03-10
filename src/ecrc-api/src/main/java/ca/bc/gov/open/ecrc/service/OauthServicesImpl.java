@@ -116,7 +116,7 @@ public class OauthServicesImpl implements OauthServices {
 
 			if (!response.indicatesSuccess()) {
 			    TokenErrorResponse errorResponse = response.toErrorResponse();
-				throw new OauthServiceException("Token Error Response from IdP server: " + errorResponse.toString() );
+				throw new OauthServiceException("Token Error Response from IdP server: " + errorResponse.toJSONObject().toJSONString());
 			}
 
 			// Respond with the complete token returned from the IdP.

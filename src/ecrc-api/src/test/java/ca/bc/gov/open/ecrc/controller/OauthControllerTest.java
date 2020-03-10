@@ -19,6 +19,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -30,6 +31,8 @@ import com.nimbusds.oauth2.sdk.token.Tokens;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.OauthServiceException;
+import ca.bc.gov.open.ecrc.model.ValidationResponse;
+import ca.bc.gov.open.ecrc.service.ECRCJWTValidationServiceImpl;
 import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -44,6 +47,9 @@ class OauthControllerTest {
 
 	@Mock
 	OauthServicesImpl oauthServices;
+	
+	@Mock
+	ECRCJWTValidationServiceImpl tokenServices;
 
 	@Mock
 	EcrcProperties ecrcProperties;
@@ -109,27 +115,30 @@ class OauthControllerTest {
 		when(oauthServices.getUserInfo(any())).thenReturn(userInfo);
 		when(oauthServices.getToken(any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
-		String response = oauthController.login("test");
+		when(tokenServices.validateBCSCIDToken(any()))
+				.thenReturn(new ValidationResponse(true, "success"));
+	
+		ResponseEntity<String> response = oauthController.login("test");
 		Assert.assertNotNull(response);
 	}
 
-	@DisplayName("Error - login oauth controller")
+	@DisplayName("Error - login oauth controller (getToken)")
 	@Test
 	void testLoginError1() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getToken(any())).thenThrow(new OauthServiceException("error"));
-		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthController.login("test");
-		});
+		ResponseEntity<String> response = oauthController.login("code");
+		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 
-	@DisplayName("Error - login oauth controller")
+	@DisplayName("Error - login oauth controller (getUserInfo)")
 	@Test
 	void testLoginError2() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getToken(any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
+		when(tokenServices.validateBCSCIDToken(any())).
+			thenReturn(new ValidationResponse(true, "success"));
 		when(oauthServices.getUserInfo(any())).thenThrow(new OauthServiceException("error"));
-		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthController.login("test");
-		});
+		ResponseEntity<String> response = oauthController.login("code");
+		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 }

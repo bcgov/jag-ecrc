@@ -44,6 +44,8 @@ class EcrcPropertiesTest {
 		Assert.assertEquals("5678", ecrcProperties.getOauthSecret());
 		Assert.assertEquals("api", ecrcProperties.getOauthScope());
 		Assert.assertEquals("returnuri", ecrcProperties.getOauthReturnUri());
+		Assert.assertEquals("wellknown", ecrcProperties.getOauthWellKnown());
+		
 		Assert.assertEquals(3000, ecrcProperties.getOauthJwtExpiry());
 	}
 
