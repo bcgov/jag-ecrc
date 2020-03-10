@@ -5,7 +5,11 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import "./Transition.css";
 
-export default function Transition({ page: { header, transitionReason } }) {
+export default function Transition({
+  page: { header, transitionReason = "bcsc" }
+}) {
+  console.log(transitionReason);
+
   return (
     <main>
       <Header header={header} />
@@ -32,8 +36,8 @@ export default function Transition({ page: { header, transitionReason } }) {
           )}
           {transitionReason === "bcsc" && (
             <p>
-              TEXT TO BE UPDATED You failed a bcsc login, didn't have a bcsc
-              with picture, didnt have bcsc...etc
+              TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc
+              with picture, did not have bcsc...etc
             </p>
           )}
         </div>
