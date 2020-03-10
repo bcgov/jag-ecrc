@@ -6,8 +6,6 @@ import Footer from "../../base/footer/Footer";
 import "./Transition.css";
 
 export default function Transition({ page: { header, transitionReason } }) {
-  console.log(transitionReason);
-
   return (
     <main>
       <Header header={header} />
