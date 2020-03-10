@@ -49,10 +49,8 @@ export default function ApplicationForm({
   const [toHome, setToHome] = useState(false);
   const [toInfoReview, setToInfoReview] = useState(false);
   const [previousNames, setPreviousNames] = useState({
-    previousTwo:
-      alias2FirstNm || alias2SecondNm || alias2SurnameNm ? true : false,
-    previousThree:
-      alias3FirstNm || alias3SecondNm || alias3SurnameNm ? true : false
+    previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
+    previousThree: alias3FirstNm || alias3SecondNm || alias3SurnameNm
   });
 
   const [alias1First, setAlias1First] = useState(alias1FirstNm || "");
