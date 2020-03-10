@@ -9,7 +9,9 @@ import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
-export default function OrgValidation({ page: { header, setOrg } }) {
+export default function OrgValidation({
+  page: { header, setOrg, setTransitionReason }
+}) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
   const [toTransition, setToTransition] = useState(false);
@@ -40,6 +42,7 @@ export default function OrgValidation({ page: { header, setOrg } }) {
         if (error.response.status === 404) {
           setOrgError("Please enter a valid org code");
         } else if (error.response.status === 401) {
+          setTransitionReason("notwhitelisted");
           setToTransition(true);
         }
       });

@@ -22,6 +22,8 @@ export default function App() {
     JSON.parse(sessionStorage.getItem("applicationInfo")) || {}
   );
 
+  const [transitionReason, setTransitionReason] = useState("bcsc");
+
   const saveOrg = (orgInfo = org) => {
     sessionStorage.setItem("org", JSON.stringify(orgInfo));
   };
@@ -44,7 +46,7 @@ export default function App() {
         <Switch>
           <Redirect exact from="/" to="/ecrc" />
           <Route exact path="/ecrc">
-            <OrgValidation page={{ header, setOrg }} />
+            <OrgValidation page={{ header, setOrg, setTransitionReason }} />
           </Route>
           <Route path="/ecrc/orgverification">
             <OrgVerification page={{ header, org }} />
@@ -53,7 +55,7 @@ export default function App() {
             <ApplicationForm page={{ header, org, applicant, setApplicant }} />
           </Route>
           <Route path="/ecrc/transition">
-            <Transition header={header} />
+            <Transition page={{ header, transitionReason }} />
           </Route>
           <Route path="/ecrc/termsofuse">
             <TOU page={{ header }} />

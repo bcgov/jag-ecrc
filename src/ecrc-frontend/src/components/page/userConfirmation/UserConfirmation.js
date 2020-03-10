@@ -14,6 +14,7 @@ import {
 
 export default function UserConfirmation({ page: { header, setApplicant } }) {
   const [toConsent, setToConsent] = useState(false);
+  const [toTransition, setToTransition] = useState(false);
   const [user, setUser] = useState({});
   const [fullName, setFullName] = useState("");
 
@@ -47,7 +48,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 
         // TODO Check identity assurance level
         if (identity_assurance_level < 3) {
-          // DO SOMETHING
+          setToTransition(true);
         }
 
         // Convert gender text
@@ -122,6 +123,10 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 
   if (toConsent) {
     return <Redirect to="/ecrc/userconfirmation" />;
+  }
+
+  if (toTransition) {
+    return <Redirect to="/ecrc/transition" />;
   }
 
   return (
