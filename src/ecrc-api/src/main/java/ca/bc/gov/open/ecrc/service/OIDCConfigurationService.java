@@ -59,7 +59,7 @@ public class OIDCConfigurationService {
 			uri = new URI(ecrcProps.getOauthWellKnown());
 			config = restTemplate.getForObject(uri, OIDCConfiguration.class);
 		} catch (URISyntaxException e2) {
-			logger.error("Unable to load remote server Well-Known configuration endpoint. Check Oauth2 well-known endpoint configuration. ", e2);
+			logger.error("Unable to load remote server well-known configuration endpoint. Check Oauth2 well-known endpoint configuration. ", e2);
 		}
 	}
 }

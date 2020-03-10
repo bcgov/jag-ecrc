@@ -159,18 +159,15 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 			obj = (JSONObject) p.parse(_tokens);
 			response = TokenResponse.parse(obj);
 		} catch (net.minidev.json.parser.ParseException e) {
-			logger.error("PER Vaildate Failed to Parse. ", e);
+			logger.error("PER Validate Failed to Parse. ", e);
 		} catch (com.nimbusds.oauth2.sdk.ParseException e) {
-			logger.error("PER Vaildate Failed to Parse. ", e);
+			logger.error("PER Validate Failed to Parse. ", e);
 		}
 		
 		// Fetch both tokens within the decrypted string. 
 		AccessToken accessToken = response.toSuccessResponse().getTokens().getAccessToken();
 		String idToken = (String) response.toSuccessResponse().getCustomParameters().get("id_token");
-		
-		//System.out.println(accessToken.getValue()); 
-		//System.out.println(idToken);
-		
+
 		ValidationResponse val1 = validateBCSCAccessToken(accessToken.getValue());
 		ValidationResponse val2 = validateBCSCIDToken(idToken);
 		Boolean bothValid = val1.isValid() && val2.isValid();
