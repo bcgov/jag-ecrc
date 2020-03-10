@@ -21,4 +21,21 @@ describe("Button Component", () => {
     );
     expect(button.toJSON()).toMatchSnapshot();
   });
+  test("Unknown button type", () => {
+    const buttonTest = {
+      label: "test",
+      buttonStyle: "btn-warning",
+      buttonSize: "btn-sm",
+      type: "back"
+    };
+
+    const actionData = {
+      onClick: () => jest.fn()
+    };
+
+    const button = create(
+      <Button button={{ ...buttonTest }} {...actionData} />
+    );
+    expect(button.toJSON().props.type).toEqual("button");
+  });
 });
