@@ -107,9 +107,8 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 		try {
 			keySource = new RemoteJWKSet<>(new URL(oidcConfigService.getConfig().getJwksUri()));
 		} catch (MalformedURLException e1) {
-			logger.error("Unable to instantiate Remote JWK set from remote server. " + e1.getMessage());
+			logger.error("Unable to instantiate Remote JWK set from remote server.", e1);
 			val.setMessage(e1.getMessage());
-			e1.printStackTrace();
 		}
 
 		// The expected JWS algorithm of the id_Token received from BCSC
@@ -134,10 +133,9 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 			jwtProcessor.process(token, ctx);
 			logger.debug("Token Ok");
 		} catch (ParseException | BadJOSEException | JOSEException e) {
-			logger.error("Token FAILED validation. " + e.getMessage(), e);
+			logger.error("Token FAILED validation.", e);
 			val.setMessage(e.getMessage());
 			val.setValid(false);
-			e.printStackTrace();
 		}
 
 		return val;
@@ -161,9 +159,9 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 			obj = (JSONObject) p.parse(_tokens);
 			response = TokenResponse.parse(obj);
 		} catch (net.minidev.json.parser.ParseException e) {
-			e.printStackTrace();
+			logger.error("PER Vaildate Failed to Parse. ", e);
 		} catch (com.nimbusds.oauth2.sdk.ParseException e) {
-			e.printStackTrace();
+			logger.error("PER Vaildate Failed to Parse. ", e);
 		}
 		
 		// Fetch both tokens within the decrypted string. 
