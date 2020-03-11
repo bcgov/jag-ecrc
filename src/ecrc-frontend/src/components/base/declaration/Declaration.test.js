@@ -6,9 +6,7 @@ import Declaration from "./Declaration";
 
 describe("Declaration Component", () => {
   test("Matches the snapshot", () => {
-    const declaration = create(
-      <Declaration onApplicantNameChange={jest.fn()} />
-    );
+    const declaration = create(<Declaration />);
     expect(declaration.toJSON()).toMatchSnapshot();
   });
 });

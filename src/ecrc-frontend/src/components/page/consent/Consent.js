@@ -12,15 +12,10 @@ import SideCards from "../../composite/sideCards/SideCards";
 export default function Consent({ page: { header } }) {
   const [toHome, setToHome] = useState(false);
   const [toApplicationForm, setToApplicationForm] = useState(false);
-
-  const [inputEnabled, setInputEnabled] = useState(
-    "textinput_non_editable_gray"
-  );
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [thirdBoxChecked, setThirdBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
-  const [applicantName, setApplicantName] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,17 +23,11 @@ export default function Consent({ page: { header } }) {
 
   useEffect(() => {
     if (firstBoxChecked && secondBoxChecked && thirdBoxChecked) {
-      setInputEnabled("textinput_editable_white");
-      if (applicantName) {
-        setContinueBtnEnabled(true);
-      } else {
-        setContinueBtnEnabled(false);
-      }
+      setContinueBtnEnabled(true);
     } else {
-      setInputEnabled("textinput_non_editable_gray");
       setContinueBtnEnabled(false);
     }
-  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked, applicantName]);
+  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked]);
 
   const cancelButton = {
     label: "Cancel and Exit",
@@ -55,12 +44,6 @@ export default function Consent({ page: { header } }) {
     disabled: !continueBtnEnabled
   };
 
-  const textInput = {
-    label: "Applicant Name",
-    id: "textInputId",
-    textInputStyle: inputEnabled
-  };
-
   if (toHome) {
     return <Redirect to="/hosthome" />;
   }
@@ -69,19 +52,28 @@ export default function Consent({ page: { header } }) {
     return <Redirect to="/ecrc/applicationform" />;
   }
 
+  const asterisk = (
+    <span id="asterisk" className="mandatory">
+      *
+    </span>
+  );
+
   return (
     <main>
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
           <h1>Consent for Criminal Record Check</h1>
+          <p>
+            In this section, you consent to a criminal background check. Please
+            read the declaration before agreeing.
+          </p>
+          <p>You must complete all mandatory fields ({asterisk} ):</p>
           <Declaration
             style={{ paddingBottom: "30px" }}
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
-            textInput={textInput}
-            onApplicantNameChange={setApplicantName}
           />
           <br />
           <div className="buttons" style={{ paddingLeft: "20px" }}>
