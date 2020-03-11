@@ -25,6 +25,21 @@ describe("OrgVerification Component", () => {
     org
   };
 
+  // Mock window function
+  window.scrollTo = jest.fn();
+
+  let useEffect;
+
+  const mockUseEffect = () => {
+    useEffect.mockImplementationOnce(f => f());
+  };
+
+  beforeEach(() => {
+    // Mocking useEffect
+    useEffect = jest.spyOn(React, "useEffect");
+    mockUseEffect();
+  });
+
   test("Matches the snapshot", () => {
     const orgVerificationPage = create(
       <MemoryRouter>
@@ -64,5 +79,14 @@ describe("OrgVerification Component", () => {
     expect(orgVerificationPage.find("Redirect").props().to).toBe(
       "/ecrc/termsofuse"
     );
+  });
+
+  test("Redirect to Home on empty organization", () => {
+    page.org.orgNm = "";
+
+    const orgVerificationPage = shallow(<OrgVerification page={page} />);
+
+    expect(orgVerificationPage.find("Redirect")).toHaveLength(1);
+    expect(orgVerificationPage.find("Redirect").props().to).toBe("/");
   });
 });

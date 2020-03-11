@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -13,7 +13,7 @@ export default function OrgVerification({ page: { header, org } }) {
   const [toHome, setToHome] = useState(false);
   const [toTOU, setToTOU] = useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
     if (!org.orgNm) {
       setToHome(true);
