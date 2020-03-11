@@ -64,13 +64,11 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
                         EcrcExceptionConstants.UNKNOWN_RESPONSE_CODE, respCode), HttpStatus.BAD_REQUEST);
             }
         } catch (JsonProcessingException e) {
-            logger.error("Failed to convert to json processing exception");
-            logger.debug("DEBUG Stack: {}", e);
+            logger.error("Failed to convert to json processing exception", e);
             return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                     EcrcExceptionConstants.CONVERT_TO_JSON_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
-            logger.error("Error in call to webMethods");
-            logger.debug("DEBUG Stack: {}", e);
+            logger.error("Error in call to webMethods", e);
             return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                     EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
         }
