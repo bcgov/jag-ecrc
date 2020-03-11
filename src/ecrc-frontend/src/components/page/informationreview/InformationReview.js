@@ -359,9 +359,9 @@ export default function InformationReview({
 
           const createURL = {
             invoiceNumber: invoiceId,
-            approvedPage: "http://localhost:3000/ecrc/success",
-            declinedPage: "http://localhost:3000/ecrc/success",
-            errorPage: "http://localhost:3000/ecrc/success",
+            approvedPage: `${window.location.protocol}//${window.location.host}/ecrc/success`,
+            declinedPage: `${window.location.protocol}//${window.location.host}/ecrc/success`,
+            errorPage: `${window.location.protocol}//${window.location.host}/ecrc/success`,
             totalItemsAmount: serviceFeeAmount,
             serviceIdRef1: serviceId,
             partyIdRef2: partyId

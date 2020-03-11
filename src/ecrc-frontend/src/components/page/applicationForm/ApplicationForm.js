@@ -81,6 +81,7 @@ export default function ApplicationForm({
     ""
   );
 
+  const [differentMailingAddress, setDifferentMailingAddress] = useState(false);
   const [mailingAddressLine1, setMailingAddressLine1] = useState("");
   const [mailingAddressLine1Error, setMailingAddressLine1Error] = useState("");
   const [mailingCity, setMailingCity] = useState("");
@@ -462,19 +463,19 @@ export default function ApplicationForm({
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
-    if (!mailingAddressLine1) {
+    if (differentMailingAddress && !mailingAddressLine1) {
       setMailingAddressLine1Error("Please enter your PO box or street address");
     }
 
-    if (!mailingCity) {
+    if (differentMailingAddress && !mailingCity) {
       setMailingCityError("Please enter your city");
     }
 
-    if (!mailingProvince) {
+    if (differentMailingAddress && !mailingProvince) {
       setMailingProvinceError("Please enter your province");
     }
 
-    if (!validatePostalCode(mailingPostalCode)) {
+    if (differentMailingAddress && !validatePostalCode(mailingPostalCode)) {
       setMailingPostalCodeError(
         "Please enter a valid postal code in the form V9V 9V9"
       );
@@ -488,13 +489,13 @@ export default function ApplicationForm({
       validateEmail(email) &&
       job !== "" &&
       !(defaultScheduleTypeCd === "WBSD" && organizationLocation === "") &&
-      mailingAddressLine1 !== "" &&
-      mailingCity !== "" &&
-      mailingProvince !== "" &&
-      validatePostalCode(mailingPostalCode)
+      ((differentMailingAddress &&
+        mailingAddressLine1 !== "" &&
+        mailingCity !== "" &&
+        mailingProvince !== "" &&
+        validatePostalCode(mailingPostalCode)) ||
+        (addressLine1 && cityNm && provinceNm && postalCodeTxt))
     ) {
-      // TODO: Option to save address fields based on if mailing address added...
-
       setApplicant({
         legalFirstNm,
         legalSecondNm,
@@ -510,10 +511,10 @@ export default function ApplicationForm({
         alias3SurnameNm: alias3Surname,
         birthDt,
         genderTxt,
-        addressLine1: mailingAddressLine1,
-        cityNm: mailingCity,
-        provinceNm: mailingProvince,
-        postalCodeTxt: mailingPostalCode,
+        addressLine1: mailingAddressLine1 || addressLine1,
+        cityNm: mailingCity || cityNm,
+        provinceNm: mailingProvince || provinceNm,
+        postalCodeTxt: mailingPostalCode || postalCodeTxt,
         countryNm,
         birthPlace: birthLoc,
         driversLicNo: driversLicence,
@@ -542,10 +543,7 @@ export default function ApplicationForm({
   };
 
   const mailingAddress = () => {
-    setMailingAddressLine1(addressLine1);
-    setMailingCity(cityNm);
-    setMailingProvince(provinceNm);
-    setMailingPostalCode(postalCodeTxt);
+    setDifferentMailingAddress(!differentMailingAddress);
   };
 
   if (toHome) {
@@ -593,7 +591,7 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
           <p>
-            Is your current street address the same as your mailing
+            Is your mailing address different from your current street
             address?&nbsp;
             <input
               type="checkbox"
@@ -602,12 +600,17 @@ export default function ApplicationForm({
               }}
             />
           </p>
-          <SimpleForm simpleForm={mailing} />
-          <section>
-            Entering your mailing address in this application will not update
-            your BC Services Card Address. To update your BC Services Card
-            information you must contact Service BC, ICBC, or AddressChangeBC
-          </section>
+          {differentMailingAddress && (
+            <>
+              <SimpleForm simpleForm={mailing} />
+              <section>
+                Entering your mailing address in this application will not
+                update your BC Services Card Address. To update your BC Services
+                Card information you must contact Service BC, ICBC, or
+                AddressChangeBC
+              </section>
+            </>
+          )}
           <div className="buttons">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />
