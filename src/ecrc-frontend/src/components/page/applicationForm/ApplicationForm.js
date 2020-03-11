@@ -106,7 +106,7 @@ export default function ApplicationForm({
         setProvinces(res.data.provinces.province);
       });
 
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []);
 
   const currentName = {

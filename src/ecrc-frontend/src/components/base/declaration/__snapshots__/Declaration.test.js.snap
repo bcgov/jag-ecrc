@@ -55,21 +55,21 @@ exports[`Declaration Component Matches the snapshot 1`] = `
     }
   >
     <div>
-      <div
+      <label
         className="label"
+        htmlFor=""
       >
-        <label
+        <div
           className="textinput_label"
-          htmlFor=""
         >
           
-        </label>
+        </div>
         
          
         <span
           className="note"
         />
-      </div>
+      </label>
       <input
         className="textinput_editable_white"
         id=""

@@ -127,21 +127,21 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
           }
         >
           <div>
-            <div
+            <label
               className="label"
+              htmlFor="textInputId"
             >
-              <label
+              <div
                 className="textinput_label"
-                htmlFor="textInputId"
               >
                 Applicant Name
-              </label>
+              </div>
               
                
               <span
                 className="note"
               />
-            </div>
+            </label>
             <input
               className="textinput_non_editable_gray"
               id="textInputId"
