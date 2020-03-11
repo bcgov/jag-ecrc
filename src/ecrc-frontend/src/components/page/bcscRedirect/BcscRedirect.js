@@ -14,7 +14,6 @@ import "../page.css";
 import "./BcscRedirect.css";
 
 export default function BcscRedirect({ page: { header, saveOrg } }) {
-  const [toHostHome, setToHostHome] = useState(false);
   const [bcscUrl, setBcscUrl] = useState("");
 
   useEffect(() => {
@@ -69,39 +68,30 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
     );
   };
 
-  if (toHostHome) {
-    return <Redirect to="/hosthome" />;
-  }
-
   return (
     <main>
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
           <h1>Apply for a Criminal Record Check</h1>
-          <p>
-            Now, that you have confirmed the organization you work or plan to
-            work for, the next step is to complete a criminal record check
-            application.
-          </p>
+          <br />
           <p>
             To apply for a criminal record check online, you must use your{" "}
             <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
               BC Services Card
             </a>{" "}
-            Account.
-          </p>
-          <p>
-            Only cards <b>with a photo</b> are accepted. If it&apos;s your first
-            time using your Card to access any online service, you need to set
-            up your account for use online by completing a one-time security
-            check to{" "}
+            Account. Only cards <b>with a photo</b> are accepted. If it&apos;s
+            your first time using your Card to access any online service, you
+            need to set up your account for use online by completing a one-time
+            security check to{" "}
             <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
               verify your identity
             </a>
+            .
           </p>
 
           <p>Please select an option below:</p>
+          <br />
           <div className="option">
             <div className="row">
               <div
@@ -116,31 +106,13 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
               </div>
             </div>
           </div>
-          <div className="option">
-            <div className="row">
-              <div
-                className="col-lg-8 col-md-12"
-                style={{ marginBottom: "10px" }}
-              >
-                I <span className="underlineText">DON’T</span> have a BC
-                Services Card, or I have one without a photo
-              </div>
-              <div className="col-lg-4 col-md-12 col-sm-12 alignRight">
-                <Button
-                  button={accountBtn}
-                  onClick={onAccountClick}
-                  className="btn"
-                />
-              </div>
-            </div>
-          </div>
+
           <div style={{ marginTop: "40px" }}>
-            <Button
-              button={cancelButton}
-              onClick={() => {
-                setToHostHome(true);
-              }}
-            />
+            <a href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check">
+              I do not have a BC Services Card, or I have non-photo BC Services
+              Card
+            </a>
+            .
           </div>
         </div>
 
