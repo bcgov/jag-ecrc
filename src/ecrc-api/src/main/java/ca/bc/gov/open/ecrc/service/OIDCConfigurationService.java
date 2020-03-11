@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -53,7 +54,12 @@ public class OIDCConfigurationService {
      * 
      */
 	private void loadConfig() {
-		RestTemplate restTemplate = new RestTemplate();
+		HttpComponentsClientHttpRequestFactory clientHttpRequestFactory
+				= new HttpComponentsClientHttpRequestFactory();
+		clientHttpRequestFactory.setConnectTimeout(30000);
+		clientHttpRequestFactory.setConnectionRequestTimeout(30000);
+		
+		RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
 		URI uri = null;
 		try {
 			uri = new URI(ecrcProps.getOauthWellKnown());
