@@ -359,9 +359,9 @@ export default function InformationReview({
 
           const createURL = {
             invoiceNumber: invoiceId,
-            approvedPage: `${window.location.protocol}//${window.location.host}/ecrc/success`,
-            declinedPage: `${window.location.protocol}//${window.location.host}/ecrc/success`,
-            errorPage: `${window.location.protocol}//${window.location.host}/ecrc/success`,
+            approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+            declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+            errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
             totalItemsAmount: serviceFeeAmount,
             serviceIdRef1: serviceId,
             partyIdRef2: partyId
