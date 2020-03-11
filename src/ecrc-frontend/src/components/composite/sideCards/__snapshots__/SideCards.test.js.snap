@@ -210,7 +210,7 @@ exports[`SideCards Component BcServices sidecard 1`] = `
               >
                 If you have a BC Services Card, you must use it to log in to the online security verification page.
               </div>
-              <p>
+              <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 >
@@ -220,13 +220,14 @@ exports[`SideCards Component BcServices sidecard 1`] = `
                     Learn more about the BC Services Card.
                   </div>
                 </a>
-              </p>
+              </div>
               <div
                 className="side-card-text"
               >
+                <br />
                 Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
               </div>
-              <p>
+              <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
                 >
@@ -236,7 +237,7 @@ exports[`SideCards Component BcServices sidecard 1`] = `
                     Learn more about BC Services Card eligibility.
                   </div>
                 </a>
-              </p>
+              </div>
             </span>
           </div>
         </section>
