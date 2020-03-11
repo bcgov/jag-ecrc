@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
 
@@ -41,31 +40,10 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
     type: "button"
   };
 
-  const accountBtn = {
-    label: "Find how to apply",
-    buttonStyle: "btn ecrc_bscs_apply_btn",
-    buttonSize: "btn",
-    type: "button"
-  };
-
-  const cancelButton = {
-    label: "Cancel and Exit",
-    buttonStyle: "btn ecrc_accessary_btn",
-    buttonSize: "btn",
-    type: "submit"
-  };
-
   const onLoginClick = () => {
     saveOrg();
     // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");
-  };
-
-  const onAccountClick = () => {
-    window.open(
-      "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card",
-      "_blank"
-    );
   };
 
   return (
