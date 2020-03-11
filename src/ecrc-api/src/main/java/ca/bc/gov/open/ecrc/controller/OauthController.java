@@ -100,7 +100,7 @@ public class OauthController {
 		try {
 			token = oauthServices.getToken(authCode);
 		} catch (Exception e) {
-			logger.error("Error while calling Oauth2 /token endpoint. " + e.getMessage(), e);
+			logger.error("Error while calling Oauth2 /token endpoint. ", e);
 			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
 		}
 		
@@ -108,7 +108,7 @@ public class OauthController {
 		logger.debug("Validating ID token received from BCSC...");
 		ValidationResponse valResp = tokenServices.validateBCSCIDToken((String)token.toSuccessResponse().getCustomParameters().get("id_token"));
 		if (!valResp.isValid()) {
-			logger.error("ID token failed to validate. Error: " + valResp.getMessage());
+			logger.error("ID token failed to validate. Error {}", valResp.getMessage());
 			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
 		}
 		
@@ -117,7 +117,7 @@ public class OauthController {
 		try {
 			userInfo = oauthServices.getUserInfo((BearerAccessToken)token.toSuccessResponse().getTokens().getAccessToken());
 		} catch (OauthServiceException e) {
-			logger.error("Error fetching userinfo. " + e.getMessage(), e);
+			logger.error("Error fetching userinfo:", e);
 			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
 		}
 		
@@ -127,7 +127,7 @@ public class OauthController {
 	    try {
 			encryptedTokens = AES256.encrypt(token.toJSONObject().toJSONString());
 		} catch (Exception e) {
-			logger.error("Error encrypting token. " + e.getMessage(), e);
+			logger.error("Error encrypting token:", e);
 			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
 		}
 		

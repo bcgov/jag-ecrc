@@ -102,8 +102,7 @@ public class EcrcPaymentServiceImpl implements EcrcPaymentService {
 						HttpStatus.BAD_REQUEST);
 			}
 		} catch (Exception e) {
-			logger.error("Error in retrieving payment url");
-			logger.debug("DEBUG Stack: {}", e);
+			logger.error("Error in retrieving payment url ", e);
 			return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 					EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 					HttpStatus.BAD_REQUEST);
