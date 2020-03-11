@@ -11,9 +11,16 @@ const header = {
   name: "header name"
 };
 
-export const Default = () => <UserConfirmation header={header} />;
+const setApplicant = () => {};
 
-export const Mobile = () => <UserConfirmation header={header} />;
+const page = {
+  header,
+  setApplicant
+};
+
+export const Default = () => <UserConfirmation page={page} />;
+
+export const Mobile = () => <UserConfirmation page={page} />;
 
 Mobile.story = {
   parameters: {
