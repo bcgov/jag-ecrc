@@ -2944,11 +2944,24 @@ exports[`Storyshots Consent page Default 1`] = `
       <h1>
         Consent for Criminal Record Check
       </h1>
+      <p>
+        In this section, you consent to a criminal background check. Please read the declaration before agreeing.
+      </p>
+      <p>
+        You must complete all mandatory fields (
+        <span
+          className="mandatory"
+          id="asterisk"
+        >
+          *
+        </span>
+         ):
+      </p>
       <div>
         <div
           className="declareTitle"
         >
-          DECLARATION AND CONSENT
+          CONSENT
         </div>
         <section
           className="declareSection"
@@ -2988,42 +3001,6 @@ exports[`Storyshots Consent page Default 1`] = `
           >
             The third checkbox for my application and will provide as necessary is complete.
           </span>
-        </section>
-        <section
-          className="declareSection"
-          style={
-            Object {
-              "maxWidth": "475px",
-            }
-          }
-        >
-          <div>
-            <div
-              className="label"
-            >
-              <label
-                className="textinput_label"
-                htmlFor="textInputId"
-              >
-                Applicant Name
-              </label>
-              
-               
-              <span
-                className="note"
-              />
-            </div>
-            <input
-              className="textinput_non_editable_gray"
-              id="textInputId"
-              onChange={[Function]}
-              readOnly={true}
-              type="text"
-            />
-            <span
-              className="error"
-            />
-          </div>
         </section>
       </div>
       <br />
@@ -3447,11 +3424,24 @@ exports[`Storyshots Consent page Mobile 1`] = `
       <h1>
         Consent for Criminal Record Check
       </h1>
+      <p>
+        In this section, you consent to a criminal background check. Please read the declaration before agreeing.
+      </p>
+      <p>
+        You must complete all mandatory fields (
+        <span
+          className="mandatory"
+          id="asterisk"
+        >
+          *
+        </span>
+         ):
+      </p>
       <div>
         <div
           className="declareTitle"
         >
-          DECLARATION AND CONSENT
+          CONSENT
         </div>
         <section
           className="declareSection"
@@ -3491,42 +3481,6 @@ exports[`Storyshots Consent page Mobile 1`] = `
           >
             The third checkbox for my application and will provide as necessary is complete.
           </span>
-        </section>
-        <section
-          className="declareSection"
-          style={
-            Object {
-              "maxWidth": "475px",
-            }
-          }
-        >
-          <div>
-            <div
-              className="label"
-            >
-              <label
-                className="textinput_label"
-                htmlFor="textInputId"
-              >
-                Applicant Name
-              </label>
-              
-               
-              <span
-                className="note"
-              />
-            </div>
-            <input
-              className="textinput_non_editable_gray"
-              id="textInputId"
-              onChange={[Function]}
-              readOnly={true}
-              type="text"
-            />
-            <span
-              className="error"
-            />
-          </div>
         </section>
       </div>
       <br />
@@ -3882,7 +3836,7 @@ exports[`Storyshots Declaration Default 1`] = `
   <div
     className="declareTitle"
   >
-    DECLARATION AND CONSENT
+    CONSENT
   </div>
   <section
     className="declareSection"
@@ -3922,41 +3876,6 @@ exports[`Storyshots Declaration Default 1`] = `
     >
       The third checkbox for my application and will provide as necessary is complete.
     </span>
-  </section>
-  <section
-    className="declareSection"
-    style={
-      Object {
-        "maxWidth": "475px",
-      }
-    }
-  >
-    <div>
-      <div
-        className="label"
-      >
-        <label
-          className="textinput_label"
-          htmlFor=""
-        >
-          
-        </label>
-        
-         
-        <span
-          className="note"
-        />
-      </div>
-      <input
-        className="textinput_editable_white"
-        id=""
-        onChange={[Function]}
-        type="text"
-      />
-      <span
-        className="error"
-      />
-    </div>
   </section>
 </div>
 `;
