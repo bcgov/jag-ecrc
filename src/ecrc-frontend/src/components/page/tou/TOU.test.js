@@ -40,8 +40,8 @@ describe("TermOfUse Page Component", () => {
     window.scrollTo = jest.fn();
 
     // Mocking UseState
-    const useStateMock = initState => [initState, setState];
     const setState = jest.fn();
+    const useStateMock = initState => [initState, setState];
 
     jest.spyOn(React, "useState").mockImplementation(useStateMock);
 
