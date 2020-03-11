@@ -606,8 +606,16 @@ export default function ApplicationForm({
               <section>
                 Entering your mailing address in this application will not
                 update your BC Services Card Address. To update your BC Services
-                Card information you must contact Service BC, ICBC, or
-                AddressChangeBC
+                Card information you must contact&nbsp;
+                <a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc">
+                  Service BC
+                </a>
+                ,&nbsp;
+                <a href="https://www.icbc.com/Pages/default.aspx">ICBC</a>
+                &nbsp;or&nbsp;
+                <a href="https://www.addresschange.gov.bc.ca/">
+                  AddressChangeBC
+                </a>
               </section>
             </>
           )}
