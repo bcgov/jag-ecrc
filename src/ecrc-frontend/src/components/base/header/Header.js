@@ -22,7 +22,11 @@ export default function Header({ header: { name } }) {
               alt="B.C. Government Logo"
             />
           </a>
-          <div className="navbar-brand">{name}</div>
+          <div>
+            <a className="navbar-brand nav-item nav-link" href="/">
+              {name}
+            </a>
+          </div>
           <button
             className="navbar-toggler"
             type="button"
@@ -34,13 +38,10 @@ export default function Header({ header: { name } }) {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <a className="nav-item nav-link" href="/">
-                Home
-              </a>
-            </div>
-          </div>
+          <div
+            className="collapse navbar-collapse"
+            id="navbarNavAltMarkup"
+          ></div>
         </div>
       </nav>
     </header>

@@ -28,10 +28,13 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -49,18 +52,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -297,10 +289,13 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -318,18 +313,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -551,10 +535,13 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -572,18 +559,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
