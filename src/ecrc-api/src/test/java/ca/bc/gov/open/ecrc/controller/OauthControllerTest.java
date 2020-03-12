@@ -69,26 +69,6 @@ class OauthControllerTest {
 		userInfo.put("sub", "test");
 	}
 
-	@DisplayName("Success - authenticate oauth controller")
-	@Test
-	void testAuthenticateSuccess() throws OauthServiceException, URISyntaxException {
-		HttpServletRequest request = mock(HttpServletRequest.class);
-		HttpServletResponse response = mock(HttpServletResponse.class);
-		when(oauthServices.getIDPRedirect()).thenReturn(new URI("test"));
-
-		Assertions.assertDoesNotThrow(() -> {
-			oauthController.authenticate(request, response);
-		});
-	}
-
-	@DisplayName("Error - authenticate oauth controller")
-	@Test
-	void testAuthenticateError() throws OauthServiceException, URISyntaxException {
-		when(oauthServices.getIDPRedirect()).thenReturn(null);
-		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthController.authenticate(null, null);
-		});
-	}
 
 	@DisplayName("Success - getBCSCUrl oauth controller")
 	@Test
