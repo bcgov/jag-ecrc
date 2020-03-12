@@ -4,9 +4,7 @@ import axios from "axios";
 const jwt = require("jsonwebtoken");
 
 export function isAuthenticated(page) {
-  console.log(page);
   const token = sessionStorage.getItem("jwt");
-  console.log(token);
   const validator = sessionStorage.getItem("validator");
   let isAuthed = false;
 
