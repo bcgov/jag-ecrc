@@ -40,28 +40,29 @@ export default function SideCards({ type, sideCardLinks }) {
       </div>
     ),
     content: [
-      <div className="side-card-text">
+      <div key="bcscTop" className="side-card-text">
         If you have a BC Services Card, you must use it to log in to the online
         security verification page.
       </div>,
-      <p>
+      <div key="bcscLearnMore">
         <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
           <div className="side-card-link">
             Learn more about the BC Services Card.
           </div>
         </a>
-      </p>,
-      <div className="side-card-text">
+      </div>,
+      <div key="bcscEligibility" className="side-card-text">
+        <br />
         Eligibility for a BC Services Card is the same as for the Medical
         Services Plan(MSP).
       </div>,
-      <p>
+      <div key="bcscEligibilityLink">
         <a href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible">
           <div className="side-card-link">
             Learn more about BC Services Card eligibility.
           </div>
         </a>
-      </p>
+      </div>
     ],
     type: "blue",
     isWide: true
@@ -151,22 +152,22 @@ export default function SideCards({ type, sideCardLinks }) {
       </div>
     ),
     content: [
-      <div className="side-card-text">
+      <div key="withoutBCSCTop" className="side-card-text">
         Applicants who do not have a BC Services Card must apply offline to
         complete a criminal record check.
       </div>,
-      <div className="side-card-text">
+      <div key="withoutBCSCMid" className="side-card-text">
         <br />
         Please <b>contact your organization</b> and request a criminal record
         form.
       </div>,
-      <p>
+      <div key="withoutBCSCBottom">
         <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
           <div className="side-card-link">
             Learn more about how to apply for a criminal record check offline.
           </div>
         </a>
-      </p>
+      </div>
     ],
     type: "blue",
     isWide: true

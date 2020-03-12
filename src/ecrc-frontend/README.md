@@ -1,6 +1,6 @@
 ## eCRC Frontend
 
-In order to connect to the backend api for development, create an env file named .env.development and copy the format of .env.example. Replace <Base_url_of_backend_api> with the url of the back end api (for example: http://localhost:4000).
+In order to connect to the backend api for development, create an env file named .env.development and copy the format of .env.example. Replace <Base_url_of_backend_api> with the url of the back end api (for example: http://localhost:4000), and <Base_url_of_frontend> with the url the frontend will run on (for example http://localhost:3000).
 
 In the project directory, you can run:
 
