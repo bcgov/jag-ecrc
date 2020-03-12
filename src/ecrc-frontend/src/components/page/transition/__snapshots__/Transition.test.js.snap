@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Transition Page Component Matches the default snapshot 1`] = `
+exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
 <main>
   <header>
     <nav
@@ -80,6 +80,9 @@ exports[`Transition Page Component Matches the default snapshot 1`] = `
         .
       </p>
       <br />
+      <p>
+        TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc with picture, did not have bcsc...etc
+      </p>
     </div>
   </div>
   <footer

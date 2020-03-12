@@ -11450,7 +11450,7 @@ exports[`Storyshots TextInput note 1`] = `
 </div>
 `;
 
-exports[`Storyshots Transition Page Default 1`] = `
+exports[`Storyshots Transition Page Default To BCSC 1`] = `
 <main>
   <header>
     <nav
@@ -11531,15 +11531,7 @@ exports[`Storyshots Transition Page Default 1`] = `
       </p>
       <br />
       <p>
-        We are transitioning our client organizations currently using Equifax for identity verification to a new process through a
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-        >
-          BC Services Card account
-        </a>
-        . Your organization hasn't
-         been transitioned to the new system yet.
+        TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc with picture, did not have bcsc...etc
       </p>
     </div>
   </div>
@@ -11632,6 +11624,179 @@ exports[`Storyshots Transition Page Default 1`] = `
 `;
 
 exports[`Storyshots Transition Page Mobile 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="https://www2.gov.bc.ca"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div
+          className="navbar-brand"
+        >
+          header name
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        >
+          <div
+            className="navbar-nav"
+          >
+            <a
+              className="nav-item nav-link"
+              href="/"
+            >
+              Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="transition-content col-md-12"
+    >
+      <p>
+        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        <a
+          href="https://justice.gov.bc.ca/eCRC/home.htm"
+        >
+          here
+        </a>
+        .
+      </p>
+      <br />
+      <p>
+        TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc with picture, did not have bcsc...etc
+      </p>
+    </div>
+  </div>
+  <footer
+    className="footer"
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "fixed",
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
+
+exports[`Storyshots Transition Page Not Whitelisted 1`] = `
 <main>
   <header>
     <nav
