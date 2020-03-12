@@ -8,17 +8,26 @@ import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
+import {
+  isAuthenticated,
+  generateJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 export default function OrgVerification({ page: { header, org } }) {
   const [toHome, setToHome] = useState(false);
   const [toTOU, setToTOU] = useState(false);
 
   React.useEffect(() => {
+    if (!isAuthenticated("orgValidation") || !org.orgNm) setToHome(true);
+
+    const payload = {
+      authorities: ["ROLE"],
+      visited: ["orgValidation", "orgVerification"]
+    };
+    generateJWTToken(payload);
+
     window.scrollTo(0, 0);
-    if (!org.orgNm) {
-      setToHome(true);
-    }
-  }, [org.orgNm]);
+  }, []);
 
   const orgVerified = () => {
     setToTOU(true);

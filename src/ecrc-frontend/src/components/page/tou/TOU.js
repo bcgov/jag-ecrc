@@ -6,15 +6,28 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
+import {
+  isAuthenticated,
+  generateJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 export default function TOU({ page: { header } }) {
   const [toBCSCRedirect, setToBCSCRedirect] = React.useState(false);
+  const [toHome, setToHome] = React.useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = React.useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = React.useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = React.useState(false);
   const [reachedEnd, setReachedEnd] = React.useState(false);
 
   React.useEffect(() => {
+    if (!isAuthenticated("orgVerification")) setToHome(true);
+
+    const payload = {
+      authorities: ["ROLE"],
+      visited: ["orgValidation", "orgVerification", "tou"]
+    };
+    generateJWTToken(payload);
+
     window.scrollTo(0, 0);
   }, []);
 
@@ -39,6 +52,10 @@ export default function TOU({ page: { header } }) {
       setReachedEnd(true);
     }
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <main>

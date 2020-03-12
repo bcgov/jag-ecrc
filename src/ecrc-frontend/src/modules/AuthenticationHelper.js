@@ -3,22 +3,21 @@ import axios from "axios";
 
 const jwt = require("jsonwebtoken");
 
-export function isAuthenticated() {
+export function isAuthenticated(page) {
+  console.log(page);
   const token = sessionStorage.getItem("jwt");
+  console.log(token);
   const validator = sessionStorage.getItem("validator");
+  let isAuthed = false;
 
   if (!token || !validator) return false;
 
   // verify a token symmetric
-  jwt.verify(token, validator, err => {
-    if (err) {
-      return false;
-    }
-
-    return true;
+  jwt.verify(token, validator, (err, decoded) => {
+    if (decoded.visited.includes(page)) isAuthed = true;
   });
 
-  return false;
+  return isAuthed;
 }
 
 export function storeValidator() {
@@ -40,6 +39,8 @@ export function generateJWTToken(payload) {
   if (!validator) return false;
 
   const token = jwt.sign(payload, validator, { expiresIn: "2h" });
+
+  sessionStorage.setItem("jwt", token);
 
   return token;
 }
