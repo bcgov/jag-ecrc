@@ -153,9 +153,9 @@ export default function Success({
 
         const createURL = {
           invoiceNumber: newInvoiceId,
-          approvedPage: "http://localhost:3000/ecrc/success",
-          declinedPage: "http://localhost:3000/ecrc/success",
-          errorPage: "http://localhost:3000/ecrc/success",
+          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
           totalItemsAmount: serviceFeeAmount,
           serviceIdRef1: serviceId,
           partyIdRef2: partyId
