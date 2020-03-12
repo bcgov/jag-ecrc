@@ -2,12 +2,18 @@ package ca.bc.gov.open.ecrc.service;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.Duration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.ClientHttpRequestFactory;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -53,7 +59,7 @@ public class OIDCConfigurationService {
      * 
      */
 	private void loadConfig() {
-		RestTemplate restTemplate = new RestTemplate();
+		RestTemplate restTemplate = new RestTemplate(getClientHttpRequestFactory());
 		URI uri = null;
 		try {
 			uri = new URI(ecrcProps.getOauthWellKnown());
@@ -61,6 +67,14 @@ public class OIDCConfigurationService {
 		} catch (URISyntaxException e2) {
 			logger.error("Unable to load remote server well-known configuration endpoint. Check Oauth2 well-known endpoint configuration. ", e2);
 		}
+	}
+
+	private ClientHttpRequestFactory getClientHttpRequestFactory() {
+		SimpleClientHttpRequestFactory clientHttpRequestFactory
+				= new SimpleClientHttpRequestFactory();
+		clientHttpRequestFactory.setConnectTimeout(300000);
+		clientHttpRequestFactory.setReadTimeout(300000);
+		return clientHttpRequestFactory;
 	}
 }
 

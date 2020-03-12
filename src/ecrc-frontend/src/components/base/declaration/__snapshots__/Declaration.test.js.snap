@@ -5,7 +5,7 @@ exports[`Declaration Component Matches the snapshot 1`] = `
   <div
     className="declareTitle"
   >
-    DECLARATION AND CONSENT
+    CONSENT
   </div>
   <section
     className="declareSection"
@@ -45,41 +45,6 @@ exports[`Declaration Component Matches the snapshot 1`] = `
     >
       The third checkbox for my application and will provide as necessary is complete.
     </span>
-  </section>
-  <section
-    className="declareSection"
-    style={
-      Object {
-        "maxWidth": "475px",
-      }
-    }
-  >
-    <div>
-      <div
-        className="label"
-      >
-        <label
-          className="textinput_label"
-          htmlFor=""
-        >
-          
-        </label>
-        
-         
-        <span
-          className="note"
-        />
-      </div>
-      <input
-        className="textinput_editable_white"
-        id=""
-        onChange={[Function]}
-        type="text"
-      />
-      <span
-        className="error"
-      />
-    </div>
   </section>
 </div>
 `;

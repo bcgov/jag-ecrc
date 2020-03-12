@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
@@ -8,17 +8,17 @@ import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
 
 export default function TOU({ page: { header } }) {
-  const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
-  const [secondBoxChecked, setSecondBoxChecked] = useState(false);
-  const [firstBoxChecked, setFirstBoxChecked] = useState(false);
-  const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
-  const [reachedEnd, setReachedEnd] = useState(false);
+  const [toBCSCRedirect, setToBCSCRedirect] = React.useState(false);
+  const [secondBoxChecked, setSecondBoxChecked] = React.useState(false);
+  const [firstBoxChecked, setFirstBoxChecked] = React.useState(false);
+  const [continueBtnEnabled, setContinueBtnEnabled] = React.useState(false);
+  const [reachedEnd, setReachedEnd] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (firstBoxChecked && secondBoxChecked && reachedEnd) {
       setContinueBtnEnabled(true);
     } else {
