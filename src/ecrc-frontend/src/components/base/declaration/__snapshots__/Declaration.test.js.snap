@@ -46,43 +46,5 @@ exports[`Declaration Component Matches the snapshot 1`] = `
       The third checkbox for my application and will provide as necessary is complete.
     </span>
   </section>
-<<<<<<< HEAD
-  <section
-    className="declareSection"
-    style={
-      Object {
-        "maxWidth": "475px",
-      }
-    }
-  >
-    <div>
-      <label
-        className="label"
-        htmlFor=""
-      >
-        <div
-          className="textinput_label"
-        >
-          
-        </div>
-        
-         
-        <span
-          className="note"
-        />
-      </label>
-      <input
-        className="textinput_editable_white"
-        id=""
-        onChange={[Function]}
-        type="text"
-      />
-      <span
-        className="error"
-      />
-    </div>
-  </section>
-=======
->>>>>>> master
 </div>
 `;

@@ -131,45 +131,6 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
             The third checkbox for my application and will provide as necessary is complete.
           </span>
         </section>
-<<<<<<< HEAD
-        <section
-          className="declareSection"
-          style={
-            Object {
-              "maxWidth": "475px",
-            }
-          }
-        >
-          <div>
-            <label
-              className="label"
-              htmlFor="textInputId"
-            >
-              <div
-                className="textinput_label"
-              >
-                Applicant Name
-              </div>
-              
-               
-              <span
-                className="note"
-              />
-            </label>
-            <input
-              className="textinput_non_editable_gray"
-              id="textInputId"
-              onChange={[Function]}
-              readOnly={true}
-              type="text"
-            />
-            <span
-              className="error"
-            />
-          </div>
-        </section>
-=======
->>>>>>> master
       </div>
       <br />
       <div
