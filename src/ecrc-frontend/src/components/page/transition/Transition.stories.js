@@ -15,7 +15,7 @@ const page = {
   header
 };
 
-export const Default = () => <Transition page={page} />;
+export const DefaultToBCSC = () => <Transition page={page} />;
 
 export const NotWhitelisted = () => (
   <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />

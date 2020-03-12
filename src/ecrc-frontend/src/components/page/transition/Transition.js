@@ -5,7 +5,9 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import "./Transition.css";
 
-export default function Transition({ page: { header, transitionReason } }) {
+export default function Transition({
+  page: { header, transitionReason = "bcsc" }
+}) {
   return (
     <main>
       <Header header={header} />
@@ -43,6 +45,12 @@ export default function Transition({ page: { header, transitionReason } }) {
   );
 }
 
+Transition.defaultProps = {
+  page: {
+    transitionReason: "bcsc"
+  }
+};
+
 Transition.propTypes = {
   page: PropTypes.shape({
     header: PropTypes.shape({
@@ -50,10 +58,4 @@ Transition.propTypes = {
     }).isRequired,
     transitionReason: PropTypes.string
   })
-};
-
-Transition.defaultProps = {
-  page: {
-    transitionReason: "bcsc"
-  }
 };

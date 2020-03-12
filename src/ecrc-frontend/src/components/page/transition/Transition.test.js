@@ -12,7 +12,7 @@ describe("Transition Page Component", () => {
     header
   };
 
-  test("Matches the default snapshot", () => {
+  test("Matches the default/BCSC snapshot", () => {
     const defaultTransition = create(<Transition page={page} />);
     expect(defaultTransition.toJSON()).toMatchSnapshot();
   });
