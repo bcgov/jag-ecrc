@@ -73,11 +73,24 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
       <h1>
         Consent for Criminal Record Check
       </h1>
+      <p>
+        In this section, you consent to a criminal background check. Please read the declaration before agreeing.
+      </p>
+      <p>
+        You must complete all mandatory fields (
+        <span
+          className="mandatory"
+          id="asterisk"
+        >
+          *
+        </span>
+         ):
+      </p>
       <div>
         <div
           className="declareTitle"
         >
-          DECLARATION AND CONSENT
+          CONSENT
         </div>
         <section
           className="declareSection"
@@ -118,6 +131,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
             The third checkbox for my application and will provide as necessary is complete.
           </span>
         </section>
+<<<<<<< HEAD
         <section
           className="declareSection"
           style={
@@ -154,6 +168,8 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
             />
           </div>
         </section>
+=======
+>>>>>>> master
       </div>
       <br />
       <div

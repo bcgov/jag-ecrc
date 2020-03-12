@@ -69,7 +69,7 @@ export default function Success({
     };
 
     axios
-      .post("/ecrc/logPaymentFailure", logFailure)
+      .post("/ecrc/private/logPaymentFailure", logFailure)
       .then(() => {})
       .catch(() => {});
   }
@@ -78,6 +78,8 @@ export default function Success({
   // cC_Authorization - Unsure, defer to Shaun
   // payor_Type_Cd - based on application type O for ONETIME, A otherwise
   if (paymentInfo.trnApproved === "1") {
+    const token = sessionStorage.getItem("jwt");
+
     const logSuccess = {
       orgTicketNumber,
       appl_Party_Id: partyId,
@@ -93,7 +95,11 @@ export default function Success({
     };
 
     axios
-      .post("/ecrc/private/updateServiceFinancialTxn", logSuccess)
+      .post("/ecrc/private/updateServiceFinancialTxn", logSuccess, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       .then(() => {})
       .catch(() => {});
   }

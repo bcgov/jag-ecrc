@@ -73,9 +73,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
       <h1>
         Apply for a Criminal Record Check
       </h1>
-      <p>
-        Now, that you have confirmed the organization you work or plan to work for, the next step is to complete a criminal record check application.
-      </p>
+      <br />
       <p>
         To apply for a criminal record check online, you must use your
          
@@ -85,10 +83,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
           BC Services Card
         </a>
          
-        Account.
-      </p>
-      <p>
-        Only cards 
+        Account. Only cards 
         <b>
           with a photo
         </b>
@@ -99,10 +94,12 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
         >
           verify your identity
         </a>
+        .
       </p>
       <p>
         Please select an option below:
       </p>
+      <br />
       <div
         className="option"
       >
@@ -139,54 +136,18 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
         </div>
       </div>
       <div
-        className="option"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-lg-8 col-md-12"
-            style={
-              Object {
-                "marginBottom": "10px",
-              }
-            }
-          >
-            I 
-            <span
-              className="underlineText"
-            >
-              DON’T
-            </span>
-             have a BC Services Card, or I have one without a photo
-          </div>
-          <div
-            className="col-lg-4 col-md-12 col-sm-12 alignRight"
-          >
-            <button
-              className="btn ecrc_bscs_apply_btn btn"
-              onClick={[Function]}
-              type="button"
-            >
-              Find how to apply
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
         style={
           Object {
             "marginTop": "40px",
           }
         }
       >
-        <button
-          className="btn ecrc_accessary_btn btn"
-          onClick={[Function]}
-          type="submit"
+        <a
+          href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
         >
-          Cancel and Exit
-        </button>
+          I do not have a BC Services Card, or I have non-photo BC Services Card
+        </a>
+        .
       </div>
     </div>
     <div
@@ -263,7 +224,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                     >
                       If you have a BC Services Card, you must use it to log in to the online security verification page.
                     </div>
-                    <p>
+                    <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                       >
@@ -273,13 +234,14 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                           Learn more about the BC Services Card.
                         </div>
                       </a>
-                    </p>
+                    </div>
                     <div
                       className="side-card-text"
                     >
+                      <br />
                       Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
                     </div>
-                    <p>
+                    <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
                       >
@@ -289,7 +251,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                           Learn more about BC Services Card eligibility.
                         </div>
                       </a>
-                    </p>
+                    </div>
                   </span>
                 </div>
               </section>
@@ -378,7 +340,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                       </b>
                        and request a criminal record form.
                     </div>
-                    <p>
+                    <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                       >
@@ -388,7 +350,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                           Learn more about how to apply for a criminal record check offline.
                         </div>
                       </a>
-                    </p>
+                    </div>
                   </span>
                 </div>
               </section>

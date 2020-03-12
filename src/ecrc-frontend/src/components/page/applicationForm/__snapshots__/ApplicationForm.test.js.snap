@@ -752,12 +752,13 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         </ul>
       </form>
       <p>
-        Is your current street address the same as your mailing address? 
+        Is your mailing address different from your current street address? 
         <input
           onClick={[Function]}
           type="checkbox"
         />
       </p>
+<<<<<<< HEAD
       <form
         className="simpleForm"
       >
@@ -941,6 +942,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
       <section>
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact Service BC, ICBC, or AddressChangeBC
       </section>
+=======
+>>>>>>> master
       <div
         className="buttons"
       >

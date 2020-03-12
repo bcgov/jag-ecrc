@@ -1,18 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TextInput } from "../textInput/TextInput";
 import "./Declaration.css";
 
 export default function Declaration({
-  textInput,
-  onApplicantNameChange,
   checkFirstBox,
   checkSecondBox,
   checkThirdBox
 }) {
   return (
     <div>
-      <div className="declareTitle">DECLARATION AND CONSENT</div>
+      <div className="declareTitle">CONSENT</div>
       <section className="declareSection">
         <input type="checkbox" onClick={checkFirstBox} />
         <span className="declaration-cb">
@@ -50,31 +47,17 @@ export default function Declaration({
           complete.
         </span>
       </section>
-
-      <section className="declareSection" style={{ maxWidth: "475px" }}>
-        <TextInput textInput={textInput} onChange={onApplicantNameChange} />
-      </section>
     </div>
   );
 }
 
 Declaration.propTypes = {
-  textInput: PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    note: PropTypes.string,
-    textInputStyle: PropTypes.string,
-    value: PropTypes.string,
-    isRequired: PropTypes.bool
-  }),
   checkFirstBox: PropTypes.func,
   checkSecondBox: PropTypes.func,
-  checkThirdBox: PropTypes.func,
-  onApplicantNameChange: PropTypes.func.isRequired
+  checkThirdBox: PropTypes.func
 };
 
 Declaration.defaultProps = {
-  textInput: { id: "", label: "" },
   checkFirstBox: () => {},
   checkSecondBox: () => {},
   checkThirdBox: () => {}

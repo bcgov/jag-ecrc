@@ -5,7 +5,7 @@ exports[`Declaration Component Matches the snapshot 1`] = `
   <div
     className="declareTitle"
   >
-    DECLARATION AND CONSENT
+    CONSENT
   </div>
   <section
     className="declareSection"
@@ -46,6 +46,7 @@ exports[`Declaration Component Matches the snapshot 1`] = `
       The third checkbox for my application and will provide as necessary is complete.
     </span>
   </section>
+<<<<<<< HEAD
   <section
     className="declareSection"
     style={
@@ -81,5 +82,7 @@ exports[`Declaration Component Matches the snapshot 1`] = `
       />
     </div>
   </section>
+=======
+>>>>>>> master
 </div>
 `;
