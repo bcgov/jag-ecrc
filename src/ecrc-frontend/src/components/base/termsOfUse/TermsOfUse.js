@@ -408,6 +408,16 @@ export default function TermsOfUse({
         </ol>
       </section>
 
+      {!continueBtnEnabled && (
+        <section>
+          <p style={{ color: "red" }}>
+            Please scroll down to the bottom of the terms of use and agree to
+            the terms below to continue.
+          </p>
+        </section>
+      )}
+      <br />
+
       <section>
         <input type="checkbox" className="terms-cb" onClick={checkFirstBox} />
         &nbsp;I have read and accept the above terms and conditions.

@@ -371,6 +371,18 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
           </ol>
         </section>
         <section>
+          <p
+            style={
+              Object {
+                "color": "red",
+              }
+            }
+          >
+            Please scroll down to the bottom of the terms of use and agree to the terms below to continue.
+          </p>
+        </section>
+        <br />
+        <section>
           <input
             className="terms-cb"
             onClick={[Function]}
