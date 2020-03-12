@@ -9,8 +9,11 @@ import { create } from "react-test-renderer";
 import { MemoryRouter } from "react-router-dom";
 
 import ApplicationForm from "./ApplicationForm";
+import { shallow } from "enzyme";
 
 describe("ApplicationForm Component", () => {
+  window.scrollTo = jest.fn();
+
   const header = {
     name: "Criminal Record Check"
   };
@@ -63,6 +66,12 @@ describe("ApplicationForm Component", () => {
     expect(getByDisplayValue("Robert"));
   });
 
+  test("Displays Organization Facility when Schedule D Org", () => {
+    const { getByText } = render(<ApplicationForm page={page} />);
+
+    expect(getByText("Organization Facility")).toBeInTheDocument();
+  });
+
   test("Prevents navigation without required fields", () => {
     const { container } = render(<ApplicationForm page={page} />);
 
@@ -71,5 +80,20 @@ describe("ApplicationForm Component", () => {
     expect(
       getByText(container, "Please enter your city and country of birth")
     ).toBeInTheDocument();
+  });
+
+  test("Redirect to Home", () => {
+    const applicationForm = shallow(<ApplicationForm page={page} />);
+
+    expect(applicationForm.find("Redirect")).toHaveLength(0);
+
+    applicationForm
+      .find("Button")
+      .first()
+      .props()
+      .onClick();
+
+    expect(applicationForm.find("Redirect")).toHaveLength(1);
+    expect(applicationForm.find("Redirect").props().to).toBe("/");
   });
 });

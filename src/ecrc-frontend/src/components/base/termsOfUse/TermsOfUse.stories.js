@@ -19,6 +19,6 @@ export const Default = () => (
     checkFirstBox={checkFirstBox}
     checkSecondBox={checkSecondBox}
     termOfUseOnScroll={termOfUseOnScroll}
-    continueBtnEnabled
+    continueBtnEnabled={continueBtnEnabled}
   />
 );
