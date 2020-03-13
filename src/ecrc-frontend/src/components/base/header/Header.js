@@ -6,7 +6,7 @@ export default function Header({ header: { name } }) {
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container">
-          <a className="navbar-brand" href="https://www2.gov.bc.ca">
+          <a className="navbar-brand" href="/">
             <img
               className="img-fluid d-none d-md-block"
               src="/images/bcid-logo-rev-en.svg"
@@ -38,10 +38,7 @@ export default function Header({ header: { name } }) {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div
-            className="collapse navbar-collapse"
-            id="navbarNavAltMarkup"
-          ></div>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup" />
         </div>
       </nav>
     </header>
