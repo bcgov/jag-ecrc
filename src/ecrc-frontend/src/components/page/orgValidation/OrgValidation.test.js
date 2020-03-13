@@ -22,9 +22,11 @@ describe("OrgValidation Component", () => {
   };
 
   const setOrg = jest.fn();
+  const setTransitionReason = jest.fn();
 
   const page = {
     setOrg,
+    setTransitionReason,
     header
   };
 
@@ -94,7 +96,9 @@ describe("OrgValidation Component", () => {
 
     fireEvent.click(getByText(container, "Validate"));
 
-    await wait(() => {});
+    await wait(() => {
+      expect(setTransitionReason).toHaveBeenCalled();
+    });
 
     expect(history.location.pathname).toEqual("/ecrc/transition");
   });

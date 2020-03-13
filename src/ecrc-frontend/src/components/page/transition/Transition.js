@@ -5,7 +5,9 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import "./Transition.css";
 
-export default function Transition({ header }) {
+export default function Transition({
+  page: { header, transitionReason = "bcsc" }
+}) {
   return (
     <main>
       <Header header={header} />
@@ -19,15 +21,23 @@ export default function Transition({ header }) {
             {"."}
           </p>
           <br />
-          <p>
-            We are transitioning our client organizations currently using
-            Equifax for identity verification to a new process through a{" "}
-            <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
-              BC Services Card account
-            </a>
-            {". Your organization hasn't"} been transitioned to the new system
-            yet.
-          </p>
+          {transitionReason === "notwhitelisted" && (
+            <p>
+              We are transitioning our client organizations currently using
+              Equifax for identity verification to a new process through a{" "}
+              <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
+                BC Services Card account
+              </a>
+              {". Your organization hasn't"} been transitioned to the new system
+              yet.
+            </p>
+          )}
+          {transitionReason === "bcsc" && (
+            <p>
+              TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc
+              with picture, did not have bcsc...etc
+            </p>
+          )}
         </div>
       </div>
       <Footer isSmallPage />
@@ -35,8 +45,17 @@ export default function Transition({ header }) {
   );
 }
 
+Transition.defaultProps = {
+  page: {
+    transitionReason: "bcsc"
+  }
+};
+
 Transition.propTypes = {
-  header: PropTypes.shape({
-    name: PropTypes.string.isRequired
-  }).isRequired
+  page: PropTypes.shape({
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }).isRequired,
+    transitionReason: PropTypes.string
+  })
 };
