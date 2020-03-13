@@ -59,7 +59,7 @@ describe("InformationReview Component", () => {
 
   // Mock Window object
   window.scrollTo = jest.fn();
-  let mockWindow = jest.fn();
+  const mockWindow = jest.fn();
 
   // Mocking UseEffect
   const useEffect = jest.spyOn(React, "useEffect");
