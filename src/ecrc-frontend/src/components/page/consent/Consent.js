@@ -9,6 +9,11 @@ import Declaration from "../../base/declaration/Declaration";
 import { Button } from "../../base/button/Button";
 import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
+import {
+  isAuthorized,
+  accessJWTToken,
+  generateJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 export default function Consent({ page: { header } }) {
   const [toHome, setToHome] = useState(false);
@@ -20,6 +25,24 @@ export default function Consent({ page: { header } }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    if (!isAuthorized()) setToHome(true);
+
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      visited: [
+        "orgValidation",
+        "orgVerification",
+        "tou",
+        "bcscRedirect",
+        "userConfirmation",
+        "consent"
+      ]
+    };
+    console.log(currentPayload);
+    console.log(newPayload);
+    generateJWTToken(newPayload);
   }, []);
 
   useEffect(() => {

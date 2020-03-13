@@ -241,6 +241,8 @@ export default function InformationReview({
     // CALL THAT API
     const token = sessionStorage.getItem("jwt");
 
+    console.log("token is ", token);
+
     const createApplicantInfo = {
       orgTicketNumber,
       callPurpose: "CRC",

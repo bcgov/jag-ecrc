@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
@@ -20,7 +20,7 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
   const [bcscUrl, setBcscUrl] = useState("");
   const [toHome, setToHome] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
 
     if (!isAuthenticated("tou")) setToHome(true);

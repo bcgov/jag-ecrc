@@ -13,10 +13,27 @@ export function isAuthenticated(page) {
   // verify a token symmetric
   jwt.verify(token, validator, (err, decoded) => {
     console.log(decoded);
+    if (!decoded.visited) return false;
     if (decoded.visited.includes(page)) isAuthed = true;
   });
 
   return isAuthed;
+}
+
+export function isAuthorized() {
+  const token = sessionStorage.getItem("jwt");
+  const validator = sessionStorage.getItem("validator");
+  let isAuthorized = false;
+
+  if (!token || !validator) return false;
+
+  // verify a token symmetric
+  jwt.verify(token, validator, (err, decoded) => {
+    console.log(decoded);
+    if (decoded.authorities.includes("Authorized")) isAuthorized = true;
+  });
+
+  return isAuthorized;
 }
 
 export function storeValidator() {
@@ -37,7 +54,7 @@ export function generateJWTToken(payload) {
 
   if (!validator) return false;
 
-  const token = jwt.sign(payload, validator, { expiresIn: "2h" });
+  const token = jwt.sign(payload, validator);
 
   sessionStorage.setItem("jwt", token);
 

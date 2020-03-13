@@ -10,7 +10,11 @@ import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
-import { generateJWTToken } from "../../../modules/AuthenticationHelper";
+import {
+  generateJWTToken,
+  isAuthenticated,
+  accessJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 export default function ApplicationForm({
   page: {
@@ -94,8 +98,24 @@ export default function ApplicationForm({
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    const payload = { authorities: ["ROLE"] };
-    const token = generateJWTToken(payload);
+    if (!isAuthenticated("consent")) setToHome(true);
+
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      visited: [
+        "orgValidation",
+        "orgVerification",
+        "tou",
+        "bcscRedirect",
+        "userConfirmation",
+        "consent",
+        "appForm"
+      ]
+    };
+    console.log(currentPayload);
+    console.log(newPayload);
+    const token = generateJWTToken(newPayload);
 
     axios
       .get("/ecrc/protected/getProvinceList", {

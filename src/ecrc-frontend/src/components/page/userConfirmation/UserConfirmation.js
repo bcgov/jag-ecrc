@@ -8,12 +8,14 @@ import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import "./UserConfirmation.css";
 import {
+  isAuthenticated,
   generateJWTToken,
   accessJWTToken
 } from "../../../modules/AuthenticationHelper";
 
 export default function UserConfirmation({ page: { header, setApplicant } }) {
   const [toConsent, setToConsent] = useState(false);
+  const [toHome, setToHome] = React.useState(false);
   const [toTransition, setToTransition] = useState(false);
   const [user, setUser] = useState({});
   const [fullName, setFullName] = useState("");
@@ -22,7 +24,18 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
 
-    const payload = { authorities: ["ROLE"] };
+    if (!isAuthenticated("bcscRedirect") || !code) setToHome(true);
+
+    const payload = {
+      authorities: ["ROLE"],
+      visited: [
+        "orgValidation",
+        "orgVerification",
+        "tou",
+        "bcscRedirect",
+        "userConfirmation"
+      ]
+    };
     const token = generateJWTToken(payload);
 
     axios
@@ -123,6 +136,10 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 
   if (toTransition) {
     return <Redirect to="/ecrc/transition" />;
+  }
+
+  if (toHome) {
+    return <Redirect to="/" />;
   }
 
   return (
