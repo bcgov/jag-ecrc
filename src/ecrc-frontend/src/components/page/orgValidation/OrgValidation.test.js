@@ -7,14 +7,12 @@ import {
   getByRole,
   getByDisplayValue,
   getByText,
-  wait,
-  waitForElement,
-  cleanup
+  wait
 } from "@testing-library/react";
 import { createMemoryHistory } from "history";
+import axios from "axios";
 
 import OrgValidation from "./OrgValidation";
-import axios from "axios";
 
 jest.mock("axios");
 
@@ -76,13 +74,7 @@ describe("OrgValidation Component", () => {
   });
 
   test("redirects to Transition page", async () => {
-    axios.get.mockImplementationOnce(() =>
-      Promise.reject({
-        response: {
-          status: 401
-        }
-      })
-    );
+    axios.get.mockRejectedValueOnce({ response: { status: 401 } });
 
     const history = createMemoryHistory();
 
@@ -108,13 +100,7 @@ describe("OrgValidation Component", () => {
   });
 
   test("displays org code error", async () => {
-    axios.get.mockImplementationOnce(() =>
-      Promise.reject({
-        response: {
-          status: 404
-        }
-      })
-    );
+    axios.get.mockRejectedValueOnce({ response: { status: 404 } });
 
     const history = createMemoryHistory();
 

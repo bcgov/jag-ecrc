@@ -37,6 +37,7 @@ export default function OrgValidation({ page: { header, setOrg } }) {
         setToOrgVerification(true);
       })
       .catch(error => {
+        console.log("The error is: " + error);
         if (error.response.status === 404) {
           setOrgError("Please enter a valid org code");
         } else if (error.response.status === 401) {
