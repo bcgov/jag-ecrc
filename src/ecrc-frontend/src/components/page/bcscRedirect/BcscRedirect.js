@@ -1,24 +1,34 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
-import { generateJWTToken } from "../../../modules/AuthenticationHelper";
+import {
+  isAuthenticated,
+  generateJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 import "../page.css";
 import "./BcscRedirect.css";
 
 export default function BcscRedirect({ page: { header, saveOrg } }) {
   const [bcscUrl, setBcscUrl] = useState("");
+  const [toHome, setToHome] = React.useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const payload = { authorities: ["ROLE"] };
+    if (!isAuthenticated("tou")) setToHome(true);
+
+    const payload = {
+      authorities: ["ROLE"],
+      visited: ["orgValidation", "orgVerification", "tou", "bcscRedirect"]
+    };
     const token = generateJWTToken(payload);
 
     axios
@@ -45,6 +55,10 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
     // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <main>
