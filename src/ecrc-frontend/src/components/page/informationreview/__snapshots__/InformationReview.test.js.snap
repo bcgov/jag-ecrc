@@ -154,6 +154,91 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
             <th
               colSpan="2"
             >
+              PREVIOUS NAMES
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              First Name
+            </td>
+            <td>
+              Robert
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Middle Name
+            </td>
+            <td>
+              Norman
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Last Name
+            </td>
+            <td>
+              Ross
+            </td>
+          </tr>
+          <tr>
+            <td>
+              First Name
+            </td>
+            <td>
+              Robert
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Middle Name
+            </td>
+            <td>
+              Norman
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Last Name
+            </td>
+            <td>
+              Ross
+            </td>
+          </tr>
+          <tr>
+            <td>
+              First Name
+            </td>
+            <td>
+              Robert
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Middle Name
+            </td>
+            <td>
+              Norman
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Last Name
+            </td>
+            <td>
+              Ross
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
               POSITION WITH ORGANIZATION
             </th>
           </tr>
@@ -165,6 +250,14 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
             </td>
             <td>
               Painter
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Organization Facility
+            </td>
+            <td>
+              Something
             </td>
           </tr>
         </tbody>

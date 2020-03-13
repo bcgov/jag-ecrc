@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -51,11 +51,11 @@ export default function InformationReview({
     saveApplicationInfo
   }
 }) {
-  const [toBack, setToBack] = useState(false);
-  const [toSuccess, setToSuccess] = useState(false);
-  const [boxChecked, setBoxChecked] = useState(false);
+  const [toBack, setToBack] = React.useState(false);
+  const [toSuccess, setToSuccess] = React.useState(false);
+  const [boxChecked, setBoxChecked] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
