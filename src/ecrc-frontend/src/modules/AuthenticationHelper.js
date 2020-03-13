@@ -12,6 +12,7 @@ export function isAuthenticated(page) {
 
   // verify a token symmetric
   jwt.verify(token, validator, (err, decoded) => {
+    console.log(decoded);
     if (decoded.visited.includes(page)) isAuthed = true;
   });
 

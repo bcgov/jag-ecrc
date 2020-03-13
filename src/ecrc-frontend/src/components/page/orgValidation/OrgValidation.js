@@ -17,18 +17,19 @@ export default function OrgValidation({ page: { header, setOrg } }) {
   const [orgError, setOrgError] = useState("");
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
+  let payload;
+  let token;
 
   useEffect(() => {
     // get the initial validator from backend and store it for subsequent requests (for JWT)
     storeValidator();
+    payload = { authorities: ["ROLE"], visited: ["orgValidation"] };
+    token = generateJWTToken(payload);
 
     window.scrollTo(0, 0);
   }, []);
 
   const orgValidation = () => {
-    const payload = { authorities: ["ROLE"], visited: ["orgValidation"] };
-    const token = generateJWTToken(payload);
-
     axios
       .get(
         `/ecrc/protected/doAuthenticateUser?orgTicketNumber=${orgTicketNumber}`,
