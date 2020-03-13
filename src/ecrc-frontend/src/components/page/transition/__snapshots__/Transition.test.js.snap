@@ -11,7 +11,7 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -176,7 +176,7 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"

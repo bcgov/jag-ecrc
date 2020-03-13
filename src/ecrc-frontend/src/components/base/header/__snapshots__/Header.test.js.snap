@@ -10,7 +10,7 @@ exports[`Header Component Matches the snapshot 1`] = `
     >
       <a
         className="navbar-brand"
-        href="https://www2.gov.bc.ca"
+        href="/"
       >
         <img
           alt="B.C. Government Logo"

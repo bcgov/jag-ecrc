@@ -11,7 +11,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -272,7 +272,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -518,7 +518,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"

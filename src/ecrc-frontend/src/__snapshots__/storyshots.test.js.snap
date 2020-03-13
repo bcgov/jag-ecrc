@@ -11,7 +11,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -959,7 +959,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -1945,7 +1945,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -2377,7 +2377,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -2850,7 +2850,7 @@ exports[`Storyshots Consent page Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -3322,7 +3322,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -4021,7 +4021,7 @@ exports[`Storyshots Header Default 1`] = `
     >
       <a
         className="navbar-brand"
-        href="https://www2.gov.bc.ca"
+        href="/"
       >
         <img
           alt="B.C. Government Logo"
@@ -4079,7 +4079,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -4738,7 +4738,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -5559,7 +5559,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -6022,7 +6022,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -6697,7 +6697,7 @@ exports[`Storyshots OrgVerification Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -7300,7 +7300,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -9037,7 +9037,7 @@ exports[`Storyshots Success Payment Failure 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -9298,7 +9298,7 @@ exports[`Storyshots Success Payment Success 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -9544,7 +9544,7 @@ exports[`Storyshots Success Volunteer 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -9821,7 +9821,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -10316,7 +10316,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -11353,7 +11353,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -11518,7 +11518,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -11683,7 +11683,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -11856,7 +11856,7 @@ exports[`Storyshots User Confirmation Page Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -12041,7 +12041,7 @@ exports[`Storyshots User Confirmation Page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
