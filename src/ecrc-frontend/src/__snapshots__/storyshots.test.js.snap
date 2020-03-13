@@ -11,7 +11,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -28,10 +28,13 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -49,18 +52,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -967,7 +959,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -984,10 +976,13 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -1005,18 +1000,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -1961,7 +1945,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -1978,10 +1962,13 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          BC Services Card
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            BC Services Card
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -1999,18 +1986,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -2401,7 +2377,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -2418,10 +2394,13 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          BC Services Card
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            BC Services Card
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -2439,18 +2418,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -2882,7 +2850,7 @@ exports[`Storyshots Consent page Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -2899,10 +2867,13 @@ exports[`Storyshots Consent page Default 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -2920,18 +2891,7 @@ exports[`Storyshots Consent page Default 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -3362,7 +3322,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -3379,10 +3339,13 @@ exports[`Storyshots Consent page Mobile 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -3400,18 +3363,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -4069,7 +4021,7 @@ exports[`Storyshots Header Default 1`] = `
     >
       <a
         className="navbar-brand"
-        href="https://www2.gov.bc.ca"
+        href="/"
       >
         <img
           alt="B.C. Government Logo"
@@ -4086,10 +4038,13 @@ exports[`Storyshots Header Default 1`] = `
           width="64"
         />
       </a>
-      <div
-        className="navbar-brand"
-      >
-        eCRC
+      <div>
+        <a
+          className="navbar-brand nav-item nav-link"
+          href="/"
+        >
+          eCRC
+        </a>
       </div>
       <button
         aria-controls="navbarNavAltMarkup"
@@ -4107,18 +4062,7 @@ exports[`Storyshots Header Default 1`] = `
       <div
         className="collapse navbar-collapse"
         id="navbarNavAltMarkup"
-      >
-        <div
-          className="navbar-nav"
-        >
-          <a
-            className="nav-item nav-link"
-            href="/"
-          >
-            Home
-          </a>
-        </div>
-      </div>
+      />
     </div>
   </nav>
 </header>
@@ -4135,7 +4079,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -4152,10 +4096,13 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -4173,18 +4120,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -4802,7 +4738,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -4819,10 +4755,13 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -4840,18 +4779,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -5631,7 +5559,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -5648,10 +5576,13 @@ exports[`Storyshots OrgValidation Default 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -5669,18 +5600,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -6102,7 +6022,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -6119,10 +6039,13 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -6140,18 +6063,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -6785,7 +6697,7 @@ exports[`Storyshots OrgVerification Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -6802,10 +6714,13 @@ exports[`Storyshots OrgVerification Default 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -6823,18 +6738,7 @@ exports[`Storyshots OrgVerification Default 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -7396,7 +7300,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -7413,10 +7317,13 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -7434,18 +7341,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -9141,7 +9037,7 @@ exports[`Storyshots Success Payment Failure 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -9158,10 +9054,13 @@ exports[`Storyshots Success Payment Failure 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -9179,18 +9078,7 @@ exports[`Storyshots Success Payment Failure 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -9410,7 +9298,7 @@ exports[`Storyshots Success Payment Success 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -9427,10 +9315,13 @@ exports[`Storyshots Success Payment Success 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -9448,18 +9339,7 @@ exports[`Storyshots Success Payment Success 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -9664,7 +9544,7 @@ exports[`Storyshots Success Volunteer 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -9681,10 +9561,13 @@ exports[`Storyshots Success Volunteer 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Criminal Record Check
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -9702,18 +9585,7 @@ exports[`Storyshots Success Volunteer 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -9949,7 +9821,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -9966,10 +9838,13 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Terms of Use
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Terms of Use
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -9987,18 +9862,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -10309,6 +10173,18 @@ exports[`Storyshots Term Of Use page Default 1`] = `
           </ol>
         </section>
         <section>
+          <p
+            style={
+              Object {
+                "color": "red",
+              }
+            }
+          >
+            Please scroll down to the bottom of the terms of use and agree to the terms below to continue.
+          </p>
+        </section>
+        <br />
+        <section>
           <input
             className="terms-cb"
             onClick={[Function]}
@@ -10440,7 +10316,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -10457,10 +10333,13 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          Terms of Use
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Terms of Use
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -10478,18 +10357,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -10799,6 +10667,18 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             </li>
           </ol>
         </section>
+        <section>
+          <p
+            style={
+              Object {
+                "color": "red",
+              }
+            }
+          >
+            Please scroll down to the bottom of the terms of use and agree to the terms below to continue.
+          </p>
+        </section>
+        <br />
         <section>
           <input
             className="terms-cb"
@@ -11221,6 +11101,18 @@ exports[`Storyshots Terms of Use Default 1`] = `
     </ol>
   </section>
   <section>
+    <p
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      Please scroll down to the bottom of the terms of use and agree to the terms below to continue.
+    </p>
+  </section>
+  <br />
+  <section>
     <input
       className="terms-cb"
       type="checkbox"
@@ -11450,7 +11342,7 @@ exports[`Storyshots TextInput note 1`] = `
 </div>
 `;
 
-exports[`Storyshots Transition Page Default 1`] = `
+exports[`Storyshots Transition Page Default To BCSC 1`] = `
 <main>
   <header>
     <nav
@@ -11461,7 +11353,7 @@ exports[`Storyshots Transition Page Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -11478,10 +11370,13 @@ exports[`Storyshots Transition Page Default 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          header name
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            header name
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -11499,18 +11394,7 @@ exports[`Storyshots Transition Page Default 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -11531,15 +11415,7 @@ exports[`Storyshots Transition Page Default 1`] = `
       </p>
       <br />
       <p>
-        We are transitioning our client organizations currently using Equifax for identity verification to a new process through a
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-        >
-          BC Services Card account
-        </a>
-        . Your organization hasn't
-         been transitioned to the new system yet.
+        TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc with picture, did not have bcsc...etc
       </p>
     </div>
   </div>
@@ -11642,7 +11518,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -11659,10 +11535,13 @@ exports[`Storyshots Transition Page Mobile 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          header name
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            header name
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -11680,18 +11559,172 @@ exports[`Storyshots Transition Page Mobile 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
+        />
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="transition-content col-md-12"
+    >
+      <p>
+        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        <a
+          href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
-          <div
-            className="navbar-nav"
+          here
+        </a>
+        .
+      </p>
+      <br />
+      <p>
+        TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc with picture, did not have bcsc...etc
+      </p>
+    </div>
+  </div>
+  <footer
+    className="footer"
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "fixed",
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
           >
             <a
-              className="nav-item nav-link"
-              href="/"
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              Home
+              Disclaimer
             </a>
-          </div>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
+
+exports[`Storyshots Transition Page Not Whitelisted 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            header name
+          </a>
         </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        />
       </div>
     </nav>
   </header>
@@ -11823,7 +11856,7 @@ exports[`Storyshots User Confirmation Page Default 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -11840,10 +11873,13 @@ exports[`Storyshots User Confirmation Page Default 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          header name
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            header name
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -11861,18 +11897,7 @@ exports[`Storyshots User Confirmation Page Default 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>
@@ -12016,7 +12041,7 @@ exports[`Storyshots User Confirmation Page Mobile 1`] = `
       >
         <a
           className="navbar-brand"
-          href="https://www2.gov.bc.ca"
+          href="/"
         >
           <img
             alt="B.C. Government Logo"
@@ -12033,10 +12058,13 @@ exports[`Storyshots User Confirmation Page Mobile 1`] = `
             width="64"
           />
         </a>
-        <div
-          className="navbar-brand"
-        >
-          header name
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            header name
+          </a>
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -12054,18 +12082,7 @@ exports[`Storyshots User Confirmation Page Mobile 1`] = `
         <div
           className="collapse navbar-collapse"
           id="navbarNavAltMarkup"
-        >
-          <div
-            className="navbar-nav"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/"
-            >
-              Home
-            </a>
-          </div>
-        </div>
+        />
       </div>
     </nav>
   </header>

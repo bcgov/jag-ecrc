@@ -12,7 +12,9 @@ import {
   storeValidator
 } from "../../../modules/AuthenticationHelper";
 
-export default function OrgValidation({ page: { header, setOrg } }) {
+export default function OrgValidation({
+  page: { header, setOrg, setTransitionReason }
+}) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
   const [toTransition, setToTransition] = useState(false);
@@ -47,6 +49,7 @@ export default function OrgValidation({ page: { header, setOrg } }) {
         if (error.response.status === 404) {
           setOrgError("Please enter a valid org code");
         } else if (error.response.status === 401) {
+          setTransitionReason("notwhitelisted");
           setToTransition(true);
         }
       });
@@ -100,6 +103,7 @@ export default function OrgValidation({ page: { header, setOrg } }) {
 OrgValidation.propTypes = {
   page: PropTypes.shape({
     setOrg: PropTypes.func.isRequired,
+    setTransitionReason: PropTypes.func.isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired

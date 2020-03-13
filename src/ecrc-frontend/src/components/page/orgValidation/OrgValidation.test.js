@@ -11,9 +11,11 @@ describe("OrgValidation Component", () => {
     };
 
     const setOrg = () => {};
+    const setTransitionReason = () => {};
 
     const page = {
       setOrg,
+      setTransitionReason,
       header
     };
 

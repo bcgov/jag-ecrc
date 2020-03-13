@@ -13,9 +13,11 @@ const header = {
 };
 
 const setOrg = () => {};
+const setTransitionReason = () => {};
 
 const page = {
   setOrg,
+  setTransitionReason,
   header
 };
 
