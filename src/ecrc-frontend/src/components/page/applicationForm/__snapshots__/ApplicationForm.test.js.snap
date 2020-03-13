@@ -84,21 +84,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="legalFirstNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="legalFirstNm"
                 >
                   First Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Robert"
@@ -114,21 +114,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="legalSecondNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="legalSecondNm"
                 >
                   Middle Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Norman"
@@ -144,21 +144,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="legalSurnameNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="legalSurnameNm"
                 >
                   Last Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Ross"
@@ -194,21 +194,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="alias1First"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="alias1First"
                 >
                   First Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -223,21 +223,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="alias1Seocnd"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="alias1Seocnd"
                 >
                   Middle Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -252,21 +252,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="alias1Surname"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="alias1Surname"
                 >
                   Last Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -300,15 +300,15 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="birthLoc"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="birthLoc"
                 >
                   City and Country of Birth
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -319,7 +319,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -336,21 +336,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="birthDt"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="birthDt"
                 >
                   Date of Birth
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="1942-10-29"
@@ -366,21 +366,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="genderTxt"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="genderTxt"
                 >
                   Sex
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Male"
@@ -396,15 +396,15 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="bcDLNumber"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="bcDLNumber"
                 >
                   BC Driver's Licence Number
-                </label>
+                </div>
                 
                  
                 <span
@@ -412,7 +412,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 >
                   (Current or Expired)
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -427,15 +427,15 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="phoneNumber"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="phoneNumber"
                 >
                   Primary Phone Number
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -448,7 +448,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 >
                   (Include area code)
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -466,15 +466,15 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="emailAddress"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="emailAddress"
                 >
                   Personal Email Address
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -487,7 +487,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 >
                   We may use this to communicate with you about your application.
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -516,15 +516,15 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="applicantPosition"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="applicantPosition"
                 >
                   Applicant's position/Job Title
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -535,7 +535,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -552,15 +552,15 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="organizationFacility"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="organizationFacility"
                 >
                   Organization Facility
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -573,7 +573,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 >
                   (Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -601,21 +601,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="addressLine1"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="addressLine1"
                 >
                   Street
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="123 Somewhere"
@@ -631,21 +631,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="cityNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="cityNm"
                 >
                   City
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Here"
@@ -661,21 +661,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="provinceNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="provinceNm"
                 >
                   Province
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="British Columbia"
@@ -691,21 +691,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="postalCodeTxt"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="postalCodeTxt"
                 >
                   Postal Code
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="V9V 9V9"
@@ -721,21 +721,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="countryNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="countryNm"
                 >
                   Country
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Canada"
