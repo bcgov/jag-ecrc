@@ -11,9 +11,17 @@ const header = {
   name: "header name"
 };
 
-export const Default = () => <Transition header={header} />;
+const page = {
+  header
+};
 
-export const Mobile = () => <Transition header={header} />;
+export const DefaultToBCSC = () => <Transition page={page} />;
+
+export const NotWhitelisted = () => (
+  <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
+);
+
+export const Mobile = () => <Transition page={page} />;
 
 Mobile.story = {
   parameters: {
