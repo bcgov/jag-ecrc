@@ -19,8 +19,8 @@ export default function OrgValidation({
   const [orgError, setOrgError] = useState("");
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
-  let payload = { authorities: ["ROLE"], visited: ["orgValidation"] };
-  let token = generateJWTToken(payload);
+  const payload = { authorities: ["ROLE"], visited: ["orgValidation"] };
+  const token = generateJWTToken(payload);
 
   useEffect(() => {
     // get the initial validator from backend and store it for subsequent requests (for JWT)
