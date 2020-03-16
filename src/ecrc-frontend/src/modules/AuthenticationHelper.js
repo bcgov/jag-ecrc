@@ -12,8 +12,7 @@ export function isAuthenticated(page) {
 
   // verify a token symmetric
   jwt.verify(token, validator, (err, decoded) => {
-    console.log(decoded);
-    if (!decoded.visited) {
+    if (err || !decoded.visited) {
       isAuthed = false;
     } else if (decoded.visited.includes(page)) {
       isAuthed = true;
@@ -32,8 +31,7 @@ export function isAuthorized() {
 
   // verify a token symmetric
   jwt.verify(token, validator, (err, decoded) => {
-    console.log(decoded);
-    if (!decoded.authorities) {
+    if (err || !decoded.authorities) {
       isAuthorize = false;
     } else if (decoded.authorities.includes("Authorized")) {
       isAuthorize = true;
@@ -69,10 +67,7 @@ export function generateJWTToken(payload) {
 }
 
 export function accessJWTToken(token) {
-  console.log("OKATY ", token);
   const validator = sessionStorage.getItem("validator");
-
-  console.log("VALIDATOR", validator);
 
   const payload = jwt.verify(token, validator);
 

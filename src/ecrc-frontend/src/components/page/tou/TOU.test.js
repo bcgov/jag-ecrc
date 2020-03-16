@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { shallow } from "enzyme";
 
 import TOU from "./TOU";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 describe("TermOfUse Page Component", () => {
   const header = {
@@ -13,6 +14,9 @@ describe("TermOfUse Page Component", () => {
   const page = {
     header
   };
+
+  sessionStorage.setItem("validator", "secret");
+  generateJWTToken({ visited: ["orgVerification"] });
 
   test("Matches the snapshot", () => {
     const termsOfUse = create(

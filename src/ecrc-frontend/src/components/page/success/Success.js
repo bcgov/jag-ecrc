@@ -32,8 +32,6 @@ export default function Success({
   const location = useLocation();
   const paymentInfo = queryString.parse(location.search);
 
-  console.log(paymentInfo);
-
   useEffect(() => {
     window.scrollTo(0, 0);
 

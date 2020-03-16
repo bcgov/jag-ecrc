@@ -80,8 +80,6 @@ export default function InformationReview({
         "infoReview"
       ]
     };
-    console.log(currentPayload);
-    console.log(newPayload);
     generateJWTToken(newPayload);
   }, []);
 
@@ -266,8 +264,6 @@ export default function InformationReview({
     // TODO: Check if volunteer, if yes, success, else, cont.
     // CALL THAT API
     const token = sessionStorage.getItem("jwt");
-
-    console.log("token is ", token);
 
     const createApplicantInfo = {
       orgTicketNumber,

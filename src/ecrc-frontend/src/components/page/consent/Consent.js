@@ -28,8 +28,6 @@ export default function Consent({ page: { header } }) {
 
     if (!isAuthorized()) setToHome(true);
 
-    console.log("TESTING: ", sessionStorage.getItem("jwt"));
-
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
     const newPayload = {
       ...currentPayload,
@@ -42,8 +40,6 @@ export default function Consent({ page: { header } }) {
         "consent"
       ]
     };
-    console.log(currentPayload);
-    console.log(newPayload);
     generateJWTToken(newPayload);
   }, []);
 

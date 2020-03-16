@@ -22,7 +22,6 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams);
     const code = urlParams.get("code");
 
     if (!isAuthenticated("bcscRedirect") || !code) setToHome(true);

@@ -5,6 +5,8 @@ import { MemoryRouter } from "react-router-dom";
 import Success from "./Success";
 
 describe("Success Page Component", () => {
+  window.scrollTo = jest.fn();
+
   const header = {
     name: "Criminal Record Check"
   };

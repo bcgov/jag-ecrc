@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { shallow } from "enzyme";
 
 import OrgVerification from "./OrgVerification";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 describe("OrgVerification Component", () => {
   const header = {
@@ -27,6 +28,9 @@ describe("OrgVerification Component", () => {
 
   // Mock window function
   window.scrollTo = jest.fn();
+
+  sessionStorage.setItem("validator", "secret");
+  generateJWTToken({ visited: ["orgValidation"] });
 
   let useEffect;
 

@@ -113,8 +113,6 @@ export default function ApplicationForm({
         "appForm"
       ]
     };
-    console.log(currentPayload);
-    console.log(newPayload);
     const token = generateJWTToken(newPayload);
 
     axios

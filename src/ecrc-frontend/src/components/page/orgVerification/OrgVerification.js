@@ -18,7 +18,9 @@ export default function OrgVerification({ page: { header, org } }) {
   const [toTOU, setToTOU] = useState(false);
 
   React.useEffect(() => {
-    if (!isAuthenticated("orgValidation") || !org.orgNm) setToHome(true);
+    if (!isAuthenticated("orgValidation") || !org.orgNm) {
+      setToHome(true);
+    }
 
     const payload = {
       authorities: ["ROLE"],

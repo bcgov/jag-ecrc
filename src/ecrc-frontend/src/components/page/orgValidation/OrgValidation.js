@@ -30,7 +30,6 @@ export default function OrgValidation({
   }, []);
 
   const orgValidation = () => {
-    console.log(token);
     axios
       .get(
         `/ecrc/protected/doAuthenticateUser?orgTicketNumber=${orgTicketNumber}`,
