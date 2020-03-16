@@ -65,15 +65,15 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
       >
         <div>
           <div>
-            <div
+            <label
               className="label"
+              htmlFor="orgId"
             >
-              <label
+              <div
                 className="textinput_label"
-                htmlFor="orgId"
               >
                 Access code
-              </label>
+              </div>
               <span
                 className="mandatory"
                 id="asterisk"
@@ -84,7 +84,7 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
               <span
                 className="note"
               />
-            </div>
+            </label>
             <input
               className="textinput_editable_white"
               id="orgId"
