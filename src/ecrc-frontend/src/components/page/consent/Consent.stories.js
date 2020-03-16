@@ -1,14 +1,10 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
+import { storiesOf } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
-import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 import Consent from "./Consent";
-
-export default {
-  title: "ConsentPage",
-  component: Consent
-};
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 const header = {
   name: "Criminal Record Check"
@@ -18,26 +14,21 @@ const page = {
   header
 };
 
-const onContinueClick = action("onButtonContinueClicked");
-
 sessionStorage.setItem("validator", "secret");
 
 generateJWTToken({ authorities: ["Authorized"] });
 
-export const Default = () => (
-  <MemoryRouter>
-    <Consent page={page} onContinueClick={onContinueClick} />
-  </MemoryRouter>
-);
+const onContinueClick = action("onButtonContinueClicked");
 
-export const Mobile = () => (
-  <Consent page={page} onContinueClick={onContinueClick} />
-);
-
-Mobile.story = {
-  parameters: {
-    viewport: {
-      defaultViewport: "mobile2"
-    }
-  }
-};
+storiesOf("Consent page", module)
+  .add("Default", () => (
+    <MemoryRouter>
+      <Consent page={page} onContinueClick={onContinueClick} />
+    </MemoryRouter>
+  ))
+  .addParameters({ viewport: { defaultViewport: "mobile2" } })
+  .add("Mobile", () => (
+    <MemoryRouter>
+      <Consent page={page} onContinueClick={onContinueClick} />
+    </MemoryRouter>
+  ));

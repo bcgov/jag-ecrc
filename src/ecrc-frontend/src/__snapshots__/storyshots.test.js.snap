@@ -2839,7 +2839,7 @@ exports[`Storyshots Button ecrc 1`] = `
 </button>
 `;
 
-exports[`Storyshots ConsentPage Default 1`] = `
+exports[`Storyshots Consent page Default 1`] = `
 <main>
   <header>
     <nav
@@ -3311,7 +3311,7 @@ exports[`Storyshots ConsentPage Default 1`] = `
 </main>
 `;
 
-exports[`Storyshots ConsentPage Mobile 1`] = `
+exports[`Storyshots Consent page Mobile 1`] = `
 <main>
   <header>
     <nav
@@ -11845,7 +11845,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
 </main>
 `;
 
-exports[`Storyshots User Confirmation Page Default 1`] = `
+exports[`Storyshots User Confirmation page Default 1`] = `
 <main>
   <header>
     <nav
@@ -12030,7 +12030,7 @@ exports[`Storyshots User Confirmation Page Default 1`] = `
 </main>
 `;
 
-exports[`Storyshots User Confirmation Page Mobile 1`] = `
+exports[`Storyshots User Confirmation page Mobile 1`] = `
 <main>
   <header>
     <nav

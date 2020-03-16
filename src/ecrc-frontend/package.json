@@ -5,6 +5,7 @@
   "dependencies": {
     "@bcgov/bootstrap-theme": "https://github.com/bcgov/bootstrap-theme/releases/download/v1.1.1/bcgov-bootstrap-theme-1.1.1.tgz",
     "@storybook/addon-actions": "^5.3.12",
+    "@storybook/addon-queryparams": "^5.3.17",
     "@storybook/addon-storyshots": "^5.3.14",
     "@storybook/react": "^5.3.12",
     "@testing-library/jest-dom": "^4.2.4",
