@@ -317,6 +317,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 defaultValue=""
                 id="birthLoc"
                 onChange={[Function]}
+                placeholder="City, Country"
                 type="text"
               />
               <span
@@ -533,6 +534,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 defaultValue=""
                 id="applicantPosition"
                 onChange={[Function]}
+                placeholder="Position/Job Title"
                 type="text"
               />
               <span
@@ -571,6 +573,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 defaultValue=""
                 id="organizationFacility"
                 onChange={[Function]}
+                placeholder="Organization Facility"
                 type="text"
               />
               <span
@@ -743,18 +746,17 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </li>
         </ul>
       </form>
-      <p>
-        <label
-          htmlFor="mailingAddress"
-        >
+      <div>
+        <span>
           Is your mailing address different from your current street address? 
-        </label>
+        </span>
         <input
+          data-testid="mailingCheckbox"
           id="mailingAddress"
           onClick={[Function]}
           type="checkbox"
         />
-      </p>
+      </div>
       <div
         className="buttons"
       >

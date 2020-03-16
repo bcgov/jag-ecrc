@@ -5,17 +5,35 @@ import {
   getByText,
   queryByText,
   queryAllByText,
+  queryAllByDisplayValue,
   getByPlaceholderText,
-  getByLabelText
+  getByTestId,
+  getByDisplayValue,
+  wait
 } from "@testing-library/react";
 import { create } from "react-test-renderer";
 import { MemoryRouter, Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
+import axios from "axios";
 
 import ApplicationForm from "./ApplicationForm";
 
+jest.mock("axios");
+
 describe("ApplicationForm Component", () => {
   window.scrollTo = jest.fn();
+
+  const axiosCall = {
+    data: {
+      provinces: {
+        province: [
+          { name: "British Columbia" },
+          { name: "Ontario" },
+          { name: "Alberta" }
+        ]
+      }
+    }
+  };
 
   const header = {
     name: "Criminal Record Check"
@@ -34,7 +52,7 @@ describe("ApplicationForm Component", () => {
     countryNm: "Canada"
   };
 
-  const setApplicant = () => {};
+  const setApplicant = jest.fn();
   const org = {
     defaultScheduleTypeCd: "WBSD"
   };
@@ -46,7 +64,9 @@ describe("ApplicationForm Component", () => {
     setApplicant
   };
 
-  test("Matches the snapshot", () => {
+  beforeEach(() => axios.get.mockResolvedValueOnce(axiosCall));
+
+  test("Matches the snapshot", async () => {
     const applicationPage = create(
       <MemoryRouter>
         <ApplicationForm page={page} />
@@ -55,24 +75,27 @@ describe("ApplicationForm Component", () => {
     expect(applicationPage.toJSON()).toMatchSnapshot();
   });
 
-  test("Displays Organization Facility when Schedule D Org", () => {
+  test("Displays Organization Facility when Schedule D Org", async () => {
     const { getByText } = render(<ApplicationForm page={page} />);
+    await wait(() => {});
 
     expect(getByText("Organization Facility")).toBeInTheDocument();
   });
 
-  test("Does not display Organization Facility when not Schedule D Org", () => {
+  test("Does not display Organization Facility when not Schedule D Org", async () => {
     const { queryByText } = render(
       <ApplicationForm
         page={{ ...page, org: { defaultScheduleTypeCd: "WBSC" } }}
       />
     );
+    await wait(() => {});
 
     expect(queryByText("Organization Facility")).toBeNull();
   });
 
-  test("Displays Additional Aliases", () => {
+  test("Displays Additional Aliases", async () => {
     const { container } = render(<ApplicationForm page={page} />);
+    await wait(() => {});
 
     expect(queryAllByText(container, "First Name")).toHaveLength(2);
 
@@ -86,7 +109,7 @@ describe("ApplicationForm Component", () => {
     expect(queryByText(container, "click here to add them")).toBeNull();
   });
 
-  test("Displays Previously Set Values on returning", () => {
+  test("Displays Previously Set Values on returning", async () => {
     const returningApplicant = {
       ...applicant,
       alias1FirstNm: "Bob",
@@ -104,6 +127,7 @@ describe("ApplicationForm Component", () => {
         page={{ ...page, applicant: { ...returningApplicant } }}
       />
     );
+    await wait(() => {});
 
     expect(getByDisplayValue("Bob")).toBeInTheDocument();
     expect(getByDisplayValue("Rob")).toBeInTheDocument();
@@ -111,7 +135,7 @@ describe("ApplicationForm Component", () => {
     expect(getByDisplayValue("PBS")).toBeInTheDocument();
   });
 
-  test("Prevents navigation if different address checked but not set", () => {
+  test("Prevents navigation if different address checked but not set", async () => {
     const completeApplicant = {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
@@ -129,13 +153,9 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </Router>
     );
+    await wait(() => {});
 
-    fireEvent.click(
-      getByLabelText(
-        container,
-        "Is your mailing address different from your current street address?"
-      )
-    );
+    fireEvent.click(getByTestId(container, "mailingCheckbox"));
 
     expect(getByText(container, "Current Mailing Address")).toBeInTheDocument();
 
@@ -146,7 +166,7 @@ describe("ApplicationForm Component", () => {
     ).toBeInTheDocument();
   });
 
-  test("Only accepts valid email addresses", () => {
+  test("Only accepts valid email addresses", async () => {
     const completeApplicant = {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
@@ -164,6 +184,7 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </Router>
     );
+    await wait(() => {});
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -193,7 +214,7 @@ describe("ApplicationForm Component", () => {
     expect(history.location.pathname).toEqual("/ecrc/informationreview");
   });
 
-  test("Only accepts valid phone numbers", () => {
+  test("Only accepts valid phone numbers", async () => {
     const completeApplicant = {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
@@ -211,6 +232,7 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </Router>
     );
+    await wait(() => {});
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -240,23 +262,307 @@ describe("ApplicationForm Component", () => {
     expect(history.location.pathname).toEqual("/ecrc/informationreview");
   });
 
-  test("Prevents navigation without required fields", () => {
-    const { getByText } = render(<ApplicationForm page={page} />);
+  test("Only accepts valid postal codes", async () => {
+    const completeApplicant = {
+      ...applicant,
+      birthPlace: "Daytona Beach, Florida",
+      driversLicNo: "123456",
+      phoneNumber: "",
+      emailAddress: "bob@ross.com",
+      jobTitle: "Painter",
+      organizationFacility: "PBS"
+    };
 
-    fireEvent.click(getByText("Continue"));
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+      </Router>
+    );
+    await wait(() => {});
+
+    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+
+    fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText("Please enter your city and country of birth")
+      getByText(
+        container,
+        "Please enter a valid postal code in the form V9V 9V9"
+      )
     ).toBeInTheDocument();
+
+    fireEvent.change(getByPlaceholderText(container, "V9V 9V9"), {
+      target: { value: "V99 9V9" }
+    });
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(
+      getByText(
+        container,
+        "Please enter a valid postal code in the form V9V 9V9"
+      )
+    ).toBeInTheDocument();
+
+    fireEvent.change(getByPlaceholderText(container, "V9V 9V9"), {
+      target: { value: "V9V9V9" }
+    });
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(
+      queryByText(
+        container,
+        "Please enter a valid postal code in the form V9V 9V9"
+      )
+    ).toBeNull();
   });
 
-  test("Redirect to Home", () => {
+  test("Requires city and country of birth", async () => {
+    const completeApplicant = {
+      ...applicant,
+      birthPlace: "",
+      driversLicNo: "123456",
+      phoneNumber: "1234567890",
+      emailAddress: "bob@ross.com",
+      jobTitle: "Painter",
+      organizationFacility: "PBS"
+    };
+
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+      </Router>
+    );
+    await wait(() => {});
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(
+      getByText(container, "Please enter your city and country of birth")
+    ).toBeInTheDocument();
+
+    fireEvent.change(getByPlaceholderText(container, "City, Country"), {
+      target: { value: "Daytona Beach, Florida" }
+    });
+
+    expect(
+      queryByText(container, "Please enter your city and country of birth")
+    ).toBeNull();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+  });
+
+  test("Requires applicant's position/job title", async () => {
+    const completeApplicant = {
+      ...applicant,
+      birthPlace: "Daytona Beach, Florida",
+      driversLicNo: "123456",
+      phoneNumber: "1234567890",
+      emailAddress: "bob@ross.com",
+      jobTitle: "",
+      organizationFacility: "PBS"
+    };
+
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+      </Router>
+    );
+    await wait(() => {});
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(
+      getByText(container, "Please enter your position/job title")
+    ).toBeInTheDocument();
+
+    fireEvent.change(getByPlaceholderText(container, "Position/Job Title"), {
+      target: { value: "Painter" }
+    });
+
+    expect(
+      queryByText(container, "Please enter your position/job title")
+    ).toBeNull();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+  });
+
+  test("Requires orgnization facility if schedule D", async () => {
+    const completeApplicant = {
+      ...applicant,
+      birthPlace: "Daytona Beach, Florida",
+      driversLicNo: "123456",
+      phoneNumber: "1234567890",
+      emailAddress: "bob@ross.com",
+      jobTitle: "Painter",
+      organizationFacility: ""
+    };
+
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+      </Router>
+    );
+    await wait(() => {});
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(
+      getByText(container, "Please enter your organization facility")
+    ).toBeInTheDocument();
+
+    fireEvent.change(getByPlaceholderText(container, "Organization Facility"), {
+      target: { value: "PBS" }
+    });
+
+    expect(
+      queryByText(container, "Please enter your organization facility")
+    ).toBeNull();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+  });
+
+  test("Requires street if different mailing address selected", async () => {
+    const completeApplicant = {
+      ...applicant,
+      birthPlace: "Daytona Beach, Florida",
+      driversLicNo: "123456",
+      phoneNumber: "1234567890",
+      emailAddress: "bob@ross.com",
+      jobTitle: "Painter",
+      organizationFacility: ""
+    };
+
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+      </Router>
+    );
+    await wait(() => {});
+
+    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(
+      getByText(container, "Please enter your PO box or street address")
+    ).toBeInTheDocument();
+
+    fireEvent.change(getByPlaceholderText(container, "Street or PO Box"), {
+      target: { value: "234 Here St" }
+    });
+
+    expect(
+      queryByText(container, "Please enter your PO box or street address")
+    ).toBeNull();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(
+      queryByText(container, "Please enter your PO box or street address")
+    ).toBeNull();
+  });
+
+  test("Requires city if different mailing address selected", async () => {
+    const completeApplicant = {
+      ...applicant,
+      birthPlace: "Daytona Beach, Florida",
+      driversLicNo: "123456",
+      phoneNumber: "1234567890",
+      emailAddress: "bob@ross.com",
+      jobTitle: "Painter",
+      organizationFacility: ""
+    };
+
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+      </Router>
+    );
+    await wait(() => {});
+
+    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(getByText(container, "Please enter your city")).toBeInTheDocument();
+
+    fireEvent.change(getByPlaceholderText(container, "City"), {
+      target: { value: "Nowhere" }
+    });
+
+    expect(queryByText(container, "Please enter your city")).toBeNull();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(queryByText(container, "Please enter your city")).toBeNull();
+  });
+
+  test("Select province if different mailing address selected", async () => {
+    const completeApplicant = {
+      ...applicant,
+      birthPlace: "Daytona Beach, Florida",
+      driversLicNo: "123456",
+      phoneNumber: "1234567890",
+      emailAddress: "bob@ross.com",
+      jobTitle: "Painter",
+      organizationFacility: ""
+    };
+
+    axios.get.mockResolvedValueOnce(axiosCall);
+
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+      </Router>
+    );
+
+    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+
+    await wait(() => {});
+
+    const provinces = queryAllByDisplayValue(container, "British Columbia");
+
+    expect(provinces).toHaveLength(2);
+
+    // fireEvent.click(provinces[1]);
+
+    expect(getByText(container, "Ontario")).toBeInTheDocument();
+
+    fireEvent.click(getByText(container, "Ontario"));
+
+    expect(getByText(container, "Ontario")).toBeInTheDocument();
+  });
+
+  test("Redirect to Home", async () => {
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
         <ApplicationForm page={page} />
       </Router>
     );
+    await wait(() => {});
 
     expect(
       getByText(container, "Criminal Record Check - Application")

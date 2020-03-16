@@ -219,6 +219,7 @@ export default function ApplicationForm({
         label: "City and Country of Birth",
         id: "birthLoc",
         isRequired: true,
+        placeholder: "City, Country",
         value: birthLoc,
         errorMsg: birthPlaceError,
         onChange: event => {
@@ -281,6 +282,7 @@ export default function ApplicationForm({
       {
         label: "Applicant's position/Job Title",
         id: "applicantPosition",
+        placeholder: "Position/Job Title",
         value: job,
         isRequired: true,
         errorMsg: jobTitleError,
@@ -297,6 +299,7 @@ export default function ApplicationForm({
     positionInformation.textInputs.push({
       label: "Organization Facility",
       id: "organizationFacility",
+      placeholder: "Organization Facility",
       value: organizationLocation,
       note:
         "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)",
@@ -352,6 +355,7 @@ export default function ApplicationForm({
       {
         label: "Street",
         id: "mailingAddressLine1",
+        placeholder: "Street or PO Box",
         value: mailingAddressLine1,
         isRequired: true,
         errorMsg: mailingAddressLine1Error,
@@ -363,6 +367,7 @@ export default function ApplicationForm({
       {
         label: "City",
         id: "mailingCityNm",
+        placeholder: "City",
         value: mailingCity,
         isRequired: true,
         errorMsg: mailingCityError,
@@ -374,6 +379,7 @@ export default function ApplicationForm({
       {
         label: "Province",
         id: "mailingProvinceNm",
+        placeholder: "Select Province",
         value: mailingProvince,
         options: provinces,
         isRequired: true,
@@ -594,19 +600,20 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={applicantInformation} />
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
-          <p>
-            <label htmlFor="mailingAddress">
+          <div>
+            <span>
               Is your mailing address different from your current street
               address?&nbsp;
-            </label>
+            </span>
             <input
               id="mailingAddress"
               type="checkbox"
               onClick={() => {
                 mailingAddress();
               }}
+              data-testid="mailingCheckbox"
             />
-          </p>
+          </div>
           {differentMailingAddress && (
             <>
               <SimpleForm simpleForm={mailing} />
