@@ -27,13 +27,11 @@ export const TextInput = ({
   }
 
   const labelPart = (
-    <div className="label">
-      <label className="textinput_label" htmlFor={id}>
-        {label}
-      </label>
+    <label className="label" htmlFor={id}>
+      <div className="textinput_label">{label}</div>
       {asterisk}&nbsp;
       <span className="note">{note}</span>
-    </div>
+    </label>
   );
 
   let textStyle = "textinput_editable_white";

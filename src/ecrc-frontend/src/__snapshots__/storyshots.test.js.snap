@@ -76,21 +76,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="legalFirstNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="legalFirstNm"
                 >
                   First Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Robert"
@@ -106,21 +106,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="legalSecondNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="legalSecondNm"
                 >
                   Middle Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Norman"
@@ -136,21 +136,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="legalSurnameNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="legalSurnameNm"
                 >
                   Last Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Ross"
@@ -186,21 +186,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="alias1First"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="alias1First"
                 >
                   First Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -215,21 +215,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="alias1Seocnd"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="alias1Seocnd"
                 >
                   Middle Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -244,21 +244,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="alias1Surname"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="alias1Surname"
                 >
                   Last Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -292,15 +292,15 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="birthLoc"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="birthLoc"
                 >
                   City and Country of Birth
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -311,7 +311,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -328,21 +328,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="birthDt"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="birthDt"
                 >
                   Date of Birth
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="1942-10-29"
@@ -358,21 +358,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="genderTxt"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="genderTxt"
                 >
                   Sex
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Male"
@@ -388,15 +388,15 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="bcDLNumber"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="bcDLNumber"
                 >
                   BC Driver's Licence Number
-                </label>
+                </div>
                 
                  
                 <span
@@ -404,7 +404,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 >
                   (Current or Expired)
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -419,15 +419,15 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="phoneNumber"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="phoneNumber"
                 >
                   Primary Phone Number
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -440,7 +440,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 >
                   (Include area code)
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -458,15 +458,15 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="emailAddress"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="emailAddress"
                 >
                   Personal Email Address
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -479,7 +479,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 >
                   We may use this to communicate with you about your application.
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -508,15 +508,15 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="applicantPosition"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="applicantPosition"
                 >
                   Applicant's position/Job Title
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -527,7 +527,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -555,21 +555,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="addressLine1"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="addressLine1"
                 >
                   Street
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="123 Somewhere"
@@ -585,21 +585,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="cityNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="cityNm"
                 >
                   City
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Here"
@@ -615,21 +615,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="provinceNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="provinceNm"
                 >
                   Province
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="British Columbia"
@@ -645,21 +645,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="postalCodeTxt"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="postalCodeTxt"
                 >
                   Postal Code
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="V9V 9V9"
@@ -675,21 +675,21 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="countryNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="countryNm"
                 >
                   Country
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Canada"
@@ -1024,21 +1024,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="legalFirstNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="legalFirstNm"
                 >
                   First Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Robert"
@@ -1054,21 +1054,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="legalSecondNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="legalSecondNm"
                 >
                   Middle Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Norman"
@@ -1084,21 +1084,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="legalSurnameNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="legalSurnameNm"
                 >
                   Last Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Ross"
@@ -1134,21 +1134,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="alias1First"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="alias1First"
                 >
                   First Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -1163,21 +1163,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="alias1Seocnd"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="alias1Seocnd"
                 >
                   Middle Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -1192,21 +1192,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="alias1Surname"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="alias1Surname"
                 >
                   Last Name
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -1240,15 +1240,15 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="birthLoc"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="birthLoc"
                 >
                   City and Country of Birth
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -1259,7 +1259,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -1276,21 +1276,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="birthDt"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="birthDt"
                 >
                   Date of Birth
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="1942-10-29"
@@ -1306,21 +1306,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="genderTxt"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="genderTxt"
                 >
                   Sex
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Male"
@@ -1336,15 +1336,15 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="bcDLNumber"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="bcDLNumber"
                 >
                   BC Driver's Licence Number
-                </label>
+                </div>
                 
                  
                 <span
@@ -1352,7 +1352,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 >
                   (Current or Expired)
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -1367,15 +1367,15 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="phoneNumber"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="phoneNumber"
                 >
                   Primary Phone Number
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -1388,7 +1388,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 >
                   (Include area code)
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -1406,15 +1406,15 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="emailAddress"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="emailAddress"
                 >
                   Personal Email Address
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -1427,7 +1427,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 >
                   We may use this to communicate with you about your application.
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -1456,15 +1456,15 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="applicantPosition"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="applicantPosition"
                 >
                   Applicant's position/Job Title
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -1475,7 +1475,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -1492,15 +1492,15 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="organizationFacility"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="organizationFacility"
                 >
                   Organization Facility
-                </label>
+                </div>
                 <span
                   className="mandatory"
                   id="asterisk"
@@ -1513,7 +1513,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 >
                   (Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)
                 </span>
-              </div>
+              </label>
               <input
                 className="textinput_editable_white"
                 defaultValue=""
@@ -1541,21 +1541,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         <ul>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="addressLine1"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="addressLine1"
                 >
                   Street
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="123 Somewhere"
@@ -1571,21 +1571,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="cityNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="cityNm"
                 >
                   City
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Here"
@@ -1601,21 +1601,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="provinceNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="provinceNm"
                 >
                   Province
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="British Columbia"
@@ -1631,21 +1631,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="postalCodeTxt"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="postalCodeTxt"
                 >
                   Postal Code
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="V9V 9V9"
@@ -1661,21 +1661,21 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
           <li>
             <div>
-              <div
+              <label
                 className="label"
+                htmlFor="countryNm"
               >
-                <label
+                <div
                   className="textinput_label"
-                  htmlFor="countryNm"
                 >
                   Country
-                </label>
+                </div>
                 
                  
                 <span
                   className="note"
                 />
-              </div>
+              </label>
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Canada"
@@ -3919,21 +3919,21 @@ exports[`Storyshots FullName Default 1`] = `
   <ul>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="firstName"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="firstName"
           >
             First Name
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_non_editable_gray"
           defaultValue="First"
@@ -3949,21 +3949,21 @@ exports[`Storyshots FullName Default 1`] = `
     </li>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="middleName"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="middleName"
           >
             Middle Name
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_non_editable_gray"
           defaultValue="Middle"
@@ -3979,21 +3979,21 @@ exports[`Storyshots FullName Default 1`] = `
     </li>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="lastName"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="lastName"
           >
             Last Name
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_non_editable_gray"
           defaultValue="Last"
@@ -5674,15 +5674,15 @@ exports[`Storyshots OrgValidation Default 1`] = `
             >
               <div>
                 <div>
-                  <div
+                  <label
                     className="label"
+                    htmlFor="orgId"
                   >
-                    <label
+                    <div
                       className="textinput_label"
-                      htmlFor="orgId"
                     >
                       Access code
-                    </label>
+                    </div>
                     <span
                       className="mandatory"
                       id="asterisk"
@@ -5693,7 +5693,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
                     <span
                       className="note"
                     />
-                  </div>
+                  </label>
                   <input
                     className="textinput_editable_white"
                     id="orgId"
@@ -6137,15 +6137,15 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             >
               <div>
                 <div>
-                  <div
+                  <label
                     className="label"
+                    htmlFor="orgId"
                   >
-                    <label
+                    <div
                       className="textinput_label"
-                      htmlFor="orgId"
                     >
                       Access code
-                    </label>
+                    </div>
                     <span
                       className="mandatory"
                       id="asterisk"
@@ -6156,7 +6156,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                     <span
                       className="note"
                     />
-                  </div>
+                  </label>
                   <input
                     className="textinput_editable_white"
                     id="orgId"
@@ -6539,15 +6539,15 @@ exports[`Storyshots OrgValidationText Default 1`] = `
       >
         <div>
           <div>
-            <div
+            <label
               className="label"
+              htmlFor="orgId"
             >
-              <label
+              <div
                 className="textinput_label"
-                htmlFor="orgId"
               >
                 Access code
-              </label>
+              </div>
               <span
                 className="mandatory"
                 id="asterisk"
@@ -6558,7 +6558,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
               <span
                 className="note"
               />
-            </div>
+            </label>
             <input
               className="textinput_editable_white"
               id="orgId"
@@ -8760,21 +8760,21 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
   <ul>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="textInput1"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="textInput1"
           >
             label1
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_editable_white"
           id="textInput1"
@@ -8788,21 +8788,21 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
     </li>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="textInput2"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="textInput2"
           >
             label2
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_non_editable_gray"
           defaultValue="initValue"
@@ -8818,15 +8818,15 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
     </li>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="textInput3"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="textInput3"
           >
             label3
-          </label>
+          </div>
           <span
             className="mandatory"
             id="asterisk"
@@ -8837,7 +8837,7 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_editable_gray"
           id="textInput3"
@@ -8902,21 +8902,21 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
   <ul>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="textInput1"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="textInput1"
           >
             label1
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_editable_white"
           id="textInput1"
@@ -8930,21 +8930,21 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
     </li>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="textInput2"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="textInput2"
           >
             label2
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_non_editable_gray"
           defaultValue="initValue"
@@ -8960,15 +8960,15 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
     </li>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="textInput3"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="textInput3"
           >
             label3
-          </label>
+          </div>
           <span
             className="mandatory"
             id="asterisk"
@@ -8979,7 +8979,7 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_editable_gray"
           id="textInput3"
@@ -11152,21 +11152,21 @@ exports[`Storyshots Terms of Use Default 1`] = `
 
 exports[`Storyshots TextInput Default 1`] = `
 <div>
-  <div
+  <label
     className="label"
+    htmlFor="textInputId"
   >
-    <label
+    <div
       className="textinput_label"
-      htmlFor="textInputId"
     >
       button label
-    </label>
+    </div>
     
      
     <span
       className="note"
     />
-  </div>
+  </label>
   <input
     className="textinput_editable_white"
     id="textInputId"
@@ -11181,15 +11181,15 @@ exports[`Storyshots TextInput Default 1`] = `
 
 exports[`Storyshots TextInput editable-gray-required 1`] = `
 <div>
-  <div
+  <label
     className="label"
+    htmlFor="textInputId"
   >
-    <label
+    <div
       className="textinput_label"
-      htmlFor="textInputId"
     >
       button label
-    </label>
+    </div>
     <span
       className="mandatory"
       id="asterisk"
@@ -11200,7 +11200,7 @@ exports[`Storyshots TextInput editable-gray-required 1`] = `
     <span
       className="note"
     />
-  </div>
+  </label>
   <input
     className="textinput_editable_gray"
     defaultValue="initial value"
@@ -11216,15 +11216,15 @@ exports[`Storyshots TextInput editable-gray-required 1`] = `
 
 exports[`Storyshots TextInput editable-white-required 1`] = `
 <div>
-  <div
+  <label
     className="label"
+    htmlFor="textInputId"
   >
-    <label
+    <div
       className="textinput_label"
-      htmlFor="textInputId"
     >
       button label
-    </label>
+    </div>
     <span
       className="mandatory"
       id="asterisk"
@@ -11235,7 +11235,7 @@ exports[`Storyshots TextInput editable-white-required 1`] = `
     <span
       className="note"
     />
-  </div>
+  </label>
   <input
     className="textinput_editable_white"
     defaultValue="initial value"
@@ -11251,21 +11251,21 @@ exports[`Storyshots TextInput editable-white-required 1`] = `
 
 exports[`Storyshots TextInput error 1`] = `
 <div>
-  <div
+  <label
     className="label"
+    htmlFor="textInputId"
   >
-    <label
+    <div
       className="textinput_label"
-      htmlFor="textInputId"
     >
       button label
-    </label>
+    </div>
     
      
     <span
       className="note"
     />
-  </div>
+  </label>
   <input
     className="textinput_editable_white"
     id="textInputId"
@@ -11282,21 +11282,21 @@ exports[`Storyshots TextInput error 1`] = `
 
 exports[`Storyshots TextInput non-editable-gray 1`] = `
 <div>
-  <div
+  <label
     className="label"
+    htmlFor="textInputId"
   >
-    <label
+    <div
       className="textinput_label"
-      htmlFor="textInputId"
     >
       button label
-    </label>
+    </div>
     
      
     <span
       className="note"
     />
-  </div>
+  </label>
   <input
     className="textinput_non_editable_gray"
     defaultValue="initial value"
@@ -11313,15 +11313,15 @@ exports[`Storyshots TextInput non-editable-gray 1`] = `
 
 exports[`Storyshots TextInput note 1`] = `
 <div>
-  <div
+  <label
     className="label"
+    htmlFor="textInputId"
   >
-    <label
+    <div
       className="textinput_label"
-      htmlFor="textInputId"
     >
       button label
-    </label>
+    </div>
     
      
     <span
@@ -11329,7 +11329,7 @@ exports[`Storyshots TextInput note 1`] = `
     >
       (This is a note)
     </span>
-  </div>
+  </label>
   <input
     className="textinput_editable_white"
     id="textInputId"
