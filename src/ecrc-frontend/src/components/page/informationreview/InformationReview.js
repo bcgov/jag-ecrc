@@ -262,10 +262,6 @@ export default function InformationReview({
     disabled: !boxChecked
   };
 
-  if (toHome) {
-    return <Redirect to="/" />;
-  }
-
   const confirm = () => {
     // TODO: Check if volunteer, if yes, success, else, cont.
     // CALL THAT API
@@ -430,6 +426,10 @@ export default function InformationReview({
 
   if (toSuccess) {
     return <Redirect to="/ecrc/success" />;
+  }
+
+  if (toHome) {
+    return <Redirect to="/" />;
   }
 
   return (

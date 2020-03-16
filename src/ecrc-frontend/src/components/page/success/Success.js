@@ -1,8 +1,8 @@
 /* eslint-disable new-cap */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
-import { useLocation } from "react-router-dom";
+import { useLocation, Redirect } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import PropTypes from "prop-types";
@@ -11,6 +11,7 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
 import { Button } from "../../base/button/Button";
+import { isAuthenticated } from "../../../modules/AuthenticationHelper";
 
 export default function Success({
   page: {
@@ -27,9 +28,18 @@ export default function Success({
     saveApplicationInfo
   }
 }) {
+  const [toHome, setToHome] = useState(false);
   const location = useLocation();
-
   const paymentInfo = queryString.parse(location.search);
+
+  console.log(paymentInfo);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    if (!isAuthenticated("infoReview") && !paymentInfo.trnApproved)
+      setToHome(true);
+  }, []);
 
   const receiptInfo = [
     { name: "Service Number", value: serviceId },
@@ -169,6 +179,10 @@ export default function Success({
         window.location.href = urlResponse.data.paymentUrl;
       });
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <main>

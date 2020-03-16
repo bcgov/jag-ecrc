@@ -118,7 +118,7 @@ export default function ApplicationForm({
     const token = generateJWTToken(newPayload);
 
     axios
-      .get("/ecrc/protected/getProvinceList", {
+      .get("/ecrc/private/getProvinceList", {
         headers: {
           Authorization: `Bearer ${token}`
         }
