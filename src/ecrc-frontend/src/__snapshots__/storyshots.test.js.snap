@@ -2839,7 +2839,7 @@ exports[`Storyshots Button ecrc 1`] = `
 </button>
 `;
 
-exports[`Storyshots Consent page Default 1`] = `
+exports[`Storyshots ConsentPage Default 1`] = `
 <main>
   <header>
     <nav
@@ -3311,7 +3311,7 @@ exports[`Storyshots Consent page Default 1`] = `
 </main>
 `;
 
-exports[`Storyshots Consent page Mobile 1`] = `
+exports[`Storyshots ConsentPage Mobile 1`] = `
 <main>
   <header>
     <nav

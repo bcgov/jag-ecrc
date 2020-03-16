@@ -33,7 +33,11 @@ export function isAuthorized() {
   // verify a token symmetric
   jwt.verify(token, validator, (err, decoded) => {
     console.log(decoded);
-    if (decoded.authorities.includes("Authorized")) isAuthorize = true;
+    if (!decoded.authorities) {
+      isAuthorize = false;
+    } else if (decoded.authorities.includes("Authorized")) {
+      isAuthorize = true;
+    }
   });
 
   return isAuthorize;
@@ -65,7 +69,10 @@ export function generateJWTToken(payload) {
 }
 
 export function accessJWTToken(token) {
+  console.log("OKATY ", token);
   const validator = sessionStorage.getItem("validator");
+
+  console.log("VALIDATOR", validator);
 
   const payload = jwt.verify(token, validator);
 
