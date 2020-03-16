@@ -5,7 +5,6 @@ import {
   render,
   fireEvent,
   getByRole,
-  getByDisplayValue,
   getByText,
   wait
 } from "@testing-library/react";
