@@ -1,6 +1,6 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
-import { storiesOf, addDecorator } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 import { withQuery } from "@storybook/addon-queryparams";
 
 import UserConfirmation from "./UserConfirmation";
