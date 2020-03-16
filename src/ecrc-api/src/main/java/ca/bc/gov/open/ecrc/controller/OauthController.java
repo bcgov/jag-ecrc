@@ -53,9 +53,8 @@ public class OauthController {
 
 	@ResponseStatus(code = HttpStatus.FOUND)
 	@GetMapping(value = "/protected/getBCSCUrl")
-	public ResponseEntity<String> getBCSCUrl() throws OauthServiceException {
-		//TODO: Extract guid generated from front end
-		logger.info("BCSC URL request received {}", UUID.randomUUID());
+	public ResponseEntity<String> getBCSCUrl(@RequestParam(required=true) String requestGuid) throws OauthServiceException {
+		logger.info("BCSC URL request received {}", requestGuid);
 
 		try {
 			return new ResponseEntity(oauthServices.getIDPRedirect().toString(), HttpStatus.OK);
@@ -73,10 +72,9 @@ public class OauthController {
 	 * 
 	 */
 	@GetMapping(value = "/protected/login")
-	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode) throws OauthServiceException {
-
-		//TODO: Extract guid generated from front end
-		logger.info("Login URL request received {}", UUID.randomUUID());
+	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode,
+										@RequestParam(required=true) String requestGuid) throws OauthServiceException {
+		logger.info("Login URL request received {}", requestGuid);
 		
 		AccessTokenResponse token = null; 
 		try {
@@ -116,7 +114,6 @@ public class OauthController {
 		// Send the new FE JWT in the response body to the caller. 
 	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedTokens, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
         return new ResponseEntity(feTokenResponse, HttpStatus.OK);
-		
 	}
 
 }

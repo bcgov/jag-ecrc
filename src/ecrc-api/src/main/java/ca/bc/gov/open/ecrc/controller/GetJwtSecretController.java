@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
@@ -28,11 +29,11 @@ public class GetJwtSecretController {
 	private EcrcServices ecrcServices;
 	
 	@GetMapping(value = "/initialHandshake")
-	public ResponseEntity<String> getJwtSecret() {
+	public ResponseEntity<String> getJwtSecret(@RequestParam(required=true) String requestGuid) {
 		try {
 			return new ResponseEntity<>(ecrcServices.getJwtSecret(), HttpStatus.OK);		
 		} catch (EcrcServiceException e) {
-			logger.debug("DEBUG Stack:", e);
+			logger.error("Error in service: ", e);
 			return new ResponseEntity<>(
 					String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 							EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),

@@ -33,6 +33,7 @@ public class RequestCreateApplicant {
 	private String countryNm;
 	private String postalCodeTxt;
 	private String driversLicNo;
+	private String requestGuid;
 
 	public String getOrgTicketNumber() {
 		return orgTicketNumber;
@@ -233,6 +234,10 @@ public class RequestCreateApplicant {
 	public void setDriversLicNo(String driversLicNo) {
 		this.driversLicNo = driversLicNo;
 	}
+
+	public String getRequestGuid() { return requestGuid; }
+
+	public void setRequestGuid(String requestGuid) { this.requestGuid = requestGuid; }
 
 	public String toQueryString() {
         return 	"?OrgTicketNumber=" + orgTicketNumber +

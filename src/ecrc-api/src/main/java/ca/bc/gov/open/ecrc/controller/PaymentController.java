@@ -32,7 +32,7 @@ public class PaymentController {
 	@PostMapping(value = "/private/createPaymentUrl", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createPaymentUrl(@RequestBody RequestPaymentService paymentInfo) throws EcrcServiceException {
 		//TODO: Extract guid generated from front end
-		logger.info("Payment request received {}", UUID.randomUUID());
+		logger.info("Payment request received {}", paymentInfo.getRequestGuid());
 		return paymentService.createPaymentUrl(paymentInfo);
 		
 	}
