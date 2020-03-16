@@ -50,7 +50,7 @@ public class LinksControllerTest {
 		Map<String,String> links = new HashMap<String,String>();
 		links.put("test1", "http://test1.ca");
 		Mockito.when(ecrcServices.getLinks()).thenReturn(links);
-		ResponseEntity<Object> result = linksController.getLinks();
+		ResponseEntity<Object> result = linksController.getLinks("SOMEUUID");
 		Assertions.assertEquals(result.getBody(), links);
 	}
 
@@ -58,7 +58,7 @@ public class LinksControllerTest {
 	@Test
 	void testError() throws EcrcServiceException {
 		when(ecrcServices.getLinks()).thenThrow(new EcrcServiceException(EcrcExceptionConstants.DATA_NOT_FOUND_ERROR));
-		ResponseEntity<Object> response = linksController.getLinks();
+		ResponseEntity<Object> response = linksController.getLinks("SOMEUUID");
 		Assertions.assertEquals(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),

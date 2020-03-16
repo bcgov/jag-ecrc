@@ -41,7 +41,7 @@ public class GetJwtSecretTest {
 	@Test
 	public void testSuccess() throws EcrcServiceException {
 		when(ecrcServices.getJwtSecret()).thenReturn("testSecret");
-		ResponseEntity<String> response = getJwtSecretController.getJwtSecret(); 
+		ResponseEntity<String> response = getJwtSecretController.getJwtSecret("SOMEUUID");
 		assertEquals("testSecret", response.getBody());
 	}
 	
@@ -50,7 +50,7 @@ public class GetJwtSecretTest {
 	@Test
 	public void testError() throws EcrcServiceException {
 		when(ecrcServices.getJwtSecret()).thenThrow(new EcrcServiceException(EcrcExceptionConstants.DATA_NOT_FOUND_ERROR));
-		ResponseEntity<String> response = getJwtSecretController.getJwtSecret();
+		ResponseEntity<String> response = getJwtSecretController.getJwtSecret("SOMEUUID");
 		assertEquals(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 				response.getBody());

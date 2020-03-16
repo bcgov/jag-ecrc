@@ -17,6 +17,8 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Random;
+
 
 public class DoAuthenticateUserControllerTest {
 	@InjectMocks
@@ -36,7 +38,7 @@ public class DoAuthenticateUserControllerTest {
 	@Test
 	public void testFoundValidOrg() throws EcrcServiceException, NotFoundException {
 		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(new ResponseEntity<>("SOMESTRING", HttpStatus.OK));
-		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
+		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA", "SOMEUUID");
 		Assertions.assertEquals("SOMESTRING", result.getBody());
 	}
 
@@ -45,7 +47,7 @@ public class DoAuthenticateUserControllerTest {
 	public void testNotFoundValidOrg() throws EcrcServiceException, NotFoundException {
 		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.NOT_FOUND));
-		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
+		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA", "SOMEUUID");
 		Assertions.assertEquals(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), result.getBody());
 		Assertions.assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
@@ -56,7 +58,7 @@ public class DoAuthenticateUserControllerTest {
 	public void testServiceExceptionValidOrg() throws EcrcServiceException, NotFoundException {
 		Mockito.when(ecrcServices.doAuthenticateUser("SOMEDATA")).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 				EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.BAD_REQUEST));
-		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA");
+		ResponseEntity<String> result = doAuthenticateUserController.doAuthenticateUser("SOMEDATA", "SOMEUUID");
 		Assertions.assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
 	}
 }

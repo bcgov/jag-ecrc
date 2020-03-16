@@ -74,7 +74,7 @@ class OauthControllerTest {
 	@Test
 	void testGetBCSCUrlSuccess() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getIDPRedirect()).thenReturn(new URI("test"));
-		ResponseEntity<String> response = oauthController.getBCSCUrl();
+		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID");
 		Assert.assertEquals("test", response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -84,7 +84,7 @@ class OauthControllerTest {
 	void testGetBCSCUrlError() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getIDPRedirect()).thenReturn(null);
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthController.getBCSCUrl();
+			oauthController.getBCSCUrl("SOMEUUID");
 		});
 	}
 
@@ -98,7 +98,7 @@ class OauthControllerTest {
 		when(tokenServices.validateBCSCIDToken(any()))
 				.thenReturn(new ValidationResponse(true, "success"));
 	
-		ResponseEntity<String> response = oauthController.login("test");
+		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID");
 		Assert.assertNotNull(response);
 	}
 
@@ -106,7 +106,7 @@ class OauthControllerTest {
 	@Test
 	void testLoginError1() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getToken(any())).thenThrow(new OauthServiceException("error"));
-		ResponseEntity<String> response = oauthController.login("code");
+		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
 		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 
@@ -118,7 +118,7 @@ class OauthControllerTest {
 		when(tokenServices.validateBCSCIDToken(any())).
 			thenReturn(new ValidationResponse(true, "success"));
 		when(oauthServices.getUserInfo(any())).thenThrow(new OauthServiceException("error"));
-		ResponseEntity<String> response = oauthController.login("code");
+		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
 		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 }

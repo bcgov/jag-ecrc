@@ -35,7 +35,7 @@ class GetNextInvoiceIdControllerTest {
 	@Test
 	void testSuccess() throws EcrcServiceException {
 		when(ecrcServices.getNextInvoiceId("request")).thenReturn(new ResponseEntity<String>("success", HttpStatus.OK));
-		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request");
+		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request", "SOMEUUID");
 		Assert.assertEquals("success", response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -47,7 +47,7 @@ class GetNextInvoiceIdControllerTest {
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
 				HttpStatus.NOT_FOUND));
-		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request");
+		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request", "SOMEUUID");
 		Assertions.assertEquals(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
@@ -62,7 +62,7 @@ class GetNextInvoiceIdControllerTest {
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 				HttpStatus.BAD_REQUEST));
-		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request");
+		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request", "SOMEUUID");
 		Assertions.assertEquals(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
