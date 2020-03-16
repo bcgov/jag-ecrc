@@ -29,7 +29,7 @@ public class GetProvinceListController {
 
 	Logger logger = LoggerFactory.getLogger(GetProvinceListController.class);
 
-	@GetMapping(value = "/protected/getProvinceList", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/private/getProvinceList", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> getProvinceList(@RequestParam(required=true) String requestGuid) {
 		logger.info("Get province list request received {}", requestGuid);
 		try {
