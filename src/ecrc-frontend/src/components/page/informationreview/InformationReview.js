@@ -8,6 +8,11 @@ import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+import {
+  generateJWTToken,
+  isAuthenticated,
+  accessJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 export default function InformationReview({
   page: {
@@ -52,11 +57,32 @@ export default function InformationReview({
   }
 }) {
   const [toBack, setToBack] = useState(false);
+  const [toHome, setToHome] = useState(false);
   const [toSuccess, setToSuccess] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    if (!isAuthenticated("appForm")) setToHome(true);
+
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      visited: [
+        "orgValidation",
+        "orgVerification",
+        "tou",
+        "bcscRedirect",
+        "userConfirmation",
+        "consent",
+        "appForm",
+        "infoReview"
+      ]
+    };
+    console.log(currentPayload);
+    console.log(newPayload);
+    generateJWTToken(newPayload);
   }, []);
 
   const personalInfoElement = [
@@ -235,6 +261,10 @@ export default function InformationReview({
     type: "submit",
     disabled: !boxChecked
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
 
   const confirm = () => {
     // TODO: Check if volunteer, if yes, success, else, cont.
