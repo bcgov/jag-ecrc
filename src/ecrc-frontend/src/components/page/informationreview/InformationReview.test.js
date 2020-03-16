@@ -62,16 +62,6 @@ describe("InformationReview Component", () => {
   const saveOrg = jest.fn();
   const saveApplicationInfo = jest.fn();
 
-  const page = {
-    header,
-    applicant,
-    org,
-    setApplicationInfo,
-    saveApplicant,
-    saveOrg,
-    saveApplicationInfo
-  };
-
   window.scrollTo = jest.fn();
 
   // Mock window location
@@ -80,6 +70,15 @@ describe("InformationReview Component", () => {
   window.location = { assign: mockWindow };
 
   test("Matches the snapshot", () => {
+    const page = {
+      header,
+      applicant,
+      org,
+      setApplicationInfo,
+      saveApplicant,
+      saveOrg,
+      saveApplicationInfo
+    };
     const infoReview = create(
       <MemoryRouter>
         <InformationReview page={page} />
@@ -89,6 +88,15 @@ describe("InformationReview Component", () => {
   });
 
   test("Validate checkbox", () => {
+    const page = {
+      header,
+      applicant,
+      org,
+      setApplicationInfo,
+      saveApplicant,
+      saveOrg,
+      saveApplicationInfo
+    };
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
@@ -104,6 +112,15 @@ describe("InformationReview Component", () => {
   });
 
   test("Validate Back button", () => {
+    const page = {
+      header,
+      applicant,
+      org,
+      setApplicationInfo,
+      saveApplicant,
+      saveOrg,
+      saveApplicationInfo
+    };
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
@@ -115,6 +132,15 @@ describe("InformationReview Component", () => {
   });
 
   test("Validate Employee relationship flow", async () => {
+    const page = {
+      header,
+      applicant,
+      org,
+      setApplicationInfo,
+      saveApplicant,
+      saveOrg,
+      saveApplicationInfo
+    };
     axios.get.mockImplementation(() =>
       Promise.resolve({
         data: {
@@ -153,29 +179,20 @@ describe("InformationReview Component", () => {
   });
 
   test("Validate Volunteer relationship flow", async () => {
-    const applicant = {
-      legalFirstNm: "Robert",
-      legalSecondNm: "Norman",
-      legalSurnameNm: "Ross",
-      birthPlace: "Daytona Beach, Florida",
-      birthDt: "1942-10-29",
-      genderTxt: "Male",
-      phoneNumber: "2501234567",
-      emailAddress: "bob.ross@example.com",
-      addressLine1: "123 Somewhere",
-      cityNm: "Here",
-      provinceNm: "British Columbia",
-      postalCodeTxt: "V9V 9V9",
-      countryNm: "Canada",
-      jobTitle: "Painter"
-    };
+    applicant.driversLicNo = "";
+    applicant.alias1FirstNm = "";
+    applicant.alias1SecondNm = "";
+    applicant.alias1SurnameNm = "";
+    applicant.alias2FirstNm = "";
+    applicant.alias2SecondNm = "";
+    applicant.alias2SurnameNm = "";
+    applicant.alias3FirstNm = "";
+    applicant.alias3SecondNm = "";
+    applicant.alias3SurnameNm = "";
 
-    const org = {
-      orgApplicantRelationship: "VOLUNTEER",
-      orgTicketNumber: "crce",
-      defaultScheduleTypeCd: "WBSD",
-      defaultCrcScopeLevelCd: "WWCH"
-    };
+    applicant.organizationFacility = "";
+
+    org.orgApplicantRelationship = "VOLUNTEER";
 
     const page = {
       header,
