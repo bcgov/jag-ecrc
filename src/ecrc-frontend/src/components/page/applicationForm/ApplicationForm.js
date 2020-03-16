@@ -494,7 +494,11 @@ export default function ApplicationForm({
         mailingCity !== "" &&
         mailingProvince !== "" &&
         validatePostalCode(mailingPostalCode)) ||
-        (addressLine1 && cityNm && provinceNm && postalCodeTxt))
+        (!differentMailingAddress &&
+          addressLine1 &&
+          cityNm &&
+          provinceNm &&
+          postalCodeTxt))
     ) {
       setApplicant({
         legalFirstNm,
@@ -591,9 +595,12 @@ export default function ApplicationForm({
           <SimpleForm simpleForm={positionInformation} />
           <SimpleForm simpleForm={address} />
           <p>
-            Is your mailing address different from your current street
-            address?&nbsp;
+            <label htmlFor="mailingAddress">
+              Is your mailing address different from your current street
+              address?&nbsp;
+            </label>
             <input
+              id="mailingAddress"
               type="checkbox"
               onClick={() => {
                 mailingAddress();

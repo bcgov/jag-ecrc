@@ -69,6 +69,15 @@
     "pretty-quick": "^2.0.1",
     "react-test-renderer": "^16.12.0"
   },
+  "jest": {
+    "watchPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged",

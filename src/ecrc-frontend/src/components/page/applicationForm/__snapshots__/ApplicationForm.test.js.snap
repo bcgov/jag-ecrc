@@ -744,8 +744,13 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         </ul>
       </form>
       <p>
-        Is your mailing address different from your current street address? 
+        <label
+          htmlFor="mailingAddress"
+        >
+          Is your mailing address different from your current street address? 
+        </label>
         <input
+          id="mailingAddress"
           onClick={[Function]}
           type="checkbox"
         />
