@@ -8,6 +8,12 @@ import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+import {
+  generateJWTToken,
+  isAuthenticated,
+  accessJWTToken,
+  isActionPerformed
+} from "../../../modules/AuthenticationHelper";
 
 export default function InformationReview({
   page: {
@@ -52,11 +58,14 @@ export default function InformationReview({
   }
 }) {
   const [toBack, setToBack] = useState(false);
+  const [toHome, setToHome] = useState(false);
   const [toSuccess, setToSuccess] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    if (!isAuthenticated() || !isActionPerformed("appForm")) setToHome(true);
   }, []);
 
   const personalInfoElement = [
@@ -397,7 +406,18 @@ export default function InformationReview({
   }
 
   if (toSuccess) {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [...currentPayload.actionsPerformed, "infoReview"];
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed
+    };
+    generateJWTToken(newPayload);
     return <Redirect to="/ecrc/success" />;
+  }
+
+  if (toHome) {
+    return <Redirect to="/" />;
   }
 
   return (

@@ -9,8 +9,15 @@ import Declaration from "../../base/declaration/Declaration";
 import { Button } from "../../base/button/Button";
 import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
+import {
+  isAuthorized,
+  accessJWTToken,
+  generateJWTToken,
+  isActionPerformed
+} from "../../../modules/AuthenticationHelper";
 
 export default function Consent({ page: { header } }) {
+  const [toAppHome, setToAppHome] = useState(false);
   const [toHome, setToHome] = useState(false);
   const [toApplicationForm, setToApplicationForm] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
@@ -20,6 +27,9 @@ export default function Consent({ page: { header } }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    if (!isAuthorized() || !isActionPerformed("userConfirmation"))
+      setToAppHome(true);
   }, []);
 
   useEffect(() => {
@@ -49,7 +59,18 @@ export default function Consent({ page: { header } }) {
     return <Redirect to="/hosthome" />;
   }
 
+  if (toAppHome) {
+    return <Redirect to="/" />;
+  }
+
   if (toApplicationForm) {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [...currentPayload.actionsPerformed, "consent"];
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed
+    };
+    generateJWTToken(newPayload);
     return <Redirect to="/ecrc/applicationform" />;
   }
 

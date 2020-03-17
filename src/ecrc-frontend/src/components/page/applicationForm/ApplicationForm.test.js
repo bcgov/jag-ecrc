@@ -11,12 +11,12 @@ import {
   getByDisplayValue,
   wait
 } from "@testing-library/react";
-import { create } from "react-test-renderer";
 import { MemoryRouter, Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import axios from "axios";
 
 import ApplicationForm from "./ApplicationForm";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 jest.mock("axios");
 
@@ -64,15 +64,23 @@ describe("ApplicationForm Component", () => {
     setApplicant
   };
 
-  beforeEach(() => axios.get.mockResolvedValueOnce(axiosCall));
+  beforeEach(() => {
+    sessionStorage.setItem("validator", "secret");
+    generateJWTToken({
+      actionsPerformed: ["consent"]
+    });
+    axios.get.mockResolvedValueOnce(axiosCall);
+  });
 
   test("Matches the snapshot", async () => {
-    const applicationPage = create(
+    const { asFragment } = render(
       <MemoryRouter>
         <ApplicationForm page={page} />
       </MemoryRouter>
     );
-    expect(applicationPage.toJSON()).toMatchSnapshot();
+    await wait(() => {});
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("Displays Organization Facility when Schedule D Org", async () => {
