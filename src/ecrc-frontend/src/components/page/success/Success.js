@@ -11,7 +11,10 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
 import { Button } from "../../base/button/Button";
-import { isAuthenticated } from "../../../modules/AuthenticationHelper";
+import {
+  isAuthenticated,
+  isActionPerformed
+} from "../../../modules/AuthenticationHelper";
 
 export default function Success({
   page: {
@@ -35,7 +38,11 @@ export default function Success({
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isAuthenticated("infoReview") && !paymentInfo.trnApproved)
+    if (
+      !isAuthenticated("infoReview") ||
+      !paymentInfo.trnApproved ||
+      !isActionPerformed("infoReview")
+    )
       setToHome(true);
   }, []);
 

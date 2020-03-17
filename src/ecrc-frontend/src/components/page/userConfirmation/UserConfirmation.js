@@ -126,6 +126,13 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
   };
 
   function onYesClick() {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed: ["orgVerification", "tou", "userConfirmation"]
+    };
+    generateJWTToken(newPayload);
+
     setApplicant(user);
     setToConsent(true);
   }

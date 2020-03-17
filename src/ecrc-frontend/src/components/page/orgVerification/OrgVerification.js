@@ -10,7 +10,8 @@ import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
   isAuthenticated,
-  generateJWTToken
+  generateJWTToken,
+  accessJWTToken
 } from "../../../modules/AuthenticationHelper";
 
 export default function OrgVerification({ page: { header, org } }) {
@@ -32,6 +33,12 @@ export default function OrgVerification({ page: { header, org } }) {
   }, []);
 
   const orgVerified = () => {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed: ["orgVerification"]
+    };
+    generateJWTToken(newPayload);
     setToTOU(true);
   };
 

@@ -13,7 +13,8 @@ import SideCards from "../../composite/sideCards/SideCards";
 import {
   generateJWTToken,
   isAuthenticated,
-  accessJWTToken
+  accessJWTToken,
+  isActionPerformed
 } from "../../../modules/AuthenticationHelper";
 
 export default function ApplicationForm({
@@ -98,7 +99,8 @@ export default function ApplicationForm({
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    if (!isAuthenticated("consent")) setToHome(true);
+    if (!isAuthenticated("consent") || !isActionPerformed("consent"))
+      setToHome(true);
 
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
     const newPayload = {
@@ -569,6 +571,18 @@ export default function ApplicationForm({
   }
 
   if (toInfoReview) {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed: [
+        "orgVerification",
+        "tou",
+        "userConfirmation",
+        "consent",
+        "appForm"
+      ]
+    };
+    generateJWTToken(newPayload);
     return <Redirect to="/ecrc/informationreview" />;
   }
 

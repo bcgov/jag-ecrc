@@ -8,7 +8,9 @@ import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
 import {
   isAuthenticated,
-  generateJWTToken
+  generateJWTToken,
+  isActionPerformed,
+  accessJWTToken
 } from "../../../modules/AuthenticationHelper";
 
 export default function TOU({ page: { header } }) {
@@ -20,7 +22,11 @@ export default function TOU({ page: { header } }) {
   const [reachedEnd, setReachedEnd] = React.useState(false);
 
   React.useEffect(() => {
-    if (!isAuthenticated("orgVerification")) setToHome(true);
+    if (
+      !isAuthenticated("orgVerification") ||
+      !isActionPerformed("orgVerification")
+    )
+      setToHome(true);
 
     const payload = {
       authorities: ["ROLE"],
@@ -44,6 +50,12 @@ export default function TOU({ page: { header } }) {
   };
 
   if (toBCSCRedirect) {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed: ["orgVerification", "tou"]
+    };
+    generateJWTToken(newPayload);
     return <Redirect to="/ecrc/bcscRedirect" />;
   }
   const termOfUseOnScroll = event => {

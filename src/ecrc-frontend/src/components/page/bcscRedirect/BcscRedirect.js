@@ -10,7 +10,8 @@ import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
   isAuthenticated,
-  generateJWTToken
+  generateJWTToken,
+  isActionPerformed
 } from "../../../modules/AuthenticationHelper";
 
 import "../page.css";
@@ -23,7 +24,7 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
   React.useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isAuthenticated("tou")) setToHome(true);
+    if (!isAuthenticated("tou") || !isActionPerformed("tou")) setToHome(true);
 
     const payload = {
       authorities: ["ROLE"],

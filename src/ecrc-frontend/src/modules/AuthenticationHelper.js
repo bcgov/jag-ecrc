@@ -41,6 +41,25 @@ export function isAuthorized() {
   return isAuthorize;
 }
 
+export function isActionPerformed(action) {
+  const token = sessionStorage.getItem("jwt");
+  const validator = sessionStorage.getItem("validator");
+  let isPerformed = false;
+
+  if (!token || !validator) return false;
+
+  // verify a token symmetric
+  jwt.verify(token, validator, (err, decoded) => {
+    if (err || !decoded.actionsPerformed) {
+      isPerformed = false;
+    } else if (decoded.actionsPerformed.includes(action)) {
+      isPerformed = true;
+    }
+  });
+
+  return isPerformed;
+}
+
 export function storeValidator() {
   axios
     .get(`/ecrc/initialHandshake`)
