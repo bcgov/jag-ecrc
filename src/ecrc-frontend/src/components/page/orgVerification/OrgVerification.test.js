@@ -1,7 +1,8 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { MemoryRouter } from "react-router-dom";
-import { shallow } from "enzyme";
+import { MemoryRouter, Router } from "react-router-dom";
+import { render, fireEvent, getByText } from "@testing-library/react";
+import { createMemoryHistory } from "history";
 
 import OrgVerification from "./OrgVerification";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
@@ -32,18 +33,6 @@ describe("OrgVerification Component", () => {
   sessionStorage.setItem("validator", "secret");
   generateJWTToken({ visited: ["orgValidation"] });
 
-  let useEffect;
-
-  const mockUseEffect = () => {
-    useEffect.mockImplementationOnce(f => f());
-  };
-
-  beforeEach(() => {
-    // Mocking useEffect
-    useEffect = jest.spyOn(React, "useEffect");
-    mockUseEffect();
-  });
-
   test("Matches the snapshot", () => {
     const orgVerificationPage = create(
       <MemoryRouter>
@@ -54,43 +43,38 @@ describe("OrgVerification Component", () => {
   });
 
   test("Redirect to Home", () => {
-    const orgVerificationPage = shallow(<OrgVerification page={page} />);
+    const history = createMemoryHistory();
 
-    expect(orgVerificationPage.find("Redirect")).toHaveLength(0);
-
-    orgVerificationPage
-      .find("Button")
-      .first()
-      .props()
-      .onClick();
-
-    expect(orgVerificationPage.find("Redirect")).toHaveLength(1);
-    expect(orgVerificationPage.find("Redirect").props().to).toBe("/");
+    const { container } = render(
+      <Router history={history}>
+        <OrgVerification page={page} />
+      </Router>
+    );
+    fireEvent.click(getByText(container, "Back"));
+    expect(history.location.pathname).toEqual("/");
   });
 
   test("Redirect to terms of use", () => {
-    const orgVerificationPage = shallow(<OrgVerification page={page} />);
+    const history = createMemoryHistory();
 
-    expect(orgVerificationPage.find("Redirect")).toHaveLength(0);
-
-    orgVerificationPage
-      .find("Button")
-      .last()
-      .props()
-      .onClick();
-
-    expect(orgVerificationPage.find("Redirect")).toHaveLength(1);
-    expect(orgVerificationPage.find("Redirect").props().to).toBe(
-      "/ecrc/termsofuse"
+    const { container } = render(
+      <Router history={history}>
+        <OrgVerification page={page} />
+      </Router>
     );
+    fireEvent.click(getByText(container, "Continue"));
+    expect(history.location.pathname).toEqual("/ecrc/termsofuse");
   });
 
   test("Redirect to Home on empty organization", () => {
     page.org.orgNm = "";
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <OrgVerification page={page} />
+      </Router>
+    );
 
-    const orgVerificationPage = shallow(<OrgVerification page={page} />);
-
-    expect(orgVerificationPage.find("Redirect")).toHaveLength(1);
-    expect(orgVerificationPage.find("Redirect").props().to).toBe("/");
+    expect(history.location.pathname).toEqual("/");
   });
 });

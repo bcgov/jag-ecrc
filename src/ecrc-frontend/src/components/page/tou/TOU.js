@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
@@ -14,14 +14,16 @@ import {
 } from "../../../modules/AuthenticationHelper";
 
 export default function TOU({ page: { header } }) {
-  const [toBCSCRedirect, setToBCSCRedirect] = React.useState(false);
-  const [toHome, setToHome] = React.useState(false);
-  const [secondBoxChecked, setSecondBoxChecked] = React.useState(false);
-  const [firstBoxChecked, setFirstBoxChecked] = React.useState(false);
-  const [continueBtnEnabled, setContinueBtnEnabled] = React.useState(false);
-  const [reachedEnd, setReachedEnd] = React.useState(false);
+  const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
+  const [toHome, setToHome] = useState(false);
+  const [secondBoxChecked, setSecondBoxChecked] = useState(false);
+  const [firstBoxChecked, setFirstBoxChecked] = useState(false);
+  const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
+  const [reachedEnd, setReachedEnd] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
     if (
       !isAuthenticated("orgVerification") ||
       !isActionPerformed("orgVerification")
@@ -33,11 +35,9 @@ export default function TOU({ page: { header } }) {
       visited: ["orgValidation", "orgVerification", "tou"]
     };
     generateJWTToken(payload);
-
-    window.scrollTo(0, 0);
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (firstBoxChecked && secondBoxChecked && reachedEnd) {
       setContinueBtnEnabled(true);
     } else {
