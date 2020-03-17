@@ -117,13 +117,9 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 
   function onYesClick() {
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const actionsPerformed = [
-      ...currentPayload.actionsPerformed,
-      "userConfirmation"
-    ];
     const newPayload = {
       ...currentPayload,
-      actionsPerformed
+      actionsPerformed: ["userConfirmation"]
     };
     generateJWTToken(newPayload);
 
