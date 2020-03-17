@@ -51,7 +51,7 @@ describe("OrgVerification Component", () => {
         <OrgVerification page={page} />
       </Router>
     );
-    fireEvent.click(getByText(container, "Back"));
+    fireEvent.click(getByText(container, "Cancel"));
     expect(history.location.pathname).toEqual("/");
   });
 

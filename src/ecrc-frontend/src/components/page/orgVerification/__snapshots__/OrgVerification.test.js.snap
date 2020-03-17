@@ -66,7 +66,7 @@ exports[`OrgVerification Component Matches the snapshot 1`] = `
         Organization Information
       </h1>
       <p>
-        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it’s not, please do NOT proceed and contact the organization that has requested you to complete a criminal record check.
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it’s not, please contact the organization that has requested you to complete a criminal record check.
       </p>
       <table>
         <thead>
@@ -115,7 +115,7 @@ Canada
             <th
               colSpan="2"
             >
-              Organization Type
+              Role of Applicant (Employee or Volunteer) and working category (e.g. working with children)
             </th>
           </tr>
         </thead>
@@ -128,15 +128,26 @@ Canada
               Employee
             </td>
           </tr>
+          <tr>
+            <td>
+              Works with category
+            </td>
+            <td>
+              
+            </td>
+          </tr>
         </tbody>
       </table>
       <div>
         <p>
-          To continue with your online criminal record check request, please ensure you meet the following criteria:
+          To continue with your online request for a criminal record check:
         </p>
         <ul>
           <li>
-            You must have a BC Service Card Account. If you do not already have a BC Service Card Account, you can initiate the process at the
+            Only BC Services cards with a photo are accepted at this time.
+          </li>
+          <li>
+            If you do not already have a BC Service Card Account, you can initiate the process at the
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
             >
@@ -145,12 +156,35 @@ Canada
             .
           </li>
           <li>
-            Pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for criminal record check, no payment is required.
+            If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
+          </li>
+          <li>
+            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
+          </li>
+          <li>
+            There is no fee for Volunteer applications.
           </li>
         </ul>
         <p>
-          Once the criminal record check is complete, the organization noted above will receive the results.
+          The organization noted above will be notified:
         </p>
+        <ol
+          className="contactList"
+        >
+          <li>
+            When you are cleared to work with children and/or vulnerable adults.
+          </li>
+        </ol>
+        <ol
+          className="contactList"
+        >
+          <li>
+            If you have an outstanding charge or conviction relating to a relevant or specified offence; and
+          </li>
+          <li>
+            a determination of risk or no risk has been made by the Deputy Registrar.
+          </li>
+        </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
@@ -163,7 +197,7 @@ Canada
           onClick={[Function]}
           type="submit"
         >
-          Back
+          Cancel
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -179,7 +213,7 @@ Canada
     >
       <div>
         <div
-          className="wide-dashboard-spacing"
+          className="dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -235,7 +269,7 @@ Canada
                     <div
                       className="sideCardTitle"
                     >
-                      Using the BC Services Card
+                      Get a BC Service Card
                     </div>
                   </div>
                 </h2>
@@ -243,38 +277,17 @@ Canada
                   className="submit-content"
                 >
                   <span>
+                    B.C. residents who have lived in the province for at least six months must use a BC Services Card to submit an online Criminal Record Check. Learn how to get a card.
                     <div
-                      className="side-card-text"
+                      className="getServiceButton"
                     >
-                      If you have a BC Services Card, you must use it to log in to the online security verification page.
-                    </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                      <button
+                        className="btn btn-primary dark-button btn btn-md"
+                        onClick={[Function]}
+                        type="submit"
                       >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about the BC Services Card.
-                        </div>
-                      </a>
-                    </div>
-                    <div
-                      className="side-card-text"
-                    >
-                      <br />
-                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
-                    </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-                      >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about BC Services Card eligibility.
-                        </div>
-                      </a>
+                        READ MORE
+                      </button>
                     </div>
                   </span>
                 </div>

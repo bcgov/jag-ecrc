@@ -22,8 +22,6 @@ export default function OrgVerification({ page: { header, org } }) {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    console.log(org);
-
     if (!isAuthenticated() || !org.orgNm) {
       setToHome(true);
     }

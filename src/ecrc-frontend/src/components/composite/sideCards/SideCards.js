@@ -38,7 +38,7 @@ export default function SideCards({ type, sideCardLinks }) {
 
   const getBCServiceButton = (
     <Button
-      key="criminal-record-link"
+      key="getBCSCLink"
       button={bcscbutton}
       onClick={() =>
         window.open(
@@ -61,7 +61,9 @@ export default function SideCards({ type, sideCardLinks }) {
     ),
     content: [
       "B.C. residents who have lived in the province for at least six months must use a BC Services Card to submit an online Criminal Record Check. Learn how to get a card.",
-      <div className="getServiceButton">{getBCServiceButton}</div>
+      <div key="getBCSCButton" className="getServiceButton">
+        {getBCServiceButton}
+      </div>
     ],
     type: "blue"
   };
