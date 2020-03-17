@@ -81,7 +81,7 @@ export default function ApplicationForm({
     ""
   );
 
-  const [differentMailingAddress, setDifferentMailingAddress] = useState(false);
+  const [sameAddress, setSameAddress] = useState(true);
   const [mailingAddressLine1, setMailingAddressLine1] = useState("");
   const [mailingAddressLine1Error, setMailingAddressLine1Error] = useState("");
   const [mailingCity, setMailingCity] = useState("");
@@ -109,6 +109,20 @@ export default function ApplicationForm({
 
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if (sameAddress) {
+      setMailingAddressLine1(addressLine1);
+      setMailingCity(cityNm);
+      setMailingProvince(provinceNm);
+      setMailingPostalCode(postalCodeTxt);
+    } else {
+      setMailingAddressLine1("");
+      setMailingCity("");
+      setMailingProvince("");
+      setMailingPostalCode("");
+    }
+  }, [sameAddress]);
 
   const currentName = {
     legalFirstNm: {
@@ -463,19 +477,19 @@ export default function ApplicationForm({
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
-    if (differentMailingAddress && !mailingAddressLine1) {
+    if (!sameAddress && !mailingAddressLine1) {
       setMailingAddressLine1Error("Please enter your PO box or street address");
     }
 
-    if (differentMailingAddress && !mailingCity) {
+    if (!sameAddress && !mailingCity) {
       setMailingCityError("Please enter your city");
     }
 
-    if (differentMailingAddress && !mailingProvince) {
+    if (!sameAddress && !mailingProvince) {
       setMailingProvinceError("Please enter your province");
     }
 
-    if (differentMailingAddress && !validatePostalCode(mailingPostalCode)) {
+    if (!sameAddress && !validatePostalCode(mailingPostalCode)) {
       setMailingPostalCodeError(
         "Please enter a valid postal code in the form V9V 9V9"
       );
@@ -489,7 +503,7 @@ export default function ApplicationForm({
       validateEmail(email) &&
       job !== "" &&
       !(defaultScheduleTypeCd === "WBSD" && organizationLocation === "") &&
-      ((differentMailingAddress &&
+      ((!sameAddress &&
         mailingAddressLine1 !== "" &&
         mailingCity !== "" &&
         mailingProvince !== "" &&
@@ -542,8 +556,9 @@ export default function ApplicationForm({
     }
   };
 
-  const mailingAddress = () => {
-    setDifferentMailingAddress(!differentMailingAddress);
+  const mailingAddress = event => {
+    console.log(event.target.value);
+    setSameAddress(event.target.value === "true" ? true : false);
   };
 
   if (toHome) {
@@ -598,34 +613,38 @@ export default function ApplicationForm({
           </div>
           <SimpleForm simpleForm={address} />
           <p>
-            Is your mailing address different from your current street
+            Is your current mailing address the same as your current residential
             address?&nbsp;
+            <label htmlFor="yes">Yes</label>
             <input
-              type="checkbox"
-              onClick={() => {
-                mailingAddress();
-              }}
+              type="radio"
+              id="yes"
+              value={true}
+              checked={sameAddress}
+              onChange={mailingAddress}
+            />
+            <label htmlFor="no">No</label>
+            <input
+              type="radio"
+              id="no"
+              value={false}
+              checked={!sameAddress}
+              onChange={mailingAddress}
             />
           </p>
-          {differentMailingAddress && (
-            <>
-              <SimpleForm simpleForm={mailing} />
-              <section>
-                Entering your mailing address in this application will not
-                update your BC Services Card Address. To update your BC Services
-                Card information you must contact&nbsp;
-                <a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc">
-                  Service BC
-                </a>
-                ,&nbsp;
-                <a href="https://www.icbc.com/Pages/default.aspx">ICBC</a>
-                &nbsp;or&nbsp;
-                <a href="https://www.addresschange.gov.bc.ca/">
-                  AddressChangeBC
-                </a>
-              </section>
-            </>
-          )}
+          <SimpleForm simpleForm={mailing} />
+          <section>
+            Entering your mailing address in this application will not update
+            your BC Services Card Address. To update your BC Services Card
+            information you must contact&nbsp;
+            <a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc">
+              Service BC
+            </a>
+            ,&nbsp;
+            <a href="https://www.icbc.com/Pages/default.aspx">ICBC</a>
+            &nbsp;or&nbsp;
+            <a href="https://www.addresschange.gov.bc.ca/">AddressChangeBC</a>
+          </section>
           <div className="buttons">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />
