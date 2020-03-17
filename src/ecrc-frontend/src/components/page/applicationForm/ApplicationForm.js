@@ -537,10 +537,10 @@ export default function ApplicationForm({
         alias3SurnameNm: alias3Surname,
         birthDt,
         genderTxt,
-        addressLine1: mailingAddressLine1 || addressLine1,
-        cityNm: mailingCity || cityNm,
-        provinceNm: mailingProvince || provinceNm,
-        postalCodeTxt: mailingPostalCode || postalCodeTxt,
+        addressLine1: mailingAddressLine1,
+        cityNm: mailingCity,
+        provinceNm: mailingProvince,
+        postalCodeTxt: mailingPostalCode,
         countryNm,
         birthPlace: birthLoc,
         driversLicNo: driversLicence,
@@ -633,7 +633,7 @@ export default function ApplicationForm({
           <p>
             Is your current mailing address the same as your current residential
             address?&nbsp;
-            <span>Yes</span>
+            <span>Yes&nbsp;</span>
             <input
               type="radio"
               id="yes"
@@ -641,7 +641,7 @@ export default function ApplicationForm({
               onChange={mailingAddress}
               data-testid="sameAddress"
             />
-            <span>No</span>
+            <span>&nbsp;No&nbsp;</span>
             <input
               type="radio"
               id="no"
