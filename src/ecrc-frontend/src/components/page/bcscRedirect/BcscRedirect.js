@@ -1,25 +1,31 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
-import { generateJWTToken } from "../../../modules/AuthenticationHelper";
+import {
+  isAuthenticated,
+  isActionPerformed
+} from "../../../modules/AuthenticationHelper";
 
 import "../page.css";
 import "./BcscRedirect.css";
 
 export default function BcscRedirect({ page: { header, saveOrg } }) {
   const [bcscUrl, setBcscUrl] = useState("");
+  const [toHome, setToHome] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
 
-    const payload = { authorities: ["ROLE"] };
-    const token = generateJWTToken(payload);
+    if (!isAuthenticated() || !isActionPerformed("tou")) setToHome(true);
+
+    const token = sessionStorage.getItem("jwt");
 
     axios
       .get(`/ecrc/protected/getBCSCUrl`, {
@@ -45,6 +51,10 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
     // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <main>

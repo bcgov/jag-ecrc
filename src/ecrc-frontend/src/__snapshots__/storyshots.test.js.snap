@@ -317,6 +317,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 defaultValue=""
                 id="birthLoc"
                 onChange={[Function]}
+                placeholder="City, Country"
                 type="text"
               />
               <span
@@ -533,6 +534,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 defaultValue=""
                 id="applicantPosition"
                 onChange={[Function]}
+                placeholder="Position/Job Title"
                 type="text"
               />
               <span
@@ -705,13 +707,17 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
         </ul>
       </form>
-      <p>
-        Is your mailing address different from your current street address? 
+      <div>
+        <span>
+          Is your mailing address different from your current street address? 
+        </span>
         <input
+          data-testid="mailingCheckbox"
+          id="mailingAddress"
           onClick={[Function]}
           type="checkbox"
         />
-      </p>
+      </div>
       <div
         className="buttons"
       >
@@ -1265,6 +1271,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 defaultValue=""
                 id="birthLoc"
                 onChange={[Function]}
+                placeholder="City, Country"
                 type="text"
               />
               <span
@@ -1481,6 +1488,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 defaultValue=""
                 id="applicantPosition"
                 onChange={[Function]}
+                placeholder="Position/Job Title"
                 type="text"
               />
               <span
@@ -1519,6 +1527,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 defaultValue=""
                 id="organizationFacility"
                 onChange={[Function]}
+                placeholder="Organization Facility"
                 type="text"
               />
               <span
@@ -1691,13 +1700,17 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
         </ul>
       </form>
-      <p>
-        Is your mailing address different from your current street address? 
+      <div>
+        <span>
+          Is your mailing address different from your current street address? 
+        </span>
         <input
+          data-testid="mailingCheckbox"
+          id="mailingAddress"
           onClick={[Function]}
           type="checkbox"
         />
-      </p>
+      </div>
       <div
         className="buttons"
       >
@@ -10835,6 +10848,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
   </div>
   <section
     className="scroll-box"
+    onScroll={[Function]}
   >
     <p>
       In these Terms of Use, “you” or “your” includes the individual using or accessing the Cannabis Licensing Application Portal (the “Site”) on their own behalf, as well as any applicant (“Applicant”) for a cannabis retail store licence (“Retailer Licence”) and/or a cannabis marketing licence (“Marketing Licence”) that you represent.
@@ -11115,6 +11129,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
   <section>
     <input
       className="terms-cb"
+      onClick={[Function]}
       type="checkbox"
     />
      I have read and accept the above terms and conditions.
@@ -11125,6 +11140,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
     </p>
     <input
       className="terms-cb"
+      onClick={[Function]}
       type="checkbox"
     />
      I authorize use of my email address to communicate with me about my registration.
@@ -11142,6 +11158,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
     <button
       className="btn ecrc_go_btn btn "
       disabled={true}
+      onClick={[Function]}
       type="submit"
     >
       Continue
@@ -11845,7 +11862,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
 </main>
 `;
 
-exports[`Storyshots User Confirmation Page Default 1`] = `
+exports[`Storyshots User Confirmation page Default 1`] = `
 <main>
   <header>
     <nav
@@ -12030,7 +12047,7 @@ exports[`Storyshots User Confirmation Page Default 1`] = `
 </main>
 `;
 
-exports[`Storyshots User Confirmation Page Mobile 1`] = `
+exports[`Storyshots User Confirmation page Mobile 1`] = `
 <main>
   <header>
     <nav

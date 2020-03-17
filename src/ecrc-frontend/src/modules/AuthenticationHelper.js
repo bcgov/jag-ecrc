@@ -6,19 +6,56 @@ const jwt = require("jsonwebtoken");
 export function isAuthenticated() {
   const token = sessionStorage.getItem("jwt");
   const validator = sessionStorage.getItem("validator");
+  let isAuthed = true;
 
   if (!token || !validator) return false;
 
   // verify a token symmetric
   jwt.verify(token, validator, err => {
     if (err) {
-      return false;
+      isAuthed = false;
     }
-
-    return true;
   });
 
-  return false;
+  return isAuthed;
+}
+
+export function isAuthorized() {
+  const token = sessionStorage.getItem("jwt");
+  const validator = sessionStorage.getItem("validator");
+  let isAuthorize = false;
+
+  if (!token || !validator) return false;
+
+  // verify a token symmetric
+  jwt.verify(token, validator, (err, decoded) => {
+    if (err || !decoded.authorities) {
+      isAuthorize = false;
+    } else if (decoded.authorities.includes("Authorized")) {
+      isAuthorize = true;
+    }
+  });
+
+  return isAuthorize;
+}
+
+export function isActionPerformed(action) {
+  const token = sessionStorage.getItem("jwt");
+  const validator = sessionStorage.getItem("validator");
+  let isPerformed = false;
+
+  if (!token || !validator) return false;
+
+  // verify a token symmetric
+  jwt.verify(token, validator, (err, decoded) => {
+    if (err || !decoded.actionsPerformed) {
+      isPerformed = false;
+    } else if (decoded.actionsPerformed.includes(action)) {
+      isPerformed = true;
+    }
+  });
+
+  return isPerformed;
 }
 
 export function storeValidator() {
@@ -39,7 +76,9 @@ export function generateJWTToken(payload) {
 
   if (!validator) return false;
 
-  const token = jwt.sign(payload, validator, { expiresIn: "2h" });
+  const token = jwt.sign(payload, validator);
+
+  sessionStorage.setItem("jwt", token);
 
   return token;
 }

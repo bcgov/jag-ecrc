@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
@@ -6,19 +6,30 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import TermsOfUse from "../../base/termsOfUse/TermsOfUse";
 import "../page.css";
+import {
+  isAuthenticated,
+  generateJWTToken,
+  isActionPerformed,
+  accessJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 export default function TOU({ page: { header } }) {
-  const [toBCSCRedirect, setToBCSCRedirect] = React.useState(false);
-  const [secondBoxChecked, setSecondBoxChecked] = React.useState(false);
-  const [firstBoxChecked, setFirstBoxChecked] = React.useState(false);
-  const [continueBtnEnabled, setContinueBtnEnabled] = React.useState(false);
-  const [reachedEnd, setReachedEnd] = React.useState(false);
+  const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
+  const [toHome, setToHome] = useState(false);
+  const [secondBoxChecked, setSecondBoxChecked] = useState(false);
+  const [firstBoxChecked, setFirstBoxChecked] = useState(false);
+  const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
+  const [reachedEnd, setReachedEnd] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
+
+    if (!isAuthenticated() || !isActionPerformed("orgVerification")) {
+      setToHome(true);
+    }
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (firstBoxChecked && secondBoxChecked && reachedEnd) {
       setContinueBtnEnabled(true);
     } else {
@@ -31,6 +42,13 @@ export default function TOU({ page: { header } }) {
   };
 
   if (toBCSCRedirect) {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [...currentPayload.actionsPerformed, "tou"];
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed
+    };
+    generateJWTToken(newPayload);
     return <Redirect to="/ecrc/bcscRedirect" />;
   }
   const termOfUseOnScroll = event => {
@@ -39,6 +57,10 @@ export default function TOU({ page: { header } }) {
       setReachedEnd(true);
     }
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <main>

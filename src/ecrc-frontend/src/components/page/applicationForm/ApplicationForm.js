@@ -10,7 +10,12 @@ import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
-import { generateJWTToken } from "../../../modules/AuthenticationHelper";
+import {
+  generateJWTToken,
+  isAuthenticated,
+  accessJWTToken,
+  isActionPerformed
+} from "../../../modules/AuthenticationHelper";
 
 export default function ApplicationForm({
   page: {
@@ -94,11 +99,12 @@ export default function ApplicationForm({
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    const payload = { authorities: ["ROLE"] };
-    const token = generateJWTToken(payload);
+    if (!isAuthenticated() || !isActionPerformed("consent")) setToHome(true);
+
+    const token = sessionStorage.getItem("jwt");
 
     axios
-      .get("/ecrc/protected/getProvinceList", {
+      .get("/ecrc/private/getProvinceList", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -233,6 +239,7 @@ export default function ApplicationForm({
         label: "City and Country of Birth",
         id: "birthLoc",
         isRequired: true,
+        placeholder: "City, Country",
         value: birthLoc,
         errorMsg: birthPlaceError,
         onChange: event => {
@@ -295,6 +302,7 @@ export default function ApplicationForm({
       {
         label: "Applicant's position/Job Title",
         id: "applicantPosition",
+        placeholder: "Position/Job Title",
         value: job,
         isRequired: true,
         errorMsg: jobTitleError,
@@ -311,6 +319,7 @@ export default function ApplicationForm({
     positionInformation.textInputs.push({
       label: "Organization Facility",
       id: "organizationFacility",
+      placeholder: "Organization Facility",
       value: organizationLocation,
       note:
         "(Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)",
@@ -366,6 +375,7 @@ export default function ApplicationForm({
       {
         label: "Street",
         id: "mailingAddressLine1",
+        placeholder: "Street or PO Box",
         value: mailingAddressLine1,
         isRequired: true,
         errorMsg: mailingAddressLine1Error,
@@ -377,6 +387,7 @@ export default function ApplicationForm({
       {
         label: "City",
         id: "mailingCityNm",
+        placeholder: "City",
         value: mailingCity,
         isRequired: true,
         errorMsg: mailingCityError,
@@ -388,6 +399,7 @@ export default function ApplicationForm({
       {
         label: "Province",
         id: "mailingProvinceNm",
+        placeholder: "Select Province",
         value: mailingProvince,
         options: provinces,
         isRequired: true,
@@ -508,7 +520,11 @@ export default function ApplicationForm({
         mailingCity !== "" &&
         mailingProvince !== "" &&
         validatePostalCode(mailingPostalCode)) ||
-        (addressLine1 && cityNm && provinceNm && postalCodeTxt))
+        (!differentMailingAddress &&
+          addressLine1 &&
+          cityNm &&
+          provinceNm &&
+          postalCodeTxt))
     ) {
       setApplicant({
         legalFirstNm,
@@ -565,6 +581,13 @@ export default function ApplicationForm({
   }
 
   if (toInfoReview) {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [...currentPayload.actionsPerformed, "appForm"];
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed
+    };
+    generateJWTToken(newPayload);
     return <Redirect to="/ecrc/informationreview" />;
   }
 

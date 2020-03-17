@@ -1,11 +1,9 @@
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
+import { storiesOf } from "@storybook/react";
+import { withQuery } from "@storybook/addon-queryparams";
 
 import UserConfirmation from "./UserConfirmation";
-
-export default {
-  title: "User Confirmation Page",
-  component: UserConfirmation
-};
 
 const header = {
   name: "header name"
@@ -18,14 +16,21 @@ const page = {
   setApplicant
 };
 
-export const Default = () => <UserConfirmation page={page} />;
-
-export const Mobile = () => <UserConfirmation page={page} />;
-
-Mobile.story = {
-  parameters: {
-    viewport: {
-      defaultViewport: "mobile2"
+storiesOf("User Confirmation page", module)
+  .addDecorator(withQuery)
+  .addParameters({
+    query: {
+      code: "mycode"
     }
-  }
-};
+  })
+  .add("Default", () => (
+    <MemoryRouter>
+      <UserConfirmation page={page} />
+    </MemoryRouter>
+  ))
+  .addParameters({ viewport: { defaultViewport: "mobile2" } })
+  .add("Mobile", () => (
+    <MemoryRouter>
+      <UserConfirmation page={page} />
+    </MemoryRouter>
+  ));

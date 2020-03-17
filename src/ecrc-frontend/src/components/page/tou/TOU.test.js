@@ -1,11 +1,20 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { MemoryRouter } from "react-router-dom";
-import { shallow } from "enzyme";
+import { MemoryRouter, Router } from "react-router-dom";
+import {
+  render,
+  fireEvent,
+  getAllByRole,
+  getByText
+} from "@testing-library/react";
+import { createMemoryHistory } from "history";
 
 import TOU from "./TOU";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 describe("TermOfUse Page Component", () => {
+  window.scrollTo = jest.fn();
+
   const header = {
     name: "Criminal Record Check"
   };
@@ -13,6 +22,13 @@ describe("TermOfUse Page Component", () => {
   const page = {
     header
   };
+
+  beforeEach(() => {
+    sessionStorage.setItem("validator", "secret");
+    generateJWTToken({
+      actionsPerformed: ["orgVerification"]
+    });
+  });
 
   test("Matches the snapshot", () => {
     const termsOfUse = create(
@@ -23,68 +39,35 @@ describe("TermOfUse Page Component", () => {
     expect(termsOfUse.toJSON()).toMatchSnapshot();
   });
 
-  test("Validate Redirect", () => {
-    const termsOfUse = shallow(<TOU page={page} />);
+  test("Validate Cancel Redirect", () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <TOU page={page} />
+      </Router>
+    );
 
-    termsOfUse
-      .find("TermsOfUse")
-      .first()
-      .props()
-      .onContinueClick();
-
-    expect(termsOfUse.find("Redirect")).toHaveLength(1);
-    expect(termsOfUse.find("Redirect").props().to).toBe("/ecrc/bcscRedirect");
+    fireEvent.click(getByText(container, "Cancel and Exit"));
+    expect(history.location.pathname).toEqual("/hosthome");
   });
 
-  test("Validate User actions", () => {
-    window.scrollTo = jest.fn();
+  test("Validate Continue Redirect", () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <TOU page={page} />
+      </Router>
+    );
 
-    // Mocking UseState
-    const setState = jest.fn();
-    const useStateMock = initState => [initState, setState];
+    expect(getByText(container, "Continue").disabled).toBeTruthy();
 
-    jest.spyOn(React, "useState").mockImplementation(useStateMock);
+    fireEvent.scroll(container.querySelector("section"));
+    fireEvent.click(getAllByRole(container, "checkbox")[0]);
+    fireEvent.click(getAllByRole(container, "checkbox")[1]);
 
-    // Mocking UseEffect
-    const useEffect = jest.spyOn(React, "useEffect");
+    expect(getByText(container, "Continue").disabled).toBeFalsy();
 
-    const mockUseEffect = () => {
-      useEffect.mockImplementationOnce(f => f());
-    };
-
-    // Call UseEffect twice
-    mockUseEffect();
-    mockUseEffect();
-
-    // Mock Scroll Event
-    const mockScrollEvent = {
-      target: { scrollHeight: 80, scrollTop: 0, clientHeight: 100 }
-    };
-
-    const termsOfUse = shallow(<TOU page={page} />);
-
-    expect(setState).toHaveBeenCalledTimes(1);
-
-    termsOfUse
-      .find("TermsOfUse")
-      .first()
-      .props()
-      .checkFirstBox();
-
-    termsOfUse
-      .find("TermsOfUse")
-      .first()
-      .props()
-      .checkSecondBox();
-
-    termsOfUse
-      .find("TermsOfUse")
-      .first()
-      .props()
-      .termOfUseOnScroll(mockScrollEvent);
-
-    expect(setState).toHaveBeenCalledTimes(4);
-
-    jest.clearAllMocks();
+    fireEvent.click(getByText(container, "Continue"));
+    expect(history.location.pathname).toEqual("/ecrc/bcscRedirect");
   });
 });

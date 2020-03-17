@@ -320,6 +320,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 defaultValue=""
                 id="birthLoc"
                 onChange={[Function]}
+                placeholder="City, Country"
                 type="text"
               />
               <span
@@ -536,6 +537,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 defaultValue=""
                 id="applicantPosition"
                 onChange={[Function]}
+                placeholder="Position/Job Title"
                 type="text"
               />
               <span
@@ -574,6 +576,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 defaultValue=""
                 id="organizationFacility"
                 onChange={[Function]}
+                placeholder="Organization Facility"
                 type="text"
               />
               <span

@@ -33,6 +33,15 @@ describe("OrgValidation Component", () => {
   window.scrollTo = jest.fn();
 
   test("Matches the snapshot", () => {
+    axios.get.mockImplementation(() =>
+      Promise.resolve({
+        data: "string",
+        accessCodeResponse: {
+          orgNm: "Test Org Name"
+        }
+      })
+    );
+
     const orgValidationPage = create(
       <MemoryRouter>
         <OrgValidation page={page} />
@@ -42,13 +51,14 @@ describe("OrgValidation Component", () => {
   });
 
   test("redirects to Org Verification page", async () => {
-    axios.get.mockResolvedValueOnce({
-      data: {
+    axios.get.mockImplementation(() =>
+      Promise.resolve({
+        data: "string",
         accessCodeResponse: {
           orgNm: "Test Org Name"
         }
-      }
-    });
+      })
+    );
 
     const history = createMemoryHistory();
 
@@ -76,6 +86,7 @@ describe("OrgValidation Component", () => {
   });
 
   test("redirects to Transition page", async () => {
+    axios.get.mockResolvedValueOnce({ data: "secret" });
     axios.get.mockRejectedValueOnce({ response: { status: 401 } });
 
     const history = createMemoryHistory();
@@ -104,6 +115,7 @@ describe("OrgValidation Component", () => {
   });
 
   test("displays org code error", async () => {
+    axios.get.mockResolvedValueOnce({ data: "secret" });
     axios.get.mockRejectedValueOnce({ response: { status: 404 } });
 
     const history = createMemoryHistory();
