@@ -58,7 +58,7 @@ export default function OrgValidation({
 
   const button = {
     label: "Validate",
-    buttonStyle: "btn btn-primary",
+    buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit"
   };
