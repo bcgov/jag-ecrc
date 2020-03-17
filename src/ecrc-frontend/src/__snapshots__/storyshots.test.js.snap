@@ -726,7 +726,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
       <p>
         Is your current mailing address the same as your current residential address? 
         <span>
-          Yes
+          Yes 
         </span>
         <input
           checked={true}
@@ -736,7 +736,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           type="radio"
         />
         <span>
-          No
+           No 
         </span>
         <input
           checked={false}
@@ -1949,7 +1949,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
       <p>
         Is your current mailing address the same as your current residential address? 
         <span>
-          Yes
+          Yes 
         </span>
         <input
           checked={true}
@@ -1959,7 +1959,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           type="radio"
         />
         <span>
-          No
+           No 
         </span>
         <input
           checked={false}

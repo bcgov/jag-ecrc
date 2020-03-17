@@ -722,7 +722,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <p>
           Is your current mailing address the same as your current residential address? 
           <span>
-            Yes
+            Yes 
           </span>
           <input
             checked=""
@@ -731,7 +731,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             type="radio"
           />
           <span>
-            No
+             No 
           </span>
           <input
             data-testid="differentAddress"
