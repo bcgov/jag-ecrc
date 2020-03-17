@@ -163,14 +163,14 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         </table>
       </div>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
         Print
       </button>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
@@ -409,14 +409,14 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         </table>
       </div>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
         Print
       </button>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
@@ -631,14 +631,14 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         </table>
       </div>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
         Print
       </button>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >

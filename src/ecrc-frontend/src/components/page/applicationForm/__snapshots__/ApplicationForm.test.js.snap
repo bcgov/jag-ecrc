@@ -717,13 +717,13 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           class="buttons"
         >
           <button
-            class="btn btn-primary btn btn-sm"
+            class="btn ecrc_go_btn btn btn-sm"
             type="submit"
           >
             Cancel
           </button>
           <button
-            class="btn btn-primary btn btn-sm"
+            class="btn ecrc_go_btn btn btn-sm"
             type="submit"
           >
             Continue

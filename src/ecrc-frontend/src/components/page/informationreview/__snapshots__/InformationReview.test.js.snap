@@ -352,7 +352,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           EDIT APPLICATION
         </button>
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           disabled={true}
           onClick={[Function]}
           type="submit"

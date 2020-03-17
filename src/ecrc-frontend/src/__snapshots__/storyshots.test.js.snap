@@ -722,14 +722,14 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         className="buttons"
       >
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
           Cancel
         </button>
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
@@ -1715,14 +1715,14 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         className="buttons"
       >
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
           Cancel
         </button>
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
@@ -4340,7 +4340,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           EDIT APPLICATION
         </button>
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           disabled={true}
           onClick={[Function]}
           type="submit"
@@ -5007,7 +5007,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           EDIT APPLICATION
         </button>
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           disabled={true}
           onClick={[Function]}
           type="submit"
@@ -5734,7 +5734,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
                 }
               >
                 <button
-                  className="btn btn-primary btn btn-sm"
+                  className="btn ecrc_go_btn btn btn-sm"
                   onClick={[Function]}
                   type="submit"
                 >
@@ -6197,7 +6197,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                 }
               >
                 <button
-                  className="btn btn-primary btn btn-sm"
+                  className="btn ecrc_go_btn btn btn-sm"
                   onClick={[Function]}
                   type="submit"
                 >
@@ -6858,14 +6858,14 @@ Canada
         className="buttons"
       >
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
           Back
         </button>
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
@@ -7461,14 +7461,14 @@ Canada
         className="buttons"
       >
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
           Back
         </button>
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
@@ -9202,14 +9202,14 @@ exports[`Storyshots Success Payment Failure 1`] = `
         </table>
       </div>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
         Print
       </button>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
@@ -9448,14 +9448,14 @@ exports[`Storyshots Success Payment Success 1`] = `
         </table>
       </div>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
         Print
       </button>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
@@ -9670,14 +9670,14 @@ exports[`Storyshots Success Volunteer 1`] = `
         </table>
       </div>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
         Print
       </button>
       <button
-        className="btn btn-primary btn btn-sm"
+        className="btn ecrc_go_btn btn btn-sm"
         onClick={[Function]}
         type="submit"
       >
