@@ -27,8 +27,9 @@ export default function TOU({ page: { header } }) {
     if (
       !isAuthenticated("orgVerification") ||
       !isActionPerformed("orgVerification")
-    )
+    ) {
       setToHome(true);
+    }
 
     const payload = {
       authorities: ["ROLE"],

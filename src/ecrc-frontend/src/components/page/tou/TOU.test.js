@@ -23,8 +23,13 @@ describe("TermOfUse Page Component", () => {
     header
   };
 
-  sessionStorage.setItem("validator", "secret");
-  generateJWTToken({ visited: ["orgVerification"] });
+  beforeEach(() => {
+    sessionStorage.setItem("validator", "secret");
+    generateJWTToken({
+      visited: ["orgVerification"],
+      actionsPerformed: ["orgVerification"]
+    });
+  });
 
   test("Matches the snapshot", () => {
     const termsOfUse = create(
