@@ -1,8 +1,6 @@
-p {
-  flex-direction: column;
-}
-p > button {
-  align-self: flex-end;
+.getServiceButton {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .dark-button {
