@@ -10,6 +10,7 @@ import {
 import { createMemoryHistory } from "history";
 
 import TOU from "./TOU";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 describe("TermOfUse Page Component", () => {
   window.scrollTo = jest.fn();
@@ -21,6 +22,13 @@ describe("TermOfUse Page Component", () => {
   const page = {
     header
   };
+
+  beforeEach(() => {
+    sessionStorage.setItem("validator", "secret");
+    generateJWTToken({
+      actionsPerformed: ["orgVerification"]
+    });
+  });
 
   test("Matches the snapshot", () => {
     const termsOfUse = create(

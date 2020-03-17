@@ -8,12 +8,14 @@ import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import "./UserConfirmation.css";
 import {
+  isAuthenticated,
   generateJWTToken,
   accessJWTToken
 } from "../../../modules/AuthenticationHelper";
 
 export default function UserConfirmation({ page: { header, setApplicant } }) {
   const [toConsent, setToConsent] = useState(false);
+  const [toHome, setToHome] = React.useState(false);
   const [toTransition, setToTransition] = useState(false);
   const [user, setUser] = useState({});
   const [fullName, setFullName] = useState("");
@@ -22,8 +24,9 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
 
-    const payload = { authorities: ["ROLE"] };
-    const token = generateJWTToken(payload);
+    if (!isAuthenticated() || !code) setToHome(true);
+
+    const token = sessionStorage.getItem("jwt");
 
     axios
       .get(`/ecrc/protected/login?code=${code}`, {
@@ -113,6 +116,17 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
   };
 
   function onYesClick() {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [
+      ...currentPayload.actionsPerformed,
+      "userConfirmation"
+    ];
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed
+    };
+    generateJWTToken(newPayload);
+
     setApplicant(user);
     setToConsent(true);
   }
@@ -123,6 +137,10 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 
   if (toTransition) {
     return <Redirect to="/ecrc/transition" />;
+  }
+
+  if (toHome) {
+    return <Redirect to="/" />;
   }
 
   return (

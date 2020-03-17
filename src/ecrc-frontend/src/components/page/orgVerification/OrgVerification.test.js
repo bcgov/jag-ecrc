@@ -5,6 +5,7 @@ import { render, fireEvent, getByText } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 
 import OrgVerification from "./OrgVerification";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 describe("OrgVerification Component", () => {
   const header = {
@@ -28,6 +29,9 @@ describe("OrgVerification Component", () => {
 
   // Mock window function
   window.scrollTo = jest.fn();
+
+  sessionStorage.setItem("validator", "secret");
+  generateJWTToken({ key: "val" });
 
   test("Matches the snapshot", () => {
     const orgVerificationPage = create(
