@@ -12,8 +12,8 @@ import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
 import { Button } from "../../base/button/Button";
 import {
-  isAuthenticated,
-  isActionPerformed
+  isActionPerformed,
+  isAuthorized
 } from "../../../modules/AuthenticationHelper";
 
 export default function Success({
@@ -34,12 +34,13 @@ export default function Success({
   const [toHome, setToHome] = useState(false);
   const location = useLocation();
   const paymentInfo = queryString.parse(location.search);
+  const uuid = sessionStorage.getItem("uuid");
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
     if (
-      !isAuthenticated() ||
+      !isAuthorized() ||
       !paymentInfo.trnApproved ||
       !isActionPerformed("infoReview")
     )
@@ -75,6 +76,7 @@ export default function Success({
   if (paymentInfo.trnApproved === "0") {
     const logFailure = {
       orgTicketNumber,
+      requestGuid: uuid,
       serviceId,
       applPartyId: partyId,
       sessionId,
@@ -97,6 +99,7 @@ export default function Success({
 
     const logSuccess = {
       orgTicketNumber,
+      requestGuid: uuid,
       appl_Party_Id: partyId,
       service_Id: serviceId,
       cC_Authorization: paymentInfo.trnId,
@@ -148,7 +151,7 @@ export default function Success({
 
     axios
       .get(
-        `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}`,
+        `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -168,6 +171,7 @@ export default function Success({
 
         const createURL = {
           invoiceNumber: newInvoiceId,
+          requestGuid: uuid,
           approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
           declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
           errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,

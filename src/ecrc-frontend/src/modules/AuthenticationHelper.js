@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 const jwt = require("jsonwebtoken");
 
@@ -69,6 +70,11 @@ export function storeValidator() {
       }
     })
     .catch(() => {});
+}
+
+export function storeUUID() {
+  const uuid = uuidv4();
+  sessionStorage.setItem("uuid", uuid);
 }
 
 export function generateJWTToken(payload) {

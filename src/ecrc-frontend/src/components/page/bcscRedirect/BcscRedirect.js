@@ -26,9 +26,10 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
     if (!isAuthenticated() || !isActionPerformed("tou")) setToHome(true);
 
     const token = sessionStorage.getItem("jwt");
+    const uuid = sessionStorage.getItem("uuid");
 
     axios
-      .get(`/ecrc/protected/getBCSCUrl`, {
+      .get(`/ecrc/protected/getBCSCUrl?requestGuid=${uuid}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

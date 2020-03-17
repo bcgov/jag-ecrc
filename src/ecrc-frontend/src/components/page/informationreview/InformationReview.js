@@ -10,9 +10,9 @@ import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
   generateJWTToken,
-  isAuthenticated,
   accessJWTToken,
-  isActionPerformed
+  isActionPerformed,
+  isAuthorized
 } from "../../../modules/AuthenticationHelper";
 
 export default function InformationReview({
@@ -65,7 +65,7 @@ export default function InformationReview({
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isAuthenticated() || !isActionPerformed("appForm")) setToHome(true);
+    if (!isAuthorized() || !isActionPerformed("appForm")) setToHome(true);
   }, []);
 
   const personalInfoElement = [
@@ -249,9 +249,11 @@ export default function InformationReview({
     // TODO: Check if volunteer, if yes, success, else, cont.
     // CALL THAT API
     const token = sessionStorage.getItem("jwt");
+    const uuid = sessionStorage.getItem("uuid");
 
     const createApplicantInfo = {
       orgTicketNumber,
+      requestGuid: uuid,
       callPurpose: "CRC",
       legalSurnameNm,
       legalFirstNm,
@@ -290,7 +292,7 @@ export default function InformationReview({
         }
       }),
       axios.get(
-        `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}`,
+        `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -298,7 +300,7 @@ export default function InformationReview({
         }
       ),
       axios.get(
-        `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}`,
+        `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -306,7 +308,7 @@ export default function InformationReview({
         }
       ),
       axios.get(
-        `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}`,
+        `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -324,6 +326,7 @@ export default function InformationReview({
         // eivPassDetailsResults - String returned from equifax, see Shaun
         const newCRC = {
           orgTicketNumber,
+          requestGuid: uuid,
           schedule_Type_Cd: defaultScheduleTypeCd,
           scope_Level_Cd: defaultCrcScopeLevelCd,
           appl_Party_Id: partyId,
@@ -368,6 +371,7 @@ export default function InformationReview({
 
           const createURL = {
             invoiceNumber: invoiceId,
+            requestGuid: uuid,
             approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
             declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
             errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
