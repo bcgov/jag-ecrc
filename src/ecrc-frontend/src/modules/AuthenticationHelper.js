@@ -3,19 +3,17 @@ import axios from "axios";
 
 const jwt = require("jsonwebtoken");
 
-export function isAuthenticated(page) {
+export function isAuthenticated() {
   const token = sessionStorage.getItem("jwt");
   const validator = sessionStorage.getItem("validator");
-  let isAuthed = false;
+  let isAuthed = true;
 
   if (!token || !validator) return false;
 
   // verify a token symmetric
-  jwt.verify(token, validator, (err, decoded) => {
-    if (err || !decoded.visited) {
+  jwt.verify(token, validator, err => {
+    if (err) {
       isAuthed = false;
-    } else if (decoded.visited.includes(page)) {
-      isAuthed = true;
     }
   });
 

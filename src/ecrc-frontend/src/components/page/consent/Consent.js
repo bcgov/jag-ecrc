@@ -30,20 +30,6 @@ export default function Consent({ page: { header } }) {
 
     if (!isAuthorized() || !isActionPerformed("userConfirmation"))
       setToAppHome(true);
-
-    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const newPayload = {
-      ...currentPayload,
-      visited: [
-        "orgValidation",
-        "orgVerification",
-        "tou",
-        "bcscRedirect",
-        "userConfirmation",
-        "consent"
-      ]
-    };
-    generateJWTToken(newPayload);
   }, []);
 
   useEffect(() => {

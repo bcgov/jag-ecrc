@@ -24,19 +24,9 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
 
-    if (!isAuthenticated("bcscRedirect") || !code) setToHome(true);
+    if (!isAuthenticated() || !code) setToHome(true);
 
-    const payload = {
-      authorities: ["ROLE"],
-      visited: [
-        "orgValidation",
-        "orgVerification",
-        "tou",
-        "bcscRedirect",
-        "userConfirmation"
-      ]
-    };
-    const token = generateJWTToken(payload);
+    const token = sessionStorage.getItem("jwt");
 
     axios
       .get(`/ecrc/protected/login?code=${code}`, {

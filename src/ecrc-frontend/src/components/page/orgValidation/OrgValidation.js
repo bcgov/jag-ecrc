@@ -19,7 +19,7 @@ export default function OrgValidation({
   const [orgError, setOrgError] = useState("");
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
-  const payload = { authorities: ["ROLE"], visited: ["orgValidation"] };
+  const payload = { authorities: ["ROLE"] };
   const token = generateJWTToken(payload);
 
   useEffect(() => {

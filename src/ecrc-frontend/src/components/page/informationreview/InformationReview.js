@@ -65,24 +65,7 @@ export default function InformationReview({
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isAuthenticated("appForm") || !isActionPerformed("appForm"))
-      setToHome(true);
-
-    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const newPayload = {
-      ...currentPayload,
-      visited: [
-        "orgValidation",
-        "orgVerification",
-        "tou",
-        "bcscRedirect",
-        "userConfirmation",
-        "consent",
-        "appForm",
-        "infoReview"
-      ]
-    };
-    generateJWTToken(newPayload);
+    if (!isAuthenticated() || !isActionPerformed("appForm")) setToHome(true);
   }, []);
 
   const personalInfoElement = [

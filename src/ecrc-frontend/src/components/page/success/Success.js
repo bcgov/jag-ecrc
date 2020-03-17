@@ -39,7 +39,7 @@ export default function Success({
     window.scrollTo(0, 0);
 
     if (
-      !isAuthenticated("infoReview") ||
+      !isAuthenticated() ||
       !paymentInfo.trnApproved ||
       !isActionPerformed("infoReview")
     )

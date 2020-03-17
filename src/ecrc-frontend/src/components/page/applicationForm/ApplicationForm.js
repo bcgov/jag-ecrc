@@ -99,23 +99,9 @@ export default function ApplicationForm({
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    if (!isAuthenticated("consent") || !isActionPerformed("consent"))
-      setToHome(true);
+    if (!isAuthenticated() || !isActionPerformed("consent")) setToHome(true);
 
-    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const newPayload = {
-      ...currentPayload,
-      visited: [
-        "orgValidation",
-        "orgVerification",
-        "tou",
-        "bcscRedirect",
-        "userConfirmation",
-        "consent",
-        "appForm"
-      ]
-    };
-    const token = generateJWTToken(newPayload);
+    const token = sessionStorage.getItem("jwt");
 
     axios
       .get("/ecrc/private/getProvinceList", {

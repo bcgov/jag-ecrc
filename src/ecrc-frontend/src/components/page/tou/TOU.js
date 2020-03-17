@@ -24,18 +24,9 @@ export default function TOU({ page: { header } }) {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (
-      !isAuthenticated("orgVerification") ||
-      !isActionPerformed("orgVerification")
-    ) {
+    if (!isAuthenticated() || !isActionPerformed("orgVerification")) {
       setToHome(true);
     }
-
-    const payload = {
-      authorities: ["ROLE"],
-      visited: ["orgValidation", "orgVerification", "tou"]
-    };
-    generateJWTToken(payload);
   }, []);
 
   useEffect(() => {

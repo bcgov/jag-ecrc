@@ -21,15 +21,9 @@ export default function OrgVerification({ page: { header, org } }) {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isAuthenticated("orgValidation") || !org.orgNm) {
+    if (!isAuthenticated() || !org.orgNm) {
       setToHome(true);
     }
-
-    const payload = {
-      authorities: ["ROLE"],
-      visited: ["orgValidation", "orgVerification"]
-    };
-    generateJWTToken(payload);
 
     window.scrollTo(0, 0);
   }, []);

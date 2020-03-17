@@ -10,7 +10,6 @@ import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
   isAuthenticated,
-  generateJWTToken,
   isActionPerformed
 } from "../../../modules/AuthenticationHelper";
 
@@ -24,13 +23,9 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
   React.useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isAuthenticated("tou") || !isActionPerformed("tou")) setToHome(true);
+    if (!isAuthenticated() || !isActionPerformed("tou")) setToHome(true);
 
-    const payload = {
-      authorities: ["ROLE"],
-      visited: ["orgValidation", "orgVerification", "tou", "bcscRedirect"]
-    };
-    const token = generateJWTToken(payload);
+    const token = sessionStorage.getItem("jwt");
 
     axios
       .get(`/ecrc/protected/getBCSCUrl`, {

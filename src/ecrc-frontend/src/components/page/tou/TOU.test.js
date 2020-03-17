@@ -26,7 +26,6 @@ describe("TermOfUse Page Component", () => {
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
     generateJWTToken({
-      visited: ["orgVerification"],
       actionsPerformed: ["orgVerification"]
     });
   });

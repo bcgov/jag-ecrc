@@ -68,7 +68,6 @@ describe("ApplicationForm Component", () => {
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
     generateJWTToken({
-      visited: ["consent"],
       actionsPerformed: ["consent"]
     });
     axios.get.mockResolvedValueOnce(axiosCall);

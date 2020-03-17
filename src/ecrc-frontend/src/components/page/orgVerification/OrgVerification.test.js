@@ -31,7 +31,7 @@ describe("OrgVerification Component", () => {
   window.scrollTo = jest.fn();
 
   sessionStorage.setItem("validator", "secret");
-  generateJWTToken({ visited: ["orgValidation"] });
+  generateJWTToken({ key: "val" });
 
   test("Matches the snapshot", () => {
     const orgVerificationPage = create(
