@@ -585,7 +585,7 @@ export default function ApplicationForm({
       actionsPerformed
     };
     generateJWTToken(newPayload);
-    return <Redirect to="/ecrc/informationreview" />;
+    return <Redirect to="/criminalrecordcheck/informationreview" />;
   }
 
   return (

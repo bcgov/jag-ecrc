@@ -73,11 +73,11 @@ export default function OrgValidation({
   };
 
   if (toOrgVerification) {
-    return <Redirect to="/ecrc/orgverification" />;
+    return <Redirect to="/criminalrecordcheck/orgverification" />;
   }
 
   if (toTransition) {
-    return <Redirect to="/ecrc/transition" />;
+    return <Redirect to="/criminalrecordcheck/transition" />;
   }
 
   return (

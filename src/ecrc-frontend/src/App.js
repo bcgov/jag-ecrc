@@ -44,7 +44,7 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Switch>
-          <Redirect exact from="/" to="/ecrc" />
+          <Redirect exact from="/" to="/criminalrecordcheck" />
           <Route exact path="/(ecrc|criminalrecordcheck)">
             <OrgValidation page={{ header, setOrg, setTransitionReason }} />
           </Route>
