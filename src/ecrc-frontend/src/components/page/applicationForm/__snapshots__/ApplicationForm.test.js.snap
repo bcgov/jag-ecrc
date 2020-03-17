@@ -769,6 +769,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         </span>
         <input
           checked={true}
+          data-testid="sameAddress"
           id="yes"
           onChange={[Function]}
           type="radio"
@@ -778,6 +779,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         </span>
         <input
           checked={false}
+          data-testid="differentAddress"
           id="no"
           onChange={[Function]}
           type="radio"
@@ -819,6 +821,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 defaultValue=""
                 id="mailingAddressLine1"
                 onChange={[Function]}
+                placeholder="Street or PO Box"
                 type="text"
               />
               <span
@@ -855,6 +858,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 defaultValue=""
                 id="mailingCityNm"
                 onChange={[Function]}
+                placeholder="City"
                 type="text"
               />
               <span

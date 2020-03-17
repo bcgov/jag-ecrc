@@ -125,7 +125,7 @@ export default function ApplicationForm({
     } else {
       setMailingAddressLine1("");
       setMailingCity("");
-      setMailingProvince("");
+      setMailingProvince("BRITISH COLUMBIA");
       setMailingPostalCode("");
     }
   }, [sameAddress]);
@@ -520,11 +520,7 @@ export default function ApplicationForm({
         mailingCity !== "" &&
         mailingProvince !== "" &&
         validatePostalCode(mailingPostalCode)) ||
-        (!differentMailingAddress &&
-          addressLine1 &&
-          cityNm &&
-          provinceNm &&
-          postalCodeTxt))
+        (sameAddress && addressLine1 && cityNm && provinceNm && postalCodeTxt))
     ) {
       setApplicant({
         legalFirstNm,
@@ -643,6 +639,7 @@ export default function ApplicationForm({
               id="yes"
               checked={sameAddress}
               onChange={mailingAddress}
+              data-testid="sameAddress"
             />
             <span>No</span>
             <input
@@ -650,6 +647,7 @@ export default function ApplicationForm({
               id="no"
               checked={!sameAddress}
               onChange={mailingAddress}
+              data-testid="differentAddress"
             />
           </p>
           <SimpleForm simpleForm={mailing} />
