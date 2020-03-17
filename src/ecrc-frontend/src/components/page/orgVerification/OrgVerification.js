@@ -93,10 +93,9 @@ export default function OrgVerification({ page: { header, org } }) {
 
   let worksWith = "";
 
-  // NOT 100% ON THESE, waiting for clarification from Jason
   if (org.defaultCrcScopeLevelCd === "WWCA") {
     worksWith = "Children & Vulnerable Adults";
-  } else if (org.defaultCrcScopeLevelCd === "WWVA") {
+  } else if (org.defaultCrcScopeLevelCd === "WWAD") {
     worksWith = "Vulnerable Adults";
   } else if (org.defaultCrcScopeLevelCd === "WWCH") {
     worksWith = "Children";
