@@ -129,7 +129,7 @@ export default function ApplicationForm({
       setMailingProvince("BRITISH COLUMBIA");
       setMailingPostalCode("");
     }
-  }, [sameAddress]);
+  }, [sameAddress, addressLine1, cityNm, postalCodeTxt, provinceNm]);
 
   const currentName = {
     legalFirstNm: {
