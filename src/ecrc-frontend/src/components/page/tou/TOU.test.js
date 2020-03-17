@@ -69,6 +69,6 @@ describe("TermOfUse Page Component", () => {
     expect(getByText(container, "Continue").disabled).toBeFalsy();
 
     fireEvent.click(getByText(container, "Continue"));
-    expect(history.location.pathname).toEqual("/ecrc/bcscRedirect");
+    expect(history.location.pathname).toEqual("/ecrc/bcscredirect");
   });
 });

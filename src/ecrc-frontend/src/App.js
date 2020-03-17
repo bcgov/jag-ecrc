@@ -45,28 +45,28 @@ export default function App() {
       <BrowserRouter>
         <Switch>
           <Redirect exact from="/" to="/ecrc" />
-          <Route exact path="/ecrc">
+          <Route exact path="/(ecrc|criminalrecordcheck)">
             <OrgValidation page={{ header, setOrg, setTransitionReason }} />
           </Route>
-          <Route path="/ecrc/orgverification">
+          <Route path="/(ecrc/orgverification|criminalrecordcheck/orgverification)">
             <OrgVerification page={{ header, org }} />
           </Route>
-          <Route path="/ecrc/applicationform">
+          <Route path="/(ecrc/applicationform|criminalrecordcheck/applicationform)">
             <ApplicationForm page={{ header, org, applicant, setApplicant }} />
           </Route>
-          <Route path="/ecrc/transition">
+          <Route path="/(ecrc/transition|criminalrecordcheck/transition)">
             <Transition page={{ header, transitionReason }} />
           </Route>
-          <Route path="/ecrc/termsofuse">
+          <Route path="/(ecrc/termsofuse|criminalrecordcheck/termsofuse)">
             <TOU page={{ header }} />
           </Route>
-          <Route path="/ecrc/consent">
+          <Route path="/(ecrc/consent|criminalrecordcheck/consent)">
             <UserConfirmation page={{ header, setApplicant }} />
           </Route>
-          <Route path="/ecrc/bcscRedirect">
+          <Route path="/(ecrc/bcscredirect|criminalrecordcheck/bcscredirect)">
             <BcscRedirect page={{ header, saveOrg }} />
           </Route>
-          <Route path="/ecrc/success">
+          <Route path="/(ecrc/success|criminalrecordcheck/success)">
             <Success
               page={{
                 header,
@@ -77,7 +77,7 @@ export default function App() {
               }}
             />
           </Route>
-          <Route path="/ecrc/informationreview">
+          <Route path="/(ecrc/informationreview|criminalrecordcheck/informationreview)">
             <InformationReview
               page={{
                 header,
@@ -90,7 +90,7 @@ export default function App() {
               }}
             />
           </Route>
-          <Route path="/ecrc/userconfirmation">
+          <Route path="/(ecrc/userconfirmation|criminalrecordcheck/userconfirmation)">
             <Consent page={{ header }} />
           </Route>
           <Route

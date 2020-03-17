@@ -49,7 +49,7 @@ export default function TOU({ page: { header } }) {
       actionsPerformed
     };
     generateJWTToken(newPayload);
-    return <Redirect to="/ecrc/bcscRedirect" />;
+    return <Redirect to="/ecrc/bcscredirect" />;
   }
   const termOfUseOnScroll = event => {
     const { scrollHeight, scrollTop, clientHeight } = event.target;
