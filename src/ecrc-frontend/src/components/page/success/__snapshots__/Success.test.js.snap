@@ -261,7 +261,251 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
 </main>
 `;
 
-exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `null`;
+exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        />
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Payment Approved
+      </h1>
+      <p>
+        Thank you for submitting your application to the Criminal Records Review Program.
+      </p>
+      <p>
+        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+      </p>
+      <div
+        className="print"
+      >
+        <table
+          className="white"
+          id="print"
+        >
+          <thead>
+            <tr>
+              <th
+                colSpan="2"
+              >
+                APPLICATION INFORMATION
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Service Number
+              </td>
+              <td>
+                987
+              </td>
+            </tr>
+            <tr>
+              <td>
+                First Name
+              </td>
+              <td>
+                Robert
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Last Name
+              </td>
+              <td>
+                Ross
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Organization
+              </td>
+              <td>
+                Public Broadcast Network
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Amount
+              </td>
+              <td>
+                28.00
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Date/Time
+              </td>
+              <td>
+                3/4/2020 1:01:36 PM
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Transaction ID
+              </td>
+              <td>
+                2991
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Print
+      </button>
+      <button
+        className="btn btn-primary btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Download
+      </button>
+    </div>
+    <div
+      className="sidecard"
+    />
+  </div>
+  <footer
+    className="footer"
+    style={Object {}}
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
 
 exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
 <main>
