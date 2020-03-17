@@ -8,6 +8,11 @@ import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import Table from "../../composite/table/Table";
 import SideCards from "../../composite/sideCards/SideCards";
+import {
+  isAuthenticated,
+  generateJWTToken,
+  accessJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 export default function OrgVerification({ page: { header, org } }) {
   const [toHome, setToHome] = useState(false);
@@ -15,12 +20,21 @@ export default function OrgVerification({ page: { header, org } }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (!org.orgNm) {
+
+    if (!isAuthenticated() || !org.orgNm) {
       setToHome(true);
     }
-  }, [org.orgNm]);
+
+    window.scrollTo(0, 0);
+  }, []);
 
   const orgVerified = () => {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed: ["orgVerification"]
+    };
+    generateJWTToken(newPayload);
     setToTOU(true);
   };
 

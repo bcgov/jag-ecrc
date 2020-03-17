@@ -17,6 +17,7 @@ import { createMemoryHistory } from "history";
 import axios from "axios";
 
 import ApplicationForm from "./ApplicationForm";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 jest.mock("axios");
 
@@ -64,7 +65,13 @@ describe("ApplicationForm Component", () => {
     setApplicant
   };
 
-  beforeEach(() => axios.get.mockResolvedValueOnce(axiosCall));
+  beforeEach(() => {
+    sessionStorage.setItem("validator", "secret");
+    generateJWTToken({
+      actionsPerformed: ["consent"]
+    });
+    axios.get.mockResolvedValueOnce(axiosCall);
+  });
 
   test("Matches the snapshot", async () => {
     const applicationPage = create(

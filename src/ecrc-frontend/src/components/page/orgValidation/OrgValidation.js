@@ -7,7 +7,10 @@ import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
-import { generateJWTToken } from "../../../modules/AuthenticationHelper";
+import {
+  generateJWTToken,
+  storeValidator
+} from "../../../modules/AuthenticationHelper";
 
 export default function OrgValidation({
   page: { header, setOrg, setTransitionReason }
@@ -16,15 +19,17 @@ export default function OrgValidation({
   const [orgError, setOrgError] = useState("");
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
+  const payload = { authorities: ["ROLE"] };
+  const token = generateJWTToken(payload);
 
   useEffect(() => {
+    // get the initial validator from backend and store it for subsequent requests (for JWT)
+    storeValidator();
+
     window.scrollTo(0, 0);
   }, []);
 
   const orgValidation = () => {
-    const payload = { authorities: ["ROLE"] };
-    const token = generateJWTToken(payload);
-
     axios
       .get(
         `/ecrc/protected/doAuthenticateUser?orgTicketNumber=${orgTicketNumber}`,

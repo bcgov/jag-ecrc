@@ -12,6 +12,7 @@ import { createMemoryHistory } from "history";
 import axios from "axios";
 
 import InformationReview from "./InformationReview";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 // Mock axios
 jest.mock("axios");
@@ -67,6 +68,11 @@ describe("InformationReview Component", () => {
   const mockWindow = jest.fn();
   delete window.location;
   window.location = { assign: mockWindow };
+
+  beforeEach(() => {
+    sessionStorage.setItem("validator", "secret");
+    generateJWTToken({ actionsPerformed: ["appForm"] });
+  });
 
   test("Matches the snapshot", () => {
     const page = {

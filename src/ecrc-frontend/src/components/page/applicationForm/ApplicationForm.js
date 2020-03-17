@@ -10,7 +10,12 @@ import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
-import { generateJWTToken } from "../../../modules/AuthenticationHelper";
+import {
+  generateJWTToken,
+  isAuthenticated,
+  accessJWTToken,
+  isActionPerformed
+} from "../../../modules/AuthenticationHelper";
 
 export default function ApplicationForm({
   page: {
@@ -94,11 +99,12 @@ export default function ApplicationForm({
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    const payload = { authorities: ["ROLE"] };
-    const token = generateJWTToken(payload);
+    if (!isAuthenticated() || !isActionPerformed("consent")) setToHome(true);
+
+    const token = sessionStorage.getItem("jwt");
 
     axios
-      .get("/ecrc/protected/getProvinceList", {
+      .get("/ecrc/private/getProvinceList", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -561,6 +567,13 @@ export default function ApplicationForm({
   }
 
   if (toInfoReview) {
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [...currentPayload.actionsPerformed, "appForm"];
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed
+    };
+    generateJWTToken(newPayload);
     return <Redirect to="/ecrc/informationreview" />;
   }
 
