@@ -380,6 +380,17 @@ export default function InformationReview({
             partyIdRef2: partyId
           };
 
+          const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+          const actionsPerformed = [
+            ...currentPayload.actionsPerformed,
+            "infoReview"
+          ];
+          const newPayload = {
+            ...currentPayload,
+            actionsPerformed
+          };
+          generateJWTToken(newPayload);
+
           axios
             .post("/ecrc/private/createPaymentUrl", createURL, {
               headers: {

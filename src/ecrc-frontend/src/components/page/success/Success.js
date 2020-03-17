@@ -44,8 +44,9 @@ export default function Success({
       !paymentInfo.trnApproved ||
       !isActionPerformed("infoReview")
     )
-      setToHome(true);
-  }, []);
+      console.log(sessionStorage.getItem("jwt"), paymentInfo);
+    //setToHome(true);
+  }, [paymentInfo.trnApproved]);
 
   const receiptInfo = [
     { name: "Service Number", value: serviceId },
