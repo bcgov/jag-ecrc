@@ -60,18 +60,15 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
     <div
       class="page"
     >
-      <h1>
-        Criminal Record Check - Application
-      </h1>
-      <p>
-        Complete the application form below to continue.
-      </p>
-      <form
-        className="simpleForm"
+      <div
+        class="content col-md-8"
       >
         <h1>
           Criminal Record Check - Application
         </h1>
+        <p>
+          Complete the application form below to continue.
+        </p>
         <form
           class="simpleForm"
         >
@@ -178,32 +175,35 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           <span
             class="note"
           >
-            Including alias, previous name and/or birthname
+            Including birth name, previous name, maiden name, and/or alias
           </span>
         </div>
         <form
           class="simpleForm"
         >
-          Including birth name, previous name, maiden name, and/or alias
-        </span>
-      </div>
-      <form
-        className="simpleForm"
-      >
-        <ul>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="alias1First"
-              >
-                <div
-                  className="textinput_label"
+          <ul>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="alias1First"
                 >
-                  First Name
-                </div>
-                
-                 
+                  <div
+                    class="textinput_label"
+                  >
+                    First Name
+                  </div>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_editable_white"
+                  id="alias1First"
+                  type="text"
+                  value=""
+                />
                 <span
                   class="error"
                 />
@@ -555,14 +555,27 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </li>
           </ul>
         </form>
+        <div
+          class="smallHeading"
+        >
+          <span
+            class="simpleForm_title"
+          >
+            Addresses
+          </span>
+        </div>
+        <div
+          class="heading"
+        >
+          <span
+            class="previousHeader"
+          >
+            Current Residential Address
+          </span>
+        </div>
         <form
           class="simpleForm"
         >
-          <div
-            class="simpleForm_title"
-          >
-            Current Street Address
-          </div>
           <ul>
             <li>
               <div>
@@ -672,427 +685,282 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   value="V9V 9V9"
                 />
                 <span
-                  className="note"
+                  class="error"
+                />
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="countryNm"
                 >
-                  (Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)
-                </span>
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="organizationFacility"
-                onChange={[Function]}
-                placeholder="Organization Facility"
-                type="text"
-              />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-        </ul>
-      </form>
-      <div
-        className="smallHeading"
-      >
-        <span
-          className="simpleForm_title"
+                  <div
+                    class="textinput_label"
+                  >
+                    Country
+                  </div>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_non_editable_gray"
+                  id="countryNm"
+                  readonly=""
+                  type="text"
+                  value="Canada"
+                />
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+          </ul>
+        </form>
+        <p>
+          Is your current mailing address the same as your current residential address? 
+          <span>
+            Yes
+          </span>
+          <input
+            checked=""
+            data-testid="sameAddress"
+            id="yes"
+            type="radio"
+          />
+          <span>
+            No
+          </span>
+          <input
+            data-testid="differentAddress"
+            id="no"
+            type="radio"
+          />
+        </p>
+        <form
+          class="simpleForm"
         >
-          Addresses
-        </span>
-      </div>
-      <div
-        className="heading"
-      >
-        <span
-          className="previousHeader"
-        >
-          Current Residential Address
-        </span>
-      </div>
-      <form
-        className="simpleForm"
-      >
-        <ul>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="addressLine1"
-              >
-                <div
-                  className="textinput_label"
+          <div
+            class="simpleForm_title"
+          >
+            Current Mailing Address
+          </div>
+          <ul>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingAddressLine1"
                 >
-                  Street
-                </div>
-                
-                 
-                <span
-                  className="note"
+                  <div
+                    class="textinput_label"
+                  >
+                    Street
+                  </div>
+                  <span
+                    class="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_editable_white"
+                  id="mailingAddressLine1"
+                  placeholder="Street or PO Box"
+                  type="text"
+                  value="123 Somewhere"
                 />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="123 Somewhere"
-                id="addressLine1"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="cityNm"
-              >
-                <div
-                  className="textinput_label"
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingCityNm"
                 >
-                  City
-                </div>
-                
-                 
-                <span
-                  className="note"
+                  <div
+                    class="textinput_label"
+                  >
+                    City
+                  </div>
+                  <span
+                    class="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_editable_white"
+                  id="mailingCityNm"
+                  placeholder="City"
+                  type="text"
+                  value="Here"
                 />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="Here"
-                id="cityNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="provinceNm"
-              >
-                <div
-                  className="textinput_label"
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingProvinceNm"
                 >
-                  Province
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="British Columbia"
-                id="provinceNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="postalCodeTxt"
-              >
-                <div
-                  className="textinput_label"
+                  <div
+                    class="textinput_label"
+                  >
+                    Province
+                  </div>
+                  <span
+                    class="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <select
+                  class="textinput_editable_white"
+                  id="mailingProvinceNm"
                 >
-                  Postal Code
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="V9V 9V9"
-                id="postalCodeTxt"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="countryNm"
-              >
-                <div
-                  className="textinput_label"
+                  <option
+                    value="British Columbia"
+                  >
+                    British Columbia
+                  </option>
+                  <option
+                    value="Ontario"
+                  >
+                    Ontario
+                  </option>
+                  <option
+                    value="Alberta"
+                  >
+                    Alberta
+                  </option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingPostalCodeTxt"
                 >
-                  Country
-                </div>
-                
-                 
-                <span
-                  className="note"
+                  <div
+                    class="textinput_label"
+                  >
+                    Postal Code
+                  </div>
+                  <span
+                    class="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_editable_white"
+                  id="mailingPostalCodeTxt"
+                  placeholder="V9V 9V9"
+                  type="text"
+                  value="V9V 9V9"
                 />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="Canada"
-                id="countryNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-        </ul>
-      </form>
-      <p>
-        Is your current mailing address the same as your current residential address? 
-        <span>
-          Yes
-        </span>
-        <input
-          checked={true}
-          data-testid="sameAddress"
-          id="yes"
-          onChange={[Function]}
-          type="radio"
-        />
-        <span>
-          No
-        </span>
-        <input
-          checked={false}
-          data-testid="differentAddress"
-          id="no"
-          onChange={[Function]}
-          type="radio"
-        />
-      </p>
-      <form
-        className="simpleForm"
-      >
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingCountryNm"
+                >
+                  <div
+                    class="textinput_label"
+                  >
+                    Country
+                  </div>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_non_editable_gray"
+                  id="mailingCountryNm"
+                  readonly=""
+                  type="text"
+                  value="Canada"
+                />
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+          </ul>
+        </form>
+        <section>
+          Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
+          <a
+            href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+          >
+            Service BC
+          </a>
+          , 
+          <a
+            href="https://www.icbc.com/Pages/default.aspx"
+          >
+            ICBC
+          </a>
+           or 
+          <a
+            href="https://www.addresschange.gov.bc.ca/"
+          >
+            AddressChangeBC
+          </a>
+        </section>
         <div
-          className="simpleForm_title"
+          class="buttons"
         >
-          Current Mailing Address
+          <button
+            class="btn ecrc_go_btn btn btn-sm"
+            type="submit"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn ecrc_go_btn btn btn-sm"
+            type="submit"
+          >
+            Continue
+          </button>
         </div>
-        <ul>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="mailingAddressLine1"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Street
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingAddressLine1"
-                onChange={[Function]}
-                placeholder="Street or PO Box"
-                type="text"
-              />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="mailingCityNm"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  City
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingCityNm"
-                onChange={[Function]}
-                placeholder="City"
-                type="text"
-              />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="mailingProvinceNm"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Province
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <select
-                className="textinput_editable_white"
-                id="mailingProvinceNm"
-                onChange={[Function]}
-                value=""
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="mailingPostalCodeTxt"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Postal Code
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingPostalCodeTxt"
-                onChange={[Function]}
-                placeholder="V9V 9V9"
-                type="text"
-              />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="mailingCountryNm"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Country
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="Canada"
-                id="mailingCountryNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-        </ul>
-      </form>
-      <section>
-        Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
-        >
-          Service BC
-        </a>
-        , 
-        <a
-          href="https://www.icbc.com/Pages/default.aspx"
-        >
-          ICBC
-        </a>
-         or 
-        <a
-          href="https://www.addresschange.gov.bc.ca/"
-        >
-          AddressChangeBC
-        </a>
-      </section>
+      </div>
       <div
         class="sidecard"
       >
