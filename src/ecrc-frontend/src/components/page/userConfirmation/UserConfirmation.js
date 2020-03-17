@@ -129,11 +129,11 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
   }
 
   if (toConsent) {
-    return <Redirect to="/ecrc/userconfirmation" />;
+    return <Redirect to="/criminalrecordcheck/userconfirmation" />;
   }
 
   if (toTransition) {
-    return <Redirect to="/ecrc/transition" />;
+    return <Redirect to="/criminalrecordcheck/transition" />;
   }
 
   if (toHome) {

@@ -221,7 +221,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Only accepts valid phone numbers", async () => {
@@ -269,7 +271,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Only accepts valid postal codes", async () => {
@@ -366,7 +370,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Requires applicant's position/job title", async () => {
@@ -405,7 +411,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Requires organization facility if schedule D", async () => {
@@ -444,7 +452,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Requires street if different mailing address selected", async () => {

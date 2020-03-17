@@ -71,7 +71,7 @@ export default function Consent({ page: { header } }) {
       actionsPerformed
     };
     generateJWTToken(newPayload);
-    return <Redirect to="/ecrc/applicationform" />;
+    return <Redirect to="/criminalrecordcheck/applicationform" />;
   }
 
   const asterisk = (
