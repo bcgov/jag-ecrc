@@ -11,7 +11,6 @@ import {
   getByDisplayValue,
   wait
 } from "@testing-library/react";
-import { create } from "react-test-renderer";
 import { MemoryRouter, Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import axios from "axios";
@@ -74,12 +73,14 @@ describe("ApplicationForm Component", () => {
   });
 
   test("Matches the snapshot", async () => {
-    const applicationPage = create(
+    const { asFragment } = render(
       <MemoryRouter>
         <ApplicationForm page={page} />
       </MemoryRouter>
     );
-    expect(applicationPage.toJSON()).toMatchSnapshot();
+    await wait(() => {});
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("Displays Organization Facility when Schedule D Org", async () => {

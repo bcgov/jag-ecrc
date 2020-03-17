@@ -433,14 +433,14 @@ export default function ApplicationForm({
 
   const continueButton = {
     label: "Continue",
-    buttonStyle: "btn btn-primary",
+    buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit"
   };
 
   const cancelButton = {
     label: "Cancel",
-    buttonStyle: "btn btn-primary",
+    buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit"
   };

@@ -239,7 +239,7 @@ export default function InformationReview({
 
   const confirmButton = {
     label: "SUBMIT",
-    buttonStyle: "btn btn-primary",
+    buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit",
     disabled: !boxChecked
