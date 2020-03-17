@@ -106,7 +106,7 @@ export default function Success({
 
   const printButton = {
     label: "Print",
-    buttonStyle: "btn btn-primary",
+    buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit"
   };
@@ -117,7 +117,7 @@ export default function Success({
 
   const pdfButton = {
     label: "Download",
-    buttonStyle: "btn btn-primary",
+    buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit"
   };
