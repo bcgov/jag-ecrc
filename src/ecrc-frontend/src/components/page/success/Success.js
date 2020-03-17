@@ -43,9 +43,9 @@ export default function Success({
       !isAuthorized() ||
       !paymentInfo.trnApproved ||
       !isActionPerformed("infoReview")
-    )
-      console.log(sessionStorage.getItem("jwt"), paymentInfo);
-    //setToHome(true);
+    ) {
+      setToHome(true);
+    }
   }, [paymentInfo.trnApproved]);
 
   const receiptInfo = [
