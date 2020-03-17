@@ -64,7 +64,9 @@ describe("OrgVerification Component", () => {
       </Router>
     );
     fireEvent.click(getByText(container, "Continue"));
-    expect(history.location.pathname).toEqual("/ecrc/termsofuse");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/termsofuse"
+    );
   });
 
   test("Redirect to Home on empty organization", () => {

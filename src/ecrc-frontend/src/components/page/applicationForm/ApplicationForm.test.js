@@ -165,7 +165,7 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     expect(getByText(container, "Current Mailing Address")).toBeInTheDocument();
 
@@ -221,7 +221,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Only accepts valid phone numbers", async () => {
@@ -269,7 +271,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Only accepts valid postal codes", async () => {
@@ -292,7 +296,7 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -366,7 +370,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Requires applicant's position/job title", async () => {
@@ -405,7 +411,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Requires organization facility if schedule D", async () => {
@@ -444,7 +452,9 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(history.location.pathname).toEqual("/ecrc/informationreview");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/informationreview"
+    );
   });
 
   test("Requires street if different mailing address selected", async () => {
@@ -467,7 +477,7 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -510,7 +520,7 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -548,7 +558,7 @@ describe("ApplicationForm Component", () => {
       </Router>
     );
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     await wait(() => {});
 

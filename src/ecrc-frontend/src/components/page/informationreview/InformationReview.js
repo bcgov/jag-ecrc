@@ -417,7 +417,7 @@ export default function InformationReview({
   };
 
   if (toBack) {
-    return <Redirect to="/ecrc/applicationform" />;
+    return <Redirect to="/criminalrecordcheck/applicationform" />;
   }
 
   if (toSuccess) {
@@ -428,7 +428,7 @@ export default function InformationReview({
       actionsPerformed
     };
     generateJWTToken(newPayload);
-    return <Redirect to="/ecrc/success" />;
+    return <Redirect to="/criminalrecordcheck/success" />;
   }
 
   if (toHome) {

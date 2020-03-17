@@ -86,7 +86,7 @@ export default function ApplicationForm({
     ""
   );
 
-  const [differentMailingAddress, setDifferentMailingAddress] = useState(false);
+  const [sameAddress, setSameAddress] = useState(true);
   const [mailingAddressLine1, setMailingAddressLine1] = useState("");
   const [mailingAddressLine1Error, setMailingAddressLine1Error] = useState("");
   const [mailingCity, setMailingCity] = useState("");
@@ -116,6 +116,20 @@ export default function ApplicationForm({
 
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if (sameAddress) {
+      setMailingAddressLine1(addressLine1);
+      setMailingCity(cityNm);
+      setMailingProvince(provinceNm);
+      setMailingPostalCode(postalCodeTxt);
+    } else {
+      setMailingAddressLine1("");
+      setMailingCity("");
+      setMailingProvince("BRITISH COLUMBIA");
+      setMailingPostalCode("");
+    }
+  }, [sameAddress]);
 
   const currentName = {
     legalFirstNm: {
@@ -320,7 +334,7 @@ export default function ApplicationForm({
   }
 
   const address = {
-    title: "Current Street Address",
+    title: null,
     textInputs: [
       {
         label: "Street",
@@ -357,7 +371,7 @@ export default function ApplicationForm({
   };
 
   const mailing = {
-    title: "Current Mailing Address",
+    title: null,
     textInputs: [
       {
         label: "Street",
@@ -476,19 +490,19 @@ export default function ApplicationForm({
       setOrganizationFacilityError("Please enter your organization facility");
     }
 
-    if (differentMailingAddress && !mailingAddressLine1) {
+    if (!sameAddress && !mailingAddressLine1) {
       setMailingAddressLine1Error("Please enter your PO box or street address");
     }
 
-    if (differentMailingAddress && !mailingCity) {
+    if (!sameAddress && !mailingCity) {
       setMailingCityError("Please enter your city");
     }
 
-    if (differentMailingAddress && !mailingProvince) {
+    if (!sameAddress && !mailingProvince) {
       setMailingProvinceError("Please enter your province");
     }
 
-    if (differentMailingAddress && !validatePostalCode(mailingPostalCode)) {
+    if (!sameAddress && !validatePostalCode(mailingPostalCode)) {
       setMailingPostalCodeError(
         "Please enter a valid postal code in the form V9V 9V9"
       );
@@ -502,16 +516,12 @@ export default function ApplicationForm({
       validateEmail(email) &&
       job !== "" &&
       !(defaultScheduleTypeCd === "WBSD" && organizationLocation === "") &&
-      ((differentMailingAddress &&
+      ((!sameAddress &&
         mailingAddressLine1 !== "" &&
         mailingCity !== "" &&
         mailingProvince !== "" &&
         validatePostalCode(mailingPostalCode)) ||
-        (!differentMailingAddress &&
-          addressLine1 &&
-          cityNm &&
-          provinceNm &&
-          postalCodeTxt))
+        (sameAddress && addressLine1 && cityNm && provinceNm && postalCodeTxt))
     ) {
       setApplicant({
         legalFirstNm,
@@ -528,10 +538,10 @@ export default function ApplicationForm({
         alias3SurnameNm: alias3Surname,
         birthDt,
         genderTxt,
-        addressLine1: mailingAddressLine1 || addressLine1,
-        cityNm: mailingCity || cityNm,
-        provinceNm: mailingProvince || provinceNm,
-        postalCodeTxt: mailingPostalCode || postalCodeTxt,
+        addressLine1: mailingAddressLine1,
+        cityNm: mailingCity,
+        provinceNm: mailingProvince,
+        postalCodeTxt: mailingPostalCode,
         countryNm,
         birthPlace: birthLoc,
         driversLicNo: driversLicence,
@@ -559,8 +569,8 @@ export default function ApplicationForm({
     }
   };
 
-  const mailingAddress = () => {
-    setDifferentMailingAddress(!differentMailingAddress);
+  const mailingAddress = event => {
+    setSameAddress(event.target.id === "yes");
   };
 
   if (toHome) {
@@ -575,7 +585,7 @@ export default function ApplicationForm({
       actionsPerformed
     };
     generateJWTToken(newPayload);
-    return <Redirect to="/ecrc/informationreview" />;
+    return <Redirect to="/criminalrecordcheck/informationreview" />;
   }
 
   return (
@@ -584,11 +594,12 @@ export default function ApplicationForm({
       <div className="page">
         <div className="content col-md-8">
           <h1>Criminal Record Check - Application</h1>
+          <p>Complete the application form below to continue.</p>
           <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
           <div className="heading">
             <span className="previousHeader">PREVIOUS NAME&nbsp;</span>
             <span className="note">
-              Including alias, previous name and/or birthname
+              Including birth name, previous name, maiden name, and/or alias
             </span>
           </div>
           <FullName title={null} fullname={previousNameOne} />
@@ -613,40 +624,52 @@ export default function ApplicationForm({
           )}
           <SimpleForm simpleForm={applicantInformation} />
           <SimpleForm simpleForm={positionInformation} />
+          <div className="smallHeading">
+            <span className="simpleForm_title">Addresses</span>
+          </div>
+          <div className="heading">
+            <span className="previousHeader">Current Residential Address</span>
+          </div>
           <SimpleForm simpleForm={address} />
-          <div>
-            <span>
-              Is your mailing address different from your current street
-              address?&nbsp;
-            </span>
+          <p className="heading">
+            Is your current mailing address the same as your current residential
+            address?&nbsp;
+          </p>
+          <div className="heading">
+            <span>Yes&nbsp;</span>
             <input
-              id="mailingAddress"
-              type="checkbox"
-              onClick={() => {
-                mailingAddress();
-              }}
-              data-testid="mailingCheckbox"
+              type="radio"
+              id="yes"
+              checked={sameAddress}
+              onChange={mailingAddress}
+              data-testid="sameAddress"
+            />
+            <span>&nbsp;No&nbsp;</span>
+            <input
+              type="radio"
+              id="no"
+              checked={!sameAddress}
+              onChange={mailingAddress}
+              data-testid="differentAddress"
             />
           </div>
-          {differentMailingAddress && (
-            <>
-              <SimpleForm simpleForm={mailing} />
-              <section>
-                Entering your mailing address in this application will not
-                update your BC Services Card Address. To update your BC Services
-                Card information you must contact&nbsp;
-                <a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc">
-                  Service BC
-                </a>
-                ,&nbsp;
-                <a href="https://www.icbc.com/Pages/default.aspx">ICBC</a>
-                &nbsp;or&nbsp;
-                <a href="https://www.addresschange.gov.bc.ca/">
-                  AddressChangeBC
-                </a>
-              </section>
-            </>
-          )}
+          <br />
+          <div className="heading">
+            <span className="previousHeader">Current Mailing Address</span>
+          </div>
+          <SimpleForm simpleForm={mailing} />
+          <section>
+            Entering your mailing address in this application will not update
+            your BC Services Card Address. To update your BC Services Card
+            information you must contact&nbsp;
+            <a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc">
+              Service BC
+            </a>
+            ,&nbsp;
+            <a href="https://www.icbc.com/Pages/default.aspx">ICBC</a>
+            &nbsp;or&nbsp;
+            <a href="https://www.addresschange.gov.bc.ca/">AddressChangeBC</a>
+          </section>
           <div className="buttons">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />

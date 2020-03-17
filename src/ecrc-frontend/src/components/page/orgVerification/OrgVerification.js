@@ -118,7 +118,7 @@ export default function OrgVerification({ page: { header, org } }) {
   }
 
   if (toTOU) {
-    return <Redirect to="/ecrc/termsofuse" />;
+    return <Redirect to="/criminalrecordcheck/termsofuse" />;
   }
 
   return (
