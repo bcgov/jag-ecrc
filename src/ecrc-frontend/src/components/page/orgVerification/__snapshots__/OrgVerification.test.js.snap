@@ -159,14 +159,14 @@ Canada
         className="buttons"
       >
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
           Back
         </button>
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >

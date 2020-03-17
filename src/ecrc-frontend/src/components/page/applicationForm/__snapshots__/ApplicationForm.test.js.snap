@@ -761,14 +761,14 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         className="buttons"
       >
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
           Cancel
         </button>
         <button
-          className="btn btn-primary btn btn-sm"
+          className="btn ecrc_go_btn btn btn-sm"
           onClick={[Function]}
           type="submit"
         >
