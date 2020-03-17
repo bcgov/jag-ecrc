@@ -398,7 +398,7 @@ describe("ApplicationForm Component", () => {
     expect(history.location.pathname).toEqual("/ecrc/informationreview");
   });
 
-  test("Requires orgnization facility if schedule D", async () => {
+  test("Requires organization facility if schedule D", async () => {
     const completeApplicant = {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
