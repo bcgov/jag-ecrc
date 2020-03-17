@@ -101,18 +101,18 @@ public class OauthController {
 			return new ResponseEntity(HttpStatus.FORBIDDEN);
 		}
 		
-		// Encrypt the token received from the IdP. This token contains the accessToken, the refreshToken, and the ID Token. This block 
-		// must be decrypted and used for subsequent calls back to the IdP from this layer (e.g. /refreshToken). 
-	    String encryptedTokens = null; 
+		// Encrypt the Access Token received from the IdP. This token has a 1 hour expiry time on it and 
+		// must be decrypted and used for subsequent calls back to the API. 
+	    String encryptedAccessToken = null;
 	    try {
-			encryptedTokens = AES256.encrypt(token.toJSONObject().toJSONString());
+	    	encryptedAccessToken = AES256.encrypt(token.getTokens().getBearerAccessToken().getValue());
 		} catch (Exception e) {
 			logger.error("Error encrypting token:", e);
 			return new ResponseEntity(HttpStatus.FORBIDDEN);
 		}
 		
 		// Send the new FE JWT in the response body to the caller. 
-	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedTokens, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
+	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedAccessToken, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
         return new ResponseEntity(feTokenResponse, HttpStatus.OK);
 	}
 
