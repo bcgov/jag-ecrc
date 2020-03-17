@@ -41,7 +41,7 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
   }, []);
 
   const loginBtn = {
-    label: "Login with a BC Services Card",
+    label: "Login with your BC Services Card",
     buttonStyle: "btn ecrc_btn_login_bcsc",
     buttonSize: "btn",
     type: "button"
@@ -70,9 +70,9 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
               BC Services Card
             </a>{" "}
             Account. Only cards <b>with a photo</b> are accepted. If it&apos;s
-            your first time using your Card to access any online service, you
-            need to set up your account for use online by completing a one-time
-            security check to{" "}
+            your first time using your BC Services Card to access an online
+            service, you need to set up your account for use online. Completing
+            a one-time security check to{" "}
             <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
               verify your identity
             </a>
@@ -97,7 +97,7 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
           </div>
 
           <div style={{ marginTop: "40px" }}>
-            <a href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check">
+            <a href="/ecrc/transition">
               I do not have a BC Services Card, or I have non-photo BC Services
               Card
             </a>
@@ -107,7 +107,6 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
 
         <div className="sidecard">
           <SideCards type={"bcservice"} />
-          <SideCards type={"withoutBCServiceCard"} />
         </div>
       </div>
       <Footer />
