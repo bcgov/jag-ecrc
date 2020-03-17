@@ -19,6 +19,7 @@ public class RequestNewCRCService {
     private String auth_Release_To_Org_YN;
     private String appl_Identity_Verified_EIV_YN;
     private String eivPassDetailsResults;
+    private String requestGuid;
 
     public String getOrgTicketNumber() {
         return orgTicketNumber;
@@ -136,9 +137,11 @@ public class RequestNewCRCService {
         return eivPassDetailsResults;
     }
 
-    public void setEivPassDetailsResults(String eivPassDetailsResults) {
-        this.eivPassDetailsResults = eivPassDetailsResults;
-    }
+    public void setEivPassDetailsResults(String eivPassDetailsResults) {  this.eivPassDetailsResults = eivPassDetailsResults; }
+
+    public String getRequestGuid() { return requestGuid; }
+
+    public void setRequestGuid(String requestGuid) { this.requestGuid = requestGuid; }
 
 
     public String toQueryString() {

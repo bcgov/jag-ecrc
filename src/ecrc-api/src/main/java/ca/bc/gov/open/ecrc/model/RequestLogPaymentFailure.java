@@ -15,6 +15,7 @@ public class RequestLogPaymentFailure {
 	private String invoiceId;
 	private String serviceFeeAmount;
 	private String bcepErrorMsg;
+	private String requestGuid;
 
 	public String getOrgTicketNumber() {
 		return orgTicketNumber;
@@ -71,7 +72,11 @@ public class RequestLogPaymentFailure {
 	public void setBcepErrorMsg(String bcepErrorMsg) {
 		this.bcepErrorMsg = bcepErrorMsg;
 	}
-	
+
+	public String getRequestGuid() { return requestGuid; }
+
+	public void setRequestGuid(String requestGuid) { this.requestGuid = requestGuid; }
+
 	public String toQueryString() {
         return 	"?OrgTicketNumber=" + orgTicketNumber +
         		"&Service_Id=" + serviceId +

@@ -43,7 +43,7 @@ class GetProvinceListControllerTest {
 		when(ecrcServices.getProvinceList()).thenReturn(new ResponseEntity<String>(
 				"{\"provinces\":{\"province\":[{\"name\":\"BRITISH COLUMBIA\"},{\"name\":\"ALBERTA\"},{\"name\":\"MANITOBA\"},{\"name\":\"NEW BRUNSWICK\"},{\"name\":\"NEWFOUNDLAND\"},{\"name\":\"NORTH WEST TERRITORIES\"},{\"name\":\"NOVA SCOTIA\"},{\"name\":\"NUNAVUT\"},{\"name\":\"ONTARIO\"},{\"name\":\"PRINCE EDWARD ISLAND\"},{\"name\":\"QUEBEC\"},{\"name\":\"SASKATCHEWAN\"},{\"name\":\"YUKON\"}]},\"message\":\"Success\",\"responseCode\":0}",
 				HttpStatus.OK));
-		ResponseEntity<String> response = getProvinceListController.getProvinceList();
+		ResponseEntity<String> response = getProvinceListController.getProvinceList("SOMEUUID");
 		Assert.assertEquals(
 				"{\"provinces\":{\"province\":[{\"name\":\"BRITISH COLUMBIA\"},{\"name\":\"ALBERTA\"},{\"name\":\"MANITOBA\"},{\"name\":\"NEW BRUNSWICK\"},{\"name\":\"NEWFOUNDLAND\"},{\"name\":\"NORTH WEST TERRITORIES\"},{\"name\":\"NOVA SCOTIA\"},{\"name\":\"NUNAVUT\"},{\"name\":\"ONTARIO\"},{\"name\":\"PRINCE EDWARD ISLAND\"},{\"name\":\"QUEBEC\"},{\"name\":\"SASKATCHEWAN\"},{\"name\":\"YUKON\"}]},\"message\":\"Success\",\"responseCode\":0}",
 				response.getBody());
@@ -57,7 +57,7 @@ class GetProvinceListControllerTest {
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
 				HttpStatus.NOT_FOUND));
-		ResponseEntity<String> response = getProvinceListController.getProvinceList();
+		ResponseEntity<String> response = getProvinceListController.getProvinceList("SOMEUUID");
 		Assertions.assertEquals(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
@@ -72,7 +72,7 @@ class GetProvinceListControllerTest {
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 				HttpStatus.BAD_REQUEST));
-		ResponseEntity<String> response = getProvinceListController.getProvinceList();
+		ResponseEntity<String> response = getProvinceListController.getProvinceList("SOMEUUID");
 		Assertions.assertEquals(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),

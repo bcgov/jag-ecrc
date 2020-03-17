@@ -22,4 +22,6 @@ public final class EcrcExceptionConstants {
 
 	public static final String SERVICE_UNAVAILABLE = "Service unavailable returned";
 
+	public static final String INTERNAL_SERVICE_ERROR = "ECRC Service exception thrown";
+
 }

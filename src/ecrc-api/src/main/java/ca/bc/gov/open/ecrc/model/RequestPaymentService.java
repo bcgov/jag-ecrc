@@ -17,6 +17,7 @@ public class RequestPaymentService {
 	private String minutesToExpire;
 	private String serviceIdRef1;
 	private String partyIdRef2;
+	private String requestGuid;
 
 	public String getTransType() {
 		return transType;
@@ -89,6 +90,10 @@ public class RequestPaymentService {
 	public void setPartyIdRef2(String partyIdRef2) {
 		this.partyIdRef2 = partyIdRef2;
 	}
+
+	public String getRequestGuid() { return requestGuid; }
+
+	public void setRequestGuid(String requestGuid) { this.requestGuid = requestGuid; }
 
 	public String toQueryString() {
         return 	"?transType=" + transType +

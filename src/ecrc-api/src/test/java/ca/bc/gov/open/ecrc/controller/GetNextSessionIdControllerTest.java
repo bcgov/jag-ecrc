@@ -35,7 +35,7 @@ public class GetNextSessionIdControllerTest {
     @Test
     public void testFoundValidOrg() throws EcrcServiceException {
         Mockito.when(ecrcServices.getNextSessionId("SOMEDATA")).thenReturn(new ResponseEntity<>("SOMESTRING", HttpStatus.OK));
-        ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA");
+        ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA", "SOMEUUID");
         Assertions.assertEquals("SOMESTRING", result.getBody());
     }
 
@@ -44,7 +44,7 @@ public class GetNextSessionIdControllerTest {
     public void testNotFoundValidOrg() throws EcrcServiceException {
         Mockito.when(ecrcServices.getNextSessionId("SOMEDATA")).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                 EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.NOT_FOUND));
-        ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA");
+        ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA", "SOMEUUID");
         Assertions.assertEquals(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                 EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), result.getBody());
         Assertions.assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
@@ -55,7 +55,7 @@ public class GetNextSessionIdControllerTest {
     public void testServiceExceptionValidOrg() throws EcrcServiceException {
         Mockito.when(ecrcServices.getNextSessionId("SOMEDATA")).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                 EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.BAD_REQUEST));
-        ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA");
+        ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA", "SOMEUUID");
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
     }
 }

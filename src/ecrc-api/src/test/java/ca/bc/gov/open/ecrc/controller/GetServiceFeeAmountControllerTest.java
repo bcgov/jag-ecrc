@@ -34,7 +34,7 @@ public class GetServiceFeeAmountControllerTest {
     @Test
     public void testFoundValidOrg() throws EcrcServiceException {
         Mockito.when(ecrcServices.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd)).thenReturn(new ResponseEntity<>("SOMESTRING", HttpStatus.OK));
-        ResponseEntity<String> result = getServiceFeeAmountController.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd);
+        ResponseEntity<String> result = getServiceFeeAmountController.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd, "SOMEUUID");
         Assertions.assertEquals("SOMESTRING", result.getBody());
     }
 
@@ -43,7 +43,7 @@ public class GetServiceFeeAmountControllerTest {
     public void testNotFoundValidOrg() throws EcrcServiceException {
         Mockito.when(ecrcServices.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd)).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                 EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.NOT_FOUND));
-        ResponseEntity<String> result = getServiceFeeAmountController.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd);
+        ResponseEntity<String> result = getServiceFeeAmountController.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd, "SOMEUUID");
         Assertions.assertEquals(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                 EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), result.getBody());
         Assertions.assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
@@ -54,7 +54,7 @@ public class GetServiceFeeAmountControllerTest {
     public void testServiceExceptionValidOrg() throws EcrcServiceException {
         Mockito.when(ecrcServices.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd)).thenReturn(new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                 EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.BAD_REQUEST));
-        ResponseEntity<String> result = getServiceFeeAmountController.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd);
+        ResponseEntity<String> result = getServiceFeeAmountController.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd, "SOMEUUID");
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
     }
 }

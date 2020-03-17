@@ -12,6 +12,7 @@ public class RequestUpdateServiceFinancialTxn {
     private String invoice_Id;
     private String transaction_Id;
     private String transaction_Amount;
+    private String requestGuid;
     
     public String getOrgTicketNumber() {
         return orgTicketNumber;
@@ -100,6 +101,10 @@ public class RequestUpdateServiceFinancialTxn {
     public void setTransaction_Amount(String transaction_Amount) {
         this.transaction_Amount = transaction_Amount;
     }
+
+    public String getRequestGuid() { return requestGuid; }
+
+    public void setRequestGuid(String requestGuid) { this.requestGuid = requestGuid; }
 
     public String toQueryString() {
         return "?" +
