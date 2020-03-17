@@ -723,8 +723,14 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
         </ul>
       </form>
-      <p>
+      <p
+        className="heading"
+      >
         Is your current mailing address the same as your current residential address? 
+      </p>
+      <div
+        className="heading"
+      >
         <span>
           Yes 
         </span>
@@ -745,15 +751,20 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           onChange={[Function]}
           type="radio"
         />
-      </p>
+      </div>
+      <br />
+      <div
+        className="heading"
+      >
+        <span
+          className="previousHeader"
+        >
+          Current Mailing Address
+        </span>
+      </div>
       <form
         className="simpleForm"
       >
-        <div
-          className="simpleForm_title"
-        >
-          Current Mailing Address
-        </div>
         <ul>
           <li>
             <div>
@@ -1946,8 +1957,14 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
         </ul>
       </form>
-      <p>
+      <p
+        className="heading"
+      >
         Is your current mailing address the same as your current residential address? 
+      </p>
+      <div
+        className="heading"
+      >
         <span>
           Yes 
         </span>
@@ -1968,15 +1985,20 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           onChange={[Function]}
           type="radio"
         />
-      </p>
+      </div>
+      <br />
+      <div
+        className="heading"
+      >
+        <span
+          className="previousHeader"
+        >
+          Current Mailing Address
+        </span>
+      </div>
       <form
         className="simpleForm"
       >
-        <div
-          className="simpleForm_title"
-        >
-          Current Mailing Address
-        </div>
         <ul>
           <li>
             <div>
