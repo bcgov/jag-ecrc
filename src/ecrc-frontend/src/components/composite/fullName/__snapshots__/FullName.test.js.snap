@@ -12,21 +12,21 @@ exports[`FullName Component Matches the snapshot 1`] = `
   <ul>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="firstName"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="firstName"
           >
             First Name
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_non_editable_gray"
           defaultValue="First"
@@ -42,21 +42,21 @@ exports[`FullName Component Matches the snapshot 1`] = `
     </li>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="middleName"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="middleName"
           >
             Middle Name
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_non_editable_gray"
           defaultValue="Middle"
@@ -72,21 +72,21 @@ exports[`FullName Component Matches the snapshot 1`] = `
     </li>
     <li>
       <div>
-        <div
+        <label
           className="label"
+          htmlFor="lastName"
         >
-          <label
+          <div
             className="textinput_label"
-            htmlFor="lastName"
           >
             Last Name
-          </label>
+          </div>
           
            
           <span
             className="note"
           />
-        </div>
+        </label>
         <input
           className="textinput_non_editable_gray"
           defaultValue="Last"
