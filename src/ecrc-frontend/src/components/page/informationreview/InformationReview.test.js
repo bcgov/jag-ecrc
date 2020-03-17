@@ -137,7 +137,9 @@ describe("InformationReview Component", () => {
       </Router>
     );
     fireEvent.click(getByText(container, "EDIT APPLICATION"));
-    expect(history.location.pathname).toEqual("/ecrc/applicationform");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/applicationform"
+    );
   });
 
   test("Validate Employee relationship flow", async () => {
@@ -244,7 +246,7 @@ describe("InformationReview Component", () => {
 
     await wait(() => {
       expect(setApplicationInfo).toHaveBeenCalled();
-      expect(history.location.pathname).toEqual("/ecrc/success");
+      expect(history.location.pathname).toEqual("/criminalrecordcheck/success");
     });
   });
 });

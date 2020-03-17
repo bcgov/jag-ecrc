@@ -82,7 +82,9 @@ describe("OrgValidation Component", () => {
       expect(setOrg).toHaveBeenCalled();
     });
 
-    expect(history.location.pathname).toEqual("/ecrc/orgverification");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/orgverification"
+    );
   });
 
   test("redirects to Transition page", async () => {
@@ -111,7 +113,9 @@ describe("OrgValidation Component", () => {
       expect(setTransitionReason).toHaveBeenCalled();
     });
 
-    expect(history.location.pathname).toEqual("/ecrc/transition");
+    expect(history.location.pathname).toEqual(
+      "/criminalrecordcheck/transition"
+    );
   });
 
   test("displays org code error", async () => {
