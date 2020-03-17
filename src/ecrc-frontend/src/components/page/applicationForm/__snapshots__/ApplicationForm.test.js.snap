@@ -66,6 +66,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <h1>
           Criminal Record Check - Application
         </h1>
+        <p>
+          Complete the application form below to continue.
+        </p>
         <form
           class="simpleForm"
         >
@@ -172,7 +175,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           <span
             class="note"
           >
-            Including alias, previous name and/or birthname
+            Including birth name, previous name, maiden name, and/or alias
           </span>
         </div>
         <form
@@ -552,14 +555,27 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </li>
           </ul>
         </form>
+        <div
+          class="smallHeading"
+        >
+          <span
+            class="simpleForm_title"
+          >
+            Addresses
+          </span>
+        </div>
+        <div
+          class="heading"
+        >
+          <span
+            class="previousHeader"
+          >
+            Current Residential Address
+          </span>
+        </div>
         <form
           class="simpleForm"
         >
-          <div
-            class="simpleForm_title"
-          >
-            Current Street Address
-          </div>
           <ul>
             <li>
               <div>
@@ -703,16 +719,242 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </li>
           </ul>
         </form>
-        <div>
+        <p
+          class="heading"
+        >
+          Is your current mailing address the same as your current residential address? 
+        </p>
+        <div
+          class="heading"
+        >
           <span>
-            Is your mailing address different from your current street address? 
+            Yes 
           </span>
           <input
-            data-testid="mailingCheckbox"
-            id="mailingAddress"
-            type="checkbox"
+            checked=""
+            data-testid="sameAddress"
+            id="yes"
+            type="radio"
+          />
+          <span>
+             No 
+          </span>
+          <input
+            data-testid="differentAddress"
+            id="no"
+            type="radio"
           />
         </div>
+        <br />
+        <div
+          class="heading"
+        >
+          <span
+            class="previousHeader"
+          >
+            Current Mailing Address
+          </span>
+        </div>
+        <form
+          class="simpleForm"
+        >
+          <ul>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingAddressLine1"
+                >
+                  <div
+                    class="textinput_label"
+                  >
+                    Street
+                  </div>
+                  <span
+                    class="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_editable_white"
+                  id="mailingAddressLine1"
+                  placeholder="Street or PO Box"
+                  type="text"
+                  value="123 Somewhere"
+                />
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingCityNm"
+                >
+                  <div
+                    class="textinput_label"
+                  >
+                    City
+                  </div>
+                  <span
+                    class="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_editable_white"
+                  id="mailingCityNm"
+                  placeholder="City"
+                  type="text"
+                  value="Here"
+                />
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingProvinceNm"
+                >
+                  <div
+                    class="textinput_label"
+                  >
+                    Province
+                  </div>
+                  <span
+                    class="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <select
+                  class="textinput_editable_white"
+                  id="mailingProvinceNm"
+                >
+                  <option
+                    value="British Columbia"
+                  >
+                    British Columbia
+                  </option>
+                  <option
+                    value="Ontario"
+                  >
+                    Ontario
+                  </option>
+                  <option
+                    value="Alberta"
+                  >
+                    Alberta
+                  </option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingPostalCodeTxt"
+                >
+                  <div
+                    class="textinput_label"
+                  >
+                    Postal Code
+                  </div>
+                  <span
+                    class="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_editable_white"
+                  id="mailingPostalCodeTxt"
+                  placeholder="V9V 9V9"
+                  type="text"
+                  value="V9V 9V9"
+                />
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="mailingCountryNm"
+                >
+                  <div
+                    class="textinput_label"
+                  >
+                    Country
+                  </div>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_non_editable_gray"
+                  id="mailingCountryNm"
+                  readonly=""
+                  type="text"
+                  value="Canada"
+                />
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+          </ul>
+        </form>
+        <section>
+          Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
+          <a
+            href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+          >
+            Service BC
+          </a>
+          , 
+          <a
+            href="https://www.icbc.com/Pages/default.aspx"
+          >
+            ICBC
+          </a>
+           or 
+          <a
+            href="https://www.addresschange.gov.bc.ca/"
+          >
+            AddressChangeBC
+          </a>
+        </section>
         <div
           class="buttons"
         >

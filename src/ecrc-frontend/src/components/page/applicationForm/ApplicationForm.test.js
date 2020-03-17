@@ -165,7 +165,7 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     expect(getByText(container, "Current Mailing Address")).toBeInTheDocument();
 
@@ -292,7 +292,7 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -467,7 +467,7 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -510,7 +510,7 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -548,7 +548,7 @@ describe("ApplicationForm Component", () => {
       </Router>
     );
 
-    fireEvent.click(getByTestId(container, "mailingCheckbox"));
+    fireEvent.click(getByTestId(container, "differentAddress"));
 
     await wait(() => {});
 
