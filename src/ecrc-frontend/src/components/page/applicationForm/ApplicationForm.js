@@ -557,8 +557,7 @@ export default function ApplicationForm({
   };
 
   const mailingAddress = event => {
-    console.log(event.target.value);
-    setSameAddress(event.target.value === "true" ? true : false);
+    setSameAddress(event.target.id === "yes");
   };
 
   if (toHome) {
@@ -615,19 +614,17 @@ export default function ApplicationForm({
           <p>
             Is your current mailing address the same as your current residential
             address?&nbsp;
-            <label htmlFor="yes">Yes</label>
+            <span>Yes</span>
             <input
               type="radio"
               id="yes"
-              value={true}
               checked={sameAddress}
               onChange={mailingAddress}
             />
-            <label htmlFor="no">No</label>
+            <span>No</span>
             <input
               type="radio"
               id="no"
-              value={false}
               checked={!sameAddress}
               onChange={mailingAddress}
             />
