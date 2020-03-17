@@ -48,6 +48,7 @@ describe("Success Page Component", () => {
 
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
+    sessionStorage.setItem("uuid", "unique123");
     generateJWTToken({
       actionsPerformed: ["infoReview"]
     });

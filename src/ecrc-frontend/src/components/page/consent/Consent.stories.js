@@ -15,6 +15,7 @@ const page = {
 };
 
 sessionStorage.setItem("validator", "secret");
+sessionStorage.setItem("uuid", "unique123");
 
 generateJWTToken({ authorities: ["Authorized"] });
 
