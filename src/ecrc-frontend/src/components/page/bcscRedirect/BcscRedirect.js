@@ -97,7 +97,7 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
           </div>
 
           <div style={{ marginTop: "40px" }}>
-            <a href="/ecrc/transition">
+            <a href="/criminalrecordcheck/transition">
               I do not have a BC Services Card, or I have non-photo BC Services
               Card
             </a>
