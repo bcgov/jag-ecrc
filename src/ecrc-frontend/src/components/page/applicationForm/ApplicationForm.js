@@ -12,9 +12,9 @@ import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
   generateJWTToken,
-  isAuthenticated,
   accessJWTToken,
-  isActionPerformed
+  isActionPerformed,
+  isAuthorized
 } from "../../../modules/AuthenticationHelper";
 
 export default function ApplicationForm({
@@ -99,12 +99,13 @@ export default function ApplicationForm({
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    if (!isAuthenticated() || !isActionPerformed("consent")) setToHome(true);
+    if (!isAuthorized() || !isActionPerformed("consent")) setToHome(true);
 
     const token = sessionStorage.getItem("jwt");
+    const uuid = sessionStorage.getItem("uuid");
 
     axios
-      .get("/ecrc/private/getProvinceList", {
+      .get(`/ecrc/private/getProvinceList?requestGuid=${uuid}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

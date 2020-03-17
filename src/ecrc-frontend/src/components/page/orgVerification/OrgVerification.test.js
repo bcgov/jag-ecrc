@@ -31,6 +31,7 @@ describe("OrgVerification Component", () => {
   window.scrollTo = jest.fn();
 
   sessionStorage.setItem("validator", "secret");
+  sessionStorage.setItem("uuid", "unique123");
   generateJWTToken({ key: "val" });
 
   test("Matches the snapshot", () => {

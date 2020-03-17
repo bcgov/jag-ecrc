@@ -9,7 +9,8 @@ import "../page.css";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
   generateJWTToken,
-  storeValidator
+  storeValidator,
+  storeUUID
 } from "../../../modules/AuthenticationHelper";
 
 export default function OrgValidation({
@@ -25,14 +26,17 @@ export default function OrgValidation({
   useEffect(() => {
     // get the initial validator from backend and store it for subsequent requests (for JWT)
     storeValidator();
+    storeUUID();
 
     window.scrollTo(0, 0);
   }, []);
 
   const orgValidation = () => {
+    const uuid = sessionStorage.getItem("uuid");
+
     axios
       .get(
-        `/ecrc/protected/doAuthenticateUser?orgTicketNumber=${orgTicketNumber}`,
+        `/ecrc/protected/doAuthenticateUser?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

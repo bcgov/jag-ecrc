@@ -71,7 +71,11 @@ describe("InformationReview Component", () => {
 
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
-    generateJWTToken({ actionsPerformed: ["appForm"] });
+    sessionStorage.setItem("uuid", "unique123");
+    generateJWTToken({
+      actionsPerformed: ["appForm"],
+      authorities: ["Authorized"]
+    });
   });
 
   test("Matches the snapshot", () => {

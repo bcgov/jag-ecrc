@@ -26,7 +26,7 @@ export default function OrgVerification({ page: { header, org } }) {
     }
 
     window.scrollTo(0, 0);
-  }, []);
+  }, [org.orgNm]);
 
   const orgVerified = () => {
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));

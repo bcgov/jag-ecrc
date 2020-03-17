@@ -8,9 +8,9 @@ import Footer from "../../base/footer/Footer";
 import { Button } from "../../base/button/Button";
 import "./UserConfirmation.css";
 import {
-  isAuthenticated,
   generateJWTToken,
-  accessJWTToken
+  accessJWTToken,
+  isAuthenticated
 } from "../../../modules/AuthenticationHelper";
 
 export default function UserConfirmation({ page: { header, setApplicant } }) {
@@ -27,9 +27,10 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
     if (!isAuthenticated() || !code) setToHome(true);
 
     const token = sessionStorage.getItem("jwt");
+    const uuid = sessionStorage.getItem("uuid");
 
     axios
-      .get(`/ecrc/protected/login?code=${code}`, {
+      .get(`/ecrc/protected/login?code=${code}&requestGuid=${uuid}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
