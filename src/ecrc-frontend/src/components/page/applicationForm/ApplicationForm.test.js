@@ -137,7 +137,6 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    // all the testing is doing
     expect(getByDisplayValue(container, "Bob")).toBeInTheDocument();
     expect(getByDisplayValue(container, "Rob")).toBeInTheDocument();
     expect(getByDisplayValue(container, "1234567890")).toBeInTheDocument();
