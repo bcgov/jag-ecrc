@@ -370,7 +370,7 @@ export default function ApplicationForm({
   };
 
   const mailing = {
-    title: "Current Mailing Address",
+    title: null,
     textInputs: [
       {
         label: "Street",
@@ -630,9 +630,11 @@ export default function ApplicationForm({
             <span className="previousHeader">Current Residential Address</span>
           </div>
           <SimpleForm simpleForm={address} />
-          <p>
+          <p className="heading">
             Is your current mailing address the same as your current residential
             address?&nbsp;
+          </p>
+          <div className="heading">
             <span>Yes&nbsp;</span>
             <input
               type="radio"
@@ -649,7 +651,11 @@ export default function ApplicationForm({
               onChange={mailingAddress}
               data-testid="differentAddress"
             />
-          </p>
+          </div>
+          <br />
+          <div className="heading">
+            <span className="previousHeader">Current Mailing Address</span>
+          </div>
           <SimpleForm simpleForm={mailing} />
           <section>
             Entering your mailing address in this application will not update

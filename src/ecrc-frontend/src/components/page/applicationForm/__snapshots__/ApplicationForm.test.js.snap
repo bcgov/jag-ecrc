@@ -719,8 +719,14 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </li>
           </ul>
         </form>
-        <p>
+        <p
+          class="heading"
+        >
           Is your current mailing address the same as your current residential address? 
+        </p>
+        <div
+          class="heading"
+        >
           <span>
             Yes 
           </span>
@@ -738,15 +744,20 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             id="no"
             type="radio"
           />
-        </p>
+        </div>
+        <br />
+        <div
+          class="heading"
+        >
+          <span
+            class="previousHeader"
+          >
+            Current Mailing Address
+          </span>
+        </div>
         <form
           class="simpleForm"
         >
-          <div
-            class="simpleForm_title"
-          >
-            Current Mailing Address
-          </div>
           <ul>
             <li>
               <div>
