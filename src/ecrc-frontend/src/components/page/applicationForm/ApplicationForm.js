@@ -310,7 +310,7 @@ export default function ApplicationForm({
   }
 
   const address = {
-    title: "Current Street Address",
+    title: null,
     textInputs: [
       {
         label: "Street",
@@ -560,11 +560,12 @@ export default function ApplicationForm({
       <div className="page">
         <div className="content col-md-8">
           <h1>Criminal Record Check - Application</h1>
+          <p>Complete the application form below to continue.</p>
           <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
           <div className="heading">
             <span className="previousHeader">PREVIOUS NAME&nbsp;</span>
             <span className="note">
-              Including alias, previous name and/or birthname
+              Including birth name, previous name, maiden name, and/or alias
             </span>
           </div>
           <FullName title={null} fullname={previousNameOne} />
@@ -589,6 +590,12 @@ export default function ApplicationForm({
           )}
           <SimpleForm simpleForm={applicantInformation} />
           <SimpleForm simpleForm={positionInformation} />
+          <div className="smallHeading">
+            <span className="simpleForm_title">Addresses</span>
+          </div>
+          <div className="heading">
+            <span className="previousHeader">Current Residential Address</span>
+          </div>
           <SimpleForm simpleForm={address} />
           <p>
             Is your mailing address different from your current street
