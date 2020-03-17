@@ -76,21 +76,21 @@ describe("ApplicationForm Component", () => {
   });
 
   test("Displays Organization Facility when Schedule D Org", async () => {
-    const { getByText } = render(<ApplicationForm page={page} />);
+    const { container } = render(<ApplicationForm page={page} />);
     await wait(() => {});
 
-    expect(getByText("Organization Facility")).toBeInTheDocument();
+    expect(getByText(container, "Organization Facility")).toBeInTheDocument();
   });
 
   test("Does not display Organization Facility when not Schedule D Org", async () => {
-    const { queryByText } = render(
+    const { container } = render(
       <ApplicationForm
         page={{ ...page, org: { defaultScheduleTypeCd: "WBSC" } }}
       />
     );
     await wait(() => {});
 
-    expect(queryByText("Organization Facility")).toBeNull();
+    expect(queryByText(container, "Organization Facility")).toBeNull();
   });
 
   test("Displays Additional Aliases", async () => {
@@ -122,17 +122,17 @@ describe("ApplicationForm Component", () => {
       organizationFacility: "PBS"
     };
 
-    const { getByDisplayValue } = render(
+    const { container } = render(
       <ApplicationForm
         page={{ ...page, applicant: { ...returningApplicant } }}
       />
     );
     await wait(() => {});
 
-    expect(getByDisplayValue("Bob")).toBeInTheDocument();
-    expect(getByDisplayValue("Rob")).toBeInTheDocument();
-    expect(getByDisplayValue("1234567890")).toBeInTheDocument();
-    expect(getByDisplayValue("PBS")).toBeInTheDocument();
+    expect(getByDisplayValue(container, "Bob")).toBeInTheDocument();
+    expect(getByDisplayValue(container, "Rob")).toBeInTheDocument();
+    expect(getByDisplayValue(container, "1234567890")).toBeInTheDocument();
+    expect(getByDisplayValue(container, "PBS")).toBeInTheDocument();
   });
 
   test("Prevents navigation if different address checked but not set", async () => {
