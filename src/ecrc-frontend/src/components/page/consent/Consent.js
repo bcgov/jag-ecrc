@@ -65,14 +65,10 @@ export default function Consent({ page: { header } }) {
 
   if (toApplicationForm) {
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [...currentPayload.actionsPerformed, "consent"];
     const newPayload = {
       ...currentPayload,
-      actionsPerformed: [
-        "orgVerification",
-        "tou",
-        "userConfirmation",
-        "consent"
-      ]
+      actionsPerformed
     };
     generateJWTToken(newPayload);
     return <Redirect to="/ecrc/applicationform" />;

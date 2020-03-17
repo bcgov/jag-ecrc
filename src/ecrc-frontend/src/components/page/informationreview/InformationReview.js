@@ -407,16 +407,10 @@ export default function InformationReview({
 
   if (toSuccess) {
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [...currentPayload.actionsPerformed, "infoReview"];
     const newPayload = {
       ...currentPayload,
-      actionsPerformed: [
-        "orgVerification",
-        "tou",
-        "userConfirmation",
-        "consent",
-        "appForm",
-        "infoReview"
-      ]
+      actionsPerformed
     };
     generateJWTToken(newPayload);
     return <Redirect to="/ecrc/success" />;

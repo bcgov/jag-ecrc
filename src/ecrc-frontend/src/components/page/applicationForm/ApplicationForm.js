@@ -568,15 +568,10 @@ export default function ApplicationForm({
 
   if (toInfoReview) {
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [...currentPayload.actionsPerformed, "appForm"];
     const newPayload = {
       ...currentPayload,
-      actionsPerformed: [
-        "orgVerification",
-        "tou",
-        "userConfirmation",
-        "consent",
-        "appForm"
-      ]
+      actionsPerformed
     };
     generateJWTToken(newPayload);
     return <Redirect to="/ecrc/informationreview" />;

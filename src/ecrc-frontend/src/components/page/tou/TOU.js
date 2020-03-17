@@ -43,9 +43,10 @@ export default function TOU({ page: { header } }) {
 
   if (toBCSCRedirect) {
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const actionsPerformed = [...currentPayload.actionsPerformed, "tou"];
     const newPayload = {
       ...currentPayload,
-      actionsPerformed: ["orgVerification", "tou"]
+      actionsPerformed
     };
     generateJWTToken(newPayload);
     return <Redirect to="/ecrc/bcscRedirect" />;
