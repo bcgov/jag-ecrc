@@ -33,6 +33,15 @@ describe("OrgValidation Component", () => {
   window.scrollTo = jest.fn();
 
   test("Matches the snapshot", () => {
+    axios.get.mockImplementation(() =>
+      Promise.resolve({
+        data: "string",
+        accessCodeResponse: {
+          orgNm: "Test Org Name"
+        }
+      })
+    );
+
     const orgValidationPage = create(
       <MemoryRouter>
         <OrgValidation page={page} />
