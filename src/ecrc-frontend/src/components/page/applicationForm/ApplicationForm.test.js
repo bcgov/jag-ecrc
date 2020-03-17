@@ -546,13 +546,15 @@ describe("ApplicationForm Component", () => {
 
     expect(provinces).toHaveLength(2);
 
-    // fireEvent.click(provinces[1]);
+    fireEvent.mouseDown(provinces[1]);
 
     expect(getByText(container, "Ontario")).toBeInTheDocument();
 
-    fireEvent.click(getByText(container, "Ontario"));
+    fireEvent.change(provinces[1], {
+      target: { value: "Ontario" }
+    });
 
-    expect(getByText(container, "Ontario")).toBeInTheDocument();
+    expect(getByDisplayValue(container, "Ontario")).toBeInTheDocument();
   });
 
   test("Redirect to Home", async () => {
