@@ -27,7 +27,7 @@ export const TextInput = ({
   }
 
   const labelPart = (
-    <label className="label" htmlFor={id}>
+    <label htmlFor={id} className="label">
       <div className="textinput_label">{label}</div>
       {asterisk}&nbsp;
       <span className="note">{note}</span>
