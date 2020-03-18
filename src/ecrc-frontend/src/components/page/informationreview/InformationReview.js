@@ -161,7 +161,14 @@ export default function InformationReview({
   }
 
   const previousNamesTable = {
-    header: "PREVIOUS NAMES",
+    header: (
+      <div>
+        PREVIOUS NAMES
+        <span className="">
+          Including birth name, previous name, maiden name, and alias
+        </span>
+      </div>
+    ),
     tableElements: previousNamesElement
   };
 
@@ -441,10 +448,9 @@ export default function InformationReview({
       <div className="page">
         <div className="content col-md-8">
           <h1>Information Review</h1>
-          <p>TEXT TO BE CONFIRMED</p>
           <p>
-            Please confirm that the information provided s accurate. If it is
-            not, please do NOT proceed and contact __________
+            Please confirm that the information provided below is accurate. If
+            it is not, please select Edit Application.
           </p>
           <Table table={personalInfoTable} />
           {previousNamesElement.length > 0 ? (
