@@ -19,7 +19,8 @@ const org = {
   provinceNm: "British Columbia",
   countryNm: "Canada",
   contactPhoneNo: "250 123 4567",
-  orgApplicantRelationship: "Employee"
+  orgApplicantRelationship: "Employee",
+  defaultCrcScopeLevelCd: "WWCA"
 };
 
 const setOrg = () => {};
@@ -30,9 +31,25 @@ const page = {
   header
 };
 
-export const Default = () => (
+export const WorksWithAdultsAndChildren = () => (
   <MemoryRouter>
     <OrgVerification page={page} />
+  </MemoryRouter>
+);
+
+export const WorksWithVulnerableAdults = () => (
+  <MemoryRouter>
+    <OrgVerification
+      page={{ ...page, org: { ...org, defaultCrcScopeLevelCd: "WWAD" } }}
+    />
+  </MemoryRouter>
+);
+
+export const WorksWithChildren = () => (
+  <MemoryRouter>
+    <OrgVerification
+      page={{ ...page, org: { ...org, defaultCrcScopeLevelCd: "WWCH" } }}
+    />
   </MemoryRouter>
 );
 

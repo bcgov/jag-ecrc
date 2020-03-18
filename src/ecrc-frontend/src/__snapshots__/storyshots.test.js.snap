@@ -4665,7 +4665,38 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                 <h2
                   className="heading-style"
                 >
-                  Useful Links
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 384 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle textAlign"
+                    >
+                      Useful Links
+                    </div>
+                  </div>
                 </h2>
                 <div
                   className="submit-content"
@@ -5332,7 +5363,38 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                 <h2
                   className="heading-style"
                 >
-                  Useful Links
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 384 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle textAlign"
+                    >
+                      Useful Links
+                    </div>
+                  </div>
                 </h2>
                 <div
                   className="submit-content"
@@ -6983,7 +7045,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots OrgVerification Default 1`] = `
+exports[`Storyshots OrgVerification Mobile 1`] = `
 <main>
   <header>
     <nav
@@ -7049,7 +7111,7 @@ exports[`Storyshots OrgVerification Default 1`] = `
         Organization Information
       </h1>
       <p>
-        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it’s not, please do NOT proceed and contact the organization that has requested you to complete a criminal record check.
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
       <table>
         <thead>
@@ -7098,7 +7160,20 @@ Canada
             <th
               colSpan="2"
             >
-              Organization Type
+              <div>
+                Role of Applicant 
+                <span
+                  className="smallTableHeader"
+                >
+                  (Employee or Volunteer)
+                </span>
+                 and working category 
+                <span
+                  className="smallTableHeader"
+                >
+                  (e.g. working with children)
+                </span>
+              </div>
             </th>
           </tr>
         </thead>
@@ -7111,15 +7186,26 @@ Canada
               Employee
             </td>
           </tr>
+          <tr>
+            <td>
+              Works with category
+            </td>
+            <td>
+              Children & Vulnerable Adults
+            </td>
+          </tr>
         </tbody>
       </table>
       <div>
         <p>
-          To continue with your online criminal record check request, please ensure you meet the following criteria:
+          To continue with your online request for a criminal record check:
         </p>
         <ul>
           <li>
-            You must have a BC Service Card Account. If you do not already have a BC Service Card Account, you can initiate the process at the
+            Only BC Services cards with a photo are accepted at this time.
+          </li>
+          <li>
+            If you do not already have a BC Service Card Account, you can initiate the process at the
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
             >
@@ -7128,12 +7214,35 @@ Canada
             .
           </li>
           <li>
-            Pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for criminal record check, no payment is required.
+            If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
+          </li>
+          <li>
+            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
+          </li>
+          <li>
+            There is no fee for Volunteer applications.
           </li>
         </ul>
         <p>
-          Once the criminal record check is complete, the organization noted above will receive the results.
+          The organization noted above will be notified:
         </p>
+        <ol
+          className="contactList"
+        >
+          <li>
+            When you are cleared to work with children and/or vulnerable adults.
+          </li>
+        </ol>
+        <ol
+          className="contactList"
+        >
+          <li>
+            If you have an outstanding charge or conviction relating to a relevant or specified offence; and
+          </li>
+          <li>
+            a determination of risk or no risk has been made by the Deputy Registrar.
+          </li>
+        </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
@@ -7146,7 +7255,7 @@ Canada
           onClick={[Function]}
           type="submit"
         >
-          Back
+          Cancel
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -7162,7 +7271,7 @@ Canada
     >
       <div>
         <div
-          className="wide-dashboard-spacing"
+          className="dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -7218,7 +7327,7 @@ Canada
                     <div
                       className="sideCardTitle"
                     >
-                      Using the BC Services Card
+                      Get a BC Service Card
                     </div>
                   </div>
                 </h2>
@@ -7226,38 +7335,17 @@ Canada
                   className="submit-content"
                 >
                   <span>
+                    B.C. residents who have lived in the province for at least six months must use a BC Services Card to submit an online Criminal Record Check. Learn how to get a card.
                     <div
-                      className="side-card-text"
+                      className="getServiceButton"
                     >
-                      If you have a BC Services Card, you must use it to log in to the online security verification page.
-                    </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                      <button
+                        className="btn btn-primary dark-button btn btn-md"
+                        onClick={[Function]}
+                        type="submit"
                       >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about the BC Services Card.
-                        </div>
-                      </a>
-                    </div>
-                    <div
-                      className="side-card-text"
-                    >
-                      <br />
-                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
-                    </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-                      >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about BC Services Card eligibility.
-                        </div>
-                      </a>
+                        READ MORE
+                      </button>
                     </div>
                   </span>
                 </div>
@@ -7295,7 +7383,38 @@ Canada
                 <h2
                   className="heading-style"
                 >
-                  Useful Links
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 384 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle textAlign"
+                    >
+                      Useful Links
+                    </div>
+                  </div>
                 </h2>
                 <div
                   className="submit-content"
@@ -7586,7 +7705,7 @@ Canada
 </main>
 `;
 
-exports[`Storyshots OrgVerification Mobile 1`] = `
+exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
 <main>
   <header>
     <nav
@@ -7652,7 +7771,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
         Organization Information
       </h1>
       <p>
-        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it’s not, please do NOT proceed and contact the organization that has requested you to complete a criminal record check.
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
       <table>
         <thead>
@@ -7701,7 +7820,20 @@ Canada
             <th
               colSpan="2"
             >
-              Organization Type
+              <div>
+                Role of Applicant 
+                <span
+                  className="smallTableHeader"
+                >
+                  (Employee or Volunteer)
+                </span>
+                 and working category 
+                <span
+                  className="smallTableHeader"
+                >
+                  (e.g. working with children)
+                </span>
+              </div>
             </th>
           </tr>
         </thead>
@@ -7714,15 +7846,26 @@ Canada
               Employee
             </td>
           </tr>
+          <tr>
+            <td>
+              Works with category
+            </td>
+            <td>
+              Children & Vulnerable Adults
+            </td>
+          </tr>
         </tbody>
       </table>
       <div>
         <p>
-          To continue with your online criminal record check request, please ensure you meet the following criteria:
+          To continue with your online request for a criminal record check:
         </p>
         <ul>
           <li>
-            You must have a BC Service Card Account. If you do not already have a BC Service Card Account, you can initiate the process at the
+            Only BC Services cards with a photo are accepted at this time.
+          </li>
+          <li>
+            If you do not already have a BC Service Card Account, you can initiate the process at the
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
             >
@@ -7731,12 +7874,35 @@ Canada
             .
           </li>
           <li>
-            Pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for criminal record check, no payment is required.
+            If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
+          </li>
+          <li>
+            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
+          </li>
+          <li>
+            There is no fee for Volunteer applications.
           </li>
         </ul>
         <p>
-          Once the criminal record check is complete, the organization noted above will receive the results.
+          The organization noted above will be notified:
         </p>
+        <ol
+          className="contactList"
+        >
+          <li>
+            When you are cleared to work with children and/or vulnerable adults.
+          </li>
+        </ol>
+        <ol
+          className="contactList"
+        >
+          <li>
+            If you have an outstanding charge or conviction relating to a relevant or specified offence; and
+          </li>
+          <li>
+            a determination of risk or no risk has been made by the Deputy Registrar.
+          </li>
+        </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
@@ -7749,7 +7915,7 @@ Canada
           onClick={[Function]}
           type="submit"
         >
-          Back
+          Cancel
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -7765,7 +7931,7 @@ Canada
     >
       <div>
         <div
-          className="wide-dashboard-spacing"
+          className="dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -7821,7 +7987,7 @@ Canada
                     <div
                       className="sideCardTitle"
                     >
-                      Using the BC Services Card
+                      Get a BC Service Card
                     </div>
                   </div>
                 </h2>
@@ -7829,38 +7995,17 @@ Canada
                   className="submit-content"
                 >
                   <span>
+                    B.C. residents who have lived in the province for at least six months must use a BC Services Card to submit an online Criminal Record Check. Learn how to get a card.
                     <div
-                      className="side-card-text"
+                      className="getServiceButton"
                     >
-                      If you have a BC Services Card, you must use it to log in to the online security verification page.
-                    </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                      <button
+                        className="btn btn-primary dark-button btn btn-md"
+                        onClick={[Function]}
+                        type="submit"
                       >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about the BC Services Card.
-                        </div>
-                      </a>
-                    </div>
-                    <div
-                      className="side-card-text"
-                    >
-                      <br />
-                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
-                    </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-                      >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about BC Services Card eligibility.
-                        </div>
-                      </a>
+                        READ MORE
+                      </button>
                     </div>
                   </span>
                 </div>
@@ -7898,7 +8043,1358 @@ Canada
                 <h2
                   className="heading-style"
                 >
-                  Useful Links
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 384 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle textAlign"
+                    >
+                      Useful Links
+                    </div>
+                  </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <li
+                      className="menuItem"
+                    >
+                      <a
+                        href="/tbd"
+                      >
+                        I'm an employee or volunteer
+                      </a>
+                    </li>
+                    <li
+                      className="menuItem"
+                    >
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+                      >
+                        Electronic Identity Verification (EIV)
+                      </a>
+                    </li>
+                    <li
+                      className="menuItem"
+                    >
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+                      >
+                        Results and Reconsideration
+                      </a>
+                    </li>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wide-dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle"
+                    >
+                      Contact the Criminal Records Review Program
+                    </div>
+                  </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <div
+                      className="side-card-text"
+                    >
+                      For questions about criminal record checks, contact the Criminal Records Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
+                    </div>
+                    <div
+                      className="side-card-text"
+                    >
+                      <br />
+                      <div>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
+                          />
+                        </svg>
+                         
+                        <div
+                          className="contact-title"
+                        >
+                          Fax: 
+                        </div>
+                        (250)356-1889
+                      </div>
+                      <div>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                          />
+                        </svg>
+                         
+                        <div
+                          className="contact-title"
+                        >
+                          Office: 
+                        </div>
+                        Toll free - 1 855 587-0185 (press option 2)
+                      </div>
+                      <div>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                          />
+                        </svg>
+                          
+                        <div
+                          className="contact-title"
+                        >
+                          Email: 
+                        </div>
+                        <a
+                          className="email"
+                          href="mailto:criminalrecords@gov.bc.ca"
+                        >
+                          criminalrecords@gov.bc.ca
+                        </a>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+    style={Object {}}
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
+
+exports[`Storyshots OrgVerification Works With Children 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        />
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Organization Information
+      </h1>
+      <p>
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              Organization Information
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Organization Name
+            </td>
+            <td>
+              Test Org Name
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Address
+            </td>
+            <td>
+              123 Somewhere Lane
+Nowhere
+British Columbia
+undefined
+Canada
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Phone Number
+            </td>
+            <td>
+              250 123 4567
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              <div>
+                Role of Applicant 
+                <span
+                  className="smallTableHeader"
+                >
+                  (Employee or Volunteer)
+                </span>
+                 and working category 
+                <span
+                  className="smallTableHeader"
+                >
+                  (e.g. working with children)
+                </span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Role
+            </td>
+            <td>
+              Employee
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Works with category
+            </td>
+            <td>
+              Children
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <p>
+          To continue with your online request for a criminal record check:
+        </p>
+        <ul>
+          <li>
+            Only BC Services cards with a photo are accepted at this time.
+          </li>
+          <li>
+            If you do not already have a BC Service Card Account, you can initiate the process at the
+            <a
+              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+            >
+              BC Service Card website
+            </a>
+            .
+          </li>
+          <li>
+            If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
+          </li>
+          <li>
+            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
+          </li>
+          <li>
+            There is no fee for Volunteer applications.
+          </li>
+        </ul>
+        <p>
+          The organization noted above will be notified:
+        </p>
+        <ol
+          className="contactList"
+        >
+          <li>
+            When you are cleared to work with children and/or vulnerable adults.
+          </li>
+        </ol>
+        <ol
+          className="contactList"
+        >
+          <li>
+            If you have an outstanding charge or conviction relating to a relevant or specified offence; and
+          </li>
+          <li>
+            a determination of risk or no risk has been made by the Deputy Registrar.
+          </li>
+        </ol>
+        <p>
+          By selecting continue, you are consenting to have your information released to this organization.
+        </p>
+      </div>
+      <div
+        className="buttons"
+      >
+        <button
+          className="btn ecrc_go_btn btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Cancel
+        </button>
+        <button
+          className="btn ecrc_go_btn btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+    <div
+      className="sidecard"
+    >
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 576 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle"
+                    >
+                      Get a BC Service Card
+                    </div>
+                  </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    B.C. residents who have lived in the province for at least six months must use a BC Services Card to submit an online Criminal Record Check. Learn how to get a card.
+                    <div
+                      className="getServiceButton"
+                    >
+                      <button
+                        className="btn btn-primary dark-button btn btn-md"
+                        onClick={[Function]}
+                        type="submit"
+                      >
+                        READ MORE
+                      </button>
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 384 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle textAlign"
+                    >
+                      Useful Links
+                    </div>
+                  </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <li
+                      className="menuItem"
+                    >
+                      <a
+                        href="/tbd"
+                      >
+                        I'm an employee or volunteer
+                      </a>
+                    </li>
+                    <li
+                      className="menuItem"
+                    >
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+                      >
+                        Electronic Identity Verification (EIV)
+                      </a>
+                    </li>
+                    <li
+                      className="menuItem"
+                    >
+                      <a
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+                      >
+                        Results and Reconsideration
+                      </a>
+                    </li>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wide-dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle"
+                    >
+                      Contact the Criminal Records Review Program
+                    </div>
+                  </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <div
+                      className="side-card-text"
+                    >
+                      For questions about criminal record checks, contact the Criminal Records Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
+                    </div>
+                    <div
+                      className="side-card-text"
+                    >
+                      <br />
+                      <div>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
+                          />
+                        </svg>
+                         
+                        <div
+                          className="contact-title"
+                        >
+                          Fax: 
+                        </div>
+                        (250)356-1889
+                      </div>
+                      <div>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                          />
+                        </svg>
+                         
+                        <div
+                          className="contact-title"
+                        >
+                          Office: 
+                        </div>
+                        Toll free - 1 855 587-0185 (press option 2)
+                      </div>
+                      <div>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                          />
+                        </svg>
+                          
+                        <div
+                          className="contact-title"
+                        >
+                          Email: 
+                        </div>
+                        <a
+                          className="email"
+                          href="mailto:criminalrecords@gov.bc.ca"
+                        >
+                          criminalrecords@gov.bc.ca
+                        </a>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+    style={Object {}}
+  >
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
+
+exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        />
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Organization Information
+      </h1>
+      <p>
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              Organization Information
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Organization Name
+            </td>
+            <td>
+              Test Org Name
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Address
+            </td>
+            <td>
+              123 Somewhere Lane
+Nowhere
+British Columbia
+undefined
+Canada
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Phone Number
+            </td>
+            <td>
+              250 123 4567
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              <div>
+                Role of Applicant 
+                <span
+                  className="smallTableHeader"
+                >
+                  (Employee or Volunteer)
+                </span>
+                 and working category 
+                <span
+                  className="smallTableHeader"
+                >
+                  (e.g. working with children)
+                </span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Role
+            </td>
+            <td>
+              Employee
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Works with category
+            </td>
+            <td>
+              Vulnerable Adults
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <p>
+          To continue with your online request for a criminal record check:
+        </p>
+        <ul>
+          <li>
+            Only BC Services cards with a photo are accepted at this time.
+          </li>
+          <li>
+            If you do not already have a BC Service Card Account, you can initiate the process at the
+            <a
+              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+            >
+              BC Service Card website
+            </a>
+            .
+          </li>
+          <li>
+            If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
+          </li>
+          <li>
+            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
+          </li>
+          <li>
+            There is no fee for Volunteer applications.
+          </li>
+        </ul>
+        <p>
+          The organization noted above will be notified:
+        </p>
+        <ol
+          className="contactList"
+        >
+          <li>
+            When you are cleared to work with children and/or vulnerable adults.
+          </li>
+        </ol>
+        <ol
+          className="contactList"
+        >
+          <li>
+            If you have an outstanding charge or conviction relating to a relevant or specified offence; and
+          </li>
+          <li>
+            a determination of risk or no risk has been made by the Deputy Registrar.
+          </li>
+        </ol>
+        <p>
+          By selecting continue, you are consenting to have your information released to this organization.
+        </p>
+      </div>
+      <div
+        className="buttons"
+      >
+        <button
+          className="btn ecrc_go_btn btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Cancel
+        </button>
+        <button
+          className="btn ecrc_go_btn btn btn-sm"
+          onClick={[Function]}
+          type="submit"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+    <div
+      className="sidecard"
+    >
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 576 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle"
+                    >
+                      Get a BC Service Card
+                    </div>
+                  </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    B.C. residents who have lived in the province for at least six months must use a BC Services Card to submit an online Criminal Record Check. Learn how to get a card.
+                    <div
+                      className="getServiceButton"
+                    >
+                      <button
+                        className="btn btn-primary dark-button btn btn-md"
+                        onClick={[Function]}
+                        type="submit"
+                      >
+                        READ MORE
+                      </button>
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 384 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle textAlign"
+                    >
+                      Useful Links
+                    </div>
+                  </div>
                 </h2>
                 <div
                   className="submit-content"
@@ -8800,6 +10296,94 @@ exports[`Storyshots SideCards Criminal Record 1`] = `
 </div>
 `;
 
+exports[`Storyshots SideCards Get Bc Service 1`] = `
+<div>
+  <div
+    className="dashboard-spacing"
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-12"
+        style={
+          Object {
+            "paddingTop": "30px",
+            "position": "relative",
+          }
+        }
+      >
+        <p />
+        <section
+          className="submit-container"
+          id="blue-section"
+        >
+          <h2
+            className="heading-style"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="round-icon-wrapper"
+              >
+                <svg
+                  className="side-card-icon"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 576 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="sideCardTitle"
+              >
+                Get a BC Service Card
+              </div>
+            </div>
+          </h2>
+          <div
+            className="submit-content"
+          >
+            <span>
+              B.C. residents who have lived in the province for at least six months must use a BC Services Card to submit an online Criminal Record Check. Learn how to get a card.
+              <div
+                className="getServiceButton"
+              >
+                <button
+                  className="btn btn-primary dark-button btn btn-md"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  READ MORE
+                </button>
+              </div>
+            </span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots SideCards Personal Information 1`] = `
 <div>
   <div
@@ -8897,7 +10481,38 @@ exports[`Storyshots SideCards Useful Links 1`] = `
           <h2
             className="heading-style"
           >
-            Useful Links
+            <div
+              className="row"
+            >
+              <div
+                className="round-icon-wrapper"
+              >
+                <svg
+                  className="side-card-icon"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 384 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="sideCardTitle textAlign"
+              >
+                Useful Links
+              </div>
+            </div>
           </h2>
           <div
             className="submit-content"
