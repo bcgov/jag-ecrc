@@ -4196,9 +4196,10 @@ exports[`Storyshots Error Default 1`] = `
       </h1>
       <br />
       <p>
-        Error description: 
+        The error description is below. If this error persists, please try again later.
+        <br />
+        <br />
         "403"
-        . Please try again later.
       </p>
       <div
         className="buttons"
@@ -4360,9 +4361,10 @@ exports[`Storyshots Error Mobile 1`] = `
       </h1>
       <br />
       <p>
-        Error description: 
+        The error description is below. If this error persists, please try again later.
+        <br />
+        <br />
         "403"
-        . Please try again later.
       </p>
       <div
         className="buttons"

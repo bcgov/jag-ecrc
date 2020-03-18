@@ -56,7 +56,7 @@ export default function OrgValidation({
           setToTransition(true);
         } else {
           setToError(true);
-          setError(error.response.status);
+          setError(error.response.status.toString());
         }
       });
   };
@@ -114,6 +114,7 @@ OrgValidation.propTypes = {
   page: PropTypes.shape({
     setOrg: PropTypes.func.isRequired,
     setTransitionReason: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "../page.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
-import Button from "../../base/button/Button";
+import { Button } from "../../base/button/Button";
+
 export default function Error({ page: { header, error } }) {
   const [toHome, setToHome] = useState(false);
 
@@ -40,25 +42,36 @@ export default function Error({ page: { header, error } }) {
         <Footer />
       </main>
     );
-  } else {
-    return (
-      <main>
-        <Header header={header} />
-        <div className="page">
-          <div className="content col-md-8">
-            <h1>An unknown error has occurred.</h1>
+  }
+  return (
+    <main>
+      <Header header={header} />
+      <div className="page">
+        <div className="content col-md-8">
+          <h1>An unknown error has occurred.</h1>
+          <br />
+          <p>
+            The error description is below. If this error persists, please try
+            again later.
             <br />
-            <p>
-              Error description:
-              {JSON.stringify(error)}. Please try again later.
-            </p>
-            <div className="buttons">
-              <Button button={homeButton} onClick={home} />
-            </div>
+            <br />
+            {JSON.stringify(error)}
+          </p>
+          <div className="buttons">
+            <Button button={homeButton} onClick={home} />
           </div>
         </div>
-        <Footer />
-      </main>
-    );
-  }
+      </div>
+      <Footer />
+    </main>
+  );
 }
+
+Error.propTypes = {
+  page: PropTypes.shape({
+    error: PropTypes.string.isRequired,
+    header: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+};

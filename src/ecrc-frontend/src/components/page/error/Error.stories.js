@@ -2,7 +2,6 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 
 import Error from "./Error";
-import { storiesOf } from "@storybook/react";
 
 export default {
   title: "Error",

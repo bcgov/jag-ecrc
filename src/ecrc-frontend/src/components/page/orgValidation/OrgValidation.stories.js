@@ -14,10 +14,12 @@ const header = {
 
 const setOrg = () => {};
 const setTransitionReason = () => {};
+const setError = () => {};
 
 const page = {
   setOrg,
   setTransitionReason,
+  setError,
   header
 };
 

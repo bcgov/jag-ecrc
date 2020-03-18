@@ -23,10 +23,12 @@ describe("OrgValidation Component", () => {
 
   const setOrg = jest.fn();
   const setTransitionReason = jest.fn();
+  const setError = jest.fn();
 
   const page = {
     setOrg,
     setTransitionReason,
+    setError,
     header
   };
 
