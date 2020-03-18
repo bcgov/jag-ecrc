@@ -164,7 +164,7 @@ export default function InformationReview({
     header: (
       <div>
         PREVIOUS NAMES
-        <span className="">
+        <span className="smallTableHeader">
           Including birth name, previous name, maiden name, and alias
         </span>
       </div>
