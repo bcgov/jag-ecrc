@@ -168,7 +168,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
           </div>
         </div>
       </div>
-      <Footer isSmallPage />
+      <Footer />
     </main>
   );
 }

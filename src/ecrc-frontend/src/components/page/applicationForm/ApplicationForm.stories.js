@@ -2,6 +2,7 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 
 import ApplicationForm from "./ApplicationForm";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 export default {
   title: "ApplicationForm",
@@ -43,6 +44,23 @@ const page = {
   org,
   setApplicant
 };
+
+sessionStorage.setItem("validator", "secret");
+sessionStorage.setItem("uuid", "unique123");
+
+const newPayload = {
+  actionsPerformed: [
+    "infoReview",
+    "appForm",
+    "tou",
+    "bcscRedirect",
+    "orgVerification",
+    "consent",
+    "userConfirmation"
+  ],
+  authorities: ["Authorized"]
+};
+generateJWTToken(newPayload);
 
 export const NonScheduleD = () => (
   <MemoryRouter>

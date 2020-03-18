@@ -4,7 +4,10 @@ import { storiesOf } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
 
 import Consent from "./Consent";
-import { generateJWTToken } from "../../../modules/AuthenticationHelper";
+import {
+  generateJWTToken,
+  accessJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 const header = {
   name: "Criminal Record Check"
@@ -17,7 +20,21 @@ const page = {
 sessionStorage.setItem("validator", "secret");
 sessionStorage.setItem("uuid", "unique123");
 
-generateJWTToken({ authorities: ["Authorized"] });
+const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+const newPayload = {
+  ...currentPayload,
+  actionsPerformed: [
+    "infoReview",
+    "appForm",
+    "tou",
+    "bcscRedirect",
+    "orgVerification",
+    "consent",
+    "userConfirmation"
+  ],
+  authorities: ["Authorized"]
+};
+generateJWTToken(newPayload);
 
 const onContinueClick = action("onButtonContinueClicked");
 

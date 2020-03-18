@@ -28,8 +28,9 @@ export default function Consent({ page: { header } }) {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isAuthorized() || !isActionPerformed("userConfirmation"))
+    if (!isAuthorized() || !isActionPerformed("userConfirmation")) {
       setToAppHome(true);
+    }
   }, []);
 
   useEffect(() => {

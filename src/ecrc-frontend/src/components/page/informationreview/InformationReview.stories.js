@@ -2,6 +2,10 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 
 import InformationReview from "./InformationReview";
+import {
+  generateJWTToken,
+  accessJWTToken
+} from "../../../modules/AuthenticationHelper";
 
 export default {
   title: "InformationReview",
@@ -56,6 +60,25 @@ const page = {
   saveOrg,
   saveApplicationInfo
 };
+
+sessionStorage.setItem("validator", "secret");
+sessionStorage.setItem("uuid", "unique123");
+
+const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+const newPayload = {
+  ...currentPayload,
+  actionsPerformed: [
+    "infoReview",
+    "appForm",
+    "tou",
+    "bcscRedirect",
+    "orgVerification",
+    "consent",
+    "userConfirmation"
+  ],
+  authorities: ["Authorized"]
+};
+generateJWTToken(newPayload);
 
 export const NonScheduleD = () => (
   <MemoryRouter>

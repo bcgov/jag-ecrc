@@ -31,6 +31,9 @@ const page = {
   header
 };
 
+sessionStorage.setItem("validator", "secret");
+sessionStorage.setItem("uuid", "unique123");
+
 export const WorksWithAdultsAndChildren = () => (
   <MemoryRouter>
     <OrgVerification page={page} />

@@ -1171,10 +1171,9 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -2459,10 +2458,9 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -2792,10 +2790,9 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -3125,10 +3122,9 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -3638,10 +3634,9 @@ exports[`Storyshots Consent page Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -4110,10 +4105,9 @@ exports[`Storyshots Consent page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -4240,10 +4234,9 @@ exports[`Storyshots Declaration Default 1`] = `
 exports[`Storyshots Footer Default 1`] = `
 <footer
   className="footer"
-  style={Object {}}
 >
   <nav
-    className="navbar navbar-expand-lg navbar-dark"
+    className="navbar navbar-expand-sm navbar-dark"
   >
     <div
       className="container"
@@ -4930,6 +4923,248 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           <li
             className="nav-item"
           >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle"
+                    >
+                      Contact the Criminal Records Review Program
+                    </div>
+                  </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <div
+                      className="side-card-text"
+                    >
+                      For questions about criminal record checks, contact the Criminal Records Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
+                    </div>
+                    <div
+                      className="side-card-text"
+                    >
+                      <br />
+                      <div>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
+                          />
+                        </svg>
+                         
+                        <div
+                          className="contact-title"
+                        >
+                          Fax: 
+                        </div>
+                        (250)356-1889
+                      </div>
+                      <div>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                          />
+                        </svg>
+                         
+                        <div
+                          className="contact-title"
+                        >
+                          Office: 
+                        </div>
+                        Toll free - 1 855 587-0185 (press option 2)
+                      </div>
+                      <div>
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                          />
+                        </svg>
+                          
+                        <div
+                          className="contact-title"
+                        >
+                          Email: 
+                        </div>
+                        <a
+                          className="email"
+                          href="mailto:criminalrecords@gov.bc.ca"
+                        >
+                          criminalrecords@gov.bc.ca
+                        </a>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wide-dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+              style={
+                Object {
+                  "paddingTop": "30px",
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="notice-section"
+                style={
+                  Object {
+                    "backgroundColor": "#F2F2F2",
+                    "border": "none",
+                    "color": "#000",
+                  }
+                }
+              >
+                <h2
+                  style={
+                    Object {
+                      "color": "#000",
+                    }
+                  }
+                >
+                  Collection Notice
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <div
+                      style={
+                        Object {
+                          "fontSize": "12px",
+                        }
+                      }
+                    >
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      <a
+                        href="mailto:criminalrecords@gov.bc.ca"
+                      >
+                        criminalrecords@gov.bc.ca
+                      </a>
+                       or by telephone at 1- 855-587-0185 (option 2).
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-sm navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
             <a
               className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
@@ -5445,10 +5680,9 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -6062,10 +6296,9 @@ exports[`Storyshots OrgValidation Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -6525,10 +6758,9 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -7399,10 +7631,9 @@ Canada
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -8061,10 +8292,9 @@ Canada
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -8723,10 +8953,9 @@ Canada
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -9385,10 +9614,9 @@ Canada
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -10628,12 +10856,6 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
 </form>
 `;
 
-exports[`Storyshots SimpleForm Default 1`] = `
-<form
-  className="simpleForm"
-/>
-`;
-
 exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
 <form
   className="simpleForm"
@@ -10770,7 +10992,7 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
 </form>
 `;
 
-exports[`Storyshots Success Payment Failure 1`] = `
+exports[`Storyshots Success page Mobile Payment Failure 1`] = `
 <main>
   <header>
     <nav
@@ -11031,7 +11253,7 @@ exports[`Storyshots Success Payment Failure 1`] = `
 </main>
 `;
 
-exports[`Storyshots Success Payment Success 1`] = `
+exports[`Storyshots Success page Mobile Payment Success 1`] = `
 <main>
   <header>
     <nav
@@ -11277,7 +11499,7 @@ exports[`Storyshots Success Payment Success 1`] = `
 </main>
 `;
 
-exports[`Storyshots Success Volunteer 1`] = `
+exports[`Storyshots Success page Mobile Volunteer 1`] = `
 <main>
   <header>
     <nav
@@ -11425,6 +11647,732 @@ exports[`Storyshots Success Volunteer 1`] = `
   >
     <nav
       className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
+
+exports[`Storyshots Success page PaymentFailure 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        />
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Payment Declined
+      </h1>
+      <span>
+        Unfortunately, your payment transaction was declined. Please ensure you have the correct credit card information:
+      </span>
+      <ul
+        className="bodyList"
+      >
+        <li>
+          16 digit credit card number
+        </li>
+        <li>
+          3 digit CVD number
+        </li>
+        <li>
+          Non-expired date
+        </li>
+        <li>
+          Availale funds to transfer
+        </li>
+      </ul>
+      <p>
+        <button
+          className="notAButton"
+          onClick={[Function]}
+          type="button"
+        >
+          Click here to try again
+        </button>
+        . Otherwise, please refer to our website for submission options.
+      </p>
+      <div
+        className="print"
+      >
+        <table
+          className="white"
+          id="print"
+        >
+          <thead>
+            <tr>
+              <th
+                colSpan="2"
+              >
+                APPLICATION INFORMATION
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Service Number
+              </td>
+              <td>
+                987
+              </td>
+            </tr>
+            <tr>
+              <td>
+                First Name
+              </td>
+              <td>
+                Robert
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Last Name
+              </td>
+              <td>
+                Ross
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Organization
+              </td>
+              <td>
+                Public Broadcast Network
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Date/Time
+              </td>
+              <td>
+                3/2/2020 8:43:52 AM
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Transaction ID
+              </td>
+              <td>
+                2946
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        className="btn ecrc_go_btn btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Print
+      </button>
+      <button
+        className="btn ecrc_go_btn btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Download
+      </button>
+    </div>
+    <div
+      className="sidecard"
+    />
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-sm navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
+
+exports[`Storyshots Success page PaymentSuccess 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        />
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Payment Approved
+      </h1>
+      <p>
+        Thank you for submitting your application to the Criminal Records Review Program.
+      </p>
+      <p>
+        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+      </p>
+      <div
+        className="print"
+      >
+        <table
+          className="white"
+          id="print"
+        >
+          <thead>
+            <tr>
+              <th
+                colSpan="2"
+              >
+                APPLICATION INFORMATION
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Service Number
+              </td>
+              <td>
+                987
+              </td>
+            </tr>
+            <tr>
+              <td>
+                First Name
+              </td>
+              <td>
+                Robert
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Last Name
+              </td>
+              <td>
+                Ross
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Organization
+              </td>
+              <td>
+                Public Broadcast Network
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Amount
+              </td>
+              <td>
+                28.00
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Date/Time
+              </td>
+              <td>
+                3/4/2020 1:01:36 PM
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Transaction ID
+              </td>
+              <td>
+                2991
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        className="btn ecrc_go_btn btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Print
+      </button>
+      <button
+        className="btn ecrc_go_btn btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Download
+      </button>
+    </div>
+    <div
+      className="sidecard"
+    />
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-sm navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <ul
+          className="navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
+
+exports[`Storyshots Success page Volunteer 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+        >
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-none d-md-block"
+            height="44"
+            src="/images/bcid-logo-rev-en.svg"
+            width="181"
+          />
+          <img
+            alt="B.C. Government Logo"
+            className="img-fluid d-md-none"
+            height="44"
+            src="/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+        </a>
+        <div>
+          <a
+            className="navbar-brand nav-item nav-link"
+            href="/"
+          >
+            Criminal Record Check
+          </a>
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        />
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Application Submitted
+      </h1>
+      <p>
+        Thank you for submitting your application to the Criminal Records Review Program.
+      </p>
+      <p>
+        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+      </p>
+      <div
+        className="print"
+      >
+        <table
+          className="white"
+          id="print"
+        >
+          <thead>
+            <tr>
+              <th
+                colSpan="2"
+              >
+                APPLICATION INFORMATION
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Service Number
+              </td>
+              <td>
+                987
+              </td>
+            </tr>
+            <tr>
+              <td>
+                First Name
+              </td>
+              <td>
+                Robert
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Last Name
+              </td>
+              <td>
+                Ross
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Organization
+              </td>
+              <td>
+                Public Broadcast Network
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        className="btn ecrc_go_btn btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Print
+      </button>
+      <button
+        className="btn ecrc_go_btn btn btn-sm"
+        onClick={[Function]}
+        type="submit"
+      >
+        Download
+      </button>
+    </div>
+    <div
+      className="sidecard"
+    />
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -11971,10 +12919,9 @@ exports[`Storyshots Term Of Use page Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -12466,10 +13413,9 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -13169,18 +14115,9 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -13334,18 +14271,9 @@ exports[`Storyshots Transition Page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -13507,18 +14435,9 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -13692,18 +14611,9 @@ exports[`Storyshots User Confirmation page Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -13877,18 +14787,9 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"

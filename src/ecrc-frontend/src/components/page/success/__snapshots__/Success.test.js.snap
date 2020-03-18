@@ -183,10 +183,9 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -429,10 +428,9 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -651,10 +649,9 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"

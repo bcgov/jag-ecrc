@@ -16,6 +16,9 @@ const page = {
   setApplicant
 };
 
+sessionStorage.setItem("validator", "secret");
+sessionStorage.setItem("uuid", "unique123");
+
 storiesOf("User Confirmation page", module)
   .addDecorator(withQuery)
   .addParameters({
