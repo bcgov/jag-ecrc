@@ -27,6 +27,7 @@ const links = [
 ];
 
 export const AccessCode = () => <SideCards type={"accesscode"} />;
+export const GetBcService = () => <SideCards type={"getbcservice"} />;
 export const BcService = () => <SideCards type={"bcservice"} />;
 export const ContactInformation = () => (
   <SideCards type={"contactinformation"} />

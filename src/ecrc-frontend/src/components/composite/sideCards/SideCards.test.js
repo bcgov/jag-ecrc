@@ -28,6 +28,11 @@ describe("SideCards Component", () => {
     expect(accessCode.toJSON()).toMatchSnapshot();
   });
 
+  test("GetBcServices sidecard", () => {
+    const bcServices = create(<SideCards type={"getbcservice"} />);
+    expect(bcServices.toJSON()).toMatchSnapshot();
+  });
+
   test("BcServices sidecard", () => {
     const bcServices = create(<SideCards type={"bcservice"} />);
     expect(bcServices.toJSON()).toMatchSnapshot();

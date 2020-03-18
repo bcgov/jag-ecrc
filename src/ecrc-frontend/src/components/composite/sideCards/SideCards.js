@@ -28,6 +28,46 @@ export default function SideCards({ type, sideCardLinks }) {
     type: "bluegrey"
   };
 
+  // GET BC SERVICE SIDECARD
+  const bcscbutton = {
+    label: "READ MORE",
+    buttonStyle: "btn btn-primary dark-button",
+    buttonSize: "btn btn-md",
+    type: "submit"
+  };
+
+  const getBCServiceButton = (
+    <Button
+      key="getBCSCLink"
+      button={bcscbutton}
+      onClick={() =>
+        window.open(
+          "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+        )
+      }
+    />
+  );
+
+  const getBCService = {
+    heading: (
+      <div className="row">
+        <div key="bcServiceIcon" className="round-icon-wrapper">
+          <FaIdCard className="side-card-icon" />
+        </div>
+        <div key="bcServiceHeader" className="sideCardTitle">
+          Get a BC Service Card
+        </div>
+      </div>
+    ),
+    content: [
+      "B.C. residents who have lived in the province for at least six months must use a BC Services Card to submit an online Criminal Record Check. Learn how to get a card.",
+      <div key="getBCSCButton" className="getServiceButton">
+        {getBCServiceButton}
+      </div>
+    ],
+    type: "blue"
+  };
+
   const bcservice = {
     heading: (
       <div className="row">
@@ -237,7 +277,16 @@ export default function SideCards({ type, sideCardLinks }) {
   });
 
   const usefulLinks = {
-    heading: "Useful Links",
+    heading: (
+      <div className="row">
+        <div key="usefulLinksIcon" className="round-icon-wrapper">
+          <FaQuestion className="side-card-icon" />
+        </div>
+        <div key="usefulLinksHeader" className="sideCardTitle textAlign">
+          Useful Links
+        </div>
+      </div>
+    ),
     content: [links],
     type: "blue"
   };
@@ -246,6 +295,9 @@ export default function SideCards({ type, sideCardLinks }) {
     <div>
       {type === "accesscode" && (
         <SideCard key="accesscode" sideCard={accessCode} />
+      )}
+      {type === "getbcservice" && (
+        <SideCard key="getbcservice" sideCard={getBCService} />
       )}
       {type === "bcservice" && (
         <SideCard key="bcservices" sideCard={bcservice} />
