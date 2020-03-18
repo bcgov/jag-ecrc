@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -136,8 +137,8 @@ export default function OrgVerification({ page: { header, org } }) {
             You have provided the access code of the organization that has
             requested you to complete a criminal record check. Below are the
             details of that organization. Please confirm that this is the
-            organization. If it’s not, please contact the organization that has
-            requested you to complete a criminal record check.
+            organization. If it&apos;s not, please contact the organization that
+            has requested you to complete a criminal record check.
           </p>
           <Table table={organizationInfoTable} />
           <Table table={organizationTypeTable} />

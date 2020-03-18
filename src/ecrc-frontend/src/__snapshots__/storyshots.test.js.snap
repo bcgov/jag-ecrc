@@ -7247,7 +7247,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
         Organization Information
       </h1>
       <p>
-        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it’s not, please contact the organization that has requested you to complete a criminal record check.
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
       <table>
         <thead>
@@ -7296,7 +7296,20 @@ Canada
             <th
               colSpan="2"
             >
-              Role of Applicant (Employee or Volunteer) and working category (e.g. working with children)
+              <div>
+                Role of Applicant 
+                <span
+                  className="smallTableHeader"
+                >
+                  (Employee or Volunteer)
+                </span>
+                 and working category 
+                <span
+                  className="smallTableHeader"
+                >
+                  (e.g. working with children)
+                </span>
+              </div>
             </th>
           </tr>
         </thead>
@@ -7863,7 +7876,7 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
         Organization Information
       </h1>
       <p>
-        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it’s not, please contact the organization that has requested you to complete a criminal record check.
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
       <table>
         <thead>
@@ -7912,7 +7925,20 @@ Canada
             <th
               colSpan="2"
             >
-              Role of Applicant (Employee or Volunteer) and working category (e.g. working with children)
+              <div>
+                Role of Applicant 
+                <span
+                  className="smallTableHeader"
+                >
+                  (Employee or Volunteer)
+                </span>
+                 and working category 
+                <span
+                  className="smallTableHeader"
+                >
+                  (e.g. working with children)
+                </span>
+              </div>
             </th>
           </tr>
         </thead>
@@ -8479,7 +8505,7 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
         Organization Information
       </h1>
       <p>
-        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it’s not, please contact the organization that has requested you to complete a criminal record check.
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
       <table>
         <thead>
@@ -8528,7 +8554,20 @@ Canada
             <th
               colSpan="2"
             >
-              Role of Applicant (Employee or Volunteer) and working category (e.g. working with children)
+              <div>
+                Role of Applicant 
+                <span
+                  className="smallTableHeader"
+                >
+                  (Employee or Volunteer)
+                </span>
+                 and working category 
+                <span
+                  className="smallTableHeader"
+                >
+                  (e.g. working with children)
+                </span>
+              </div>
             </th>
           </tr>
         </thead>
@@ -9095,7 +9134,7 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
         Organization Information
       </h1>
       <p>
-        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it’s not, please contact the organization that has requested you to complete a criminal record check.
+        You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
       <table>
         <thead>
@@ -9144,7 +9183,20 @@ Canada
             <th
               colSpan="2"
             >
-              Role of Applicant (Employee or Volunteer) and working category (e.g. working with children)
+              <div>
+                Role of Applicant 
+                <span
+                  className="smallTableHeader"
+                >
+                  (Employee or Volunteer)
+                </span>
+                 and working category 
+                <span
+                  className="smallTableHeader"
+                >
+                  (e.g. working with children)
+                </span>
+              </div>
             </th>
           </tr>
         </thead>
