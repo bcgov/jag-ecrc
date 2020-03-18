@@ -46,13 +46,13 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
                 Claims claims = validateToken(request);
                 logger.debug("JWT passed basic validation checks.");
                 
-                if ( claims.get("authorities") != null ) {
+                if ( null != claims.get("authorities") ) {
                 	
                 	logger.debug("Authority found JWT.");
                 	
                 	// Accessing a private resource requires validating the 'PER' claim. 
                 	// Any errors during validation or a missing 'PER' claim will result in 403. 
-                	if ( request.getServletPath().startsWith("/private") ) {
+                	if ( (null != request.getServletPath() ) && request.getServletPath().startsWith("/private") ) {
                 	
                 		// "per" block must be found in private context. 
 	                	if ( claims.get("per") != null ) {
