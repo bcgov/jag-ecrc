@@ -99,18 +99,9 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
