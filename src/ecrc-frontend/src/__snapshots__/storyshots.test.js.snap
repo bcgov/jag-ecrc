@@ -5744,6 +5744,12 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
 </main>
 `;
 
+exports[`Storyshots Loader Default 1`] = `
+<div
+  className="loader"
+/>
+`;
+
 exports[`Storyshots Menu Default 1`] = `
 <div
   className="col-12 col-md-3 "
