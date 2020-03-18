@@ -1,3 +1,7 @@
+.eligibleList {
+  list-style: disc;
+}
+
 .contactList {
   list-style-type: lower-roman;
 }

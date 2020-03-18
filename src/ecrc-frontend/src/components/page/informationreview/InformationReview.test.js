@@ -46,6 +46,10 @@ describe("InformationReview Component", () => {
     provinceNm: "British Columbia",
     postalCodeTxt: "V9V 9V9",
     countryNm: "Canada",
+    mailingAddressLine1: "456 Elsewhere",
+    mailingCity: "There",
+    mailingProvince: "Ontario",
+    mailingPostalCode: "V1V 1A1",
     jobTitle: "Painter",
     organizationFacility: "Something"
   };

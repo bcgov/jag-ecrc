@@ -38,6 +38,10 @@ export default function InformationReview({
       provinceNm,
       postalCodeTxt,
       countryNm,
+      mailingAddressLine1,
+      mailingCity,
+      mailingProvince,
+      mailingPostalCode,
       birthPlace,
       driversLicNo,
       phoneNumber,
@@ -161,7 +165,14 @@ export default function InformationReview({
   }
 
   const previousNamesTable = {
-    header: "PREVIOUS NAMES",
+    header: (
+      <div>
+        PREVIOUS NAMES
+        <span className="smallTableHeader">
+          (Including birth name, previous name, maiden name, and alias)
+        </span>
+      </div>
+    ),
     tableElements: previousNamesElement
   };
 
@@ -184,9 +195,9 @@ export default function InformationReview({
     tableElements: positionInfoElement
   };
 
-  const addressElement = [
+  const contactElement = [
     {
-      name: "Street",
+      name: "Residential Address",
       value: addressLine1
     },
     {
@@ -215,27 +226,38 @@ export default function InformationReview({
     }
   ];
 
-  const addressTable = {
+  const contactTable = {
     header: "CONTACT INFORMATION",
-    tableElements: addressElement
+    tableElements: contactElement
   };
 
-  const links = [
+  const mailingAddressElement = [
     {
-      name: "I'm an employee or volunteer",
-      url: "/tbd"
+      name: "Mailing Address",
+      value: mailingAddressLine1
     },
     {
-      name: "Electronic Identity Verification (EIV)",
-      url:
-        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+      name: "City",
+      value: mailingCity
     },
     {
-      name: "Results and Reconsideration",
-      url:
-        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+      name: "Province",
+      value: mailingProvince
+    },
+    {
+      name: "Postal Code",
+      value: mailingPostalCode
+    },
+    {
+      name: "Country",
+      value: countryNm
     }
   ];
+
+  const mailingAddressTable = {
+    header: "MAILING ADDRESS",
+    tableElements: mailingAddressElement
+  };
 
   const confirmButton = {
     label: "SUBMIT",
@@ -271,11 +293,11 @@ export default function InformationReview({
       alias3SecondNm,
       alias3SurnameNm,
       phoneNumber,
-      addressLine1,
-      cityNm,
-      provinceNm,
+      addressLine1: mailingAddressLine1,
+      cityNm: mailingCity,
+      provinceNm: mailingProvince,
       countryNm,
-      postalCodeTxt,
+      postalCodeTxt: mailingPostalCode,
       driversLicNo
     };
 
@@ -441,17 +463,17 @@ export default function InformationReview({
       <div className="page">
         <div className="content col-md-8">
           <h1>Information Review</h1>
-          <p>TEXT TO BE CONFIRMED</p>
           <p>
-            Please confirm that the information provided s accurate. If it is
-            not, please do NOT proceed and contact __________
+            Please confirm that the information provided below is accurate. If
+            it is not, please select Edit Application.
           </p>
           <Table table={personalInfoTable} />
           {previousNamesElement.length > 0 ? (
             <Table table={previousNamesTable} />
           ) : null}
           <Table table={positionInfoTable} />
-          <Table table={addressTable} />
+          <Table table={contactTable} />
+          <Table table={mailingAddressTable} />
           <div className="declareTitle">DECLARATION</div>
           <section className="declareSection">
             <input
@@ -462,12 +484,11 @@ export default function InformationReview({
             />
             <span className="declaration-cb">
               I certify that, to the best of my knowledge, the information I
-              have provided on my application and will provide as necessary is
-              complete, honest and accurate. I understand that a false statement
-              or omission of facts herein may lead to a denial of a cannabis
-              workers registration. I am also aware that later discovery of an
-              omission or misrepresentation may be grounds for any finding of
-              suitability to be suspended or revoked.
+              have provided on my application is complete, honest and accurate.
+              Any false statements or deliberate omissions on a consent form
+              filed with the CRRP may result in the inability of the CRRP to
+              accurately determine whether the applicant poses a risk to
+              children or vulnerable adults.
             </span>
           </section>
           <div className="buttons">
@@ -476,9 +497,7 @@ export default function InformationReview({
           </div>
         </div>
         <div className="sidecard">
-          <SideCards type={"usefullinks"} sideCardLinks={links} />
-          <SideCards type={"contactinformation"} />
-          <SideCards type={"collectionnotice"} />
+          <SideCards type={"personalinformation"} />
         </div>
       </div>
       <Footer />
@@ -511,6 +530,10 @@ InformationReview.propTypes = {
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
       countryNm: PropTypes.string.isRequired,
+      mailingAddressLine1: PropTypes.string.isRequired,
+      mailingCity: PropTypes.string.isRequired,
+      mailingProvince: PropTypes.string.isRequired,
+      mailingPostalCode: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string.isRequired,

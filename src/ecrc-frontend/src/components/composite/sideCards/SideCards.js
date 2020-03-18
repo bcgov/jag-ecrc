@@ -215,9 +215,27 @@ export default function SideCards({ type, sideCardLinks }) {
 
   // PERSONAL INFORMATION
   const personalInformation = {
-    heading: "Update your personal information",
+    heading: (
+      <div className="row">
+        <div key="withoutBCServiceCardIcon" className="round-icon-wrapper">
+          <FaQuestion className="side-card-icon" />
+        </div>
+        <div key="withoutBCServiceCardHeader" className="sideCardTitle">
+          Update your BC Services Card Information
+        </div>
+      </div>
+    ),
     content: [
-      "If you find an error in your personal information, please contact ",
+      "If you find an error with your:",
+      <ul key="personalInfoList" className="discStyle">
+        <li>First Name</li>
+        <li>Middle Name</li>
+        <li>Last Name</li>
+        <li>Date of Birth</li>
+        <li>Sex</li>
+        <li>Current Street Address</li>
+      </ul>,
+      "Please contact either ",
       <a
         key="serviceBC"
         className="link"
@@ -225,7 +243,7 @@ export default function SideCards({ type, sideCardLinks }) {
       >
         Service BC
       </a>,
-      " ,",
+      ", ",
       <a
         key="icbc"
         className="link"

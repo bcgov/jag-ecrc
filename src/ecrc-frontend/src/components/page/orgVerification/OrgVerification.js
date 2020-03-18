@@ -146,7 +146,7 @@ export default function OrgVerification({ page: { header, org } }) {
             <p>
               To continue with your online request for a criminal record check:
             </p>
-            <ul>
+            <ul className="eligibleList">
               <li>
                 Only BC Services cards with a photo are accepted at this time.
               </li>

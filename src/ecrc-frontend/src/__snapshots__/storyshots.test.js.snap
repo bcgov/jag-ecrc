@@ -1010,20 +1010,74 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 <h2
                   className="heading-style"
                 >
-                  Update your personal information
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 384 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle"
+                    >
+                      Update your BC Services Card Information
+                    </div>
+                  </div>
                 </h2>
                 <div
                   className="submit-content"
                 >
                   <span>
-                    If you find an error in your personal information, please contact 
+                    If you find an error with your:
+                    <ul
+                      className="discStyle"
+                    >
+                      <li>
+                        First Name
+                      </li>
+                      <li>
+                        Middle Name
+                      </li>
+                      <li>
+                        Last Name
+                      </li>
+                      <li>
+                        Date of Birth
+                      </li>
+                      <li>
+                        Sex
+                      </li>
+                      <li>
+                        Current Street Address
+                      </li>
+                    </ul>
+                    Please contact either 
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
                     >
                       Service BC
                     </a>
-                     ,
+                    , 
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
@@ -2243,20 +2297,74 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 <h2
                   className="heading-style"
                 >
-                  Update your personal information
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="round-icon-wrapper"
+                    >
+                      <svg
+                        className="side-card-icon"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 384 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="sideCardTitle"
+                    >
+                      Update your BC Services Card Information
+                    </div>
+                  </div>
                 </h2>
                 <div
                   className="submit-content"
                 >
                   <span>
-                    If you find an error in your personal information, please contact 
+                    If you find an error with your:
+                    <ul
+                      className="discStyle"
+                    >
+                      <li>
+                        First Name
+                      </li>
+                      <li>
+                        Middle Name
+                      </li>
+                      <li>
+                        Last Name
+                      </li>
+                      <li>
+                        Date of Birth
+                      </li>
+                      <li>
+                        Sex
+                      </li>
+                      <li>
+                        Current Street Address
+                      </li>
+                    </ul>
+                    Please contact either 
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
                     >
                       Service BC
                     </a>
-                     ,
+                    , 
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
@@ -4424,10 +4532,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         Information Review
       </h1>
       <p>
-        TEXT TO BE CONFIRMED
-      </p>
-      <p>
-        Please confirm that the information provided s accurate. If it is not, please do NOT proceed and contact __________
+        Please confirm that the information provided below is accurate. If it is not, please select Edit Application.
       </p>
       <table>
         <thead>
@@ -4532,7 +4637,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
-              Street
+              Residential Address
             </td>
             <td>
               123 Somewhere
@@ -4588,6 +4693,59 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              MAILING ADDRESS
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Mailing Address
+            </td>
+            <td>
+              456 Elsewhere
+            </td>
+          </tr>
+          <tr>
+            <td>
+              City
+            </td>
+            <td>
+              There
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Province
+            </td>
+            <td>
+              Ontario
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Postal Code
+            </td>
+            <td>
+              V1V 1A1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Country
+            </td>
+            <td>
+              Canada
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <div
         className="declareTitle"
       >
@@ -4603,7 +4761,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         <span
           className="declaration-cb"
         >
-          I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
+          I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
         </span>
       </section>
       <div
@@ -4685,109 +4843,9 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle textAlign"
-                    >
-                      Useful Links
-                    </div>
-                  </div>
-                </h2>
-                <div
-                  className="submit-content"
-                >
-                  <span>
-                    <li
-                      className="menuItem"
-                    >
-                      <a
-                        href="/tbd"
-                      >
-                        I'm an employee or volunteer
-                      </a>
-                    </li>
-                    <li
-                      className="menuItem"
-                    >
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
-                      >
-                        Electronic Identity Verification (EIV)
-                      </a>
-                    </li>
-                    <li
-                      className="menuItem"
-                    >
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
-                      >
-                        Results and Reconsideration
-                      </a>
-                    </li>
-                  </span>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          className="wide-dashboard-spacing"
-          style={
-            Object {
-              "position": "relative",
-            }
-          }
-        >
-          <div
-            className="row"
-          >
-            <div
-              className="col-12"
-              style={
-                Object {
-                  "paddingTop": "30px",
-                  "position": "relative",
-                }
-              }
-            >
-              <p />
-              <section
-                className="submit-container"
-                id="blue-section"
-              >
-                <h2
-                  className="heading-style"
-                >
-                  <div
-                    className="row"
-                  >
-                    <div
-                      className="round-icon-wrapper"
-                    >
-                      <svg
-                        className="side-card-icon"
-                        fill="currentColor"
-                        height="1em"
-                        stroke="currentColor"
-                        strokeWidth="0"
-                        style={
-                          Object {
-                            "color": undefined,
-                          }
-                        }
-                        viewBox="0 0 512 512"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                        />
-                      </svg>
-                    </div>
-                    <div
                       className="sideCardTitle"
                     >
-                      Contact the Criminal Records Review Program
+                      Update your BC Services Card Information
                     </div>
                   </div>
                 </h2>
@@ -4795,170 +4853,51 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                   className="submit-content"
                 >
                   <span>
-                    <div
-                      className="side-card-text"
+                    If you find an error with your:
+                    <ul
+                      className="discStyle"
                     >
-                      For questions about criminal record checks, contact the Criminal Records Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
-                    </div>
-                    <div
-                      className="side-card-text"
+                      <li>
+                        First Name
+                      </li>
+                      <li>
+                        Middle Name
+                      </li>
+                      <li>
+                        Last Name
+                      </li>
+                      <li>
+                        Date of Birth
+                      </li>
+                      <li>
+                        Sex
+                      </li>
+                      <li>
+                        Current Street Address
+                      </li>
+                    </ul>
+                    Please contact either 
+                    <a
+                      className="link"
+                      href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
                     >
-                      <br />
-                      <div>
-                        <svg
-                          fill="currentColor"
-                          height="1em"
-                          stroke="currentColor"
-                          strokeWidth="0"
-                          style={
-                            Object {
-                              "color": undefined,
-                            }
-                          }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
-                          />
-                        </svg>
-                         
-                        <div
-                          className="contact-title"
-                        >
-                          Fax: 
-                        </div>
-                        (250)356-1889
-                      </div>
-                      <div>
-                        <svg
-                          fill="currentColor"
-                          height="1em"
-                          stroke="currentColor"
-                          strokeWidth="0"
-                          style={
-                            Object {
-                              "color": undefined,
-                            }
-                          }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                          />
-                        </svg>
-                         
-                        <div
-                          className="contact-title"
-                        >
-                          Office: 
-                        </div>
-                        Toll free - 1 855 587-0185 (press option 2)
-                      </div>
-                      <div>
-                        <svg
-                          fill="currentColor"
-                          height="1em"
-                          stroke="currentColor"
-                          strokeWidth="0"
-                          style={
-                            Object {
-                              "color": undefined,
-                            }
-                          }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                          />
-                        </svg>
-                          
-                        <div
-                          className="contact-title"
-                        >
-                          Email: 
-                        </div>
-                        <a
-                          className="email"
-                          href="mailto:criminalrecords@gov.bc.ca"
-                        >
-                          criminalrecords@gov.bc.ca
-                        </a>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          className="wide-dashboard-spacing"
-          style={
-            Object {
-              "position": "relative",
-            }
-          }
-        >
-          <div
-            className="row"
-          >
-            <div
-              className="col-12"
-              style={
-                Object {
-                  "paddingTop": "30px",
-                  "position": "relative",
-                }
-              }
-            >
-              <p />
-              <section
-                className="submit-container"
-                id="notice-section"
-                style={
-                  Object {
-                    "backgroundColor": "#F2F2F2",
-                    "border": "none",
-                    "color": "#000",
-                  }
-                }
-              >
-                <h2
-                  style={
-                    Object {
-                      "color": "#000",
-                    }
-                  }
-                >
-                  Collection Notice
-                </h2>
-                <div
-                  className="submit-content"
-                >
-                  <span>
-                    <div
-                      style={
-                        Object {
-                          "fontSize": "12px",
-                        }
-                      }
+                      Service BC
+                    </a>
+                    , 
+                    <a
+                      className="link"
+                      href="https://www.icbc.com/Pages/default.aspx"
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
-                      <a
-                        href="mailto:criminalrecords@gov.bc.ca"
-                      >
-                        criminalrecords@gov.bc.ca
-                      </a>
-                       or by telephone at 1- 855-587-0185 (option 2).
-                    </div>
+                      ICBC
+                    </a>
+                     or 
+                    <a
+                      className="link"
+                      href="https://www.addresschange.gov.bc.ca/"
+                    >
+                      AddressChangeBC
+                    </a>
+                     to correct it.
                   </span>
                 </div>
               </section>
@@ -5113,10 +5052,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
         Information Review
       </h1>
       <p>
-        TEXT TO BE CONFIRMED
-      </p>
-      <p>
-        Please confirm that the information provided s accurate. If it is not, please do NOT proceed and contact __________
+        Please confirm that the information provided below is accurate. If it is not, please select Edit Application.
       </p>
       <table>
         <thead>
@@ -5229,7 +5165,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
-              Street
+              Residential Address
             </td>
             <td>
               123 Somewhere
@@ -5285,6 +5221,59 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <table>
+        <thead>
+          <tr>
+            <th
+              colSpan="2"
+            >
+              MAILING ADDRESS
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Mailing Address
+            </td>
+            <td>
+              456 Elsewhere
+            </td>
+          </tr>
+          <tr>
+            <td>
+              City
+            </td>
+            <td>
+              There
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Province
+            </td>
+            <td>
+              Ontario
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Postal Code
+            </td>
+            <td>
+              V1V 1A1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Country
+            </td>
+            <td>
+              Canada
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <div
         className="declareTitle"
       >
@@ -5300,7 +5289,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
         <span
           className="declaration-cb"
         >
-          I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
+          I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
         </span>
       </section>
       <div
@@ -5382,109 +5371,9 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle textAlign"
-                    >
-                      Useful Links
-                    </div>
-                  </div>
-                </h2>
-                <div
-                  className="submit-content"
-                >
-                  <span>
-                    <li
-                      className="menuItem"
-                    >
-                      <a
-                        href="/tbd"
-                      >
-                        I'm an employee or volunteer
-                      </a>
-                    </li>
-                    <li
-                      className="menuItem"
-                    >
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
-                      >
-                        Electronic Identity Verification (EIV)
-                      </a>
-                    </li>
-                    <li
-                      className="menuItem"
-                    >
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
-                      >
-                        Results and Reconsideration
-                      </a>
-                    </li>
-                  </span>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          className="wide-dashboard-spacing"
-          style={
-            Object {
-              "position": "relative",
-            }
-          }
-        >
-          <div
-            className="row"
-          >
-            <div
-              className="col-12"
-              style={
-                Object {
-                  "paddingTop": "30px",
-                  "position": "relative",
-                }
-              }
-            >
-              <p />
-              <section
-                className="submit-container"
-                id="blue-section"
-              >
-                <h2
-                  className="heading-style"
-                >
-                  <div
-                    className="row"
-                  >
-                    <div
-                      className="round-icon-wrapper"
-                    >
-                      <svg
-                        className="side-card-icon"
-                        fill="currentColor"
-                        height="1em"
-                        stroke="currentColor"
-                        strokeWidth="0"
-                        style={
-                          Object {
-                            "color": undefined,
-                          }
-                        }
-                        viewBox="0 0 512 512"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                        />
-                      </svg>
-                    </div>
-                    <div
                       className="sideCardTitle"
                     >
-                      Contact the Criminal Records Review Program
+                      Update your BC Services Card Information
                     </div>
                   </div>
                 </h2>
@@ -5492,170 +5381,51 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                   className="submit-content"
                 >
                   <span>
-                    <div
-                      className="side-card-text"
+                    If you find an error with your:
+                    <ul
+                      className="discStyle"
                     >
-                      For questions about criminal record checks, contact the Criminal Records Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
-                    </div>
-                    <div
-                      className="side-card-text"
+                      <li>
+                        First Name
+                      </li>
+                      <li>
+                        Middle Name
+                      </li>
+                      <li>
+                        Last Name
+                      </li>
+                      <li>
+                        Date of Birth
+                      </li>
+                      <li>
+                        Sex
+                      </li>
+                      <li>
+                        Current Street Address
+                      </li>
+                    </ul>
+                    Please contact either 
+                    <a
+                      className="link"
+                      href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
                     >
-                      <br />
-                      <div>
-                        <svg
-                          fill="currentColor"
-                          height="1em"
-                          stroke="currentColor"
-                          strokeWidth="0"
-                          style={
-                            Object {
-                              "color": undefined,
-                            }
-                          }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
-                          />
-                        </svg>
-                         
-                        <div
-                          className="contact-title"
-                        >
-                          Fax: 
-                        </div>
-                        (250)356-1889
-                      </div>
-                      <div>
-                        <svg
-                          fill="currentColor"
-                          height="1em"
-                          stroke="currentColor"
-                          strokeWidth="0"
-                          style={
-                            Object {
-                              "color": undefined,
-                            }
-                          }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                          />
-                        </svg>
-                         
-                        <div
-                          className="contact-title"
-                        >
-                          Office: 
-                        </div>
-                        Toll free - 1 855 587-0185 (press option 2)
-                      </div>
-                      <div>
-                        <svg
-                          fill="currentColor"
-                          height="1em"
-                          stroke="currentColor"
-                          strokeWidth="0"
-                          style={
-                            Object {
-                              "color": undefined,
-                            }
-                          }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                          />
-                        </svg>
-                          
-                        <div
-                          className="contact-title"
-                        >
-                          Email: 
-                        </div>
-                        <a
-                          className="email"
-                          href="mailto:criminalrecords@gov.bc.ca"
-                        >
-                          criminalrecords@gov.bc.ca
-                        </a>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          className="wide-dashboard-spacing"
-          style={
-            Object {
-              "position": "relative",
-            }
-          }
-        >
-          <div
-            className="row"
-          >
-            <div
-              className="col-12"
-              style={
-                Object {
-                  "paddingTop": "30px",
-                  "position": "relative",
-                }
-              }
-            >
-              <p />
-              <section
-                className="submit-container"
-                id="notice-section"
-                style={
-                  Object {
-                    "backgroundColor": "#F2F2F2",
-                    "border": "none",
-                    "color": "#000",
-                  }
-                }
-              >
-                <h2
-                  style={
-                    Object {
-                      "color": "#000",
-                    }
-                  }
-                >
-                  Collection Notice
-                </h2>
-                <div
-                  className="submit-content"
-                >
-                  <span>
-                    <div
-                      style={
-                        Object {
-                          "fontSize": "12px",
-                        }
-                      }
+                      Service BC
+                    </a>
+                    , 
+                    <a
+                      className="link"
+                      href="https://www.icbc.com/Pages/default.aspx"
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
-                      <a
-                        href="mailto:criminalrecords@gov.bc.ca"
-                      >
-                        criminalrecords@gov.bc.ca
-                      </a>
-                       or by telephone at 1- 855-587-0185 (option 2).
-                    </div>
+                      ICBC
+                    </a>
+                     or 
+                    <a
+                      className="link"
+                      href="https://www.addresschange.gov.bc.ca/"
+                    >
+                      AddressChangeBC
+                    </a>
+                     to correct it.
                   </span>
                 </div>
               </section>
@@ -7189,7 +6959,9 @@ Canada
         <p>
           To continue with your online request for a criminal record check:
         </p>
-        <ul>
+        <ul
+          className="eligibleList"
+        >
           <li>
             Only BC Services cards with a photo are accepted at this time.
           </li>
@@ -7848,7 +7620,9 @@ Canada
         <p>
           To continue with your online request for a criminal record check:
         </p>
-        <ul>
+        <ul
+          className="eligibleList"
+        >
           <li>
             Only BC Services cards with a photo are accepted at this time.
           </li>
@@ -8507,7 +8281,9 @@ Canada
         <p>
           To continue with your online request for a criminal record check:
         </p>
-        <ul>
+        <ul
+          className="eligibleList"
+        >
           <li>
             Only BC Services cards with a photo are accepted at this time.
           </li>
@@ -9166,7 +8942,9 @@ Canada
         <p>
           To continue with your online request for a criminal record check:
         </p>
-        <ul>
+        <ul
+          className="eligibleList"
+        >
           <li>
             Only BC Services cards with a photo are accepted at this time.
           </li>
@@ -10399,20 +10177,74 @@ exports[`Storyshots SideCards Personal Information 1`] = `
           <h2
             className="heading-style"
           >
-            Update your personal information
+            <div
+              className="row"
+            >
+              <div
+                className="round-icon-wrapper"
+              >
+                <svg
+                  className="side-card-icon"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 384 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="sideCardTitle"
+              >
+                Update your BC Services Card Information
+              </div>
+            </div>
           </h2>
           <div
             className="submit-content"
           >
             <span>
-              If you find an error in your personal information, please contact 
+              If you find an error with your:
+              <ul
+                className="discStyle"
+              >
+                <li>
+                  First Name
+                </li>
+                <li>
+                  Middle Name
+                </li>
+                <li>
+                  Last Name
+                </li>
+                <li>
+                  Date of Birth
+                </li>
+                <li>
+                  Sex
+                </li>
+                <li>
+                  Current Street Address
+                </li>
+              </ul>
+              Please contact either 
               <a
                 className="link"
                 href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
               >
                 Service BC
               </a>
-               ,
+              , 
               <a
                 className="link"
                 href="https://www.icbc.com/Pages/default.aspx"
