@@ -64,7 +64,7 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	 */
 	@Override
 	public ValidationResponse validateBCSCAccessToken(String token) { 
-		logger.debug("validateBCSCAccessToken called. Token = " + token);
+		logger.debug("validateBCSCAccessToken called.");
 		return validateBCSCToken(token, BCSC_ACCESS_TOKEN_CLAIMS);
 	}
 	
@@ -73,7 +73,7 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	 */
 	@Override
 	public ValidationResponse validateBCSCIDToken(String token) {
-		logger.debug("validateBCSCIDToken called. Token = " + token);
+		logger.debug("validateBCSCIDToken called.");
 		return validateBCSCToken(token, BCSC_ID_TOKEN_CLAIMS);
 	}
 	
