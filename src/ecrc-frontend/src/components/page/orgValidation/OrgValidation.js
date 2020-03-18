@@ -24,9 +24,9 @@ export default function OrgValidation({
   const token = generateJWTToken(payload);
 
   useEffect(() => {
-    // get the initial validator from backend and store it for subsequent requests (for JWT)
-    storeValidator();
+    // create guid and get the initial validator from backend and store it for subsequent requests (for JWT)
     storeUUID();
+    storeValidator();
 
     window.scrollTo(0, 0);
   }, []);
