@@ -59,9 +59,11 @@ describe("Consent Page Component", () => {
 
     expect(getByText(container, "Continue").disabled).toBeTruthy();
 
-    fireEvent.click(getAllByRole(container, "checkbox")[0]);
-    fireEvent.click(getAllByRole(container, "checkbox")[1]);
-    fireEvent.click(getAllByRole(container, "checkbox")[2]);
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
 
     expect(getByText(container, "Continue").disabled).toBeFalsy();
 
