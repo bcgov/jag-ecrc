@@ -60,8 +60,12 @@ export function isActionPerformed(action) {
 }
 
 export function storeValidator() {
+  const uuid = sessionStorage.getItem("uuid");
+
+  if (!uuid) return false;
+
   axios
-    .get(`/ecrc/initialHandshake`)
+    .get(`/ecrc/initialHandshake?requestGuid=${uuid}`)
     .then(res => {
       const value = res.data;
 
