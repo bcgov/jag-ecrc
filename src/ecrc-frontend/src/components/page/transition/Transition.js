@@ -40,7 +40,7 @@ export default function Transition({
           )}
         </div>
       </div>
-      <Footer isSmallPage />
+      <Footer />
     </main>
   );
 }

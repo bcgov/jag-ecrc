@@ -1117,10 +1117,9 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -2351,10 +2350,9 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -2684,10 +2682,9 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -3017,10 +3014,9 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -3530,10 +3526,9 @@ exports[`Storyshots Consent page Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -4002,10 +3997,9 @@ exports[`Storyshots Consent page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -4132,10 +4126,9 @@ exports[`Storyshots Declaration Default 1`] = `
 exports[`Storyshots Footer Default 1`] = `
 <footer
   className="footer"
-  style={Object {}}
 >
   <nav
-    className="navbar navbar-expand-lg navbar-dark"
+    className="navbar navbar-expand-sm navbar-dark"
   >
     <div
       className="container"
@@ -4977,10 +4970,9 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -5675,10 +5667,9 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -6292,10 +6283,9 @@ exports[`Storyshots OrgValidation Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -6755,10 +6745,9 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -7627,10 +7616,9 @@ Canada
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -8287,10 +8275,9 @@ Canada
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -8947,10 +8934,9 @@ Canada
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -9607,10 +9593,9 @@ Canada
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -11121,10 +11106,9 @@ exports[`Storyshots Success Payment Failure 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -11367,10 +11351,9 @@ exports[`Storyshots Success Payment Success 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -11589,10 +11572,9 @@ exports[`Storyshots Success Volunteer 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -12139,10 +12121,9 @@ exports[`Storyshots Term Of Use page Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -12634,10 +12615,9 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -13337,18 +13317,9 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -13502,18 +13473,9 @@ exports[`Storyshots Transition Page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -13675,18 +13637,9 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -13860,18 +13813,9 @@ exports[`Storyshots User Confirmation page Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -14045,18 +13989,9 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"

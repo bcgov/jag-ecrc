@@ -79,18 +79,9 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -252,18 +243,9 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
   </div>
   <footer
     className="footer"
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "position": "fixed",
-        "textAlign": "center",
-        "width": "100%",
-      }
-    }
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
