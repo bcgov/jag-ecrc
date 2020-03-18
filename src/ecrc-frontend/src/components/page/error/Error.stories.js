@@ -20,10 +20,6 @@ const genericPage = {
   error
 };
 
-// storiesOf("Error", module)
-//   .add("Default - generic", () => <Error page={genericPage} />)
-//   .add("Default - session expired", () => <Error page={sessionExpiredPage} />);
-
 export const Default = () => (
   <MemoryRouter>
     <Error page={genericPage} />

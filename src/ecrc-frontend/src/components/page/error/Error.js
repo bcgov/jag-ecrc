@@ -49,8 +49,8 @@ export default function Error({ page: { header, error } }) {
             <h1>An unknown error has occurred.</h1>
             <br />
             <p>
-              Error description: {JSON.stringify(error)}. Please try again
-              later.
+              Error description:
+              {JSON.stringify(error)}. Please try again later.
             </p>
             <div className="buttons">
               <Button button={homeButton} onClick={home} />
