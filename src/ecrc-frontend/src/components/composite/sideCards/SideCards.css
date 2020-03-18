@@ -9,6 +9,10 @@
   margin-right: 0px;
 }
 
+.discStyle {
+  list-style: disc;
+}
+
 .block {
   display: contents;
 }

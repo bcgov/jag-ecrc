@@ -17,6 +17,10 @@ main {
   padding-bottom: 30px;
 }
 
+.sidecard {
+  width: 100%;
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;
