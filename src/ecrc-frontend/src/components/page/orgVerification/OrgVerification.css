@@ -1,3 +1,7 @@
 .contactList {
   list-style-type: lower-roman;
 }
+
+.smallTableHeader {
+  font-weight: 400;
+}

@@ -107,8 +107,14 @@ export default function OrgVerification({ page: { header, org } }) {
   ];
 
   const organizationTypeTable = {
-    header:
-      "Role of Applicant (Employee or Volunteer) and working category (e.g. working with children)",
+    header: (
+      <div>
+        Role of Applicant{" "}
+        <span className="smallTableHeader">(Employee or Volunteer)</span> and
+        working category{" "}
+        <span className="smallTableHeader">(e.g. working with children)</span>
+      </div>
+    ),
     tableElements: organizationTypeElements
   };
 
