@@ -73,7 +73,11 @@ export function storeValidator() {
         sessionStorage.setItem("validator", value);
       }
     })
-    .catch(() => {});
+    .catch(() => {
+      return false;
+    });
+
+  return true;
 }
 
 export function storeUUID() {
