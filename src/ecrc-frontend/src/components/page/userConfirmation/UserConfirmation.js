@@ -61,6 +61,13 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
         // Convert date format
         const birthDt = birthdate.split("-").join("/");
 
+        // Convert given names
+        const givenNamesArray = given_names.split(" ");
+
+        givenNamesArray.shift();
+
+        const legalSecondNm = givenNamesArray.join(" ");
+
         // Convert province name
         const regionMap = new Map([
           ["BC", "BRITISH COLUMBIA"],
@@ -85,7 +92,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 
         setUser({
           legalFirstNm: given_name,
-          legalSecondNm: given_names,
+          legalSecondNm,
           legalSurnameNm: family_name,
           birthDt,
           genderTxt,
