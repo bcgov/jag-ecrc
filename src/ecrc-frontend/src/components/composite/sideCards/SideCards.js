@@ -277,7 +277,16 @@ export default function SideCards({ type, sideCardLinks }) {
   });
 
   const usefulLinks = {
-    heading: "Useful Links",
+    heading: (
+      <div className="row">
+        <div key="usefulLinksIcon" className="round-icon-wrapper">
+          <FaQuestion className="side-card-icon" />
+        </div>
+        <div key="usefulLinksHeader" className="sideCardTitle textAlign">
+          Useful Links
+        </div>
+      </div>
+    ),
     content: [links],
     type: "blue"
   };
