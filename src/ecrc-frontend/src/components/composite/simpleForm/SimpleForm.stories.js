@@ -57,9 +57,6 @@ const simpleForm = {
 };
 
 storiesOf("SimpleForm", module)
-  .add("Default", () => (
-    <SimpleForm simpleForm={{ title: null, textInputs: [], buttons: [] }} />
-  ))
   .add("3texts_3buttons", () => (
     <SimpleForm simpleForm={{ ...simpleForm, title: null }} />
   ))
