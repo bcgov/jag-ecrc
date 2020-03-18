@@ -40,25 +40,48 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
         try {
             if (checkJWTToken(request)) {
+            	
+            	logger.debug("JWT found in header.");
+            	
                 Claims claims = validateToken(request);
+                logger.debug("JWT passed basic validation checks.");
+                
                 if ( claims.get("authorities") != null ) {
-                	if (claims.get("per") != null) {
-                		logger.debug("Found PER claim. Validating....");
-                		String accessToken = AES256.decrypt((String)claims.get("per")); 
-                		if ( accessToken != null ) {
-                			ValidationResponse resp = tokenValidationServices.validateBCSCAccessToken(accessToken);  
-                			if ( !resp.isValid() ) {
-                				logger.error("Failed to validate PER claim of received JWT token. Validation Response said : " + resp.getMessage());
-                				SecurityContextHolder.clearContext(); // fail
-                			} else {
-                				logger.debug("PER decypted and Access Token validated.");
-                			}
-                		} else {
-                			SecurityContextHolder.clearContext(); // fail
-                		}
+                	
+                	logger.debug("Authority found JWT.");
+                	
+                	// Accessing a private resource requires validating the 'PER' claim. 
+                	// Any errors during validation or a missing 'PER' claim will result in 403. 
+                	if ( request.getServletPath().startsWith("/private") ) {
+                	
+                		// "per" block must be found in private context. 
+	                	if ( claims.get("per") != null ) {
+	                		logger.debug("Found 'PER' claim. Validating....");
+	                		String accessToken = AES256.decrypt((String)claims.get("per")); 
+	                		if ( accessToken != null ) {
+	                			ValidationResponse resp = tokenValidationServices.validateBCSCAccessToken(accessToken);  
+	                			if ( !resp.isValid() ) {
+	                				logger.error("Failed to validate Access Token within PER claim. Validation response said : " + resp.getMessage());
+	                				SecurityContextHolder.clearContext(); // fail
+	                			} else {
+	                				logger.debug("'PER' decypted and Access Token validated.");
+	                				setUpSpringAuthentication(claims); // pass
+	                			}
+	                		} else {
+	                			logger.error("Error decrypting 'PER' block while accessing private resource");
+	                			SecurityContextHolder.clearContext(); // fail
+	                		}
+	                	} else {
+	                		logger.error("No 'PER' block found during attempt to access private resource");
+	                		SecurityContextHolder.clearContext(); // fail
+	                	}
+                	} else {
+                		logger.debug("Authorities checked. Allowing non private access.");
+                		setUpSpringAuthentication(claims); // pass
                 	}
-                    setUpSpringAuthentication(claims);
+                    
                 } else {
+                	logger.debug("No Authorities found. Blocking access.");
                     SecurityContextHolder.clearContext(); // fail
                 }
             }
