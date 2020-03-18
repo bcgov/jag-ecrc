@@ -23,13 +23,15 @@
     "react-dom": "^16.12.0",
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.1",
-    "uuid": "^7.0.2"
+    "react-scripts": "3.4.0",
+    "uuid": "^7.0.2",
+    "@babel/preset-react": "^7.8.3",
+    "babel-plugin-transform-export-extensions": "^6.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
+    "test": "jest",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
@@ -70,7 +72,9 @@
     "husky": "^4.2.1",
     "prettier": "1.19.1",
     "pretty-quick": "^2.0.1",
-    "react-test-renderer": "^16.12.0"
+    "react-test-renderer": "^16.12.0",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4"
   },
   "jest": {
     "watchPathIgnorePatterns": [
@@ -79,7 +83,15 @@
     "collectCoverageFrom": [
       "src/**/*.js",
       "!src/index.js"
-    ]
+    ],
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>/path/to/your/file.js",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|PNG|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|pdf)$": "<rootDir>/src/AssetsTransformer.js",
+      "\\.(css|less)$": "<rootDir>/src/AssetsTransformer.js"
+    }
   },
   "husky": {
     "hooks": {
