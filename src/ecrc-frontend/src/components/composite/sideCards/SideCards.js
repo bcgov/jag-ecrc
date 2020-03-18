@@ -218,7 +218,7 @@ export default function SideCards({ type, sideCardLinks }) {
     heading: "Update your personal information",
     content: [
       "If you find an error with your:",
-      <ul className="discStyle">
+      <ul key="personalInfoList" className="discStyle">
         <li>FIRST NAME</li>
         <li>MIDDLE NAME</li>
         <li>LAST NAME</li>

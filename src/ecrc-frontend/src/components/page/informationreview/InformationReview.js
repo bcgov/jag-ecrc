@@ -293,11 +293,11 @@ export default function InformationReview({
       alias3SecondNm,
       alias3SurnameNm,
       phoneNumber,
-      addressLine1,
-      cityNm,
-      provinceNm,
+      addressLine1: mailingAddressLine1,
+      cityNm: mailingCity,
+      provinceNm: mailingProvince,
       countryNm,
-      postalCodeTxt,
+      postalCodeTxt: mailingPostalCode,
       driversLicNo
     };
 
@@ -530,6 +530,10 @@ InformationReview.propTypes = {
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
       countryNm: PropTypes.string.isRequired,
+      mailingAddressLine1: PropTypes.string.isRequired,
+      mailingCity: PropTypes.string.isRequired,
+      mailingProvince: PropTypes.string.isRequired,
+      mailingPostalCode: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string.isRequired,
