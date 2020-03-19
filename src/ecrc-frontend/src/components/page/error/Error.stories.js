@@ -1,37 +1,39 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 
-import OrgValidation from "./OrgValidation";
+import Error from "./Error";
 
 export default {
-  title: "OrgValidation",
-  component: OrgValidation
+  title: "Error",
+  component: Error
 };
 
 const header = {
   name: "Criminal Record Check"
 };
 
-const setOrg = () => {};
-const setTransitionReason = () => {};
-const setError = () => {};
+const error = "403";
 
-const page = {
-  setOrg,
-  setTransitionReason,
-  setError,
-  header
+const genericPage = {
+  header,
+  error
 };
 
 export const Default = () => (
   <MemoryRouter>
-    <OrgValidation page={page} />
+    <Error page={genericPage} />
   </MemoryRouter>
 );
 
 export const Mobile = () => (
   <MemoryRouter>
-    <OrgValidation page={page} />
+    <Error page={genericPage} />
+  </MemoryRouter>
+);
+
+export const SessionExpired = () => (
+  <MemoryRouter>
+    <Error page={{ header, error: "session expired" }} />
   </MemoryRouter>
 );
 
