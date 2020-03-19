@@ -8,3 +8,13 @@ export default {
 };
 
 export const Default = () => <Loader />;
+
+export const Mobile = () => <Loader />;
+
+Mobile.story = {
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile2"
+    }
+  }
+};
