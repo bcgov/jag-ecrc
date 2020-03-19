@@ -89,10 +89,9 @@ exports[`Error Component Matches the snapshot 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
