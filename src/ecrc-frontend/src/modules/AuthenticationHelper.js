@@ -90,7 +90,7 @@ export function generateJWTToken(payload) {
 
   if (!validator) return false;
 
-  const token = jwt.sign(payload, validator, { expiresIn: "1h" });
+  const token = jwt.sign(payload, validator, { expiresIn: "10000" });
 
   sessionStorage.setItem("jwt", token);
 
