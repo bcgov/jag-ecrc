@@ -14,12 +14,13 @@ import {
 } from "../../../modules/AuthenticationHelper";
 
 export default function OrgValidation({
-  page: { header, setOrg, setTransitionReason }
+  page: { header, setOrg, setTransitionReason, setError }
 }) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
+  const [toError, setToError] = useState(false);
 
   useEffect(() => {
     // create guid and get the initial validator from backend and store it for subsequent requests (for JWT)
@@ -53,6 +54,9 @@ export default function OrgValidation({
         } else if (error.response.status === 401) {
           setTransitionReason("notwhitelisted");
           setToTransition(true);
+        } else {
+          setToError(true);
+          setError(error.response.status.toString());
         }
       });
   };
@@ -78,6 +82,10 @@ export default function OrgValidation({
 
   if (toTransition) {
     return <Redirect to="/criminalrecordcheck/transition" />;
+  }
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   return (
@@ -106,6 +114,7 @@ OrgValidation.propTypes = {
   page: PropTypes.shape({
     setOrg: PropTypes.func.isRequired,
     setTransitionReason: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired

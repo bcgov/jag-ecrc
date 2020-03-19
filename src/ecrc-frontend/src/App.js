@@ -10,6 +10,7 @@ import BcscRedirect from "./components/page/bcscRedirect/BcscRedirect";
 import Success from "./components/page/success/Success";
 import InformationReview from "./components/page/informationreview/InformationReview";
 import UserConfirmation from "./components/page/userConfirmation/UserConfirmation";
+import Error from "./components/page/error/Error";
 
 export default function App() {
   const [org, setOrg] = useState(
@@ -21,6 +22,8 @@ export default function App() {
   const [applicationInfo, setApplicationInfo] = useState(
     JSON.parse(sessionStorage.getItem("applicationInfo")) || {}
   );
+
+  const [error, setError] = useState("");
 
   const [transitionReason, setTransitionReason] = useState("bcsc");
 
@@ -46,7 +49,9 @@ export default function App() {
         <Switch>
           <Redirect exact from="/" to="/criminalrecordcheck" />
           <Route exact path="/(ecrc|criminalrecordcheck)">
-            <OrgValidation page={{ header, setOrg, setTransitionReason }} />
+            <OrgValidation
+              page={{ header, setOrg, setTransitionReason, setError }}
+            />
           </Route>
           <Route path="/(ecrc/orgverification|criminalrecordcheck/orgverification)">
             <OrgVerification page={{ header, org }} />
@@ -92,6 +97,9 @@ export default function App() {
           </Route>
           <Route path="/(ecrc/userconfirmation|criminalrecordcheck/userconfirmation)">
             <Consent page={{ header }} />
+          </Route>
+          <Route path="/(ecrc/error|criminalrecordcheck/error)">
+            <Error page={{ header, error }} />
           </Route>
           <Route
             path="/hosthome"
