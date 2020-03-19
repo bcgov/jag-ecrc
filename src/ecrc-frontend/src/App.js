@@ -23,9 +23,7 @@ export default function App() {
     JSON.parse(sessionStorage.getItem("applicationInfo")) || {}
   );
 
-  const [error, setError] = useState(
-    JSON.parse(sessionStorage.getItem("error")) || {}
-  );
+  const [error, setError] = useState("");
 
   const [transitionReason, setTransitionReason] = useState("bcsc");
 
