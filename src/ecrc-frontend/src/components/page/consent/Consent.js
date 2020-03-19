@@ -65,6 +65,10 @@ export default function Consent({ page: { header } }) {
   }
 
   if (toApplicationForm) {
+    if (!isAuthorized()) {
+      return setToHome(true);
+    }
+
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
     const actionsPerformed = [...currentPayload.actionsPerformed, "consent"];
     const newPayload = {

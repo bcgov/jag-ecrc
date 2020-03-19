@@ -48,6 +48,9 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
   };
 
   const onLoginClick = () => {
+    if (!isAuthenticated()) {
+      return setToHome(true);
+    }
     saveOrg();
     // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");

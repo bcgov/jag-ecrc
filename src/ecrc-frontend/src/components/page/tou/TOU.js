@@ -38,6 +38,10 @@ export default function TOU({ page: { header } }) {
   }, [firstBoxChecked, secondBoxChecked, reachedEnd]);
 
   const onContinueClick = () => {
+    if (!isAuthenticated()) {
+      return setToHome(true);
+    }
+
     setToBCSCRedirect(true);
   };
 

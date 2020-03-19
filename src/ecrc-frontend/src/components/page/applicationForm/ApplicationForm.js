@@ -462,6 +462,10 @@ export default function ApplicationForm({
   };
 
   const applicationVerification = () => {
+    if (!isAuthorized()) {
+      return setToHome(true);
+    }
+
     if (!birthLoc) {
       setBirthPlaceError("Please enter your city and country of birth");
     }
