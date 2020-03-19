@@ -48,11 +48,13 @@ export default function ApplicationForm({
       organizationFacility
     },
     setApplicant,
-    org: { defaultScheduleTypeCd }
+    org: { defaultScheduleTypeCd },
+    setError
   }
 }) {
   const [toHome, setToHome] = useState(false);
   const [toInfoReview, setToInfoReview] = useState(false);
+  const [toError, setToError] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
     previousThree: alias3FirstNm || alias3SecondNm || alias3SurnameNm
@@ -112,10 +114,14 @@ export default function ApplicationForm({
       })
       .then(res => {
         setProvinces(res.data.provinces.province);
+      })
+      .catch(error => {
+        setToError(true);
+        setError(error.response.status.toString());
       });
 
     window.scrollTo(0, 0);
-  }, []);
+  }, [setError]);
 
   useEffect(() => {
     if (sameAddress) {
@@ -577,6 +583,10 @@ export default function ApplicationForm({
     setSameAddress(event.target.id === "yes");
   };
 
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
+
   if (toHome) {
     return <Redirect to="/" />;
   }
@@ -724,7 +734,8 @@ ApplicationForm.propTypes = {
     setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({
       defaultScheduleTypeCd: PropTypes.string.isRequired
-    })
+    }),
+    setError: PropTypes.func.isRequired
   })
 };
 
