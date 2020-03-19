@@ -4320,10 +4320,9 @@ exports[`Storyshots Error Default 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -4487,10 +4486,9 @@ exports[`Storyshots Error Mobile 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"
@@ -4651,10 +4649,9 @@ exports[`Storyshots Error Session Expired 1`] = `
   </div>
   <footer
     className="footer"
-    style={Object {}}
   >
     <nav
-      className="navbar navbar-expand-lg navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark"
     >
       <div
         className="container"

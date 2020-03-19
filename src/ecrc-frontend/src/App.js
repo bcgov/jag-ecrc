@@ -54,7 +54,7 @@ export default function App() {
             />
           </Route>
           <Route path="/(ecrc/orgverification|criminalrecordcheck/orgverification)">
-            <OrgVerification page={{ header, org }} />
+            <OrgVerification page={{ header, org, setError }} />
           </Route>
           <Route path="/(ecrc/applicationform|criminalrecordcheck/applicationform)">
             <ApplicationForm page={{ header, org, applicant, setApplicant }} />
