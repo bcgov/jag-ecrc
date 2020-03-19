@@ -66,6 +66,17 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
         Please confirm the name associated with the BC Service card login provided.
       </strong>
       <p />
+      <div
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        <div
+          className="loader"
+        />
+      </div>
       <p>
         
       </p>
