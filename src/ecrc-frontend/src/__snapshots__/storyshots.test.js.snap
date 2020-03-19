@@ -4191,16 +4191,18 @@ exports[`Storyshots Error Default 1`] = `
     <div
       className="content col-md-8"
     >
-      <h1>
-        An unknown error has occurred.
-      </h1>
-      <br />
-      <p>
-        The error description is below. If this error persists, please try again later.
+      <div>
+        <h1>
+          An unknown error has occurred.
+        </h1>
         <br />
-        <br />
-        "403"
-      </p>
+        <p>
+          The error description is below. If this error persists, please try again later.
+          <br />
+          <br />
+          403
+        </p>
+      </div>
       <div
         className="buttons"
       >
@@ -4356,16 +4358,18 @@ exports[`Storyshots Error Mobile 1`] = `
     <div
       className="content col-md-8"
     >
-      <h1>
-        An unknown error has occurred.
-      </h1>
-      <br />
-      <p>
-        The error description is below. If this error persists, please try again later.
+      <div>
+        <h1>
+          An unknown error has occurred.
+        </h1>
         <br />
-        <br />
-        "403"
-      </p>
+        <p>
+          The error description is below. If this error persists, please try again later.
+          <br />
+          <br />
+          403
+        </p>
+      </div>
       <div
         className="buttons"
       >
@@ -4521,13 +4525,15 @@ exports[`Storyshots Error Session Expired 1`] = `
     <div
       className="content col-md-8"
     >
-      <h1>
-        Your session has expired.
-      </h1>
-      <br />
-      <p>
-        Please return to the home page and begin your session again.
-      </p>
+      <div>
+        <h1>
+          Your session has expired.
+        </h1>
+        <br />
+        <p>
+          Please return to the home page and begin your session again.
+        </p>
+      </div>
       <div
         className="buttons"
       >
