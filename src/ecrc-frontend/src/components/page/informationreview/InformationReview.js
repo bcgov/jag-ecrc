@@ -268,8 +268,10 @@ export default function InformationReview({
   };
 
   const confirm = () => {
-    // TODO: Check if volunteer, if yes, success, else, cont.
-    // CALL THAT API
+    if (!isAuthorized()) {
+      setToHome(true);
+      return;
+    }
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 

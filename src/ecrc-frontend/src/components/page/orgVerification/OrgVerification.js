@@ -32,7 +32,8 @@ export default function OrgVerification({ page: { header, org } }) {
 
   const orgVerified = () => {
     if (!isAuthenticated()) {
-      return setToHome(true);
+      setToHome(true);
+      return;
     }
 
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));

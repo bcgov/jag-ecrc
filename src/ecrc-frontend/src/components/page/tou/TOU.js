@@ -39,7 +39,8 @@ export default function TOU({ page: { header } }) {
 
   const onContinueClick = () => {
     if (!isAuthenticated()) {
-      return setToHome(true);
+      setToHome(true);
+      return;
     }
 
     setToBCSCRedirect(true);

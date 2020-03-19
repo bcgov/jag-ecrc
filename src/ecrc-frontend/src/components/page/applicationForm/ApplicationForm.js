@@ -463,7 +463,8 @@ export default function ApplicationForm({
 
   const applicationVerification = () => {
     if (!isAuthorized()) {
-      return setToHome(true);
+      setToHome(true);
+      return;
     }
 
     if (!birthLoc) {

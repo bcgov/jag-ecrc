@@ -90,8 +90,6 @@ export function generateJWTToken(payload) {
 
   if (!validator) return false;
 
-  console.log(payload);
-
   let token;
 
   if (payload.exp) {
