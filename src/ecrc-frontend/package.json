@@ -1,7 +1,6 @@
 {
   "name": "ecrc-frontend",
   "version": "0.1.0",
-  "homepage": "/criminalrecordcheck",
   "private": true,
   "dependencies": {
     "@bcgov/bootstrap-theme": "https://github.com/bcgov/bootstrap-theme/releases/download/v1.1.1/bcgov-bootstrap-theme-1.1.1.tgz",
