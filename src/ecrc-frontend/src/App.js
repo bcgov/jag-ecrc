@@ -71,7 +71,7 @@ export default function App() {
             <UserConfirmation page={{ header, setApplicant }} />
           </Route>
           <Route path="/(ecrc/bcscredirect|criminalrecordcheck/bcscredirect)">
-            <BcscRedirect page={{ header, saveOrg }} />
+            <BcscRedirect page={{ header, saveOrg, setError }} />
           </Route>
           <Route path="/(ecrc/success|criminalrecordcheck/success)">
             <Success

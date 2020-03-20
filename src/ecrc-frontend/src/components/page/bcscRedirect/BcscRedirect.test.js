@@ -10,10 +10,12 @@ describe("BcscRedirect Page Component", () => {
     };
 
     const saveOrg = () => {};
+    const setError = () => {};
 
     const page = {
       header,
-      saveOrg
+      saveOrg,
+      setError
     };
 
     const bcscRedirect = create(<BcscRedirect page={page} />);
