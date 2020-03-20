@@ -46,10 +46,11 @@ const org = {
   defaultCrcScopeLevelCd: "WWCH"
 };
 
-const setApplicationInfo = () => {};
-const saveApplicant = () => {};
-const saveOrg = () => {};
-const saveApplicationInfo = () => {};
+const setApplicationInfo = jest.fn();
+const saveApplicant = jest.fn();
+const saveOrg = jest.fn();
+const saveApplicationInfo = jest.fn();
+const setError = jest.fn();
 
 const page = {
   header,
@@ -58,7 +59,8 @@ const page = {
   setApplicationInfo,
   saveApplicant,
   saveOrg,
-  saveApplicationInfo
+  saveApplicationInfo,
+  setError
 };
 
 sessionStorage.setItem("validator", "secret");

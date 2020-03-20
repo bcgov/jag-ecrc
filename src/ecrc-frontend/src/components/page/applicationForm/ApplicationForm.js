@@ -48,11 +48,13 @@ export default function ApplicationForm({
       organizationFacility
     },
     setApplicant,
-    org: { defaultScheduleTypeCd }
+    org: { defaultScheduleTypeCd },
+    setError
   }
 }) {
   const [toHome, setToHome] = useState(false);
   const [toInfoReview, setToInfoReview] = useState(false);
+  const [toError, setToError] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
     previousThree: alias3FirstNm || alias3SecondNm || alias3SurnameNm
@@ -463,7 +465,8 @@ export default function ApplicationForm({
 
   const applicationVerification = () => {
     if (!isAuthorized()) {
-      setToHome(true);
+      setError("session expired");
+      setToError(true);
       return;
     }
 
@@ -595,6 +598,10 @@ export default function ApplicationForm({
     };
     generateJWTToken(newPayload);
     return <Redirect to="/criminalrecordcheck/informationreview" />;
+  }
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   return (
@@ -729,7 +736,8 @@ ApplicationForm.propTypes = {
     setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({
       defaultScheduleTypeCd: PropTypes.string.isRequired
-    })
+    }),
+    setError: PropTypes.func.isRequired
   })
 };
 

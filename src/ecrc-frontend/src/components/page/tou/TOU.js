@@ -13,9 +13,10 @@ import {
   accessJWTToken
 } from "../../../modules/AuthenticationHelper";
 
-export default function TOU({ page: { header } }) {
+export default function TOU({ page: { header, setError } }) {
   const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
   const [toHome, setToHome] = useState(false);
+  const [toError, setToError] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
@@ -39,7 +40,8 @@ export default function TOU({ page: { header } }) {
 
   const onContinueClick = () => {
     if (!isAuthenticated()) {
-      setToHome(true);
+      setError("session expired");
+      setToError(true);
       return;
     }
 
@@ -67,6 +69,10 @@ export default function TOU({ page: { header } }) {
     return <Redirect to="/" />;
   }
 
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
+
   return (
     <main>
       <Header header={header} />
@@ -90,6 +96,7 @@ TOU.propTypes = {
   page: PropTypes.shape({
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
-    })
+    }),
+    setError: PropTypes.func.isRequired
   }).isRequired
 };
