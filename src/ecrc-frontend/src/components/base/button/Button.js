@@ -2,16 +2,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Button.css";
+import Loader from "../loader/Loader";
 
 export const Button = ({
-  button: { label, buttonStyle, buttonSize, type, disabled },
+  button: { label, buttonStyle, buttonSize, type, disabled, loader },
   onClick
 }) => {
   let buttonType = "button";
+  let displayLoader = "loader-hide";
   const validTypes = ["button", "submit", "reset"];
 
   if (validTypes.includes(type)) {
     buttonType = type;
+  }
+
+  if (loader) {
+    displayLoader = "loader-show";
   }
 
   return (
@@ -22,6 +28,9 @@ export const Button = ({
       disabled={disabled}
     >
       {label}
+      <div className={displayLoader}>
+        <Loader />
+      </div>
     </button>
   );
 };
@@ -32,7 +41,8 @@ Button.propTypes = {
     buttonStyle: PropTypes.string.isRequired,
     buttonSize: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    loader: PropTypes.bool
   }).isRequired,
   onClick: PropTypes.func.isRequired
 };

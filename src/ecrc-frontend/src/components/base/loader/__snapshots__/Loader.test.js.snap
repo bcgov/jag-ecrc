@@ -2,6 +2,6 @@
 
 exports[`Loader Component Matches the snapshot 1`] = `
 <div
-  className="loader"
+  className="btn-loader"
 />
 `;

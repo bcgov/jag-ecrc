@@ -65,9 +65,11 @@ export default function InformationReview({
   const [toHome, setToHome] = useState(false);
   const [toSuccess, setToSuccess] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setLoading(false);
 
     if (!isAuthorized() || !isActionPerformed("appForm")) setToHome(true);
   }, []);
@@ -264,10 +266,12 @@ export default function InformationReview({
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit",
-    disabled: !boxChecked
+    disabled: !boxChecked,
+    loader: loading
   };
 
   const confirm = () => {
+    setLoading(true);
     // TODO: Check if volunteer, if yes, success, else, cont.
     // CALL THAT API
     const token = sessionStorage.getItem("jwt");

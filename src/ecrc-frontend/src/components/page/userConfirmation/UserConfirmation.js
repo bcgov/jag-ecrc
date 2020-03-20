@@ -163,7 +163,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
           </strong>
           <p />
           <div style={toggleLoader}>
-            <Loader />
+            <Loader page />
           </div>
           <p>{fullName}</p>
           <p>Is this correct?</p>

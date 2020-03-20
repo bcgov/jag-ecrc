@@ -82,6 +82,13 @@ exports[`SimpleForm Component Matches the snapshot 1`] = `
         type="button"
       >
         button2
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </li>
     <li>
@@ -91,6 +98,13 @@ exports[`SimpleForm Component Matches the snapshot 1`] = `
         type="button"
       >
         button3
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </li>
   </ul>

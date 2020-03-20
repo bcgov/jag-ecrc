@@ -493,6 +493,13 @@ exports[`SideCards Component CriminalRecord sidecard 1`] = `
                 type="submit"
               >
                 VISIT THE CRIMINAL RECORD REVIEW WEBSITE
+                <div
+                  className="loader-hide"
+                >
+                  <div
+                    className="btn-loader"
+                  />
+                </div>
               </button>
             </span>
           </div>
@@ -580,6 +587,13 @@ exports[`SideCards Component GetBcServices sidecard 1`] = `
                   type="submit"
                 >
                   READ MORE
+                  <div
+                    className="loader-hide"
+                  >
+                    <div
+                      className="btn-loader"
+                    />
+                  </div>
                 </button>
               </div>
             </span>
