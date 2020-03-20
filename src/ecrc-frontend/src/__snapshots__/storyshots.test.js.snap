@@ -6015,6 +6015,12 @@ exports[`Storyshots Loader Default 1`] = `
 />
 `;
 
+exports[`Storyshots Loader Mobile 1`] = `
+<div
+  className="loader"
+/>
+`;
+
 exports[`Storyshots Menu Default 1`] = `
 <div
   className="col-12 col-md-3 "
@@ -14833,6 +14839,17 @@ exports[`Storyshots User Confirmation page Default 1`] = `
         Please confirm the name associated with the BC Service card login provided.
       </strong>
       <p />
+      <div
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        <div
+          className="loader"
+        />
+      </div>
       <p>
         
       </p>
@@ -15009,6 +15026,17 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
         Please confirm the name associated with the BC Service card login provided.
       </strong>
       <p />
+      <div
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        <div
+          className="loader"
+        />
+      </div>
       <p>
         
       </p>
