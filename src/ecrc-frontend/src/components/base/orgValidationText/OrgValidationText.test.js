@@ -12,7 +12,7 @@ describe("OrgValidationText Component", () => {
   };
 
   const button = {
-    label: "Validate",
+    label: "Continue",
     buttonStyle: "btn btn-primary",
     buttonSize: "btn btn-sm",
     type: "submit"

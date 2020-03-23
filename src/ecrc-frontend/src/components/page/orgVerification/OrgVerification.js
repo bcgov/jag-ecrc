@@ -16,9 +16,10 @@ import {
   accessJWTToken
 } from "../../../modules/AuthenticationHelper";
 
-export default function OrgVerification({ page: { header, org } }) {
+export default function OrgVerification({ page: { header, org, setError } }) {
   const history = useHistory();
   const [toHome, setToHome] = useState(false);
+  const [toError, setToError] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -31,6 +32,12 @@ export default function OrgVerification({ page: { header, org } }) {
   }, [org.orgNm]);
 
   const orgVerified = () => {
+    if (!isAuthenticated()) {
+      setError("session expired");
+      setToError(true);
+      return;
+    }
+
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
     const newPayload = {
       ...currentPayload,
@@ -123,6 +130,10 @@ export default function OrgVerification({ page: { header, org } }) {
     return <Redirect to="/" />;
   }
 
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
+
   return (
     <main>
       <Header header={header} />
@@ -208,6 +219,7 @@ OrgVerification.propTypes = {
     org: PropTypes.object.isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
-    }).isRequired
+    }).isRequired,
+    setError: PropTypes.func.isRequired
   }).isRequired
 };

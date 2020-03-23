@@ -1,4 +1,4 @@
-.loader {
+.page-loader {
   height: 40px;
   width: 40px;
   color: #494949;
@@ -7,6 +7,20 @@
   border-top-color: transparent;
   animation: rotate 2s linear infinite;
   display: inline-block;
+}
+
+.btn-loader {
+  height: 15px;
+  width: 15px;
+  color: #ffffff;
+  border: 2px solid;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: rotate 2s linear infinite;
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 3px;
+  vertical-align: text-top;
 }
 
 @keyframes rotate {

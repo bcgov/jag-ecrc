@@ -19,8 +19,8 @@ const setError = () => {};
 const page = {
   setOrg,
   setTransitionReason,
-  setError,
-  header
+  header,
+  setError
 };
 
 export const Default = () => (

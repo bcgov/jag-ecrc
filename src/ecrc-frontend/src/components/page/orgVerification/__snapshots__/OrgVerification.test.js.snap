@@ -213,6 +213,13 @@ Canada
           type="submit"
         >
           Cancel
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -220,6 +227,13 @@ Canada
           type="submit"
         >
           Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -302,6 +316,13 @@ Canada
                         type="submit"
                       >
                         READ MORE
+                        <div
+                          className="loader-hide"
+                        >
+                          <div
+                            className="btn-loader"
+                          />
+                        </div>
                       </button>
                     </div>
                   </span>

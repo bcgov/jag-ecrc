@@ -12,8 +12,11 @@ const header = {
   name: "Terms of Use"
 };
 
+const setError = () => {};
+
 const page = {
-  header
+  header,
+  setError
 };
 
 sessionStorage.setItem("validator", "secret");

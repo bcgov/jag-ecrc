@@ -13,8 +13,11 @@ const header = {
   name: "Criminal Record Check"
 };
 
+const setError = () => {};
+
 const page = {
-  header
+  header,
+  setError
 };
 
 sessionStorage.setItem("validator", "secret");

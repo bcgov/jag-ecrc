@@ -16,10 +16,11 @@ import {
   isActionPerformed
 } from "../../../modules/AuthenticationHelper";
 
-export default function Consent({ page: { header } }) {
+export default function Consent({ page: { header, setError } }) {
   const history = useHistory();
   const [toAppHome, setToAppHome] = useState(false);
   const [toHome, setToHome] = useState(false);
+  const [toError, setToError] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [thirdBoxChecked, setThirdBoxChecked] = useState(false);
@@ -65,6 +66,11 @@ export default function Consent({ page: { header } }) {
   }
 
   const toApplicationForm = () => {
+    if (!isAuthorized()) {
+      setError("session expired");
+      return setToError(true);
+    }
+
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
     const actionsPerformed = [...currentPayload.actionsPerformed, "consent"];
     const newPayload = {
@@ -81,6 +87,10 @@ export default function Consent({ page: { header } }) {
       *
     </span>
   );
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
 
   return (
     <main>
@@ -130,6 +140,7 @@ Consent.propTypes = {
   page: PropTypes.shape({
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
-    }).isRequired
+    }).isRequired,
+    setError: PropTypes.func.isRequired
   }).isRequired
 };

@@ -402,6 +402,13 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             type="submit"
           >
             Cancel and Exit
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <button
             className="btn ecrc_go_btn btn "
@@ -410,6 +417,13 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             type="submit"
           >
             Continue
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
         </section>
       </div>
