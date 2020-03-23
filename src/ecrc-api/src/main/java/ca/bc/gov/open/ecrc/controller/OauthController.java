@@ -1,16 +1,15 @@
 package ca.bc.gov.open.ecrc.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import net.minidev.json.JSONObject;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.nimbusds.oauth2.sdk.AccessTokenResponse;
 import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
@@ -23,8 +22,7 @@ import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
 import ca.bc.gov.open.ecrc.util.AES256;
 import ca.bc.gov.open.ecrc.util.JwtTokenGenerator;
 import ch.qos.logback.classic.Logger;
-
-import java.util.UUID;
+import net.minidev.json.JSONObject;
 
 /**
  * 
@@ -105,7 +103,7 @@ public class OauthController {
 		// must be decrypted and used for subsequent calls back to the API. 
 	    String encryptedAccessToken = null;
 	    try {
-	    	encryptedAccessToken = AES256.encrypt(token.getTokens().getBearerAccessToken().getValue());
+	    	encryptedAccessToken = AES256.encrypt(token.getTokens().getBearerAccessToken().getValue(), ecrcProps.getOauthPERSecret() );
 		} catch (Exception e) {
 			logger.error("Error encrypting token:", e);
 			return new ResponseEntity(HttpStatus.FORBIDDEN);

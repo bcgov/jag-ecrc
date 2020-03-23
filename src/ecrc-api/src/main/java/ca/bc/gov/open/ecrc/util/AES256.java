@@ -26,23 +26,25 @@ public class AES256 {
 
 	private AES256() { throw new IllegalStateException("Utility class"); }
 
-	private static String secretKey = "@.Rdn4XbG$]%PW2";
 	private static String salt = "p900*gU";
+	
 	private static Logger logger = LoggerFactory.getLogger(AES256.class);
+	
 	/**
 	 * 
-	 * Encrypt
+	 * encrypt
 	 * 
 	 * @param strToEncrypt
+	 * @param secret
 	 * @return
 	 */
-	public static String encrypt(String strToEncrypt) {
+	public static String encrypt(String strToEncrypt, String secret) {
 		try {
 			byte[] iv = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 			IvParameterSpec ivspec = new IvParameterSpec(iv);
 
 			SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-			KeySpec spec = new PBEKeySpec(secretKey.toCharArray(), salt.getBytes(), 65536, 256);
+			KeySpec spec = new PBEKeySpec(secret.toCharArray(), salt.getBytes(), 65536, 256);
 			SecretKey tmp = factory.generateSecret(spec);
 			SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
 
@@ -54,21 +56,22 @@ public class AES256 {
 		}
 		return null;
 	}
-
+	
 	/**
 	 * 
-	 * Decrypt 
+	 * decrypt
 	 * 
 	 * @param strToDecrypt
+	 * @param secret
 	 * @return
 	 */
-	public static String decrypt(String strToDecrypt) {
+	public static String decrypt(String strToDecrypt, String secret) {
 		try {
 			byte[] iv = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 			IvParameterSpec ivspec = new IvParameterSpec(iv);
 
 			SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-			KeySpec spec = new PBEKeySpec(secretKey.toCharArray(), salt.getBytes(), 65536, 256);
+			KeySpec spec = new PBEKeySpec(secret.toCharArray(), salt.getBytes(), 65536, 256);
 			SecretKey tmp = factory.generateSecret(spec);
 			SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
 
