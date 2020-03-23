@@ -22,9 +22,12 @@ describe("OrgVerification Component", () => {
     orgApplicantRelationship: "Employee"
   };
 
+  const setError = jest.fn();
+
   const page = {
     header,
-    org
+    org,
+    setError
   };
 
   // Mock window function

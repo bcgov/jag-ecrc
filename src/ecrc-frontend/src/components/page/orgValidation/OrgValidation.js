@@ -21,8 +21,6 @@ export default function OrgValidation({
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
   const [toError, setToError] = useState(false);
-  const payload = { authorities: ["ROLE"] };
-  const token = generateJWTToken(payload);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -45,6 +43,8 @@ export default function OrgValidation({
   const orgValidation = () => {
     setLoading(true);
     const uuid = sessionStorage.getItem("uuid");
+    const payload = { authorities: ["ROLE"] };
+    const token = generateJWTToken(payload);
 
     axios
       .get(

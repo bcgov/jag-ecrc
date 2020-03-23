@@ -19,8 +19,11 @@ describe("TermOfUse Page Component", () => {
     name: "Criminal Record Check"
   };
 
+  const setError = jest.fn();
+
   const page = {
-    header
+    header,
+    setError
   };
 
   beforeEach(() => {

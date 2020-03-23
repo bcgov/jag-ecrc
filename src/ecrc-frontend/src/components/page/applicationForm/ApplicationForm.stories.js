@@ -32,7 +32,8 @@ const applicant = {
   organizationFacility: ""
 };
 
-const setApplicant = () => {};
+const setApplicant = jest.fn();
+const setError = jest.fn();
 
 const org = {
   defaultScheduleTypeCd: "WBSD"
@@ -42,7 +43,8 @@ const page = {
   header,
   applicant,
   org,
-  setApplicant
+  setApplicant,
+  setError
 };
 
 sessionStorage.setItem("validator", "secret");
