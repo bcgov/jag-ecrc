@@ -110,7 +110,8 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo
+      saveApplicationInfo,
+      setError
     };
     const history = createMemoryHistory();
     const { container } = render(
@@ -134,7 +135,8 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo
+      saveApplicationInfo,
+      setError
     };
     const history = createMemoryHistory();
     const { container } = render(
@@ -156,7 +158,8 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo
+      saveApplicationInfo,
+      setError
     };
     axios.get.mockImplementation(() =>
       Promise.resolve({
@@ -218,7 +221,8 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo
+      saveApplicationInfo,
+      setError
     };
 
     axios.get.mockImplementation(() =>

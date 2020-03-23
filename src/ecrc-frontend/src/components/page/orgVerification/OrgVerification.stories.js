@@ -24,11 +24,13 @@ const org = {
 };
 
 const setOrg = () => {};
+const setError = () => {};
 
 const page = {
   org,
   setOrg,
-  header
+  header,
+  setError
 };
 
 sessionStorage.setItem("validator", "secret");
