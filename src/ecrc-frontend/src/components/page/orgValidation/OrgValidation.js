@@ -85,6 +85,10 @@ export default function OrgValidation({
     return <Redirect to="/criminalrecordcheck/transition" />;
   }
 
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
+
   return (
     <main>
       <Header header={header} />

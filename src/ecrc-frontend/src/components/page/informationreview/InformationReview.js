@@ -467,6 +467,10 @@ export default function InformationReview({
     return <Redirect to="/" />;
   }
 
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
+
   return (
     <main>
       <Header header={header} />
