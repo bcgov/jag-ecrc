@@ -3,7 +3,6 @@
 exports[`TableElement Component Matches the snapshot 1`] = `
 <tr>
   <td>
-     
     Somewhere
   </td>
   <td>
