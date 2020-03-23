@@ -13,7 +13,7 @@ const header = {
   name: "Criminal Record Check"
 };
 
-const setError = jest.fn();
+const setError = () => {};
 
 const page = {
   header,
