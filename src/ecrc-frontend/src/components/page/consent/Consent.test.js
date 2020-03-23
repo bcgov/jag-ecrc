@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { create } from "react-test-renderer";
 import { Router } from "react-router-dom";
 import {
@@ -10,7 +11,6 @@ import {
 } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
-import axios from "axios";
 
 import Consent from "./Consent";
 
@@ -117,16 +117,6 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate Employee relationship flow", async () => {
-    const page = {
-      header,
-      applicant,
-      org,
-      setApplicationInfo,
-      saveApplicant,
-      saveOrg,
-      saveApplicationInfo,
-      setError
-    };
     axios.get.mockImplementation(() =>
       Promise.resolve({
         data: {
@@ -184,17 +174,6 @@ describe("Consent Page Component", () => {
     applicant.organizationFacility = "";
 
     org.orgApplicantRelationship = "VOLUNTEER";
-
-    const page = {
-      header,
-      applicant,
-      org,
-      setApplicationInfo,
-      saveApplicant,
-      saveOrg,
-      saveApplicationInfo,
-      setError
-    };
 
     axios.get.mockImplementation(() =>
       Promise.resolve({
