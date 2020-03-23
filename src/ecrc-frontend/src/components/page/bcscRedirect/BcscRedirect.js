@@ -52,7 +52,6 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
       setToHome(true);
       return;
     }
-
     saveOrg();
     // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");

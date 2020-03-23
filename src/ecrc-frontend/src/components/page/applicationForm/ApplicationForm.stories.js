@@ -33,6 +33,7 @@ const applicant = {
 };
 
 const setApplicant = () => {};
+const setError = () => {};
 
 const org = {
   defaultScheduleTypeCd: "WBSD"
@@ -42,7 +43,8 @@ const page = {
   header,
   applicant,
   org,
-  setApplicant
+  setApplicant,
+  setError
 };
 
 sessionStorage.setItem("validator", "secret");
