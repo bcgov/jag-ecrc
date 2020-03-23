@@ -14,11 +14,13 @@ const header = {
 
 const setOrg = () => {};
 const setTransitionReason = () => {};
+const setError = () => {};
 
 const page = {
   setOrg,
   setTransitionReason,
-  header
+  header,
+  setError
 };
 
 export const Default = () => (

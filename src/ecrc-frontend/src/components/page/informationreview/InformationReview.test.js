@@ -65,6 +65,7 @@ describe("InformationReview Component", () => {
   const saveApplicant = jest.fn();
   const saveOrg = jest.fn();
   const saveApplicationInfo = jest.fn();
+  const setError = jest.fn();
 
   window.scrollTo = jest.fn();
 
@@ -90,7 +91,8 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo
+      saveApplicationInfo,
+      setError
     };
     const infoReview = create(
       <MemoryRouter>

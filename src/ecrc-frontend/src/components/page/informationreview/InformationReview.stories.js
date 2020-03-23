@@ -50,6 +50,7 @@ const setApplicationInfo = () => {};
 const saveApplicant = () => {};
 const saveOrg = () => {};
 const saveApplicationInfo = () => {};
+const setError = () => {};
 
 const page = {
   header,
@@ -58,7 +59,8 @@ const page = {
   setApplicationInfo,
   saveApplicant,
   saveOrg,
-  saveApplicationInfo
+  saveApplicationInfo,
+  setError
 };
 
 sessionStorage.setItem("validator", "secret");
