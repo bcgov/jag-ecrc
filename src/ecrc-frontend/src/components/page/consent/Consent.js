@@ -68,7 +68,8 @@ export default function Consent({ page: { header, setError } }) {
   const toApplicationForm = () => {
     if (!isAuthorized()) {
       setError("session expired");
-      return setToError(true);
+      setToError(true);
+      return;
     }
 
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
