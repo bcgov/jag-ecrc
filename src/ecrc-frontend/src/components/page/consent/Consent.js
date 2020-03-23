@@ -100,6 +100,23 @@ export default function Consent({
     loader: loading
   };
 
+  const toSuccess = () => {
+    if (!isAuthorized()) {
+      setError("session expired");
+      setToError(true);
+      return;
+    }
+
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed: [...currentPayload.actionsPerformed, "consent"]
+    };
+    generateJWTToken(newPayload);
+
+    history.push("/criminalrecordcheck/success");
+  };
+
   const confirm = () => {
     setLoading(true);
 
@@ -268,23 +285,6 @@ export default function Consent({
   if (toAppHome) {
     return <Redirect to="/" />;
   }
-
-  const toSuccess = () => {
-    if (!isAuthorized()) {
-      setError("session expired");
-      setToError(true);
-      return;
-    }
-
-    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const newPayload = {
-      ...currentPayload,
-      actionsPerformed: [...currentPayload.actionsPerformed, "consent"]
-    };
-    generateJWTToken(newPayload);
-
-    history.push("/criminalrecordcheck/success");
-  };
 
   const asterisk = (
     <span id="asterisk" className="mandatory">
