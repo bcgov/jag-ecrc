@@ -51,20 +51,16 @@ export default function OrgValidationText({
           <br />
           <h3>{"I'm ready"}</h3>
           <div style={{ float: "left" }}>
-            <div>
-              <TextInput textInput={textInput} onChange={onChange} />
-            </div>
+            <TextInput textInput={textInput} onChange={onChange} />
             <div style={{ maxWidth: "350px" }}>
-              <p style={{ width: "400px" }}>
+              <p>
                 Enter the access code provided by your organization. An access
                 code is required to proceed with the online submission
+                <span id="asterisk" className="mandatory">
+                  *
+                </span>
               </p>
             </div>
-          </div>
-          <div style={{ float: "left" }}>
-            <span id="asterisk" className="mandatory">
-              *
-            </span>
           </div>
           <div style={{ float: "right" }}>
             <Button button={button} onClick={onClick} />

@@ -120,19 +120,17 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
               }
             >
               <div>
-                <div>
-                  <input
-                    className="textinput_editable_white"
-                    id="orgId"
-                    onChange={[Function]}
-                    type="text"
-                  />
-                  <span
-                    className="error"
-                  >
-                    
-                  </span>
-                </div>
+                <input
+                  className="textinput_editable_white"
+                  id="orgId"
+                  onChange={[Function]}
+                  type="text"
+                />
+                <span
+                  className="error"
+                >
+                  
+                </span>
               </div>
               <div
                 style={
@@ -141,30 +139,16 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
                   }
                 }
               >
-                <p
-                  style={
-                    Object {
-                      "width": "400px",
-                    }
-                  }
-                >
+                <p>
                   Enter the access code provided by your organization. An access code is required to proceed with the online submission
+                  <span
+                    className="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
                 </p>
               </div>
-            </div>
-            <div
-              style={
-                Object {
-                  "float": "left",
-                }
-              }
-            >
-              <span
-                className="mandatory"
-                id="asterisk"
-              >
-                *
-              </span>
             </div>
             <div
               style={

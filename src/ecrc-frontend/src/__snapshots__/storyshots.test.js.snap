@@ -6456,19 +6456,17 @@ exports[`Storyshots OrgValidation Default 1`] = `
               }
             >
               <div>
-                <div>
-                  <input
-                    className="textinput_editable_white"
-                    id="orgId"
-                    onChange={[Function]}
-                    type="text"
-                  />
-                  <span
-                    className="error"
-                  >
-                    
-                  </span>
-                </div>
+                <input
+                  className="textinput_editable_white"
+                  id="orgId"
+                  onChange={[Function]}
+                  type="text"
+                />
+                <span
+                  className="error"
+                >
+                  
+                </span>
               </div>
               <div
                 style={
@@ -6477,30 +6475,16 @@ exports[`Storyshots OrgValidation Default 1`] = `
                   }
                 }
               >
-                <p
-                  style={
-                    Object {
-                      "width": "400px",
-                    }
-                  }
-                >
+                <p>
                   Enter the access code provided by your organization. An access code is required to proceed with the online submission
+                  <span
+                    className="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
                 </p>
               </div>
-            </div>
-            <div
-              style={
-                Object {
-                  "float": "left",
-                }
-              }
-            >
-              <span
-                className="mandatory"
-                id="asterisk"
-              >
-                *
-              </span>
             </div>
             <div
               style={
@@ -6814,19 +6798,17 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               }
             >
               <div>
-                <div>
-                  <input
-                    className="textinput_editable_white"
-                    id="orgId"
-                    onChange={[Function]}
-                    type="text"
-                  />
-                  <span
-                    className="error"
-                  >
-                    
-                  </span>
-                </div>
+                <input
+                  className="textinput_editable_white"
+                  id="orgId"
+                  onChange={[Function]}
+                  type="text"
+                />
+                <span
+                  className="error"
+                >
+                  
+                </span>
               </div>
               <div
                 style={
@@ -6835,30 +6817,16 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                   }
                 }
               >
-                <p
-                  style={
-                    Object {
-                      "width": "400px",
-                    }
-                  }
-                >
+                <p>
                   Enter the access code provided by your organization. An access code is required to proceed with the online submission
+                  <span
+                    className="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
                 </p>
               </div>
-            </div>
-            <div
-              style={
-                Object {
-                  "float": "left",
-                }
-              }
-            >
-              <span
-                className="mandatory"
-                id="asterisk"
-              >
-                *
-              </span>
             </div>
             <div
               style={
@@ -7111,37 +7079,35 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         }
       >
         <div>
-          <div>
-            <label
-              className="label"
-              htmlFor="orgId"
+          <label
+            className="label"
+            htmlFor="orgId"
+          >
+            <div
+              className="textinput_label"
             >
-              <div
-                className="textinput_label"
-              >
-                Access code
-              </div>
-              <span
-                className="mandatory"
-                id="asterisk"
-              >
-                *
-              </span>
-               
-              <span
-                className="note"
-              />
-            </label>
-            <input
-              className="textinput_editable_white"
-              id="orgId"
-              onChange={[Function]}
-              type="text"
-            />
+              Access code
+            </div>
             <span
-              className="error"
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+             
+            <span
+              className="note"
             />
-          </div>
+          </label>
+          <input
+            className="textinput_editable_white"
+            id="orgId"
+            onChange={[Function]}
+            type="text"
+          />
+          <span
+            className="error"
+          />
         </div>
         <div
           style={
@@ -7150,30 +7116,16 @@ exports[`Storyshots OrgValidationText Default 1`] = `
             }
           }
         >
-          <p
-            style={
-              Object {
-                "width": "400px",
-              }
-            }
-          >
+          <p>
             Enter the access code provided by your organization. An access code is required to proceed with the online submission
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
           </p>
         </div>
-      </div>
-      <div
-        style={
-          Object {
-            "float": "left",
-          }
-        }
-      >
-        <span
-          className="mandatory"
-          id="asterisk"
-        >
-          *
-        </span>
       </div>
       <div
         style={
