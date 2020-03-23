@@ -5161,6 +5161,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
+               
               First Name
             </td>
             <td>
@@ -5169,6 +5170,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Middle Name
             </td>
             <td>
@@ -5177,6 +5179,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Last Name
             </td>
             <td>
@@ -5185,6 +5188,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               City and Country of Birth
             </td>
             <td>
@@ -5193,6 +5197,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Birth Date
             </td>
             <td>
@@ -5201,6 +5206,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Sex
             </td>
             <td>
@@ -5209,6 +5215,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               BC Driver's Licence
             </td>
             <td>
@@ -5230,6 +5237,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
+               
               Your Position/Job Title
             </td>
             <td>
@@ -5251,6 +5259,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
+               
               Residential Address
             </td>
             <td>
@@ -5259,6 +5268,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               City
             </td>
             <td>
@@ -5267,6 +5277,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Province
             </td>
             <td>
@@ -5275,6 +5286,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Postal Code
             </td>
             <td>
@@ -5283,6 +5295,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Country
             </td>
             <td>
@@ -5291,6 +5304,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Primary Phone Number
             </td>
             <td>
@@ -5299,6 +5313,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Personal Email Address
             </td>
             <td>
@@ -5320,6 +5335,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
+               
               Mailing Address
             </td>
             <td>
@@ -5328,6 +5344,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               City
             </td>
             <td>
@@ -5336,6 +5353,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Province
             </td>
             <td>
@@ -5344,6 +5362,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Postal Code
             </td>
             <td>
@@ -5352,6 +5371,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Country
             </td>
             <td>
@@ -5695,6 +5715,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
+               
               First Name
             </td>
             <td>
@@ -5703,6 +5724,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Middle Name
             </td>
             <td>
@@ -5711,6 +5733,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Last Name
             </td>
             <td>
@@ -5719,6 +5742,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               City and Country of Birth
             </td>
             <td>
@@ -5727,6 +5751,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Birth Date
             </td>
             <td>
@@ -5735,6 +5760,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Sex
             </td>
             <td>
@@ -5743,6 +5769,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               BC Driver's Licence
             </td>
             <td>
@@ -5764,6 +5791,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
+               
               Your Position/Job Title
             </td>
             <td>
@@ -5772,6 +5800,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Organization Facility
             </td>
             <td>
@@ -5793,6 +5822,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
+               
               Residential Address
             </td>
             <td>
@@ -5801,6 +5831,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               City
             </td>
             <td>
@@ -5809,6 +5840,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Province
             </td>
             <td>
@@ -5817,6 +5849,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Postal Code
             </td>
             <td>
@@ -5825,6 +5858,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Country
             </td>
             <td>
@@ -5833,6 +5867,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Primary Phone Number
             </td>
             <td>
@@ -5841,6 +5876,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Personal Email Address
             </td>
             <td>
@@ -5862,6 +5898,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
         <tbody>
           <tr>
             <td>
+               
               Mailing Address
             </td>
             <td>
@@ -5870,6 +5907,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               City
             </td>
             <td>
@@ -5878,6 +5916,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Province
             </td>
             <td>
@@ -5886,6 +5925,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Postal Code
             </td>
             <td>
@@ -5894,6 +5934,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
           <tr>
             <td>
+               
               Country
             </td>
             <td>
@@ -7305,6 +7346,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
       <h1>
         Organization Information
       </h1>
+      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -7321,7 +7363,8 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name
+               
+              Organization Name:
             </td>
             <td>
               Test Org Name
@@ -7329,7 +7372,8 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
           </tr>
           <tr>
             <td>
-              Address
+               
+              Address:
             </td>
             <td>
               123 Somewhere Lane
@@ -7341,7 +7385,8 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number
+               
+              Phone Number:
             </td>
             <td>
               250 123 4567
@@ -7349,6 +7394,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
@@ -7366,7 +7412,7 @@ Canada
                 <span
                   className="smallTableHeader"
                 >
-                  (e.g. working with children)
+                  (e.g. working with children):
                 </span>
               </div>
             </th>
@@ -7375,7 +7421,8 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role
+               
+              Role:
             </td>
             <td>
               Employee
@@ -7383,7 +7430,8 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category
+               
+              Works with category:
             </td>
             <td>
               Children & Vulnerable Adults
@@ -7391,6 +7439,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <div>
         <p>
           To continue with your online request for a criminal record check:
@@ -7420,6 +7469,7 @@ Canada
             There is no fee for Volunteer applications.
           </li>
         </ul>
+        <br />
         <p>
           The organization noted above will be notified:
         </p>
@@ -7482,7 +7532,7 @@ Canada
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -7536,7 +7586,7 @@ Canada
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle"
+                      className="sideCardTitle textAlign"
                     >
                       Get a BC Service Card
                     </div>
@@ -7574,7 +7624,7 @@ Canada
       </div>
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -7987,6 +8037,7 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
       <h1>
         Organization Information
       </h1>
+      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -8003,7 +8054,8 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name
+               
+              Organization Name:
             </td>
             <td>
               Test Org Name
@@ -8011,7 +8063,8 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
           </tr>
           <tr>
             <td>
-              Address
+               
+              Address:
             </td>
             <td>
               123 Somewhere Lane
@@ -8023,7 +8076,8 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number
+               
+              Phone Number:
             </td>
             <td>
               250 123 4567
@@ -8031,6 +8085,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
@@ -8048,7 +8103,7 @@ Canada
                 <span
                   className="smallTableHeader"
                 >
-                  (e.g. working with children)
+                  (e.g. working with children):
                 </span>
               </div>
             </th>
@@ -8057,7 +8112,8 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role
+               
+              Role:
             </td>
             <td>
               Employee
@@ -8065,7 +8121,8 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category
+               
+              Works with category:
             </td>
             <td>
               Children & Vulnerable Adults
@@ -8073,6 +8130,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <div>
         <p>
           To continue with your online request for a criminal record check:
@@ -8102,6 +8160,7 @@ Canada
             There is no fee for Volunteer applications.
           </li>
         </ul>
+        <br />
         <p>
           The organization noted above will be notified:
         </p>
@@ -8164,7 +8223,7 @@ Canada
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -8218,7 +8277,7 @@ Canada
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle"
+                      className="sideCardTitle textAlign"
                     >
                       Get a BC Service Card
                     </div>
@@ -8256,7 +8315,7 @@ Canada
       </div>
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -8669,6 +8728,7 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
       <h1>
         Organization Information
       </h1>
+      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -8685,7 +8745,8 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name
+               
+              Organization Name:
             </td>
             <td>
               Test Org Name
@@ -8693,7 +8754,8 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
           </tr>
           <tr>
             <td>
-              Address
+               
+              Address:
             </td>
             <td>
               123 Somewhere Lane
@@ -8705,7 +8767,8 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number
+               
+              Phone Number:
             </td>
             <td>
               250 123 4567
@@ -8713,6 +8776,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
@@ -8730,7 +8794,7 @@ Canada
                 <span
                   className="smallTableHeader"
                 >
-                  (e.g. working with children)
+                  (e.g. working with children):
                 </span>
               </div>
             </th>
@@ -8739,7 +8803,8 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role
+               
+              Role:
             </td>
             <td>
               Employee
@@ -8747,7 +8812,8 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category
+               
+              Works with category:
             </td>
             <td>
               Children
@@ -8755,6 +8821,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <div>
         <p>
           To continue with your online request for a criminal record check:
@@ -8784,6 +8851,7 @@ Canada
             There is no fee for Volunteer applications.
           </li>
         </ul>
+        <br />
         <p>
           The organization noted above will be notified:
         </p>
@@ -8846,7 +8914,7 @@ Canada
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -8900,7 +8968,7 @@ Canada
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle"
+                      className="sideCardTitle textAlign"
                     >
                       Get a BC Service Card
                     </div>
@@ -8938,7 +9006,7 @@ Canada
       </div>
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -9351,6 +9419,7 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
       <h1>
         Organization Information
       </h1>
+      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -9367,7 +9436,8 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name
+               
+              Organization Name:
             </td>
             <td>
               Test Org Name
@@ -9375,7 +9445,8 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
           </tr>
           <tr>
             <td>
-              Address
+               
+              Address:
             </td>
             <td>
               123 Somewhere Lane
@@ -9387,7 +9458,8 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number
+               
+              Phone Number:
             </td>
             <td>
               250 123 4567
@@ -9395,6 +9467,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
@@ -9412,7 +9485,7 @@ Canada
                 <span
                   className="smallTableHeader"
                 >
-                  (e.g. working with children)
+                  (e.g. working with children):
                 </span>
               </div>
             </th>
@@ -9421,7 +9494,8 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role
+               
+              Role:
             </td>
             <td>
               Employee
@@ -9429,7 +9503,8 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category
+               
+              Works with category:
             </td>
             <td>
               Vulnerable Adults
@@ -9437,6 +9512,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <div>
         <p>
           To continue with your online request for a criminal record check:
@@ -9466,6 +9542,7 @@ Canada
             There is no fee for Volunteer applications.
           </li>
         </ul>
+        <br />
         <p>
           The organization noted above will be notified:
         </p>
@@ -9528,7 +9605,7 @@ Canada
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -9582,7 +9659,7 @@ Canada
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle"
+                      className="sideCardTitle textAlign"
                     >
                       Get a BC Service Card
                     </div>
@@ -9620,7 +9697,7 @@ Canada
       </div>
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -10589,7 +10666,7 @@ exports[`Storyshots SideCards Criminal Record 1`] = `
 exports[`Storyshots SideCards Get Bc Service 1`] = `
 <div>
   <div
-    className="dashboard-spacing"
+    className="wide-dashboard-spacing"
     style={
       Object {
         "position": "relative",
@@ -10643,7 +10720,7 @@ exports[`Storyshots SideCards Get Bc Service 1`] = `
                 </svg>
               </div>
               <div
-                className="sideCardTitle"
+                className="sideCardTitle textAlign"
               >
                 Get a BC Service Card
               </div>
@@ -10805,7 +10882,7 @@ exports[`Storyshots SideCards Personal Information 1`] = `
 exports[`Storyshots SideCards Useful Links 1`] = `
 <div>
   <div
-    className="dashboard-spacing"
+    className="wide-dashboard-spacing"
     style={
       Object {
         "position": "relative",
@@ -11438,6 +11515,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
           <tbody>
             <tr>
               <td>
+                 
                 Service Number
               </td>
               <td>
@@ -11446,6 +11524,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 First Name
               </td>
               <td>
@@ -11454,6 +11533,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Last Name
               </td>
               <td>
@@ -11462,6 +11542,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Organization
               </td>
               <td>
@@ -11470,6 +11551,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Date/Time
               </td>
               <td>
@@ -11478,6 +11560,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Transaction ID
               </td>
               <td>
@@ -11689,6 +11772,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
           <tbody>
             <tr>
               <td>
+                 
                 Service Number
               </td>
               <td>
@@ -11697,6 +11781,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 First Name
               </td>
               <td>
@@ -11705,6 +11790,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Last Name
               </td>
               <td>
@@ -11713,6 +11799,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Organization
               </td>
               <td>
@@ -11721,6 +11808,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Amount
               </td>
               <td>
@@ -11729,6 +11817,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Date/Time
               </td>
               <td>
@@ -11737,6 +11826,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Transaction ID
               </td>
               <td>
@@ -11948,6 +12038,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
           <tbody>
             <tr>
               <td>
+                 
                 Service Number
               </td>
               <td>
@@ -11956,6 +12047,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 First Name
               </td>
               <td>
@@ -11964,6 +12056,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Last Name
               </td>
               <td>
@@ -11972,6 +12065,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Organization
               </td>
               <td>
@@ -12206,6 +12300,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
           <tbody>
             <tr>
               <td>
+                 
                 Service Number
               </td>
               <td>
@@ -12214,6 +12309,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 First Name
               </td>
               <td>
@@ -12222,6 +12318,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Last Name
               </td>
               <td>
@@ -12230,6 +12327,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Organization
               </td>
               <td>
@@ -12238,6 +12336,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Date/Time
               </td>
               <td>
@@ -12246,6 +12345,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Transaction ID
               </td>
               <td>
@@ -12457,6 +12557,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
           <tbody>
             <tr>
               <td>
+                 
                 Service Number
               </td>
               <td>
@@ -12465,6 +12566,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 First Name
               </td>
               <td>
@@ -12473,6 +12575,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Last Name
               </td>
               <td>
@@ -12481,6 +12584,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Organization
               </td>
               <td>
@@ -12489,6 +12593,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Amount
               </td>
               <td>
@@ -12497,6 +12602,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Date/Time
               </td>
               <td>
@@ -12505,6 +12611,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Transaction ID
               </td>
               <td>
@@ -12716,6 +12823,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
           <tbody>
             <tr>
               <td>
+                 
                 Service Number
               </td>
               <td>
@@ -12724,6 +12832,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 First Name
               </td>
               <td>
@@ -12732,6 +12841,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Last Name
               </td>
               <td>
@@ -12740,6 +12850,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
             </tr>
             <tr>
               <td>
+                 
                 Organization
               </td>
               <td>
@@ -12875,6 +12986,7 @@ exports[`Storyshots Table Default 1`] = `
   <tbody>
     <tr>
       <td>
+         
         Org name
       </td>
       <td>
@@ -12883,6 +12995,7 @@ exports[`Storyshots Table Default 1`] = `
     </tr>
     <tr>
       <td>
+         
         Org Address
       </td>
       <td>
@@ -12895,6 +13008,7 @@ Canada
     </tr>
     <tr>
       <td>
+         
         Applicant Relationship
       </td>
       <td>
@@ -12908,6 +13022,7 @@ Canada
 exports[`Storyshots TableElement Default 1`] = `
 <tr>
   <td>
+     
     Example Name
   </td>
   <td>

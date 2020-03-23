@@ -54,7 +54,7 @@ export default function SideCards({ type, sideCardLinks }) {
         <div key="bcServiceIcon" className="round-icon-wrapper">
           <FaIdCard className="side-card-icon" />
         </div>
-        <div key="bcServiceHeader" className="sideCardTitle">
+        <div key="bcServiceHeader" className="sideCardTitle textAlign">
           Get a BC Service Card
         </div>
       </div>
@@ -65,7 +65,8 @@ export default function SideCards({ type, sideCardLinks }) {
         {getBCServiceButton}
       </div>
     ],
-    type: "blue"
+    type: "blue",
+    isWide: true
   };
 
   const bcservice = {
@@ -306,7 +307,8 @@ export default function SideCards({ type, sideCardLinks }) {
       </div>
     ),
     content: [links],
-    type: "blue"
+    type: "blue",
+    isWide: true
   };
 
   return (

@@ -81,6 +81,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
         <tbody>
           <tr>
             <td>
+               
               First Name
             </td>
             <td>
@@ -89,6 +90,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Middle Name
             </td>
             <td>
@@ -97,6 +99,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Last Name
             </td>
             <td>
@@ -105,6 +108,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               City and Country of Birth
             </td>
             <td>
@@ -113,6 +117,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Birth Date
             </td>
             <td>
@@ -121,6 +126,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Sex
             </td>
             <td>
@@ -129,6 +135,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               BC Driver's Licence
             </td>
             <td>
@@ -157,6 +164,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
         <tbody>
           <tr>
             <td>
+               
               First Name
             </td>
             <td>
@@ -165,6 +173,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Middle Name
             </td>
             <td>
@@ -173,6 +182,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Last Name
             </td>
             <td>
@@ -181,6 +191,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               First Name
             </td>
             <td>
@@ -189,6 +200,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Middle Name
             </td>
             <td>
@@ -197,6 +209,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Last Name
             </td>
             <td>
@@ -205,6 +218,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               First Name
             </td>
             <td>
@@ -213,6 +227,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Middle Name
             </td>
             <td>
@@ -221,6 +236,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Last Name
             </td>
             <td>
@@ -242,6 +258,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
         <tbody>
           <tr>
             <td>
+               
               Your Position/Job Title
             </td>
             <td>
@@ -250,6 +267,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Organization Facility
             </td>
             <td>
@@ -271,6 +289,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
         <tbody>
           <tr>
             <td>
+               
               Residential Address
             </td>
             <td>
@@ -279,6 +298,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               City
             </td>
             <td>
@@ -287,6 +307,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Province
             </td>
             <td>
@@ -295,6 +316,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Postal Code
             </td>
             <td>
@@ -303,6 +325,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Country
             </td>
             <td>
@@ -311,6 +334,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Primary Phone Number
             </td>
             <td>
@@ -319,6 +343,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Personal Email Address
             </td>
             <td>
@@ -340,6 +365,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
         <tbody>
           <tr>
             <td>
+               
               Mailing Address
             </td>
             <td>
@@ -348,6 +374,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               City
             </td>
             <td>
@@ -356,6 +383,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Province
             </td>
             <td>
@@ -364,6 +392,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Postal Code
             </td>
             <td>
@@ -372,6 +401,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
+               
               Country
             </td>
             <td>

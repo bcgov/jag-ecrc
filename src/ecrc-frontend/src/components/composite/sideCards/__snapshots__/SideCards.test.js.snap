@@ -60,7 +60,7 @@ exports[`SideCards Component AccessCode sidecard 1`] = `
 exports[`SideCards Component AccessCode sidecard 2`] = `
 <div>
   <div
-    className="dashboard-spacing"
+    className="wide-dashboard-spacing"
     style={
       Object {
         "position": "relative",
@@ -513,7 +513,7 @@ exports[`SideCards Component CriminalRecord sidecard 1`] = `
 exports[`SideCards Component GetBcServices sidecard 1`] = `
 <div>
   <div
-    className="dashboard-spacing"
+    className="wide-dashboard-spacing"
     style={
       Object {
         "position": "relative",
@@ -567,7 +567,7 @@ exports[`SideCards Component GetBcServices sidecard 1`] = `
                 </svg>
               </div>
               <div
-                className="sideCardTitle"
+                className="sideCardTitle textAlign"
               >
                 Get a BC Service Card
               </div>

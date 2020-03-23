@@ -14,6 +14,7 @@ exports[`Table Component Matches the snapshot 1`] = `
   <tbody>
     <tr>
       <td>
+         
         Org name
       </td>
       <td>
@@ -22,6 +23,7 @@ exports[`Table Component Matches the snapshot 1`] = `
     </tr>
     <tr>
       <td>
+         
         Org Address
       </td>
       <td>
@@ -34,6 +36,7 @@ Canada
     </tr>
     <tr>
       <td>
+         
         Applicant Relationship
       </td>
       <td>
