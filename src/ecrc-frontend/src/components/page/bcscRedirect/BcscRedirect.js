@@ -41,7 +41,7 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
   }, []);
 
   const loginBtn = {
-    label: "Login with your BC Services Card",
+    label: "Login with a BC Services Card",
     buttonStyle: "btn ecrc_btn_login_bcsc",
     buttonSize: "btn",
     type: "button"

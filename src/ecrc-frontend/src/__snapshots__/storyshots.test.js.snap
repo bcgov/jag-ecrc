@@ -2685,7 +2685,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
               onClick={[Function]}
               type="button"
             >
-              Login with your BC Services Card
+              Login with a BC Services Card
               <div
                 className="loader-hide"
               >
@@ -3024,7 +3024,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
               onClick={[Function]}
               type="button"
             >
-              Login with your BC Services Card
+              Login with a BC Services Card
               <div
                 className="loader-hide"
               >
@@ -7305,6 +7305,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
       <h1>
         Organization Information
       </h1>
+      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -7321,7 +7322,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name
+              Organization Name:
             </td>
             <td>
               Test Org Name
@@ -7329,7 +7330,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
           </tr>
           <tr>
             <td>
-              Address
+              Address:
             </td>
             <td>
               123 Somewhere Lane
@@ -7341,7 +7342,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number
+              Phone Number:
             </td>
             <td>
               250 123 4567
@@ -7349,6 +7350,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
@@ -7366,7 +7368,7 @@ Canada
                 <span
                   className="smallTableHeader"
                 >
-                  (e.g. working with children)
+                  (e.g. working with children):
                 </span>
               </div>
             </th>
@@ -7375,7 +7377,7 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role
+              Role:
             </td>
             <td>
               Employee
@@ -7383,7 +7385,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category
+              Works with category:
             </td>
             <td>
               Children & Vulnerable Adults
@@ -7391,6 +7393,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <div>
         <p>
           To continue with your online request for a criminal record check:
@@ -7420,6 +7423,7 @@ Canada
             There is no fee for Volunteer applications.
           </li>
         </ul>
+        <br />
         <p>
           The organization noted above will be notified:
         </p>
@@ -7482,7 +7486,7 @@ Canada
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -7536,7 +7540,7 @@ Canada
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle"
+                      className="sideCardTitle textAlign"
                     >
                       Get a BC Service Card
                     </div>
@@ -7574,7 +7578,7 @@ Canada
       </div>
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -7987,6 +7991,7 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
       <h1>
         Organization Information
       </h1>
+      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -8003,7 +8008,7 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name
+              Organization Name:
             </td>
             <td>
               Test Org Name
@@ -8011,7 +8016,7 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
           </tr>
           <tr>
             <td>
-              Address
+              Address:
             </td>
             <td>
               123 Somewhere Lane
@@ -8023,7 +8028,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number
+              Phone Number:
             </td>
             <td>
               250 123 4567
@@ -8031,6 +8036,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
@@ -8048,7 +8054,7 @@ Canada
                 <span
                   className="smallTableHeader"
                 >
-                  (e.g. working with children)
+                  (e.g. working with children):
                 </span>
               </div>
             </th>
@@ -8057,7 +8063,7 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role
+              Role:
             </td>
             <td>
               Employee
@@ -8065,7 +8071,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category
+              Works with category:
             </td>
             <td>
               Children & Vulnerable Adults
@@ -8073,6 +8079,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <div>
         <p>
           To continue with your online request for a criminal record check:
@@ -8102,6 +8109,7 @@ Canada
             There is no fee for Volunteer applications.
           </li>
         </ul>
+        <br />
         <p>
           The organization noted above will be notified:
         </p>
@@ -8164,7 +8172,7 @@ Canada
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -8218,7 +8226,7 @@ Canada
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle"
+                      className="sideCardTitle textAlign"
                     >
                       Get a BC Service Card
                     </div>
@@ -8256,7 +8264,7 @@ Canada
       </div>
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -8669,6 +8677,7 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
       <h1>
         Organization Information
       </h1>
+      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -8685,7 +8694,7 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name
+              Organization Name:
             </td>
             <td>
               Test Org Name
@@ -8693,7 +8702,7 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
           </tr>
           <tr>
             <td>
-              Address
+              Address:
             </td>
             <td>
               123 Somewhere Lane
@@ -8705,7 +8714,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number
+              Phone Number:
             </td>
             <td>
               250 123 4567
@@ -8713,6 +8722,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
@@ -8730,7 +8740,7 @@ Canada
                 <span
                   className="smallTableHeader"
                 >
-                  (e.g. working with children)
+                  (e.g. working with children):
                 </span>
               </div>
             </th>
@@ -8739,7 +8749,7 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role
+              Role:
             </td>
             <td>
               Employee
@@ -8747,7 +8757,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category
+              Works with category:
             </td>
             <td>
               Children
@@ -8755,6 +8765,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <div>
         <p>
           To continue with your online request for a criminal record check:
@@ -8784,6 +8795,7 @@ Canada
             There is no fee for Volunteer applications.
           </li>
         </ul>
+        <br />
         <p>
           The organization noted above will be notified:
         </p>
@@ -8846,7 +8858,7 @@ Canada
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -8900,7 +8912,7 @@ Canada
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle"
+                      className="sideCardTitle textAlign"
                     >
                       Get a BC Service Card
                     </div>
@@ -8938,7 +8950,7 @@ Canada
       </div>
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -9351,6 +9363,7 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
       <h1>
         Organization Information
       </h1>
+      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -9367,7 +9380,7 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name
+              Organization Name:
             </td>
             <td>
               Test Org Name
@@ -9375,7 +9388,7 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
           </tr>
           <tr>
             <td>
-              Address
+              Address:
             </td>
             <td>
               123 Somewhere Lane
@@ -9387,7 +9400,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number
+              Phone Number:
             </td>
             <td>
               250 123 4567
@@ -9395,6 +9408,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
@@ -9412,7 +9426,7 @@ Canada
                 <span
                   className="smallTableHeader"
                 >
-                  (e.g. working with children)
+                  (e.g. working with children):
                 </span>
               </div>
             </th>
@@ -9421,7 +9435,7 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role
+              Role:
             </td>
             <td>
               Employee
@@ -9429,7 +9443,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category
+              Works with category:
             </td>
             <td>
               Vulnerable Adults
@@ -9437,6 +9451,7 @@ Canada
           </tr>
         </tbody>
       </table>
+      <br />
       <div>
         <p>
           To continue with your online request for a criminal record check:
@@ -9466,6 +9481,7 @@ Canada
             There is no fee for Volunteer applications.
           </li>
         </ul>
+        <br />
         <p>
           The organization noted above will be notified:
         </p>
@@ -9528,7 +9544,7 @@ Canada
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -9582,7 +9598,7 @@ Canada
                       </svg>
                     </div>
                     <div
-                      className="sideCardTitle"
+                      className="sideCardTitle textAlign"
                     >
                       Get a BC Service Card
                     </div>
@@ -9620,7 +9636,7 @@ Canada
       </div>
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -10589,7 +10605,7 @@ exports[`Storyshots SideCards Criminal Record 1`] = `
 exports[`Storyshots SideCards Get Bc Service 1`] = `
 <div>
   <div
-    className="dashboard-spacing"
+    className="wide-dashboard-spacing"
     style={
       Object {
         "position": "relative",
@@ -10643,7 +10659,7 @@ exports[`Storyshots SideCards Get Bc Service 1`] = `
                 </svg>
               </div>
               <div
-                className="sideCardTitle"
+                className="sideCardTitle textAlign"
               >
                 Get a BC Service Card
               </div>
@@ -10805,7 +10821,7 @@ exports[`Storyshots SideCards Personal Information 1`] = `
 exports[`Storyshots SideCards Useful Links 1`] = `
 <div>
   <div
-    className="dashboard-spacing"
+    className="wide-dashboard-spacing"
     style={
       Object {
         "position": "relative",
