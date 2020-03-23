@@ -137,7 +137,7 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
     generateJWTToken(newPayload);
 
     setApplicant(user);
-    history.push("/criminalrecordcheck/userconfirmation");
+    history.push("/criminalrecordcheck/applicationform");
   }
 
   if (toTransition) {

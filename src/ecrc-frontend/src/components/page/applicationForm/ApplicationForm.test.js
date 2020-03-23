@@ -70,7 +70,7 @@ describe("ApplicationForm Component", () => {
     sessionStorage.setItem("validator", "secret");
     sessionStorage.setItem("uuid", "unique123");
     generateJWTToken({
-      actionsPerformed: ["consent"],
+      actionsPerformed: ["userConfirmation"],
       authorities: ["Authorized"]
     });
     axios.get.mockResolvedValueOnce(axiosCall);

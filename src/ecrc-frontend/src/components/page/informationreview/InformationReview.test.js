@@ -5,11 +5,9 @@ import {
   render,
   fireEvent,
   getByRole,
-  getByText,
-  wait
+  getByText
 } from "@testing-library/react";
 import { createMemoryHistory } from "history";
-import axios from "axios";
 
 import InformationReview from "./InformationReview";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
@@ -54,25 +52,8 @@ describe("InformationReview Component", () => {
     organizationFacility: "Something"
   };
 
-  const org = {
-    orgApplicantRelationship: "EMPLOYEE",
-    orgTicketNumber: "crce",
-    defaultScheduleTypeCd: "WBSD",
-    defaultCrcScopeLevelCd: "WWCH"
-  };
-
-  const setApplicationInfo = jest.fn();
-  const saveApplicant = jest.fn();
-  const saveOrg = jest.fn();
-  const saveApplicationInfo = jest.fn();
   const setError = jest.fn();
-
   window.scrollTo = jest.fn();
-
-  // Mock window location
-  const mockWindow = jest.fn();
-  delete window.location;
-  window.location = { assign: mockWindow };
 
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
@@ -87,11 +68,6 @@ describe("InformationReview Component", () => {
     const page = {
       header,
       applicant,
-      org,
-      setApplicationInfo,
-      saveApplicant,
-      saveOrg,
-      saveApplicationInfo,
       setError
     };
     const infoReview = create(
@@ -106,11 +82,6 @@ describe("InformationReview Component", () => {
     const page = {
       header,
       applicant,
-      org,
-      setApplicationInfo,
-      saveApplicant,
-      saveOrg,
-      saveApplicationInfo,
       setError
     };
     const history = createMemoryHistory();
@@ -131,11 +102,6 @@ describe("InformationReview Component", () => {
     const page = {
       header,
       applicant,
-      org,
-      setApplicationInfo,
-      saveApplicant,
-      saveOrg,
-      saveApplicationInfo,
       setError
     };
     const history = createMemoryHistory();
@@ -148,115 +114,5 @@ describe("InformationReview Component", () => {
     expect(history.location.pathname).toEqual(
       "/criminalrecordcheck/applicationform"
     );
-  });
-
-  test("Validate Employee relationship flow", async () => {
-    const page = {
-      header,
-      applicant,
-      org,
-      setApplicationInfo,
-      saveApplicant,
-      saveOrg,
-      saveApplicationInfo,
-      setError
-    };
-    axios.get.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          sessionId: "123",
-          invoiceId: "123",
-          serviceFeeAmount: "123"
-        }
-      })
-    );
-
-    axios.post.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          partyId: "123",
-          serviceId: "123",
-          urlResponse: "http://sample.com"
-        }
-      })
-    );
-
-    const history = createMemoryHistory();
-    const { container } = render(
-      <Router history={history}>
-        <InformationReview page={page} />
-      </Router>
-    );
-    fireEvent.click(getByRole(container, "checkbox"));
-    fireEvent.click(getByText(container, "SUBMIT"));
-
-    await wait(() => {
-      expect(setApplicationInfo).toHaveBeenCalled();
-      expect(saveApplicant).toHaveBeenCalled();
-      expect(saveOrg).toHaveBeenCalled();
-      expect(saveApplicationInfo).toHaveBeenCalled();
-    });
-  });
-
-  test("Validate Volunteer relationship flow", async () => {
-    applicant.driversLicNo = "";
-    applicant.alias1FirstNm = "";
-    applicant.alias1SecondNm = "";
-    applicant.alias1SurnameNm = "";
-    applicant.alias2FirstNm = "";
-    applicant.alias2SecondNm = "";
-    applicant.alias2SurnameNm = "";
-    applicant.alias3FirstNm = "";
-    applicant.alias3SecondNm = "";
-    applicant.alias3SurnameNm = "";
-
-    applicant.organizationFacility = "";
-
-    org.orgApplicantRelationship = "VOLUNTEER";
-
-    const page = {
-      header,
-      applicant,
-      org,
-      setApplicationInfo,
-      saveApplicant,
-      saveOrg,
-      saveApplicationInfo,
-      setError
-    };
-
-    axios.get.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          sessionId: "123",
-          invoiceId: "123",
-          serviceFeeAmount: "123"
-        }
-      })
-    );
-
-    axios.post.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          partyId: "123",
-          serviceId: "123",
-          urlResponse: "http://sample.com"
-        }
-      })
-    );
-
-    const history = createMemoryHistory();
-    const { container } = render(
-      <Router history={history}>
-        <InformationReview page={page} />
-      </Router>
-    );
-    fireEvent.click(getByRole(container, "checkbox"));
-    fireEvent.click(getByText(container, "SUBMIT"));
-
-    await wait(() => {
-      expect(setApplicationInfo).toHaveBeenCalled();
-      expect(history.location.pathname).toEqual("/criminalrecordcheck/success");
-    });
   });
 });
