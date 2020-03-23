@@ -16,6 +16,7 @@ import {
 export default function TOU({ page: { header, setError } }) {
   const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
   const [toHome, setToHome] = useState(false);
+  const [toError, setToError] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
