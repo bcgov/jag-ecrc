@@ -58,18 +58,23 @@ export default function InformationReview({
     setApplicationInfo,
     saveApplicant,
     saveOrg,
-    saveApplicationInfo
+    saveApplicationInfo,
+    setError
   }
 }) {
   const [toBack, setToBack] = useState(false);
   const [toHome, setToHome] = useState(false);
   const [toSuccess, setToSuccess] = useState(false);
+  const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isAuthorized() || !isActionPerformed("appForm")) setToHome(true);
+    if (!isAuthorized() || !isActionPerformed("appForm")) {
+      setToHome(true);
+      console.log("Redirected by routing");
+    }
   }, []);
 
   const personalInfoElement = [
@@ -313,30 +318,49 @@ export default function InformationReview({
           Authorization: `Bearer ${token}`
         }
       }),
-      axios.get(
-        `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
+      // .catch(error => {
+      //   setToError(true);
+      //   setError(error.response.status.toString());
+      // }),
+      axios
+        .get(
+          `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
           }
-        }
-      ),
-      axios.get(
-        `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
+        )
+        .catch(error => {
+          setToError(true);
+          setError(error.response.status.toString());
+        }),
+      axios
+        .get(
+          `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
           }
-        }
-      ),
-      axios.get(
-        `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
+        )
+        .catch(error => {
+          setToError(true);
+          setError(error.response.status.toString());
+        }),
+      axios
+        .get(
+          `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
           }
-        }
-      )
+        )
+        .catch(error => {
+          setToError(true);
+          setError(error.response.status.toString());
+        })
     ])
       .then(all => {
         partyId = all[0].data.partyId;
@@ -421,10 +445,17 @@ export default function InformationReview({
             })
             .then(urlResponse => {
               window.location.href = urlResponse.data.paymentUrl;
+            })
+            .catch(error => {
+              setToError(true);
+              setError(error.response.status.toString());
             });
         }
       })
-      .catch(() => {});
+      .catch(error => {
+        setToError(true);
+        setError(error.response.status.toString());
+      });
   };
 
   const cancelButton = {
@@ -455,6 +486,10 @@ export default function InformationReview({
 
   if (toHome) {
     return <Redirect to="/" />;
+  }
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/success" />;
   }
 
   return (

@@ -28,10 +28,12 @@ export default function Success({
       serviceFeeAmount,
       serviceId
     },
-    saveApplicationInfo
+    saveApplicationInfo,
+    setError
   }
 }) {
   const [toHome, setToHome] = useState(false);
+  const [toError, setToError] = useState(false);
   const location = useLocation();
   const paymentInfo = queryString.parse(location.search);
   const uuid = sessionStorage.getItem("uuid");
@@ -89,7 +91,10 @@ export default function Success({
     axios
       .post("/ecrc/private/logPaymentFailure", logFailure)
       .then(() => {})
-      .catch(() => {});
+      .catch(error => {
+        setToError(true);
+        setError(error.reponse.status.toString());
+      });
   }
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
@@ -120,7 +125,10 @@ export default function Success({
         }
       })
       .then(() => {})
-      .catch(() => {});
+      .catch(error => {
+        setToError(true);
+        setError(error.response.status.toString());
+      });
   }
 
   const printButton = {
@@ -181,17 +189,30 @@ export default function Success({
           partyIdRef2: partyId
         };
 
-        return axios.post("/ecrc/private/createPaymentUrl", createURL, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        return axios
+          .post("/ecrc/private/createPaymentUrl", createURL, {
+            headers: { Authorization: `Bearer ${token}` }
+          })
+          .catch(error => {
+            setToError(true);
+            setError(error.response.status.toString());
+          });
       })
       .then(urlResponse => {
         window.location.href = urlResponse.data.paymentUrl;
+      })
+      .catch(error => {
+        setToError(true);
+        setError(error.response.status.toString());
       });
   };
 
   if (toHome) {
     return <Redirect to="/" />;
+  }
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   return (
@@ -277,6 +298,7 @@ Success.propTypes = {
       serviceFeeAmount: PropTypes.number,
       serviceId: PropTypes.number.isRequired
     }),
-    saveApplicationInfo: PropTypes.func.isRequired
+    saveApplicationInfo: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired
   }).isRequired
 };

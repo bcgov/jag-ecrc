@@ -68,7 +68,7 @@ export default function App() {
             <TOU page={{ header }} />
           </Route>
           <Route path="/(ecrc/consent|criminalrecordcheck/consent)">
-            <UserConfirmation page={{ header, setApplicant }} />
+            <UserConfirmation page={{ header, setApplicant, setError }} />
           </Route>
           <Route path="/(ecrc/bcscredirect|criminalrecordcheck/bcscredirect)">
             <BcscRedirect page={{ header, saveOrg, setError }} />
@@ -80,7 +80,8 @@ export default function App() {
                 applicant,
                 org,
                 applicationInfo,
-                saveApplicationInfo
+                saveApplicationInfo,
+                setError
               }}
             />
           </Route>
@@ -93,7 +94,8 @@ export default function App() {
                 setApplicationInfo,
                 saveOrg,
                 saveApplicant,
-                saveApplicationInfo
+                saveApplicationInfo,
+                setError
               }}
             />
           </Route>
