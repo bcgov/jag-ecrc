@@ -74,7 +74,7 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
         }
       >
         <div
-          className="loader"
+          className="page-loader"
         />
       </div>
       <p>
@@ -95,6 +95,13 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
             type="submit"
           >
             Yes
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <button
             className="btn ecrc_accessary_btn btn"
@@ -102,6 +109,13 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
             type="submit"
           >
             No
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <br />
         </div>

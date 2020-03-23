@@ -178,6 +178,13 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
                   type="submit"
                 >
                   Validate
+                  <div
+                    className="loader-hide"
+                  >
+                    <div
+                      className="btn-loader"
+                    />
+                  </div>
                 </button>
               </div>
             </div>
@@ -373,6 +380,13 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
                       type="submit"
                     >
                       VISIT THE CRIMINAL RECORD REVIEW WEBSITE
+                      <div
+                        className="loader-hide"
+                      >
+                        <div
+                          className="btn-loader"
+                        />
+                      </div>
                     </button>
                   </span>
                 </div>

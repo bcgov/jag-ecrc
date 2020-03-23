@@ -968,6 +968,13 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           type="submit"
         >
           Cancel
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -975,6 +982,13 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           type="submit"
         >
           Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -2255,6 +2269,13 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           type="submit"
         >
           Cancel
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -2262,6 +2283,13 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           type="submit"
         >
           Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -2658,6 +2686,13 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
               type="button"
             >
               Login with your BC Services Card
+              <div
+                className="loader-hide"
+              >
+                <div
+                  className="btn-loader"
+                />
+              </div>
             </button>
           </div>
         </div>
@@ -2990,6 +3025,13 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
               type="button"
             >
               Login with your BC Services Card
+              <div
+                className="loader-hide"
+              >
+                <div
+                  className="btn-loader"
+                />
+              </div>
             </button>
           </div>
         </div>
@@ -3206,6 +3248,13 @@ exports[`Storyshots Button Default 1`] = `
   type="submit"
 >
   button label
+  <div
+    className="loader-hide"
+  >
+    <div
+      className="btn-loader"
+    />
+  </div>
 </button>
 `;
 
@@ -3217,6 +3266,13 @@ exports[`Storyshots Button Disabled 1`] = `
   type="submit"
 >
   button label
+  <div
+    className="loader-hide"
+  >
+    <div
+      className="btn-loader"
+    />
+  </div>
 </button>
 `;
 
@@ -3227,6 +3283,13 @@ exports[`Storyshots Button Warning 1`] = `
   type="submit"
 >
   button label
+  <div
+    className="loader-hide"
+  >
+    <div
+      className="btn-loader"
+    />
+  </div>
 </button>
 `;
 
@@ -3237,6 +3300,13 @@ exports[`Storyshots Button ecrc 1`] = `
   type="submit"
 >
   button label
+  <div
+    className="loader-hide"
+  >
+    <div
+      className="btn-loader"
+    />
+  </div>
 </button>
 `;
 
@@ -3379,6 +3449,13 @@ exports[`Storyshots Consent page Default 1`] = `
           type="submit"
         >
           Cancel and Exit
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn"
@@ -3387,6 +3464,13 @@ exports[`Storyshots Consent page Default 1`] = `
           type="submit"
         >
           Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -3850,6 +3934,13 @@ exports[`Storyshots Consent page Mobile 1`] = `
           type="submit"
         >
           Cancel and Exit
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn"
@@ -3858,6 +3949,13 @@ exports[`Storyshots Consent page Mobile 1`] = `
           type="submit"
         >
           Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -4314,6 +4412,13 @@ exports[`Storyshots Error Default 1`] = `
           type="submit"
         >
           Home
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -4480,6 +4585,13 @@ exports[`Storyshots Error Mobile 1`] = `
           type="submit"
         >
           Home
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -4643,6 +4755,13 @@ exports[`Storyshots Error Session Expired 1`] = `
           type="submit"
         >
           Home
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -5268,6 +5387,13 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           type="submit"
         >
           EDIT APPLICATION
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -5276,6 +5402,13 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           type="submit"
         >
           SUBMIT
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -5796,6 +5929,13 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           type="submit"
         >
           EDIT APPLICATION
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -5804,6 +5944,13 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           type="submit"
         >
           SUBMIT
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -6011,13 +6158,27 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
 
 exports[`Storyshots Loader Default 1`] = `
 <div
-  className="loader"
-/>
+  style={
+    Object {
+      "background": "grey",
+    }
+  }
+>
+  <div
+    className="btn-loader"
+  />
+</div>
 `;
 
 exports[`Storyshots Loader Mobile 1`] = `
 <div
-  className="loader"
+  className="page-loader"
+/>
+`;
+
+exports[`Storyshots Loader Page 1`] = `
+<div
+  className="page-loader"
 />
 `;
 
@@ -6353,6 +6514,13 @@ exports[`Storyshots OrgValidation Default 1`] = `
                   type="submit"
                 >
                   Validate
+                  <div
+                    className="loader-hide"
+                  >
+                    <div
+                      className="btn-loader"
+                    />
+                  </div>
                 </button>
               </div>
             </div>
@@ -6548,6 +6716,13 @@ exports[`Storyshots OrgValidation Default 1`] = `
                       type="submit"
                     >
                       VISIT THE CRIMINAL RECORD REVIEW WEBSITE
+                      <div
+                        className="loader-hide"
+                      >
+                        <div
+                          className="btn-loader"
+                        />
+                      </div>
                     </button>
                   </span>
                 </div>
@@ -6815,6 +6990,13 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                   type="submit"
                 >
                   Validate
+                  <div
+                    className="loader-hide"
+                  >
+                    <div
+                      className="btn-loader"
+                    />
+                  </div>
                 </button>
               </div>
             </div>
@@ -7010,6 +7192,13 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                       type="submit"
                     >
                       VISIT THE CRIMINAL RECORD REVIEW WEBSITE
+                      <div
+                        className="loader-hide"
+                      >
+                        <div
+                          className="btn-loader"
+                        />
+                      </div>
                     </button>
                   </span>
                 </div>
@@ -7214,6 +7403,13 @@ exports[`Storyshots OrgValidationText Default 1`] = `
             type="submit"
           >
             Validate
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
         </div>
       </div>
@@ -7524,6 +7720,13 @@ Canada
           type="submit"
         >
           Cancel
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -7531,6 +7734,13 @@ Canada
           type="submit"
         >
           Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -7613,6 +7823,13 @@ Canada
                         type="submit"
                       >
                         READ MORE
+                        <div
+                          className="loader-hide"
+                        >
+                          <div
+                            className="btn-loader"
+                          />
+                        </div>
                       </button>
                     </div>
                   </span>
@@ -8185,6 +8402,13 @@ Canada
           type="submit"
         >
           Cancel
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -8192,6 +8416,13 @@ Canada
           type="submit"
         >
           Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -8274,6 +8505,13 @@ Canada
                         type="submit"
                       >
                         READ MORE
+                        <div
+                          className="loader-hide"
+                        >
+                          <div
+                            className="btn-loader"
+                          />
+                        </div>
                       </button>
                     </div>
                   </span>
@@ -8846,6 +9084,13 @@ Canada
           type="submit"
         >
           Cancel
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -8853,6 +9098,13 @@ Canada
           type="submit"
         >
           Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -8935,6 +9187,13 @@ Canada
                         type="submit"
                       >
                         READ MORE
+                        <div
+                          className="loader-hide"
+                        >
+                          <div
+                            className="btn-loader"
+                          />
+                        </div>
                       </button>
                     </div>
                   </span>
@@ -9507,6 +9766,13 @@ Canada
           type="submit"
         >
           Cancel
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
         <button
           className="btn ecrc_go_btn btn btn-sm"
@@ -9514,6 +9780,13 @@ Canada
           type="submit"
         >
           Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -9596,6 +9869,13 @@ Canada
                         type="submit"
                       >
                         READ MORE
+                        <div
+                          className="loader-hide"
+                        >
+                          <div
+                            className="btn-loader"
+                          />
+                        </div>
                       </button>
                     </div>
                   </span>
@@ -10556,6 +10836,13 @@ exports[`Storyshots SideCards Criminal Record 1`] = `
                 type="submit"
               >
                 VISIT THE CRIMINAL RECORD REVIEW WEBSITE
+                <div
+                  className="loader-hide"
+                >
+                  <div
+                    className="btn-loader"
+                  />
+                </div>
               </button>
             </span>
           </div>
@@ -10643,6 +10930,13 @@ exports[`Storyshots SideCards Get Bc Service 1`] = `
                   type="submit"
                 >
                   READ MORE
+                  <div
+                    className="loader-hide"
+                  >
+                    <div
+                      className="btn-loader"
+                    />
+                  </div>
                 </button>
               </div>
             </span>
@@ -11096,6 +11390,13 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
         type="reset"
       >
         button1
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </li>
     <li>
@@ -11105,6 +11406,13 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
         type="button"
       >
         button2
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </li>
     <li>
@@ -11114,6 +11422,13 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
         type="button"
       >
         button3
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </li>
   </ul>
@@ -11232,6 +11547,13 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
         type="reset"
       >
         button1
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </li>
     <li>
@@ -11241,6 +11563,13 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
         type="button"
       >
         button2
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </li>
     <li>
@@ -11250,6 +11579,13 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
         type="button"
       >
         button3
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </li>
   </ul>
@@ -11424,6 +11760,13 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
         type="submit"
       >
         Print
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
       <button
         className="btn ecrc_go_btn btn btn-sm"
@@ -11431,6 +11774,13 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
         type="submit"
       >
         Download
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </div>
     <div
@@ -11669,6 +12019,13 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
         type="submit"
       >
         Print
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
       <button
         className="btn ecrc_go_btn btn btn-sm"
@@ -11676,6 +12033,13 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
         type="submit"
       >
         Download
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </div>
     <div
@@ -11890,6 +12254,13 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
         type="submit"
       >
         Print
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
       <button
         className="btn ecrc_go_btn btn btn-sm"
@@ -11897,6 +12268,13 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
         type="submit"
       >
         Download
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </div>
     <div
@@ -12150,6 +12528,13 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
         type="submit"
       >
         Print
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
       <button
         className="btn ecrc_go_btn btn btn-sm"
@@ -12157,6 +12542,13 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
         type="submit"
       >
         Download
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </div>
     <div
@@ -12395,6 +12787,13 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
         type="submit"
       >
         Print
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
       <button
         className="btn ecrc_go_btn btn btn-sm"
@@ -12402,6 +12801,13 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
         type="submit"
       >
         Download
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </div>
     <div
@@ -12616,6 +13022,13 @@ exports[`Storyshots Success page Volunteer 1`] = `
         type="submit"
       >
         Print
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
       <button
         className="btn ecrc_go_btn btn btn-sm"
@@ -12623,6 +13036,13 @@ exports[`Storyshots Success page Volunteer 1`] = `
         type="submit"
       >
         Download
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </div>
     <div
@@ -13165,6 +13585,13 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             type="submit"
           >
             Cancel and Exit
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <button
             className="btn ecrc_go_btn btn "
@@ -13173,6 +13600,13 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             type="submit"
           >
             Continue
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
         </section>
       </div>
@@ -13659,6 +14093,13 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             type="submit"
           >
             Cancel and Exit
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <button
             className="btn ecrc_go_btn btn "
@@ -13667,6 +14108,13 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             type="submit"
           >
             Continue
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
         </section>
       </div>
@@ -14092,6 +14540,13 @@ exports[`Storyshots Terms of Use Default 1`] = `
       type="submit"
     >
       Cancel and Exit
+      <div
+        className="loader-hide"
+      >
+        <div
+          className="btn-loader"
+        />
+      </div>
     </button>
     <button
       className="btn ecrc_go_btn btn "
@@ -14100,6 +14555,13 @@ exports[`Storyshots Terms of Use Default 1`] = `
       type="submit"
     >
       Continue
+      <div
+        className="loader-hide"
+      >
+        <div
+          className="btn-loader"
+        />
+      </div>
     </button>
   </section>
 </div>
@@ -14847,7 +15309,7 @@ exports[`Storyshots User Confirmation page Default 1`] = `
         }
       >
         <div
-          className="loader"
+          className="page-loader"
         />
       </div>
       <p>
@@ -14868,6 +15330,13 @@ exports[`Storyshots User Confirmation page Default 1`] = `
             type="submit"
           >
             Yes
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <button
             className="btn ecrc_accessary_btn btn"
@@ -14875,6 +15344,13 @@ exports[`Storyshots User Confirmation page Default 1`] = `
             type="submit"
           >
             No
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <br />
         </div>
@@ -15034,7 +15510,7 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
         }
       >
         <div
-          className="loader"
+          className="page-loader"
         />
       </div>
       <p>
@@ -15055,6 +15531,13 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
             type="submit"
           >
             Yes
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <button
             className="btn ecrc_accessary_btn btn"
@@ -15062,6 +15545,13 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
             type="submit"
           >
             No
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <br />
         </div>

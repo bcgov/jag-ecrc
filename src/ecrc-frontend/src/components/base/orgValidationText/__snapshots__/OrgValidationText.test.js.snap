@@ -115,6 +115,13 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
             type="submit"
           >
             Validate
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
         </div>
       </div>

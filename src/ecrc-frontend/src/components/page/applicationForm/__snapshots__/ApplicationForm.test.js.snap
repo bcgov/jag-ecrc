@@ -963,12 +963,26 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             type="submit"
           >
             Cancel
+            <div
+              class="loader-hide"
+            >
+              <div
+                class="btn-loader"
+              />
+            </div>
           </button>
           <button
             class="btn ecrc_go_btn btn btn-sm"
             type="submit"
           >
             Continue
+            <div
+              class="loader-hide"
+            >
+              <div
+                class="btn-loader"
+              />
+            </div>
           </button>
         </div>
       </div>
