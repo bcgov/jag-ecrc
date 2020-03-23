@@ -143,15 +143,15 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 
 
 	/**
-	 * Validate the PER claim (Decrypt and validate the BCSC tokens within).
 	 * 
-	 * MIGHT NOT BE USED. 
+	 * Validate the PER claim (Decrypts and validates the BCSC tokens within).
+	 * 
 	 */
 	@Override
 	public ValidationResponse PERValidate(String tokens) {
 		
 		// Decrypt the original claim (labeled "PER") containing the tokens BCSC
-		String _tokens = AES256.decrypt(tokens); 
+		String _tokens = AES256.decrypt(tokens, ecrcProps.getOauthPERSecret()); 
 		JSONParser p = new JSONParser(JSONParser.MODE_RFC4627);
 		JSONObject obj;
 		TokenResponse response = null; 

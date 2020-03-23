@@ -57,7 +57,7 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
                 		// "per" block must be found in private context. 
 	                	if ( claims.get("per") != null ) {
 	                		logger.debug("Found 'PER' claim. Validating....");
-	                		String accessToken = AES256.decrypt((String)claims.get("per")); 
+	                		String accessToken = AES256.decrypt((String)claims.get("per"), ecrcProps.getOauthPERSecret()); 
 	                		if ( accessToken != null ) {
 	                			ValidationResponse resp = tokenValidationServices.validateBCSCAccessToken(accessToken);  
 	                			if ( !resp.isValid() ) {

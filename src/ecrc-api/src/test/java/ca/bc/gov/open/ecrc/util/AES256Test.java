@@ -1,12 +1,9 @@
 package ca.bc.gov.open.ecrc.util;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import ca.bc.gov.open.ecrc.util.AES256;
 
 /**
  * Tests for AES256 encryption util
@@ -21,22 +18,22 @@ public class AES256Test {
 	@DisplayName("Success - encrypt success, decrypt success")
 	@Test
 	public void testEncryptSuccessDecryptSuccess() {
-		String encryptedString = AES256.encrypt(strToEncrypt);
-		String decryptedString = AES256.decrypt(encryptedString);
+		String encryptedString = AES256.encrypt(strToEncrypt, secret);
+		String decryptedString = AES256.decrypt(encryptedString, secret);
 		assertEquals(decryptedString, strToEncrypt);
 	}
 	
 	@DisplayName("Error - decrypt error")
 	@Test
 	public void testDecryptError() {
-		String decryptedString = AES256.decrypt(null);
+		String decryptedString = AES256.decrypt(null, secret);
 		assertEquals(null, decryptedString);
 	}
 	
 	@DisplayName("Error - encrypt error")
 	@Test
 	public void testEncryptError() {
-		String encryptedString = AES256.encrypt(null);
+		String encryptedString = AES256.encrypt(null, secret);
 		assertEquals(null, encryptedString);
 	}
 	
