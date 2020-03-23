@@ -2685,7 +2685,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
               onClick={[Function]}
               type="button"
             >
-              Login with your BC Services Card
+              Login with a BC Services Card
               <div
                 className="loader-hide"
               >
@@ -3024,7 +3024,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
               onClick={[Function]}
               type="button"
             >
-              Login with your BC Services Card
+              Login with a BC Services Card
               <div
                 className="loader-hide"
               >
