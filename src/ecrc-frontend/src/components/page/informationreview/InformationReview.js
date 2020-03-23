@@ -58,12 +58,14 @@ export default function InformationReview({
     setApplicationInfo,
     saveApplicant,
     saveOrg,
-    saveApplicationInfo
+    saveApplicationInfo,
+    setError
   }
 }) {
   const [toBack, setToBack] = useState(false);
   const [toHome, setToHome] = useState(false);
   const [toSuccess, setToSuccess] = useState(false);
+  const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
   useEffect(() => {
@@ -268,8 +270,11 @@ export default function InformationReview({
   };
 
   const confirm = () => {
-    // TODO: Check if volunteer, if yes, success, else, cont.
-    // CALL THAT API
+    if (!isAuthorized()) {
+      setError("session expired");
+      setToError(true);
+      return;
+    }
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
@@ -457,6 +462,10 @@ export default function InformationReview({
     return <Redirect to="/" />;
   }
 
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
+
   return (
     <main>
       <Header header={header} />
@@ -550,7 +559,8 @@ InformationReview.propTypes = {
     setApplicationInfo: PropTypes.func.isRequired,
     saveApplicant: PropTypes.func.isRequired,
     saveOrg: PropTypes.func.isRequired,
-    saveApplicationInfo: PropTypes.func.isRequired
+    saveApplicationInfo: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired
   })
 };
 

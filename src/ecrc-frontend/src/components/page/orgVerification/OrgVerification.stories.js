@@ -23,12 +23,14 @@ const org = {
   defaultCrcScopeLevelCd: "WWCA"
 };
 
-const setOrg = () => {};
+const setOrg = jest.fn();
+const setError = jest.fn();
 
 const page = {
   org,
   setOrg,
-  header
+  header,
+  setError
 };
 
 sessionStorage.setItem("validator", "secret");
