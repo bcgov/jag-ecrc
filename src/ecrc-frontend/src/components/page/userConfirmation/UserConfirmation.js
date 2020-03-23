@@ -15,7 +15,7 @@ import {
 import Loader from "../../base/loader/Loader";
 
 export default function UserConfirmation({ page: { header, setApplicant } }) {
-  const [toConsent, setToConsent] = useState(false);
+  const [toAppForm, setToAppForm] = useState(false);
   const [toHome, setToHome] = React.useState(false);
   const [toTransition, setToTransition] = useState(false);
   const [user, setUser] = useState({});
@@ -137,11 +137,11 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
     generateJWTToken(newPayload);
 
     setApplicant(user);
-    setToConsent(true);
+    setToAppForm(true);
   }
 
-  if (toConsent) {
-    return <Redirect to="/criminalrecordcheck/userconfirmation" />;
+  if (toAppForm) {
+    return <Redirect to="/criminalrecordcheck/applicationform" />;
   }
 
   if (toTransition) {
