@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from "react";
+import { Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
@@ -58,10 +58,10 @@ export default function Consent({
     setError
   }
 }) {
+  const history = useHistory();
   const [toAppHome, setToAppHome] = useState(false);
   const [toHome, setToHome] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [toSuccess, setToSuccess] = useState(false);
   const [toError, setToError] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
@@ -98,6 +98,23 @@ export default function Consent({
     type: "submit",
     disabled: !continueBtnEnabled,
     loader: loading
+  };
+
+  const toSuccess = () => {
+    if (!isAuthorized()) {
+      setError("session expired");
+      setToError(true);
+      return;
+    }
+
+    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed: [...currentPayload.actionsPerformed, "consent"]
+    };
+    generateJWTToken(newPayload);
+
+    history.push("/criminalrecordcheck/success");
   };
 
   const confirm = () => {
@@ -223,7 +240,7 @@ export default function Consent({
         setApplicationInfo(appInfo);
 
         if (orgApplicantRelationship === "VOLUNTEER") {
-          setToSuccess(true);
+          toSuccess();
         } else {
           saveApplicant();
           saveOrg();
@@ -267,21 +284,6 @@ export default function Consent({
 
   if (toAppHome) {
     return <Redirect to="/" />;
-  }
-
-  if (toSuccess) {
-    if (!isAuthorized()) {
-      setError("session expired");
-      return setToError(true);
-    }
-
-    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const newPayload = {
-      ...currentPayload,
-      actionsPerformed: [...currentPayload.actionsPerformed, "consent"]
-    };
-    generateJWTToken(newPayload);
-    return <Redirect to="/criminalrecordcheck/success" />;
   }
 
   const asterisk = (

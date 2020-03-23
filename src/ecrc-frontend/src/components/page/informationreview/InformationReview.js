@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
@@ -51,9 +51,8 @@ export default function InformationReview({
     setError
   }
 }) {
-  const [toBack, setToBack] = useState(false);
+  const history = useHistory();
   const [toHome, setToHome] = useState(false);
-  const [toConsent, setToConsent] = useState(false);
   const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -269,7 +268,7 @@ export default function InformationReview({
   };
 
   const edit = () => {
-    setToBack(true);
+    history.push("/criminalrecordcheck/applicationform");
   };
 
   const confirm = () => {
@@ -281,22 +280,15 @@ export default function InformationReview({
       return;
     }
 
-    setToConsent(true);
-  };
-
-  if (toBack) {
-    return <Redirect to="/criminalrecordcheck/applicationform" />;
-  }
-
-  if (toConsent) {
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
     const newPayload = {
       ...currentPayload,
       actionsPerformed: [...currentPayload.actionsPerformed, "infoReview"]
     };
     generateJWTToken(newPayload);
-    return <Redirect to="/criminalrecordcheck/userconfirmation" />;
-  }
+
+    history.push("/criminalrecordcheck/userconfirmation");
+  };
 
   if (toHome) {
     return <Redirect to="/" />;

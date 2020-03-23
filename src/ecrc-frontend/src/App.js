@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import OrgValidation from "./components/page/orgValidation/OrgValidation";
 import OrgVerification from "./components/page/orgVerification/OrgVerification";
 import ApplicationForm from "./components/page/applicationForm/ApplicationForm";
@@ -45,85 +45,79 @@ export default function App() {
 
   return (
     <div>
-      <BrowserRouter>
-        <Switch>
-          <Redirect exact from="/" to="/criminalrecordcheck" />
-          <Route exact path="/(ecrc|criminalrecordcheck)">
-            <OrgValidation
-              page={{ header, setOrg, setTransitionReason, setError }}
-            />
-          </Route>
-          <Route path="/(ecrc/orgverification|criminalrecordcheck/orgverification)">
-            <OrgVerification page={{ header, org, setError }} />
-          </Route>
-          <Route path="/(ecrc/applicationform|criminalrecordcheck/applicationform)">
-            <ApplicationForm
-              page={{ header, org, applicant, setApplicant, setError }}
-            />
-          </Route>
-          <Route path="/(ecrc/transition|criminalrecordcheck/transition)">
-            <Transition page={{ header, transitionReason }} />
-          </Route>
-          <Route path="/(ecrc/termsofuse|criminalrecordcheck/termsofuse)">
-            <TOU page={{ header, setError }} />
-          </Route>
-          <Route path="/(ecrc/consent|criminalrecordcheck/consent)">
-            <UserConfirmation page={{ header, setApplicant, setError }} />
-          </Route>
-          <Route path="/(ecrc/bcscredirect|criminalrecordcheck/bcscredirect)">
-            <BcscRedirect page={{ header, saveOrg, setError }} />
-          </Route>
-          <Route path="/(ecrc/success|criminalrecordcheck/success)">
-            <Success
-              page={{
-                header,
-                applicant,
-                org,
-                applicationInfo,
-                saveApplicationInfo
-              }}
-            />
-          </Route>
-          <Route path="/(ecrc/informationreview|criminalrecordcheck/informationreview)">
-            <InformationReview
-              page={{
-                header,
-                applicant,
-                org,
-                setApplicationInfo,
-                saveOrg,
-                saveApplicant,
-                saveApplicationInfo
-              }}
-            />
-          </Route>
-          <Route path="/(ecrc/userconfirmation|criminalrecordcheck/userconfirmation)">
-            <Consent
-              page={{
-                header,
-                applicant,
-                org,
-                setApplicationInfo,
-                saveOrg,
-                saveApplicant,
-                saveApplicationInfo,
-                setError
-              }}
-            />
-          </Route>
-          <Route path="/(ecrc/error|criminalrecordcheck/error)">
-            <Error page={{ header, error }} />
-          </Route>
-          <Route
-            path="/hosthome"
-            component={() => {
-              window.location.href =
-                "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check";
-              return null;
+      <Switch>
+        <Redirect exact from="/" to="/criminalrecordcheck" />
+        <Route exact path="/(ecrc|criminalrecordcheck)">
+          <OrgValidation
+            page={{ header, setOrg, setTransitionReason, setError }}
+          />
+        </Route>
+        <Route path="/(ecrc/orgverification|criminalrecordcheck/orgverification)">
+          <OrgVerification page={{ header, org, setError }} />
+        </Route>
+        <Route path="/(ecrc/applicationform|criminalrecordcheck/applicationform)">
+          <ApplicationForm
+            page={{ header, org, applicant, setApplicant, setError }}
+          />
+        </Route>
+        <Route path="/(ecrc/transition|criminalrecordcheck/transition)">
+          <Transition page={{ header, transitionReason }} />
+        </Route>
+        <Route path="/(ecrc/termsofuse|criminalrecordcheck/termsofuse)">
+          <TOU page={{ header, setError }} />
+        </Route>
+        <Route path="/(ecrc/consent|criminalrecordcheck/consent)">
+          <UserConfirmation page={{ header, setApplicant, setError }} />
+        </Route>
+        <Route path="/(ecrc/bcscredirect|criminalrecordcheck/bcscredirect)">
+          <BcscRedirect page={{ header, saveOrg, setError }} />
+        </Route>
+        <Route path="/(ecrc/success|criminalrecordcheck/success)">
+          <Success
+            page={{
+              header,
+              applicant,
+              org,
+              applicationInfo,
+              saveApplicationInfo
             }}
           />
-        </Switch>
-      </BrowserRouter>
+        </Route>
+        <Route path="/(ecrc/informationreview|criminalrecordcheck/informationreview)">
+          <InformationReview
+            page={{
+              header,
+              applicant,
+              org
+            }}
+          />
+        </Route>
+        <Route path="/(ecrc/userconfirmation|criminalrecordcheck/userconfirmation)">
+          <Consent
+            page={{
+              header,
+              applicant,
+              org,
+              setApplicationInfo,
+              saveOrg,
+              saveApplicant,
+              saveApplicationInfo,
+              setError
+            }}
+          />
+        </Route>
+        <Route path="/(ecrc/error|criminalrecordcheck/error)">
+          <Error page={{ header, error }} />
+        </Route>
+        <Route
+          path="/hosthome"
+          component={() => {
+            window.location.href =
+              "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check";
+            return null;
+          }}
+        />
+      </Switch>
     </div>
   );
 }

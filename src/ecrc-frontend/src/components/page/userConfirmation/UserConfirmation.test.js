@@ -1,5 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
+import { MemoryRouter } from "react-router-dom";
 
 import UserConfirmation from "./UserConfirmation";
 
@@ -16,7 +17,11 @@ describe("User Confirmation Page Component", () => {
       setApplicant
     };
 
-    const userConfirmation = create(<UserConfirmation page={page} />);
+    const userConfirmation = create(
+      <MemoryRouter>
+        <UserConfirmation page={page} />
+      </MemoryRouter>
+    );
     expect(userConfirmation.toJSON()).toMatchSnapshot();
   });
 });

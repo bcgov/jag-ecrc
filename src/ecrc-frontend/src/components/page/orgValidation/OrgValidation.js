@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -15,10 +15,9 @@ import {
 export default function OrgValidation({
   page: { header, setOrg, setTransitionReason, setError }
 }) {
+  const history = useHistory();
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
-  const [toTransition, setToTransition] = useState(false);
-  const [toOrgVerification, setToOrgVerification] = useState(false);
   const [toError, setToError] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -56,14 +55,14 @@ export default function OrgValidation({
       )
       .then(res => {
         setOrg({ ...res.data.accessCodeResponse, orgTicketNumber });
-        setToOrgVerification(true);
+        history.push("/criminalrecordcheck/orgverification");
       })
       .catch(error => {
         if (error.response.status === 404) {
           setOrgError("Please enter a valid org code");
         } else if (error.response.status === 401) {
           setTransitionReason("notwhitelisted");
-          setToTransition(true);
+          history.push("/criminalrecordcheck/transition");
         } else {
           setToError(true);
           setError(error.response.status.toString());
@@ -76,14 +75,6 @@ export default function OrgValidation({
     textInputStyle: "placeHolder",
     errorMsg: orgError
   };
-
-  if (toOrgVerification) {
-    return <Redirect to="/criminalrecordcheck/orgverification" />;
-  }
-
-  if (toTransition) {
-    return <Redirect to="/criminalrecordcheck/transition" />;
-  }
 
   if (toError) {
     return <Redirect to="/criminalrecordcheck/error" />;
