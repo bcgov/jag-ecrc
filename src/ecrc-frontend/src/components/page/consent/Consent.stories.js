@@ -32,8 +32,7 @@ const applicant = {
   mailingCity: "There",
   mailingProvince: "Ontario",
   mailingPostalCode: "V1V 1A1",
-  jobTitle: "Painter",
-  organizationFacility: ""
+  jobTitle: "Painter"
 };
 
 const org = {

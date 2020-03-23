@@ -353,10 +353,6 @@ Consent.propTypes = {
       alias3SurnameNm: PropTypes.string,
       birthDt: PropTypes.string.isRequired,
       genderTxt: PropTypes.string.isRequired,
-      addressLine1: PropTypes.string.isRequired,
-      cityNm: PropTypes.string.isRequired,
-      provinceNm: PropTypes.string.isRequired,
-      postalCodeTxt: PropTypes.string.isRequired,
       countryNm: PropTypes.string.isRequired,
       mailingAddressLine1: PropTypes.string.isRequired,
       mailingCity: PropTypes.string.isRequired,
@@ -365,9 +361,7 @@ Consent.propTypes = {
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string.isRequired,
-      emailAddress: PropTypes.string.isRequired,
-      jobTitle: PropTypes.string.isRequired,
-      organizationFacility: PropTypes.string
+      jobTitle: PropTypes.string.isRequired
     }),
     org: PropTypes.shape({
       orgApplicantRelationship: PropTypes.string.isRequired,
