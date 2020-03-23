@@ -157,6 +157,9 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
             provided.
           </strong>
           <p />
+          <div style={toggleLoader}>
+            <Loader page />
+          </div>
           <p>{fullName}</p>
           <p>Is this correct?</p>
           <div className="row">

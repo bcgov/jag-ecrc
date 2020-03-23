@@ -168,6 +168,13 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         type="submit"
       >
         Print
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
       <button
         className="btn ecrc_go_btn btn btn-sm"
@@ -175,6 +182,13 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         type="submit"
       >
         Download
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </div>
     <div
@@ -413,6 +427,13 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         type="submit"
       >
         Print
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
       <button
         className="btn ecrc_go_btn btn btn-sm"
@@ -420,6 +441,13 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         type="submit"
       >
         Download
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </div>
     <div
@@ -634,6 +662,13 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         type="submit"
       >
         Print
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
       <button
         className="btn ecrc_go_btn btn btn-sm"
@@ -641,6 +676,13 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         type="submit"
       >
         Download
+        <div
+          className="loader-hide"
+        >
+          <div
+            className="btn-loader"
+          />
+        </div>
       </button>
     </div>
     <div

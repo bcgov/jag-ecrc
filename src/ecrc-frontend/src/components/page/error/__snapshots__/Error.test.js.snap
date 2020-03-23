@@ -83,6 +83,13 @@ exports[`Error Component Matches the snapshot 1`] = `
           type="submit"
         >
           Home
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
         </button>
       </div>
     </div>
