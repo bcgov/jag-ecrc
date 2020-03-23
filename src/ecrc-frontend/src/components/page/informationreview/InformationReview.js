@@ -58,12 +58,14 @@ export default function InformationReview({
     setApplicationInfo,
     saveApplicant,
     saveOrg,
-    saveApplicationInfo
+    saveApplicationInfo,
+    setError
   }
 }) {
   const [toBack, setToBack] = useState(false);
   const [toHome, setToHome] = useState(false);
   const [toSuccess, setToSuccess] = useState(false);
+  const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -558,7 +560,8 @@ InformationReview.propTypes = {
     setApplicationInfo: PropTypes.func.isRequired,
     saveApplicant: PropTypes.func.isRequired,
     saveOrg: PropTypes.func.isRequired,
-    saveApplicationInfo: PropTypes.func.isRequired
+    saveApplicationInfo: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired
   })
 };
 

@@ -13,7 +13,7 @@ import {
 } from "../../../modules/AuthenticationHelper";
 
 export default function OrgValidation({
-  page: { header, setOrg, setTransitionReason }
+  page: { header, setOrg, setTransitionReason, setError }
 }) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
@@ -107,6 +107,7 @@ OrgValidation.propTypes = {
   page: PropTypes.shape({
     setOrg: PropTypes.func.isRequired,
     setTransitionReason: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired
