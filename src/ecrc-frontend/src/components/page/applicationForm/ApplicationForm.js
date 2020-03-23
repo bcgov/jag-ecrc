@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import "./ApplicationForm.css";
@@ -51,8 +51,8 @@ export default function ApplicationForm({
     org: { defaultScheduleTypeCd }
   }
 }) {
+  const history = useHistory();
   const [toHome, setToHome] = useState(false);
-  const [toInfoReview, setToInfoReview] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
     previousThree: alias3FirstNm || alias3SecondNm || alias3SurnameNm
@@ -555,7 +555,15 @@ export default function ApplicationForm({
         organizationFacility: organizationLocation
       });
 
-      setToInfoReview(true);
+      const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+      const actionsPerformed = [...currentPayload.actionsPerformed, "appForm"];
+      const newPayload = {
+        ...currentPayload,
+        actionsPerformed
+      };
+      generateJWTToken(newPayload);
+
+      history.push("/criminalrecordcheck/informationreview");
     }
   };
 
@@ -579,17 +587,6 @@ export default function ApplicationForm({
 
   if (toHome) {
     return <Redirect to="/" />;
-  }
-
-  if (toInfoReview) {
-    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const actionsPerformed = [...currentPayload.actionsPerformed, "appForm"];
-    const newPayload = {
-      ...currentPayload,
-      actionsPerformed
-    };
-    generateJWTToken(newPayload);
-    return <Redirect to="/criminalrecordcheck/informationreview" />;
   }
 
   return (

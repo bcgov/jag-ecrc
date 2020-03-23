@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
@@ -17,9 +17,9 @@ import {
 } from "../../../modules/AuthenticationHelper";
 
 export default function Consent({ page: { header } }) {
+  const history = useHistory();
   const [toAppHome, setToAppHome] = useState(false);
   const [toHome, setToHome] = useState(false);
-  const [toApplicationForm, setToApplicationForm] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [thirdBoxChecked, setThirdBoxChecked] = useState(false);
@@ -64,7 +64,7 @@ export default function Consent({ page: { header } }) {
     return <Redirect to="/" />;
   }
 
-  if (toApplicationForm) {
+  const toApplicationForm = () => {
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
     const actionsPerformed = [...currentPayload.actionsPerformed, "consent"];
     const newPayload = {
@@ -72,8 +72,9 @@ export default function Consent({ page: { header } }) {
       actionsPerformed
     };
     generateJWTToken(newPayload);
-    return <Redirect to="/criminalrecordcheck/applicationform" />;
-  }
+
+    history.push("/criminalrecordcheck/applicationform");
+  };
 
   const asterisk = (
     <span id="asterisk" className="mandatory">
@@ -109,7 +110,7 @@ export default function Consent({ page: { header } }) {
             <Button
               button={continueButton}
               onClick={() => {
-                setToApplicationForm(true);
+                toApplicationForm();
               }}
             />
           </div>

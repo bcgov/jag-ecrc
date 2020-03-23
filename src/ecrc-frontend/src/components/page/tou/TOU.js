@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -14,7 +14,7 @@ import {
 } from "../../../modules/AuthenticationHelper";
 
 export default function TOU({ page: { header } }) {
-  const [toBCSCRedirect, setToBCSCRedirect] = useState(false);
+  const history = useHistory();
   const [toHome, setToHome] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
@@ -38,10 +38,6 @@ export default function TOU({ page: { header } }) {
   }, [firstBoxChecked, secondBoxChecked, reachedEnd]);
 
   const onContinueClick = () => {
-    setToBCSCRedirect(true);
-  };
-
-  if (toBCSCRedirect) {
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
     const actionsPerformed = [...currentPayload.actionsPerformed, "tou"];
     const newPayload = {
@@ -49,8 +45,10 @@ export default function TOU({ page: { header } }) {
       actionsPerformed
     };
     generateJWTToken(newPayload);
-    return <Redirect to="/criminalrecordcheck/bcscredirect" />;
-  }
+
+    history.push("/criminalrecordcheck/bcscredirect");
+  };
+
   const termOfUseOnScroll = event => {
     const { scrollHeight, scrollTop, clientHeight } = event.target;
     if (!reachedEnd && scrollHeight - scrollTop <= clientHeight + 5) {

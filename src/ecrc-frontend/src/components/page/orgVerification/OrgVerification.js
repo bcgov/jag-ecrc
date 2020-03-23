@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import "../page.css";
@@ -17,8 +17,8 @@ import {
 } from "../../../modules/AuthenticationHelper";
 
 export default function OrgVerification({ page: { header, org } }) {
+  const history = useHistory();
   const [toHome, setToHome] = useState(false);
-  const [toTOU, setToTOU] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,7 +37,7 @@ export default function OrgVerification({ page: { header, org } }) {
       actionsPerformed: ["orgVerification"]
     };
     generateJWTToken(newPayload);
-    setToTOU(true);
+    history.push("/criminalrecordcheck/termsofuse");
   };
 
   const back = () => {
@@ -121,10 +121,6 @@ export default function OrgVerification({ page: { header, org } }) {
 
   if (toHome) {
     return <Redirect to="/" />;
-  }
-
-  if (toTOU) {
-    return <Redirect to="/criminalrecordcheck/termsofuse" />;
   }
 
   return (
