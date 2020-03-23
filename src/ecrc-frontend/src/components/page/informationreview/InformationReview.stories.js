@@ -39,27 +39,11 @@ const applicant = {
   organizationFacility: ""
 };
 
-const org = {
-  orgApplicantRelationship: "EMPLOYEE",
-  orgTicketNumber: "crce",
-  defaultScheduleTypeCd: "WBSD",
-  defaultCrcScopeLevelCd: "WWCH"
-};
-
-const setApplicationInfo = () => {};
-const saveApplicant = () => {};
-const saveOrg = () => {};
-const saveApplicationInfo = () => {};
 const setError = () => {};
 
 const page = {
   header,
   applicant,
-  org,
-  setApplicationInfo,
-  saveApplicant,
-  saveOrg,
-  saveApplicationInfo,
   setError
 };
 

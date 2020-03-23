@@ -98,7 +98,18 @@ export default function App() {
             />
           </Route>
           <Route path="/(ecrc/userconfirmation|criminalrecordcheck/userconfirmation)">
-            <Consent page={{ header, setError }} />
+            <Consent
+              page={{
+                header,
+                applicant,
+                org,
+                setApplicationInfo,
+                saveOrg,
+                saveApplicant,
+                saveApplicationInfo,
+                setError
+              }}
+            />
           </Route>
           <Route path="/(ecrc/error|criminalrecordcheck/error)">
             <Error page={{ header, error }} />
