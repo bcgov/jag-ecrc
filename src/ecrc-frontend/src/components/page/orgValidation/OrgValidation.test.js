@@ -28,8 +28,8 @@ describe("OrgValidation Component", () => {
   const page = {
     setOrg,
     setTransitionReason,
-    setError,
-    header
+    header,
+    setError
   };
 
   window.scrollTo = jest.fn();
@@ -78,7 +78,7 @@ describe("OrgValidation Component", () => {
 
     expect(getByDisplayValue(container, "crce")).toBeInTheDocument();
 
-    fireEvent.click(getByText(container, "Validate"));
+    fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
       expect(setOrg).toHaveBeenCalled();
@@ -109,7 +109,7 @@ describe("OrgValidation Component", () => {
 
     expect(getByDisplayValue(container, "crce")).toBeInTheDocument();
 
-    fireEvent.click(getByText(container, "Validate"));
+    fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
       expect(setTransitionReason).toHaveBeenCalled();
@@ -140,7 +140,7 @@ describe("OrgValidation Component", () => {
 
     expect(getByDisplayValue(container, "test")).toBeInTheDocument();
 
-    fireEvent.click(getByText(container, "Validate"));
+    fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {});
 

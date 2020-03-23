@@ -274,7 +274,7 @@ export default function InformationReview({
 
   const confirm = () => {
     setLoading(true);
-    
+
     if (!isAuthorized()) {
       setError("session expired");
       setToError(true);

@@ -32,8 +32,8 @@ const applicant = {
   organizationFacility: ""
 };
 
-const setApplicant = jest.fn();
-const setError = jest.fn();
+const setApplicant = () => {};
+const setError = () => {};
 
 const org = {
   defaultScheduleTypeCd: "WBSD"

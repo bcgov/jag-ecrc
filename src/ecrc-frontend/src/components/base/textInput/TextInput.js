@@ -26,13 +26,16 @@ export const TextInput = ({
     );
   }
 
-  const labelPart = (
-    <label htmlFor={id} className="label">
-      <div className="textinput_label">{label}</div>
-      {asterisk}&nbsp;
-      <span className="note">{note}</span>
-    </label>
-  );
+  let labelPart = null;
+  if (label) {
+    labelPart = (
+      <label htmlFor={id} className="label">
+        <div className="textinput_label">{label}</div>
+        {asterisk}&nbsp;
+        <span className="note">{note}</span>
+      </label>
+    );
+  }
 
   let textStyle = "textinput_editable_white";
   const validStyles = [
@@ -48,7 +51,7 @@ export const TextInput = ({
   if (textStyle === "textinput_non_editable_gray")
     return (
       <div>
-        {labelPart}
+        {labelPart && labelPart}
         <input
           className={`${textStyle}`}
           type="text"
@@ -64,7 +67,7 @@ export const TextInput = ({
   if (options) {
     return (
       <div>
-        {labelPart}
+        {labelPart && labelPart}
         <select className={textStyle} id={id} value={value} onChange={onChange}>
           {options.map(item => {
             return (
@@ -80,7 +83,7 @@ export const TextInput = ({
 
   return (
     <div>
-      {labelPart}
+      {labelPart && labelPart}
       <input
         className={`${textStyle}`}
         type="text"
@@ -96,7 +99,7 @@ export const TextInput = ({
 
 TextInput.propTypes = {
   textInput: PropTypes.shape({
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     id: PropTypes.string.isRequired,
     note: PropTypes.string,
     textInputStyle: PropTypes.string,

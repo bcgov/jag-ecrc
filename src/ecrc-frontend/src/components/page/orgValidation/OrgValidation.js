@@ -6,7 +6,6 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
-import SideCards from "../../composite/sideCards/SideCards";
 import {
   generateJWTToken,
   storeValidator,
@@ -33,7 +32,7 @@ export default function OrgValidation({
   }, []);
 
   const button = {
-    label: "Validate",
+    label: "Continue",
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit",
@@ -73,10 +72,8 @@ export default function OrgValidation({
   };
 
   const textInput = {
-    label: "Access code",
     id: "orgId",
     textInputStyle: "placeHolder",
-    isRequired: true,
     errorMsg: orgError
   };
 
@@ -96,17 +93,13 @@ export default function OrgValidation({
     <main>
       <Header header={header} />
       <div className="page">
-        <div className="content col-md-8">
+        <div className="content col-md-10">
           <OrgValidationText
             textInput={textInput}
             onChange={setOrgTicketNumber}
             button={button}
             onClick={orgValidation}
           />
-        </div>
-        <div className="sidecard">
-          <SideCards type={"accesscode"} />
-          <SideCards type={"criminalrecord"} />
         </div>
       </div>
       <Footer />

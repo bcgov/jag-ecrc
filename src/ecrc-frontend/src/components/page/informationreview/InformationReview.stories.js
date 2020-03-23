@@ -46,11 +46,11 @@ const org = {
   defaultCrcScopeLevelCd: "WWCH"
 };
 
-const setApplicationInfo = jest.fn();
-const saveApplicant = jest.fn();
-const saveOrg = jest.fn();
-const saveApplicationInfo = jest.fn();
-const setError = jest.fn();
+const setApplicationInfo = () => {};
+const saveApplicant = () => {};
+const saveOrg = () => {};
+const saveApplicationInfo = () => {};
+const setError = () => {};
 
 const page = {
   header,
