@@ -88,11 +88,7 @@ export default function App() {
             page={{
               header,
               applicant,
-              org,
-              setApplicationInfo,
-              saveOrg,
-              saveApplicant,
-              saveApplicationInfo
+              org
             }}
           />
         </Route>
