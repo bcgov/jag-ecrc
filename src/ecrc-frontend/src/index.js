@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import "@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter } from "react-router-dom";
 
 if (process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;

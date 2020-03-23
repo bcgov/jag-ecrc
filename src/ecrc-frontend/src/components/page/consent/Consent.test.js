@@ -1,6 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { Router } from "react-router-dom";
+import { Router, MemoryRouter } from "react-router-dom";
 import {
   render,
   fireEvent,
@@ -33,7 +33,11 @@ describe("Consent Page Component", () => {
   });
 
   test("Matches the snapshot", () => {
-    const consent = create(<Consent page={page} />);
+    const consent = create(
+      <MemoryRouter>
+        <Consent page={page} />
+      </MemoryRouter>
+    );
     expect(consent.toJSON()).toMatchSnapshot();
   });
 
