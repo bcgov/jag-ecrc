@@ -338,6 +338,47 @@ Consent.propTypes = {
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired,
+    applicant: PropTypes.shape({
+      legalFirstNm: PropTypes.string.isRequired,
+      legalSecondNm: PropTypes.string.isRequired,
+      legalSurnameNm: PropTypes.string.isRequired,
+      alias1FirstNm: PropTypes.string,
+      alias1SecondNm: PropTypes.string,
+      alias1SurnameNm: PropTypes.string,
+      alias2FirstNm: PropTypes.string,
+      alias2SecondNm: PropTypes.string,
+      alias2SurnameNm: PropTypes.string,
+      alias3FirstNm: PropTypes.string,
+      alias3SecondNm: PropTypes.string,
+      alias3SurnameNm: PropTypes.string,
+      birthDt: PropTypes.string.isRequired,
+      genderTxt: PropTypes.string.isRequired,
+      addressLine1: PropTypes.string.isRequired,
+      cityNm: PropTypes.string.isRequired,
+      provinceNm: PropTypes.string.isRequired,
+      postalCodeTxt: PropTypes.string.isRequired,
+      countryNm: PropTypes.string.isRequired,
+      mailingAddressLine1: PropTypes.string.isRequired,
+      mailingCity: PropTypes.string.isRequired,
+      mailingProvince: PropTypes.string.isRequired,
+      mailingPostalCode: PropTypes.string.isRequired,
+      birthPlace: PropTypes.string.isRequired,
+      driversLicNo: PropTypes.string,
+      phoneNumber: PropTypes.string.isRequired,
+      emailAddress: PropTypes.string.isRequired,
+      jobTitle: PropTypes.string.isRequired,
+      organizationFacility: PropTypes.string
+    }),
+    org: PropTypes.shape({
+      orgApplicantRelationship: PropTypes.string.isRequired,
+      orgTicketNumber: PropTypes.string.isRequired,
+      defaultScheduleTypeCd: PropTypes.string.isRequired,
+      defaultCrcScopeLevelCd: PropTypes.string.isRequired
+    }),
+    setApplicationInfo: PropTypes.func.isRequired,
+    saveApplicant: PropTypes.func.isRequired,
+    saveOrg: PropTypes.func.isRequired,
+    saveApplicationInfo: PropTypes.func.isRequired,
     setError: PropTypes.func.isRequired
   }).isRequired
 };

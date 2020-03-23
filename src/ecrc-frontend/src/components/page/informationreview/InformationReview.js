@@ -390,16 +390,6 @@ InformationReview.propTypes = {
       jobTitle: PropTypes.string.isRequired,
       organizationFacility: PropTypes.string
     }),
-    org: PropTypes.shape({
-      orgApplicantRelationship: PropTypes.string.isRequired,
-      orgTicketNumber: PropTypes.string.isRequired,
-      defaultScheduleTypeCd: PropTypes.string.isRequired,
-      defaultCrcScopeLevelCd: PropTypes.string.isRequired
-    }),
-    setApplicationInfo: PropTypes.func.isRequired,
-    saveApplicant: PropTypes.func.isRequired,
-    saveOrg: PropTypes.func.isRequired,
-    saveApplicationInfo: PropTypes.func.isRequired,
     setError: PropTypes.func.isRequired
   })
 };
