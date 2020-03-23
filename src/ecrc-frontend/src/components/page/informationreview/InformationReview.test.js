@@ -55,11 +55,6 @@ describe("InformationReview Component", () => {
   const setError = jest.fn();
   window.scrollTo = jest.fn();
 
-  // Mock window location
-  const mockWindow = jest.fn();
-  delete window.location;
-  window.location = { assign: mockWindow };
-
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
     sessionStorage.setItem("uuid", "unique123");

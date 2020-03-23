@@ -73,6 +73,11 @@ describe("Consent Page Component", () => {
     setError
   };
 
+  // Mock window location
+  const mockWindow = jest.fn();
+  delete window.location;
+  window.location = { assign: mockWindow };
+
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
     sessionStorage.setItem("uuid", "unique123");
