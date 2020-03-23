@@ -1,8 +1,8 @@
 import React from "react";
 import { create } from "react-test-renderer";
+import { MemoryRouter } from "react-router-dom";
 
 import UserConfirmation from "./UserConfirmation";
-import { MemoryRouter } from "react-router-dom";
 
 describe("User Confirmation Page Component", () => {
   test("Matches the snapshot", () => {
