@@ -13,11 +13,8 @@ const header = {
   name: "Criminal Record Check"
 };
 
-const setError = jest.fn();
-
 const page = {
-  header,
-  setError
+  header
 };
 
 sessionStorage.setItem("validator", "secret");

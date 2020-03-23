@@ -12,11 +12,8 @@ const header = {
   name: "Terms of Use"
 };
 
-const setError = jest.fn();
-
 const page = {
-  header,
-  setError
+  header
 };
 
 sessionStorage.setItem("validator", "secret");

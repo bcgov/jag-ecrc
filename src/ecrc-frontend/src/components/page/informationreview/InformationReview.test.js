@@ -65,7 +65,6 @@ describe("InformationReview Component", () => {
   const saveApplicant = jest.fn();
   const saveOrg = jest.fn();
   const saveApplicationInfo = jest.fn();
-  const setError = jest.fn();
 
   window.scrollTo = jest.fn();
 
@@ -91,8 +90,7 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo,
-      setError
+      saveApplicationInfo
     };
     const infoReview = create(
       <MemoryRouter>
@@ -110,8 +108,7 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo,
-      setError
+      saveApplicationInfo
     };
     const history = createMemoryHistory();
     const { container } = render(
@@ -135,8 +132,7 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo,
-      setError
+      saveApplicationInfo
     };
     const history = createMemoryHistory();
     const { container } = render(
@@ -158,8 +154,7 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo,
-      setError
+      saveApplicationInfo
     };
     axios.get.mockImplementation(() =>
       Promise.resolve({
@@ -221,8 +216,7 @@ describe("InformationReview Component", () => {
       setApplicationInfo,
       saveApplicant,
       saveOrg,
-      saveApplicationInfo,
-      setError
+      saveApplicationInfo
     };
 
     axios.get.mockImplementation(() =>

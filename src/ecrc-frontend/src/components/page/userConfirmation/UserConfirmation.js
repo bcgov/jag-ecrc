@@ -12,7 +12,6 @@ import {
   accessJWTToken,
   isAuthenticated
 } from "../../../modules/AuthenticationHelper";
-import Loader from "../../base/loader/Loader";
 
 export default function UserConfirmation({ page: { header, setApplicant } }) {
   const [toConsent, setToConsent] = useState(false);
@@ -20,7 +19,6 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
   const [toTransition, setToTransition] = useState(false);
   const [user, setUser] = useState({});
   const [fullName, setFullName] = useState("");
-  const [toggleLoader, setToggleLoader] = useState({ display: "inline-block" });
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -106,11 +104,8 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
         });
 
         setFullName(`${given_name} ${family_name}`);
-        setToggleLoader({ display: "none" });
       })
-      .catch(() => {
-        setToggleLoader({ display: "none" });
-      });
+      .catch(() => {});
     window.scrollTo(0, 0);
   }, []);
 
@@ -162,9 +157,6 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
             provided.
           </strong>
           <p />
-          <div style={toggleLoader}>
-            <Loader />
-          </div>
           <p>{fullName}</p>
           <p>Is this correct?</p>
           <div className="row">

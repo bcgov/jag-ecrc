@@ -53,7 +53,6 @@ describe("ApplicationForm Component", () => {
   };
 
   const setApplicant = jest.fn();
-  const setError = jest.fn();
   const org = {
     defaultScheduleTypeCd: "WBSD"
   };
@@ -62,8 +61,7 @@ describe("ApplicationForm Component", () => {
     header,
     applicant,
     org,
-    setApplicant,
-    setError
+    setApplicant
   };
 
   beforeEach(() => {

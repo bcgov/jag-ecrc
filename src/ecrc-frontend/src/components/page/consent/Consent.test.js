@@ -19,11 +19,8 @@ describe("Consent Page Component", () => {
     name: "Criminal Record Check"
   };
 
-  const setError = jest.fn();
-
   const page = {
-    header,
-    setError
+    header
   };
 
   beforeEach(() => {

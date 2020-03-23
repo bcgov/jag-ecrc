@@ -54,24 +54,22 @@ export default function App() {
             />
           </Route>
           <Route path="/(ecrc/orgverification|criminalrecordcheck/orgverification)">
-            <OrgVerification page={{ header, org, setError }} />
+            <OrgVerification page={{ header, org }} />
           </Route>
           <Route path="/(ecrc/applicationform|criminalrecordcheck/applicationform)">
-            <ApplicationForm
-              page={{ header, org, applicant, setApplicant, setError }}
-            />
+            <ApplicationForm page={{ header, org, applicant, setApplicant }} />
           </Route>
           <Route path="/(ecrc/transition|criminalrecordcheck/transition)">
             <Transition page={{ header, transitionReason }} />
           </Route>
           <Route path="/(ecrc/termsofuse|criminalrecordcheck/termsofuse)">
-            <TOU page={{ header, setError }} />
+            <TOU page={{ header }} />
           </Route>
           <Route path="/(ecrc/consent|criminalrecordcheck/consent)">
-            <UserConfirmation page={{ header, setApplicant, setError }} />
+            <UserConfirmation page={{ header, setApplicant }} />
           </Route>
           <Route path="/(ecrc/bcscredirect|criminalrecordcheck/bcscredirect)">
-            <BcscRedirect page={{ header, saveOrg, setError }} />
+            <BcscRedirect page={{ header, saveOrg }} />
           </Route>
           <Route path="/(ecrc/success|criminalrecordcheck/success)">
             <Success

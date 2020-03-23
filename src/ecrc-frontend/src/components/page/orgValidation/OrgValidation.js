@@ -6,7 +6,6 @@ import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
-import SideCards from "../../composite/sideCards/SideCards";
 import {
   generateJWTToken,
   storeValidator,
@@ -14,13 +13,12 @@ import {
 } from "../../../modules/AuthenticationHelper";
 
 export default function OrgValidation({
-  page: { header, setOrg, setTransitionReason, setError }
+  page: { header, setOrg, setTransitionReason }
 }) {
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
-  const [toError, setToError] = useState(false);
 
   useEffect(() => {
     // create guid and get the initial validator from backend and store it for subsequent requests (for JWT)
@@ -54,23 +52,18 @@ export default function OrgValidation({
         } else if (error.response.status === 401) {
           setTransitionReason("notwhitelisted");
           setToTransition(true);
-        } else {
-          setToError(true);
-          setError(error.response.status.toString());
         }
       });
   };
 
   const textInput = {
-    label: "Access code",
     id: "orgId",
     textInputStyle: "placeHolder",
-    isRequired: true,
     errorMsg: orgError
   };
 
   const button = {
-    label: "Validate",
+    label: "Continue",
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit"
@@ -84,25 +77,17 @@ export default function OrgValidation({
     return <Redirect to="/criminalrecordcheck/transition" />;
   }
 
-  if (toError) {
-    return <Redirect to="/criminalrecordcheck/error" />;
-  }
-
   return (
     <main>
       <Header header={header} />
       <div className="page">
-        <div className="content col-md-8">
+        <div className="content col-md-10">
           <OrgValidationText
             textInput={textInput}
             onChange={setOrgTicketNumber}
             button={button}
             onClick={orgValidation}
           />
-        </div>
-        <div className="sidecard">
-          <SideCards type={"accesscode"} />
-          <SideCards type={"criminalrecord"} />
         </div>
       </div>
       <Footer />
@@ -114,7 +99,6 @@ OrgValidation.propTypes = {
   page: PropTypes.shape({
     setOrg: PropTypes.func.isRequired,
     setTransitionReason: PropTypes.func.isRequired,
-    setError: PropTypes.func.isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired
