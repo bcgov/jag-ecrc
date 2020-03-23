@@ -32,7 +32,7 @@ export default function OrgValidation({
   }, []);
 
   const button = {
-    label: "Validate",
+    label: "Continue",
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit",
@@ -64,6 +64,9 @@ export default function OrgValidation({
         } else if (error.response.status === 401) {
           setTransitionReason("notwhitelisted");
           setToTransition(true);
+        } else {
+          setToError(true);
+          setError(error.response.status.toString());
         }
       });
   };
@@ -72,13 +75,6 @@ export default function OrgValidation({
     id: "orgId",
     textInputStyle: "placeHolder",
     errorMsg: orgError
-  };
-
-  const button = {
-    label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
-    buttonSize: "btn btn-sm",
-    type: "submit"
   };
 
   if (toOrgVerification) {
