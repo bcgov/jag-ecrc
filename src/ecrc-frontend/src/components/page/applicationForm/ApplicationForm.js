@@ -468,6 +468,12 @@ export default function ApplicationForm({
   };
 
   const applicationVerification = () => {
+    if (!isAuthorized()) {
+      setError("session expired");
+      setToError(true);
+      return;
+    }
+
     if (!birthLoc) {
       setBirthPlaceError("Please enter your city and country of birth");
     }
@@ -600,6 +606,10 @@ export default function ApplicationForm({
     };
     generateJWTToken(newPayload);
     return <Redirect to="/criminalrecordcheck/informationreview" />;
+  }
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   return (

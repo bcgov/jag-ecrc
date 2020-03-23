@@ -189,14 +189,9 @@ export default function Success({
           partyIdRef2: partyId
         };
 
-        return axios
-          .post("/ecrc/private/createPaymentUrl", createURL, {
-            headers: { Authorization: `Bearer ${token}` }
-          })
-          .catch(error => {
-            setToError(true);
-            setError(error.response.status.toString());
-          });
+        return axios.post("/ecrc/private/createPaymentUrl", createURL, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
       })
       .then(urlResponse => {
         window.location.href = urlResponse.data.paymentUrl;

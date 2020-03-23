@@ -71,3 +71,10 @@
   background-color: rgba(43, 91, 164, 1);
   color: white;
 }
+
+.loader-hide {
+  display: none;
+}
+.loader-show {
+  display: inline-block;
+}

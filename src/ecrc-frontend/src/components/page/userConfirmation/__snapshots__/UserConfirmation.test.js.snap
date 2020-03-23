@@ -66,6 +66,17 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
         Please confirm the name associated with the BC Service card login provided.
       </strong>
       <p />
+      <div
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        <div
+          className="page-loader"
+        />
+      </div>
       <p>
         
       </p>
@@ -84,6 +95,13 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
             type="submit"
           >
             Yes
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <button
             className="btn ecrc_accessary_btn btn"
@@ -91,6 +109,13 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
             type="submit"
           >
             No
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
           </button>
           <br />
         </div>

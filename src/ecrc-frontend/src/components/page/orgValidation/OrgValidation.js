@@ -21,19 +21,30 @@ export default function OrgValidation({
   const [toTransition, setToTransition] = useState(false);
   const [toOrgVerification, setToOrgVerification] = useState(false);
   const [toError, setToError] = useState(false);
-  const payload = { authorities: ["ROLE"] };
-  const token = generateJWTToken(payload);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // create guid and get the initial validator from backend and store it for subsequent requests (for JWT)
     storeUUID();
     storeValidator();
+    setLoading(false);
 
     window.scrollTo(0, 0);
   }, []);
 
+  const button = {
+    label: "Validate",
+    buttonStyle: "btn ecrc_go_btn",
+    buttonSize: "btn btn-sm",
+    type: "submit",
+    loader: loading
+  };
+
   const orgValidation = () => {
+    setLoading(true);
     const uuid = sessionStorage.getItem("uuid");
+    const payload = { authorities: ["ROLE"] };
+    const token = generateJWTToken(payload);
 
     axios
       .get(
@@ -67,13 +78,6 @@ export default function OrgValidation({
     textInputStyle: "placeHolder",
     isRequired: true,
     errorMsg: orgError
-  };
-
-  const button = {
-    label: "Validate",
-    buttonStyle: "btn ecrc_go_btn",
-    buttonSize: "btn btn-sm",
-    type: "submit"
   };
 
   if (toOrgVerification) {

@@ -67,9 +67,11 @@ export default function InformationReview({
   const [toSuccess, setToSuccess] = useState(false);
   const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setLoading(false);
 
     if (!isAuthorized() || !isActionPerformed("appForm")) {
       setToHome(true);
@@ -269,12 +271,18 @@ export default function InformationReview({
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit",
-    disabled: !boxChecked
+    disabled: !boxChecked,
+    loader: loading
   };
 
   const confirm = () => {
-    // TODO: Check if volunteer, if yes, success, else, cont.
-    // CALL THAT API
+    setLoading(true);
+
+    if (!isAuthorized()) {
+      setError("session expired");
+      setToError(true);
+      return;
+    }
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
@@ -318,49 +326,30 @@ export default function InformationReview({
           Authorization: `Bearer ${token}`
         }
       }),
-      // .catch(error => {
-      //   setToError(true);
-      //   setError(error.response.status.toString());
-      // }),
-      axios
-        .get(
-          `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
+      axios.get(
+        `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
           }
-        )
-        .catch(error => {
-          setToError(true);
-          setError(error.response.status.toString());
-        }),
-      axios
-        .get(
-          `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
+        }
+      ),
+      axios.get(
+        `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
           }
-        )
-        .catch(error => {
-          setToError(true);
-          setError(error.response.status.toString());
-        }),
-      axios
-        .get(
-          `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
+        }
+      ),
+      axios.get(
+        `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
           }
-        )
-        .catch(error => {
-          setToError(true);
-          setError(error.response.status.toString());
-        })
+        }
+      )
     ])
       .then(all => {
         partyId = all[0].data.partyId;
@@ -454,7 +443,7 @@ export default function InformationReview({
       })
       .catch(error => {
         setToError(true);
-        setError(error.response.status.toString());
+        setError(error.response.status.toString() + " - outer catch");
       });
   };
 
@@ -489,7 +478,7 @@ export default function InformationReview({
   }
 
   if (toError) {
-    return <Redirect to="/criminalrecordcheck/success" />;
+    return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   return (
@@ -585,7 +574,8 @@ InformationReview.propTypes = {
     setApplicationInfo: PropTypes.func.isRequired,
     saveApplicant: PropTypes.func.isRequired,
     saveOrg: PropTypes.func.isRequired,
-    saveApplicationInfo: PropTypes.func.isRequired
+    saveApplicationInfo: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired
   })
 };
 

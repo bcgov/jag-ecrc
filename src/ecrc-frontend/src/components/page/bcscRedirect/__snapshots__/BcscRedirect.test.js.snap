@@ -123,6 +123,13 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
               type="button"
             >
               Login with your BC Services Card
+              <div
+                className="loader-hide"
+              >
+                <div
+                  className="btn-loader"
+                />
+              </div>
             </button>
           </div>
         </div>

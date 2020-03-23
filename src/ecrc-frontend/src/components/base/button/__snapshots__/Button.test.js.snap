@@ -7,5 +7,12 @@ exports[`Button Component Matches the snapshot 1`] = `
   type="button"
 >
   test
+  <div
+    className="loader-hide"
+  >
+    <div
+      className="btn-loader"
+    />
+  </div>
 </button>
 `;
