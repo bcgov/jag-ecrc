@@ -59,6 +59,7 @@ export default function TermsOfUse({
           onClick={() => {
             setIsHidden(false);
           }}
+          tabIndex={0}
         >
           <FaPrint style={{ marginRight: "10px" }} />
           Print Page
@@ -88,12 +89,13 @@ export default function TermsOfUse({
         <p>
           These Terms of Use are an agreement between you and Her Majesty the
           Queen in Right of the Province of British Columbia, represented by the
-          Minister of Public Safety and Solicitor General (the "Province") and
-          they govern your use of the Site and, where applicable, any associated
-          service ("Associated Service" and, together with the Site, the
-          "Services"). By clicking the box to indicate that you accept these
-          Terms of Use, and in consideration of your use of the Services, you
-          agree, to the terms and conditions set out below.
+          Minister of Public Safety and Solicitor General (the
+          &quot;Province&quot;) and they govern your use of the Site and, where
+          applicable, any associated service (&quot;Associated Service&quot;
+          and, together with the Site, the &quot;Services&quot;). By clicking
+          the box to indicate that you accept these Terms of Use, and in
+          consideration of your use of the Services, you agree, to the terms and
+          conditions set out below.
         </p>
 
         <p>
@@ -119,10 +121,10 @@ export default function TermsOfUse({
           </li>
           <br />
           <li>
-            The services are provided “as is”, without warranty of any kind
-            including warranty of fitness for a particular purpose. Use of the
-            services is entirely at your own risk and you will be liable for any
-            failure to abide by these terms of use.
+            The services are provided &quot;as is&quot;, without warranty of any
+            kind including warranty of fitness for a particular purpose. Use of
+            the services is entirely at your own risk and you will be liable for
+            any failure to abide by these terms of use.
           </li>
           <li>
             Without limiting the general nature of the foregoing, the province
@@ -218,9 +220,9 @@ export default function TermsOfUse({
         <ol start="11">
           <li>
             You will be required to access an external payment processing site
-            ("Payment Site") in order to pay the criminal record check fee. For
-            volunteers completing an online request for a criminal record check,
-            no payment is required.
+            (&quot;Payment Site&quot;) in order to pay the criminal record check
+            fee. For volunteers completing an online request for a criminal
+            record check, no payment is required.
           </li>
         </ol>
 
