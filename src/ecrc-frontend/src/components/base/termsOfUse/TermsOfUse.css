@@ -14,3 +14,11 @@
 .btn {
   margin-right: 40px;
 }
+
+.print-page {
+  cursor: pointer;
+  color: #1a5a96;
+  float: right;
+  margin-top: 10px;
+  margin-left: 15px;
+}

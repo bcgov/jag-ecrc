@@ -2,6 +2,7 @@
 import { Redirect } from "react-router-dom";
 
 import React, { useState } from "react";
+import { FaPrint } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { Button } from "../button/Button";
 import "./TermsOfUse.css";
@@ -9,7 +10,6 @@ import "./TermsOfUse.css";
 export default function TermsOfUse({
   onContinueClick,
   checkFirstBox,
-  checkSecondBox,
   termOfUseOnScroll,
   continueBtnEnabled
 }) {
@@ -41,15 +41,19 @@ export default function TermsOfUse({
   return (
     <div>
       <div style={{ width: "100%" }}>
-        <a
-          href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820"
-          download
-          style={{ float: "right", marginRight: "-30px" }}
-        >
-          <button type="submit" className="btn btn-primary">
-            <i className="fa fa-download" /> Download Terms of Use
-          </button>
-        </a>
+        <span className="print-page">
+          <FaPrint />
+          <a href=""> Print Page</a>
+        </span>
+
+        <span className="print-page">
+          <FaPrint />
+          <a href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820">
+            {" "}
+            Download Terms of Use
+          </a>
+        </span>
+
         <h1>Terms of Use</h1>
       </div>
 
@@ -410,27 +414,17 @@ export default function TermsOfUse({
 
       {!continueBtnEnabled && (
         <section>
-          <p style={{ color: "red" }}>
-            Please scroll down to the bottom of the terms of use and agree to
-            the terms below to continue.
-          </p>
+          <p>Please scroll down to the bottom of the terms to continue.</p>
         </section>
       )}
       <br />
 
       <section>
         <input type="checkbox" className="terms-cb" onClick={checkFirstBox} />
-        &nbsp;I have read and accept the above terms and conditions.
-        <br />
-        <br />
-        <p>
-          By submitting your email address, you agree the eCRC can use it to
-          communicate with you about your registration.
-        </p>
-        <input type="checkbox" className="terms-cb" onClick={checkSecondBox} />
-        &nbsp;I authorize use of my email address to communicate with me about
-        my registration.
+        &nbsp;I have read and accept the above terms of use.
       </section>
+      <br />
+      <br />
       <section className="buttons">
         <Button button={cancelButton} onClick={onCancelClicked} />
         <Button button={button} onClick={onContinueClick} />
@@ -442,7 +436,6 @@ export default function TermsOfUse({
 TermsOfUse.propTypes = {
   onContinueClick: PropTypes.func.isRequired,
   checkFirstBox: PropTypes.func.isRequired,
-  checkSecondBox: PropTypes.func.isRequired,
   termOfUseOnScroll: PropTypes.func.isRequired,
   continueBtnEnabled: PropTypes.bool
 };

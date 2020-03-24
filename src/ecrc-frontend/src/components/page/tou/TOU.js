@@ -17,7 +17,6 @@ export default function TOU({ page: { header, setError } }) {
   const history = useHistory();
   const [toHome, setToHome] = useState(false);
   const [toError, setToError] = useState(false);
-  const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
   const [reachedEnd, setReachedEnd] = useState(false);
@@ -31,12 +30,12 @@ export default function TOU({ page: { header, setError } }) {
   }, []);
 
   useEffect(() => {
-    if (firstBoxChecked && secondBoxChecked && reachedEnd) {
+    if (firstBoxChecked && reachedEnd) {
       setContinueBtnEnabled(true);
     } else {
       setContinueBtnEnabled(false);
     }
-  }, [firstBoxChecked, secondBoxChecked, reachedEnd]);
+  }, [firstBoxChecked, reachedEnd]);
 
   const onContinueClick = () => {
     if (!isAuthenticated()) {
@@ -80,7 +79,6 @@ export default function TOU({ page: { header, setError } }) {
             onContinueClick={onContinueClick}
             termOfUseOnScroll={termOfUseOnScroll}
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
-            checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             continueBtnEnabled={continueBtnEnabled}
           />
         </div>
