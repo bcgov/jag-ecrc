@@ -55,6 +55,7 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
         style={
           Object {
             "float": "left",
+            "marginRight": "30px",
           }
         }
       >
@@ -107,13 +108,7 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
           </p>
         </div>
       </div>
-      <div
-        style={
-          Object {
-            "float": "right",
-          }
-        }
-      >
+      <div>
         <button
           className="btn btn-primary btn btn-sm"
           onClick={[Function]}
