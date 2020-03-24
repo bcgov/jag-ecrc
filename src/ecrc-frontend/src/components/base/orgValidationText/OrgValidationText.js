@@ -50,7 +50,7 @@ export default function OrgValidationText({
         <div>
           <br />
           <h3>{"I'm ready"}</h3>
-          <div style={{ float: "left" }}>
+          <div style={{ float: "left", marginRight: "30px" }}>
             <TextInput textInput={textInput} onChange={onChange} />
             <div style={{ maxWidth: "350px" }}>
               <p>
@@ -62,7 +62,7 @@ export default function OrgValidationText({
               </p>
             </div>
           </div>
-          <div style={{ float: "right" }}>
+          <div>
             <Button button={button} onClick={onClick} />
           </div>
           <div style={{ clear: "both" }} />
