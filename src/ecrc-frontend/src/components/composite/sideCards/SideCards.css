@@ -1,6 +1,7 @@
 .getServiceButton {
   display: flex;
   flex-direction: row-reverse;
+  padding-top: 10px;
 }
 
 .dark-button {

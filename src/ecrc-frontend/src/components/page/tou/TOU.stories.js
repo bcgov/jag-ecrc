@@ -12,7 +12,7 @@ const header = {
   name: "Terms of Use"
 };
 
-const setError = jest.fn();
+const setError = () => {};
 
 const page = {
   header,

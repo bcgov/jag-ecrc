@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import "./ApplicationForm.css";
@@ -52,8 +52,8 @@ export default function ApplicationForm({
     setError
   }
 }) {
+  const history = useHistory();
   const [toHome, setToHome] = useState(false);
-  const [toInfoReview, setToInfoReview] = useState(false);
   const [toError, setToError] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
@@ -101,7 +101,8 @@ export default function ApplicationForm({
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    if (!isAuthorized() || !isActionPerformed("consent")) setToHome(true);
+    if (!isAuthorized() || !isActionPerformed("userConfirmation"))
+      setToHome(true);
 
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
@@ -567,7 +568,15 @@ export default function ApplicationForm({
         organizationFacility: organizationLocation
       });
 
-      setToInfoReview(true);
+      const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+      const actionsPerformed = [...currentPayload.actionsPerformed, "appForm"];
+      const newPayload = {
+        ...currentPayload,
+        actionsPerformed
+      };
+      generateJWTToken(newPayload);
+
+      history.push("/criminalrecordcheck/informationreview");
     }
   };
 
@@ -595,17 +604,6 @@ export default function ApplicationForm({
 
   if (toHome) {
     return <Redirect to="/" />;
-  }
-
-  if (toInfoReview) {
-    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const actionsPerformed = [...currentPayload.actionsPerformed, "appForm"];
-    const newPayload = {
-      ...currentPayload,
-      actionsPerformed
-    };
-    generateJWTToken(newPayload);
-    return <Redirect to="/criminalrecordcheck/informationreview" />;
   }
 
   if (toError) {

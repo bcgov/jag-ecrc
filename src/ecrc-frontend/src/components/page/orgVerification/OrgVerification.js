@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import "../page.css";
@@ -17,8 +17,8 @@ import {
 } from "../../../modules/AuthenticationHelper";
 
 export default function OrgVerification({ page: { header, org, setError } }) {
+  const history = useHistory();
   const [toHome, setToHome] = useState(false);
-  const [toTOU, setToTOU] = useState(false);
   const [toError, setToError] = useState(false);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
       actionsPerformed: ["orgVerification"]
     };
     generateJWTToken(newPayload);
-    setToTOU(true);
+    history.push("/criminalrecordcheck/termsofuse");
   };
 
   const back = () => {
@@ -83,13 +83,13 @@ export default function OrgVerification({ page: { header, org, setError } }) {
   };
 
   const organizationInfoElements = [
-    { name: "Organization Name", value: org.orgNm },
+    { name: "Organization Name:", value: org.orgNm },
     {
-      name: "Address",
+      name: "Address:",
       value: `${org.addressLine1}\n${org.cityNm}\n${org.provinceNm}\n${org.postalCodeTxt}\n${org.countryNm}`
     },
     {
-      name: "Phone Number",
+      name: "Phone Number:",
       value: org.contactPhoneNo
     }
   ];
@@ -110,8 +110,8 @@ export default function OrgVerification({ page: { header, org, setError } }) {
   }
 
   const organizationTypeElements = [
-    { name: "Role", value: org.orgApplicantRelationship },
-    { name: "Works with category", value: worksWith }
+    { name: "Role:", value: org.orgApplicantRelationship },
+    { name: "Works with category:", value: worksWith }
   ];
 
   const organizationTypeTable = {
@@ -120,7 +120,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
         Role of Applicant&nbsp;
         <span className="smallTableHeader">(Employee or Volunteer)</span> and
         working category&nbsp;
-        <span className="smallTableHeader">(e.g. working with children)</span>
+        <span className="smallTableHeader">(e.g. working with children):</span>
       </div>
     ),
     tableElements: organizationTypeElements
@@ -128,10 +128,6 @@ export default function OrgVerification({ page: { header, org, setError } }) {
 
   if (toHome) {
     return <Redirect to="/" />;
-  }
-
-  if (toTOU) {
-    return <Redirect to="/criminalrecordcheck/termsofuse" />;
   }
 
   if (toError) {
@@ -144,6 +140,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
       <div className="page">
         <div className="content col-md-8">
           <h1>Organization Information</h1>
+          <br />
           <p>
             You have provided the access code of the organization that has
             requested you to complete a criminal record check. Below are the
@@ -152,7 +149,9 @@ export default function OrgVerification({ page: { header, org, setError } }) {
             has requested you to complete a criminal record check.
           </p>
           <Table table={organizationInfoTable} />
+          <br />
           <Table table={organizationTypeTable} />
+          <br />
           <div>
             <p>
               To continue with your online request for a criminal record check:
@@ -180,6 +179,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
               </li>
               <li>There is no fee for Volunteer applications.</li>
             </ul>
+            <br />
             <p>The organization noted above will be notified:</p>
             <ol className="contactList">
               <li>

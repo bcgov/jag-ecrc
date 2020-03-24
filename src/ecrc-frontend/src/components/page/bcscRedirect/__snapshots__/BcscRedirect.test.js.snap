@@ -122,7 +122,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
               onClick={[Function]}
               type="button"
             >
-              Login with your BC Services Card
+              Login with a BC Services Card
               <div
                 className="loader-hide"
               >

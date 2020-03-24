@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
 import Header from "../../base/header/Header";
@@ -17,7 +17,7 @@ import Loader from "../../base/loader/Loader";
 export default function UserConfirmation({
   page: { header, setApplicant, setError }
 }) {
-  const [toConsent, setToConsent] = useState(false);
+  const history = useHistory();
   const [toHome, setToHome] = React.useState(false);
   const [toTransition, setToTransition] = useState(false);
   const [toError, setToError] = useState(false);
@@ -142,11 +142,7 @@ export default function UserConfirmation({
     generateJWTToken(newPayload);
 
     setApplicant(user);
-    setToConsent(true);
-  }
-
-  if (toConsent) {
-    return <Redirect to="/criminalrecordcheck/userconfirmation" />;
+    history.push("/criminalrecordcheck/applicationform");
   }
 
   if (toTransition) {

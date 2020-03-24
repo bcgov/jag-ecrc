@@ -39,27 +39,11 @@ const applicant = {
   organizationFacility: ""
 };
 
-const org = {
-  orgApplicantRelationship: "EMPLOYEE",
-  orgTicketNumber: "crce",
-  defaultScheduleTypeCd: "WBSD",
-  defaultCrcScopeLevelCd: "WWCH"
-};
-
-const setApplicationInfo = jest.fn();
-const saveApplicant = jest.fn();
-const saveOrg = jest.fn();
-const saveApplicationInfo = jest.fn();
-const setError = jest.fn();
+const setError = () => {};
 
 const page = {
   header,
   applicant,
-  org,
-  setApplicationInfo,
-  saveApplicant,
-  saveOrg,
-  saveApplicationInfo,
   setError
 };
 

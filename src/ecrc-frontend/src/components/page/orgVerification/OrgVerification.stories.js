@@ -23,8 +23,8 @@ const org = {
   defaultCrcScopeLevelCd: "WWCA"
 };
 
-const setOrg = jest.fn();
-const setError = jest.fn();
+const setOrg = () => {};
+const setError = () => {};
 
 const page = {
   org,

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import Header from "../../base/header/Header";
@@ -49,22 +48,11 @@ export default function InformationReview({
       jobTitle,
       organizationFacility
     },
-    org: {
-      orgApplicantRelationship,
-      orgTicketNumber,
-      defaultScheduleTypeCd,
-      defaultCrcScopeLevelCd
-    },
-    setApplicationInfo,
-    saveApplicant,
-    saveOrg,
-    saveApplicationInfo,
     setError
   }
 }) {
-  const [toBack, setToBack] = useState(false);
+  const history = useHistory();
   const [toHome, setToHome] = useState(false);
-  const [toSuccess, setToSuccess] = useState(false);
   const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -275,178 +263,6 @@ export default function InformationReview({
     loader: loading
   };
 
-  const confirm = () => {
-    setLoading(true);
-
-    if (!isAuthorized()) {
-      setError("session expired");
-      setToError(true);
-      return;
-    }
-    const token = sessionStorage.getItem("jwt");
-    const uuid = sessionStorage.getItem("uuid");
-
-    const createApplicantInfo = {
-      orgTicketNumber,
-      requestGuid: uuid,
-      callPurpose: "CRC",
-      legalSurnameNm,
-      legalFirstNm,
-      legalSecondNm,
-      birthDt,
-      genderTxt,
-      birthPlace,
-      alias1FirstNm,
-      alias1SecondNm,
-      alias1SurnameNm,
-      alias2FirstNm,
-      alias2SecondNm,
-      alias2SurnameNm,
-      alias3FirstNm,
-      alias3SecondNm,
-      alias3SurnameNm,
-      phoneNumber,
-      addressLine1: mailingAddressLine1,
-      cityNm: mailingCity,
-      provinceNm: mailingProvince,
-      countryNm,
-      postalCodeTxt: mailingPostalCode,
-      driversLicNo
-    };
-
-    let partyId;
-    let sessionId;
-    let invoiceId;
-    let serviceFeeAmount;
-    let serviceId;
-
-    Promise.all([
-      axios.post("/ecrc/private/createApplicant", createApplicantInfo, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }),
-      axios.get(
-        `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      ),
-      axios.get(
-        `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      ),
-      axios.get(
-        `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      )
-    ])
-      .then(all => {
-        partyId = all[0].data.partyId;
-        sessionId = all[1].data.sessionId;
-        invoiceId = all[2].data.invoiceId;
-        serviceFeeAmount = all[3].data.serviceFeeAmount;
-
-        // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
-        // eivPassDetailsResults - String returned from equifax, see Shaun
-        const newCRC = {
-          orgTicketNumber,
-          requestGuid: uuid,
-          schedule_Type_Cd: defaultScheduleTypeCd,
-          scope_Level_Cd: defaultCrcScopeLevelCd,
-          appl_Party_Id: partyId,
-          org_Appl_To_Pay: "A",
-          applicant_Posn: jobTitle,
-          child_Care_Fac_Nm: "child_Care_Fac_Nm",
-          governing_Body_Nm: "governing_Body_Nm",
-          session_Id: sessionId,
-          invoice_Id: invoiceId,
-          auth_Release_EIV_Vendor_YN: "Y",
-          auth_Conduct_CRC_Check_YN: "Y",
-          auth_Release_To_Org_YN: "Y",
-          appl_Identity_Verified_EIV_YN: "Y",
-          eivPassDetailsResults: "eivPassDetailsResults"
-        };
-
-        return axios.post("/ecrc/private/createNewCRCService", newCRC, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-      })
-      .then(crcResponse => {
-        serviceId = crcResponse.data.serviceId;
-
-        const appInfo = {
-          partyId,
-          sessionId,
-          invoiceId,
-          serviceFeeAmount,
-          serviceId
-        };
-
-        setApplicationInfo(appInfo);
-
-        if (orgApplicantRelationship === "VOLUNTEER") {
-          setToSuccess(true);
-        } else {
-          saveApplicant();
-          saveOrg();
-          saveApplicationInfo(appInfo);
-
-          const createURL = {
-            invoiceNumber: invoiceId,
-            requestGuid: uuid,
-            approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-            declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-            errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-            totalItemsAmount: serviceFeeAmount,
-            serviceIdRef1: serviceId,
-            partyIdRef2: partyId
-          };
-
-          const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-          const actionsPerformed = [
-            ...currentPayload.actionsPerformed,
-            "infoReview"
-          ];
-          const newPayload = {
-            ...currentPayload,
-            actionsPerformed
-          };
-          generateJWTToken(newPayload);
-
-          axios
-            .post("/ecrc/private/createPaymentUrl", createURL, {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            })
-            .then(urlResponse => {
-              window.location.href = urlResponse.data.paymentUrl;
-            })
-            .catch(error => {
-              setToError(true);
-              setError(error.response.status.toString());
-            });
-        }
-      })
-      .catch(error => {
-        setToError(true);
-        setError(error.response.status.toString());
-      });
-  };
-
   const cancelButton = {
     label: "EDIT APPLICATION",
     buttonStyle: "btn ecrc_accessary_btn",
@@ -455,23 +271,27 @@ export default function InformationReview({
   };
 
   const edit = () => {
-    setToBack(true);
+    history.push("/criminalrecordcheck/applicationform");
   };
 
-  if (toBack) {
-    return <Redirect to="/criminalrecordcheck/applicationform" />;
-  }
+  const confirm = () => {
+    setLoading(true);
 
-  if (toSuccess) {
+    if (!isAuthorized()) {
+      setError("session expired");
+      setToError(true);
+      return;
+    }
+
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const actionsPerformed = [...currentPayload.actionsPerformed, "infoReview"];
     const newPayload = {
       ...currentPayload,
-      actionsPerformed
+      actionsPerformed: [...currentPayload.actionsPerformed, "infoReview"]
     };
     generateJWTToken(newPayload);
-    return <Redirect to="/criminalrecordcheck/success" />;
-  }
+
+    history.push("/criminalrecordcheck/userconfirmation");
+  };
 
   if (toHome) {
     return <Redirect to="/" />;
@@ -565,16 +385,6 @@ InformationReview.propTypes = {
       jobTitle: PropTypes.string.isRequired,
       organizationFacility: PropTypes.string
     }),
-    org: PropTypes.shape({
-      orgApplicantRelationship: PropTypes.string.isRequired,
-      orgTicketNumber: PropTypes.string.isRequired,
-      defaultScheduleTypeCd: PropTypes.string.isRequired,
-      defaultCrcScopeLevelCd: PropTypes.string.isRequired
-    }),
-    setApplicationInfo: PropTypes.func.isRequired,
-    saveApplicant: PropTypes.func.isRequired,
-    saveOrg: PropTypes.func.isRequired,
-    saveApplicationInfo: PropTypes.func.isRequired,
     setError: PropTypes.func.isRequired
   })
 };

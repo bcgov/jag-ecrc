@@ -71,7 +71,7 @@ describe("ApplicationForm Component", () => {
     sessionStorage.setItem("validator", "secret");
     sessionStorage.setItem("uuid", "unique123");
     generateJWTToken({
-      actionsPerformed: ["consent"],
+      actionsPerformed: ["userConfirmation"],
       authorities: ["Authorized"]
     });
     axios.get.mockResolvedValueOnce(axiosCall);
@@ -89,7 +89,11 @@ describe("ApplicationForm Component", () => {
   });
 
   test("Displays Organization Facility when Schedule D Org", async () => {
-    const { container } = render(<ApplicationForm page={page} />);
+    const { container } = render(
+      <MemoryRouter>
+        <ApplicationForm page={page} />
+      </MemoryRouter>
+    );
     await wait(() => {});
 
     expect(getByText(container, "Organization Facility")).toBeInTheDocument();
@@ -97,9 +101,11 @@ describe("ApplicationForm Component", () => {
 
   test("Does not display Organization Facility when not Schedule D Org", async () => {
     const { container } = render(
-      <ApplicationForm
-        page={{ ...page, org: { defaultScheduleTypeCd: "WBSC" } }}
-      />
+      <MemoryRouter>
+        <ApplicationForm
+          page={{ ...page, org: { defaultScheduleTypeCd: "WBSC" } }}
+        />
+      </MemoryRouter>
     );
     await wait(() => {});
 
@@ -107,7 +113,11 @@ describe("ApplicationForm Component", () => {
   });
 
   test("Displays Additional Aliases", async () => {
-    const { container } = render(<ApplicationForm page={page} />);
+    const { container } = render(
+      <MemoryRouter>
+        <ApplicationForm page={page} />
+      </MemoryRouter>
+    );
     await wait(() => {});
 
     expect(queryAllByText(container, "First Name")).toHaveLength(3);
@@ -136,9 +146,11 @@ describe("ApplicationForm Component", () => {
     };
 
     const { container } = render(
-      <ApplicationForm
-        page={{ ...page, applicant: { ...returningApplicant } }}
-      />
+      <MemoryRouter>
+        <ApplicationForm
+          page={{ ...page, applicant: { ...returningApplicant } }}
+        />
+      </MemoryRouter>
     );
     await wait(() => {});
 
