@@ -166,29 +166,7 @@
 			<version>2.7.1</version>
 		</dependency>
 	</dependencies>
-	<profiles>
-		<profile>
-
-			<id>openshift</id>
-
-			<repositories>
-				<repository>
-					<id>splunk-artifactory</id>
-					<name>Splunk Releases</name>
-					<url>http://splunk.jfrog.io/splunk/ext-releases-local</url>
-				</repository>
-			</repositories>
-
-			<dependencies>
-				<dependency>
-					<groupId>com.splunk.logging</groupId>
-					<artifactId>splunk-library-javalogging</artifactId>
-					<version>1.7.1</version>
-				</dependency>
-			</dependencies>
-
-		</profile>
-	</profiles>
+	
 	<build>
 		<plugins>
 			<plugin>
