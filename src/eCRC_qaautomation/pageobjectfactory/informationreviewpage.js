@@ -7,7 +7,7 @@ class InformationReviewPage {
         this.sex = element(by.xpath('//td[text()=\'Sex\']/following-sibling::td'));
         this.applicantPosition = element(by.xpath('//td[text()=\'Your Position/Job Title\']/following-sibling::td'));
         this.organizationFacility = element(by.xpath('//td[text()=\'Organization Facility\']/following-sibling::td'));
-        this.street = element(by.xpath('//td[text()=\'Street\']/following-sibling::td'));
+        this.street = element(by.xpath('//td[text()=\'Mailing Address\']/following-sibling::td'));
         this.city = element(by.xpath('//td[text()=\'City\']/following-sibling::td'));
         this.province = element(by.xpath('//td[text()=\'Province\']/following-sibling::td'));
         this.postalCode = element(by.xpath('//td[text()=\'Postal Code\']/following-sibling::td'));
@@ -19,4 +19,4 @@ class InformationReviewPage {
     }
 }
 
-export default new InformationReviewPage();
+module.exports=new InformationReviewPage();

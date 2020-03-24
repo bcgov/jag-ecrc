@@ -8,9 +8,9 @@ class LandingPageObjects {
         this.criminalRecordsReviewAct = element(by.css('a[href=\'http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01\']'));
         this.accessCode = element(by.id('orgId'));
         this.error = element(by.className('error'));
-        this.validate = element(by.buttonText('Validate'));
+        this.validate = element(by.buttonText('Continue'));
         this.visitTheCriminalRecordReviewWebsite = element(by.buttonText('VISIT THE CRIMINAL RECORD REVIEW WEBSITE'));
     }
 }
 
-export default new LandingPageObjects();
+module.exports = new LandingPageObjects();

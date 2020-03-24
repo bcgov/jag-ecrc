@@ -30,6 +30,11 @@ var testInput = require('../../input/success');
 
 describe('success', function(){
 
+    beforeEach(function() {
+        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+      });
+
     it('verify that entering a valid org code and validating redirects to the orgverification page', function(){
         
         browser.get(process.env.URL);
@@ -40,15 +45,13 @@ describe('success', function(){
 
         landingPage.validate.click();
 
-        expect(process.env.LP_VALIDATE_NAVTITLE).toBe(browser.getTitle());
-
         browserWait=protractor.ExpectedConditions;
 
         browser.wait(browserWait.elementToBeClickable(orgVerificationPage.continue),10000);
+
+        browser.sleep(4000);
         
         orgVerificationPage.continue.click();
-
-        expect(process.env.ORGVERIFICATION_CONTINUE_NAVTITLE).toBe(browser.getTitle());
 
         termsOfUsePage.readAndAcceptCheckBox.click();
 
@@ -56,11 +59,7 @@ describe('success', function(){
 
         browser.executeScript('arguments[0].scrollIntoView(true)', termsOfUsePage.termsOfUseFinalParagraph);
 
-        //browser.actions().mouseMove().perform();
-
         termsOfUsePage.continueButton.click();
-
-        expect(process.env.TERMSOFUSE_CONTINUE_NAVTITLE).toBe(browser.getTitle());
 
         browser.wait(browserWait.elementToBeClickable(bcscRedirectPage.login),10000);
 
@@ -87,22 +86,6 @@ describe('success', function(){
         });
 
         bcscConsentPage.yes.click();
-
-         expect(true).toBe(browser.getCurrentUrl().then(function(url){
-            return url.includes(process.env.USERCONFIRMATION_URL);
-        }));
-
-        consentPage.consentCheckBox.click();
-        
-        consentPage.certifyCheckBox.click();
-
-        consentPage.unknownCheckBox.click();
-
-        consentPage.continueButton.click();
-
-        expect(true).toBe(browser.getCurrentUrl().then(function(url){
-            return url.includes(process.env.APPLICATIONFORM_URL);
-        }));
 
         expect(applicationFormPage.firstName.getAttribute('value')).toBe(testInput.applicationFormFirstName);
 
@@ -138,19 +121,15 @@ describe('success', function(){
 
         applicationFormPage.mailingAddressStreet.sendKeys(testInput.applicationFormMailingAddressStreet);
 
-        applicationFormPage.mailingAddressCity.sendKeys(testInput.applicationFormMailingAddressCity);
+        applicationFormPage.mailingAddressCity.sendKeys(testInput.applicationFormCurrentAddressCity);
 
-        applicationFormPage.mailingAddressProvince.sendKeys(testInput.applicationFormMailingAddressProvince);
+        applicationFormPage.mailingAddressProvince.sendKeys(testInput.applicationFormCurrentAddressProvince);
 
-        applicationFormPage.mailingAddresPostalCode.sendKeys(testInput.applicationFormMailingAddresPostalCode);
+        applicationFormPage.mailingAddresPostalCode.sendKeys(testInput.applicationFormCurrentAddresPostalCode);
 
         applicationFormPage.mailingAddresCountry.sendKeys(testInput.applicationFormMailingAddresCountry);
 
         applicationFormPage.continueButton.click();
-
-        expect(true).toBe(browser.getCurrentUrl().then(function(url){
-            return url.includes(process.env.INFORMATIONREVIEW_URL);
-        }));
 
         informationReviewPage.cityAndCountryBirth.getText().then(function(cityAndCountryBirth){
             expect(cityAndCountryBirth).toBe(testInput.applicationFormCityAndCountryBirth);
@@ -177,15 +156,15 @@ describe('success', function(){
         });
 
         informationReviewPage.city.getText().then(function(city){
-            expect(city).toBe(testInput.applicationFormMailingAddressCity);
+            expect(city).toBe(testInput.applicationFormCurrentAddressCity);
         });
 
         informationReviewPage.province.getText().then(function(province){
-            expect(province).toBe(testInput.applicationFormMailingAddressProvince);
+            expect(province).toBe(testInput.applicationFormCurrentAddressProvince);
         });
 
         informationReviewPage.postalCode.getText().then(function(postalCode){
-            expect(postalCode).toBe(testInput.applicationFormMailingAddresPostalCode);
+            expect(postalCode).toBe(testInput.applicationFormCurrentAddresPostalCode);
         });
 
         informationReviewPage.country.getText().then(function(country){
@@ -196,11 +175,21 @@ describe('success', function(){
 
         informationReviewPage.submitButton.click();
 
+        consentPage.consentCheckBox.click();
+        
+        consentPage.certifyCheckBox.click();
+
+        consentPage.unknownCheckBox.click();
+
+        consentPage.continueButton.click();
+
         paymentPage.cardNumber.sendKeys(testInput.declinedNoDeviceCardNumber);
 
-        paymentPage.cardCVD.sendKeys(testInput.declinedNoDeviceCardCVD);
+        paymentPage.cardCVD.sendKeys(testInput.declinedNoDeviceCVD);
 
         paymentPage.payNow.click();
+
+        expect(paymentPage.paymentStatus.getText()).toBe(testInput.declinedStatus);
         
     });
 });

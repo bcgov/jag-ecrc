@@ -6,4 +6,4 @@ class BcscConsentPage {
     }
 }
 
-export default new BcscConsentPage();
+module.exports = new BcscConsentPage();

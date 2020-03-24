@@ -15,7 +15,7 @@ class ApplicationFormPage {
         this.currentAddressProvince = element(by.id('provinceNm'));
         this.currentAddresPostalCode = element(by.id('postalCodeTxt'));
         this.currentAddresCountry = element(by.id('countryNm'));
-        this.currentAddressNotSameAsMailingAddressCheckBox = element(by.xpath('//input[@type=\'checkbox\']'));
+        this.currentAddressNotSameAsMailingAddressCheckBox = element(by.id('no'));
         this.mailingAddressStreet = element(by.id('mailingAddressLine1'));
         this.mailingAddressCity = element(by.id('mailingCityNm'));
         this.mailingAddressProvince = element(by.id('mailingProvinceNm'));
@@ -28,4 +28,4 @@ class ApplicationFormPage {
     }
 }
 
-export default new ApplicationFormPage();
+module.exports = new ApplicationFormPage();

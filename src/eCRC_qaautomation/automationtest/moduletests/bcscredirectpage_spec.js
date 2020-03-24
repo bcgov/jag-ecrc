@@ -2,9 +2,9 @@
 
 require('dotenv').config();
 
-import { login, setUpAccount, requestForm, getBCServicesCardSectionReadMore } from '../../pageobjectfactory/bcscredirectpage';
+var bcscRedirectPage = require('../../pageobjectfactory/bcscredirectpage');
 
-import using from 'jasmine-data-provider';
+var using = require('jasmine-data-provider');
 
 describe('bcscRedirectPage', function () {
 
@@ -13,7 +13,7 @@ describe('bcscRedirectPage', function () {
     });
     
     it('verify if login redirects to the right page', function(){
-        login.click().then(function(){
+        bcscRedirectPage.login.click().then(function(){
             browser.getAllWindowHandles().then(function(windowHandle){
                 browser.switchTo().window(windowHandle[1]);
                 expect(process.env.BCSC_LOGIN_NAVTITLE).toBe(browser.getTitle());
@@ -25,7 +25,7 @@ describe('bcscRedirectPage', function () {
     });
 
     it('verify if setup account redirects to the right page', function(){
-        setUpAccount.click().then(function(){
+        bcscRedirectPage.setUpAccount.click().then(function(){
             browser.getAllWindowHandles().then(function(windowHandle){
                 browser.switchTo().window(windowHandle[1]);
                 expect(process.env.BCSC_SETUPACCOUNT_NAVTITLE).toBe(browser.getTitle());
@@ -37,7 +37,7 @@ describe('bcscRedirectPage', function () {
     });
 
     xit('verify if request form redirects to the right page', function(){
-        requestForm.click().then(function(){
+        bcscRedirectPage.requestForm.click().then(function(){
             browser.getAllWindowHandles().then(function(windowHandle){
                 browser.switchTo().window(windowHandle[1]);
                 expect(process.env.BCSC_LOGIN_NAVTITLE).toBe(browser.getTitle());
@@ -49,7 +49,7 @@ describe('bcscRedirectPage', function () {
     });
 
     it('verify if read more redirects to the right page', function(){
-        getBCServicesCardSectionReadMore.click().then(function(){
+        bcscRedirectPage.getBCServicesCardSectionReadMore.click().then(function(){
             browser.getAllWindowHandles().then(function(windowHandle){
                 browser.switchTo().window(windowHandle[1]);
                 expect(process.env.BCSC_READMORE_NAVTITLE).toBe(browser.getTitle());

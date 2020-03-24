@@ -9,4 +9,4 @@ class ConsentPage {
     }
 }
 
-export default new ConsentPage();
+module.exports = new ConsentPage();

@@ -8,10 +8,10 @@ module.exports.config={
     },
     suites:{
         regression:'./automationtest/*/*_spec.js',
-        module:'./automationtest/moduletests/landingpage_spec.js',
+        module:'./automationtest/moduletests/termsofusepage_spec.js',
         consent: './automationtest/moduletests/consentpage_spec.js',
         termsofuse: './automationtest/moduletests/termsofusepage_spec.js',
-        success:'./automationtest/smoketests/success_spec.js'
+        success:'./automationtest/smoketests/success_paymentnoresponse_spec.js'
     },
     capabilities:{
         browserName: 'chrome',
