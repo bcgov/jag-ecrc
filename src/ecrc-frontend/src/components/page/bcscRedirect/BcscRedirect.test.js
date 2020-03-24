@@ -9,8 +9,8 @@ describe("BcscRedirect Page Component", () => {
       name: "Criminal Record Check"
     };
 
-    const saveOrg = () => {};
-    const setError = () => {};
+    const saveOrg = () => jest.fn();
+    const setError = () => jest.fn();
 
     const page = {
       header,
