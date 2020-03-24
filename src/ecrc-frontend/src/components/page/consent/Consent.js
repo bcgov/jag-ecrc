@@ -107,13 +107,6 @@ export default function Consent({
       return;
     }
 
-    const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const newPayload = {
-      ...currentPayload,
-      actionsPerformed: [...currentPayload.actionsPerformed, "consent"]
-    };
-    generateJWTToken(newPayload);
-
     history.push("/criminalrecordcheck/success");
   };
 
@@ -238,6 +231,13 @@ export default function Consent({
         };
 
         setApplicationInfo(appInfo);
+
+        const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
+        const newPayload = {
+          ...currentPayload,
+          actionsPerformed: [...currentPayload.actionsPerformed, "consent"]
+        };
+        generateJWTToken(newPayload);
 
         if (orgApplicantRelationship === "VOLUNTEER") {
           toSuccess();
