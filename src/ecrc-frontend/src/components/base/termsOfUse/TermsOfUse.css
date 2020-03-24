@@ -17,6 +17,7 @@
 
 .print-page {
   cursor: pointer;
+  text-decoration: underline;
   color: #1a5a96;
   float: right;
   margin-top: 10px;

@@ -80,6 +80,7 @@ export default function TOU({ page: { header, setError } }) {
             termOfUseOnScroll={termOfUseOnScroll}
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
             continueBtnEnabled={continueBtnEnabled}
+            reachedEnd={reachedEnd}
           />
         </div>
       </div>
