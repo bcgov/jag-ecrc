@@ -89,7 +89,8 @@ export default function App() {
             page={{
               header,
               applicant,
-              org
+              org,
+              setError
             }}
           />
         </Route>

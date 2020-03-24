@@ -11,10 +11,12 @@ describe("User Confirmation Page Component", () => {
     };
 
     const setApplicant = () => {};
+    const setError = () => {};
 
     const page = {
       header,
-      setApplicant
+      setApplicant,
+      setError
     };
 
     const userConfirmation = create(

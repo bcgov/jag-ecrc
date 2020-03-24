@@ -58,7 +58,6 @@ describe("ApplicationForm Component", () => {
     defaultScheduleTypeCd: "WBSD"
   };
 
-  const setError = jest.fn();
   const page = {
     header,
     applicant,

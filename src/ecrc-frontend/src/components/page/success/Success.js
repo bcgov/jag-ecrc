@@ -33,7 +33,6 @@ export default function Success({
   }
 }) {
   const [toHome, setToHome] = useState(false);
-  const [toError, setToError] = useState(false);
   const location = useLocation();
   const paymentInfo = queryString.parse(location.search);
   const uuid = sessionStorage.getItem("uuid");
@@ -91,10 +90,7 @@ export default function Success({
     axios
       .post("/ecrc/private/logPaymentFailure", logFailure)
       .then(() => {})
-      .catch(error => {
-        setToError(true);
-        setError(error.reponse.status.toString());
-      });
+      .catch(() => {});
   }
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
@@ -125,10 +121,7 @@ export default function Success({
         }
       })
       .then(() => {})
-      .catch(error => {
-        setToError(true);
-        setError(error.response.status.toString());
-      });
+      .catch(() => {});
   }
 
   const printButton = {
@@ -196,18 +189,11 @@ export default function Success({
       .then(urlResponse => {
         window.location.href = urlResponse.data.paymentUrl;
       })
-      .catch(error => {
-        setToError(true);
-        setError(error.response.status.toString());
-      });
+      .catch(() => {});
   };
 
   if (toHome) {
     return <Redirect to="/" />;
-  }
-
-  if (toError) {
-    return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   return (
@@ -293,7 +279,6 @@ Success.propTypes = {
       serviceFeeAmount: PropTypes.number,
       serviceId: PropTypes.number.isRequired
     }),
-    saveApplicationInfo: PropTypes.func.isRequired,
-    setError: PropTypes.func.isRequired
+    saveApplicationInfo: PropTypes.func.isRequired
   }).isRequired
 };
