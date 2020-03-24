@@ -22,8 +22,15 @@ export default function Error({ page: { header, error } }) {
   }
 
   let errorContent;
-
-  if (error === "session expired") {
+  if (!error) {
+    errorContent = (
+      <div>
+        <h1>Service is currently unavailable.</h1>
+        <br />
+        <p>Please try again later.</p>
+      </div>
+    );
+  } else if (error === "session expired") {
     errorContent = (
       <div>
         <h1>Your session has expired.</h1>
