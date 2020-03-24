@@ -1,12 +1,44 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter, Router } from "react-router-dom";
+import { createMemoryHistory } from "history";
+import axios from "axios";
+import { render, fireEvent, getByText, wait } from "@testing-library/react";
 
 import Success from "./Success";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
+jest.mock("axios");
+
 describe("Success Page Component", () => {
   window.scrollTo = jest.fn();
+
+  // Mock browser print
+  window.print = jest.fn();
+
+  // Mock browser download function
+  URL.createObjectURL = jest.fn();
+
+  // Mock window location
+  const mockWindow = jest.fn();
+  delete window.location;
+  window.location = { assign: mockWindow };
+
+  axios.get.mockImplementation(() =>
+    Promise.resolve({
+      data: {
+        invoiceId: "123"
+      }
+    })
+  );
+
+  axios.post.mockImplementation(() =>
+    Promise.resolve({
+      data: {
+        urlResponse: "http://sample.com"
+      }
+    })
+  );
 
   const header = {
     name: "Criminal Record Check"
@@ -31,7 +63,7 @@ describe("Success Page Component", () => {
     serviceId: 987
   };
 
-  const saveApplicationInfo = () => {};
+  const saveApplicationInfo = jest.fn();
 
   const page = {
     header,
@@ -50,7 +82,7 @@ describe("Success Page Component", () => {
     sessionStorage.setItem("validator", "secret");
     sessionStorage.setItem("uuid", "unique123");
     generateJWTToken({
-      actionsPerformed: ["infoReview"],
+      actionsPerformed: ["consent"],
       authorities: ["Authorized"]
     });
   });
@@ -77,6 +109,7 @@ describe("Success Page Component", () => {
     );
     expect(successPayment.toJSON()).toMatchSnapshot();
   });
+
   test("Matches the FailedPayment snapshot", () => {
     const failedPayment = create(
       <MemoryRouter initialEntries={[failureUrl]}>
@@ -84,5 +117,50 @@ describe("Success Page Component", () => {
       </MemoryRouter>
     );
     expect(failedPayment.toJSON()).toMatchSnapshot();
+  });
+
+  test("Validate Retry payment", async () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <MemoryRouter initialEntries={[failureUrl]}>
+          <Success page={page} />
+        </MemoryRouter>
+      </Router>
+    );
+
+    fireEvent.click(getByText(container, "Click here to try again"));
+
+    await wait(() => {
+      expect(saveApplicationInfo).toHaveBeenCalled();
+    });
+  });
+
+  test("Validate Print", () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <MemoryRouter initialEntries={[succesUrl]}>
+          <Success page={page} />
+        </MemoryRouter>
+      </Router>
+    );
+
+    fireEvent.click(getByText(container, "Print"));
+    expect(window.print).toHaveBeenCalled();
+  });
+
+  test("Validate Download", () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <MemoryRouter initialEntries={[succesUrl]}>
+          <Success page={page} />
+        </MemoryRouter>
+      </Router>
+    );
+
+    fireEvent.click(getByText(container, "Download"));
+    expect(URL.createObjectURL).toHaveBeenCalled();
   });
 });
