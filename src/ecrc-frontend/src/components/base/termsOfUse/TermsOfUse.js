@@ -51,7 +51,11 @@ export default function TermsOfUse({
     <div>
       <div style={{ width: "100%" }}>
         <span
+          role="button"
           className="print-page print"
+          onKeyDown={() => {
+            setIsHidden(false);
+          }}
           onClick={() => {
             setIsHidden(false);
           }}
@@ -76,10 +80,10 @@ export default function TermsOfUse({
         hidden={!isHidden}
       >
         <p>
-          In these Terms of Use, “you” or “your” includes the individual using
-          or accessing the Electronic Criminal Record Check Portal (the “Site”)
-          on their own behalf to submit an online request for a criminal record
-          check.
+          In these Terms of Use, &quot;you&quot; or &quot;your&quot; includes
+          the individual using or accessing the Electronic Criminal Record Check
+          Portal (the &quot;Site&quot;) on their own behalf to submit an online
+          request for a criminal record check.
         </p>
         <p>
           These Terms of Use are an agreement between you and Her Majesty the
