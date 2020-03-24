@@ -10,7 +10,7 @@ describe("TermsOfUse Component", () => {
         onContinueClick={() => jest.fn()}
         onCancelClick={() => jest.fn()}
         checkFirstBox={() => jest.fn()}
-        checkSecondBox={() => jest.fn()}
+        reachedEnd={false}
         termOfUseOnScroll={() => jest.fn()}
       />
     );

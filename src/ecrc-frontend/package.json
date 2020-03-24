@@ -4,6 +4,7 @@
   "homepage": "/criminalrecordcheck",
   "private": true,
   "dependencies": {
+    "@babel/preset-react": "^7.8.3",
     "@bcgov/bootstrap-theme": "https://github.com/bcgov/bootstrap-theme/releases/download/v1.1.1/bcgov-bootstrap-theme-1.1.1.tgz",
     "@storybook/addon-actions": "^5.3.12",
     "@storybook/addon-queryparams": "^5.3.17",
@@ -11,6 +12,7 @@
     "@storybook/react": "^5.3.12",
     "@testing-library/jest-dom": "^4.2.4",
     "axios": "^0.19.2",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
     "bootstrap": "~4.3.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
@@ -25,9 +27,7 @@
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "uuid": "^7.0.2",
-    "@babel/preset-react": "^7.8.3",
-    "babel-plugin-transform-export-extensions": "^6.22.0"
+    "uuid": "^7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

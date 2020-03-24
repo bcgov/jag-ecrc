@@ -67,7 +67,6 @@ describe("TermOfUse Page Component", () => {
 
     fireEvent.scroll(container.querySelector("section"));
     fireEvent.click(getAllByRole(container, "checkbox")[0]);
-    fireEvent.click(getAllByRole(container, "checkbox")[1]);
 
     expect(getByText(container, "Continue").disabled).toBeFalsy();
 
