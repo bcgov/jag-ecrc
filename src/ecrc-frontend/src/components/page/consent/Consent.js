@@ -257,13 +257,6 @@ export default function Consent({
             partyIdRef2: partyId
           };
 
-          const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-          const newPayload = {
-            ...currentPayload,
-            actionsPerformed: [...currentPayload.actionsPerformed, "infoReview"]
-          };
-          generateJWTToken(newPayload);
-
           axios
             .post("/ecrc/private/createPaymentUrl", createURL, {
               headers: {

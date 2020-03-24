@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
-import { useLocation } from "react-router-dom";
+import { useLocation, Redirect } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import PropTypes from "prop-types";
@@ -38,10 +38,6 @@ export default function Success({
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    console.log(isAuthorized());
-    console.log(paymentInfo.trnApproved);
-    console.log(isActionPerformed("consent"));
 
     if (
       !isAuthorized() ||
@@ -195,8 +191,7 @@ export default function Success({
   };
 
   if (toHome) {
-    console.log("Shit shit shit");
-    // return <Redirect to="/" />;
+    return <Redirect to="/" />;
   }
 
   return (
