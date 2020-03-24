@@ -58,14 +58,18 @@ export default function OrgValidation({
         history.push("/criminalrecordcheck/orgverification");
       })
       .catch(error => {
-        if (error.response.status === 404) {
-          setOrgError("Please enter a valid org code");
-        } else if (error.response.status === 401) {
-          setTransitionReason("notwhitelisted");
-          history.push("/criminalrecordcheck/transition");
+        if (error && error.response && error.response.status) {
+          if (error.response.status === 404) {
+            setOrgError("Please enter a valid org code");
+          } else if (error.response.status === 401) {
+            setTransitionReason("notwhitelisted");
+            history.push("/criminalrecordcheck/transition");
+          } else {
+            setToError(true);
+            setError(error.response.status.toString());
+          }
         } else {
           setToError(true);
-          setError(error.response.status.toString());
         }
       });
   };

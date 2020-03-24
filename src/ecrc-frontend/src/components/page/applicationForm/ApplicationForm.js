@@ -118,7 +118,9 @@ export default function ApplicationForm({
       })
       .catch(error => {
         setToError(true);
-        setError(error.response.status.toString());
+        if (error && error.response && error.response.status) {
+          setError(error.response.status.toString());
+        }
       });
 
     window.scrollTo(0, 0);
