@@ -12,6 +12,9 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
     <span
       className="print-page print"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     >
       <svg
         fill="currentColor"
@@ -72,7 +75,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
     onScroll={[Function]}
   >
     <p>
-      In these Terms of Use, “you” or “your” includes the individual using or accessing the Electronic Criminal Record Check Portal (the “Site”) on their own behalf to submit an online request for a criminal record check.
+      In these Terms of Use, "you" or "your" includes the individual using or accessing the Electronic Criminal Record Check Portal (the "Site") on their own behalf to submit an online request for a criminal record check.
     </p>
     <p>
       These Terms of Use are an agreement between you and Her Majesty the Queen in Right of the Province of British Columbia, represented by the Minister of Public Safety and Solicitor General (the "Province") and they govern your use of the Site and, where applicable, any associated service ("Associated Service" and, together with the Site, the "Services"). By clicking the box to indicate that you accept these Terms of Use, and in consideration of your use of the Services, you agree, to the terms and conditions set out below.
@@ -89,7 +92,8 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
     <ol>
       <li>
         <b>
-          Reasonable efforts have been made to provide accurate, complete and timely information regarding the Services and the Site in general. However, you are encouraged to refer to the 
+          Reasonable efforts have been made to provide accurate, complete and timely information regarding the Services and the Site in general. However, you are encouraged to refer to the
+           
           <i>
             Criminal Records Review Act
           </i>
@@ -98,7 +102,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
       </li>
       <br />
       <li>
-        The services are provided “as is”, without warranty of any kind including warranty of fitness for a particular purpose. Use of the services is entirely at your own risk and you will be liable for any failure to abide by these terms of use.
+        The services are provided "as is", without warranty of any kind including warranty of fitness for a particular purpose. Use of the services is entirely at your own risk and you will be liable for any failure to abide by these terms of use.
       </li>
       <li>
         Without limiting the general nature of the foregoing, the province does not represent or warrant that:
@@ -328,7 +332,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
     hidden={true}
   >
     <p>
-      In these Terms of Use, “you” or “your” includes the individual using or accessing the Electronic Criminal Record Check Portal (the “Site”) on their own behalf to submit an online request for a criminal record check.
+      In these Terms of Use, "you" or "your" includes the individual using or accessing the Electronic Criminal Record Check Portal (the "Site") on their own behalf to submit an online request for a criminal record check.
     </p>
     <p>
       These Terms of Use are an agreement between you and Her Majesty the Queen in Right of the Province of British Columbia, represented by the Minister of Public Safety and Solicitor General (the "Province") and they govern your use of the Site and, where applicable, any associated service ("Associated Service" and, together with the Site, the "Services"). By clicking the box to indicate that you accept these Terms of Use, and in consideration of your use of the Services, you agree, to the terms and conditions set out below.
@@ -345,7 +349,8 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
     <ol>
       <li>
         <b>
-          Reasonable efforts have been made to provide accurate, complete and timely information regarding the Services and the Site in general. However, you are encouraged to refer to the 
+          Reasonable efforts have been made to provide accurate, complete and timely information regarding the Services and the Site in general. However, you are encouraged to refer to the
+           
           <i>
             Criminal Records Review Act
           </i>
