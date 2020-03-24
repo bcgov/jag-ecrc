@@ -187,7 +187,8 @@ export default function Success({
       })
       .then(urlResponse => {
         window.location.href = urlResponse.data.paymentUrl;
-      });
+      })
+      .catch(() => {});
   };
 
   if (toHome) {

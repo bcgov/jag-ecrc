@@ -79,7 +79,8 @@ export default function App() {
               applicant,
               org,
               applicationInfo,
-              saveApplicationInfo
+              saveApplicationInfo,
+              setError
             }}
           />
         </Route>
@@ -88,7 +89,8 @@ export default function App() {
             page={{
               header,
               applicant,
-              org
+              org,
+              setError
             }}
           />
         </Route>

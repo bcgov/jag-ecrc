@@ -115,10 +115,14 @@ export default function ApplicationForm({
       })
       .then(res => {
         setProvinces(res.data.provinces.province);
+      })
+      .catch(error => {
+        setToError(true);
+        setError(error.response.status.toString());
       });
 
     window.scrollTo(0, 0);
-  }, []);
+  }, [setError]);
 
   useEffect(() => {
     if (sameAddress) {
@@ -593,6 +597,10 @@ export default function ApplicationForm({
   const mailingAddress = event => {
     setSameAddress(event.target.id === "yes");
   };
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
 
   if (toHome) {
     return <Redirect to="/" />;

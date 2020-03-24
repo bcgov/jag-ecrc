@@ -14,10 +14,13 @@ import {
 } from "../../../modules/AuthenticationHelper";
 import Loader from "../../base/loader/Loader";
 
-export default function UserConfirmation({ page: { header, setApplicant } }) {
+export default function UserConfirmation({
+  page: { header, setApplicant, setError }
+}) {
   const history = useHistory();
   const [toHome, setToHome] = React.useState(false);
   const [toTransition, setToTransition] = useState(false);
+  const [toError, setToError] = useState(false);
   const [user, setUser] = useState({});
   const [fullName, setFullName] = useState("");
   const [toggleLoader, setToggleLoader] = useState({ display: "inline-block" });
@@ -108,11 +111,13 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
         setFullName(`${given_name} ${family_name}`);
         setToggleLoader({ display: "none" });
       })
-      .catch(() => {
+      .catch(error => {
+        setToError(true);
+        setError(error.response.status.toString());
         setToggleLoader({ display: "none" });
       });
     window.scrollTo(0, 0);
-  }, []);
+  }, [setError]);
 
   const yesButton = {
     label: "Yes",
@@ -146,6 +151,10 @@ export default function UserConfirmation({ page: { header, setApplicant } }) {
 
   if (toHome) {
     return <Redirect to="/" />;
+  }
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   return (
@@ -182,6 +191,7 @@ UserConfirmation.propTypes = {
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired,
-    setApplicant: PropTypes.func.isRequired
+    setApplicant: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired
   }).isRequired
 };

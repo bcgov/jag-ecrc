@@ -10,10 +10,12 @@ const header = {
 };
 
 const setApplicant = () => {};
+const setError = () => {};
 
 const page = {
   header,
-  setApplicant
+  setApplicant,
+  setError
 };
 
 sessionStorage.setItem("validator", "secret");

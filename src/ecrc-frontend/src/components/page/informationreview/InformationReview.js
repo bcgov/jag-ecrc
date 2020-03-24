@@ -61,7 +61,9 @@ export default function InformationReview({
     window.scrollTo(0, 0);
     setLoading(false);
 
-    if (!isAuthorized() || !isActionPerformed("appForm")) setToHome(true);
+    if (!isAuthorized() || !isActionPerformed("appForm")) {
+      setToHome(true);
+    }
   }, []);
 
   const personalInfoElement = [
