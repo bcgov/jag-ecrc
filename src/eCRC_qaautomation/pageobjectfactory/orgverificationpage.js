@@ -11,4 +11,4 @@ class OrgVerificationPage {
     }
 }
 
-export default new OrgVerificationPage();
+module.exports = new OrgVerificationPage();

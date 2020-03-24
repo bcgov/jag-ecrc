@@ -6,4 +6,4 @@ class BcServicesCardLoginPage {
     }
 }
 
-export default new BcServicesCardLoginPage();
+module.exports= new BcServicesCardLoginPage();

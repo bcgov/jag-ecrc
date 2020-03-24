@@ -4,4 +4,4 @@ class BcServicesCardLandingPage {
     }
 }
 
-export default new BcServicesCardLandingPage();
+module.exports= new BcServicesCardLandingPage();

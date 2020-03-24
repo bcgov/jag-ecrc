@@ -10,4 +10,4 @@ class TermsOfUse {
     }
 }
 
-export default new TermsOfUse();
+module.exports = new TermsOfUse();
