@@ -443,7 +443,7 @@ export default function InformationReview({
       })
       .catch(error => {
         setToError(true);
-        setError(error.response.status.toString() + " - outer catch");
+        setError(error.response.status.toString());
       });
   };
 
