@@ -28,8 +28,7 @@ export default function Success({
       serviceFeeAmount,
       serviceId
     },
-    saveApplicationInfo,
-    setError
+    saveApplicationInfo
   }
 }) {
   const [toHome, setToHome] = useState(false);

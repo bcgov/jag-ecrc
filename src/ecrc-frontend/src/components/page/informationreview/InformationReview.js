@@ -63,7 +63,6 @@ export default function InformationReview({
 
     if (!isAuthorized() || !isActionPerformed("appForm")) {
       setToHome(true);
-      console.log("Redirected by routing");
     }
   }, []);
 
