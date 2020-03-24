@@ -16,9 +16,10 @@ import {
 import "../page.css";
 import "./BcscRedirect.css";
 
-export default function BcscRedirect({ page: { header, saveOrg } }) {
+export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
   const [bcscUrl, setBcscUrl] = useState("");
   const [toHome, setToHome] = React.useState(false);
+  const [toError, setToError] = useState(false);
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,8 +38,11 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
       .then(res => {
         setBcscUrl(res.data);
       })
-      .catch(() => {});
-  }, []);
+      .catch(error => {
+        setToError(true);
+        setError(error.response.status.toString());
+      });
+  }, [setError]);
 
   const loginBtn = {
     label: "Login with a BC Services Card",
@@ -59,6 +63,10 @@ export default function BcscRedirect({ page: { header, saveOrg } }) {
 
   if (toHome) {
     return <Redirect to="/" />;
+  }
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   return (
@@ -123,6 +131,7 @@ BcscRedirect.propTypes = {
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }),
-    saveOrg: PropTypes.func.isRequired
+    saveOrg: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired
   }).isRequired
 };

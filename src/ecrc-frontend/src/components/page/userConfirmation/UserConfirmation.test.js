@@ -10,11 +10,13 @@ describe("User Confirmation Page Component", () => {
       name: "Criminal Record Check"
     };
 
-    const setApplicant = () => {};
+    const setApplicant = () => jest.fn();
+    const setError = () => jest.fn();
 
     const page = {
       header,
-      setApplicant
+      setApplicant,
+      setError
     };
 
     const userConfirmation = create(
