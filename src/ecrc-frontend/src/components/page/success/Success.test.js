@@ -1,7 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { MemoryRouter, Router } from "react-router-dom";
-import { createMemoryHistory } from "history";
+import { MemoryRouter } from "react-router-dom";
 import axios from "axios";
 import { render, fireEvent, getByText, wait } from "@testing-library/react";
 
@@ -73,7 +72,7 @@ describe("Success Page Component", () => {
     saveApplicationInfo
   };
 
-  const succesUrl =
+  const successUrl =
     "http://localhost:3000/ecrc/success?trnApproved=1&trnId=10001213&messageId=1&messageText=Approved&authCode=TEST&responseType=T&trnAmount=28.00&trnDate=3%2F4%2F2020+1%3A01%3A36+PM&trnOrderNumber=2991&trnLanguage=eng&trnCustomerName=&trnEmailAddress=&trnPhoneNumber=&avsProcessed=0&avsId=U&avsResult=0&avsAddrMatch=0&avsPostalMatch=0&avsMessage=Address+information+is+unavailable%2E&cvdId=1&cardType=VI&trnType=P&paymentMethod=CC&ref1=Service+Id%3A+22522&ref2=CRRP+%2D+Org+Party+Id%3A+49119&ref3=&ref4=&ref5=";
   const failureUrl =
     "http://localhost:3000/ecrc/success?trnApproved=0&trnId=&messageId=804&messageText=Declined+%2D+Entered+Information+Cannot+Be+Authenticated&authCode=&responseType=T&trnAmount=&trnDate=3%2F2%2F2020+8%3A43%3A52+AM&trnOrderNumber=2946&trnLanguage=eng&trnCustomerName=&trnEmailAddress=&trnPhoneNumber=&avsProcessed=0&avsId=0&avsResult=0&avsAddrMatch=0&avsPostalMatch=0&avsMessage=Address+Verification+not+performed+for+this+transaction%2E&cardType=&trnType=&paymentMethod=&ref1=Service+Id%3A+22478&ref2=CRRP+%2D+Org+Party+Id%3A+49074&ref3=&ref4=&ref5=";
@@ -103,7 +102,7 @@ describe("Success Page Component", () => {
 
   test("Matches the SuccessfulPayment snapshot", () => {
     const successPayment = create(
-      <MemoryRouter initialEntries={[succesUrl]}>
+      <MemoryRouter initialEntries={[successUrl]}>
         <Success page={page} />
       </MemoryRouter>
     );
@@ -120,13 +119,10 @@ describe("Success Page Component", () => {
   });
 
   test("Validate Retry payment", async () => {
-    const history = createMemoryHistory();
     const { container } = render(
-      <Router history={history}>
-        <MemoryRouter initialEntries={[failureUrl]}>
-          <Success page={page} />
-        </MemoryRouter>
-      </Router>
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
     );
 
     fireEvent.click(getByText(container, "Click here to try again"));
@@ -137,13 +133,10 @@ describe("Success Page Component", () => {
   });
 
   test("Validate Print", () => {
-    const history = createMemoryHistory();
     const { container } = render(
-      <Router history={history}>
-        <MemoryRouter initialEntries={[succesUrl]}>
-          <Success page={page} />
-        </MemoryRouter>
-      </Router>
+      <MemoryRouter initialEntries={[successUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
     );
 
     fireEvent.click(getByText(container, "Print"));
@@ -151,13 +144,10 @@ describe("Success Page Component", () => {
   });
 
   test("Validate Download", () => {
-    const history = createMemoryHistory();
     const { container } = render(
-      <Router history={history}>
-        <MemoryRouter initialEntries={[succesUrl]}>
-          <Success page={page} />
-        </MemoryRouter>
-      </Router>
+      <MemoryRouter initialEntries={[successUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
     );
 
     fireEvent.click(getByText(container, "Download"));
