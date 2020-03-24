@@ -42,7 +42,7 @@ export default function Success({
     if (
       !isAuthorized() ||
       !paymentInfo.trnApproved ||
-      !isActionPerformed("infoReview")
+      !isActionPerformed("consent")
     ) {
       setToHome(true);
     }
