@@ -1,78 +1,113 @@
-import React from "react";
+import React, { Component } from "react";
 import { MemoryRouter } from "react-router-dom";
+import { storiesOf } from "@storybook/react";
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
 
 import ApplicationForm from "./ApplicationForm";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
-export default {
-  title: "ApplicationForm",
-  component: ApplicationForm
-};
+class LoadData extends Component {
+  componentDidMount() {
+    if (process.env.REACT_APP_API_BASE_URL) {
+      axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+    }
 
-const header = {
-  name: "Criminal Record Check"
-};
+    const mock = new MockAdapter(axios);
+    const API_REQUEST = "/ecrc/private/getProvinceList?requestGuid=unique123";
 
-const applicant = {
-  legalFirstNm: "Robert",
-  legalSecondNm: "Norman",
-  legalSurnameNm: "Ross",
-  birthPlace: "",
-  birthDt: "1942-10-29",
-  genderTxt: "Male",
-  driversLicNo: "",
-  phoneNumber: "",
-  emailAddress: "",
-  addressLine1: "123 Somewhere",
-  cityNm: "Here",
-  provinceNm: "British Columbia",
-  postalCodeTxt: "V9V 9V9",
-  countryNm: "Canada",
-  jobTitle: "",
-  organizationFacility: ""
-};
+    mock.onGet(API_REQUEST).reply(200, {
+      provinces: {
+        province: [
+          { name: "British Columbia" },
+          { name: "Ontario" },
+          { name: "Alberta" }
+        ]
+      }
+    });
+  }
 
-const setApplicant = () => {};
-const setError = () => {};
+  render() {
+    const header = {
+      name: "Criminal Record Check"
+    };
 
-const org = {
-  defaultScheduleTypeCd: "WBSD"
-};
+    const applicant = {
+      legalFirstNm: "Robert",
+      legalSecondNm: "Norman",
+      legalSurnameNm: "Ross",
+      birthPlace: "",
+      birthDt: "1942-10-29",
+      genderTxt: "Male",
+      driversLicNo: "",
+      phoneNumber: "",
+      emailAddress: "",
+      addressLine1: "123 Somewhere",
+      cityNm: "Here",
+      provinceNm: "British Columbia",
+      postalCodeTxt: "V9V 9V9",
+      countryNm: "Canada",
+      jobTitle: "",
+      organizationFacility: ""
+    };
 
-const page = {
-  header,
-  applicant,
-  org,
-  setApplicant,
-  setError
-};
+    const setApplicant = () => {};
+    const setError = () => {};
 
-sessionStorage.setItem("validator", "secret");
-sessionStorage.setItem("uuid", "unique123");
+    const org = {
+      defaultScheduleTypeCd: "WBSD"
+    };
 
-const newPayload = {
-  actionsPerformed: [
-    "infoReview",
-    "appForm",
-    "tou",
-    "bcscRedirect",
-    "orgVerification",
-    "consent"
-  ],
-  authorities: ["Authorized"]
-};
-generateJWTToken(newPayload);
+    const page = {
+      header,
+      applicant,
+      org,
+      setApplicant,
+      setError
+    };
 
-export const NonScheduleD = () => (
-  <MemoryRouter>
-    <ApplicationForm
-      page={{ ...page, org: { defaultScheduleTypeCd: "WBSC" } }}
-    />
-  </MemoryRouter>
-);
+    sessionStorage.setItem("validator", "secret");
+    sessionStorage.setItem("uuid", "unique123");
 
-export const ScheduleD = () => (
-  <MemoryRouter>
-    <ApplicationForm page={page} />
-  </MemoryRouter>
-);
+    const newPayload = {
+      actionsPerformed: [
+        "infoReview",
+        "appForm",
+        "tou",
+        "bcscRedirect",
+        "orgVerification",
+        "consent"
+      ],
+      authorities: ["Authorized"],
+      exp: 9999999999
+    };
+    generateJWTToken(newPayload);
+
+    return this.props.children({ page, org });
+  }
+}
+
+storiesOf("Application Form Page")
+  .add("test", () => (
+    <LoadData>
+      {data => (
+        <MemoryRouter>
+          <ApplicationForm
+            page={{
+              ...data.page,
+              org: { ...data.org, defaultScheduleTypeCd: "WBSC" }
+            }}
+          />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  ))
+  .add("test2", () => (
+    <LoadData>
+      {data => (
+        <MemoryRouter>
+          <ApplicationForm page={data.page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  ));

@@ -13,7 +13,6 @@ import SideCards from "../../composite/sideCards/SideCards";
 import {
   generateJWTToken,
   accessJWTToken,
-  isActionPerformed,
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
 
@@ -101,10 +100,15 @@ export default function ApplicationForm({
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    if (!isAuthorized()) setToHome(true);
+    if (!isAuthorized()) {
+      console.log("unauthed");
+      setToHome(true);
+    }
 
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
+
+    console.log(token);
 
     axios
       .get(`/ecrc/private/getProvinceList?requestGuid=${uuid}`, {
@@ -113,9 +117,11 @@ export default function ApplicationForm({
         }
       })
       .then(res => {
+        console.log(res);
         setProvinces(res.data.provinces.province);
       })
       .catch(error => {
+        console.log("in error", error);
         setToError(true);
         if (error && error.response && error.response.status) {
           setError(error.response.status.toString());
