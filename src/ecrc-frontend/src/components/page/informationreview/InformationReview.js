@@ -96,7 +96,7 @@ export default function InformationReview({
   }
 
   const personalInfoTable = {
-    header: "PERSONAL INFORMATION",
+    header: "Personal Information",
     tableElements: personalInfoElement
   };
 
@@ -183,7 +183,7 @@ export default function InformationReview({
   }
 
   const positionInfoTable = {
-    header: "POSITION WITH ORGANIZATION",
+    header: "Position With Organization",
     tableElements: positionInfoElement
   };
 
@@ -219,7 +219,7 @@ export default function InformationReview({
   ];
 
   const contactTable = {
-    header: "CONTACT INFORMATION",
+    header: "Contact Information",
     tableElements: contactElement
   };
 
@@ -247,22 +247,22 @@ export default function InformationReview({
   ];
 
   const mailingAddressTable = {
-    header: "MAILING ADDRESS",
+    header: "Mailing Address",
     tableElements: mailingAddressElement
   };
 
   const confirmButton = {
-    label: "SUBMIT",
+    label: "Submit",
     buttonStyle: "btn ecrc_go_btn",
-    buttonSize: "btn btn-sm",
+    buttonSize: "btn",
     type: "submit",
     disabled: !boxChecked
   };
 
   const cancelButton = {
-    label: "EDIT APPLICATION",
+    label: "Edit Application",
     buttonStyle: "btn ecrc_accessary_btn",
-    buttonSize: "btn btn-sm",
+    buttonSize: "btn",
     type: "submit"
   };
 
@@ -301,17 +301,25 @@ export default function InformationReview({
       <div className="page">
         <div className="content col-md-8">
           <h1>Information Review</h1>
+          <br />
           <p>
             Please confirm that the information provided below is accurate. If
             it is not, please select Edit Application.
           </p>
           <Table table={personalInfoTable} />
+          <br />
           {previousNamesElement.length > 0 ? (
-            <Table table={previousNamesTable} />
+            <React.Fragment>
+              <Table table={previousNamesTable} />
+              <br />
+            </React.Fragment>
           ) : null}
           <Table table={positionInfoTable} />
+          <br />
           <Table table={contactTable} />
+          <br />
           <Table table={mailingAddressTable} />
+          <br />
           <div className="declareTitle">DECLARATION</div>
           <section className="declareSection">
             <input
