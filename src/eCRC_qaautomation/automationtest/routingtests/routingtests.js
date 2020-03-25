@@ -88,6 +88,9 @@ describe("Route protection", () => {
 
   returnToInformationReview = () => {
     returnToApplicationForm();
+    expect(applicationFormPage.firstName.getAttribute("value")).toBe(
+      testInput.applicationFormFirstName
+    );
     applicationFormPage.cityAndCountryBirth.sendKeys(
       testInput.applicationFormCityAndCountryBirth
     );
@@ -104,6 +107,12 @@ describe("Route protection", () => {
       testInput.applicationFormOrganizationFacility
     );
     applicationFormPage.continueButton.click();
+  };
+
+  returnToUserConfirmation = () => {
+    returnToInformationReview();
+    informationReviewPage.certifyCheckBox.click();
+    informationReviewPage.submitButton.click();
   };
 
   beforeAll(() => {
@@ -193,6 +202,21 @@ describe("Route protection", () => {
       }
 
       if (testUrl === process.env.INFORMATIONREVIEW_URL) {
+        onSubsequentPages = true;
+      }
+    });
+  });
+
+  it("verify route protection from userconfirmation page", () => {
+    let onSubsequentPages = false;
+    routingTestUrls.forEach(testUrl => {
+      if (onSubsequentPages) {
+        browser.get(testUrl);
+        expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
+        returnToUserConfirmation();
+      }
+
+      if (testUrl === process.env.USERCONFIRMATION_URL) {
         onSubsequentPages = true;
       }
     });
