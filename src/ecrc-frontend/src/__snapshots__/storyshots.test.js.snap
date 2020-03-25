@@ -17,14 +17,14 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -1279,14 +1279,14 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -2580,14 +2580,14 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -2919,14 +2919,14 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -3327,14 +3327,14 @@ exports[`Storyshots Consent page Default 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -3812,14 +3812,14 @@ exports[`Storyshots Consent page Mobile 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -4346,14 +4346,14 @@ exports[`Storyshots Error Default 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -4519,14 +4519,14 @@ exports[`Storyshots Error Mobile 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -4692,14 +4692,14 @@ exports[`Storyshots Error Session Expired 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -5039,14 +5039,14 @@ exports[`Storyshots Header Default 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
       </a>
@@ -5097,14 +5097,14 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -5631,14 +5631,14 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -6353,14 +6353,14 @@ exports[`Storyshots OrgValidation Default 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -6695,14 +6695,14 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -7257,14 +7257,14 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -7943,14 +7943,14 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -8629,14 +8629,14 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -9315,14 +9315,14 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -11358,14 +11358,14 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -11632,14 +11632,14 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -11891,14 +11891,14 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -12126,14 +12126,14 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -12400,14 +12400,14 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -12659,14 +12659,14 @@ exports[`Storyshots Success page Volunteer 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -12949,14 +12949,14 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -13457,14 +13457,14 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -14525,14 +14525,14 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -14681,14 +14681,14 @@ exports[`Storyshots Transition Page Mobile 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -14837,14 +14837,14 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -15001,14 +15001,14 @@ exports[`Storyshots User Confirmation page Default 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -15202,14 +15202,14 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
