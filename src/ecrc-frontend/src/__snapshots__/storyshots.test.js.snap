@@ -997,7 +997,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -1066,22 +1066,22 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        First Name
+                        FIRST NAME
                       </li>
                       <li>
-                        Middle Name
+                        MIDDLE NAME
                       </li>
                       <li>
-                        Last Name
+                        LAST NAME
                       </li>
                       <li>
-                        Date of Birth
+                        DATE OF BIRTH
                       </li>
                       <li>
-                        Sex
+                        SEX
                       </li>
                       <li>
-                        Current Street Address
+                        CURRENT STREET ADDRESS
                       </li>
                     </ul>
                     Please contact either 
@@ -2298,7 +2298,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -2367,22 +2367,22 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        First Name
+                        FIRST NAME
                       </li>
                       <li>
-                        Middle Name
+                        MIDDLE NAME
                       </li>
                       <li>
-                        Last Name
+                        LAST NAME
                       </li>
                       <li>
-                        Date of Birth
+                        DATE OF BIRTH
                       </li>
                       <li>
-                        Sex
+                        SEX
                       </li>
                       <li>
-                        Current Street Address
+                        CURRENT STREET ADDRESS
                       </li>
                     </ul>
                     Please contact either 
@@ -5417,7 +5417,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -5486,22 +5486,22 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        First Name
+                        FIRST NAME
                       </li>
                       <li>
-                        Middle Name
+                        MIDDLE NAME
                       </li>
                       <li>
-                        Last Name
+                        LAST NAME
                       </li>
                       <li>
-                        Date of Birth
+                        DATE OF BIRTH
                       </li>
                       <li>
-                        Sex
+                        SEX
                       </li>
                       <li>
-                        Current Street Address
+                        CURRENT STREET ADDRESS
                       </li>
                     </ul>
                     Please contact either 
@@ -5959,7 +5959,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
     >
       <div>
         <div
-          className="dashboard-spacing"
+          className="wide-dashboard-spacing"
           style={
             Object {
               "position": "relative",
@@ -6028,22 +6028,22 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        First Name
+                        FIRST NAME
                       </li>
                       <li>
-                        Middle Name
+                        MIDDLE NAME
                       </li>
                       <li>
-                        Last Name
+                        LAST NAME
                       </li>
                       <li>
-                        Date of Birth
+                        DATE OF BIRTH
                       </li>
                       <li>
-                        Sex
+                        SEX
                       </li>
                       <li>
-                        Current Street Address
+                        CURRENT STREET ADDRESS
                       </li>
                     </ul>
                     Please contact either 
@@ -10685,7 +10685,7 @@ exports[`Storyshots SideCards Get Bc Service 1`] = `
 exports[`Storyshots SideCards Personal Information 1`] = `
 <div>
   <div
-    className="dashboard-spacing"
+    className="wide-dashboard-spacing"
     style={
       Object {
         "position": "relative",
@@ -10754,22 +10754,22 @@ exports[`Storyshots SideCards Personal Information 1`] = `
                 className="discStyle"
               >
                 <li>
-                  First Name
+                  FIRST NAME
                 </li>
                 <li>
-                  Middle Name
+                  MIDDLE NAME
                 </li>
                 <li>
-                  Last Name
+                  LAST NAME
                 </li>
                 <li>
-                  Date of Birth
+                  DATE OF BIRTH
                 </li>
                 <li>
-                  Sex
+                  SEX
                 </li>
                 <li>
-                  Current Street Address
+                  CURRENT STREET ADDRESS
                 </li>
               </ul>
               Please contact either 
