@@ -26,8 +26,6 @@ export function isAuthorized() {
   const validator = sessionStorage.getItem("validator");
   let isAuthorize = false;
 
-  console.log(token, validator);
-
   if (!token || !validator) return false;
 
   // verify a token symmetric
@@ -38,8 +36,6 @@ export function isAuthorized() {
       isAuthorize = true;
     }
   });
-
-  console.log(isAuthorize);
 
   return isAuthorize;
 }
