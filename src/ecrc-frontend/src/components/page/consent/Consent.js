@@ -96,7 +96,7 @@ export default function Consent({
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn",
     type: "submit",
-    disabled: !continueBtnEnabled,
+    disabled: !continueBtnEnabled || loading,
     loader: loading
   };
 
