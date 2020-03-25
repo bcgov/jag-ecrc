@@ -229,12 +229,12 @@ export default function SideCards({ type, sideCardLinks }) {
     content: [
       "If you find an error with your:",
       <ul key="personalInfoList" className="discStyle">
-        <li>First Name</li>
-        <li>Middle Name</li>
-        <li>Last Name</li>
-        <li>Date of Birth</li>
-        <li>Sex</li>
-        <li>Current Street Address</li>
+        <li>FIRST NAME</li>
+        <li>MIDDLE NAME</li>
+        <li>LAST NAME</li>
+        <li>DATE OF BIRTH</li>
+        <li>SEX</li>
+        <li>CURRENT STREET ADDRESS</li>
       </ul>,
       "Please contact either ",
       <a
@@ -262,7 +262,8 @@ export default function SideCards({ type, sideCardLinks }) {
       </a>,
       " to correct it."
     ],
-    type: "blue"
+    type: "blue",
+    isWide: true
   };
 
   const collectionNotice = {
