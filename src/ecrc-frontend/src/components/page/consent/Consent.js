@@ -303,6 +303,7 @@ export default function Consent({
             child_Care_Fac_Nm: "child_Care_Fac_Nm",
             governing_Body_Nm: "governing_Body_Nm",
             session_Id: sessionId,
+            invoice_Id: null,
             auth_Release_EIV_Vendor_YN: "Y",
             auth_Conduct_CRC_Check_YN: "Y",
             auth_Release_To_Org_YN: "Y",
