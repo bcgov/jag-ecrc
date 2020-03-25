@@ -17,14 +17,14 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
             alt="B.C. Government Logo"
             className="img-fluid d-none d-md-block"
             height="44"
-            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+            src="/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             className="img-fluid d-md-none"
             height="44"
-            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+            src="/images/bcid-symbol-rev.svg"
             width="64"
           />
         </a>
@@ -63,7 +63,7 @@ exports[`User Confirmation Page Component Matches the snapshot 1`] = `
       className="user-confirm-content col-md-12"
     >
       <strong>
-        Please confirm the name associated with the BC Service card login provided.
+        Please confirm the name associated with the BC Service card login provided. Do a barel roll
       </strong>
       <p />
       <div
