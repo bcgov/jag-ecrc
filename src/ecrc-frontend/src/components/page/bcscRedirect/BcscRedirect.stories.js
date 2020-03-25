@@ -34,8 +34,7 @@ const newPayload = {
     "tou",
     "bcscRedirect",
     "orgVerification",
-    "consent",
-    "userConfirmation"
+    "consent"
   ],
   authorities: ["Authorized"]
 };

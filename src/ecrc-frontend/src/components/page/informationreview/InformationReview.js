@@ -284,7 +284,7 @@ export default function InformationReview({
     };
     generateJWTToken(newPayload);
 
-    history.push("/criminalrecordcheck/userconfirmation");
+    history.push("/criminalrecordcheck/consent");
   };
 
   if (toHome) {

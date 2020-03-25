@@ -101,8 +101,7 @@ export default function ApplicationForm({
   const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
-    if (!isAuthorized() || !isActionPerformed("userConfirmation"))
-      setToHome(true);
+    if (!isAuthorized()) setToHome(true);
 
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
