@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-fragments */ // this is for sonarqube
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
