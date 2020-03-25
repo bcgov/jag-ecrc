@@ -60,7 +60,7 @@ describe("BcscRedirect Page Component", () => {
     await wait(() => {});
     fireEvent.click(getByText(container, "Login with a BC Services Card"));
     expect(saveOrg).toHaveBeenCalled();
-    expect(window.open).toHaveBeenCalled();
+    expect(window.open).toHaveBeenCalledWith("http://test.com", "_self");
   });
 
   test("Validate Redirect to Home when unauthorized", async () => {
