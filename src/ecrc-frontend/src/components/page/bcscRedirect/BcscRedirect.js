@@ -40,7 +40,9 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
       })
       .catch(error => {
         setToError(true);
-        setError(error.response.status.toString());
+        if (error && error.response && error.response.status) {
+          setError(error.response.status.toString());
+        }
       });
   }, [setError]);
 

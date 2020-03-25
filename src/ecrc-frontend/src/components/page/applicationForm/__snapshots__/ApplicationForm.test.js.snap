@@ -991,7 +991,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
       >
         <div>
           <div
-            class="dashboard-spacing"
+            class="wide-dashboard-spacing"
             style="position: relative;"
           >
             <div
@@ -1046,22 +1046,22 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                         class="discStyle"
                       >
                         <li>
-                          First Name
+                          FIRST NAME
                         </li>
                         <li>
-                          Middle Name
+                          MIDDLE NAME
                         </li>
                         <li>
-                          Last Name
+                          LAST NAME
                         </li>
                         <li>
-                          Date of Birth
+                          DATE OF BIRTH
                         </li>
                         <li>
-                          Sex
+                          SEX
                         </li>
                         <li>
-                          Current Street Address
+                          CURRENT STREET ADDRESS
                         </li>
                       </ul>
                       Please contact either 

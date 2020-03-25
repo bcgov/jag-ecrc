@@ -1,57 +1,105 @@
 //import { browser, element, by } from "protractor"
 
-require('dotenv').config();
+require("dotenv").config();
 
-var termsOfUsePage = require('../../pageobjectfactory/termsofusepage');
+var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
 
-var using = require('jasmine-data-provider');
+var landingPage = require("../../pageobjectfactory/landingpage");
 
-describe('terms of use page', function () {
+var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
 
-    beforeEach(function () {
-        browser.get(process.env.TERMSOFUSE_URL);
-    });
+var orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
 
-    it('verify that the continue button is enabled when all checkboxes are checked and the terms of use is scrolled to end of section', function () {
+var termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
 
-        termsOfUsePage.readAndAcceptCheckBox.click();
+var bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
 
-        termsOfUsePage.authorizeEmailIdCheckBox.click();
+var bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
 
-        browser.actions().mouseMove(termsOfUsePage.termsOfUseFinalParagraph).perform();
+var bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
 
-        termsOfUsePage.continueButton.click();
+var consentPage = require("../../pageobjectfactory/consentpage.js");
 
-        expect(process.env.TERMSOFUSE_CONTINUE_NAVTITLE).toBe(browser.getTitle());
-    });
+var applicationFormPage = require("../../pageobjectfactory/applicationformpage");
 
+var paymentPage = require("../../pageobjectfactory/paymentpage");
 
-    using([{ unchecked: 'readAndAcceptCheckBox' }, { unchecked: 'authorizeEmailIdCheckBox' }, { unchecked: 'termsOfUse' }], function (unchecked) {
-        it('verify that the continue button is disabled when one or more checkboxes are unchecked or if the terms of use is not scrolled', function () {
+var informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
 
-            if (unchecked.unchecked === 'readAndAcceptCheckBox') {
+var testInput = require("../../input/success");
 
-                termsOfUsePage.authorizeEmailIdCheckBox.click();
+var using = require("jasmine-data-provider");
 
-                browser.actions().mouseMove(termsOfUsePage.termsOfUseFinalParagraph).perform();
+describe("terms of use page", function() {
+  beforeEach(function() {
+    browser.get(process.env.URL);
 
-            }
-            else if (unchecked.unchecked === 'authorizeEmailIdCheckBox') {
+    browser
+      .manage()
+      .window()
+      .maximize();
 
-                termsOfUsePage.readAndAcceptCheckBox.click();
+    landingPage.accessCode.sendKeys(testInput.validAccessCode);
 
-                browser.actions().mouseMove(termsOfUsePage.termsOfUseFinalParagraph).perform();
+    landingPage.validate.click();
 
-            }
-            else {
+    browserWait = protractor.ExpectedConditions;
 
-                termsOfUsePage.readAndAcceptCheckBox.click();
+    browser.wait(
+      browserWait.elementToBeClickable(orgVerificationPage.continue),
+      10000
+    );
 
-                termsOfUsePage.authorizeEmailIdCheckBox.click();
-            }
+    browser.sleep(4000);
 
-            expect(false).toBe(termsOfUsePage.continueButton.isEnabled());
-        });
-    })
+    orgVerificationPage.continue.click();
+  });
 
+  it("verify that the continue button is enabled when all checkboxes are checked and the terms of use is scrolled to end of section", function() {
+    termsOfUsePage.readAndAcceptCheckBox.click();
+
+    termsOfUsePage.authorizeEmailIdCheckBox.click();
+
+    browser
+      .actions()
+      .mouseMove(termsOfUsePage.termsOfUseFinalParagraph)
+      .perform();
+
+    termsOfUsePage.continueButton.click();
+
+    // bcscRedirectPage.login.click();
+  });
+
+  using(
+    [
+      { unchecked: "readAndAcceptCheckBox" },
+      { unchecked: "authorizeEmailIdCheckBox" },
+      { unchecked: "termsOfUse" }
+    ],
+    function(unchecked) {
+      it("verify that the continue button is disabled when one or more checkboxes are unchecked or if the terms of use is not scrolled", function() {
+        if (unchecked.unchecked === "readAndAcceptCheckBox") {
+          termsOfUsePage.authorizeEmailIdCheckBox.click();
+
+          browser
+            .actions()
+            .mouseMove(termsOfUsePage.termsOfUseFinalParagraph)
+            .perform();
+        } else if (unchecked.unchecked === "authorizeEmailIdCheckBox") {
+          termsOfUsePage.readAndAcceptCheckBox.click();
+
+          browser
+            .actions()
+            .mouseMove(termsOfUsePage.termsOfUseFinalParagraph)
+            .perform();
+        } else {
+          termsOfUsePage.readAndAcceptCheckBox.click();
+
+          termsOfUsePage.authorizeEmailIdCheckBox.click();
+        }
+
+        expect(false).toBe(termsOfUsePage.continueButton.isEnabled());
+      });
+    }
+  );
 });

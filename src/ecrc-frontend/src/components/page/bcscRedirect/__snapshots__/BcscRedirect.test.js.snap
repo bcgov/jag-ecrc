@@ -1,340 +1,315 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
-<main>
-  <header>
-    <nav
-      className="navbar navbar-expand-lg navbar-dark"
-    >
-      <div
-        className="container"
+<DocumentFragment>
+  <main>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
       >
-        <a
-          className="navbar-brand"
-          href="/"
+        <div
+          class="container"
         >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
           <a
-            className="navbar-brand nav-item nav-link"
+            class="navbar-brand"
             href="/"
           >
-            Criminal Record Check
+            <img
+              alt="B.C. Government Logo"
+              class="img-fluid d-none d-md-block"
+              height="44"
+              src="/images/bcid-logo-rev-en.svg"
+              width="181"
+            />
+            <img
+              alt="B.C. Government Logo"
+              class="img-fluid d-md-none"
+              height="44"
+              src="/images/bcid-symbol-rev.svg"
+              width="64"
+            />
           </a>
-        </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
-      </div>
-    </nav>
-  </header>
-  <div
-    className="page"
-  >
-    <div
-      className="content col-md-8"
-    >
-      <h1>
-        Apply for a Criminal Record Check
-      </h1>
-      <br />
-      <p>
-        To apply for a criminal record check online, you must use your
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-        >
-          BC Services Card
-        </a>
-         
-        Account. Only cards 
-        <b>
-          with a photo
-        </b>
-         are accepted. If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-        >
-          verify your identity
-        </a>
-        .
-      </p>
-      <p>
-        Please select an option below:
-      </p>
-      <br />
-      <div
-        className="option"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-lg-6 col-md-12 "
-            style={
-              Object {
-                "marginBottom": "10px",
-              }
-            }
+          <div>
+            <a
+              class="navbar-brand nav-item nav-link"
+              href="/"
+            >
+              Criminal Record Check
+            </a>
+          </div>
+          <button
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-target="#navbarNavAltMarkup"
+            data-toggle="collapse"
+            type="button"
           >
-            I have a BC Services Card
-             
             <span
-              className="underlineText"
-            >
-              with a photo
-            </span>
-          </div>
+              class="navbar-toggler-icon"
+            />
+          </button>
           <div
-            className="col-lg-6 col-md-4 alignRight"
-          >
-            <button
-              className="btn ecrc_btn_login_bcsc btn"
-              onClick={[Function]}
-              type="button"
-            >
-              Login with a BC Services Card
-              <div
-                className="loader-hide"
-              >
-                <div
-                  className="btn-loader"
-                />
-              </div>
-            </button>
-          </div>
+            class="collapse navbar-collapse"
+            id="navbarNavAltMarkup"
+          />
         </div>
-      </div>
-      <div
-        style={
-          Object {
-            "marginTop": "40px",
-          }
-        }
-      >
-        <a
-          href="/criminalrecordcheck/transition"
-        >
-          I do not have a BC Services Card, or I have non-photo BC Services Card
-        </a>
-        .
-      </div>
-    </div>
+      </nav>
+    </header>
     <div
-      className="sidecard"
+      class="page"
     >
-      <div>
+      <div
+        class="content col-md-8"
+      >
+        <h1>
+          Apply for a Criminal Record Check
+        </h1>
+        <br />
+        <p>
+          To apply for a criminal record check online, you must use your 
+          <a
+            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          >
+            BC Services Card
+          </a>
+           Account. Only cards 
+          <b>
+            with a photo
+          </b>
+           are accepted. If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to 
+          <a
+            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          >
+            verify your identity
+          </a>
+          .
+        </p>
+        <p>
+          Please select an option below:
+        </p>
+        <br />
         <div
-          className="wide-dashboard-spacing"
-          style={
-            Object {
-              "position": "relative",
-            }
-          }
+          class="option"
         >
           <div
-            className="row"
+            class="row"
           >
             <div
-              className="col-12"
-              style={
-                Object {
-                  "paddingTop": "30px",
-                  "position": "relative",
-                }
-              }
+              class="col-lg-6 col-md-12 "
+              style="margin-bottom: 10px;"
             >
-              <p />
-              <section
-                className="submit-container"
-                id="blue-section"
+              I have a BC Services Card 
+              <span
+                class="underlineText"
               >
-                <h2
-                  className="heading-style"
+                with a photo
+              </span>
+            </div>
+            <div
+              class="col-lg-6 col-md-4 alignRight"
+            >
+              <button
+                class="btn ecrc_btn_login_bcsc btn"
+                type="button"
+              >
+                Login with a BC Services Card
+                <div
+                  class="loader-hide"
                 >
                   <div
-                    className="row"
+                    class="btn-loader"
+                  />
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          style="margin-top: 40px;"
+        >
+          <a
+            href="/criminalrecordcheck/transition"
+          >
+            I do not have a BC Services Card, or I have non-photo BC Services Card
+          </a>
+          .
+        </div>
+      </div>
+      <div
+        class="sidecard"
+      >
+        <div>
+          <div
+            class="wide-dashboard-spacing"
+            style="position: relative;"
+          >
+            <div
+              class="row"
+            >
+              <div
+                class="col-12"
+                style="position: relative; padding-top: 30px;"
+              >
+                <p />
+                <section
+                  class="submit-container"
+                  id="blue-section"
+                >
+                  <h2
+                    class="heading-style"
                   >
                     <div
-                      className="round-icon-wrapper"
+                      class="row"
                     >
-                      <svg
-                        className="side-card-icon"
-                        fill="currentColor"
-                        height="1em"
-                        stroke="currentColor"
-                        strokeWidth="0"
-                        style={
-                          Object {
-                            "color": undefined,
-                          }
-                        }
-                        viewBox="0 0 576 512"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        class="round-icon-wrapper"
                       >
-                        <path
-                          d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
-                        />
-                      </svg>
+                        <svg
+                          class="side-card-icon"
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 576 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="sideCardTitle"
+                      >
+                        Using the BC Services Card
+                      </div>
                     </div>
-                    <div
-                      className="sideCardTitle"
-                    >
-                      Using the BC Services Card
-                    </div>
+                  </h2>
+                  <div
+                    class="submit-content"
+                  >
+                    <span>
+                      <div
+                        class="side-card-text"
+                      >
+                        If you have a BC Services Card, you must use it to log in to the online security verification page.
+                      </div>
+                      <div>
+                        <a
+                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                        >
+                          <div
+                            class="side-card-link"
+                          >
+                            Learn more about the BC Services Card.
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="side-card-text"
+                      >
+                        <br />
+                        Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                      </div>
+                      <div>
+                        <a
+                          href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                        >
+                          <div
+                            class="side-card-link"
+                          >
+                            Learn more about BC Services Card eligibility.
+                          </div>
+                        </a>
+                      </div>
+                    </span>
                   </div>
-                </h2>
-                <div
-                  className="submit-content"
-                >
-                  <span>
-                    <div
-                      className="side-card-text"
-                    >
-                      If you have a BC Services Card, you must use it to log in to the online security verification page.
-                    </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                      >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about the BC Services Card.
-                        </div>
-                      </a>
-                    </div>
-                    <div
-                      className="side-card-text"
-                    >
-                      <br />
-                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
-                    </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-                      >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about BC Services Card eligibility.
-                        </div>
-                      </a>
-                    </div>
-                  </span>
-                </div>
-              </section>
+                </section>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer
-    className="footer"
-  >
-    <nav
-      className="navbar navbar-expand-sm navbar-dark"
+    <footer
+      class="footer"
     >
-      <div
-        className="container"
+      <nav
+        class="navbar navbar-expand-sm navbar-dark"
       >
-        <ul
-          className="navbar-nav"
+        <div
+          class="container"
         >
-          <li
-            className="nav-item"
+          <ul
+            class="navbar-nav"
           >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
-              rel="noopener noreferrer"
-              target="_blank"
+            <li
+              class="nav-item"
             >
-              Disclaimer
-            </a>
-          </li>
-          <li
-            className="nav-item"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/privacy"
-              rel="noopener noreferrer"
-              target="_blank"
+              <a
+                class="nav-link"
+                href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Disclaimer
+              </a>
+            </li>
+            <li
+              class="nav-item"
             >
-              Privacy
-            </a>
-          </li>
-          <li
-            className="nav-item"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
-              rel="noopener noreferrer"
-              target="_blank"
+              <a
+                class="nav-link"
+                href="https://www2.gov.bc.ca/gov/content/home/privacy"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Privacy
+              </a>
+            </li>
+            <li
+              class="nav-item"
             >
-              Accessibility
-            </a>
-          </li>
-          <li
-            className="nav-item"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/copyright"
-              rel="noopener noreferrer"
-              target="_blank"
+              <a
+                class="nav-link"
+                href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Accessibility
+              </a>
+            </li>
+            <li
+              class="nav-item"
             >
-              Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
+              <a
+                class="nav-link"
+                href="https://www2.gov.bc.ca/gov/content/home/copyright"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Copyright
+              </a>
+            </li>
+            <li
+              class="nav-item"
             >
-              Contact Us
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </footer>
-</main>
+              <a
+                class="nav-link"
+                href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+  </main>
+</DocumentFragment>
 `;

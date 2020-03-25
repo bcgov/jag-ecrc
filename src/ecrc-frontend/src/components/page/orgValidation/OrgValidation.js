@@ -35,7 +35,8 @@ export default function OrgValidation({
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit",
-    loader: loading
+    loader: loading,
+    disabled: loading
   };
 
   const orgValidation = () => {
@@ -54,18 +55,24 @@ export default function OrgValidation({
         }
       )
       .then(res => {
+        setLoading(false);
         setOrg({ ...res.data.accessCodeResponse, orgTicketNumber });
         history.push("/criminalrecordcheck/orgverification");
       })
       .catch(error => {
-        if (error.response.status === 404) {
-          setOrgError("Please enter a valid org code");
-        } else if (error.response.status === 401) {
-          setTransitionReason("notwhitelisted");
-          history.push("/criminalrecordcheck/transition");
+        setLoading(false);
+        if (error && error.response && error.response.status) {
+          if (error.response.status === 404) {
+            setOrgError("Please enter a valid org code");
+          } else if (error.response.status === 401) {
+            setTransitionReason("notwhitelisted");
+            history.push("/criminalrecordcheck/transition");
+          } else {
+            setToError(true);
+            setError(error.response.status.toString());
+          }
         } else {
           setToError(true);
-          setError(error.response.status.toString());
         }
       });
   };
