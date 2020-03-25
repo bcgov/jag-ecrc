@@ -65,6 +65,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
       <h1>
         Information Review
       </h1>
+      <br />
       <p>
         Please confirm that the information provided below is accurate. If it is not, please select Edit Application.
       </p>
@@ -74,7 +75,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
             <th
               colSpan="2"
             >
-              PERSONAL INFORMATION
+              Personal Information
             </th>
           </tr>
         </thead>
@@ -137,6 +138,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
@@ -229,13 +231,14 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
             <th
               colSpan="2"
             >
-              POSITION WITH ORGANIZATION
+              Position With Organization
             </th>
           </tr>
         </thead>
@@ -258,13 +261,14 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
             <th
               colSpan="2"
             >
-              CONTACT INFORMATION
+              Contact Information
             </th>
           </tr>
         </thead>
@@ -327,13 +331,14 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
             <th
               colSpan="2"
             >
-              MAILING ADDRESS
+              Mailing Address
             </th>
           </tr>
         </thead>
@@ -380,6 +385,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <div
         className="declareTitle"
       >
@@ -402,11 +408,11 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
         className="buttons"
       >
         <button
-          className="btn ecrc_accessary_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
-          EDIT APPLICATION
+          Edit Application
           <div
             className="loader-hide"
           >
@@ -416,12 +422,12 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           disabled={true}
           onClick={[Function]}
           type="submit"
         >
-          SUBMIT
+          Submit
           <div
             className="loader-hide"
           >

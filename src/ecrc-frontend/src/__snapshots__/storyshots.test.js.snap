@@ -963,7 +963,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         className="buttons"
       >
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -977,7 +977,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -2264,7 +2264,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         className="buttons"
       >
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -2278,7 +2278,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -5145,6 +5145,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
       <h1>
         Information Review
       </h1>
+      <br />
       <p>
         Please confirm that the information provided below is accurate. If it is not, please select Edit Application.
       </p>
@@ -5154,7 +5155,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
             <th
               colSpan="2"
             >
-              PERSONAL INFORMATION
+              Personal Information
             </th>
           </tr>
         </thead>
@@ -5217,13 +5218,14 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
             <th
               colSpan="2"
             >
-              POSITION WITH ORGANIZATION
+              Position With Organization
             </th>
           </tr>
         </thead>
@@ -5238,13 +5240,14 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
             <th
               colSpan="2"
             >
-              CONTACT INFORMATION
+              Contact Information
             </th>
           </tr>
         </thead>
@@ -5307,13 +5310,14 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
             <th
               colSpan="2"
             >
-              MAILING ADDRESS
+              Mailing Address
             </th>
           </tr>
         </thead>
@@ -5360,6 +5364,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <div
         className="declareTitle"
       >
@@ -5382,11 +5387,11 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         className="buttons"
       >
         <button
-          className="btn ecrc_accessary_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
-          EDIT APPLICATION
+          Edit Application
           <div
             className="loader-hide"
           >
@@ -5396,12 +5401,12 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           disabled={true}
           onClick={[Function]}
           type="submit"
         >
-          SUBMIT
+          Submit
           <div
             className="loader-hide"
           >
@@ -5679,6 +5684,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
       <h1>
         Information Review
       </h1>
+      <br />
       <p>
         Please confirm that the information provided below is accurate. If it is not, please select Edit Application.
       </p>
@@ -5688,7 +5694,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
             <th
               colSpan="2"
             >
-              PERSONAL INFORMATION
+              Personal Information
             </th>
           </tr>
         </thead>
@@ -5751,13 +5757,14 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
             <th
               colSpan="2"
             >
-              POSITION WITH ORGANIZATION
+              Position With Organization
             </th>
           </tr>
         </thead>
@@ -5780,13 +5787,14 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
             <th
               colSpan="2"
             >
-              CONTACT INFORMATION
+              Contact Information
             </th>
           </tr>
         </thead>
@@ -5849,13 +5857,14 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <table>
         <thead>
           <tr>
             <th
               colSpan="2"
             >
-              MAILING ADDRESS
+              Mailing Address
             </th>
           </tr>
         </thead>
@@ -5902,6 +5911,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </tr>
         </tbody>
       </table>
+      <br />
       <div
         className="declareTitle"
       >
@@ -5924,11 +5934,11 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
         className="buttons"
       >
         <button
-          className="btn ecrc_accessary_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
-          EDIT APPLICATION
+          Edit Application
           <div
             className="loader-hide"
           >
@@ -5938,12 +5948,12 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           disabled={true}
           onClick={[Function]}
           type="submit"
         >
-          SUBMIT
+          Submit
           <div
             className="loader-hide"
           >
@@ -6489,7 +6499,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
             </div>
             <div>
               <button
-                className="btn ecrc_go_btn btn btn-sm"
+                className="btn ecrc_go_btn btn"
                 disabled={false}
                 onClick={[Function]}
                 type="submit"
@@ -6827,7 +6837,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             </div>
             <div>
               <button
-                className="btn ecrc_go_btn btn btn-sm"
+                className="btn ecrc_go_btn btn"
                 disabled={false}
                 onClick={[Function]}
                 type="submit"
@@ -7309,7 +7319,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name:
+              Organization Name
             </td>
             <td>
               Test Org Name
@@ -7317,7 +7327,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
           </tr>
           <tr>
             <td>
-              Address:
+              Address
             </td>
             <td>
               123 Somewhere Lane
@@ -7329,7 +7339,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number:
+              Phone Number
             </td>
             <td>
               250 123 4567
@@ -7364,7 +7374,7 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role:
+              Role
             </td>
             <td>
               Employee
@@ -7372,7 +7382,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category:
+              Works with category
             </td>
             <td>
               Children & Vulnerable Adults
@@ -7393,6 +7403,7 @@ Canada
           </li>
           <li>
             If you do not already have a BC Service Card Account, you can initiate the process at the
+             
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
             >
@@ -7439,7 +7450,7 @@ Canada
         className="buttons"
       >
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -7453,7 +7464,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -7995,7 +8006,7 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name:
+              Organization Name
             </td>
             <td>
               Test Org Name
@@ -8003,7 +8014,7 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
           </tr>
           <tr>
             <td>
-              Address:
+              Address
             </td>
             <td>
               123 Somewhere Lane
@@ -8015,7 +8026,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number:
+              Phone Number
             </td>
             <td>
               250 123 4567
@@ -8050,7 +8061,7 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role:
+              Role
             </td>
             <td>
               Employee
@@ -8058,7 +8069,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category:
+              Works with category
             </td>
             <td>
               Children & Vulnerable Adults
@@ -8079,6 +8090,7 @@ Canada
           </li>
           <li>
             If you do not already have a BC Service Card Account, you can initiate the process at the
+             
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
             >
@@ -8125,7 +8137,7 @@ Canada
         className="buttons"
       >
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -8139,7 +8151,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -8681,7 +8693,7 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name:
+              Organization Name
             </td>
             <td>
               Test Org Name
@@ -8689,7 +8701,7 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
           </tr>
           <tr>
             <td>
-              Address:
+              Address
             </td>
             <td>
               123 Somewhere Lane
@@ -8701,7 +8713,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number:
+              Phone Number
             </td>
             <td>
               250 123 4567
@@ -8736,7 +8748,7 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role:
+              Role
             </td>
             <td>
               Employee
@@ -8744,7 +8756,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category:
+              Works with category
             </td>
             <td>
               Children
@@ -8765,6 +8777,7 @@ Canada
           </li>
           <li>
             If you do not already have a BC Service Card Account, you can initiate the process at the
+             
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
             >
@@ -8811,7 +8824,7 @@ Canada
         className="buttons"
       >
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -8825,7 +8838,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -9367,7 +9380,7 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name:
+              Organization Name
             </td>
             <td>
               Test Org Name
@@ -9375,7 +9388,7 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
           </tr>
           <tr>
             <td>
-              Address:
+              Address
             </td>
             <td>
               123 Somewhere Lane
@@ -9387,7 +9400,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number:
+              Phone Number
             </td>
             <td>
               250 123 4567
@@ -9422,7 +9435,7 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role:
+              Role
             </td>
             <td>
               Employee
@@ -9430,7 +9443,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category:
+              Works with category
             </td>
             <td>
               Vulnerable Adults
@@ -9451,6 +9464,7 @@ Canada
           </li>
           <li>
             If you do not already have a BC Service Card Account, you can initiate the process at the
+             
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
             >
@@ -9497,7 +9511,7 @@ Canada
         className="buttons"
       >
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -9511,7 +9525,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -13015,7 +13029,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
                 d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
               />
             </svg>
-            Print Page
+            Print
           </span>
           <span
             className="print-page"
@@ -13042,7 +13056,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             <a
               href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820"
             >
-              Download Terms of Use
+              Download
             </a>
           </span>
           <h1>
@@ -13797,7 +13811,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
                 d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
               />
             </svg>
-            Print Page
+            Print
           </span>
           <span
             className="print-page"
@@ -13824,7 +13838,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             <a
               href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820"
             >
-              Download Terms of Use
+              Download
             </a>
           </span>
           <h1>
@@ -14518,7 +14532,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
           d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
         />
       </svg>
-      Print Page
+      Print
     </span>
     <span
       className="print-page"
@@ -14545,7 +14559,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
       <a
         href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820"
       >
-        Download Terms of Use
+        Download
       </a>
     </span>
     <h1>

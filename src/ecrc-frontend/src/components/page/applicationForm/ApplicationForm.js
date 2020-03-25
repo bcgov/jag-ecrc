@@ -444,14 +444,14 @@ export default function ApplicationForm({
   const continueButton = {
     label: "Continue",
     buttonStyle: "btn ecrc_go_btn",
-    buttonSize: "btn btn-sm",
+    buttonSize: "btn",
     type: "submit"
   };
 
   const cancelButton = {
     label: "Cancel",
-    buttonStyle: "btn ecrc_go_btn",
-    buttonSize: "btn btn-sm",
+    buttonStyle: "btn ecrc_accessary_btn",
+    buttonSize: "btn",
     type: "submit"
   };
 
@@ -571,10 +571,9 @@ export default function ApplicationForm({
       });
 
       const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-      const actionsPerformed = [...currentPayload.actionsPerformed, "appForm"];
       const newPayload = {
         ...currentPayload,
-        actionsPerformed
+        actionsPerformed: [...currentPayload.actionsPerformed, "appForm"]
       };
       generateJWTToken(newPayload);
 
