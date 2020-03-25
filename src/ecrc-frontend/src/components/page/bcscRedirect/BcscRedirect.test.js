@@ -1,24 +1,93 @@
 import React from "react";
-import { create } from "react-test-renderer";
+import axios from "axios";
+import { MemoryRouter, Router } from "react-router-dom";
+import { render, fireEvent, getByText, wait } from "@testing-library/react";
+import { createMemoryHistory } from "history";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 import BcscRedirect from "./BcscRedirect";
 
+jest.mock("axios");
+
 describe("BcscRedirect Page Component", () => {
-  test("Matches the snapshot", () => {
-    const header = {
-      name: "Criminal Record Check"
-    };
+  window.scrollTo = jest.fn();
+  window.open = jest.fn().mockImplementation(() => true);
 
-    const saveOrg = () => jest.fn();
-    const setError = () => jest.fn();
+  const header = {
+    name: "Criminal Record Check"
+  };
 
-    const page = {
-      header,
-      saveOrg,
-      setError
-    };
+  const saveOrg = jest.fn();
+  const setError = jest.fn();
 
-    const bcscRedirect = create(<BcscRedirect page={page} />);
-    expect(bcscRedirect.toJSON()).toMatchSnapshot();
+  const page = {
+    header,
+    saveOrg,
+    setError
+  };
+
+  const axiosCall = {
+    data: "http://test.com"
+  };
+
+  beforeEach(() => {
+    sessionStorage.setItem("validator", "secret");
+    sessionStorage.setItem("uuid", "unique123");
+    generateJWTToken({
+      actionsPerformed: ["tou"],
+      authorities: ["Authorized"]
+    });
+  });
+
+  test("Matches the snapshot", async () => {
+    axios.get.mockResolvedValueOnce(axiosCall);
+    const { asFragment } = render(
+      <MemoryRouter>
+        <BcscRedirect page={page} />
+      </MemoryRouter>
+    );
+    await wait(() => {});
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test("Validate Login button", async () => {
+    axios.get.mockResolvedValueOnce(axiosCall);
+    const { container } = render(
+      <MemoryRouter>
+        <BcscRedirect page={page} />
+      </MemoryRouter>
+    );
+    await wait(() => {});
+    fireEvent.click(getByText(container, "Login with a BC Services Card"));
+    expect(saveOrg).toHaveBeenCalled();
+    expect(window.open).toHaveBeenCalled();
+  });
+
+  test("Validate Redirect to Home when unauthorized", async () => {
+    axios.get.mockResolvedValueOnce(axiosCall);
+    const history = createMemoryHistory();
+    generateJWTToken({
+      actionsPerformed: ["none"],
+      authorities: ["Authorized"]
+    });
+    render(
+      <Router history={history}>
+        <BcscRedirect page={page} />
+      </Router>
+    );
+    await wait(() => {});
+    expect(history.location.pathname).toEqual("/");
+  });
+
+  test("Validate Redirect to Error page", async () => {
+    axios.get.mockRejectedValueOnce({ response: { status: 400 } });
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <BcscRedirect page={page} />
+      </Router>
+    );
+    await wait(() => {});
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 });
