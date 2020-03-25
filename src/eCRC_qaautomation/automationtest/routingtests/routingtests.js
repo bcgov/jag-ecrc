@@ -1,29 +1,15 @@
 require("dotenv").config();
 
 var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
-
 var landingPage = require("../../pageobjectfactory/landingpage");
-
 var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
-
 var orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
-
 var termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
-
 var bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
-
 var bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
-
 var bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
-
-var consentPage = require("../../pageobjectfactory/consentpage.js");
-
 var applicationFormPage = require("../../pageobjectfactory/applicationformpage");
-
-var paymentPage = require("../../pageobjectfactory/paymentpage");
-
 var informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
-
 var testInput = require("../../input/success");
 
 describe("Route protection", () => {
