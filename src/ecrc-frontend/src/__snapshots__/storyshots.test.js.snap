@@ -6490,6 +6490,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
             <div>
               <button
                 className="btn ecrc_go_btn btn btn-sm"
+                disabled={false}
                 onClick={[Function]}
                 type="submit"
               >
@@ -6827,6 +6828,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             <div>
               <button
                 className="btn ecrc_go_btn btn btn-sm"
+                disabled={false}
                 onClick={[Function]}
                 type="submit"
               >

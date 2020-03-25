@@ -55,11 +55,9 @@ export default function InformationReview({
   const [toHome, setToHome] = useState(false);
   const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setLoading(false);
 
     if (!isAuthorized() || !isActionPerformed("appForm")) {
       setToHome(true);
@@ -258,8 +256,7 @@ export default function InformationReview({
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn btn-sm",
     type: "submit",
-    disabled: !boxChecked,
-    loader: loading
+    disabled: !boxChecked
   };
 
   const cancelButton = {
@@ -274,8 +271,6 @@ export default function InformationReview({
   };
 
   const confirm = () => {
-    setLoading(true);
-
     if (!isAuthorized()) {
       setError("session expired");
       setToError(true);

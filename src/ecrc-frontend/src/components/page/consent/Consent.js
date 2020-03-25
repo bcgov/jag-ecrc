@@ -70,6 +70,7 @@ export default function Consent({
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setLoading(false);
 
     if (!isAuthorized() || !isActionPerformed("infoReview")) {
       setToAppHome(true);
@@ -96,7 +97,7 @@ export default function Consent({
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn",
     type: "submit",
-    disabled: !continueBtnEnabled,
+    disabled: !continueBtnEnabled || loading,
     loader: loading
   };
 
@@ -240,6 +241,7 @@ export default function Consent({
         generateJWTToken(newPayload);
 
         if (orgApplicantRelationship === "VOLUNTEER") {
+          setLoading(false);
           toSuccess();
         } else {
           saveApplicant();
@@ -264,11 +266,14 @@ export default function Consent({
               }
             })
             .then(urlResponse => {
+              setLoading(false);
               window.location.href = urlResponse.data.paymentUrl;
             });
         }
       })
-      .catch(() => {});
+      .catch(() => {
+        setLoading(false);
+      });
   };
 
   if (toHome) {
