@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Error Component Matches the snapshot 1`] = `
+exports[`User Confirmation Page Component Matches the snapshot 1`] = `
 <main>
   <header>
     <nav
@@ -60,37 +60,65 @@ exports[`Error Component Matches the snapshot 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="user-confirm-content col-md-12"
     >
-      <div>
-        <h1>
-          An unknown error has occurred.
-        </h1>
-        <br />
-        <p>
-          The error description is below. If this error persists, please try again later.
-          <br />
-          <br />
-          403
-        </p>
-      </div>
+      <strong>
+        Please confirm the name associated with the BC Service card login provided. Do a barel roll
+      </strong>
+      <p />
       <div
-        className="buttons"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
       >
-        <button
-          className="btn ecrc_go_btn btn"
-          onClick={[Function]}
-          type="submit"
+        <div
+          className="page-loader"
+        />
+      </div>
+      <p>
+        
+      </p>
+      <p>
+        Is this correct?
+      </p>
+      <div
+        className="row"
+      >
+        <div
+          className="col-md-12"
         >
-          Home
-          <div
-            className="loader-hide"
+          <button
+            className="btn btn-primary btn"
+            onClick={[Function]}
+            type="submit"
           >
+            Yes
             <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
+          </button>
+          <button
+            className="btn ecrc_accessary_btn btn"
+            onClick={[Function]}
+            type="submit"
+          >
+            No
+            <div
+              className="loader-hide"
+            >
+              <div
+                className="btn-loader"
+              />
+            </div>
+          </button>
+          <br />
+        </div>
       </div>
     </div>
   </div>
