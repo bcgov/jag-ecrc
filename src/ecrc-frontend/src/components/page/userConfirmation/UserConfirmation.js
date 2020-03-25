@@ -164,7 +164,7 @@ export default function UserConfirmation({
         <div className="user-confirm-content col-md-12">
           <strong>
             Please confirm the name associated with the BC Service card login
-            provided.
+            provided. Do a barel roll
           </strong>
           <p />
           <div style={toggleLoader}>
