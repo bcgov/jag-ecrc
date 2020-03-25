@@ -18,7 +18,7 @@ module.exports.config = {
     consent: "./automationtest/moduletests/consentpage_spec.js",
     termsofuse: "./automationtest/moduletests/termsofusepage_spec.js",
     success: "./automationtest/smoketests/success_paymentnoresponse_spec.js",
-    routing: "./automationtest/routingtests/routing_orgvalidation.js"
+    routing: "./automationtest/routingtests/routingtests.js"
   },
   capabilities: {
     browserName: "chrome"
