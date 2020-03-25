@@ -153,7 +153,7 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
             </div>
             <div>
               <button
-                className="btn ecrc_go_btn btn btn-sm"
+                className="btn ecrc_go_btn btn"
                 disabled={false}
                 onClick={[Function]}
                 type="submit"

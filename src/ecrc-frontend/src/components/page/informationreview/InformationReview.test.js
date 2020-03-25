@@ -91,11 +91,11 @@ describe("InformationReview Component", () => {
       </Router>
     );
 
-    expect(getByText(container, "SUBMIT").disabled).toBeTruthy();
+    expect(getByText(container, "Submit").disabled).toBeTruthy();
 
     fireEvent.click(getByRole(container, "checkbox"));
 
-    expect(getByText(container, "SUBMIT").disabled).toBeFalsy();
+    expect(getByText(container, "Submit").disabled).toBeFalsy();
   });
 
   test("Validate Back button", () => {
@@ -110,7 +110,7 @@ describe("InformationReview Component", () => {
         <InformationReview page={page} />
       </Router>
     );
-    fireEvent.click(getByText(container, "EDIT APPLICATION"));
+    fireEvent.click(getByText(container, "Edit Application"));
     expect(history.location.pathname).toEqual(
       "/criminalrecordcheck/applicationform"
     );

@@ -82,7 +82,7 @@ exports[`OrgVerification Component Matches the snapshot 1`] = `
         <tbody>
           <tr>
             <td>
-              Organization Name:
+              Organization Name
             </td>
             <td>
               Test Org Name
@@ -90,7 +90,7 @@ exports[`OrgVerification Component Matches the snapshot 1`] = `
           </tr>
           <tr>
             <td>
-              Address:
+              Address
             </td>
             <td>
               123 Somewhere Lane
@@ -102,7 +102,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Phone Number:
+              Phone Number
             </td>
             <td>
               250 123 4567
@@ -137,7 +137,7 @@ Canada
         <tbody>
           <tr>
             <td>
-              Role:
+              Role
             </td>
             <td>
               Employee
@@ -145,7 +145,7 @@ Canada
           </tr>
           <tr>
             <td>
-              Works with category:
+              Works with category
             </td>
             <td>
               
@@ -166,6 +166,7 @@ Canada
           </li>
           <li>
             If you do not already have a BC Service Card Account, you can initiate the process at the
+             
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
             >
@@ -212,7 +213,7 @@ Canada
         className="buttons"
       >
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
@@ -226,7 +227,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn btn-sm"
+          className="btn ecrc_go_btn btn"
           onClick={[Function]}
           type="submit"
         >
