@@ -86,6 +86,26 @@ describe("Route protection", () => {
     bcscConsentPage.yes.click();
   };
 
+  returnToInformationReview = () => {
+    returnToApplicationForm();
+    applicationFormPage.cityAndCountryBirth.sendKeys(
+      testInput.applicationFormCityAndCountryBirth
+    );
+    applicationFormPage.phoneNumber.sendKeys(
+      testInput.applicationFormPhoneNumber
+    );
+    applicationFormPage.emailAddress.sendKeys(
+      testInput.applicationFormEmailAddress
+    );
+    applicationFormPage.applicantPosition.sendKeys(
+      testInput.applicationFormApplicantPosition
+    );
+    applicationFormPage.organizationFacility.sendKeys(
+      testInput.applicationFormOrganizationFacility
+    );
+    applicationFormPage.continueButton.click();
+  };
+
   beforeAll(() => {
     browser
       .manage()
@@ -154,11 +174,25 @@ describe("Route protection", () => {
       if (onSubsequentPages) {
         browser.get(testUrl);
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
-        console.log("Tested route protection to {}", testUrl);
         returnToApplicationForm();
       }
 
       if (testUrl === process.env.APPLICATIONFORM_URL) {
+        onSubsequentPages = true;
+      }
+    });
+  });
+
+  it("verify route protection from informationreview page", () => {
+    let onSubsequentPages = false;
+    routingTestUrls.forEach(testUrl => {
+      if (onSubsequentPages) {
+        browser.get(testUrl);
+        expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
+        returnToInformationReview();
+      }
+
+      if (testUrl === process.env.INFORMATIONREVIEW_URL) {
         onSubsequentPages = true;
       }
     });
