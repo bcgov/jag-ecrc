@@ -57,8 +57,6 @@ describe("success", function() {
 
     termsOfUsePage.readAndAcceptCheckBox.click();
 
-    //termsOfUsePage.authorizeEmailIdCheckBox.click();
-
     browser.executeScript(
       "arguments[0].scrollIntoView(true)",
       termsOfUsePage.termsOfUseFinalParagraph

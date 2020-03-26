@@ -1,5 +1,3 @@
-//import { browser, element, by } from "protractor"
-
 require("dotenv").config();
 
 var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
@@ -42,7 +40,7 @@ describe("success", function() {
       .window()
       .maximize();
 
-    landingPage.accessCode.sendKeys(testInput.validAccessCode);
+    landingPage.accessCode.sendKeys(testInput.validVolunteerAccessCode);
 
     landingPage.validate.click();
 
@@ -229,12 +227,10 @@ describe("success", function() {
 
     consentPage.continueButton.click();
 
-    paymentPage.cardNumber.sendKeys(testInput.approvedCardNumber);
+    browser.sleep(4000);
 
-    paymentPage.cardCVD.sendKeys(testInput.approvedCardCVD);
-
-    paymentPage.payNow.click();
-
-    expect(paymentPage.paymentStatus.getText()).toBe(testInput.approvedStatus);
+    expect(paymentPage.paymentStatus.getText()).toBe(
+      testInput.approvedStatusVolunteer
+    );
   });
 });
