@@ -115,7 +115,7 @@ export default function ApplicationForm({
           Authorization: `Bearer ${token}`
         }
       }),
-      axios.get(`/ecrc/private/getProvinceList?requestGuid=${uuid}`, {
+      axios.get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
