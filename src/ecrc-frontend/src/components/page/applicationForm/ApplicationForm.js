@@ -103,8 +103,6 @@ export default function ApplicationForm({
   const location = useLocation();
 
   useEffect(() => {
-    if (!isAuthorized()) setToHome(true);
-
     const urlParam = queryString.parse(location.search);
     const code = urlParam.code;
 
@@ -125,6 +123,9 @@ export default function ApplicationForm({
     ])
       .then(res => {
         sessionStorage.setItem("jwt", res[0].data);
+
+        if (!isAuthorized()) setToHome(true);
+
         setProvinces(res[1].data.provinces.province);
 
         const {
