@@ -108,7 +108,7 @@ export default function ApplicationForm({
     const uuid = sessionStorage.getItem("uuid");
 
     axios
-      .get(`/ecrc/private/getProvinceList?requestGuid=${uuid}`, {
+      .get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
