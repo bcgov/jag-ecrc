@@ -156,6 +156,27 @@ export default function Consent({
     let serviceFeeAmount;
     let serviceId;
 
+    // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
+    // eivPassDetailsResults - String returned from equifax, see Shaun
+    const CRC = {
+      orgTicketNumber,
+      requestGuid: uuid,
+      schedule_Type_Cd: defaultScheduleTypeCd,
+      scope_Level_Cd: defaultCrcScopeLevelCd,
+      appl_Party_Id: null,
+      org_Appl_To_Pay: "A",
+      applicant_Posn: jobTitle,
+      child_Care_Fac_Nm: "child_Care_Fac_Nm",
+      governing_Body_Nm: "governing_Body_Nm",
+      session_Id: null,
+      invoice_Id: null,
+      auth_Release_EIV_Vendor_YN: "Y",
+      auth_Conduct_CRC_Check_YN: "Y",
+      auth_Release_To_Org_YN: "Y",
+      appl_Identity_Verified_EIV_YN: "Y",
+      eivPassDetailsResults: "eivPassDetailsResults"
+    };
+
     if (orgApplicantRelationship !== "VOLUNTEER") {
       Promise.all([
         axios.post("/ecrc/private/createApplicant", createApplicantInfo, {
@@ -194,25 +215,11 @@ export default function Consent({
           invoiceId = all[2].data.invoiceId;
           serviceFeeAmount = all[3].data.serviceFeeAmount;
 
-          // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
-          // eivPassDetailsResults - String returned from equifax, see Shaun
           const newCRC = {
-            orgTicketNumber,
-            requestGuid: uuid,
-            schedule_Type_Cd: defaultScheduleTypeCd,
-            scope_Level_Cd: defaultCrcScopeLevelCd,
+            ...CRC,
             appl_Party_Id: partyId,
-            org_Appl_To_Pay: "A",
-            applicant_Posn: jobTitle,
-            child_Care_Fac_Nm: "child_Care_Fac_Nm",
-            governing_Body_Nm: "governing_Body_Nm",
             session_Id: sessionId,
-            invoice_Id: invoiceId,
-            auth_Release_EIV_Vendor_YN: "Y",
-            auth_Conduct_CRC_Check_YN: "Y",
-            auth_Release_To_Org_YN: "Y",
-            appl_Identity_Verified_EIV_YN: "Y",
-            eivPassDetailsResults: "eivPassDetailsResults"
+            invoice_Id: invoiceId
           };
 
           return axios.post("/ecrc/private/createNewCRCService", newCRC, {
@@ -290,25 +297,11 @@ export default function Consent({
           partyId = all[0].data.partyId;
           sessionId = all[1].data.sessionId;
 
-          // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
-          // eivPassDetailsResults - String returned from equifax, see Shaun
           const newCRC = {
-            orgTicketNumber,
-            requestGuid: uuid,
-            schedule_Type_Cd: defaultScheduleTypeCd,
-            scope_Level_Cd: defaultCrcScopeLevelCd,
+            ...CRC,
             appl_Party_Id: partyId,
             org_Appl_To_Pay: "",
-            applicant_Posn: jobTitle,
-            child_Care_Fac_Nm: "child_Care_Fac_Nm",
-            governing_Body_Nm: "governing_Body_Nm",
-            session_Id: sessionId,
-            invoice_Id: null,
-            auth_Release_EIV_Vendor_YN: "Y",
-            auth_Conduct_CRC_Check_YN: "Y",
-            auth_Release_To_Org_YN: "Y",
-            appl_Identity_Verified_EIV_YN: "Y",
-            eivPassDetailsResults: "eivPassDetailsResults"
+            session_Id: sessionId
           };
 
           return axios.post("/ecrc/private/createNewCRCService", newCRC, {
