@@ -323,8 +323,9 @@ export default function InformationReview({
           <br />
           <div className="declareTitle">DECLARATION</div>
           <section className="declareSection">
-            <label>
+            <label htmlFor="certify">
               <input
+                id="certify"
                 type="checkbox"
                 onClick={() => {
                   setBoxChecked(!boxChecked);

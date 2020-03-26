@@ -701,8 +701,13 @@ export default function TermsOfUse({
       <br />
 
       <section>
-        <label>
-          <input type="checkbox" className="terms-cb" onClick={checkFirstBox} />
+        <label htmlFor="acceptTerms">
+          <input
+            id="acceptTerms"
+            type="checkbox"
+            className="terms-cb"
+            onClick={checkFirstBox}
+          />
           I have read and accept the above terms of use.
           <span id="asterisk" className="mandatory">
             *

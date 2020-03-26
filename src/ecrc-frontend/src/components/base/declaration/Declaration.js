@@ -11,8 +11,8 @@ export default function Declaration({
     <div>
       <div className="declareTitle">CONSENT</div>
       <section className="declareSection">
-        <label>
-          <input type="checkbox" onClick={checkFirstBox} />
+        <label htmlFor="checkbox1">
+          <input id="checkbox1" type="checkbox" onClick={checkFirstBox} />
           <span className="declaration-cb">
             I, the undersigned, do hereby consent to the collection and
             disclosure by the Royal Canadian Mounted Police (RCMP) and other law
@@ -31,8 +31,8 @@ export default function Declaration({
         </label>
       </section>
       <section className="declareSection">
-        <label>
-          <input type="checkbox" onClick={checkSecondBox} />
+        <label htmlFor="checkbox2">
+          <input id="checkbox2" type="checkbox" onClick={checkSecondBox} />
           <span className="declaration-cb">
             I certify that, to the best of my knowledge, the information I have
             provided on my application and will provide as necessary is
@@ -45,8 +45,8 @@ export default function Declaration({
         </label>
       </section>
       <section className="declareSection">
-        <label>
-          <input type="checkbox" onClick={checkThirdBox} />
+        <label htmlFor="checkbox3">
+          <input id="checkbox3" type="checkbox" onClick={checkThirdBox} />
           <span className="declaration-cb">
             The third checkbox for my application and will provide as necessary
             is complete.
