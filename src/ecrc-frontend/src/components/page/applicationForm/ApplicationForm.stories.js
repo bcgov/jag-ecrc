@@ -25,6 +25,30 @@ function LoadData(props) {
     }
   });
 
+  const API_REQUEST_JWT =
+    "/ecrc/protected/login?code=code&requestGuid=unique123";
+
+  const tokenPayload = {
+    userInfo: {
+      birthdate: "04/04/04",
+      address: {
+        street_address: "123 addy",
+        locality: "local",
+        region: "ab",
+        postal_code: "v9n1d4"
+      },
+      gender: "M",
+      given_name: "given",
+      given_names: "givens",
+      family_name: "fam",
+      identity_assurance_level: 3
+    },
+    authorities: ["Authorized", "ROLE"]
+  };
+  const token = generateJWTToken(tokenPayload);
+
+  mock.onGet(API_REQUEST_JWT).reply(200, token);
+
   const header = {
     name: "Criminal Record Check"
   };
@@ -66,19 +90,6 @@ function LoadData(props) {
   sessionStorage.setItem("validator", "secret");
   sessionStorage.setItem("uuid", "unique123");
 
-  const newPayload = {
-    actionsPerformed: [
-      "infoReview",
-      "appForm",
-      "tou",
-      "bcscRedirect",
-      "orgVerification",
-      "consent"
-    ],
-    authorities: ["Authorized", "ROLE"]
-  };
-  generateJWTToken(newPayload);
-
   return props.children({ page, org });
 }
 
@@ -86,7 +97,7 @@ storiesOf("Application Form Page", module)
   .add("Non Schedule D", () => (
     <LoadData>
       {data => (
-        <MemoryRouter>
+        <MemoryRouter initialEntries={["/applicationform?code=code"]}>
           <ApplicationForm
             page={{
               ...data.page,
@@ -100,7 +111,7 @@ storiesOf("Application Form Page", module)
   .add("Schedule D", () => (
     <LoadData>
       {data => (
-        <MemoryRouter>
+        <MemoryRouter initialEntries={["/applicationform?code=code"]}>
           <ApplicationForm page={data.page} />
         </MemoryRouter>
       )}
