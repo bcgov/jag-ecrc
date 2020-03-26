@@ -13,7 +13,7 @@ function LoadData(props) {
   }
 
   const mock = new MockAdapter(axios);
-  const API_REQUEST = "/ecrc/private/getProvinceList?requestGuid=unique123";
+  const API_REQUEST = "/ecrc/protected/getProvinceList?requestGuid=unique123";
 
   mock.onGet(API_REQUEST).reply(200, {
     provinces: {

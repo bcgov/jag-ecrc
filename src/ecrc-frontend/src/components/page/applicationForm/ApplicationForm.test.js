@@ -59,7 +59,7 @@ describe("ApplicationForm Component", () => {
 
     const mock = new MockAdapter(axios);
     const API_REQUEST_PROVINCES =
-      "/ecrc/private/getProvinceList?requestGuid=unique123";
+      "/ecrc/protected/getProvinceList?requestGuid=unique123";
     const API_REQUEST_JWT =
       "/ecrc/protected/login?code=code&requestGuid=unique123";
 
