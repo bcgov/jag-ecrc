@@ -51,6 +51,7 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
         try {
             JSONObject obj = new JSONObject(objectMapper.writeValueAsString(responseBody.block()));
             int respCode = obj.getInt("responseCode");
+            logger.info("webMethods returned code: {} and message: {} ", respCode, obj.getString("message"));
             if (respCode == WebServiceStatusCodes.SUCCESS.getErrorCode()) {
                 return new ResponseEntity<>(obj.toString(), HttpStatus.OK);
             } else if (respCode == WebServiceStatusCodes.NOTFOUND.getErrorCode()) {
