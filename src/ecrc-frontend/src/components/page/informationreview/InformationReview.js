@@ -323,20 +323,22 @@ export default function InformationReview({
           <br />
           <div className="declareTitle">DECLARATION</div>
           <section className="declareSection">
-            <input
-              type="checkbox"
-              onClick={() => {
-                setBoxChecked(!boxChecked);
-              }}
-            />
-            <span className="declaration-cb">
-              I certify that, to the best of my knowledge, the information I
-              have provided on my application is complete, honest and accurate.
-              Any false statements or deliberate omissions on a consent form
-              filed with the CRRP may result in the inability of the CRRP to
-              accurately determine whether the applicant poses a risk to
-              children or vulnerable adults.
-            </span>
+            <label>
+              <input
+                type="checkbox"
+                onClick={() => {
+                  setBoxChecked(!boxChecked);
+                }}
+              />
+              <span className="declaration-cb">
+                I certify that, to the best of my knowledge, the information I
+                have provided on my application is complete, honest and
+                accurate. Any false statements or deliberate omissions on a
+                consent form filed with the CRRP may result in the inability of
+                the CRRP to accurately determine whether the applicant poses a
+                risk to children or vulnerable adults.
+              </span>
+            </label>
           </section>
           <div className="buttons">
             <Button button={cancelButton} onClick={edit} />
