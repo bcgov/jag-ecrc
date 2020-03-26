@@ -45,10 +45,9 @@ export default function TOU({ page: { header, setError } }) {
     }
 
     const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-    const actionsPerformed = [...currentPayload.actionsPerformed, "tou"];
     const newPayload = {
       ...currentPayload,
-      actionsPerformed
+      actionsPerformed: [...currentPayload.actionsPerformed, "tou"]
     };
     generateJWTToken(newPayload);
 

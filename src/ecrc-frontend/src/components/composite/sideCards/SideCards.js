@@ -131,7 +131,7 @@ export default function SideCards({ type, sideCardLinks }) {
         <div>
           <FaFax />
           &nbsp;<div className="contact-title">Fax: </div>
-          (250)356-1889
+          (250) 356-1889
         </div>
         <div>
           <FaPhone />

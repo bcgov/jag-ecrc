@@ -409,6 +409,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </span>
         </label>
       </section>
+      <br />
       <div
         className="buttons"
       >
