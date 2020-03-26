@@ -736,8 +736,7 @@ TermsOfUse.propTypes = {
   checkFirstBox: PropTypes.func.isRequired,
   termOfUseOnScroll: PropTypes.func.isRequired,
   continueBtnEnabled: PropTypes.bool,
-  reachedEnd: PropTypes.bool.isRequired,
-  firstBoxCheckedStatus: PropTypes.bool.isRequired
+  reachedEnd: PropTypes.bool.isRequired
 };
 
 TermsOfUse.defaultProps = {
