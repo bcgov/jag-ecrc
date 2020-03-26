@@ -65,6 +65,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
       <h1>
         Criminal Record Check - Application
       </h1>
+      <br />
       <p>
         Complete the application form below to continue.
       </p>
@@ -180,7 +181,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         <span
           className="note"
         >
-          Including birth name, previous name, maiden name, and/or alias
+          - Including birth name, previous name, maiden name, and/or alias
         </span>
       </div>
       <form
@@ -287,7 +288,6 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         >
           click here to add them
         </button>
-        .
       </span>
       <form
         className="simpleForm"
@@ -442,7 +442,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 <span
                   className="note"
                 >
-                  (Include area code)
+                  (Including area code)
                 </span>
               </label>
               <input
@@ -481,7 +481,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 <span
                   className="note"
                 >
-                  We may use this to communicate with you about your application.
+                  We may use this to communicate with you about your application
                 </span>
               </label>
               <input
@@ -501,6 +501,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <form
         className="simpleForm"
       >
@@ -519,7 +520,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 <div
                   className="textinput_label"
                 >
-                  Applicant's position/Job Title
+                  Applicant's Position/Job Title
                 </div>
                 <span
                   className="mandatory"
@@ -549,6 +550,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <div
         className="smallHeading"
       >
@@ -939,6 +941,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <section>
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
@@ -959,6 +962,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           AddressChangeBC
         </a>
       </section>
+      <br />
       <div
         className="buttons"
       >
@@ -1327,6 +1331,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
       <h1>
         Criminal Record Check - Application
       </h1>
+      <br />
       <p>
         Complete the application form below to continue.
       </p>
@@ -1442,7 +1447,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         <span
           className="note"
         >
-          Including birth name, previous name, maiden name, and/or alias
+          - Including birth name, previous name, maiden name, and/or alias
         </span>
       </div>
       <form
@@ -1549,7 +1554,6 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         >
           click here to add them
         </button>
-        .
       </span>
       <form
         className="simpleForm"
@@ -1704,7 +1708,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 <span
                   className="note"
                 >
-                  (Include area code)
+                  (Including area code)
                 </span>
               </label>
               <input
@@ -1743,7 +1747,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 <span
                   className="note"
                 >
-                  We may use this to communicate with you about your application.
+                  We may use this to communicate with you about your application
                 </span>
               </label>
               <input
@@ -1763,6 +1767,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <form
         className="simpleForm"
       >
@@ -1781,7 +1786,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 <div
                   className="textinput_label"
                 >
-                  Applicant's position/Job Title
+                  Applicant's Position/Job Title
                 </div>
                 <span
                   className="mandatory"
@@ -1850,6 +1855,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <div
         className="smallHeading"
       >
@@ -2240,6 +2246,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <section>
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
@@ -2260,6 +2267,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           AddressChangeBC
         </a>
       </section>
+      <br />
       <div
         className="buttons"
       >
