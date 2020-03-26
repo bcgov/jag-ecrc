@@ -62,7 +62,7 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
                         EcrcExceptionConstants.SERVICE_UNAVAILABLE, respCode), HttpStatus.SERVICE_UNAVAILABLE);
             } else {
                 return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
-                        EcrcExceptionConstants.UNKNOWN_RESPONSE_CODE, respCode), HttpStatus.BAD_REQUEST);
+                        obj.getString("message"), respCode), HttpStatus.BAD_REQUEST);
             }
         } catch (JsonProcessingException e) {
             logger.error("Failed to convert to json processing exception", e);
