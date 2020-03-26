@@ -10,7 +10,7 @@ export default function Transition({
 }) {
   useEffect(() => {
     setTimeout(() => {
-      window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_blank");
+      window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
     }, 4000);
   }, []);
 
