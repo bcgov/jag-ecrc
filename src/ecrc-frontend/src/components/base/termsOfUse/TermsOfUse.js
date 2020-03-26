@@ -65,11 +65,25 @@ export default function TermsOfUse({
           Print
         </span>
 
-        <span className="print-page">
+        <span
+          className="print-page"
+          role="button"
+          onKeyDown={() => {
+            window.open(
+              "https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820",
+              "_blank"
+            );
+          }}
+          onClick={() => {
+            window.open(
+              "https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820",
+              "_blank"
+            );
+          }}
+          tabIndex={0}
+        >
           <FaDownload style={{ marginRight: "10px" }} />
-          <a href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820">
-            Download
-          </a>
+          Download
         </span>
 
         <h1>Terms of Use</h1>
@@ -722,7 +736,8 @@ TermsOfUse.propTypes = {
   checkFirstBox: PropTypes.func.isRequired,
   termOfUseOnScroll: PropTypes.func.isRequired,
   continueBtnEnabled: PropTypes.bool,
-  reachedEnd: PropTypes.bool.isRequired
+  reachedEnd: PropTypes.bool.isRequired,
+  firstBoxCheckedStatus: PropTypes.bool.isRequired
 };
 
 TermsOfUse.defaultProps = {

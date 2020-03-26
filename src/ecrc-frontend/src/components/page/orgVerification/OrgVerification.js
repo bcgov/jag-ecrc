@@ -184,18 +184,18 @@ export default function OrgVerification({ page: { header, org, setError } }) {
             <ol className="contactList">
               <li>
                 When you are cleared to work with children and/or vulnerable
-                adults.
+                adults:
               </li>
-            </ol>
-            <ol className="contactList">
-              <li>
-                If you have an outstanding charge or conviction relating to a
-                relevant or specified offence; and
-              </li>
-              <li>
-                a determination of risk or no risk has been made by the Deputy
-                Registrar.
-              </li>
+              <ol className="contactList">
+                <li>
+                  if you have an outstanding charge or conviction relating to a
+                  relevant or specified offence; and
+                </li>
+                <li>
+                  a determination of risk or no risk has been made by the Deputy
+                  Registrar.
+                </li>
+              </ol>
             </ol>
             <p>
               By selecting continue, you are consenting to have your information
