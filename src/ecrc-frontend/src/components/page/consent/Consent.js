@@ -298,7 +298,7 @@ export default function Consent({
             schedule_Type_Cd: defaultScheduleTypeCd,
             scope_Level_Cd: defaultCrcScopeLevelCd,
             appl_Party_Id: partyId,
-            org_Appl_To_Pay: "A",
+            org_Appl_To_Pay: "",
             applicant_Posn: jobTitle,
             child_Care_Fac_Nm: "child_Care_Fac_Nm",
             governing_Body_Nm: "governing_Body_Nm",
