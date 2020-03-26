@@ -151,7 +151,7 @@ public class OauthServicesImpl implements OauthServices {
 			// Extract the claims
 			return userInfoResponse.toSuccessResponse().getUserInfoJWT().getJWTClaimsSet().toJSONObject();
 		} catch (ParseException e) {
-				throw new OauthServiceException("Error parsing userinfo data returned from server. ", e);
+			throw new OauthServiceException("Error parsing userinfo data returned from server. ", e);
 		} catch (Exception e) {
 			throw new OauthServiceException(e.getMessage(), e);
 		}
