@@ -652,18 +652,23 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
         </section>
         <br />
         <section>
-          <input
-            className="terms-cb"
-            onClick={[Function]}
-            type="checkbox"
-          />
-           I have read and accept the above terms of use.
-          <span
-            className="mandatory"
-            id="asterisk"
+          <label
+            htmlFor="acceptTerms"
           >
-            *
-          </span>
+            <input
+              className="terms-cb"
+              id="acceptTerms"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            I have read and accept the above terms of use.
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
         </section>
         <br />
         <br />
