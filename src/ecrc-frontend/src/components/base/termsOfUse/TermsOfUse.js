@@ -62,13 +62,13 @@ export default function TermsOfUse({
           tabIndex={0}
         >
           <FaPrint style={{ marginRight: "10px" }} />
-          Print Page
+          Print
         </span>
 
         <span className="print-page">
           <FaDownload style={{ marginRight: "10px" }} />
           <a href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820">
-            Download Terms of Use
+            Download
           </a>
         </span>
 

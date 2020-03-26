@@ -71,25 +71,25 @@ export default function OrgVerification({ page: { header, org, setError } }) {
   const continueButton = {
     label: "Continue",
     buttonStyle: "btn ecrc_go_btn",
-    buttonSize: "btn btn-sm",
+    buttonSize: "btn",
     type: "submit"
   };
 
   const cancelButton = {
     label: "Cancel",
-    buttonStyle: "btn ecrc_go_btn",
-    buttonSize: "btn btn-sm",
+    buttonStyle: "btn ecrc_accessary_btn",
+    buttonSize: "btn",
     type: "submit"
   };
 
   const organizationInfoElements = [
-    { name: "Organization Name:", value: org.orgNm },
+    { name: "Organization Name", value: org.orgNm },
     {
-      name: "Address:",
+      name: "Address",
       value: `${org.addressLine1}\n${org.cityNm}\n${org.provinceNm}\n${org.postalCodeTxt}\n${org.countryNm}`
     },
     {
-      name: "Phone Number:",
+      name: "Phone Number",
       value: org.contactPhoneNo
     }
   ];
@@ -110,8 +110,8 @@ export default function OrgVerification({ page: { header, org, setError } }) {
   }
 
   const organizationTypeElements = [
-    { name: "Role:", value: org.orgApplicantRelationship },
-    { name: "Works with category:", value: worksWith }
+    { name: "Role", value: org.orgApplicantRelationship },
+    { name: "Works with category", value: worksWith }
   ];
 
   const organizationTypeTable = {
@@ -162,7 +162,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
               </li>
               <li>
                 If you do not already have a BC Service Card Account, you can
-                initiate the process at the
+                initiate the process at the{" "}
                 <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
                   BC Service Card website
                 </a>
