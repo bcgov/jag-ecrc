@@ -66,6 +66,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <h1>
           Criminal Record Check - Application
         </h1>
+        <br />
         <p>
           Complete the application form below to continue.
         </p>
@@ -175,7 +176,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           <span
             class="note"
           >
-            Including birth name, previous name, maiden name, and/or alias
+            - Including birth name, previous name, maiden name, and/or alias
           </span>
         </div>
         <form
@@ -275,7 +276,6 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           >
             click here to add them
           </button>
-          .
         </span>
         <form
           class="simpleForm"
@@ -421,7 +421,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   <span
                     class="note"
                   >
-                    (Include area code)
+                    (Including area code)
                   </span>
                 </label>
                 <input
@@ -457,7 +457,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   <span
                     class="note"
                   >
-                    We may use this to communicate with you about your application.
+                    We may use this to communicate with you about your application
                   </span>
                 </label>
                 <input
@@ -474,6 +474,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </li>
           </ul>
         </form>
+        <br />
         <form
           class="simpleForm"
         >
@@ -492,7 +493,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   <div
                     class="textinput_label"
                   >
-                    Applicant's position/Job Title
+                    Applicant's Position/Job Title
                   </div>
                   <span
                     class="mandatory"
@@ -555,6 +556,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </li>
           </ul>
         </form>
+        <br />
         <div
           class="smallHeading"
         >
@@ -935,6 +937,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </li>
           </ul>
         </form>
+        <br />
         <section>
           Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
           <a
@@ -955,6 +958,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             AddressChangeBC
           </a>
         </section>
+        <br />
         <div
           class="buttons"
         >
