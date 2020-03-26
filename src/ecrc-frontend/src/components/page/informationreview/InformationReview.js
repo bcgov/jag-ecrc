@@ -338,6 +338,7 @@ export default function InformationReview({
               children or vulnerable adults.
             </span>
           </section>
+          <br />
           <div className="buttons">
             <Button button={cancelButton} onClick={edit} />
             <Button button={confirmButton} onClick={confirm} />
