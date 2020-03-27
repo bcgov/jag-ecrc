@@ -12442,6 +12442,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
+      <br />
       <div
         className="print"
       >
@@ -12703,6 +12704,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >
@@ -12972,6 +12974,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >
@@ -13240,6 +13243,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
+      <br />
       <div
         className="print"
       >
@@ -13501,6 +13505,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >
@@ -13770,6 +13775,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >

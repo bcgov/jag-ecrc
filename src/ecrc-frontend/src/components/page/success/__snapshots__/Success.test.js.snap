@@ -95,6 +95,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
+      <br />
       <div
         className="print"
       >
@@ -356,6 +357,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >
@@ -625,6 +627,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >
