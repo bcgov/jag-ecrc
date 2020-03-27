@@ -1,4 +1,5 @@
 import React from "react";
+import { storiesOf } from "@storybook/react";
 
 import Header from "./Header";
 
@@ -8,7 +9,10 @@ export default {
 };
 
 const header = {
-  name: "eCRC"
+  name: "eCrc"
 };
 
-export const Default = () => <Header header={header} />;
+storiesOf("Header", module)
+  .add("Default", () => <Header header={header} />)
+  .addParameters({ viewport: { defaultViewport: "mobile2" } })
+  .add("Mobile", () => <Header header={header} />);
