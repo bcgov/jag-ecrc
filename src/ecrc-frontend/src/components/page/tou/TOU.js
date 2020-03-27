@@ -39,7 +39,10 @@ export default function TOU({ page: { header, setError } }) {
 
   const onContinueClick = () => {
     if (!isAuthenticated()) {
-      setError("session expired");
+      setError({
+        status: 590,
+        message: "Session Expired"
+      });
       setToError(true);
       return;
     }

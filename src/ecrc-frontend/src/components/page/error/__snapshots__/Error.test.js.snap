@@ -64,14 +64,11 @@ exports[`Error Component Matches the snapshot 1`] = `
     >
       <div>
         <h1>
-          An unknown error has occurred.
+          Unauthorized Entry
         </h1>
         <br />
         <p>
-          The error description is below. If this error persists, please try again later.
-          <br />
-          <br />
-          403
+          Unauthorized user entry, please return to the home page and begin your session again.
         </p>
       </div>
       <div
