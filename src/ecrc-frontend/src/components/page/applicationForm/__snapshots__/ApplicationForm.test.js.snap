@@ -9,6 +9,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
       >
         <div
           class="container-fluid navbar-brand pointer"
+          role="button"
+          tabindex="0"
         >
           <img
             alt="B.C. Government Logo"
@@ -26,6 +28,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           />
           <div
             class="pointer navbar-brand nav-item nav-link"
+            role="button"
+            tabindex="0"
           >
             Criminal Record Check
           </div>

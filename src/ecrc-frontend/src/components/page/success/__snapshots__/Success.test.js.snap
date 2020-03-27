@@ -9,6 +9,9 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -27,6 +30,9 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -288,6 +294,9 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -306,6 +315,9 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -552,6 +564,9 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -570,6 +585,9 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>

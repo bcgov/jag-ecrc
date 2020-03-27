@@ -9,6 +9,9 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -27,6 +30,9 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -1312,6 +1318,9 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -1330,6 +1339,9 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -2655,6 +2667,9 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -2673,6 +2688,9 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           BC Services Card
         </div>
@@ -3006,6 +3024,9 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -3024,6 +3045,9 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           BC Services Card
         </div>
@@ -3426,6 +3450,9 @@ exports[`Storyshots Consent page Default 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -3444,6 +3471,9 @@ exports[`Storyshots Consent page Default 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -3956,6 +3986,9 @@ exports[`Storyshots Consent page Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -3974,6 +4007,9 @@ exports[`Storyshots Consent page Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -4550,6 +4586,9 @@ exports[`Storyshots Error Api Error 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -4568,6 +4607,9 @@ exports[`Storyshots Error Api Error 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -4728,6 +4770,9 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -4746,6 +4791,9 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -4903,6 +4951,9 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -4921,6 +4972,9 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -5078,6 +5132,9 @@ exports[`Storyshots Error Default 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -5096,6 +5153,9 @@ exports[`Storyshots Error Default 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -5255,6 +5315,9 @@ exports[`Storyshots Error Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -5273,6 +5336,9 @@ exports[`Storyshots Error Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -5432,6 +5498,9 @@ exports[`Storyshots Error Session Expired 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -5450,6 +5519,9 @@ exports[`Storyshots Error Session Expired 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -5888,6 +5960,9 @@ exports[`Storyshots Header Default 1`] = `
     <div
       className="container-fluid navbar-brand pointer"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     >
       <img
         alt="B.C. Government Logo"
@@ -5906,6 +5981,9 @@ exports[`Storyshots Header Default 1`] = `
       <div
         className="pointer navbar-brand nav-item nav-link"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         eCrc
       </div>
@@ -5939,6 +6017,9 @@ exports[`Storyshots Header Mobile 1`] = `
     <div
       className="container-fluid navbar-brand pointer"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     >
       <img
         alt="B.C. Government Logo"
@@ -5957,6 +6038,9 @@ exports[`Storyshots Header Mobile 1`] = `
       <div
         className="pointer navbar-brand nav-item nav-link"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         eCrc
       </div>
@@ -5991,6 +6075,9 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -6009,6 +6096,9 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -6543,6 +6633,9 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -6561,6 +6654,9 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -7095,6 +7191,9 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -7113,6 +7212,9 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -7655,6 +7757,9 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -7673,6 +7778,9 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -8413,6 +8521,9 @@ exports[`Storyshots OrgValidation Default 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -8431,6 +8542,9 @@ exports[`Storyshots OrgValidation Default 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -8773,6 +8887,9 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -8791,6 +8908,9 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -9365,6 +9485,9 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -9383,6 +9506,9 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -10095,6 +10221,9 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -10113,6 +10242,9 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -10825,6 +10957,9 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -10843,6 +10978,9 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -11555,6 +11693,9 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -11573,6 +11714,9 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -13689,6 +13833,9 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -13707,6 +13854,9 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -13968,6 +14118,9 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -13986,6 +14139,9 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -14232,6 +14388,9 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -14250,6 +14409,9 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -14472,6 +14634,9 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -14490,6 +14655,9 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -14751,6 +14919,9 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -14769,6 +14940,9 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -15015,6 +15189,9 @@ exports[`Storyshots Success page Volunteer 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -15033,6 +15210,9 @@ exports[`Storyshots Success page Volunteer 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Criminal Record Check
         </div>
@@ -15310,6 +15490,9 @@ exports[`Storyshots Term Of Use page Default 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -15328,6 +15511,9 @@ exports[`Storyshots Term Of Use page Default 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Terms of Use
         </div>
@@ -16101,6 +16287,9 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -16119,6 +16308,9 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           Terms of Use
         </div>
@@ -17736,6 +17928,9 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -17754,6 +17949,9 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           header name
         </div>
@@ -17897,6 +18095,9 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -17915,6 +18116,9 @@ exports[`Storyshots Transition Page Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           header name
         </div>
@@ -18058,6 +18262,9 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -18076,6 +18283,9 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           header name
         </div>
@@ -18229,6 +18439,9 @@ exports[`Storyshots User Confirmation page Default 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -18247,6 +18460,9 @@ exports[`Storyshots User Confirmation page Default 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           header name
         </div>
@@ -18435,6 +18651,9 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
       <div
         className="container-fluid navbar-brand pointer"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <img
           alt="B.C. Government Logo"
@@ -18453,6 +18672,9 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
         <div
           className="pointer navbar-brand nav-item nav-link"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           header name
         </div>

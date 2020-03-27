@@ -12,6 +12,9 @@ export default function Header({ header: { name } }) {
         <div
           className="container-fluid navbar-brand pointer"
           onClick={() => history.push("/")}
+          role="button"
+          onKeyDown={() => history.push("/")}
+          tabIndex={0}
         >
           <img
             className="img-fluid d-none d-md-block"
@@ -30,6 +33,9 @@ export default function Header({ header: { name } }) {
           <div
             className="pointer navbar-brand nav-item nav-link"
             onClick={() => history.push("/")}
+            role="button"
+            onKeyDown={() => history.push("/")}
+            tabIndex={0}
           >
             {name}
           </div>

@@ -8,6 +8,9 @@ exports[`Header Component Matches the snapshot 1`] = `
     <div
       className="container-fluid navbar-brand pointer"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     >
       <img
         alt="B.C. Government Logo"
@@ -26,6 +29,9 @@ exports[`Header Component Matches the snapshot 1`] = `
       <div
         className="pointer navbar-brand nav-item nav-link"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         eCRC
       </div>
