@@ -41,8 +41,8 @@ export default function Success({
 
     if (
       !isAuthorized() ||
-      !paymentInfo.trnApproved ||
-      !isActionPerformed("consent")
+      !isActionPerformed("consent") ||
+      (!paymentInfo.trnApproved && orgApplicantRelationship !== "VOLUNTEER")
     ) {
       setToHome(true);
     }

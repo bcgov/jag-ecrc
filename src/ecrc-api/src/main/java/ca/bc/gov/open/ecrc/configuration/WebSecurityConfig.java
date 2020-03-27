@@ -30,6 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterAfter(new JWTAuthorizationFilter(ecrcProps, tokenValidationServices), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 .antMatchers("/initialHandshake**").permitAll()
+                .antMatchers("/actuator/**").permitAll()
                 .antMatchers("/protected/**").hasAuthority(ecrcProps.getJwtRole())
                 .antMatchers("/private/**").hasAuthority(ecrcProps.getJwtAuthorizedRole())
                 .anyRequest().authenticated();

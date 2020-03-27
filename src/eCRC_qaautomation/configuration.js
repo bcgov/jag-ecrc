@@ -10,14 +10,15 @@ module.exports.config = {
     browser.driver
       .manage()
       .timeouts()
-      .implicitlyWait(20000);
+      .implicitlyWait(200000);
   },
   suites: {
     regression: "./automationtest/*/*_spec.js",
     module: "./automationtest/moduletests/termsofusepage_spec.js",
     consent: "./automationtest/moduletests/consentpage_spec.js",
     termsofuse: "./automationtest/moduletests/termsofusepage_spec.js",
-    success: "./automationtest/smoketests/success_paymentnoresponse_spec.js"
+    success: "./automationtest/smoketests/success_paymentnoresponse_spec.js",
+    routing: "./automationtest/routingtests/routingtests.js"
   },
   capabilities: {
     browserName: "chrome"

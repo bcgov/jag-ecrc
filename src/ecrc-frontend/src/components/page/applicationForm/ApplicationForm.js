@@ -107,7 +107,7 @@ export default function ApplicationForm({
     const urlParam = queryString.parse(location.search);
     const code = urlParam.code;
 
-    const token = sessionStorage.getItem("jwt");
+    let token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
     if (code) {
@@ -361,7 +361,7 @@ export default function ApplicationForm({
         id: "phoneNumber",
         placeholder: "123 456 7890",
         value: phoneNum,
-        note: "(Include area code)",
+        note: "(Including area code)",
         isRequired: true,
         errorMsg: phoneNumberError,
         onChange: event => {
@@ -372,7 +372,7 @@ export default function ApplicationForm({
       {
         label: "Personal Email Address",
         id: "emailAddress",
-        note: "We may use this to communicate with you about your application.",
+        note: "We may use this to communicate with you about your application",
         placeholder: "example@test.com",
         value: email,
         isRequired: true,
@@ -390,7 +390,7 @@ export default function ApplicationForm({
     title: "Position Information",
     textInputs: [
       {
-        label: "Applicant's position/Job Title",
+        label: "Applicant's Position/Job Title",
         id: "applicantPosition",
         placeholder: "Position/Job Title",
         value: job,
@@ -699,12 +699,13 @@ export default function ApplicationForm({
       <div className="page">
         <div className="content col-md-8">
           <h1>Criminal Record Check - Application</h1>
+          <br />
           <p>Complete the application form below to continue.</p>
           <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
           <div className="heading">
             <span className="previousHeader">PREVIOUS NAME&nbsp;</span>
             <span className="note">
-              Including birth name, previous name, maiden name, and/or alias
+              - Including birth name, previous name, maiden name, and/or alias
             </span>
           </div>
           <FullName title={null} fullname={previousNameOne} />
@@ -724,11 +725,12 @@ export default function ApplicationForm({
               >
                 click here to add them
               </button>
-              .
             </span>
           )}
           <SimpleForm simpleForm={applicantInformation} />
+          <br />
           <SimpleForm simpleForm={positionInformation} />
+          <br />
           <div className="smallHeading">
             <span className="simpleForm_title">Addresses</span>
           </div>
@@ -763,6 +765,7 @@ export default function ApplicationForm({
             <span className="previousHeader">Current Mailing Address</span>
           </div>
           <SimpleForm simpleForm={mailing} />
+          <br />
           <section>
             Entering your mailing address in this application will not update
             your BC Services Card Address. To update your BC Services Card
@@ -775,6 +778,7 @@ export default function ApplicationForm({
             &nbsp;or&nbsp;
             <a href="https://www.addresschange.gov.bc.ca/">AddressChangeBC</a>
           </section>
+          <br />
           <div className="buttons">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />

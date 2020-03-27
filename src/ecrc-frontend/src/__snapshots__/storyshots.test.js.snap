@@ -65,6 +65,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
       <h1>
         Criminal Record Check - Application
       </h1>
+      <br />
       <p>
         Complete the application form below to continue.
       </p>
@@ -180,7 +181,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
         <span
           className="note"
         >
-          Including birth name, previous name, maiden name, and/or alias
+          - Including birth name, previous name, maiden name, and/or alias
         </span>
       </div>
       <form
@@ -287,7 +288,6 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
         >
           click here to add them
         </button>
-        .
       </span>
       <form
         className="simpleForm"
@@ -442,7 +442,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
                 <span
                   className="note"
                 >
-                  (Include area code)
+                  (Including area code)
                 </span>
               </label>
               <input
@@ -481,7 +481,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
                 <span
                   className="note"
                 >
-                  We may use this to communicate with you about your application.
+                  We may use this to communicate with you about your application
                 </span>
               </label>
               <input
@@ -501,6 +501,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <form
         className="simpleForm"
       >
@@ -519,7 +520,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
                 <div
                   className="textinput_label"
                 >
-                  Applicant's position/Job Title
+                  Applicant's Position/Job Title
                 </div>
                 <span
                   className="mandatory"
@@ -549,6 +550,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <div
         className="smallHeading"
       >
@@ -939,6 +941,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <section>
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
@@ -959,6 +962,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
           AddressChangeBC
         </a>
       </section>
+      <br />
       <div
         className="buttons"
       >
@@ -1327,6 +1331,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
       <h1>
         Criminal Record Check - Application
       </h1>
+      <br />
       <p>
         Complete the application form below to continue.
       </p>
@@ -1442,7 +1447,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
         <span
           className="note"
         >
-          Including birth name, previous name, maiden name, and/or alias
+          - Including birth name, previous name, maiden name, and/or alias
         </span>
       </div>
       <form
@@ -1549,7 +1554,6 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
         >
           click here to add them
         </button>
-        .
       </span>
       <form
         className="simpleForm"
@@ -1704,7 +1708,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
                 <span
                   className="note"
                 >
-                  (Include area code)
+                  (Including area code)
                 </span>
               </label>
               <input
@@ -1743,7 +1747,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
                 <span
                   className="note"
                 >
-                  We may use this to communicate with you about your application.
+                  We may use this to communicate with you about your application
                 </span>
               </label>
               <input
@@ -1763,6 +1767,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <form
         className="simpleForm"
       >
@@ -1781,7 +1786,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
                 <div
                   className="textinput_label"
                 >
-                  Applicant's position/Job Title
+                  Applicant's Position/Job Title
                 </div>
                 <span
                   className="mandatory"
@@ -1850,6 +1855,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <div
         className="smallHeading"
       >
@@ -2240,6 +2246,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
           </li>
         </ul>
       </form>
+      <br />
       <section>
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
@@ -2260,6 +2267,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
           AddressChangeBC
         </a>
       </section>
+      <br />
       <div
         className="buttons"
       >
@@ -3397,41 +3405,56 @@ exports[`Storyshots Consent page Default 1`] = `
         <section
           className="declareSection"
         >
-          <input
-            onClick={[Function]}
-            type="checkbox"
-          />
-          <span
-            className="declaration-cb"
+          <label
+            htmlFor="checkbox1"
           >
-            I, the undersigned, do hereby consent to the collection and disclosure by the Royal Canadian Mounted Police (RCMP) and other law enforcement agencies, as well as other duly authorized agencies of the government, of any and all information related to the security screening checks in support of this application for up to two years. This may include some or all of: (a) criminal record check or fingerprint-based criminal record verification by searching the Canadian Police Information Centre database; (b) a police information check; (c) a check of intelligence databases maintained by law enforcement agencies; (d) a check of records in the justice information system of the Ministry of Attorney General and; (e) a check of records in the corrections information system of the Ministry of Public Safety and Solicitor General.
-          </span>
+            <input
+              id="checkbox1"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I, the undersigned, do hereby consent to the collection and disclosure by the Royal Canadian Mounted Police (RCMP) and other law enforcement agencies, as well as other duly authorized agencies of the government, of any and all information related to the security screening checks in support of this application for up to two years. This may include some or all of: (a) criminal record check or fingerprint-based criminal record verification by searching the Canadian Police Information Centre database; (b) a police information check; (c) a check of intelligence databases maintained by law enforcement agencies; (d) a check of records in the justice information system of the Ministry of Attorney General and; (e) a check of records in the corrections information system of the Ministry of Public Safety and Solicitor General.
+            </span>
+          </label>
         </section>
         <section
           className="declareSection"
         >
-          <input
-            onClick={[Function]}
-            type="checkbox"
-          />
-          <span
-            className="declaration-cb"
+          <label
+            htmlFor="checkbox2"
           >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
-          </span>
+            <input
+              id="checkbox2"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
+            </span>
+          </label>
         </section>
         <section
           className="declareSection"
         >
-          <input
-            onClick={[Function]}
-            type="checkbox"
-          />
-          <span
-            className="declaration-cb"
+          <label
+            htmlFor="checkbox3"
           >
-            The third checkbox for my application and will provide as necessary is complete.
-          </span>
+            <input
+              id="checkbox3"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              The third checkbox for my application and will provide as necessary is complete.
+            </span>
+          </label>
         </section>
       </div>
       <br />
@@ -3577,7 +3600,7 @@ exports[`Storyshots Consent page Default 1`] = `
                         >
                           Fax: 
                         </div>
-                        (250)356-1889
+                        (250) 356-1889
                       </div>
                       <div>
                         <svg
@@ -3882,41 +3905,56 @@ exports[`Storyshots Consent page Mobile 1`] = `
         <section
           className="declareSection"
         >
-          <input
-            onClick={[Function]}
-            type="checkbox"
-          />
-          <span
-            className="declaration-cb"
+          <label
+            htmlFor="checkbox1"
           >
-            I, the undersigned, do hereby consent to the collection and disclosure by the Royal Canadian Mounted Police (RCMP) and other law enforcement agencies, as well as other duly authorized agencies of the government, of any and all information related to the security screening checks in support of this application for up to two years. This may include some or all of: (a) criminal record check or fingerprint-based criminal record verification by searching the Canadian Police Information Centre database; (b) a police information check; (c) a check of intelligence databases maintained by law enforcement agencies; (d) a check of records in the justice information system of the Ministry of Attorney General and; (e) a check of records in the corrections information system of the Ministry of Public Safety and Solicitor General.
-          </span>
+            <input
+              id="checkbox1"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I, the undersigned, do hereby consent to the collection and disclosure by the Royal Canadian Mounted Police (RCMP) and other law enforcement agencies, as well as other duly authorized agencies of the government, of any and all information related to the security screening checks in support of this application for up to two years. This may include some or all of: (a) criminal record check or fingerprint-based criminal record verification by searching the Canadian Police Information Centre database; (b) a police information check; (c) a check of intelligence databases maintained by law enforcement agencies; (d) a check of records in the justice information system of the Ministry of Attorney General and; (e) a check of records in the corrections information system of the Ministry of Public Safety and Solicitor General.
+            </span>
+          </label>
         </section>
         <section
           className="declareSection"
         >
-          <input
-            onClick={[Function]}
-            type="checkbox"
-          />
-          <span
-            className="declaration-cb"
+          <label
+            htmlFor="checkbox2"
           >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
-          </span>
+            <input
+              id="checkbox2"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
+            </span>
+          </label>
         </section>
         <section
           className="declareSection"
         >
-          <input
-            onClick={[Function]}
-            type="checkbox"
-          />
-          <span
-            className="declaration-cb"
+          <label
+            htmlFor="checkbox3"
           >
-            The third checkbox for my application and will provide as necessary is complete.
-          </span>
+            <input
+              id="checkbox3"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              The third checkbox for my application and will provide as necessary is complete.
+            </span>
+          </label>
         </section>
       </div>
       <br />
@@ -4062,7 +4100,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
                         >
                           Fax: 
                         </div>
-                        (250)356-1889
+                        (250) 356-1889
                       </div>
                       <div>
                         <svg
@@ -4290,41 +4328,56 @@ exports[`Storyshots Declaration Default 1`] = `
   <section
     className="declareSection"
   >
-    <input
-      onClick={[Function]}
-      type="checkbox"
-    />
-    <span
-      className="declaration-cb"
+    <label
+      htmlFor="checkbox1"
     >
-      I, the undersigned, do hereby consent to the collection and disclosure by the Royal Canadian Mounted Police (RCMP) and other law enforcement agencies, as well as other duly authorized agencies of the government, of any and all information related to the security screening checks in support of this application for up to two years. This may include some or all of: (a) criminal record check or fingerprint-based criminal record verification by searching the Canadian Police Information Centre database; (b) a police information check; (c) a check of intelligence databases maintained by law enforcement agencies; (d) a check of records in the justice information system of the Ministry of Attorney General and; (e) a check of records in the corrections information system of the Ministry of Public Safety and Solicitor General.
-    </span>
+      <input
+        id="checkbox1"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        I, the undersigned, do hereby consent to the collection and disclosure by the Royal Canadian Mounted Police (RCMP) and other law enforcement agencies, as well as other duly authorized agencies of the government, of any and all information related to the security screening checks in support of this application for up to two years. This may include some or all of: (a) criminal record check or fingerprint-based criminal record verification by searching the Canadian Police Information Centre database; (b) a police information check; (c) a check of intelligence databases maintained by law enforcement agencies; (d) a check of records in the justice information system of the Ministry of Attorney General and; (e) a check of records in the corrections information system of the Ministry of Public Safety and Solicitor General.
+      </span>
+    </label>
   </section>
   <section
     className="declareSection"
   >
-    <input
-      onClick={[Function]}
-      type="checkbox"
-    />
-    <span
-      className="declaration-cb"
+    <label
+      htmlFor="checkbox2"
     >
-      I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
-    </span>
+      <input
+        id="checkbox2"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
+      </span>
+    </label>
   </section>
   <section
     className="declareSection"
   >
-    <input
-      onClick={[Function]}
-      type="checkbox"
-    />
-    <span
-      className="declaration-cb"
+    <label
+      htmlFor="checkbox3"
     >
-      The third checkbox for my application and will provide as necessary is complete.
-    </span>
+      <input
+        id="checkbox3"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        The third checkbox for my application and will provide as necessary is complete.
+      </span>
+    </label>
   </section>
 </div>
 `;
@@ -5373,16 +5426,22 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
       <section
         className="declareSection"
       >
-        <input
-          onClick={[Function]}
-          type="checkbox"
-        />
-        <span
-          className="declaration-cb"
+        <label
+          htmlFor="certify"
         >
-          I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
-        </span>
+          <input
+            id="certify"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <span
+            className="declaration-cb"
+          >
+            I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          </span>
+        </label>
       </section>
+      <br />
       <div
         className="buttons"
       >
@@ -5920,16 +5979,22 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
       <section
         className="declareSection"
       >
-        <input
-          onClick={[Function]}
-          type="checkbox"
-        />
-        <span
-          className="declaration-cb"
+        <label
+          htmlFor="certify"
         >
-          I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
-        </span>
+          <input
+            id="certify"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <span
+            className="declaration-cb"
+          >
+            I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          </span>
+        </label>
       </section>
+      <br />
       <div
         className="buttons"
       >
@@ -7429,18 +7494,18 @@ Canada
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults.
+            When you are cleared to work with children and/or vulnerable adults:
           </li>
-        </ol>
-        <ol
-          className="contactList"
-        >
-          <li>
-            If you have an outstanding charge or conviction relating to a relevant or specified offence; and
-          </li>
-          <li>
-            a determination of risk or no risk has been made by the Deputy Registrar.
-          </li>
+          <ol
+            className="contactList"
+          >
+            <li>
+              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
+            </li>
+            <li>
+              a determination of risk or no risk has been made by the Deputy Registrar.
+            </li>
+          </ol>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
@@ -7774,7 +7839,7 @@ Canada
                         >
                           Fax: 
                         </div>
-                        (250)356-1889
+                        (250) 356-1889
                       </div>
                       <div>
                         <svg
@@ -8116,18 +8181,18 @@ Canada
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults.
+            When you are cleared to work with children and/or vulnerable adults:
           </li>
-        </ol>
-        <ol
-          className="contactList"
-        >
-          <li>
-            If you have an outstanding charge or conviction relating to a relevant or specified offence; and
-          </li>
-          <li>
-            a determination of risk or no risk has been made by the Deputy Registrar.
-          </li>
+          <ol
+            className="contactList"
+          >
+            <li>
+              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
+            </li>
+            <li>
+              a determination of risk or no risk has been made by the Deputy Registrar.
+            </li>
+          </ol>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
@@ -8461,7 +8526,7 @@ Canada
                         >
                           Fax: 
                         </div>
-                        (250)356-1889
+                        (250) 356-1889
                       </div>
                       <div>
                         <svg
@@ -8803,18 +8868,18 @@ Canada
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults.
+            When you are cleared to work with children and/or vulnerable adults:
           </li>
-        </ol>
-        <ol
-          className="contactList"
-        >
-          <li>
-            If you have an outstanding charge or conviction relating to a relevant or specified offence; and
-          </li>
-          <li>
-            a determination of risk or no risk has been made by the Deputy Registrar.
-          </li>
+          <ol
+            className="contactList"
+          >
+            <li>
+              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
+            </li>
+            <li>
+              a determination of risk or no risk has been made by the Deputy Registrar.
+            </li>
+          </ol>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
@@ -9148,7 +9213,7 @@ Canada
                         >
                           Fax: 
                         </div>
-                        (250)356-1889
+                        (250) 356-1889
                       </div>
                       <div>
                         <svg
@@ -9490,18 +9555,18 @@ Canada
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults.
+            When you are cleared to work with children and/or vulnerable adults:
           </li>
-        </ol>
-        <ol
-          className="contactList"
-        >
-          <li>
-            If you have an outstanding charge or conviction relating to a relevant or specified offence; and
-          </li>
-          <li>
-            a determination of risk or no risk has been made by the Deputy Registrar.
-          </li>
+          <ol
+            className="contactList"
+          >
+            <li>
+              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
+            </li>
+            <li>
+              a determination of risk or no risk has been made by the Deputy Registrar.
+            </li>
+          </ol>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
@@ -9835,7 +9900,7 @@ Canada
                         >
                           Fax: 
                         </div>
-                        (250)356-1889
+                        (250) 356-1889
                       </div>
                       <div>
                         <svg
@@ -10472,7 +10537,7 @@ exports[`Storyshots SideCards Contact Information 1`] = `
                   >
                     Fax: 
                   </div>
-                  (250)356-1889
+                  (250) 356-1889
                 </div>
                 <div>
                   <svg
@@ -13033,6 +13098,10 @@ exports[`Storyshots Term Of Use page Default 1`] = `
           </span>
           <span
             className="print-page"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
           >
             <svg
               fill="currentColor"
@@ -13053,11 +13122,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
                 d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
               />
             </svg>
-            <a
-              href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820"
-            >
-              Download
-            </a>
+            Download
           </span>
           <h1>
             Terms of Use
@@ -13585,18 +13650,23 @@ exports[`Storyshots Term Of Use page Default 1`] = `
         </section>
         <br />
         <section>
-          <input
-            className="terms-cb"
-            onClick={[Function]}
-            type="checkbox"
-          />
-           I have read and accept the above terms of use.
-          <span
-            className="mandatory"
-            id="asterisk"
+          <label
+            htmlFor="acceptTerms"
           >
-            *
-          </span>
+            <input
+              className="terms-cb"
+              id="acceptTerms"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            I have read and accept the above terms of use.
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
         </section>
         <br />
         <br />
@@ -13815,6 +13885,10 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
           </span>
           <span
             className="print-page"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
           >
             <svg
               fill="currentColor"
@@ -13835,11 +13909,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
                 d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
               />
             </svg>
-            <a
-              href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820"
-            >
-              Download
-            </a>
+            Download
           </span>
           <h1>
             Terms of Use
@@ -14367,18 +14437,23 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
         </section>
         <br />
         <section>
-          <input
-            className="terms-cb"
-            onClick={[Function]}
-            type="checkbox"
-          />
-           I have read and accept the above terms of use.
-          <span
-            className="mandatory"
-            id="asterisk"
+          <label
+            htmlFor="acceptTerms"
           >
-            *
-          </span>
+            <input
+              className="terms-cb"
+              id="acceptTerms"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            I have read and accept the above terms of use.
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
         </section>
         <br />
         <br />
@@ -14536,6 +14611,10 @@ exports[`Storyshots Terms of Use Default 1`] = `
     </span>
     <span
       className="print-page"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     >
       <svg
         fill="currentColor"
@@ -14556,11 +14635,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
           d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
         />
       </svg>
-      <a
-        href="https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820"
-      >
-        Download
-      </a>
+      Download
     </span>
     <h1>
       Terms of Use
@@ -15088,18 +15163,23 @@ exports[`Storyshots Terms of Use Default 1`] = `
   </section>
   <br />
   <section>
-    <input
-      className="terms-cb"
-      onClick={[Function]}
-      type="checkbox"
-    />
-     I have read and accept the above terms of use.
-    <span
-      className="mandatory"
-      id="asterisk"
+    <label
+      htmlFor="acceptTerms"
     >
-      *
-    </span>
+      <input
+        className="terms-cb"
+        id="acceptTerms"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      I have read and accept the above terms of use.
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
+    </label>
   </section>
   <br />
   <br />
@@ -15391,7 +15471,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
     className="page"
   >
     <div
-      className="transition-content col-md-12"
+      className="transition-content col-md-8"
     >
       <p>
         You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
@@ -15404,7 +15484,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       </p>
       <br />
       <p>
-        TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc with picture, did not have bcsc...etc
+        We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
       </p>
     </div>
   </div>
@@ -15547,7 +15627,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
     className="page"
   >
     <div
-      className="transition-content col-md-12"
+      className="transition-content col-md-8"
     >
       <p>
         You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
@@ -15560,7 +15640,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       </p>
       <br />
       <p>
-        TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc with picture, did not have bcsc...etc
+        We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
       </p>
     </div>
   </div>
@@ -15703,7 +15783,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
     className="page"
   >
     <div
-      className="transition-content col-md-12"
+      className="transition-content col-md-8"
     >
       <p>
         You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 

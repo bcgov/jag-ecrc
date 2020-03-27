@@ -60,7 +60,7 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
     className="page"
   >
     <div
-      className="transition-content col-md-12"
+      className="transition-content col-md-8"
     >
       <p>
         You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
@@ -73,7 +73,7 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
       </p>
       <br />
       <p>
-        TEXT TO BE UPDATED You failed a bcsc login, did not have a bcsc with picture, did not have bcsc...etc
+        We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
       </p>
     </div>
   </div>
@@ -216,7 +216,7 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
     className="page"
   >
     <div
-      className="transition-content col-md-12"
+      className="transition-content col-md-8"
     >
       <p>
         You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 

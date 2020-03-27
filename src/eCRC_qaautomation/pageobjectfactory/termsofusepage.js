@@ -9,7 +9,7 @@ class TermsOfUse {
     this.cancelAndExitButton = element(by.buttonText("Cancel and Exit"));
     this.termsOfUseFinalParagraph = element(
       by.xpath(
-        "//*[@class='scroll-box']/ol[@start='23']/li[contains(text(), 'exclusive jurisdiction and venue of the courts of the Province of British Columbia')]"
+        "//*[@class='scroll-box']/ol[@start='21']/li[contains(text(), 'You hereby consent to the exclusive jurisdiction and venue of the courts of the Province of British Columbia, sitting in Victoria')]"
       )
     );
     this.termsOfUsePayment = element(

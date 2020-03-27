@@ -394,16 +394,22 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
       <section
         className="declareSection"
       >
-        <input
-          onClick={[Function]}
-          type="checkbox"
-        />
-        <span
-          className="declaration-cb"
+        <label
+          htmlFor="certify"
         >
-          I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
-        </span>
+          <input
+            id="certify"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <span
+            className="declaration-cb"
+          >
+            I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          </span>
+        </label>
       </section>
+      <br />
       <div
         className="buttons"
       >
