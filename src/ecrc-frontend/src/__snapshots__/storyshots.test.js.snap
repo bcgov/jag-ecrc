@@ -4453,8 +4453,6 @@ exports[`Storyshots Error Api Error 1`] = `
           The error description is below. If this error persists, please try again later.
           <br />
           <br />
-          400
-          <br />
           Not Found
         </p>
       </div>
@@ -4968,7 +4966,6 @@ exports[`Storyshots Error Default 1`] = `
           The error description is below. If this error persists, please try again later.
           <br />
           <br />
-          <br />
         </p>
       </div>
       <div
@@ -5139,7 +5136,6 @@ exports[`Storyshots Error Mobile 1`] = `
         <br />
         <p>
           The error description is below. If this error persists, please try again later.
-          <br />
           <br />
           <br />
         </p>

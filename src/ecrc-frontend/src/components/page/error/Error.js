@@ -71,8 +71,6 @@ export default function Error({ page: { header, error } }) {
           again later.
           <br />
           <br />
-          {error.status}
-          <br />
           {error.message}
         </p>
       </div>
