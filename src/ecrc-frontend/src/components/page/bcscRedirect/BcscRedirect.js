@@ -122,7 +122,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
           </div>
 
           <div style={{ marginTop: "40px" }}>
-            <a href="/criminalrecordcheck/transition" target="_blank">
+            <a href="/criminalrecordcheck/transition">
               I do not have a BC Services Card, or I have non-photo BC Services
               Card
             </a>

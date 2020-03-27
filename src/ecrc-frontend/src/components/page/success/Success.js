@@ -46,7 +46,7 @@ export default function Success({
     ) {
       setToHome(true);
     }
-  }, [paymentInfo.trnApproved]);
+  }, [paymentInfo.trnApproved, orgApplicantRelationship]);
 
   const receiptInfo = [
     { name: "Service Number", value: serviceId },
