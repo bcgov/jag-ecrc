@@ -65,6 +65,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       <h1>
         Payment Declined
       </h1>
+      <br />
       <span>
         Unfortunately, your payment transaction was declined. Please ensure you have the correct credit card information:
       </span>
@@ -106,7 +107,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
               <th
                 colSpan="2"
               >
-                APPLICATION INFORMATION
+                Application Information
               </th>
             </tr>
           </thead>
@@ -162,8 +163,9 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           </tbody>
         </table>
       </div>
+      <br />
       <button
-        className="btn ecrc_go_btn btn btn-sm"
+        className="btn ecrc_go_btn btn"
         onClick={[Function]}
         type="submit"
       >
@@ -177,7 +179,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         </div>
       </button>
       <button
-        className="btn ecrc_go_btn btn btn-sm"
+        className="btn ecrc_go_btn btn"
         onClick={[Function]}
         type="submit"
       >
@@ -191,9 +193,6 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         </div>
       </button>
     </div>
-    <div
-      className="sidecard"
-    />
   </div>
   <footer
     className="footer"
@@ -350,6 +349,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       <h1>
         Payment Approved
       </h1>
+      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
@@ -368,7 +368,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
               <th
                 colSpan="2"
               >
-                APPLICATION INFORMATION
+                Application Information
               </th>
             </tr>
           </thead>
@@ -432,8 +432,9 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
           </tbody>
         </table>
       </div>
+      <br />
       <button
-        className="btn ecrc_go_btn btn btn-sm"
+        className="btn ecrc_go_btn btn"
         onClick={[Function]}
         type="submit"
       >
@@ -447,7 +448,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         </div>
       </button>
       <button
-        className="btn ecrc_go_btn btn btn-sm"
+        className="btn ecrc_go_btn btn"
         onClick={[Function]}
         type="submit"
       >
@@ -461,9 +462,6 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         </div>
       </button>
     </div>
-    <div
-      className="sidecard"
-    />
   </div>
   <footer
     className="footer"
@@ -620,6 +618,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       <h1>
         Application Submitted
       </h1>
+      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
@@ -638,7 +637,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
               <th
                 colSpan="2"
               >
-                APPLICATION INFORMATION
+                Application Information
               </th>
             </tr>
           </thead>
@@ -678,8 +677,9 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
           </tbody>
         </table>
       </div>
+      <br />
       <button
-        className="btn ecrc_go_btn btn btn-sm"
+        className="btn ecrc_go_btn btn"
         onClick={[Function]}
         type="submit"
       >
@@ -693,7 +693,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         </div>
       </button>
       <button
-        className="btn ecrc_go_btn btn btn-sm"
+        className="btn ecrc_go_btn btn"
         onClick={[Function]}
         type="submit"
       >
@@ -707,9 +707,6 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         </div>
       </button>
     </div>
-    <div
-      className="sidecard"
-    />
   </div>
   <footer
     className="footer"
