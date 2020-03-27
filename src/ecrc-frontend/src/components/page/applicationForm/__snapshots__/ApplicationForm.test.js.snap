@@ -102,6 +102,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="Robert"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -130,6 +131,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="Norman"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -158,6 +160,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="Ross"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -205,6 +208,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value=""
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -232,6 +236,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value=""
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -259,6 +264,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value=""
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -310,6 +316,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value=""
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -338,6 +345,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="1942-10-29"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -366,6 +374,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="Male"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -395,6 +404,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value=""
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -431,6 +441,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value=""
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -467,6 +478,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value=""
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -513,6 +525,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value=""
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -549,6 +562,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value=""
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -602,6 +616,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="123 Somewhere"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -630,6 +645,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="Here"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -658,6 +674,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="British Columbia"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -686,6 +703,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="V9V 9V9"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -714,6 +732,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="Canada"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -790,6 +809,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="123 Somewhere"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -824,6 +844,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="Here"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -902,6 +923,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="V9V 9V9"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -930,6 +952,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   type="text"
                   value="Canada"
                 />
+                <br />
                 <span
                   class="error"
                 />
@@ -942,18 +965,21 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+            target="_blank"
           >
             Service BC
           </a>
           , 
           <a
             href="https://www.icbc.com/Pages/default.aspx"
+            target="_blank"
           >
             ICBC
           </a>
            or 
           <a
             href="https://www.addresschange.gov.bc.ca/"
+            target="_blank"
           >
             AddressChangeBC
           </a>
