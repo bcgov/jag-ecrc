@@ -245,6 +245,7 @@ export default function Success({
               </p>
             </>
           )}
+          <br />
           <div className="print">
             <Table table={receiptInfoTable} />
           </div>
