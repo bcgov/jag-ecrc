@@ -1,32 +1,28 @@
-//import { browser, element, by } from "protractor"
-
 require("dotenv").config();
 
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
+const bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
 
-var landingPage = require("../../pageobjectfactory/landingpage");
+const landingPage = require("../../pageobjectfactory/landingpage");
 
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
+const orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
 
-var orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
+const termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
 
-var termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
+const bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
 
-var bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
+const bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
 
-var bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
+const bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
 
-var bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
+const consentPage = require("../../pageobjectfactory/consentpage.js");
 
-var consentPage = require("../../pageobjectfactory/consentpage.js");
+const applicationFormPage = require("../../pageobjectfactory/applicationformpage");
 
-var applicationFormPage = require("../../pageobjectfactory/applicationformpage");
+const paymentPage = require("../../pageobjectfactory/paymentpage");
 
-var paymentPage = require("../../pageobjectfactory/paymentpage");
+const informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
 
-var informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
-
-var testInput = require("../../input/success");
+const testInput = require("../../input/success");
 
 describe("success", () => {
   beforeEach(() => {
@@ -42,7 +38,7 @@ describe("success", () => {
       .window()
       .maximize();
 
-    landingPage.accessCode.sendKeys(testInput.validAccessCode);
+    landingPage.accessCode.sendKeys(testInput.validVolunteerAccessCode);
 
     landingPage.validate.click();
 
@@ -58,8 +54,6 @@ describe("success", () => {
     orgVerificationPage.continue.click();
 
     termsOfUsePage.readAndAcceptCheckBox.click();
-
-    termsOfUsePage.authorizeEmailIdCheckBox.click();
 
     browser.executeScript(
       "arguments[0].scrollIntoView(true)",
@@ -88,12 +82,6 @@ describe("success", () => {
     bcServicesCardLoginPage.continueButton.click();
 
     bcServicesCardLoginPage.continueButton.click();
-
-    expect(true).toBe(
-      browser.getCurrentUrl().then(function(url) {
-        return url.includes(process.env.BCSC_CONSENT_URL);
-      })
-    );
 
     bcscConsentPage.name.count().then(function(count) {
       expect(count).toBe(1);
@@ -159,10 +147,6 @@ describe("success", () => {
       testInput.applicationFormApplicantPosition
     );
 
-    applicationFormPage.organizationFacility.sendKeys(
-      testInput.applicationFormOrganizationFacility
-    );
-
     applicationFormPage.mailingAddressStreet.sendKeys(
       testInput.applicationFormMailingAddressStreet
     );
@@ -209,14 +193,6 @@ describe("success", () => {
         );
       });
 
-    informationReviewPage.organizationFacility
-      .getText()
-      .then(function(organizationFacility) {
-        expect(organizationFacility).toBe(
-          testInput.applicationFormOrganizationFacility
-        );
-      });
-
     informationReviewPage.street.getText().then(function(street) {
       expect(street).toBe(testInput.applicationFormMailingAddressStreet);
     });
@@ -249,12 +225,10 @@ describe("success", () => {
 
     consentPage.continueButton.click();
 
-    paymentPage.cardNumber.sendKeys(testInput.declinedCardNumber);
+    browser.sleep(4000);
 
-    paymentPage.cardCVD.sendKeys(testInput.declinedCardCVD);
-
-    paymentPage.payNow.click();
-
-    expect(paymentPage.paymentStatus.getText()).toBe(testInput.declinedStatus);
+    expect(paymentPage.paymentStatus.getText()).toBe(
+      testInput.approvedStatusVolunteer
+    );
   });
 });

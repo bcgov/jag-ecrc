@@ -11,7 +11,8 @@
     "webdriver-manager-start": "./node_modules/.bin/webdriver-manager start",
     "protractor": "./node_modules/.bin/protractor configuration.js --suite success",
     "module": "./node_modules/.bin/protractor configuration.js --suite module",
-    "routing": "./node_modules/.bin/protractor configuration.js --suite routing"
+    "routing": "./node_modules/.bin/protractor configuration.js --suite routing",
+    "volunteer": "./node_modules/.bin/protractor configuration.js --suite volunteer"
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
