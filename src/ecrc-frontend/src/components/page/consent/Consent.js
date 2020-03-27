@@ -94,7 +94,7 @@ export default function Consent({
 
   const continueButton = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit",
     disabled: !continueBtnEnabled || loading,
@@ -401,13 +401,11 @@ export default function Consent({
           </p>
           <p>You must complete all mandatory fields ({asterisk} ):</p>
           <Declaration
-            style={{ paddingBottom: "30px" }}
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
           />
-          <br />
-          <div className="buttons" style={{ paddingLeft: "20px" }}>
+          <div className="buttons pt-5">
             <Button
               button={cancelButton}
               onClick={() => {

@@ -111,6 +111,10 @@ img {
     padding-left: 10px;
     padding-right: 10px;
   }
+
+  .wide-dashboard-spacing {
+    padding-left: 0;
+  }
 }
 
 .contact-title {

@@ -1012,10 +1012,9 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -1133,10 +1132,9 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -2331,10 +2329,9 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -2452,10 +2449,9 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -2764,10 +2760,9 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -3116,10 +3111,9 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -3511,14 +3505,8 @@ exports[`Storyshots Consent page Default 1`] = `
           </label>
         </section>
       </div>
-      <br />
       <div
-        className="buttons"
-        style={
-          Object {
-            "paddingLeft": "20px",
-          }
-        }
+        className="buttons pt-5"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -3535,7 +3523,7 @@ exports[`Storyshots Consent page Default 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           disabled={true}
           onClick={[Function]}
           type="submit"
@@ -3567,10 +3555,9 @@ exports[`Storyshots Consent page Default 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -3736,10 +3723,9 @@ exports[`Storyshots Consent page Default 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -4022,14 +4008,8 @@ exports[`Storyshots Consent page Mobile 1`] = `
           </label>
         </section>
       </div>
-      <br />
       <div
-        className="buttons"
-        style={
-          Object {
-            "paddingLeft": "20px",
-          }
-        }
+        className="buttons pt-5"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -4046,7 +4026,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           disabled={true}
           onClick={[Function]}
           type="submit"
@@ -4078,10 +4058,9 @@ exports[`Storyshots Consent page Mobile 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -4247,10 +4226,9 @@ exports[`Storyshots Consent page Mobile 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -6303,10 +6281,9 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -6870,10 +6847,9 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -8431,10 +8407,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -8523,10 +8498,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -8626,10 +8600,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -9133,10 +9106,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -9225,10 +9197,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -9328,10 +9299,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -9835,10 +9805,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -9927,10 +9896,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -10030,10 +9998,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -10537,10 +10504,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -10629,10 +10595,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -10732,10 +10697,9 @@ Canada
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -10993,10 +10957,9 @@ exports[`Storyshots SideCard blue 1`] = `
     className="row"
   >
     <div
-      className="col-12"
+      className="col-12 pt-2"
       style={
         Object {
-          "paddingTop": "30px",
           "position": "relative",
         }
       }
@@ -11037,10 +11000,9 @@ exports[`Storyshots SideCard bluegrey 1`] = `
     className="row"
   >
     <div
-      className="col-12"
+      className="col-12 pt-2"
       style={
         Object {
-          "paddingTop": "30px",
           "position": "relative",
         }
       }
@@ -11087,10 +11049,9 @@ exports[`Storyshots SideCard notice 1`] = `
     className="row"
   >
     <div
-      className="col-12"
+      className="col-12 pt-2"
       style={
         Object {
-          "paddingTop": "30px",
           "position": "relative",
         }
       }
@@ -11143,10 +11104,9 @@ exports[`Storyshots SideCards Access Code 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -11200,10 +11160,9 @@ exports[`Storyshots SideCards Bc Service 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -11311,10 +11270,9 @@ exports[`Storyshots SideCards Collection Notice 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -11382,10 +11340,9 @@ exports[`Storyshots SideCards Contact Information 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -11554,10 +11511,9 @@ exports[`Storyshots SideCards Criminal Record 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -11614,10 +11570,9 @@ exports[`Storyshots SideCards Get Bc Service 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -11709,10 +11664,9 @@ exports[`Storyshots SideCards Personal Information 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -11833,10 +11787,9 @@ exports[`Storyshots SideCards Useful Links 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -11949,10 +11902,9 @@ exports[`Storyshots SideCards Without BC Service Card 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -14654,8 +14606,9 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             Please scroll down to the bottom of the terms to continue.
           </p>
         </section>
-        <br />
-        <section>
+        <section
+          className="pt-2"
+        >
           <label
             htmlFor="acceptTerms"
           >
@@ -14674,10 +14627,8 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             </span>
           </label>
         </section>
-        <br />
-        <br />
         <section
-          className="buttons"
+          className="buttons pt-5"
         >
           <button
             className="btn ecrc_accessary_btn btn"
@@ -14694,7 +14645,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             </div>
           </button>
           <button
-            className="btn ecrc_go_btn btn "
+            className="btn ecrc_go_btn mr-0 btn "
             disabled={true}
             onClick={[Function]}
             type="submit"
@@ -15452,8 +15403,9 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             Please scroll down to the bottom of the terms to continue.
           </p>
         </section>
-        <br />
-        <section>
+        <section
+          className="pt-2"
+        >
           <label
             htmlFor="acceptTerms"
           >
@@ -15472,10 +15424,8 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             </span>
           </label>
         </section>
-        <br />
-        <br />
         <section
-          className="buttons"
+          className="buttons pt-5"
         >
           <button
             className="btn ecrc_accessary_btn btn"
@@ -15492,7 +15442,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             </div>
           </button>
           <button
-            className="btn ecrc_go_btn btn "
+            className="btn ecrc_go_btn mr-0 btn "
             disabled={true}
             onClick={[Function]}
             type="submit"
@@ -16189,8 +16139,9 @@ exports[`Storyshots Terms of Use Default 1`] = `
       Please scroll down to the bottom of the terms to continue.
     </p>
   </section>
-  <br />
-  <section>
+  <section
+    className="pt-2"
+  >
     <label
       htmlFor="acceptTerms"
     >
@@ -16209,10 +16160,8 @@ exports[`Storyshots Terms of Use Default 1`] = `
       </span>
     </label>
   </section>
-  <br />
-  <br />
   <section
-    className="buttons"
+    className="buttons pt-5"
   >
     <button
       className="btn ecrc_accessary_btn btn"
@@ -16229,7 +16178,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
       </div>
     </button>
     <button
-      className="btn ecrc_go_btn btn "
+      className="btn ecrc_go_btn mr-0 btn "
       disabled={true}
       onClick={[Function]}
       type="submit"

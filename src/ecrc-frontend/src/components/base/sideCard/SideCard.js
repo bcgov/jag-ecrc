@@ -13,10 +13,7 @@ export default function SideCard({
   return (
     <div className={sideCardCss} style={{ position: "relative" }}>
       <div className="row">
-        <div
-          className="col-12"
-          style={{ position: "relative", paddingTop: "30px" }}
-        >
+        <div className="col-12 pt-2" style={{ position: "relative" }}>
           <p />
           {type === "notice" && (
             <section

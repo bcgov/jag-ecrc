@@ -1002,8 +1002,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               class="row"
             >
               <div
-                class="col-12"
-                style="position: relative; padding-top: 30px;"
+                class="col-12 pt-2"
+                style="position: relative;"
               >
                 <p />
                 <section
@@ -1109,8 +1109,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               class="row"
             >
               <div
-                class="col-12"
-                style="position: relative; padding-top: 30px;"
+                class="col-12 pt-2"
+                style="position: relative;"
               >
                 <p />
                 <section

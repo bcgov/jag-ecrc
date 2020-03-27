@@ -650,8 +650,9 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             Please scroll down to the bottom of the terms to continue.
           </p>
         </section>
-        <br />
-        <section>
+        <section
+          className="pt-2"
+        >
           <label
             htmlFor="acceptTerms"
           >
@@ -670,10 +671,8 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             </span>
           </label>
         </section>
-        <br />
-        <br />
         <section
-          className="buttons"
+          className="buttons pt-5"
         >
           <button
             className="btn ecrc_accessary_btn btn"
@@ -690,7 +689,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             </div>
           </button>
           <button
-            className="btn ecrc_go_btn btn "
+            className="btn ecrc_go_btn mr-0 btn "
             disabled={true}
             onClick={[Function]}
             type="submit"

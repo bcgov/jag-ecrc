@@ -139,14 +139,8 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
           </label>
         </section>
       </div>
-      <br />
       <div
-        className="buttons"
-        style={
-          Object {
-            "paddingLeft": "20px",
-          }
-        }
+        className="buttons pt-5"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -163,7 +157,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           disabled={true}
           onClick={[Function]}
           type="submit"
@@ -195,10 +189,9 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
@@ -364,10 +357,9 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
             className="row"
           >
             <div
-              className="col-12"
+              className="col-12 pt-2"
               style={
                 Object {
-                  "paddingTop": "30px",
                   "position": "relative",
                 }
               }
