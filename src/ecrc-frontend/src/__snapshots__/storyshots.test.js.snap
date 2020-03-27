@@ -1092,6 +1092,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      target="blank"
                     >
                       Service BC
                     </a>
@@ -1099,6 +1100,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
+                      target="blank"
                     >
                       ICBC
                     </a>
@@ -1106,6 +1108,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.addresschange.gov.bc.ca/"
+                      target="blank"
                     >
                       AddressChangeBC
                     </a>
@@ -2397,6 +2400,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      target="blank"
                     >
                       Service BC
                     </a>
@@ -2404,6 +2408,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
+                      target="blank"
                     >
                       ICBC
                     </a>
@@ -2411,6 +2416,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.addresschange.gov.bc.ca/"
+                      target="blank"
                     >
                       AddressChangeBC
                     </a>
@@ -2797,6 +2803,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                     <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                        target="blank"
                       >
                         <div
                           className="side-card-link"
@@ -2814,6 +2821,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                     <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                        target="blank"
                       >
                         <div
                           className="side-card-link"
@@ -3136,6 +3144,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                     <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                        target="blank"
                       >
                         <div
                           className="side-card-link"
@@ -3153,6 +3162,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                     <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                        target="blank"
                       >
                         <div
                           className="side-card-link"
@@ -5572,6 +5582,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      target="blank"
                     >
                       Service BC
                     </a>
@@ -5579,6 +5590,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
+                      target="blank"
                     >
                       ICBC
                     </a>
@@ -5586,6 +5598,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.addresschange.gov.bc.ca/"
+                      target="blank"
                     >
                       AddressChangeBC
                     </a>
@@ -6125,6 +6138,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      target="blank"
                     >
                       Service BC
                     </a>
@@ -6132,6 +6146,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
+                      target="blank"
                     >
                       ICBC
                     </a>
@@ -6139,6 +6154,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.addresschange.gov.bc.ca/"
+                      target="blank"
                     >
                       AddressChangeBC
                     </a>
@@ -6290,6 +6306,7 @@ exports[`Storyshots Menu Default 1`] = `
         >
           <a
             href="/"
+            target="blank"
           >
             Home
           </a>
@@ -6299,6 +6316,7 @@ exports[`Storyshots Menu Default 1`] = `
         >
           <a
             href="/somewhere"
+            target="blank"
           >
             Somewhere
           </a>
@@ -6308,6 +6326,7 @@ exports[`Storyshots Menu Default 1`] = `
         >
           <a
             href="/somewhereelse"
+            target="blank"
           >
             Somewhere else
           </a>
@@ -6317,6 +6336,7 @@ exports[`Storyshots Menu Default 1`] = `
         >
           <a
             href="/here"
+            target="blank"
           >
             Somewhere with a long name for no reason
           </a>
@@ -6362,6 +6382,7 @@ exports[`Storyshots Menu Mobile 1`] = `
         >
           <a
             href="/"
+            target="blank"
           >
             Home
           </a>
@@ -6371,6 +6392,7 @@ exports[`Storyshots Menu Mobile 1`] = `
         >
           <a
             href="/somewhere"
+            target="blank"
           >
             Somewhere
           </a>
@@ -6380,6 +6402,7 @@ exports[`Storyshots Menu Mobile 1`] = `
         >
           <a
             href="/somewhereelse"
+            target="blank"
           >
             Somewhere else
           </a>
@@ -6389,6 +6412,7 @@ exports[`Storyshots Menu Mobile 1`] = `
         >
           <a
             href="/here"
+            target="blank"
           >
             Somewhere with a long name for no reason
           </a>
@@ -6405,6 +6429,7 @@ exports[`Storyshots MenuItem Default 1`] = `
 >
   <a
     href="http://www.url.com"
+    target="blank"
   >
     Name
   </a>
@@ -7471,6 +7496,7 @@ Canada
              
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+              target="blank"
             >
               BC Service Card website
             </a>
@@ -7710,6 +7736,7 @@ Canada
                     >
                       <a
                         href="/tbd"
+                        target="blank"
                       >
                         I'm an employee or volunteer
                       </a>
@@ -7719,6 +7746,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+                        target="blank"
                       >
                         Electronic Identity Verification (EIV)
                       </a>
@@ -7728,6 +7756,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+                        target="blank"
                       >
                         Results and Reconsideration
                       </a>
@@ -8158,6 +8187,7 @@ Canada
              
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+              target="blank"
             >
               BC Service Card website
             </a>
@@ -8397,6 +8427,7 @@ Canada
                     >
                       <a
                         href="/tbd"
+                        target="blank"
                       >
                         I'm an employee or volunteer
                       </a>
@@ -8406,6 +8437,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+                        target="blank"
                       >
                         Electronic Identity Verification (EIV)
                       </a>
@@ -8415,6 +8447,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+                        target="blank"
                       >
                         Results and Reconsideration
                       </a>
@@ -8845,6 +8878,7 @@ Canada
              
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+              target="blank"
             >
               BC Service Card website
             </a>
@@ -9084,6 +9118,7 @@ Canada
                     >
                       <a
                         href="/tbd"
+                        target="blank"
                       >
                         I'm an employee or volunteer
                       </a>
@@ -9093,6 +9128,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+                        target="blank"
                       >
                         Electronic Identity Verification (EIV)
                       </a>
@@ -9102,6 +9138,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+                        target="blank"
                       >
                         Results and Reconsideration
                       </a>
@@ -9532,6 +9569,7 @@ Canada
              
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+              target="blank"
             >
               BC Service Card website
             </a>
@@ -9771,6 +9809,7 @@ Canada
                     >
                       <a
                         href="/tbd"
+                        target="blank"
                       >
                         I'm an employee or volunteer
                       </a>
@@ -9780,6 +9819,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+                        target="blank"
                       >
                         Electronic Identity Verification (EIV)
                       </a>
@@ -9789,6 +9829,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+                        target="blank"
                       >
                         Results and Reconsideration
                       </a>
@@ -10331,6 +10372,7 @@ exports[`Storyshots SideCards Bc Service 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  target="blank"
                 >
                   <div
                     className="side-card-link"
@@ -10348,6 +10390,7 @@ exports[`Storyshots SideCards Bc Service 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                  target="blank"
                 >
                   <div
                     className="side-card-link"
@@ -10857,6 +10900,7 @@ exports[`Storyshots SideCards Personal Information 1`] = `
               <a
                 className="link"
                 href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                target="blank"
               >
                 Service BC
               </a>
@@ -10864,6 +10908,7 @@ exports[`Storyshots SideCards Personal Information 1`] = `
               <a
                 className="link"
                 href="https://www.icbc.com/Pages/default.aspx"
+                target="blank"
               >
                 ICBC
               </a>
@@ -10871,6 +10916,7 @@ exports[`Storyshots SideCards Personal Information 1`] = `
               <a
                 className="link"
                 href="https://www.addresschange.gov.bc.ca/"
+                target="blank"
               >
                 AddressChangeBC
               </a>
@@ -10956,6 +11002,7 @@ exports[`Storyshots SideCards Useful Links 1`] = `
               >
                 <a
                   href="/"
+                  target="blank"
                 >
                   Home
                 </a>
@@ -10965,6 +11012,7 @@ exports[`Storyshots SideCards Useful Links 1`] = `
               >
                 <a
                   href="/somewhere"
+                  target="blank"
                 >
                   Somewhere
                 </a>
@@ -10974,6 +11022,7 @@ exports[`Storyshots SideCards Useful Links 1`] = `
               >
                 <a
                   href="/somewhereelse"
+                  target="blank"
                 >
                   Somewhere else
                 </a>
@@ -10983,6 +11032,7 @@ exports[`Storyshots SideCards Useful Links 1`] = `
               >
                 <a
                   href="/here"
+                  target="blank"
                 >
                   Somewhere with a long name for no reason
                 </a>
@@ -11081,6 +11131,7 @@ exports[`Storyshots SideCards Without BC Service Card 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  target="blank"
                 >
                   <div
                     className="side-card-link"

@@ -35,6 +35,7 @@ exports[`Menu Component Matches the snapshot of populated menu 1`] = `
         >
           <a
             href="/"
+            target="blank"
           >
             Home
           </a>
@@ -44,6 +45,7 @@ exports[`Menu Component Matches the snapshot of populated menu 1`] = `
         >
           <a
             href="/somewhere"
+            target="blank"
           >
             Somewhere
           </a>
@@ -53,6 +55,7 @@ exports[`Menu Component Matches the snapshot of populated menu 1`] = `
         >
           <a
             href="/somewhereelse"
+            target="blank"
           >
             Somewhere else
           </a>
@@ -62,6 +65,7 @@ exports[`Menu Component Matches the snapshot of populated menu 1`] = `
         >
           <a
             href="/here"
+            target="blank"
           >
             Somewhere with a long name for no reason
           </a>

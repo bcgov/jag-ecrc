@@ -169,6 +169,7 @@ Canada
              
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+              target="blank"
             >
               BC Service Card website
             </a>
@@ -408,6 +409,7 @@ Canada
                     >
                       <a
                         href="/tbd"
+                        target="blank"
                       >
                         I'm an employee or volunteer
                       </a>
@@ -417,6 +419,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+                        target="blank"
                       >
                         Electronic Identity Verification (EIV)
                       </a>
@@ -426,6 +429,7 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
+                        target="blank"
                       >
                         Results and Reconsideration
                       </a>
