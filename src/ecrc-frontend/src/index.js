@@ -9,9 +9,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-if (process.env.REACT_APP_API_BASE_URL) {
-  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
-}
+axios.defaults.baseURL = "https://ecrc-api-pqyiwk-dev.pathfinder.gov.bc.ca";
 
 ReactDOM.render(
   <BrowserRouter>
