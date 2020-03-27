@@ -540,6 +540,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      target="blank"
                     >
                       Service BC
                     </a>
@@ -547,6 +548,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
+                      target="blank"
                     >
                       ICBC
                     </a>
@@ -554,6 +556,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                     <a
                       className="link"
                       href="https://www.addresschange.gov.bc.ca/"
+                      target="blank"
                     >
                       AddressChangeBC
                     </a>
