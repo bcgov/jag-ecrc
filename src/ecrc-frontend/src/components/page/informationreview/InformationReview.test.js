@@ -52,7 +52,12 @@ describe("InformationReview Component", () => {
     organizationFacility: "Something"
   };
 
+  const org = {
+    orgNm: "Some org"
+  };
+
   const setError = jest.fn();
+  const setShare = jest.fn();
   window.scrollTo = jest.fn();
 
   beforeEach(() => {
@@ -68,7 +73,9 @@ describe("InformationReview Component", () => {
     const page = {
       header,
       applicant,
-      setError
+      org,
+      setError,
+      setShare
     };
     const infoReview = create(
       <MemoryRouter>

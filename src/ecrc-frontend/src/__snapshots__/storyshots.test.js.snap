@@ -6309,6 +6309,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
         </label>
       </section>
       <br />
+      <br />
       <div
         className="buttons"
       >
@@ -6877,6 +6878,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
           </span>
         </label>
       </section>
+      <br />
       <br />
       <div
         className="buttons"
@@ -11102,6 +11104,44 @@ Canada
     </nav>
   </footer>
 </main>
+`;
+
+exports[`Storyshots Share Default 1`] = `
+<div
+  className="share"
+>
+  <span>
+    You have a valid previous CRC.
+  </span>
+  <span>
+    It was prepared for: 
+    Previous Org
+  </span>
+  <span>
+    It is valid until: 
+    2021-01-04
+  </span>
+  <p>
+    Would you like to share it with 
+    New Org
+    ?
+  </p>
+  <button
+    className="btn ecrc_go_btn btn"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Share
+    <div
+      className="loader-hide"
+    >
+      <div
+        className="btn-loader"
+      />
+    </div>
+  </button>
+</div>
 `;
 
 exports[`Storyshots SideCard blue 1`] = `
