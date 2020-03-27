@@ -1075,22 +1075,22 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                         class="discStyle"
                       >
                         <li>
-                          FIRST NAME
+                          First Name
                         </li>
                         <li>
-                          MIDDLE NAME
+                          Middle Name
                         </li>
                         <li>
-                          LAST NAME
+                          Last Name
                         </li>
                         <li>
-                          DATE OF BIRTH
+                          Date Of Birth
                         </li>
                         <li>
-                          SEX
+                          Sex
                         </li>
                         <li>
-                          CURRENT STREET ADDRESS
+                          Current Street Address
                         </li>
                       </ul>
                       Please contact either 

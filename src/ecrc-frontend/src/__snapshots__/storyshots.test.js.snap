@@ -1097,22 +1097,22 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        FIRST NAME
+                        First Name
                       </li>
                       <li>
-                        MIDDLE NAME
+                        Middle Name
                       </li>
                       <li>
-                        LAST NAME
+                        Last Name
                       </li>
                       <li>
-                        DATE OF BIRTH
+                        Date Of Birth
                       </li>
                       <li>
-                        SEX
+                        Sex
                       </li>
                       <li>
-                        CURRENT STREET ADDRESS
+                        Current Street Address
                       </li>
                     </ul>
                     Please contact either 
@@ -2446,22 +2446,22 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        FIRST NAME
+                        First Name
                       </li>
                       <li>
-                        MIDDLE NAME
+                        Middle Name
                       </li>
                       <li>
-                        LAST NAME
+                        Last Name
                       </li>
                       <li>
-                        DATE OF BIRTH
+                        Date Of Birth
                       </li>
                       <li>
-                        SEX
+                        Sex
                       </li>
                       <li>
-                        CURRENT STREET ADDRESS
+                        Current Street Address
                       </li>
                     </ul>
                     Please contact either 
@@ -6479,22 +6479,22 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        FIRST NAME
+                        First Name
                       </li>
                       <li>
-                        MIDDLE NAME
+                        Middle Name
                       </li>
                       <li>
-                        LAST NAME
+                        Last Name
                       </li>
                       <li>
-                        DATE OF BIRTH
+                        Date Of Birth
                       </li>
                       <li>
-                        SEX
+                        Sex
                       </li>
                       <li>
-                        CURRENT STREET ADDRESS
+                        Current Street Address
                       </li>
                     </ul>
                     Please contact either 
@@ -7037,22 +7037,22 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        FIRST NAME
+                        First Name
                       </li>
                       <li>
-                        MIDDLE NAME
+                        Middle Name
                       </li>
                       <li>
-                        LAST NAME
+                        Last Name
                       </li>
                       <li>
-                        DATE OF BIRTH
+                        Date Of Birth
                       </li>
                       <li>
-                        SEX
+                        Sex
                       </li>
                       <li>
-                        CURRENT STREET ADDRESS
+                        Current Street Address
                       </li>
                     </ul>
                     Please contact either 
@@ -7603,22 +7603,22 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        FIRST NAME
+                        First Name
                       </li>
                       <li>
-                        MIDDLE NAME
+                        Middle Name
                       </li>
                       <li>
-                        LAST NAME
+                        Last Name
                       </li>
                       <li>
-                        DATE OF BIRTH
+                        Date Of Birth
                       </li>
                       <li>
-                        SEX
+                        Sex
                       </li>
                       <li>
-                        CURRENT STREET ADDRESS
+                        Current Street Address
                       </li>
                     </ul>
                     Please contact either 
@@ -8169,22 +8169,22 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        FIRST NAME
+                        First Name
                       </li>
                       <li>
-                        MIDDLE NAME
+                        Middle Name
                       </li>
                       <li>
-                        LAST NAME
+                        Last Name
                       </li>
                       <li>
-                        DATE OF BIRTH
+                        Date Of Birth
                       </li>
                       <li>
-                        SEX
+                        Sex
                       </li>
                       <li>
-                        CURRENT STREET ADDRESS
+                        Current Street Address
                       </li>
                     </ul>
                     Please contact either 
@@ -13232,22 +13232,22 @@ exports[`Storyshots SideCards Personal Information 1`] = `
                 className="discStyle"
               >
                 <li>
-                  FIRST NAME
+                  First Name
                 </li>
                 <li>
-                  MIDDLE NAME
+                  Middle Name
                 </li>
                 <li>
-                  LAST NAME
+                  Last Name
                 </li>
                 <li>
-                  DATE OF BIRTH
+                  Date Of Birth
                 </li>
                 <li>
-                  SEX
+                  Sex
                 </li>
                 <li>
-                  CURRENT STREET ADDRESS
+                  Current Street Address
                 </li>
               </ul>
               Please contact either 
