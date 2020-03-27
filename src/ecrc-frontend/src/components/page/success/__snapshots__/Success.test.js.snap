@@ -7,7 +7,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -292,7 +292,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -562,7 +562,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"

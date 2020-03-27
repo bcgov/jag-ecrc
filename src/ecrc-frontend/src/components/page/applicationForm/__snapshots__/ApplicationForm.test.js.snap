@@ -8,7 +8,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         class="navbar navbar-expand-lg navbar-dark"
       >
         <div
-          class="container"
+          class="container-fluid"
         >
           <a
             class="navbar-brand"

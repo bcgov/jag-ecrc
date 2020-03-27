@@ -7,7 +7,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -1284,7 +1284,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -2600,7 +2600,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -2950,7 +2950,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -3369,7 +3369,7 @@ exports[`Storyshots Consent page Default 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -3880,7 +3880,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -4455,7 +4455,7 @@ exports[`Storyshots Error Default 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -4639,7 +4639,7 @@ exports[`Storyshots Error Mobile 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -4823,7 +4823,7 @@ exports[`Storyshots Error Session Expired 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -5282,7 +5282,7 @@ exports[`Storyshots Header Default 1`] = `
     className="navbar navbar-expand-lg navbar-dark"
   >
     <div
-      className="container"
+      className="container-fluid"
     >
       <a
         className="navbar-brand"
@@ -5308,7 +5308,64 @@ exports[`Storyshots Header Default 1`] = `
           className="navbar-brand nav-item nav-link"
           href="/"
         >
-          eCRC
+          eCrc
+        </a>
+      </div>
+      <button
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        className="navbar-toggler"
+        data-target="#navbarNavAltMarkup"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        id="navbarNavAltMarkup"
+      />
+    </div>
+  </nav>
+</header>
+`;
+
+exports[`Storyshots Header Mobile 1`] = `
+<header>
+  <nav
+    className="navbar navbar-expand-lg navbar-dark"
+  >
+    <div
+      className="container-fluid"
+    >
+      <a
+        className="navbar-brand"
+        href="/"
+      >
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+      </a>
+      <div>
+        <a
+          className="navbar-brand nav-item nav-link"
+          href="/"
+        >
+          eCrc
         </a>
       </div>
       <button
@@ -5340,7 +5397,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -5896,7 +5953,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -6640,7 +6697,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -6989,7 +7046,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -7553,7 +7610,7 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -8251,7 +8308,7 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -8949,7 +9006,7 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -9647,7 +9704,7 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -11702,7 +11759,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -11987,7 +12044,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -12257,7 +12314,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -12503,7 +12560,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -12788,7 +12845,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -13058,7 +13115,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -13359,7 +13416,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -14157,7 +14214,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -15794,7 +15851,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -15961,7 +16018,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -16128,7 +16185,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -16303,7 +16360,7 @@ exports[`Storyshots User Confirmation page Default 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -16515,7 +16572,7 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"

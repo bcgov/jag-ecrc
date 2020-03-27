@@ -7,7 +7,7 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -174,7 +174,7 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"

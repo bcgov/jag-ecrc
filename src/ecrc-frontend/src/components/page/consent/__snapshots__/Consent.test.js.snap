@@ -7,7 +7,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"

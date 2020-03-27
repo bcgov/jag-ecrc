@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Header.css";
 
 export default function Header({ header: { name } }) {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark">
-        <div className="container">
+        <div className="container-fluid">
           <a className="navbar-brand" href="/">
             <img
               className="img-fluid d-none d-md-block"
