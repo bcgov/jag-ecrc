@@ -106,7 +106,8 @@ export default function App() {
               saveOrg,
               saveApplicant,
               saveApplicationInfo,
-              setError
+              setError,
+              share
             }}
           />
         </Route>

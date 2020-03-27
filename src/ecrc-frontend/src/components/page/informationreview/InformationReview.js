@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -15,7 +16,6 @@ import {
   isActionPerformed,
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
-import axios from "axios";
 
 export default function InformationReview({
   page: {
@@ -89,6 +89,7 @@ export default function InformationReview({
           setShareAvailable(true);
         })
         .catch(error => {
+          console.log(error);
           // This could be fine...
           // If checkShare errors rather than responds, continue
           // If different error, ERROR
@@ -436,7 +437,11 @@ InformationReview.propTypes = {
       jobTitle: PropTypes.string.isRequired,
       organizationFacility: PropTypes.string
     }),
-    setError: PropTypes.func.isRequired
+    org: PropTypes.shape({
+      orgNm: PropTypes.string.isRequired
+    }),
+    setError: PropTypes.func.isRequired,
+    setShare: PropTypes.func.isRequired
   })
 };
 
