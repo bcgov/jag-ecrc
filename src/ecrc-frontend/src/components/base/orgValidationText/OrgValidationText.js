@@ -21,7 +21,10 @@ export default function OrgValidationText({
         potential for unsupervised access to children and/or vulnerable adults,
         you are required to complete a criminal record check. This portal
         enables you to easily apply for a criminal record check under the{" "}
-        <a href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01">
+        <a
+          href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+          target="_blank"
+        >
           Criminal Records Review Act (CRRA).
         </a>
       </p>
@@ -36,7 +39,10 @@ export default function OrgValidationText({
             <li>{"Be at least 12 years of age as of today's date"}</li>
             <li>
               Have your identity verified by using your{" "}
-              <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
+              <a
+                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                target="_blank"
+              >
                 BC Services Card
               </a>{" "}
               (BCSC). The BCSC provides secure access to provincial government
@@ -73,33 +79,50 @@ export default function OrgValidationText({
           <h3>I need more information</h3>
           <ul className="bodyList">
             <li>
-              <a href="volunteer">{"I'm an employee or a volunteer"}</a> and I
-              want to know{" "}
-              <a href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks">
+              <a href="volunteer" target="_blank">
+                {"I'm an employee or a volunteer"}
+              </a>{" "}
+              and I want to know{" "}
+              <a
+                href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
+                target="_blank"
+              >
                 why I need to apply for a criminal record check
               </a>
             </li>
             <li>
-              <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
+              <a
+                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                target="_blank"
+              >
                 I don&apos;t have a BC Services Card
               </a>
             </li>
             <li>
-              <a href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration">
+              <a
+                href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration"
+                target="_blank"
+              >
                 {"I'm an authorized contact"}
               </a>{" "}
               who is responsible for facilitating the criminal record check for
               my organization
             </li>
             <li>
-              <a href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/employer-organizations">
+              <a
+                href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/employer-organizations"
+                target="_blank"
+              >
                 {"I'm an employer organization"}
               </a>{" "}
               and I want to learn more about registering with the Criminal
               Records Review Program (CRRP)
             </li>
             <li>
-              <a href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/volunteer-organizations">
+              <a
+                href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/volunteer-organizations"
+                target="_blank"
+              >
                 {"I'm a volunteer organization"}
               </a>{" "}
               and I want to register with the CRRP

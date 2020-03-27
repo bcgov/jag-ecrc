@@ -40,7 +40,7 @@ export default function SideCard({
               <div className="submit-content">
                 <span>{content}</span>
                 {image && (
-                  <a href={imageLink}>
+                  <a href={imageLink} target="_blank">
                     <img
                       src={image}
                       alt="imagelink"

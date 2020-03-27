@@ -31,7 +31,10 @@ export default function Transition({
             <p>
               We are transitioning our client organizations currently using
               Equifax for identity verification to a new process through a{" "}
-              <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
+              <a
+                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                target="_blank"
+              >
                 BC Services Card account
               </a>
               {". Your organization hasn't"} been transitioned to the new system
