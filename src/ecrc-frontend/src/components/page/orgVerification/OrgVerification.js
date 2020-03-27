@@ -26,6 +26,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
 
     if (!isAuthenticated() || !org.orgNm) {
       setToHome(true);
+      console.log("Test server");
     }
 
     window.scrollTo(0, 0);
