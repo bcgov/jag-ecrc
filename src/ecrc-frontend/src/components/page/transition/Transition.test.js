@@ -1,5 +1,7 @@
 import React from "react";
 import { create } from "react-test-renderer";
+import { Router } from "react-router-dom";
+import { createMemoryHistory } from "history";
 
 import Transition from "./Transition";
 
@@ -13,12 +15,24 @@ describe("Transition Page Component", () => {
   };
 
   test("Matches the default/BCSC snapshot", () => {
-    const defaultTransition = create(<Transition page={page} />);
+    const history = createMemoryHistory();
+
+    const defaultTransition = create(
+      <Router history={history}>
+        <Transition page={page} />
+      </Router>
+    );
+
     expect(defaultTransition.toJSON()).toMatchSnapshot();
   });
+
   test("Matches the non-whitelisted snapshot", () => {
+    const history = createMemoryHistory();
+
     const nonWhitelistTransition = create(
-      <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
+      <Router history={history}>
+        <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
+      </Router>
     );
     expect(nonWhitelistTransition.toJSON()).toMatchSnapshot();
   });
