@@ -155,23 +155,27 @@ export const NonScheduleD = () => (
 );
 
 export const ScheduleD = () => (
+  <MemoryRouter>
+    <InformationReview
+      page={{
+        ...page,
+        applicant: {
+          ...applicant,
+          organizationFacility: "PBS WIPB"
+        }
+      }}
+    />
+  </MemoryRouter>
+);
+
+export const AvailableShare = () => (
   <LoadData>
     {data => (
       <MemoryRouter>
-        <InformationReview
-          page={{
-            ...data.page,
-            applicant: {
-              ...applicant,
-              organizationFacility: "PBS WIPB"
-            }
-          }}
-        />
+        <InformationReview page={data.page} />
       </MemoryRouter>
     )}
   </LoadData>
 );
-
-// TODO: Add story for sharable CRC
 
 // TODO: Add more stories for aliases
