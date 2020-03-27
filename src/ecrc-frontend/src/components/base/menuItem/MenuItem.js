@@ -6,7 +6,9 @@ import "./MenuItem.css";
 export default function MenuItem({ menuItem: { name, url } }) {
   return (
     <li className="menuItem">
-      <a href={url}>{name}</a>
+      <a href={url} target="blank">
+        {name}
+      </a>
     </li>
   );
 }

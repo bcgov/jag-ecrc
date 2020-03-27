@@ -163,7 +163,10 @@ export default function OrgVerification({ page: { header, org, setError } }) {
               <li>
                 If you do not already have a BC Service Card Account, you can
                 initiate the process at the{" "}
-                <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
+                <a
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+                  target="blank"
+                >
                   BC Service Card website
                 </a>
                 .
