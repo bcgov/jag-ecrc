@@ -24,6 +24,7 @@ export default function App() {
   );
 
   const [error, setError] = useState({});
+  const [share, setShare] = useState(false);
 
   const [transitionReason, setTransitionReason] = useState("bcsc");
 
@@ -90,7 +91,8 @@ export default function App() {
               header,
               applicant,
               org,
-              setError
+              setError,
+              setShare
             }}
           />
         </Route>

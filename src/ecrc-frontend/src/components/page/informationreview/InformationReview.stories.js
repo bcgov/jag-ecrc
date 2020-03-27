@@ -39,12 +39,19 @@ const applicant = {
   organizationFacility: ""
 };
 
+const org = {
+  orgNm: "Old Org Name"
+};
+
 const setError = () => {};
+const setShare = () => {};
 
 const page = {
   header,
   applicant,
-  setError
+  org,
+  setError,
+  setShare
 };
 
 sessionStorage.setItem("validator", "secret");
@@ -72,6 +79,21 @@ export const NonScheduleD = () => (
   </MemoryRouter>
 );
 
+export const ScheduleD = () => (
+  <MemoryRouter>
+    <InformationReview
+      page={{
+        ...page,
+        applicant: {
+          ...applicant,
+          organizationFacility: "PBS WIPB"
+        }
+      }}
+    />
+  </MemoryRouter>
+);
+
+// UNFINISHED. TODO: Mock axios for share
 export const ScheduleD = () => (
   <MemoryRouter>
     <InformationReview

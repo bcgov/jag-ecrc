@@ -8,12 +8,14 @@ import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+import Share from "../../composite/share/Share";
 import {
   generateJWTToken,
   accessJWTToken,
   isActionPerformed,
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
+import axios from "axios";
 
 export default function InformationReview({
   page: {
@@ -49,7 +51,9 @@ export default function InformationReview({
       jobTitle,
       organizationFacility
     },
-    setError
+    org: { orgNm },
+    setError,
+    setShare
   }
 }) {
   const history = useHistory();
@@ -57,11 +61,38 @@ export default function InformationReview({
   const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
+  // SHARE STATES
+  const [shareAvailable, setShareAvailable] = useState(false);
+  const [oldOrg, setOldOrg] = useState("");
+  const [oldCRCExpiration, setOldCRCExpiration] = useState("");
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     if (!isAuthorized() || !isActionPerformed("appForm")) {
       setToHome(true);
+    } else {
+      // Make axios call to check for sharing service
+      axios
+        .get("/private/checkShare")
+        .then(res => {
+          // Check if share was allowed?
+          // if it was, setShare -> true
+
+          // May get info back that need to be displayed more than just here
+          // Might need to add to a state, or create new state
+          // Old Org name:
+          // Available CRC expiration
+
+          setOldOrg(res.data.oldOrg);
+          setOldCRCExpiration(res.data.oldCRCExpiration);
+          setShareAvailable(true);
+        })
+        .catch(error => {
+          // This could be fine...
+          // If checkShare errors rather than responds, continue
+          // If different error, ERROR
+        });
     }
   }, []);
 
@@ -345,6 +376,14 @@ export default function InformationReview({
             </label>
           </section>
           <br />
+          {shareAvailable && (
+            <Share
+              previousOrg={oldOrg}
+              expiration={oldCRCExpiration}
+              newOrg={orgNm}
+              clickShare={setShare(true)}
+            />
+          )}
           <div className="buttons">
             <Button button={cancelButton} onClick={edit} />
             <Button button={confirmButton} onClick={confirm} />
