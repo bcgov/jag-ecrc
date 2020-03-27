@@ -23,6 +23,7 @@ export default function App() {
   );
 
   const [error, setError] = useState("");
+  const [provinces, setProvinces] = useState([]);
 
   const [transitionReason, setTransitionReason] = useState("bcsc");
 
@@ -56,7 +57,15 @@ export default function App() {
         </Route>
         <Route path="/(ecrc/applicationform|criminalrecordcheck/applicationform)">
           <ApplicationForm
-            page={{ header, org, applicant, setApplicant, setError }}
+            page={{
+              header,
+              org,
+              applicant,
+              setApplicant,
+              setError,
+              provinces,
+              setProvinces
+            }}
           />
         </Route>
         <Route path="/(ecrc/transition|criminalrecordcheck/transition)">

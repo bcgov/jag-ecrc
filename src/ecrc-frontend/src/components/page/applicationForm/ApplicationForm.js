@@ -49,7 +49,9 @@ export default function ApplicationForm({
     },
     setApplicant,
     org: { defaultScheduleTypeCd },
-    setError
+    setError,
+    provinces,
+    setProvinces
   }
 }) {
   const history = useHistory();
@@ -98,7 +100,6 @@ export default function ApplicationForm({
   const [mailingPostalCode, setMailingPostalCode] = useState("");
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
   const [toTransition, setToTransition] = useState(false);
-  const [provinces, setProvinces] = useState([]);
 
   const location = useLocation();
 
@@ -109,96 +110,98 @@ export default function ApplicationForm({
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
-    Promise.all([
-      axios.get(`/ecrc/protected/login?code=${code}&requestGuid=${uuid}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }),
-      axios.get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-    ])
-      .then(res => {
-        sessionStorage.setItem("jwt", res[0].data);
-
-        if (!isAuthorized()) setToHome(true);
-
-        setProvinces(res[1].data.provinces.province);
-
-        const {
-          userInfo: {
-            birthdate,
-            address: { street_address, locality, region, postal_code },
-            gender,
-            given_name,
-            given_names,
-            family_name,
-            identity_assurance_level
+    if (code) {
+      Promise.all([
+        axios.get(`/ecrc/protected/login?code=${code}&requestGuid=${uuid}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
           }
-        } = accessJWTToken(res[0].data);
+        }),
+        axios.get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+      ])
+        .then(res => {
+          sessionStorage.setItem("jwt", res[0].data);
 
-        // TODO Check identity assurance level
-        if (identity_assurance_level < 3) {
-          setToTransition(true);
-        }
+          if (!isAuthorized()) setToHome(true);
 
-        // Convert gender text
-        const genderTxt = gender === "female" ? "F" : "M";
+          setProvinces(res[1].data.provinces.province);
 
-        // Convert date format
-        const birthDt = birthdate.split("-").join("/");
+          const {
+            userInfo: {
+              birthdate,
+              address: { street_address, locality, region, postal_code },
+              gender,
+              given_name,
+              given_names,
+              family_name,
+              identity_assurance_level
+            }
+          } = accessJWTToken(res[0].data);
 
-        // Convert given names
-        const givenNamesArray = given_names.split(" ");
+          // TODO Check identity assurance level
+          if (identity_assurance_level < 3) {
+            setToTransition(true);
+          }
 
-        givenNamesArray.shift();
+          // Convert gender text
+          const genderTxt = gender === "female" ? "F" : "M";
 
-        const legalSecondNm = givenNamesArray.join(" ");
+          // Convert date format
+          const birthDt = birthdate.split("-").join("/");
 
-        // Convert province name
-        const regionMap = new Map([
-          ["BC", "BRITISH COLUMBIA"],
-          ["AB", "ALBERTA"],
-          ["NL", "NEWFOUNDLAND"],
-          ["PE", "PRINCE EDWARD ISLAND"],
-          ["NS", "NOVA SCOTIA"],
-          ["NB", "NEW BRUNSWICK"],
-          ["QC", "QUEBEC"],
-          ["ON", "ONTARIO"],
-          ["MB", "MANITOBA"],
-          ["SK", "SASKATCHEWAN"],
-          ["YT", "YUKON"],
-          ["NT", "NORTH WEST TERRITORIES"],
-          ["NU", "NUNAVUT"]
-        ]);
+          // Convert given names
+          const givenNamesArray = given_names.split(" ");
 
-        let provinceNm = regionMap.get(region);
-        if (provinceNm === undefined) {
-          provinceNm = "Invalid Province";
-        }
+          givenNamesArray.shift();
 
-        setApplicant({
-          legalFirstNm: given_name,
-          legalSecondNm,
-          legalSurnameNm: family_name,
-          birthDt,
-          genderTxt,
-          addressLine1: street_address,
-          cityNm: locality,
-          provinceNm,
-          postalCodeTxt: postal_code,
-          countryNm: "CANADA"
+          const legalSecondNm = givenNamesArray.join(" ");
+
+          // Convert province name
+          const regionMap = new Map([
+            ["BC", "BRITISH COLUMBIA"],
+            ["AB", "ALBERTA"],
+            ["NL", "NEWFOUNDLAND"],
+            ["PE", "PRINCE EDWARD ISLAND"],
+            ["NS", "NOVA SCOTIA"],
+            ["NB", "NEW BRUNSWICK"],
+            ["QC", "QUEBEC"],
+            ["ON", "ONTARIO"],
+            ["MB", "MANITOBA"],
+            ["SK", "SASKATCHEWAN"],
+            ["YT", "YUKON"],
+            ["NT", "NORTH WEST TERRITORIES"],
+            ["NU", "NUNAVUT"]
+          ]);
+
+          let provinceNm = regionMap.get(region);
+          if (provinceNm === undefined) {
+            provinceNm = "Invalid Province";
+          }
+
+          setApplicant({
+            legalFirstNm: given_name,
+            legalSecondNm,
+            legalSurnameNm: family_name,
+            birthDt,
+            genderTxt,
+            addressLine1: street_address,
+            cityNm: locality,
+            provinceNm,
+            postalCodeTxt: postal_code,
+            countryNm: "CANADA"
+          });
+        })
+        .catch(error => {
+          if (error && error.response && error.response.status) {
+            setToError(true);
+            setError(error.response.status.toString());
+          }
         });
-      })
-      .catch(error => {
-        if (error && error.response && error.response.status) {
-          setToError(true);
-          setError(error.response.status.toString());
-        }
-      });
+    }
 
     window.scrollTo(0, 0);
   }, [setError]);
