@@ -1,30 +1,28 @@
 require("dotenv").config();
 
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
+const bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
 
-var landingPage = require("../../pageobjectfactory/landingpage");
+const landingPage = require("../../pageobjectfactory/landingpage");
 
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
+const orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
 
-var orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
+const termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
 
-var termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
+const bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
 
-var bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
+const bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
 
-var bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
+const bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
 
-var bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
+const consentPage = require("../../pageobjectfactory/consentpage.js");
 
-var consentPage = require("../../pageobjectfactory/consentpage.js");
+const applicationFormPage = require("../../pageobjectfactory/applicationformpage");
 
-var applicationFormPage = require("../../pageobjectfactory/applicationformpage");
+const paymentPage = require("../../pageobjectfactory/paymentpage");
 
-var paymentPage = require("../../pageobjectfactory/paymentpage");
+const informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
 
-var informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
-
-var testInput = require("../../input/success");
+const testInput = require("../../input/success");
 
 describe("success", () => {
   beforeEach(() => {
