@@ -5,7 +5,7 @@ module.exports.config = {
     "./automationtest/moduletests/bcscredirect_spec.js"
   ],
   framework: "jasmine",
-  onPrepare: function() {
+  onPrepare: () => {
     browser.waitForAngularEnabled(false);
     browser.driver
       .manage()

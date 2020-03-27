@@ -28,13 +28,13 @@ var informationReviewPage = require("../../pageobjectfactory/informationreviewpa
 
 var testInput = require("../../input/success");
 
-describe("success", function() {
-  beforeEach(function() {
+describe("success", () => {
+  beforeEach(() => {
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
   });
 
-  it("verify that entering a valid org code and validating redirects to the orgverification page", function() {
+  it("verify that entering a valid org code and validating redirects to the orgverification page", () => {
     browser.get(process.env.URL);
 
     browser

@@ -34,7 +34,7 @@ describe("success", () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000;
   });
 
-  it("verify that entering a valid org code and validating redirects to the orgverification page", function() {
+  it("verify that entering a valid org code and validating redirects to the orgverification page", () => {
     browser.get(process.env.URL);
 
     browser
