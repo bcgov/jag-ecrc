@@ -135,7 +135,6 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
         >
           <a
             href="/criminalrecordcheck/transition"
-            target="_blank"
           >
             I do not have a BC Services Card, or I have non-photo BC Services Card
           </a>
