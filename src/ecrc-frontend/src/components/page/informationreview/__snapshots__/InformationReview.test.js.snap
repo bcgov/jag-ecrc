@@ -65,7 +65,6 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
       <h1>
         Information Review
       </h1>
-      <br />
       <p>
         Please confirm that the information provided below is accurate. If it is not, please select Edit Application.
       </p>
@@ -385,9 +384,8 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
         </tbody>
       </table>
-      <br />
       <div
-        className="declareTitle"
+        className="declareTitle mt-4"
       >
         DECLARATION
       </div>
@@ -409,9 +407,8 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </span>
         </label>
       </section>
-      <br />
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -428,7 +425,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           disabled={true}
           onClick={[Function]}
           type="submit"
