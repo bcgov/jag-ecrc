@@ -45,12 +45,22 @@ describe("ApplicationForm Component", () => {
     defaultScheduleTypeCd: "WBSD"
   };
 
+  const provinces = [
+    { name: "British Columbia" },
+    { name: "Ontario" },
+    { name: "Alberta" }
+  ];
+
+  const setProvinces = jest.fn();
+
   const page = {
     header,
     applicant,
     org,
     setApplicant,
-    setError
+    setError,
+    provinces,
+    setProvinces
   };
 
   beforeEach(() => {
@@ -79,7 +89,7 @@ describe("ApplicationForm Component", () => {
         address: {
           street_address: "123 addy",
           locality: "local",
-          region: "ab",
+          region: "British Columbia",
           postal_code: "v9n1d4"
         },
         gender: "M",

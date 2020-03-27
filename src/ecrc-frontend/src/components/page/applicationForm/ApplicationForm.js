@@ -105,9 +105,9 @@ export default function ApplicationForm({
 
   useEffect(() => {
     const urlParam = queryString.parse(location.search);
-    const code = urlParam.code;
+    const { code } = urlParam;
 
-    let token = sessionStorage.getItem("jwt");
+    const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
     if (code) {

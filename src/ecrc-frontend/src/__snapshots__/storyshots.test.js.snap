@@ -864,12 +864,19 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
                   className="note"
                 />
               </label>
-              <select
+              <input
                 className="textinput_editable_white"
+                defaultValue=""
                 id="mailingProvinceNm"
                 onChange={[Function]}
-                value=""
+                placeholder="Select Province"
+                type="text"
               />
+              <span
+                className="error"
+              >
+                
+              </span>
             </div>
           </li>
           <li>
@@ -2169,12 +2176,19 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
                   className="note"
                 />
               </label>
-              <select
+              <input
                 className="textinput_editable_white"
+                defaultValue=""
                 id="mailingProvinceNm"
                 onChange={[Function]}
-                value=""
+                placeholder="Select Province"
+                type="text"
               />
+              <span
+                className="error"
+              >
+                
+              </span>
             </div>
           </li>
           <li>
