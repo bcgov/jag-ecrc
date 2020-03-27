@@ -1151,7 +1151,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
       class="footer"
     >
       <nav
-        class="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+        class="navbar navbar-expand-sm navbar-dark justify-content-end"
       >
         <button
           class="navbar-toggler"

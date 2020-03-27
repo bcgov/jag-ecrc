@@ -1194,7 +1194,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -2513,7 +2513,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -2865,7 +2865,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -3217,7 +3217,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -3797,7 +3797,7 @@ exports[`Storyshots Consent page Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -4308,7 +4308,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -4556,7 +4556,7 @@ exports[`Storyshots Error Api Error 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -4737,7 +4737,7 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -4918,7 +4918,7 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -5101,7 +5101,7 @@ exports[`Storyshots Error Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -5284,7 +5284,7 @@ exports[`Storyshots Error Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -5465,7 +5465,7 @@ exports[`Storyshots Error Session Expired 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -5556,7 +5556,7 @@ exports[`Storyshots Footer Default 1`] = `
   className="footer"
 >
   <nav
-    className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+    className="navbar navbar-expand-sm navbar-dark justify-content-end"
   >
     <button
       className="navbar-toggler"
@@ -5646,7 +5646,7 @@ exports[`Storyshots Footer Mobile 1`] = `
   className="footer"
 >
   <nav
-    className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+    className="navbar navbar-expand-sm navbar-dark justify-content-end"
   >
     <button
       className="navbar-toggler"
@@ -6417,7 +6417,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -6984,7 +6984,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -7522,7 +7522,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -7871,7 +7871,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -8788,7 +8788,7 @@ Canada
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -9490,7 +9490,7 @@ Canada
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -10192,7 +10192,7 @@ Canada
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -10894,7 +10894,7 @@ Canada
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -12546,7 +12546,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -12816,7 +12816,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -13062,7 +13062,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -13347,7 +13347,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -13617,7 +13617,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -13863,7 +13863,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -14716,7 +14716,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -15514,7 +15514,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -16520,7 +16520,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -16687,7 +16687,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -16862,7 +16862,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -17074,7 +17074,7 @@ exports[`Storyshots User Confirmation page Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
@@ -17286,7 +17286,7 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
