@@ -28,8 +28,8 @@ var informationReviewPage = require("../../pageobjectfactory/informationreviewpa
 
 var testInput = require("../../input/success");
 
-describe("success", function() {
-  beforeEach(function() {
+describe("success", () => {
+  beforeEach(() => {
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000;
   });
