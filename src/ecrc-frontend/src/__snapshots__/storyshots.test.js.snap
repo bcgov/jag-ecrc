@@ -4465,7 +4465,7 @@ exports[`Storyshots Error Api Error 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -4556,16 +4556,27 @@ exports[`Storyshots Error Api Error 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4577,7 +4588,7 @@ exports[`Storyshots Error Api Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4589,7 +4600,7 @@ exports[`Storyshots Error Api Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4601,7 +4612,7 @@ exports[`Storyshots Error Api Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4613,7 +4624,7 @@ exports[`Storyshots Error Api Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4638,7 +4649,7 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -4726,16 +4737,27 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4747,7 +4769,7 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4759,7 +4781,7 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4771,7 +4793,7 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4783,7 +4805,7 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4808,7 +4830,7 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid"
       >
         <a
           className="navbar-brand"
@@ -4896,16 +4918,27 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4917,7 +4950,7 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4929,7 +4962,7 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4941,7 +4974,7 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4953,7 +4986,7 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
