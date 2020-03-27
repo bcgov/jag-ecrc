@@ -133,29 +133,29 @@ export default function SideCards({ type, sideCardLinks }) {
         Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
       </div>,
       <div key="contactInfo" className="side-card-text">
-        <div class="container p-0 m-0 mt-2">
-          <div class="row">
-            <div class="text-nowrap col-lg-12 col-xl-3">
+        <div className="container p-0 m-0 mt-2">
+          <div className="row">
+            <div className="text-nowrap col-lg-12 col-xl-3">
               <FaFax />
               &nbsp;<div className="contact-title">Fax: </div>
             </div>
-            <div class="col-lg-12 col-xl-9 pr-0">(250) 356-1889</div>
+            <div className="col-lg-12 col-xl-9 pr-0">(250) 356-1889</div>
           </div>
-          <div class="row">
-            <div class="text-nowrap col-lg-12 col-xl-3">
+          <div className="row">
+            <div className="text-nowrap col-lg-12 col-xl-3">
               <FaPhone />
               &nbsp;<div className="contact-title">Office: </div>
             </div>
-            <div class="col-lg-12 col-xl-9 pr-0">
+            <div className="col-lg-12 col-xl-9 pr-0">
               Toll free - 1 855 587-0185 (press option 2)
             </div>
           </div>
-          <div class="row">
-            <div class="text-nowrap col-lg-12 col-xl-3">
+          <div className="row">
+            <div className="text-nowrap col-lg-12 col-xl-3">
               <FaEnvelope />
               &nbsp;<div className="contact-title">Email: </div>
             </div>
-            <div class="col-lg-12 col-xl-9 pr-0">
+            <div className="col-lg-12 col-xl-9 pr-0">
               <a
                 key="criminalRecordsEmail"
                 className="email"

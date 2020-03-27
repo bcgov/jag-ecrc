@@ -123,3 +123,8 @@ img {
   font-weight: 600;
   display: inline-block;
 }
+
+/* could not read the email when hovering */
+a:hover {
+  color: #fff;
+}
