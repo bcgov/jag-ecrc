@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, Redirect, useHistory } from "react-router-dom";
@@ -148,17 +149,17 @@ export default function ApplicationForm({
           }
 
           // Convert gender text
-          const genderTxt = gender === "female" ? "F" : "M";
+          const formatGender = gender === "female" ? "F" : "M";
 
           // Convert date format
-          const birthDt = birthdate.split("-").join("/");
+          const formatBirthDt = birthdate.split("-").join("/");
 
           // Convert given names
           const givenNamesArray = given_names.split(" ");
 
           givenNamesArray.shift();
 
-          const legalSecondNm = givenNamesArray.join(" ");
+          const formatSecondNm = givenNamesArray.join(" ");
 
           // Convert province name
           const regionMap = new Map([
@@ -177,20 +178,20 @@ export default function ApplicationForm({
             ["NU", "NUNAVUT"]
           ]);
 
-          let provinceNm = regionMap.get(region);
-          if (provinceNm === undefined) {
-            provinceNm = "Invalid Province";
+          let formatProvinceNm = regionMap.get(region);
+          if (formatProvinceNm === undefined) {
+            formatProvinceNm = "Invalid Province";
           }
 
           setApplicant({
             legalFirstNm: given_name,
-            legalSecondNm,
+            legalSecondNm: formatSecondNm,
             legalSurnameNm: family_name,
-            birthDt,
-            genderTxt,
+            birthDt: formatBirthDt,
+            genderTxt: formatGender,
             addressLine1: street_address,
             cityNm: locality,
-            provinceNm,
+            provinceNm: formatProvinceNm,
             postalCodeTxt: postal_code,
             countryNm: "CANADA"
           });
@@ -680,12 +681,10 @@ export default function ApplicationForm({
   };
 
   if (toError) {
-    console.log("GOING TO ERROR");
     return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   if (toHome) {
-    console.log("GOING TO home");
     return <Redirect to="/" />;
   }
 
@@ -830,7 +829,9 @@ ApplicationForm.propTypes = {
     org: PropTypes.shape({
       defaultScheduleTypeCd: PropTypes.string.isRequired
     }),
-    setError: PropTypes.func.isRequired
+    setError: PropTypes.func.isRequired,
+    provinces: PropTypes.array,
+    setProvinces: PropTypes.func
   })
 };
 

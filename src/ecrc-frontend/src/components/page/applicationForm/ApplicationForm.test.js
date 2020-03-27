@@ -633,15 +633,18 @@ describe("ApplicationForm Component", () => {
 
     await wait(() => {});
 
-    const provinces = queryAllByDisplayValue(container, "British Columbia");
+    const displayedProvinces = queryAllByDisplayValue(
+      container,
+      "British Columbia"
+    );
 
-    expect(provinces).toHaveLength(2);
+    expect(displayedProvinces).toHaveLength(2);
 
-    fireEvent.mouseDown(provinces[1]);
+    fireEvent.mouseDown(displayedProvinces[1]);
 
     expect(getByText(container, "Ontario")).toBeInTheDocument();
 
-    fireEvent.change(provinces[1], {
+    fireEvent.change(displayedProvinces[1], {
       target: { value: "Ontario" }
     });
 
