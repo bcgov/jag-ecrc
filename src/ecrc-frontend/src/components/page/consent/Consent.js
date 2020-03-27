@@ -255,9 +255,9 @@ export default function Consent({
           const createURL = {
             invoiceNumber: invoiceId,
             requestGuid: uuid,
-            approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-            declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-            errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+            approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+            declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+            errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
             totalItemsAmount: serviceFeeAmount,
             serviceIdRef1: serviceId,
             partyIdRef2: partyId
