@@ -3,10 +3,18 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="footer">
-      <nav className="navbar navbar-expand-sm navbar-dark">
-        <div className="container">
-          <ul className="navbar-nav">
-            <li className="nav-item">
+      <nav className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#footerBar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse flex-grow-0" id="footerBar">
+          <ul className="navbar-nav text-right">
+            <li className="nav-item m-1">
               <a
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
@@ -16,7 +24,7 @@ export default function Footer() {
                 Disclaimer
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item m-1">
               <a
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/privacy"
@@ -26,7 +34,7 @@ export default function Footer() {
                 Privacy
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item m-1">
               <a
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/accessibility"
@@ -36,7 +44,7 @@ export default function Footer() {
                 Accessibility
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item m-1">
               <a
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/copyright"
@@ -46,7 +54,7 @@ export default function Footer() {
                 Copyright
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item m-1">
               <a
                 className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/contact-us"
