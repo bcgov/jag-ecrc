@@ -1,5 +1,7 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
+// import axios from "axios";
+// import MockAdapter from "axios-mock-adapter";
 
 import InformationReview from "./InformationReview";
 import {
@@ -40,11 +42,19 @@ const applicant = {
 };
 
 const org = {
-  orgNm: "Old Org Name"
+  orgNm: "New Org Name"
 };
 
 const setError = () => {};
 const setShare = () => {};
+
+// const mock = new MockAdapter(axios);
+// const API_REQUEST = "/private/checkShare";
+
+// mock.onGet(API_REQUEST).reply(200, {
+//   oldOrg: "Old Org Name",
+//   oldCRCExpiration: "2021-10-01"
+// })
 
 const page = {
   header,
@@ -93,19 +103,6 @@ export const ScheduleD = () => (
   </MemoryRouter>
 );
 
-// UNFINISHED. TODO: Mock axios for share
-export const ScheduleD = () => (
-  <MemoryRouter>
-    <InformationReview
-      page={{
-        ...page,
-        applicant: {
-          ...applicant,
-          organizationFacility: "PBS WIPB"
-        }
-      }}
-    />
-  </MemoryRouter>
-);
+// TODO: Add story for sharable CRC
 
 // TODO: Add more stories for aliases
