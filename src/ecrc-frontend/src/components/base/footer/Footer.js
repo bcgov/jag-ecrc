@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="footer">
-      <nav className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end">
+      <nav className="navbar navbar-expand-sm navbar-dark justify-content-end">
         <button
           className="navbar-toggler"
           type="button"

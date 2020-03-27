@@ -616,7 +616,7 @@ Canada
     className="footer"
   >
     <nav
-      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
       <button
         className="navbar-toggler"
