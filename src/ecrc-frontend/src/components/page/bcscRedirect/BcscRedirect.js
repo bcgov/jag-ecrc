@@ -41,7 +41,10 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
       .catch(error => {
         setToError(true);
         if (error && error.response && error.response.status) {
-          setError(error.response.status.toString());
+          setError({
+            status: error.response.status,
+            message: error.response.data
+          });
         }
       });
   }, [setError]);

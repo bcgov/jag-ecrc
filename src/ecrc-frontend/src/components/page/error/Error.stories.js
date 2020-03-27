@@ -12,7 +12,7 @@ const header = {
   name: "Criminal Record Check"
 };
 
-const error = "403";
+const error = {};
 
 const genericPage = {
   header,
@@ -33,7 +33,29 @@ export const Mobile = () => (
 
 export const SessionExpired = () => (
   <MemoryRouter>
-    <Error page={{ header, error: "session expired" }} />
+    <Error
+      page={{ header, error: { status: 590, message: "Session Expired" } }}
+    />
+  </MemoryRouter>
+);
+
+export const ApiError = () => (
+  <MemoryRouter>
+    <Error page={{ header, error: { status: 400, message: "Not Found" } }} />
+  </MemoryRouter>
+);
+
+export const AppUnauthorizedError = () => (
+  <MemoryRouter>
+    <Error page={{ header, error: { status: 403 } }} />
+  </MemoryRouter>
+);
+
+export const BcscUnauthorizedError = () => (
+  <MemoryRouter>
+    <Error
+      page={{ header, error: { status: 403, message: "BCSC login failed" } }}
+    />
   </MemoryRouter>
 );
 

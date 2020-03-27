@@ -114,7 +114,22 @@ export default function UserConfirmation({
       .catch(error => {
         setToError(true);
         if (error && error.response && error.response.status) {
-          setError(error.response.status.toString());
+          if (
+            error.request &&
+            error.request.response &&
+            JSON.parse(error.request.response)
+          ) {
+            setToError(true);
+            setError({
+              status: error.response.status,
+              message: JSON.parse(error.request.response).message
+            });
+          } else {
+            setError({
+              status: error.response.status,
+              message: error.response.data
+            });
+          }
         }
         setToggleLoader({ display: "none" });
       });

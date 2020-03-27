@@ -273,7 +273,10 @@ export default function InformationReview({
 
   const confirm = () => {
     if (!isAuthorized()) {
-      setError("session expired");
+      setError({
+        status: 590,
+        message: "Session Expired"
+      });
       setToError(true);
       return;
     }

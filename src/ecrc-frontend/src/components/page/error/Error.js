@@ -30,7 +30,30 @@ export default function Error({ page: { header, error } }) {
         <p>Please try again later.</p>
       </div>
     );
-  } else if (error === "session expired") {
+  } else if (error.status === 403) {
+    if (error.message === "BCSC login failed") {
+      errorContent = (
+        <div>
+          <h1>Login failed.</h1>
+          <br />
+          <p>
+            Unable to login using your BCSC account, please try again later.
+          </p>
+        </div>
+      );
+    } else {
+      errorContent = (
+        <div>
+          <h1>Unauthorized Entry</h1>
+          <br />
+          <p>
+            Unauthorized user entry, please return to the home page and begin
+            your session again.
+          </p>
+        </div>
+      );
+    }
+  } else if (error.status === 590) {
     errorContent = (
       <div>
         <h1>Your session has expired.</h1>
@@ -48,7 +71,9 @@ export default function Error({ page: { header, error } }) {
           again later.
           <br />
           <br />
-          {error}
+          {error.status}
+          <br />
+          {error.message}
         </p>
       </div>
     );
@@ -72,7 +97,7 @@ export default function Error({ page: { header, error } }) {
 
 Error.propTypes = {
   page: PropTypes.shape({
-    error: PropTypes.string.isRequired,
+    error: PropTypes.object.isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired

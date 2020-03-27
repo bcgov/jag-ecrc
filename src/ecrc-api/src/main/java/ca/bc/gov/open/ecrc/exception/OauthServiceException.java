@@ -15,6 +15,8 @@ public class OauthServiceException extends Exception {
 	 * 
 	 */
 	private static final long serialVersionUID = 5873442413088571528L;
+	
+	public static final String OAUTH_FAILURE_RESPONSE = "BCSC login failed";
 
 	public OauthServiceException(String message) {
 		super(message);

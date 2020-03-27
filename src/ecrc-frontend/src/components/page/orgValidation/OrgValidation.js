@@ -67,9 +67,21 @@ export default function OrgValidation({
           } else if (error.response.status === 401) {
             setTransitionReason("notwhitelisted");
             history.push("/criminalrecordcheck/transition");
+          } else if (
+            error.request &&
+            error.request.response &&
+            JSON.parse(error.request.response)
+          ) {
+            setToError(true);
+            setError({
+              status: error.response.status,
+              message: JSON.parse(error.request.response).message
+            });
           } else {
             setToError(true);
-            setError(error.response.status.toString());
+            setError({
+              status: error.response.status
+            });
           }
         } else {
           setToError(true);

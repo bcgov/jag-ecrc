@@ -33,7 +33,10 @@ export default function OrgVerification({ page: { header, org, setError } }) {
 
   const orgVerified = () => {
     if (!isAuthenticated()) {
-      setError("session expired");
+      setError({
+        status: 590,
+        message: "Session Expired"
+      });
       setToError(true);
       return;
     }
