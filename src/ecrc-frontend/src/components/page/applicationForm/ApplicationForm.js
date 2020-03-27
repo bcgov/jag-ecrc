@@ -104,8 +104,14 @@ export default function ApplicationForm({
     if (!isAuthorized() || !isActionPerformed("userConfirmation"))
       setToHome(true);
 
-    const token = sessionStorage.getItem("jwt");
+    let token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
+
+    const payload = accessJWTToken(token);
+    token = generateJWTToken({
+      ...payload,
+      authorities: ["Authorized", "ROLE"]
+    });
 
     axios
       .get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
