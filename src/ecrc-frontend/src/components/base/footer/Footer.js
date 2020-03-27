@@ -5,12 +5,12 @@ export default function Footer() {
     <footer className="footer">
       <nav className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#footerBar"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse flex-grow-0" id="footerBar">
           <ul className="navbar-nav text-right">

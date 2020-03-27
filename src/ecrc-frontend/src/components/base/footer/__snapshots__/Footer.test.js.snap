@@ -5,16 +5,27 @@ exports[`Footer Component Matches the snapshot 1`] = `
   className="footer"
 >
   <nav
-    className="navbar navbar-expand-sm navbar-dark"
+    className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
   >
+    <button
+      className="navbar-toggler"
+      data-target="#footerBar"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
     <div
-      className="container"
+      className="collapse navbar-collapse flex-grow-0"
+      id="footerBar"
     >
       <ul
-        className="navbar-nav"
+        className="navbar-nav text-right"
       >
         <li
-          className="nav-item"
+          className="nav-item m-1"
         >
           <a
             className="nav-link"
@@ -26,7 +37,7 @@ exports[`Footer Component Matches the snapshot 1`] = `
           </a>
         </li>
         <li
-          className="nav-item"
+          className="nav-item m-1"
         >
           <a
             className="nav-link"
@@ -38,7 +49,7 @@ exports[`Footer Component Matches the snapshot 1`] = `
           </a>
         </li>
         <li
-          className="nav-item"
+          className="nav-item m-1"
         >
           <a
             className="nav-link"
@@ -50,7 +61,7 @@ exports[`Footer Component Matches the snapshot 1`] = `
           </a>
         </li>
         <li
-          className="nav-item"
+          className="nav-item m-1"
         >
           <a
             className="nav-link"
@@ -62,7 +73,7 @@ exports[`Footer Component Matches the snapshot 1`] = `
           </a>
         </li>
         <li
-          className="nav-item"
+          className="nav-item m-1"
         >
           <a
             className="nav-link"

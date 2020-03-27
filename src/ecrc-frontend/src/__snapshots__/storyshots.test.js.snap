@@ -1191,16 +1191,27 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -1212,7 +1223,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -1224,7 +1235,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -1236,7 +1247,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -1248,7 +1259,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2496,16 +2507,27 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2517,7 +2539,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2529,7 +2551,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2541,7 +2563,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2553,7 +2575,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2835,16 +2857,27 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2856,7 +2889,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2868,7 +2901,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2880,7 +2913,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -2892,7 +2925,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3174,16 +3207,27 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3195,7 +3239,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3207,7 +3251,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3219,7 +3263,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3231,7 +3275,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3743,16 +3787,27 @@ exports[`Storyshots Consent page Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3764,7 +3819,7 @@ exports[`Storyshots Consent page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3776,7 +3831,7 @@ exports[`Storyshots Consent page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3788,7 +3843,7 @@ exports[`Storyshots Consent page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -3800,7 +3855,7 @@ exports[`Storyshots Consent page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4243,16 +4298,27 @@ exports[`Storyshots Consent page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4264,7 +4330,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4276,7 +4342,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4288,7 +4354,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4300,7 +4366,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4480,16 +4546,27 @@ exports[`Storyshots Error Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4501,7 +4578,7 @@ exports[`Storyshots Error Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4513,7 +4590,7 @@ exports[`Storyshots Error Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4525,7 +4602,7 @@ exports[`Storyshots Error Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4537,7 +4614,7 @@ exports[`Storyshots Error Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4653,16 +4730,27 @@ exports[`Storyshots Error Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4674,7 +4762,7 @@ exports[`Storyshots Error Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4686,7 +4774,7 @@ exports[`Storyshots Error Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4698,7 +4786,7 @@ exports[`Storyshots Error Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4710,7 +4798,7 @@ exports[`Storyshots Error Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4823,16 +4911,27 @@ exports[`Storyshots Error Session Expired 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4844,7 +4943,7 @@ exports[`Storyshots Error Session Expired 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4856,7 +4955,7 @@ exports[`Storyshots Error Session Expired 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4868,7 +4967,7 @@ exports[`Storyshots Error Session Expired 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4880,7 +4979,7 @@ exports[`Storyshots Error Session Expired 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -4903,16 +5002,27 @@ exports[`Storyshots Footer Default 1`] = `
   className="footer"
 >
   <nav
-    className="navbar navbar-expand-sm navbar-dark"
+    className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
   >
+    <button
+      className="navbar-toggler"
+      data-target="#footerBar"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
     <div
-      className="container"
+      className="collapse navbar-collapse flex-grow-0"
+      id="footerBar"
     >
       <ul
-        className="navbar-nav"
+        className="navbar-nav text-right"
       >
         <li
-          className="nav-item"
+          className="nav-item m-1"
         >
           <a
             className="nav-link"
@@ -4924,7 +5034,7 @@ exports[`Storyshots Footer Default 1`] = `
           </a>
         </li>
         <li
-          className="nav-item"
+          className="nav-item m-1"
         >
           <a
             className="nav-link"
@@ -4936,7 +5046,7 @@ exports[`Storyshots Footer Default 1`] = `
           </a>
         </li>
         <li
-          className="nav-item"
+          className="nav-item m-1"
         >
           <a
             className="nav-link"
@@ -4948,7 +5058,7 @@ exports[`Storyshots Footer Default 1`] = `
           </a>
         </li>
         <li
-          className="nav-item"
+          className="nav-item m-1"
         >
           <a
             className="nav-link"
@@ -4960,7 +5070,97 @@ exports[`Storyshots Footer Default 1`] = `
           </a>
         </li>
         <li
-          className="nav-item"
+          className="nav-item m-1"
+        >
+          <a
+            className="nav-link"
+            href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Contact Us
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</footer>
+`;
+
+exports[`Storyshots Footer Mobile 1`] = `
+<footer
+  className="footer"
+>
+  <nav
+    className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
+  >
+    <button
+      className="navbar-toggler"
+      data-target="#footerBar"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse flex-grow-0"
+      id="footerBar"
+    >
+      <ul
+        className="navbar-nav text-right"
+      >
+        <li
+          className="nav-item m-1"
+        >
+          <a
+            className="nav-link"
+            href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Disclaimer
+          </a>
+        </li>
+        <li
+          className="nav-item m-1"
+        >
+          <a
+            className="nav-link"
+            href="https://www2.gov.bc.ca/gov/content/home/privacy"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Privacy
+          </a>
+        </li>
+        <li
+          className="nav-item m-1"
+        >
+          <a
+            className="nav-link"
+            href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Accessibility
+          </a>
+        </li>
+        <li
+          className="nav-item m-1"
+        >
+          <a
+            className="nav-link"
+            href="https://www2.gov.bc.ca/gov/content/home/copyright"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Copyright
+          </a>
+        </li>
+        <li
+          className="nav-item m-1"
         >
           <a
             className="nav-link"
@@ -5603,16 +5803,27 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -5624,7 +5835,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -5636,7 +5847,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -5648,7 +5859,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -5660,7 +5871,7 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6156,16 +6367,27 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6177,7 +6399,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6189,7 +6411,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6201,7 +6423,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6213,7 +6435,7 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6674,16 +6896,27 @@ exports[`Storyshots OrgValidation Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6695,7 +6928,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6707,7 +6940,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6719,7 +6952,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -6731,7 +6964,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7012,16 +7245,27 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7033,7 +7277,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7045,7 +7289,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7057,7 +7301,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7069,7 +7313,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7914,16 +8158,27 @@ Canada
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7935,7 +8190,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7947,7 +8202,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7959,7 +8214,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -7971,7 +8226,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -8601,16 +8856,27 @@ Canada
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -8622,7 +8888,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -8634,7 +8900,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -8646,7 +8912,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -8658,7 +8924,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -9288,16 +9554,27 @@ Canada
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -9309,7 +9586,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -9321,7 +9598,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -9333,7 +9610,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -9345,7 +9622,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -9975,16 +10252,27 @@ Canada
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -9996,7 +10284,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -10008,7 +10296,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -10020,7 +10308,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -10032,7 +10320,7 @@ Canada
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11606,16 +11894,27 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11627,7 +11926,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11639,7 +11938,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11651,7 +11950,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11663,7 +11962,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11865,16 +12164,27 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11886,7 +12196,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11898,7 +12208,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11910,7 +12220,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -11922,7 +12232,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12100,16 +12410,27 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12121,7 +12442,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12133,7 +12454,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12145,7 +12466,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12157,7 +12478,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12374,16 +12695,27 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12395,7 +12727,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12407,7 +12739,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12419,7 +12751,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12431,7 +12763,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12633,16 +12965,27 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12654,7 +12997,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12666,7 +13009,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12678,7 +13021,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12690,7 +13033,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12868,16 +13211,27 @@ exports[`Storyshots Success page Volunteer 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12889,7 +13243,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12901,7 +13255,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12913,7 +13267,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -12925,7 +13279,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -13710,16 +14064,27 @@ exports[`Storyshots Term Of Use page Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -13731,7 +14096,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -13743,7 +14108,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -13755,7 +14120,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -13767,7 +14132,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -14497,16 +14862,27 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -14518,7 +14894,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -14530,7 +14906,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -14542,7 +14918,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -14554,7 +14930,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15492,16 +15868,27 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15513,7 +15900,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15525,7 +15912,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15537,7 +15924,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15549,7 +15936,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15648,16 +16035,27 @@ exports[`Storyshots Transition Page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15669,7 +16067,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15681,7 +16079,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15693,7 +16091,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15705,7 +16103,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15812,16 +16210,27 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15833,7 +16242,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15845,7 +16254,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15857,7 +16266,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -15869,7 +16278,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16013,16 +16422,27 @@ exports[`Storyshots User Confirmation page Default 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16034,7 +16454,7 @@ exports[`Storyshots User Confirmation page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16046,7 +16466,7 @@ exports[`Storyshots User Confirmation page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16058,7 +16478,7 @@ exports[`Storyshots User Confirmation page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16070,7 +16490,7 @@ exports[`Storyshots User Confirmation page Default 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16214,16 +16634,27 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar fixed-bottom navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16235,7 +16666,7 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16247,7 +16678,7 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16259,7 +16690,7 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -16271,7 +16702,7 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
