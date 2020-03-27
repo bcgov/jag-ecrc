@@ -14,10 +14,9 @@ exports[`SideCards Component AccessCode sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -71,10 +70,9 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -187,10 +185,9 @@ exports[`SideCards Component BcServices sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -298,10 +295,9 @@ exports[`SideCards Component ContactInformation sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -470,10 +466,9 @@ exports[`SideCards Component CriminalRecord sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -530,10 +525,9 @@ exports[`SideCards Component GetBcServices sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }

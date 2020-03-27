@@ -26,7 +26,7 @@ export default function TermsOfUse({
 
   const button = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn ",
     type: "submit",
     disabled: !continueBtnEnabled
@@ -712,9 +712,8 @@ export default function TermsOfUse({
           <p>Please scroll down to the bottom of the terms to continue.</p>
         </section>
       )}
-      <br />
 
-      <section>
+      <section className="pt-2">
         <label htmlFor="acceptTerms">
           <input
             id="acceptTerms"
@@ -728,9 +727,7 @@ export default function TermsOfUse({
           </span>
         </label>
       </section>
-      <br />
-      <br />
-      <section className="buttons">
+      <section className="buttons pt-5">
         <Button button={cancelButton} onClick={onCancelClicked} />
         <Button button={button} onClick={onContinueClick} />
       </section>
