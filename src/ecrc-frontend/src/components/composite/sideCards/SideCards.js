@@ -88,7 +88,8 @@ export default function SideCards({ type, sideCardLinks }) {
       <div key="bcscLearnMore">
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <div className="side-card-link">
             Learn more about the BC Services Card.
@@ -103,7 +104,8 @@ export default function SideCards({ type, sideCardLinks }) {
       <div key="bcscEligibilityLink">
         <a
           href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <div className="side-card-link">
             Learn more about BC Services Card eligibility.
@@ -211,7 +213,8 @@ export default function SideCards({ type, sideCardLinks }) {
       <div key="withoutBCSCBottom">
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <div className="side-card-link">
             Learn more about how to apply for a criminal record check offline.
@@ -250,7 +253,8 @@ export default function SideCards({ type, sideCardLinks }) {
         key="serviceBC"
         className="link"
         href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
-        target="blank"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         Service BC
       </a>,
@@ -259,7 +263,8 @@ export default function SideCards({ type, sideCardLinks }) {
         key="icbc"
         className="link"
         href="https://www.icbc.com/Pages/default.aspx"
-        target="blank"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         ICBC
       </a>,
@@ -268,7 +273,8 @@ export default function SideCards({ type, sideCardLinks }) {
         key="addressChangeBC"
         className="link"
         href="https://www.addresschange.gov.bc.ca/"
-        target="blank"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         AddressChangeBC
       </a>,

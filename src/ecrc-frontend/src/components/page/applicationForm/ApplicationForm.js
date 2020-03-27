@@ -715,15 +715,24 @@ export default function ApplicationForm({
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Service BC
             </a>
             ,&nbsp;
-            <a href="https://www.icbc.com/Pages/default.aspx" target="_blank">
+            <a
+              href="https://www.icbc.com/Pages/default.aspx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               ICBC
             </a>
             &nbsp;or&nbsp;
-            <a href="https://www.addresschange.gov.bc.ca/" target="_blank">
+            <a
+              href="https://www.addresschange.gov.bc.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               AddressChangeBC
             </a>
           </section>

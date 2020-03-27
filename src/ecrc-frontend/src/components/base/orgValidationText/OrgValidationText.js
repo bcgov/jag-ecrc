@@ -24,6 +24,7 @@ export default function OrgValidationText({
         <a
           href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Criminal Records Review Act (CRRA).
         </a>
@@ -42,6 +43,7 @@ export default function OrgValidationText({
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 BC Services Card
               </a>{" "}
@@ -86,6 +88,7 @@ export default function OrgValidationText({
               <a
                 href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 why I need to apply for a criminal record check
               </a>
@@ -94,6 +97,7 @@ export default function OrgValidationText({
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 I don&apos;t have a BC Services Card
               </a>
@@ -102,6 +106,7 @@ export default function OrgValidationText({
               <a
                 href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {"I'm an authorized contact"}
               </a>{" "}
@@ -112,6 +117,7 @@ export default function OrgValidationText({
               <a
                 href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/employer-organizations"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {"I'm an employer organization"}
               </a>{" "}
@@ -122,6 +128,7 @@ export default function OrgValidationText({
               <a
                 href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/volunteer-organizations"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {"I'm a volunteer organization"}
               </a>{" "}

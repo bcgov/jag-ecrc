@@ -86,6 +86,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
               target="_blank"
+              rel="noopener noreferrer"
             >
               BC Services Card
             </a>{" "}
@@ -96,6 +97,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
               target="_blank"
+              rel="noopener noreferrer"
             >
               verify your identity
             </a>

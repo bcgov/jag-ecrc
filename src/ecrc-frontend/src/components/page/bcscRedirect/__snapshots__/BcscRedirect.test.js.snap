@@ -71,6 +71,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
           To apply for a criminal record check online, you must use your 
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+            rel="noopener noreferrer"
             target="_blank"
           >
             BC Services Card
@@ -82,6 +83,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
            are accepted. If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to 
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+            rel="noopener noreferrer"
             target="_blank"
           >
             verify your identity
@@ -203,7 +205,8 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                       <div>
                         <a
                           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                          target="blank"
+                          rel="noopener noreferrer"
+                          target="_blank"
                         >
                           <div
                             class="side-card-link"
@@ -221,7 +224,8 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                       <div>
                         <a
                           href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-                          target="blank"
+                          rel="noopener noreferrer"
+                          target="_blank"
                         >
                           <div
                             class="side-card-link"

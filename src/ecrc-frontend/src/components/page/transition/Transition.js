@@ -34,6 +34,7 @@ export default function Transition({
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 BC Services Card account
               </a>
