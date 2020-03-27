@@ -244,6 +244,8 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
          
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           BC Services Card account
         </a>

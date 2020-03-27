@@ -127,7 +127,8 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
               >
                 <a
                   href="/"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Home
                 </a>
@@ -137,7 +138,8 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
               >
                 <a
                   href="/somewhere"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Somewhere
                 </a>
@@ -147,7 +149,8 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
               >
                 <a
                   href="/somewhereelse"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Somewhere else
                 </a>
@@ -157,7 +160,8 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
               >
                 <a
                   href="/here"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Somewhere with a long name for no reason
                 </a>
@@ -245,7 +249,8 @@ exports[`SideCards Component BcServices sidecard 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <div
                     className="side-card-link"
@@ -263,7 +268,8 @@ exports[`SideCards Component BcServices sidecard 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <div
                     className="side-card-link"

@@ -83,14 +83,22 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
           <br />
           <p>
             To apply for a criminal record check online, you must use your{" "}
-            <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
+            <a
+              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               BC Services Card
             </a>{" "}
             Account. Only cards <b>with a photo</b> are accepted. If it&apos;s
             your first time using your BC Services Card to access an online
             service, you need to set up your account for use online. Completing
             a one-time security check to{" "}
-            <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card">
+            <a
+              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               verify your identity
             </a>
             .
@@ -114,7 +122,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
           </div>
 
           <div style={{ marginTop: "40px" }}>
-            <a href="/criminalrecordcheck/transition">
+            <a href="/criminalrecordcheck/transition" target="_blank">
               I do not have a BC Services Card, or I have non-photo BC Services
               Card
             </a>

@@ -26,7 +26,6 @@ export default function OrgVerification({ page: { header, org, setError } }) {
 
     if (!isAuthenticated() || !org.orgNm) {
       setToHome(true);
-      console.log("Test server");
     }
 
     window.scrollTo(0, 0);
@@ -169,7 +168,8 @@ export default function OrgVerification({ page: { header, org, setError } }) {
                 initiate the process at the{" "}
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                  target="blank"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   BC Service Card website
                 </a>

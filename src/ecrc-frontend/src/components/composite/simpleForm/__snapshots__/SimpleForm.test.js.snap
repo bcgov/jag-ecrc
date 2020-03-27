@@ -33,6 +33,7 @@ exports[`SimpleForm Component Matches the snapshot 1`] = `
           onChange={[Function]}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -66,6 +67,7 @@ exports[`SimpleForm Component Matches the snapshot 1`] = `
           onChange={[Function]}
           type="text"
         />
+        <br />
         <span
           className="error"
         />

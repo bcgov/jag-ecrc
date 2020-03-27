@@ -40,6 +40,11 @@ export default function OrgValidation({
   };
 
   const orgValidation = () => {
+    if (!orgTicketNumber) {
+      setOrgError("An access code is required to continue.");
+      return false;
+    }
+
     setLoading(true);
     const uuid = sessionStorage.getItem("uuid");
     const payload = { authorities: ["ROLE"] };
@@ -87,6 +92,8 @@ export default function OrgValidation({
           setToError(true);
         }
       });
+
+    return true;
   };
 
   const textInput = {

@@ -103,6 +103,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -133,6 +134,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -163,6 +165,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -212,6 +215,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -241,6 +245,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -270,6 +275,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -323,6 +329,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 placeholder="City, Country"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -355,6 +362,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -385,6 +393,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -416,6 +425,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -453,6 +463,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 placeholder="123 456 7890"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -492,6 +503,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 placeholder="example@test.com"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -541,6 +553,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 placeholder="Position/Job Title"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -598,6 +611,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -628,6 +642,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -658,6 +673,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -688,6 +704,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -718,6 +735,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -798,6 +816,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 placeholder="Street or PO Box"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -835,6 +854,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 placeholder="City"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -902,6 +922,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 placeholder="V9V 9V9"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -934,6 +955,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -946,18 +968,24 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           Service BC
         </a>
         , 
         <a
           href="https://www.icbc.com/Pages/default.aspx"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           ICBC
         </a>
          or 
         <a
           href="https://www.addresschange.gov.bc.ca/"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           AddressChangeBC
         </a>
@@ -1091,7 +1119,8 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Service BC
                     </a>
@@ -1099,7 +1128,8 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       ICBC
                     </a>
@@ -1107,7 +1137,8 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.addresschange.gov.bc.ca/"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       AddressChangeBC
                     </a>
@@ -1381,6 +1412,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1411,6 +1443,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1441,6 +1474,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1490,6 +1524,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1519,6 +1554,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1548,6 +1584,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1601,6 +1638,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 placeholder="City, Country"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -1633,6 +1671,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1663,6 +1702,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1694,6 +1734,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 onChange={[Function]}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1731,6 +1772,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 placeholder="123 456 7890"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -1770,6 +1812,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 placeholder="example@test.com"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -1819,6 +1862,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 placeholder="Position/Job Title"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -1858,6 +1902,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 placeholder="Organization Facility"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -1915,6 +1960,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1945,6 +1991,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -1975,6 +2022,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -2005,6 +2053,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -2035,6 +2084,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -2115,6 +2165,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 placeholder="Street or PO Box"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -2152,6 +2203,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 placeholder="City"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -2219,6 +2271,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 placeholder="V9V 9V9"
                 type="text"
               />
+              <br />
               <span
                 className="error"
               >
@@ -2251,6 +2304,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 readOnly={true}
                 type="text"
               />
+              <br />
               <span
                 className="error"
               />
@@ -2263,18 +2317,24 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           Service BC
         </a>
         , 
         <a
           href="https://www.icbc.com/Pages/default.aspx"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           ICBC
         </a>
          or 
         <a
           href="https://www.addresschange.gov.bc.ca/"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           AddressChangeBC
         </a>
@@ -2408,7 +2468,8 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Service BC
                     </a>
@@ -2416,7 +2477,8 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       ICBC
                     </a>
@@ -2424,7 +2486,8 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.addresschange.gov.bc.ca/"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       AddressChangeBC
                     </a>
@@ -2666,6 +2729,8 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
          
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           BC Services Card
         </a>
@@ -2678,6 +2743,8 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
          
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           verify your identity
         </a>
@@ -2738,6 +2805,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
       >
         <a
           href="/criminalrecordcheck/transition"
+          target="_blank"
         >
           I do not have a BC Services Card, or I have non-photo BC Services Card
         </a>
@@ -2820,7 +2888,8 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                     <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         <div
                           className="side-card-link"
@@ -2838,7 +2907,8 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                     <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         <div
                           className="side-card-link"
@@ -3017,6 +3087,8 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
          
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           BC Services Card
         </a>
@@ -3029,6 +3101,8 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
          
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           verify your identity
         </a>
@@ -3089,6 +3163,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
       >
         <a
           href="/criminalrecordcheck/transition"
+          target="_blank"
         >
           I do not have a BC Services Card, or I have non-photo BC Services Card
         </a>
@@ -3171,7 +3246,8 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                     <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         <div
                           className="side-card-link"
@@ -3189,7 +3265,8 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                     <div>
                       <a
                         href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         <div
                           className="side-card-link"
@@ -5739,6 +5816,7 @@ exports[`Storyshots FullName Default 1`] = `
           readOnly={true}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -5769,6 +5847,7 @@ exports[`Storyshots FullName Default 1`] = `
           readOnly={true}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -5799,6 +5878,7 @@ exports[`Storyshots FullName Default 1`] = `
           readOnly={true}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -6360,7 +6440,8 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Service BC
                     </a>
@@ -6368,7 +6449,8 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       ICBC
                     </a>
@@ -6376,7 +6458,8 @@ exports[`Storyshots InformationReview Non Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.addresschange.gov.bc.ca/"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       AddressChangeBC
                     </a>
@@ -6926,7 +7009,8 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Service BC
                     </a>
@@ -6934,7 +7018,8 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.icbc.com/Pages/default.aspx"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       ICBC
                     </a>
@@ -6942,7 +7027,8 @@ exports[`Storyshots InformationReview Schedule D 1`] = `
                     <a
                       className="link"
                       href="https://www.addresschange.gov.bc.ca/"
-                      target="blank"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       AddressChangeBC
                     </a>
@@ -7105,7 +7191,8 @@ exports[`Storyshots Menu Default 1`] = `
         >
           <a
             href="/"
-            target="blank"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Home
           </a>
@@ -7115,7 +7202,8 @@ exports[`Storyshots Menu Default 1`] = `
         >
           <a
             href="/somewhere"
-            target="blank"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Somewhere
           </a>
@@ -7125,7 +7213,8 @@ exports[`Storyshots Menu Default 1`] = `
         >
           <a
             href="/somewhereelse"
-            target="blank"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Somewhere else
           </a>
@@ -7135,7 +7224,8 @@ exports[`Storyshots Menu Default 1`] = `
         >
           <a
             href="/here"
-            target="blank"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Somewhere with a long name for no reason
           </a>
@@ -7181,7 +7271,8 @@ exports[`Storyshots Menu Mobile 1`] = `
         >
           <a
             href="/"
-            target="blank"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Home
           </a>
@@ -7191,7 +7282,8 @@ exports[`Storyshots Menu Mobile 1`] = `
         >
           <a
             href="/somewhere"
-            target="blank"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Somewhere
           </a>
@@ -7201,7 +7293,8 @@ exports[`Storyshots Menu Mobile 1`] = `
         >
           <a
             href="/somewhereelse"
-            target="blank"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Somewhere else
           </a>
@@ -7211,7 +7304,8 @@ exports[`Storyshots Menu Mobile 1`] = `
         >
           <a
             href="/here"
-            target="blank"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Somewhere with a long name for no reason
           </a>
@@ -7228,7 +7322,8 @@ exports[`Storyshots MenuItem Default 1`] = `
 >
   <a
     href="http://www.url.com"
-    target="blank"
+    rel="noopener noreferrer"
+    target="_blank"
   >
     Name
   </a>
@@ -7307,6 +7402,8 @@ exports[`Storyshots OrgValidation Default 1`] = `
            
           <a
             href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Criminal Records Review Act (CRRA).
           </a>
@@ -7331,6 +7428,8 @@ exports[`Storyshots OrgValidation Default 1`] = `
                  
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   BC Services Card
                 </a>
@@ -7362,6 +7461,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
                   onChange={[Function]}
                   type="text"
                 />
+                <br />
                 <span
                   className="error"
                 >
@@ -7422,13 +7522,17 @@ exports[`Storyshots OrgValidation Default 1`] = `
               <li>
                 <a
                   href="volunteer"
+                  target="_blank"
                 >
                   I'm an employee or a volunteer
                 </a>
-                 and I want to know
+                 
+                and I want to know
                  
                 <a
                   href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   why I need to apply for a criminal record check
                 </a>
@@ -7436,6 +7540,8 @@ exports[`Storyshots OrgValidation Default 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   I don't have a BC Services Card
                 </a>
@@ -7443,6 +7549,8 @@ exports[`Storyshots OrgValidation Default 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   I'm an authorized contact
                 </a>
@@ -7452,6 +7560,8 @@ exports[`Storyshots OrgValidation Default 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/employer-organizations"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   I'm an employer organization
                 </a>
@@ -7461,6 +7571,8 @@ exports[`Storyshots OrgValidation Default 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/volunteer-organizations"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   I'm a volunteer organization
                 </a>
@@ -7656,6 +7768,8 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
            
           <a
             href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Criminal Records Review Act (CRRA).
           </a>
@@ -7680,6 +7794,8 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                  
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   BC Services Card
                 </a>
@@ -7711,6 +7827,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                   onChange={[Function]}
                   type="text"
                 />
+                <br />
                 <span
                   className="error"
                 >
@@ -7771,13 +7888,17 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               <li>
                 <a
                   href="volunteer"
+                  target="_blank"
                 >
                   I'm an employee or a volunteer
                 </a>
-                 and I want to know
+                 
+                and I want to know
                  
                 <a
                   href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   why I need to apply for a criminal record check
                 </a>
@@ -7785,6 +7906,8 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   I don't have a BC Services Card
                 </a>
@@ -7792,6 +7915,8 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   I'm an authorized contact
                 </a>
@@ -7801,6 +7926,8 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/employer-organizations"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   I'm an employer organization
                 </a>
@@ -7810,6 +7937,8 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/volunteer-organizations"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   I'm a volunteer organization
                 </a>
@@ -7944,6 +8073,8 @@ exports[`Storyshots OrgValidationText Default 1`] = `
      
     <a
       href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       Criminal Records Review Act (CRRA).
     </a>
@@ -7968,6 +8099,8 @@ exports[`Storyshots OrgValidationText Default 1`] = `
            
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             BC Services Card
           </a>
@@ -8019,6 +8152,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
             onChange={[Function]}
             type="text"
           />
+          <br />
           <span
             className="error"
           />
@@ -8076,13 +8210,17 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         <li>
           <a
             href="volunteer"
+            target="_blank"
           >
             I'm an employee or a volunteer
           </a>
-           and I want to know
+           
+          and I want to know
            
           <a
             href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             why I need to apply for a criminal record check
           </a>
@@ -8090,6 +8228,8 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             I don't have a BC Services Card
           </a>
@@ -8097,6 +8237,8 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             I'm an authorized contact
           </a>
@@ -8106,6 +8248,8 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/employer-organizations"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             I'm an employer organization
           </a>
@@ -8115,6 +8259,8 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/volunteer-organizations"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             I'm a volunteer organization
           </a>
@@ -8317,7 +8463,8 @@ Canada
              
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              target="blank"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               BC Service Card website
             </a>
@@ -8555,7 +8702,8 @@ Canada
                     >
                       <a
                         href="/tbd"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         I'm an employee or volunteer
                       </a>
@@ -8565,7 +8713,8 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         Electronic Identity Verification (EIV)
                       </a>
@@ -8575,7 +8724,8 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         Results and Reconsideration
                       </a>
@@ -9016,7 +9166,8 @@ Canada
              
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              target="blank"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               BC Service Card website
             </a>
@@ -9254,7 +9405,8 @@ Canada
                     >
                       <a
                         href="/tbd"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         I'm an employee or volunteer
                       </a>
@@ -9264,7 +9416,8 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         Electronic Identity Verification (EIV)
                       </a>
@@ -9274,7 +9427,8 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         Results and Reconsideration
                       </a>
@@ -9715,7 +9869,8 @@ Canada
              
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              target="blank"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               BC Service Card website
             </a>
@@ -9953,7 +10108,8 @@ Canada
                     >
                       <a
                         href="/tbd"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         I'm an employee or volunteer
                       </a>
@@ -9963,7 +10119,8 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         Electronic Identity Verification (EIV)
                       </a>
@@ -9973,7 +10130,8 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         Results and Reconsideration
                       </a>
@@ -10414,7 +10572,8 @@ Canada
              
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              target="blank"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               BC Service Card website
             </a>
@@ -10652,7 +10811,8 @@ Canada
                     >
                       <a
                         href="/tbd"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         I'm an employee or volunteer
                       </a>
@@ -10662,7 +10822,8 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         Electronic Identity Verification (EIV)
                       </a>
@@ -10672,7 +10833,8 @@ Canada
                     >
                       <a
                         href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/results-and-reconsiderations"
-                        target="blank"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
                         Results and Reconsideration
                       </a>
@@ -11220,7 +11382,8 @@ exports[`Storyshots SideCards Bc Service 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <div
                     className="side-card-link"
@@ -11238,7 +11401,8 @@ exports[`Storyshots SideCards Bc Service 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <div
                     className="side-card-link"
@@ -11743,7 +11907,8 @@ exports[`Storyshots SideCards Personal Information 1`] = `
               <a
                 className="link"
                 href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
-                target="blank"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 Service BC
               </a>
@@ -11751,7 +11916,8 @@ exports[`Storyshots SideCards Personal Information 1`] = `
               <a
                 className="link"
                 href="https://www.icbc.com/Pages/default.aspx"
-                target="blank"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 ICBC
               </a>
@@ -11759,7 +11925,8 @@ exports[`Storyshots SideCards Personal Information 1`] = `
               <a
                 className="link"
                 href="https://www.addresschange.gov.bc.ca/"
-                target="blank"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 AddressChangeBC
               </a>
@@ -11844,7 +12011,8 @@ exports[`Storyshots SideCards Useful Links 1`] = `
               >
                 <a
                   href="/"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Home
                 </a>
@@ -11854,7 +12022,8 @@ exports[`Storyshots SideCards Useful Links 1`] = `
               >
                 <a
                   href="/somewhere"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Somewhere
                 </a>
@@ -11864,7 +12033,8 @@ exports[`Storyshots SideCards Useful Links 1`] = `
               >
                 <a
                   href="/somewhereelse"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Somewhere else
                 </a>
@@ -11874,7 +12044,8 @@ exports[`Storyshots SideCards Useful Links 1`] = `
               >
                 <a
                   href="/here"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Somewhere with a long name for no reason
                 </a>
@@ -11972,7 +12143,8 @@ exports[`Storyshots SideCards Without BC Service Card 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                  target="blank"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <div
                     className="side-card-link"
@@ -12018,6 +12190,7 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
           onChange={[Function]}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -12048,6 +12221,7 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
           readOnly={true}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -12081,6 +12255,7 @@ exports[`Storyshots SimpleForm 3texts_3buttons 1`] = `
           onChange={[Function]}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -12175,6 +12350,7 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
           onChange={[Function]}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -12205,6 +12381,7 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
           readOnly={true}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -12238,6 +12415,7 @@ exports[`Storyshots SimpleForm Title_3texts_3buttons 1`] = `
           onChange={[Function]}
           type="text"
         />
+        <br />
         <span
           className="error"
         />
@@ -14153,7 +14331,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/privacy"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Privacy Policy
               </a>
@@ -14181,7 +14359,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card
               </a>
@@ -14194,7 +14372,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card Site
               </a>
@@ -14320,7 +14498,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Limitation of Liabilities
               </a>
@@ -14410,7 +14588,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/privacy"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Privacy Policy
               </a>
@@ -14438,7 +14616,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card
               </a>
@@ -14451,7 +14629,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card Site
               </a>
@@ -14577,7 +14755,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Limitation of Liabilities
               </a>
@@ -14950,7 +15128,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/privacy"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Privacy Policy
               </a>
@@ -14978,7 +15156,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card
               </a>
@@ -14991,7 +15169,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card Site
               </a>
@@ -15117,7 +15295,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Limitation of Liabilities
               </a>
@@ -15207,7 +15385,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/privacy"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Privacy Policy
               </a>
@@ -15235,7 +15413,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card
               </a>
@@ -15248,7 +15426,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card Site
               </a>
@@ -15374,7 +15552,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Limitation of Liabilities
               </a>
@@ -15686,7 +15864,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/home/privacy"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           Privacy Policy
         </a>
@@ -15714,7 +15892,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           BC Services Card
         </a>
@@ -15727,7 +15905,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           BC Services Card Site
         </a>
@@ -15853,7 +16031,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           Limitation of Liabilities
         </a>
@@ -15943,7 +16121,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/home/privacy"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           Privacy Policy
         </a>
@@ -15971,7 +16149,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           BC Services Card
         </a>
@@ -15984,7 +16162,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           BC Services Card Site
         </a>
@@ -16110,7 +16288,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           Limitation of Liabilities
         </a>
@@ -16219,6 +16397,7 @@ exports[`Storyshots TextInput Default 1`] = `
     onChange={[Function]}
     type="text"
   />
+  <br />
   <span
     className="error"
   />
@@ -16254,6 +16433,7 @@ exports[`Storyshots TextInput editable-gray-required 1`] = `
     onChange={[Function]}
     type="text"
   />
+  <br />
   <span
     className="error"
   />
@@ -16289,6 +16469,7 @@ exports[`Storyshots TextInput editable-white-required 1`] = `
     onChange={[Function]}
     type="text"
   />
+  <br />
   <span
     className="error"
   />
@@ -16318,6 +16499,7 @@ exports[`Storyshots TextInput error 1`] = `
     onChange={[Function]}
     type="text"
   />
+  <br />
   <span
     className="error"
   >
@@ -16351,6 +16533,7 @@ exports[`Storyshots TextInput non-editable-gray 1`] = `
     readOnly={true}
     type="text"
   />
+  <br />
   <span
     className="error"
   />
@@ -16382,6 +16565,7 @@ exports[`Storyshots TextInput note 1`] = `
     onChange={[Function]}
     type="text"
   />
+  <br />
   <span
     className="error"
   />
@@ -16799,6 +16983,8 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
          
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           BC Services Card account
         </a>
