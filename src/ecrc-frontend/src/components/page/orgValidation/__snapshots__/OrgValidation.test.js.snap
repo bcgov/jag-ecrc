@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrgValidation Component Matches the snapshot 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Criminal Record Check
+        </div>
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarNavAltMarkup"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        />
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-10"
+    >
+      <div>
+        <h1>
+          Criminal Record Check
+        </h1>
+        <br />
+        <p>
+          In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
+           
+          <a
+            href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Criminal Records Review Act (CRRA).
+          </a>
+        </p>
+        <div>
+          <div>
+            <br />
+            <h3>
+              How do I submit a CRC request online?
+            </h3>
+            <p>
+              To submit an online request for a criminal record check, you must:
+            </p>
+            <ul
+              className="bodyList"
+            >
+              <li>
+                Be at least 12 years of age as of today's date
+              </li>
+              <li>
+                Have your identity verified by using your
+                 
+                <a
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  BC Services Card
+                </a>
+                 
+                (BCSC). The BCSC provides secure access to provincial government online services. If you don't have a BCSC, an alternative option may be available for you.
+              </li>
+              <li>
+                Have an access code provided by your organization
+              </li>
+            </ul>
+          </div>
+          <div>
+            <br />
+            <h3>
+              I'm ready
+            </h3>
+            <div
+              style={
+                Object {
+                  "float": "left",
+                  "marginRight": "30px",
+                }
+              }
+            >
+              <div>
+                <input
+                  className="textinput_editable_white"
+                  id="orgId"
+                  onChange={[Function]}
+                  type="text"
+                />
+                <br />
+                <span
+                  className="error"
+                >
+                  
+                </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "maxWidth": "350px",
+                  }
+                }
+              >
+                <p>
+                  Enter the access code provided by your organization. An access code is required to proceed with the online submission
+                  <span
+                    className="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <button
+                className="btn ecrc_go_btn btn"
+                disabled={false}
+                onClick={[Function]}
+                type="submit"
+              >
+                Continue
+                <div
+                  className="loader-hide"
+                >
+                  <div
+                    className="btn-loader"
+                  />
+                </div>
+              </button>
+            </div>
+            <div
+              style={
+                Object {
+                  "clear": "both",
+                }
+              }
+            />
+          </div>
+          <br />
+          <div>
+            <h3>
+              I need more information
+            </h3>
+            <ul
+              className="bodyList"
+            >
+              <li>
+                <a
+                  href="volunteer"
+                  target="_blank"
+                >
+                  I'm an employee or a volunteer
+                </a>
+                 
+                and I want to know
+                 
+                <a
+                  href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  why I need to apply for a criminal record check
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  I don't have a BC Services Card
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  I'm an authorized contact
+                </a>
+                 
+                who is responsible for facilitating the criminal record check for my organization
+              </li>
+              <li>
+                <a
+                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/employer-organizations"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  I'm an employer organization
+                </a>
+                 
+                and I want to learn more about registering with the Criminal Records Review Program (CRRP)
+              </li>
+              <li>
+                <a
+                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/volunteer-organizations"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  I'm a volunteer organization
+                </a>
+                 
+                and I want to register with the CRRP
+              </li>
+            </ul>
+          </div>
+          <br />
+          <div>
+            <h3>
+              I need help
+            </h3>
+            <p>
+              For applicants, contact your organization for your access code.
+            </p>
+            <p>
+              For organizations, if you have a question about the online submission process or to register your organization, contact the Criminal Records Review Program (CRRP) at
+               
+              <a
+                href="mailto:criminalrecords@gov.bc.ca"
+              >
+                criminalrecords@gov.bc.ca
+              </a>
+               
+              or by phone at 1-855-587-0185 (Option 2).
+            </p>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
+    >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
+      >
+        <ul
+          className="navbar-nav text-right"
+        >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
