@@ -16,14 +16,14 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             alt="B.C. Government Logo"
             class="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             class="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecord/check/images/bcid-symbol-rev.svg"
             width="64"
           />
           <div
