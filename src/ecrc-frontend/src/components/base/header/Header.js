@@ -18,14 +18,14 @@ export default function Header({ header: { name } }) {
         >
           <img
             className="img-fluid d-none d-md-block"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
             height="44"
             alt="B.C. Government Logo"
           />
           <img
             className="img-fluid d-md-none"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecord/check/images/bcid-symbol-rev.svg"
             width="64"
             height="44"
             alt="B.C. Government Logo"
