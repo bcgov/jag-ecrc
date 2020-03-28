@@ -198,8 +198,22 @@ export default function ApplicationForm({
         })
         .catch(error => {
           if (error && error.response && error.response.status) {
-            setToError(true);
-            setError(error.response.status.toString());
+            if (
+              error.request &&
+              error.request.response &&
+              JSON.parse(error.request.response)
+            ) {
+              setToError(true);
+              setError({
+                status: error.response.status,
+                message: JSON.parse(error.request.response).message
+              });
+            } else {
+              setError({
+                status: error.response.status,
+                message: error.response.data
+              });
+            }
           }
         });
     }
@@ -553,7 +567,10 @@ export default function ApplicationForm({
 
   const applicationVerification = () => {
     if (!isAuthorized()) {
-      setError("session expired");
+      setError({
+        status: 590,
+        message: "Session Expired"
+      });
       setToError(true);
       return;
     }
@@ -769,13 +786,29 @@ export default function ApplicationForm({
             Entering your mailing address in this application will not update
             your BC Services Card Address. To update your BC Services Card
             information you must contact&nbsp;
-            <a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc">
+            <a
+              href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Service BC
             </a>
             ,&nbsp;
-            <a href="https://www.icbc.com/Pages/default.aspx">ICBC</a>
+            <a
+              href="https://www.icbc.com/Pages/default.aspx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ICBC
+            </a>
             &nbsp;or&nbsp;
-            <a href="https://www.addresschange.gov.bc.ca/">AddressChangeBC</a>
+            <a
+              href="https://www.addresschange.gov.bc.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AddressChangeBC
+            </a>
           </section>
           <br />
           <div className="buttons">

@@ -26,7 +26,6 @@
   font-size: 16px;
   color: #ffffff;
   text-align: left;
-  padding-top: 9px;
 }
 
 .bluegrey-heading {
@@ -111,6 +110,10 @@ img {
     padding-left: 10px;
     padding-right: 10px;
   }
+
+  .wide-dashboard-spacing {
+    padding-left: 0;
+  }
 }
 
 .contact-title {
@@ -119,4 +122,9 @@ img {
   padding-right: 10px;
   font-weight: 600;
   display: inline-block;
+}
+
+/* could not read the email when hovering */
+a:hover {
+  color: #fff;
 }

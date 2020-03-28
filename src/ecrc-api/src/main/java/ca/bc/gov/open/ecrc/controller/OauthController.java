@@ -55,7 +55,7 @@ public class OauthController {
 		logger.info("BCSC URL request received {}", requestGuid);
 
 		try {
-			return new ResponseEntity(oauthServices.getIDPRedirect().toString(), HttpStatus.OK);
+			return new ResponseEntity<>(oauthServices.getIDPRedirect().toString(), HttpStatus.OK);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			throw new OauthServiceException("Configuration Error");
@@ -79,7 +79,7 @@ public class OauthController {
 			token = oauthServices.getToken(authCode);
 		} catch (Exception e) {
 			logger.error("Error while calling Oauth2 /token endpoint. ", e);
-			return new ResponseEntity(HttpStatus.FORBIDDEN);
+			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
 		// Validate tokens received from BCSC. 
@@ -87,7 +87,7 @@ public class OauthController {
 		ValidationResponse valResp = tokenServices.validateBCSCIDToken((String)token.toSuccessResponse().getCustomParameters().get("id_token"));
 		if (!valResp.isValid()) {
 			logger.error("ID token failed to validate. Error {}", valResp.getMessage());
-			return new ResponseEntity(HttpStatus.FORBIDDEN);
+			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
 		// Fetch corresponding Userinfo from the IdP server.  
@@ -96,7 +96,7 @@ public class OauthController {
 			userInfo = oauthServices.getUserInfo((BearerAccessToken)token.toSuccessResponse().getTokens().getAccessToken());
 		} catch (OauthServiceException e) {
 			logger.error("Error fetching userinfo:", e);
-			return new ResponseEntity(HttpStatus.FORBIDDEN);
+			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
 		// Encrypt the Access Token received from the IdP. This token has a 1 hour expiry time on it and 
@@ -106,12 +106,12 @@ public class OauthController {
 	    	encryptedAccessToken = AES256.encrypt(token.getTokens().getBearerAccessToken().getValue(), ecrcProps.getOauthPERSecret() );
 		} catch (Exception e) {
 			logger.error("Error encrypting token:", e);
-			return new ResponseEntity(HttpStatus.FORBIDDEN);
+			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
 		// Send the new FE JWT in the response body to the caller. 
 	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedAccessToken, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
-        return new ResponseEntity(feTokenResponse, HttpStatus.OK);
+        return new ResponseEntity<>(feTokenResponse, HttpStatus.OK);
 	}
 
 }

@@ -24,6 +24,7 @@ exports[`TextInput Component Matches the snapshot 1`] = `
     onChange={[Function]}
     type="text"
   />
+  <br />
   <span
     className="error"
   />

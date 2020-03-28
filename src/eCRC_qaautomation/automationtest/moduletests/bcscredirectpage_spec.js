@@ -7,12 +7,12 @@ var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
 var using = require("jasmine-data-provider");
 
 describe("bcscRedirectPage", function() {
-  beforeEach(function() {
+  beforeEach(() => {
     browser.get(process.env.BCSC_URL);
   });
 
-  it("verify if login redirects to the right page", function() {
-    bcscRedirectPage.login.click().then(function() {
+  it("verify if login redirects to the right page", () => {
+    bcscRedirectPage.login.click().then(() => {
       browser.getAllWindowHandles().then(function(windowHandle) {
         browser.switchTo().window(windowHandle[1]);
         expect(process.env.BCSC_LOGIN_NAVTITLE).toBe(browser.getTitle());
@@ -22,8 +22,8 @@ describe("bcscRedirectPage", function() {
     });
   });
 
-  it("verify if setup account redirects to the right page", function() {
-    bcscRedirectPage.setUpAccount.click().then(function() {
+  it("verify if setup account redirects to the right page", () => {
+    bcscRedirectPage.setUpAccount.click().then(() => {
       browser.getAllWindowHandles().then(function(windowHandle) {
         browser.switchTo().window(windowHandle[1]);
         expect(process.env.BCSC_SETUPACCOUNT_NAVTITLE).toBe(browser.getTitle());
@@ -33,8 +33,8 @@ describe("bcscRedirectPage", function() {
     });
   });
 
-  xit("verify if request form redirects to the right page", function() {
-    bcscRedirectPage.requestForm.click().then(function() {
+  xit("verify if request form redirects to the right page", () => {
+    bcscRedirectPage.requestForm.click().then(() => {
       browser.getAllWindowHandles().then(function(windowHandle) {
         browser.switchTo().window(windowHandle[1]);
         expect(process.env.BCSC_LOGIN_NAVTITLE).toBe(browser.getTitle());
@@ -44,8 +44,8 @@ describe("bcscRedirectPage", function() {
     });
   });
 
-  it("verify if read more redirects to the right page", function() {
-    bcscRedirectPage.getBCServicesCardSectionReadMore.click().then(function() {
+  it("verify if read more redirects to the right page", () => {
+    bcscRedirectPage.getBCServicesCardSectionReadMore.click().then(() => {
       browser.getAllWindowHandles().then(function(windowHandle) {
         browser.switchTo().window(windowHandle[1]);
         expect(process.env.BCSC_READMORE_NAVTITLE).toBe(browser.getTitle());

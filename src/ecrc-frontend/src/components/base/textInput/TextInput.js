@@ -60,6 +60,7 @@ export const TextInput = ({
           readOnly
           onChange={onChange}
         />
+        <br />
         <span className="error">{errorMsg}</span>
       </div>
     );
@@ -92,6 +93,7 @@ export const TextInput = ({
         placeholder={placeholder}
         onChange={event => onChange(event.target.value)}
       />
+      <br />
       <span className="error">{errorMsg}</span>
     </div>
   );

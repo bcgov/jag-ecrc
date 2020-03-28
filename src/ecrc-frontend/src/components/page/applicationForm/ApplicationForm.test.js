@@ -148,15 +148,15 @@ describe("ApplicationForm Component", () => {
     );
     await wait(() => {});
 
-    expect(queryAllByText(container, "First Name")).toHaveLength(2);
-
-    fireEvent.click(getByText(container, "click here to add them"));
-
     expect(queryAllByText(container, "First Name")).toHaveLength(3);
 
     fireEvent.click(getByText(container, "click here to add them"));
 
     expect(queryAllByText(container, "First Name")).toHaveLength(4);
+
+    fireEvent.click(getByText(container, "click here to add them"));
+
+    expect(queryAllByText(container, "First Name")).toHaveLength(5);
     expect(queryByText(container, "click here to add them")).toBeNull();
   });
 

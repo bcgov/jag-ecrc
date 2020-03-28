@@ -9,7 +9,7 @@ describe("Error Component", () => {
     name: "Criminal Record Check"
   };
 
-  const error = "403";
+  const error = { status: 403, message: "Unauthorized" };
 
   const page = {
     header,

@@ -6,6 +6,8 @@ exports[`MenuItem Component Matches the snapshot 1`] = `
 >
   <a
     href="/somewhere"
+    rel="noopener noreferrer"
+    target="_blank"
   >
     Link to Somewhere
   </a>

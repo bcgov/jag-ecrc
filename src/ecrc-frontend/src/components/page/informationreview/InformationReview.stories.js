@@ -1,5 +1,6 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
+import { storiesOf } from "@storybook/react";
 
 import InformationReview from "./InformationReview";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
@@ -60,24 +61,43 @@ const newPayload = {
 };
 generateJWTToken(newPayload);
 
-export const NonScheduleD = () => (
-  <MemoryRouter>
-    <InformationReview page={page} />
-  </MemoryRouter>
-);
-
-export const ScheduleD = () => (
-  <MemoryRouter>
-    <InformationReview
-      page={{
-        ...page,
-        applicant: {
-          ...applicant,
-          organizationFacility: "PBS WIPB"
-        }
-      }}
-    />
-  </MemoryRouter>
-);
-
 // TODO: Add more stories for aliases
+
+storiesOf("Information Review", module)
+  .add("NonSchedule D Default", () => (
+    <MemoryRouter>
+      <InformationReview page={page} />
+    </MemoryRouter>
+  ))
+  .add("Schedule D Default", () => (
+    <MemoryRouter>
+      <InformationReview
+        page={{
+          ...page,
+          applicant: {
+            ...applicant,
+            organizationFacility: "PBS WIPB"
+          }
+        }}
+      />
+    </MemoryRouter>
+  ))
+  .addParameters({ viewport: { defaultViewport: "mobile2" } })
+  .add("NonSchedule D Mobile", () => (
+    <MemoryRouter>
+      <InformationReview page={page} />
+    </MemoryRouter>
+  ))
+  .add("Schedule D Mobile", () => (
+    <MemoryRouter>
+      <InformationReview
+        page={{
+          ...page,
+          applicant: {
+            ...applicant,
+            organizationFacility: "PBS WIPB"
+          }
+        }}
+      />
+    </MemoryRouter>
+  ));

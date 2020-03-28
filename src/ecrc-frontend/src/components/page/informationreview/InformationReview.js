@@ -254,7 +254,7 @@ export default function InformationReview({
 
   const confirmButton = {
     label: "Submit",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit",
     disabled: !boxChecked
@@ -273,7 +273,10 @@ export default function InformationReview({
 
   const confirm = () => {
     if (!isAuthorized()) {
-      setError("session expired");
+      setError({
+        status: 590,
+        message: "Session Expired"
+      });
       setToError(true);
       return;
     }
@@ -302,7 +305,6 @@ export default function InformationReview({
       <div className="page">
         <div className="content col-md-8">
           <h1>Information Review</h1>
-          <br />
           <p>
             Please confirm that the information provided below is accurate. If
             it is not, please select Edit Application.
@@ -320,8 +322,7 @@ export default function InformationReview({
           <Table table={contactTable} />
           <br />
           <Table table={mailingAddressTable} />
-          <br />
-          <div className="declareTitle">DECLARATION</div>
+          <div className="declareTitle mt-4">DECLARATION</div>
           <section className="declareSection">
             <label htmlFor="certify">
               <input
@@ -341,8 +342,7 @@ export default function InformationReview({
               </span>
             </label>
           </section>
-          <br />
-          <div className="buttons">
+          <div className="buttons pt-4">
             <Button button={cancelButton} onClick={edit} />
             <Button button={confirmButton} onClick={confirm} />
           </div>

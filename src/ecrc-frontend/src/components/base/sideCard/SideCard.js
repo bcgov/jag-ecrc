@@ -13,10 +13,7 @@ export default function SideCard({
   return (
     <div className={sideCardCss} style={{ position: "relative" }}>
       <div className="row">
-        <div
-          className="col-12"
-          style={{ position: "relative", paddingTop: "30px" }}
-        >
+        <div className="col-12 pt-2" style={{ position: "relative" }}>
           <p />
           {type === "notice" && (
             <section
@@ -40,7 +37,7 @@ export default function SideCard({
               <div className="submit-content">
                 <span>{content}</span>
                 {image && (
-                  <a href={imageLink}>
+                  <a href={imageLink} target="_blank" rel="noopener noreferrer">
                     <img
                       src={image}
                       alt="imagelink"

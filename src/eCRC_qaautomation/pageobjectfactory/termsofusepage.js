@@ -4,7 +4,7 @@ class TermsOfUse {
     this.authorizeEmailIdCheckBox = element(
       by.xpath("(//input[@type='checkbox'])[2]")
     );
-    this.downloadButton = element(by.buttonText(" Download Terms of Use"));
+    this.downloadButton = element(by.buttonText("Download"));
     this.continueButton = element(by.buttonText("Continue"));
     this.cancelAndExitButton = element(by.buttonText("Cancel and Exit"));
     this.termsOfUseFinalParagraph = element(

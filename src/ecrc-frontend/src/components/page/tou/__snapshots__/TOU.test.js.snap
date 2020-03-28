@@ -7,34 +7,34 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container"
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        <a
-          className="navbar-brand"
-          href="/"
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
-          <a
-            className="navbar-brand nav-item nav-link"
-            href="/"
-          >
-            Criminal Record Check
-          </a>
+          Criminal Record Check
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -197,7 +197,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/privacy"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Privacy Policy
               </a>
@@ -225,7 +225,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card
               </a>
@@ -238,7 +238,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card Site
               </a>
@@ -364,7 +364,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Limitation of Liabilities
               </a>
@@ -454,7 +454,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/privacy"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Privacy Policy
               </a>
@@ -482,7 +482,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card
               </a>
@@ -495,7 +495,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 BC Services Card Site
               </a>
@@ -621,7 +621,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
               <a
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 rel="noopener noreferrer"
-                target="blank"
+                target="_blank"
               >
                 Limitation of Liabilities
               </a>
@@ -650,8 +650,9 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             Please scroll down to the bottom of the terms to continue.
           </p>
         </section>
-        <br />
-        <section>
+        <section
+          className="pt-2"
+        >
           <label
             htmlFor="acceptTerms"
           >
@@ -670,10 +671,8 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             </span>
           </label>
         </section>
-        <br />
-        <br />
         <section
-          className="buttons"
+          className="buttons pt-5"
         >
           <button
             className="btn ecrc_accessary_btn btn"
@@ -690,7 +689,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             </div>
           </button>
           <button
-            className="btn ecrc_go_btn btn "
+            className="btn ecrc_go_btn mr-0 btn "
             disabled={true}
             onClick={[Function]}
             type="submit"
@@ -712,16 +711,27 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
     className="footer"
   >
     <nav
-      className="navbar navbar-expand-sm navbar-dark"
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
     >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
       <div
-        className="container"
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
       >
         <ul
-          className="navbar-nav"
+          className="navbar-nav text-right"
         >
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -733,7 +743,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -745,7 +755,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -757,7 +767,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"
@@ -769,7 +779,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
             </a>
           </li>
           <li
-            className="nav-item"
+            className="nav-item m-1"
           >
             <a
               className="nav-link"

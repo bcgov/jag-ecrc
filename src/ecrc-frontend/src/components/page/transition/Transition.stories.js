@@ -1,4 +1,6 @@
 import React from "react";
+import { Router } from "react-router-dom";
+import { createMemoryHistory } from "history";
 
 import Transition from "./Transition";
 
@@ -15,13 +17,25 @@ const page = {
   header
 };
 
-export const DefaultToBCSC = () => <Transition page={page} />;
+const history = createMemoryHistory();
 
-export const NotWhitelisted = () => (
-  <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
+export const DefaultToBCSC = () => (
+  <Router history={history}>
+    <Transition page={page} />
+  </Router>
 );
 
-export const Mobile = () => <Transition page={page} />;
+export const NotWhitelisted = () => (
+  <Router history={history}>
+    <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
+  </Router>
+);
+
+export const Mobile = () => (
+  <Router history={history}>
+    <Transition page={page} />
+  </Router>
+);
 
 Mobile.story = {
   parameters: {

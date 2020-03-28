@@ -39,7 +39,7 @@ class InformationReviewPage {
       by.xpath("//td[text()='Personal Email Address']/following-sibling::td")
     );
     this.certifyCheckBox = element(by.xpath("//input[@type='checkbox']"));
-    this.submitButton = element(by.buttonText("SUBMIT"));
+    this.submitButton = element(by.buttonText("Submit"));
   }
 }
 

@@ -94,7 +94,7 @@ export default function Consent({
 
   const continueButton = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit",
     disabled: !continueBtnEnabled || loading,
@@ -103,7 +103,10 @@ export default function Consent({
 
   const toSuccess = () => {
     if (!isAuthorized()) {
-      setError("session expired");
+      setError({
+        status: 590,
+        message: "Session Expired"
+      });
       setToError(true);
       return;
     }
@@ -111,11 +114,37 @@ export default function Consent({
     history.push("/criminalrecordcheck/success");
   };
 
+  const handleError = error => {
+    setToError(true);
+    if (error && error.response && error.response.status) {
+      if (
+        error.request &&
+        error.request.response &&
+        JSON.parse(error.request.response)
+      ) {
+        setToError(true);
+        setError({
+          status: error.response.status,
+          message: JSON.parse(error.request.response).message
+        });
+      } else {
+        setError({
+          status: error.response.status,
+          message: error.response.data
+        });
+      }
+    }
+    setLoading(false);
+  };
+
   const confirm = () => {
     setLoading(true);
 
     if (!isAuthorized()) {
-      setError("session expired");
+      setError({
+        status: 590,
+        message: "Session Expired"
+      });
       setToError(true);
       return;
     }
@@ -270,12 +299,15 @@ export default function Consent({
               }
             })
             .then(urlResponse => {
-              setLoading(false);
               window.location.href = urlResponse.data.paymentUrl;
+              setLoading(false);
+            })
+            .catch(error => {
+              handleError(error);
             });
         })
-        .catch(() => {
-          setLoading(false);
+        .catch(error => {
+          handleError(error);
         });
     } else if (orgApplicantRelationship === "VOLUNTEER") {
       Promise.all([
@@ -333,8 +365,8 @@ export default function Consent({
           setLoading(false);
           toSuccess();
         })
-        .catch(() => {
-          setLoading(false);
+        .catch(error => {
+          handleError(error);
         });
     }
   };
@@ -369,13 +401,11 @@ export default function Consent({
           </p>
           <p>You must complete all mandatory fields ({asterisk} ):</p>
           <Declaration
-            style={{ paddingBottom: "30px" }}
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
           />
-          <br />
-          <div className="buttons" style={{ paddingLeft: "20px" }}>
+          <div className="buttons pt-5">
             <Button
               button={cancelButton}
               onClick={() => {

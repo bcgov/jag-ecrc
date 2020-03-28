@@ -29,7 +29,7 @@ var testInput = require("../../input/success");
 var using = require("jasmine-data-provider");
 
 describe("consent page", function() {
-  beforeEach(function() {
+  beforeEach(() => {
     browser.get(process.env.URL);
 
     browser
@@ -266,7 +266,7 @@ describe("consent page", function() {
     }
   );
 
-  xit("verify if continue is disabled when the applicant name hasn't been entered", function() {
+  xit("verify if continue is disabled when the applicant name hasn't been entered", () => {
     consentPage.consentCheckBox.click();
 
     consentPage.certifyCheckBox.click();
@@ -276,7 +276,7 @@ describe("consent page", function() {
     expect("true").toBe(consentPage.continueButton.getAttribute("disabled"));
   });
 
-  it("verify if checking all the checkboxes and filling the applicant name allows to continue", function() {
+  it("verify if checking all the checkboxes and filling the applicant name allows to continue", () => {
     consentPage.consentCheckBox.click();
 
     consentPage.certifyCheckBox.click();

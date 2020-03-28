@@ -86,7 +86,11 @@ export default function SideCards({ type, sideCardLinks }) {
         security verification page.
       </div>,
       <div key="bcscLearnMore">
-        <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
+        <a
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="side-card-link">
             Learn more about the BC Services Card.
           </div>
@@ -98,7 +102,11 @@ export default function SideCards({ type, sideCardLinks }) {
         Services Plan(MSP).
       </div>,
       <div key="bcscEligibilityLink">
-        <a href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible">
+        <a
+          href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="side-card-link">
             Learn more about BC Services Card eligibility.
           </div>
@@ -127,27 +135,38 @@ export default function SideCards({ type, sideCardLinks }) {
         Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
       </div>,
       <div key="contactInfo" className="side-card-text">
-        <br />
-        <div>
-          <FaFax />
-          &nbsp;<div className="contact-title">Fax: </div>
-          (250) 356-1889
-        </div>
-        <div>
-          <FaPhone />
-          &nbsp;<div className="contact-title">Office: </div>
-          Toll free - 1 855 587-0185 (press option 2)
-        </div>
-        <div>
-          <FaEnvelope /> &nbsp;
-          <div className="contact-title">Email: </div>
-          <a
-            key="criminalRecordsEmail"
-            className="email"
-            href="mailto:criminalrecords@gov.bc.ca"
-          >
-            criminalrecords@gov.bc.ca
-          </a>
+        <div className="container p-0 m-0 mt-2">
+          <div className="row">
+            <div className="text-nowrap col-lg-12 col-xl-3">
+              <FaFax />
+              &nbsp;<div className="contact-title">Fax: </div>
+            </div>
+            <div className="col-lg-12 col-xl-9 pr-0">(250) 356-1889</div>
+          </div>
+          <div className="row">
+            <div className="text-nowrap col-lg-12 col-xl-3">
+              <FaPhone />
+              &nbsp;<div className="contact-title">Office: </div>
+            </div>
+            <div className="col-lg-12 col-xl-9 pr-0">
+              Toll free - 1 855 587-0185 (press option 2)
+            </div>
+          </div>
+          <div className="row">
+            <div className="text-nowrap col-lg-12 col-xl-3">
+              <FaEnvelope />
+              &nbsp;<div className="contact-title">Email: </div>
+            </div>
+            <div className="col-lg-12 col-xl-9 pr-0">
+              <a
+                key="criminalRecordsEmail"
+                className="email"
+                href="mailto:criminalrecords@gov.bc.ca"
+              >
+                criminalrecords@gov.bc.ca
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     ],
@@ -203,7 +222,11 @@ export default function SideCards({ type, sideCardLinks }) {
         form.
       </div>,
       <div key="withoutBCSCBottom">
-        <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card">
+        <a
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="side-card-link">
             Learn more about how to apply for a criminal record check offline.
           </div>
@@ -229,18 +252,20 @@ export default function SideCards({ type, sideCardLinks }) {
     content: [
       "If you find an error with your:",
       <ul key="personalInfoList" className="discStyle">
-        <li>FIRST NAME</li>
-        <li>MIDDLE NAME</li>
-        <li>LAST NAME</li>
-        <li>DATE OF BIRTH</li>
-        <li>SEX</li>
-        <li>CURRENT STREET ADDRESS</li>
+        <li>First Name</li>
+        <li>Middle Name</li>
+        <li>Last Name</li>
+        <li>Date Of Birth</li>
+        <li>Sex</li>
+        <li>Current Street Address</li>
       </ul>,
       "Please contact either ",
       <a
         key="serviceBC"
         className="link"
         href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         Service BC
       </a>,
@@ -249,6 +274,8 @@ export default function SideCards({ type, sideCardLinks }) {
         key="icbc"
         className="link"
         href="https://www.icbc.com/Pages/default.aspx"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         ICBC
       </a>,
@@ -257,6 +284,8 @@ export default function SideCards({ type, sideCardLinks }) {
         key="addressChangeBC"
         className="link"
         href="https://www.addresschange.gov.bc.ca/"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         AddressChangeBC
       </a>,

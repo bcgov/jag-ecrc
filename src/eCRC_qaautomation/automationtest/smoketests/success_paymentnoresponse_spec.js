@@ -26,13 +26,13 @@ var informationReviewPage = require("../../pageobjectfactory/informationreviewpa
 
 var testInput = require("../../input/success");
 
-describe("success", function() {
-  beforeEach(function() {
+describe("success", () => {
+  beforeEach(() => {
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
   });
 
-  it("verify that entering a valid org code and validating redirects to the orgverification page", function() {
+  it("verify that entering a valid org code and validating redirects to the orgverification page", () => {
     browser.get(process.env.URL);
 
     browser
@@ -56,8 +56,6 @@ describe("success", function() {
     orgVerificationPage.continue.click();
 
     termsOfUsePage.readAndAcceptCheckBox.click();
-
-    termsOfUsePage.authorizeEmailIdCheckBox.click();
 
     browser.executeScript(
       "arguments[0].scrollIntoView(true)",
@@ -86,12 +84,6 @@ describe("success", function() {
     bcServicesCardLoginPage.continueButton.click();
 
     bcServicesCardLoginPage.continueButton.click();
-
-    expect(true).toBe(
-      browser.getCurrentUrl().then(function(url) {
-        return url.includes(process.env.BCSC_CONSENT_URL);
-      })
-    );
 
     bcscConsentPage.name.count().then(function(count) {
       expect(count).toBe(1);

@@ -136,7 +136,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/home/privacy"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           Privacy Policy
         </a>
@@ -164,7 +164,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           BC Services Card
         </a>
@@ -177,7 +177,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           BC Services Card Site
         </a>
@@ -303,7 +303,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           Limitation of Liabilities
         </a>
@@ -393,7 +393,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/home/privacy"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           Privacy Policy
         </a>
@@ -421,7 +421,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           BC Services Card
         </a>
@@ -434,7 +434,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           BC Services Card Site
         </a>
@@ -560,7 +560,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
         <a
           href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
           rel="noopener noreferrer"
-          target="blank"
+          target="_blank"
         >
           Limitation of Liabilities
         </a>
@@ -589,8 +589,9 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
       Please scroll down to the bottom of the terms to continue.
     </p>
   </section>
-  <br />
-  <section>
+  <section
+    className="pt-2"
+  >
     <label
       htmlFor="acceptTerms"
     >
@@ -609,10 +610,8 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
       </span>
     </label>
   </section>
-  <br />
-  <br />
   <section
-    className="buttons"
+    className="buttons pt-5"
   >
     <button
       className="btn ecrc_accessary_btn btn"
@@ -629,7 +628,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
       </div>
     </button>
     <button
-      className="btn ecrc_go_btn btn "
+      className="btn ecrc_go_btn mr-0 btn "
       disabled={true}
       onClick={[Function]}
       type="submit"

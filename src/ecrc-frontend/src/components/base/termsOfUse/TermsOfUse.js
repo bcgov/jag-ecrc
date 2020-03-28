@@ -26,7 +26,7 @@ export default function TermsOfUse({
 
   const button = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn ",
     type: "submit",
     disabled: !continueBtnEnabled
@@ -172,7 +172,7 @@ export default function TermsOfUse({
             disclosed in accordance with the Province’s{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/home/privacy"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               Privacy Policy
@@ -208,7 +208,7 @@ export default function TermsOfUse({
             You are required to have a{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               BC Services Card
@@ -220,7 +220,7 @@ export default function TermsOfUse({
             following an external link to the{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               BC Services Card Site
@@ -354,7 +354,7 @@ export default function TermsOfUse({
             In addition to the Province’s general{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               Limitation of Liabilities
@@ -479,7 +479,7 @@ export default function TermsOfUse({
             disclosed in accordance with the Province’s{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/home/privacy"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               Privacy Policy
@@ -515,7 +515,7 @@ export default function TermsOfUse({
             You are required to have a{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               BC Services Card
@@ -527,7 +527,7 @@ export default function TermsOfUse({
             following an external link to the{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               BC Services Card Site
@@ -661,7 +661,7 @@ export default function TermsOfUse({
             In addition to the Province’s general{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
-              target="blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               Limitation of Liabilities
@@ -712,9 +712,8 @@ export default function TermsOfUse({
           <p>Please scroll down to the bottom of the terms to continue.</p>
         </section>
       )}
-      <br />
 
-      <section>
+      <section className="pt-2">
         <label htmlFor="acceptTerms">
           <input
             id="acceptTerms"
@@ -728,9 +727,7 @@ export default function TermsOfUse({
           </span>
         </label>
       </section>
-      <br />
-      <br />
-      <section className="buttons">
+      <section className="buttons pt-5">
         <Button button={cancelButton} onClick={onCancelClicked} />
         <Button button={button} onClick={onContinueClick} />
       </section>

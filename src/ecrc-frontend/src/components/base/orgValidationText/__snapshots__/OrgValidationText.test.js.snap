@@ -11,6 +11,8 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
      
     <a
       href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       Criminal Records Review Act (CRRA).
     </a>
@@ -35,6 +37,8 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
            
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             BC Services Card
           </a>
@@ -86,6 +90,7 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
             onChange={[Function]}
             type="text"
           />
+          <br />
           <span
             className="error"
           />
@@ -143,13 +148,17 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
         <li>
           <a
             href="volunteer"
+            target="_blank"
           >
             I'm an employee or a volunteer
           </a>
-           and I want to know
+           
+          and I want to know
            
           <a
             href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             why I need to apply for a criminal record check
           </a>
@@ -157,6 +166,8 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             I don't have a BC Services Card
           </a>
@@ -164,6 +175,8 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             I'm an authorized contact
           </a>
@@ -173,6 +186,8 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/employer-organizations"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             I'm an employer organization
           </a>
@@ -182,6 +197,8 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/volunteer-organizations"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             I'm a volunteer organization
           </a>

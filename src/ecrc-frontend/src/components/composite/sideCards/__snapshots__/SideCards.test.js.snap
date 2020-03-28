@@ -14,10 +14,9 @@ exports[`SideCards Component AccessCode sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -71,10 +70,9 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -129,6 +127,8 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
               >
                 <a
                   href="/"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Home
                 </a>
@@ -138,6 +138,8 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
               >
                 <a
                   href="/somewhere"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Somewhere
                 </a>
@@ -147,6 +149,8 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
               >
                 <a
                   href="/somewhereelse"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Somewhere else
                 </a>
@@ -156,6 +160,8 @@ exports[`SideCards Component AccessCode sidecard 2`] = `
               >
                 <a
                   href="/here"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Somewhere with a long name for no reason
                 </a>
@@ -183,10 +189,9 @@ exports[`SideCards Component BcServices sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -244,6 +249,8 @@ exports[`SideCards Component BcServices sidecard 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <div
                     className="side-card-link"
@@ -261,6 +268,8 @@ exports[`SideCards Component BcServices sidecard 1`] = `
               <div>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <div
                     className="side-card-link"
@@ -292,10 +301,9 @@ exports[`SideCards Component ContactInformation sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -353,92 +361,125 @@ exports[`SideCards Component ContactInformation sidecard 1`] = `
               <div
                 className="side-card-text"
               >
-                <br />
-                <div>
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    strokeWidth="0"
-                    style={
-                      Object {
-                        "color": undefined,
-                      }
-                    }
-                    viewBox="0 0 512 512"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
-                    />
-                  </svg>
-                   
+                <div
+                  className="container p-0 m-0 mt-2"
+                >
                   <div
-                    className="contact-title"
+                    className="row"
                   >
-                    Fax: 
+                    <div
+                      className="text-nowrap col-lg-12 col-xl-3"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
+                        />
+                      </svg>
+                       
+                      <div
+                        className="contact-title"
+                      >
+                        Fax: 
+                      </div>
+                    </div>
+                    <div
+                      className="col-lg-12 col-xl-9 pr-0"
+                    >
+                      (250) 356-1889
+                    </div>
                   </div>
-                  (250) 356-1889
-                </div>
-                <div>
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    strokeWidth="0"
-                    style={
-                      Object {
-                        "color": undefined,
-                      }
-                    }
-                    viewBox="0 0 512 512"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                    />
-                  </svg>
-                   
                   <div
-                    className="contact-title"
+                    className="row"
                   >
-                    Office: 
+                    <div
+                      className="text-nowrap col-lg-12 col-xl-3"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                        />
+                      </svg>
+                       
+                      <div
+                        className="contact-title"
+                      >
+                        Office: 
+                      </div>
+                    </div>
+                    <div
+                      className="col-lg-12 col-xl-9 pr-0"
+                    >
+                      Toll free - 1 855 587-0185 (press option 2)
+                    </div>
                   </div>
-                  Toll free - 1 855 587-0185 (press option 2)
-                </div>
-                <div>
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    strokeWidth="0"
-                    style={
-                      Object {
-                        "color": undefined,
-                      }
-                    }
-                    viewBox="0 0 512 512"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                    />
-                  </svg>
-                    
                   <div
-                    className="contact-title"
+                    className="row"
                   >
-                    Email: 
+                    <div
+                      className="text-nowrap col-lg-12 col-xl-3"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                        />
+                      </svg>
+                       
+                      <div
+                        className="contact-title"
+                      >
+                        Email: 
+                      </div>
+                    </div>
+                    <div
+                      className="col-lg-12 col-xl-9 pr-0"
+                    >
+                      <a
+                        className="email"
+                        href="mailto:criminalrecords@gov.bc.ca"
+                      >
+                        criminalrecords@gov.bc.ca
+                      </a>
+                    </div>
                   </div>
-                  <a
-                    className="email"
-                    href="mailto:criminalrecords@gov.bc.ca"
-                  >
-                    criminalrecords@gov.bc.ca
-                  </a>
                 </div>
               </div>
             </span>
@@ -464,10 +505,9 @@ exports[`SideCards Component CriminalRecord sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
@@ -524,10 +564,9 @@ exports[`SideCards Component GetBcServices sidecard 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 pt-2"
         style={
           Object {
-            "paddingTop": "30px",
             "position": "relative",
           }
         }
