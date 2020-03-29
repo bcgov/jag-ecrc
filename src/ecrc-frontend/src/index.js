@@ -13,6 +13,16 @@ if (process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 }
 
+// prevent user from leaving site and losing saved data
+window.addEventListener("beforeunload", e => {
+  const confirmationMessage =
+    "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?";
+
+  (e || window.event).returnValue = confirmationMessage; // Gecko + IE
+
+  return confirmationMessage;
+});
+
 ReactDOM.render(
   <BrowserRouter>
     <App />
