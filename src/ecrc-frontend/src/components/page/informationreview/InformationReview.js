@@ -268,7 +268,7 @@ export default function InformationReview({
   };
 
   const edit = () => {
-    history.push("/criminalrecordcheck/applicationform");
+    history.push("/criminalrecordcheck/consent");
   };
 
   const confirm = () => {
@@ -288,7 +288,7 @@ export default function InformationReview({
     };
     generateJWTToken(newPayload);
 
-    history.push("/criminalrecordcheck/consent");
+    history.push("/criminalrecordcheck/consent2");
   };
 
   if (toHome) {

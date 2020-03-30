@@ -107,7 +107,7 @@ describe("ApplicationForm Component", () => {
 
   test("Matches the snapshot", async () => {
     const { asFragment } = render(
-      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+      <MemoryRouter initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={page} />
       </MemoryRouter>
     );
@@ -118,7 +118,7 @@ describe("ApplicationForm Component", () => {
 
   test("Displays Organization Facility when Schedule D Org", async () => {
     const { container } = render(
-      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+      <MemoryRouter initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={page} />
       </MemoryRouter>
     );
@@ -129,7 +129,7 @@ describe("ApplicationForm Component", () => {
 
   test("Does not display Organization Facility when not Schedule D Org", async () => {
     const { container } = render(
-      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+      <MemoryRouter initialEntries={["/consent?code=code"]}>
         <ApplicationForm
           page={{ ...page, org: { defaultScheduleTypeCd: "WBSC" } }}
         />
@@ -142,7 +142,7 @@ describe("ApplicationForm Component", () => {
 
   test("Displays Additional Aliases", async () => {
     const { container } = render(
-      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+      <MemoryRouter initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={page} />
       </MemoryRouter>
     );
@@ -174,7 +174,7 @@ describe("ApplicationForm Component", () => {
     };
 
     const { container } = render(
-      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+      <MemoryRouter initialEntries={["/consent?code=code"]}>
         <ApplicationForm
           page={{ ...page, applicant: { ...returningApplicant } }}
         />
@@ -202,10 +202,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -236,10 +233,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -286,10 +280,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -336,10 +327,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -389,10 +377,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -433,10 +418,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -475,10 +457,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -519,10 +498,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -561,10 +537,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -601,10 +574,7 @@ describe("ApplicationForm Component", () => {
     const history = createMemoryHistory();
 
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
@@ -634,10 +604,7 @@ describe("ApplicationForm Component", () => {
   test("Redirect to Home", async () => {
     const history = createMemoryHistory();
     const { container } = render(
-      <MemoryRouter
-        history={history}
-        initialEntries={["/applicationform?code=code"]}
-      >
+      <MemoryRouter history={history} initialEntries={["/consent?code=code"]}>
         <ApplicationForm page={page} />
       </MemoryRouter>
     );

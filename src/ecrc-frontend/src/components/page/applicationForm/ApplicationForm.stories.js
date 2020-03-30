@@ -97,7 +97,7 @@ storiesOf("Application Form Page", module)
   .add("Non Schedule D", () => (
     <LoadData>
       {data => (
-        <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <MemoryRouter initialEntries={["/consent?code=code"]}>
           <ApplicationForm
             page={{
               ...data.page,
@@ -111,7 +111,7 @@ storiesOf("Application Form Page", module)
   .add("Schedule D", () => (
     <LoadData>
       {data => (
-        <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <MemoryRouter initialEntries={["/consent?code=code"]}>
           <ApplicationForm page={data.page} />
         </MemoryRouter>
       )}
