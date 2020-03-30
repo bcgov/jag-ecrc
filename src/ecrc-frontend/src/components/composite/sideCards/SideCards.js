@@ -160,7 +160,7 @@ export default function SideCards({ type, sideCardLinks }) {
             <div className="col-lg-12 col-xl-9 pr-0">
               <a
                 key="criminalRecordsEmail"
-                className="email"
+                className="email link-email"
                 href="mailto:criminalrecords@gov.bc.ca"
               >
                 criminalrecords@gov.bc.ca

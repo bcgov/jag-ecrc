@@ -340,6 +340,9 @@ export default function InformationReview({
                 the CRRP to accurately determine whether the applicant poses a
                 risk to children or vulnerable adults.
               </span>
+              <span id="asterisk" className="mandatory">
+                *
+              </span>
             </label>
           </section>
           <div className="buttons pt-4">
