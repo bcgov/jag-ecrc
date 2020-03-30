@@ -2768,13 +2768,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
               }
             }
           >
-            I have a BC Services Card
-             
-            <span
-              className="underlineText"
-            >
-              with a photo
-            </span>
+            I have a photo BC Services Card
           </div>
           <div
             className="col-lg-6 col-md-4 alignRight"
@@ -3125,13 +3119,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
               }
             }
           >
-            I have a BC Services Card
-             
-            <span
-              className="underlineText"
-            >
-              with a photo
-            </span>
+            I have a photo BC Services Card
           </div>
           <div
             className="col-lg-6 col-md-4 alignRight"
@@ -3802,7 +3790,7 @@ exports[`Storyshots Consent page Default 1`] = `
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -4338,7 +4326,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -10104,7 +10092,7 @@ Canada
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -10840,7 +10828,7 @@ Canada
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -11576,7 +11564,7 @@ Canada
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -12312,7 +12300,7 @@ Canada
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -12990,7 +12978,7 @@ exports[`Storyshots SideCards Contact Information 1`] = `
                       className="col-lg-12 col-xl-9 pr-0"
                     >
                       <a
-                        className="email"
+                        className="email link-email"
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
                         criminalrecords@gov.bc.ca

@@ -361,7 +361,7 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
