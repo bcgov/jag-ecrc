@@ -76,7 +76,7 @@ describe("terms of use page", () => {
       { unchecked: "authorizeEmailIdCheckBox" },
       { unchecked: "termsOfUse" }
     ],
-    function(unchecked) {
+    (unchecked) => {
       it("verify that the continue button is disabled when one or more checkboxes are unchecked or if the terms of use is not scrolled", function() {
         if (unchecked.unchecked === "readAndAcceptCheckBox") {
           termsOfUsePage.authorizeEmailIdCheckBox.click();
