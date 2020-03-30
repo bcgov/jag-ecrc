@@ -9,7 +9,6 @@ import Consent from "./components/page/consent/Consent";
 import BcscRedirect from "./components/page/bcscRedirect/BcscRedirect";
 import Success from "./components/page/success/Success";
 import InformationReview from "./components/page/informationreview/InformationReview";
-import UserConfirmation from "./components/page/userConfirmation/UserConfirmation";
 import Error from "./components/page/error/Error";
 
 export default function App() {
@@ -78,9 +77,6 @@ export default function App() {
         <Route path="/(ecrc/termsofuse|criminalrecordcheck/termsofuse)">
           <TOU page={{ header, setError }} />
         </Route>
-        <Route path="/(ecrc/consent|criminalrecordcheck/consent)">
-          <UserConfirmation page={{ header, setApplicant, setError }} />
-        </Route>
         <Route path="/(ecrc/bcscredirect|criminalrecordcheck/bcscredirect)">
           <BcscRedirect page={{ header, saveOrg, setError }} />
         </Route>
@@ -106,7 +102,7 @@ export default function App() {
             }}
           />
         </Route>
-        <Route path="/(ecrc/userconfirmation|criminalrecordcheck/userconfirmation)">
+        <Route path="/(ecrc/consent|criminalrecordcheck/consent)">
           <Consent
             page={{
               header,

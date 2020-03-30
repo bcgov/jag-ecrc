@@ -727,7 +727,7 @@ export default function TermsOfUse({
           </span>
         </label>
       </section>
-      <section className="buttons pt-5">
+      <section className="buttons pt-4">
         <Button button={cancelButton} onClick={onCancelClicked} />
         <Button button={button} onClick={onContinueClick} />
       </section>

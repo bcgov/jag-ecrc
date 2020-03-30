@@ -16,14 +16,14 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             alt="B.C. Government Logo"
             class="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             class="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
           <div
@@ -62,7 +62,6 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <h1>
           Criminal Record Check - Application
         </h1>
-        <br />
         <p>
           Complete the application form below to continue.
         </p>
@@ -925,7 +924,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </ul>
         </form>
         <br />
-        <section>
+        <section
+          class="p-4"
+        >
           Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
@@ -951,9 +952,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             AddressChangeBC
           </a>
         </section>
-        <br />
         <div
-          class="buttons"
+          class="buttons pt-4"
         >
           <button
             class="btn ecrc_accessary_btn btn"
@@ -969,7 +969,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </div>
           </button>
           <button
-            class="btn ecrc_go_btn btn"
+            class="btn ecrc_go_btn mr-0 btn"
             type="submit"
           >
             Continue
@@ -1171,6 +1171,18 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             >
               <a
                 class="nav-link"
+                href="https://www2.gov.bc.ca"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                BC Government
+              </a>
+            </li>
+            <li
+              class="nav-item m-1"
+            >
+              <a
+                class="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -1212,18 +1224,6 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 target="_blank"
               >
                 Copyright
-              </a>
-            </li>
-            <li
-              class="nav-item m-1"
-            >
-              <a
-                class="nav-link"
-                href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Contact Us
               </a>
             </li>
           </ul>

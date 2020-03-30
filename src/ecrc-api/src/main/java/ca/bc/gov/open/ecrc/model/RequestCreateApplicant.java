@@ -33,6 +33,8 @@ public class RequestCreateApplicant {
 	private String countryNm;
 	private String postalCodeTxt;
 	private String driversLicNo;
+	private String emailAddress;
+	private String emailType;
 	private String requestGuid;
 
 	public String getOrgTicketNumber() {
@@ -235,6 +237,22 @@ public class RequestCreateApplicant {
 		this.driversLicNo = driversLicNo;
 	}
 
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
+	public String getEmailType() {
+		return emailType;
+	}
+
+	public void setEmailType(String emailType) {
+		this.emailType = emailType;
+	}
+
 	public String getRequestGuid() { return requestGuid; }
 
 	public void setRequestGuid(String requestGuid) { this.requestGuid = requestGuid; }
@@ -263,6 +281,8 @@ public class RequestCreateApplicant {
         		"&Province_Nm=" + provinceNm +
         		"&Country_Nm=" + countryNm +
         		"&Postal_Code_Txt=" + postalCodeTxt +
-        		"&Drivers_Lic_No=" + driversLicNo;
+        		"&Drivers_Lic_No=" + driversLicNo +
+        		"&Email_Address=" + emailAddress +
+        		"&Email_Type=" + emailType;
     }
 }

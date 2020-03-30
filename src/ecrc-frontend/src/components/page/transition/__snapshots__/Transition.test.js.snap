@@ -17,14 +17,14 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -105,6 +105,18 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -148,18 +160,6 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -184,14 +184,14 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -282,6 +282,18 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -323,18 +335,6 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>

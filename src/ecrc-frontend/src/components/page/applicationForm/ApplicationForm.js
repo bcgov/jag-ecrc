@@ -1,8 +1,9 @@
 /* eslint-disable camelcase */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Redirect, useHistory } from "react-router-dom";
+import { useLocation, Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import queryString from "query-string";
 
 import "./ApplicationForm.css";
 import Header from "../../base/header/Header";
@@ -107,52 +108,126 @@ export default function ApplicationForm({
     mailingPostalCodeTxt
   );
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
+  const [toTransition, setToTransition] = useState(false);
+
+  const location = useLocation();
 
   useEffect(() => {
-    if (!isAuthorized() || !isActionPerformed("userConfirmation"))
-      setToHome(true);
+    window.scrollTo(0, 0);
+  }, []);
 
-    let token = sessionStorage.getItem("jwt");
+  useEffect(() => {
+    const urlParam = queryString.parse(location.search);
+    const { code } = urlParam;
+
+    const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
-    const payload = accessJWTToken(token);
-    token = generateJWTToken({
-      ...payload,
-      authorities: ["Authorized", "ROLE"]
-    });
-
-    axios
-      .get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      .then(res => {
-        setProvinces(res.data.provinces.province);
-      })
-      .catch(error => {
-        setToError(true);
-        if (error && error.response && error.response.status) {
-          if (
-            error.request &&
-            error.request.response &&
-            JSON.parse(error.request.response)
-          ) {
-            setToError(true);
-            setError({
-              status: error.response.status,
-              message: JSON.parse(error.request.response).message
-            });
-          } else {
-            setError({
-              status: error.response.status,
-              message: error.response.data
-            });
+    if (code) {
+      Promise.all([
+        axios.get(`/ecrc/protected/login?code=${code}&requestGuid=${uuid}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
           }
-        }
-      });
+        }),
+        axios.get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+      ])
+        .then(res => {
+          sessionStorage.setItem("jwt", res[0].data);
 
-    window.scrollTo(0, 0);
+          if (!isAuthorized()) setToHome(true);
+
+          setProvinces(res[1].data.provinces.province);
+
+          const {
+            userInfo: {
+              birthdate,
+              address: { street_address, locality, region, postal_code },
+              gender,
+              given_name,
+              given_names,
+              family_name,
+              identity_assurance_level
+            }
+          } = accessJWTToken(res[0].data);
+
+          if (identity_assurance_level < 3) {
+            setToTransition(true);
+          }
+
+          // Convert gender text
+          const formatGender = gender === "female" ? "F" : "M";
+
+          // Convert date format
+          const formatBirthDt = birthdate.split("-").join("/");
+
+          // Convert given names
+          const givenNamesArray = given_names.split(" ");
+
+          givenNamesArray.shift();
+
+          const formatSecondNm = givenNamesArray.join(" ");
+
+          // Convert province name
+          const regionMap = new Map([
+            ["BC", "BRITISH COLUMBIA"],
+            ["AB", "ALBERTA"],
+            ["NL", "NEWFOUNDLAND"],
+            ["PE", "PRINCE EDWARD ISLAND"],
+            ["NS", "NOVA SCOTIA"],
+            ["NB", "NEW BRUNSWICK"],
+            ["QC", "QUEBEC"],
+            ["ON", "ONTARIO"],
+            ["MB", "MANITOBA"],
+            ["SK", "SASKATCHEWAN"],
+            ["YT", "YUKON"],
+            ["NT", "NORTH WEST TERRITORIES"],
+            ["NU", "NUNAVUT"]
+          ]);
+
+          let formatProvinceNm = regionMap.get(region);
+          if (formatProvinceNm === undefined) {
+            formatProvinceNm = "Invalid Province";
+          }
+
+          setApplicant({
+            legalFirstNm: given_name,
+            legalSecondNm: formatSecondNm,
+            legalSurnameNm: family_name,
+            birthDt: formatBirthDt,
+            genderTxt: formatGender,
+            addressLine1: street_address,
+            cityNm: locality,
+            provinceNm: formatProvinceNm,
+            postalCodeTxt: postal_code,
+            countryNm: "CANADA"
+          });
+        })
+        .catch(error => {
+          if (error && error.response && error.response.status) {
+            if (
+              error.request &&
+              error.request.response &&
+              JSON.parse(error.request.response)
+            ) {
+              setToError(true);
+              setError({
+                status: error.response.status,
+                message: JSON.parse(error.request.response).message
+              });
+            } else {
+              setError({
+                status: error.response.status,
+                message: error.response.data
+              });
+            }
+          }
+        });
+    }
   }, [setError, setProvinces]);
 
   const currentName = {
@@ -459,7 +534,7 @@ export default function ApplicationForm({
 
   const continueButton = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -500,50 +575,48 @@ export default function ApplicationForm({
       return;
     }
 
-    if (!birthLoc || !validateBirthPlace(birthLoc)) {
-      setBirthPlaceError("Please enter your city and country of birth");
+    if (!birthLoc) {
+      setBirthPlaceError("City and country of birth are required");
     }
 
     if (!phoneNum) {
-      setPhoneNumberError("Please enter your primary phone number");
+      setPhoneNumberError("Primary phone number is required");
     } else if (!validatePhoneNumber(phoneNum)) {
-      setPhoneNumberError(
-        "Please enter a phone number in the form (XXX) XXX-XXXX"
-      );
+      setPhoneNumberError("Phone number must be in the form XXX XXX-XXXX");
     }
 
     if (!email) {
-      setEmailAddressError("Please enter your personal email address");
+      setEmailAddressError("Personal email address is required");
     } else if (!validateEmail(email)) {
-      setEmailAddressError(
-        "Please enter a valid email address eg. name@company.ca"
-      );
+      setEmailAddressError("Email address must be in the form name@company.ca");
     }
 
     if (!job) {
-      setJobTitleError("Please enter your position/job title");
+      setJobTitleError("Position/job title is required");
     }
 
     if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
-      setOrganizationFacilityError("Please enter your organization facility");
+      setOrganizationFacilityError("Organization facility is required");
     }
 
     if (!sameAddress && !mailingAddressLine1) {
-      setMailingAddressLine1Error("Please enter your PO box or street address");
+      setMailingAddressLine1Error("Street or PO box is required");
     }
 
     if (!sameAddress && !mailingCity) {
-      setMailingCityError("Please enter your city");
+      setMailingCityError("City is required");
     }
 
     if (!sameAddress && !mailingProvince) {
-      setMailingProvinceError("Please enter your province");
+      setMailingProvinceError("Province is required");
     }
 
-    if (!sameAddress && !validatePostalCode(mailingPostalCode)) {
-      setMailingPostalCodeError(
-        "Please enter a valid postal code in the form V9V 9V9"
-      );
+    if (!sameAddress) {
+      if (!mailingPostalCode) {
+        setMailingPostalCodeError("Postal code is required");
+      } else if (!validatePostalCode(mailingPostalCode)) {
+        setMailingPostalCodeError("Postal code must be in the form V9V 9V9");
+      }
     }
 
     if (
@@ -612,7 +685,7 @@ export default function ApplicationForm({
       const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
       const newPayload = {
         ...currentPayload,
-        actionsPerformed: [...currentPayload.actionsPerformed, "appForm"]
+        actionsPerformed: ["appForm"]
       };
       generateJWTToken(newPayload);
 
@@ -646,13 +719,16 @@ export default function ApplicationForm({
     return <Redirect to="/" />;
   }
 
+  if (toTransition) {
+    return <Redirect to="/criminalrecordcheck/transition" />;
+  }
+
   return (
     <main>
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
           <h1>Criminal Record Check - Application</h1>
-          <br />
           <p>Complete the application form below to continue.</p>
           <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
           <div className="heading">
@@ -720,7 +796,7 @@ export default function ApplicationForm({
           {sameAddress && <SimpleForm simpleForm={address} />}
           {!sameAddress && <SimpleForm simpleForm={mailing} />}
           <br />
-          <section>
+          <section className="p-4">
             Entering your mailing address in this application will not update
             your BC Services Card Address. To update your BC Services Card
             information you must contact&nbsp;
@@ -748,8 +824,7 @@ export default function ApplicationForm({
               AddressChangeBC
             </a>
           </section>
-          <br />
-          <div className="buttons">
+          <div className="buttons pt-4">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />
           </div>
