@@ -491,7 +491,9 @@ export default function ApplicationForm({
     return re.test(postalCode.toUpperCase());
   };
 
-  const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop);
+  const scrollToRef = ref => {
+    window.scrollTo(0, ref.current.offsetTop);
+  };
   const birthLocRef = useRef(null);
   const phoneNumRef = useRef(null);
   const emailRef = useRef(null);

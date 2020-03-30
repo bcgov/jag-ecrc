@@ -22,6 +22,7 @@ jest.mock("axios");
 
 describe("ApplicationForm Component", () => {
   window.scrollTo = jest.fn();
+  const scrollToRef = jest.fn();
 
   const axiosCall = {
     data: {
