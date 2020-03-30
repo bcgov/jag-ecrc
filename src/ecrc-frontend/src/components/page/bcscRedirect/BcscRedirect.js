@@ -112,8 +112,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
                 className="col-lg-6 col-md-12 "
                 style={{ marginBottom: "10px" }}
               >
-                I have a BC Services Card{" "}
-                <span className="underlineText">with a photo</span>
+                I have a photo BC Services Card
               </div>
               <div className="col-lg-6 col-md-4 alignRight">
                 <Button button={loginBtn} onClick={onLoginClick} />

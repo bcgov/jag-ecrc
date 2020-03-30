@@ -31,6 +31,14 @@
   font-weight: 600;
 }
 
+.link-email {
+  color: white;
+}
+
+.link-email:hover {
+  color: white;
+}
+
 .link:hover {
   color: white;
 }
