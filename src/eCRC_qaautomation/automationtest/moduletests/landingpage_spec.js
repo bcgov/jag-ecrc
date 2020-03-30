@@ -23,10 +23,10 @@ describe("landing page", () => {
       browser.get(process.env.URL);
     });
 
-    it("Verify if I am an employee or organization redirects to the right page", function() {
+    it("Verify if I am an employee or organization redirects to the right page", () => {
       landingPage.needMoreInformationEmployeeOrVolunteer
         .click()
-        .then(function() {
+        .then(() => {
           expect(process.env.LP_NEEDMOREINFORMATION_EMPORGNAVTITLE).toBe(
             browser.getTitle()
           );
