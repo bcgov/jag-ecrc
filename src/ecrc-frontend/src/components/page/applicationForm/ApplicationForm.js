@@ -13,7 +13,6 @@ import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
-  isActionPerformed,
   generateJWTToken,
   accessJWTToken,
   isAuthorized

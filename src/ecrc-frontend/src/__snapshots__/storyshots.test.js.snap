@@ -758,6 +758,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
           Yes 
         </span>
         <input
+          checked={true}
           data-testid="sameAddress"
           id="yes"
           onChange={[Function]}
@@ -767,7 +768,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
            No 
         </span>
         <input
-          checked={true}
+          checked={false}
           data-testid="differentAddress"
           id="no"
           onChange={[Function]}
@@ -792,159 +793,131 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
             <div>
               <label
                 className="label"
-                htmlFor="mailingAddressLine1"
+                htmlFor="addressLine1"
               >
                 <div
                   className="textinput_label"
                 >
                   Street
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingAddressLine1"
+                className="textinput_non_editable_gray"
+                defaultValue="123 Somewhere"
+                id="addressLine1"
                 onChange={[Function]}
-                placeholder="Street or PO Box"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingCityNm"
+                htmlFor="cityNm"
               >
                 <div
                   className="textinput_label"
                 >
                   City
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingCityNm"
+                className="textinput_non_editable_gray"
+                defaultValue="Here"
+                id="cityNm"
                 onChange={[Function]}
-                placeholder="City"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingProvinceNm"
+                htmlFor="provinceNm"
               >
                 <div
                   className="textinput_label"
                 >
                   Province
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue="BRITISH COLUMBIA"
-                id="mailingProvinceNm"
+                className="textinput_non_editable_gray"
+                defaultValue="British Columbia"
+                id="provinceNm"
                 onChange={[Function]}
-                placeholder="Select Province"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingPostalCodeTxt"
+                htmlFor="postalCodeTxt"
               >
                 <div
                   className="textinput_label"
                 >
                   Postal Code
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingPostalCodeTxt"
+                className="textinput_non_editable_gray"
+                defaultValue="V9V 9V9"
+                id="postalCodeTxt"
                 onChange={[Function]}
-                placeholder="V9V 9V9"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingCountryNm"
+                htmlFor="countryNm"
               >
                 <div
                   className="textinput_label"
@@ -960,7 +933,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Canada"
-                id="mailingCountryNm"
+                id="countryNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -2118,6 +2091,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
           Yes 
         </span>
         <input
+          checked={true}
           data-testid="sameAddress"
           id="yes"
           onChange={[Function]}
@@ -2127,7 +2101,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
            No 
         </span>
         <input
-          checked={true}
+          checked={false}
           data-testid="differentAddress"
           id="no"
           onChange={[Function]}
@@ -2152,159 +2126,131 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
             <div>
               <label
                 className="label"
-                htmlFor="mailingAddressLine1"
+                htmlFor="addressLine1"
               >
                 <div
                   className="textinput_label"
                 >
                   Street
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingAddressLine1"
+                className="textinput_non_editable_gray"
+                defaultValue="123 Somewhere"
+                id="addressLine1"
                 onChange={[Function]}
-                placeholder="Street or PO Box"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingCityNm"
+                htmlFor="cityNm"
               >
                 <div
                   className="textinput_label"
                 >
                   City
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingCityNm"
+                className="textinput_non_editable_gray"
+                defaultValue="Here"
+                id="cityNm"
                 onChange={[Function]}
-                placeholder="City"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingProvinceNm"
+                htmlFor="provinceNm"
               >
                 <div
                   className="textinput_label"
                 >
                   Province
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue="BRITISH COLUMBIA"
-                id="mailingProvinceNm"
+                className="textinput_non_editable_gray"
+                defaultValue="British Columbia"
+                id="provinceNm"
                 onChange={[Function]}
-                placeholder="Select Province"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingPostalCodeTxt"
+                htmlFor="postalCodeTxt"
               >
                 <div
                   className="textinput_label"
                 >
                   Postal Code
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingPostalCodeTxt"
+                className="textinput_non_editable_gray"
+                defaultValue="V9V 9V9"
+                id="postalCodeTxt"
                 onChange={[Function]}
-                placeholder="V9V 9V9"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingCountryNm"
+                htmlFor="countryNm"
               >
                 <div
                   className="textinput_label"
@@ -2320,7 +2266,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Canada"
-                id="mailingCountryNm"
+                id="countryNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
