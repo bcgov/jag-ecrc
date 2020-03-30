@@ -43,8 +43,8 @@ describe("landing page", () => {
         });
     });
 
-    it("Verify if I'm an authorized contact redirects to the right page", function() {
-      landingPage.iAmAnAuthorizedContact.click().then(function() {
+    it("Verify if I'm an authorized contact redirects to the right page", () => {
+      landingPage.iAmAnAuthorizedContact.click().then(() => {
         expect(process.env.LP_IAMANAUTHORIZEDCONTACT_NAVTITLE).toBe(
           browser.getTitle()
         );
