@@ -96,6 +96,8 @@ export const TextInput = ({
           value={value}
           onChange={onChange}
         />
+        <br />
+        <span className="error">{errorMsg}</span>
       </div>
     );
   }

@@ -49,7 +49,7 @@ export default function ApplicationForm({
       organizationFacility,
       mailingLine1 = "",
       mailingCityNm = "",
-      mailingProvinceNm = "",
+      mailingProvinceNm = "BRITISH COLUMBIA",
       mailingPostalCodeTxt = ""
     },
     setApplicant,
@@ -406,7 +406,6 @@ export default function ApplicationForm({
         isRequired: true,
         errorMsg: mailingAddressLine1Error,
         onChange: event => {
-          console.log(event);
           setMailingAddressLine1(event);
           setMailingAddressLine1Error("");
         }
@@ -478,8 +477,7 @@ export default function ApplicationForm({
   };
 
   const validatePhoneNumber = phone => {
-    const re = /1?[ \-(]*\d{3}[ \-)]*\d{3}[ -]*\d{4}/;
-    return re.test(phone);
+    return phone.length === 12;
   };
 
   const validateEmail = emailTxt => {
@@ -510,7 +508,7 @@ export default function ApplicationForm({
       setPhoneNumberError("Please enter your primary phone number");
     } else if (!validatePhoneNumber(phoneNum)) {
       setPhoneNumberError(
-        "Please enter a phone number in the form XXX XXX-XXXX"
+        "Please enter a phone number in the form (XXX) XXX-XXXX"
       );
     }
 
@@ -564,6 +562,19 @@ export default function ApplicationForm({
         validatePostalCode(mailingPostalCode)) ||
         (sameAddress && addressLine1 && cityNm && provinceNm && postalCodeTxt))
     ) {
+      const areaCode = phoneNum.slice(2, 5);
+      const localCode = phoneNum.slice(5, 8);
+      const phoneEnd = phoneNum.slice(8, 12);
+      const formatedPhone = `${areaCode} ${localCode}-${phoneEnd}`;
+
+      let formatedMailingPostalCode = mailingPostalCode
+        .replace(/[ -]*/g, "")
+        .toUpperCase();
+
+      const postalCodeFront = formatedMailingPostalCode.slice(0, 3);
+      const postalCodeEnd = formatedMailingPostalCode.slice(3, 6);
+      formatedMailingPostalCode = `${postalCodeFront} ${postalCodeEnd}`;
+
       setApplicant({
         legalFirstNm,
         legalSecondNm,
@@ -586,11 +597,13 @@ export default function ApplicationForm({
         provinceNm,
         mailingProvinceNm: sameAddress ? provinceNm : mailingProvince,
         postalCodeTxt,
-        mailingPostalCodeTxt: sameAddress ? postalCodeTxt : mailingPostalCode,
+        mailingPostalCodeTxt: sameAddress
+          ? postalCodeTxt
+          : formatedMailingPostalCode,
         countryNm,
         birthPlace: birthLoc,
         driversLicNo: driversLicence,
-        phoneNumber: phoneNum,
+        phoneNumber: formatedPhone,
         emailAddress: email,
         jobTitle: job,
         organizationFacility: organizationLocation
