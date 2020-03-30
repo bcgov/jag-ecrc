@@ -62,7 +62,6 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
         <h1>
           Apply for a Criminal Record Check
         </h1>
-        <br />
         <p>
           To apply for a criminal record check online, you must use your 
           <a
@@ -89,7 +88,6 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
         <p>
           Please select an option below:
         </p>
-        <br />
         <div
           class="option"
         >
@@ -261,6 +259,18 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
             >
               <a
                 class="nav-link"
+                href="https://www2.gov.bc.ca"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                BC Government
+              </a>
+            </li>
+            <li
+              class="nav-item m-1"
+            >
+              <a
+                class="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -302,18 +312,6 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                 target="_blank"
               >
                 Copyright
-              </a>
-            </li>
-            <li
-              class="nav-item m-1"
-            >
-              <a
-                class="nav-link"
-                href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Contact Us
               </a>
             </li>
           </ul>

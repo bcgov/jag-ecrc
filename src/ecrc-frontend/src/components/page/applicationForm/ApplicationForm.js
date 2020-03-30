@@ -538,7 +538,7 @@ export default function ApplicationForm({
 
   const continueButton = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -576,49 +576,47 @@ export default function ApplicationForm({
     }
 
     if (!birthLoc) {
-      setBirthPlaceError("Please enter your city and country of birth");
+      setBirthPlaceError("City and country of birth are required");
     }
 
     if (!phoneNum) {
-      setPhoneNumberError("Please enter your primary phone number");
+      setPhoneNumberError("Primary phone number is required");
     } else if (!validatePhoneNumber(phoneNum)) {
-      setPhoneNumberError(
-        "Please enter a phone number in the form XXX XXX-XXXX"
-      );
+      setPhoneNumberError("Phone number must be in the form XXX XXX-XXXX");
     }
 
     if (!email) {
-      setEmailAddressError("Please enter your personal email address");
+      setEmailAddressError("Personal email address is required");
     } else if (!validateEmail(email)) {
-      setEmailAddressError(
-        "Please enter a valid email address eg. name@company.ca"
-      );
+      setEmailAddressError("Email address must be in the form name@company.ca");
     }
 
     if (!job) {
-      setJobTitleError("Please enter your position/job title");
+      setJobTitleError("Position/job title is required");
     }
 
     if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
-      setOrganizationFacilityError("Please enter your organization facility");
+      setOrganizationFacilityError("Organization facility is required");
     }
 
     if (!sameAddress && !mailingAddressLine1) {
-      setMailingAddressLine1Error("Please enter your PO box or street address");
+      setMailingAddressLine1Error("Street or PO box is required");
     }
 
     if (!sameAddress && !mailingCity) {
-      setMailingCityError("Please enter your city");
+      setMailingCityError("City is required");
     }
 
     if (!sameAddress && !mailingProvince) {
-      setMailingProvinceError("Please enter your province");
+      setMailingProvinceError("Province is required");
     }
 
-    if (!sameAddress && !validatePostalCode(mailingPostalCode)) {
-      setMailingPostalCodeError(
-        "Please enter a valid postal code in the form V9V 9V9"
-      );
+    if (!sameAddress) {
+      if (!mailingPostalCode) {
+        setMailingPostalCodeError("Postal code is required");
+      } else if (!validatePostalCode(mailingPostalCode)) {
+        setMailingPostalCodeError("Postal code must be in the form V9V 9V9");
+      }
     }
 
     if (
@@ -715,7 +713,6 @@ export default function ApplicationForm({
       <div className="page">
         <div className="content col-md-8">
           <h1>Criminal Record Check - Application</h1>
-          <br />
           <p>Complete the application form below to continue.</p>
           <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
           <div className="heading">
@@ -781,8 +778,7 @@ export default function ApplicationForm({
             <span className="previousHeader">Current Mailing Address</span>
           </div>
           <SimpleForm simpleForm={mailing} />
-          <br />
-          <section>
+          <section className="p-4">
             Entering your mailing address in this application will not update
             your BC Services Card Address. To update your BC Services Card
             information you must contact&nbsp;
@@ -810,8 +806,7 @@ export default function ApplicationForm({
               AddressChangeBC
             </a>
           </section>
-          <br />
-          <div className="buttons">
+          <div className="buttons pt-4">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />
           </div>

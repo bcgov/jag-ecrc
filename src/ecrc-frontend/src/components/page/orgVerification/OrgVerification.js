@@ -73,7 +73,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
 
   const continueButton = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -143,7 +143,6 @@ export default function OrgVerification({ page: { header, org, setError } }) {
       <div className="page">
         <div className="content col-md-8">
           <h1>Organization Information</h1>
-          <br />
           <p>
             You have provided the access code of the organization that has
             requested you to complete a criminal record check. Below are the
@@ -209,7 +208,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
               released to this organization.
             </p>
           </div>
-          <div className="buttons">
+          <div className="buttons pt-4">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={orgVerified} />
           </div>
