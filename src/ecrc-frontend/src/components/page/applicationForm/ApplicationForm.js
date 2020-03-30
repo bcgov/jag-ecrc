@@ -496,6 +496,11 @@ export default function ApplicationForm({
   const phoneNumRef = useRef(null);
   const emailRef = useRef(null);
   const jobRef = useRef(null);
+  const organizationFacilityRef = useRef(null);
+  const mailingAddressLine1Ref = useRef(null);
+  const mailingCityRef = useRef(null);
+  const mailingProvinceRef = useRef(null);
+  const mailingPostalCodeRef = useRef(null);
   let hasScrolled = false;
 
   const applicationVerification = () => {
@@ -559,24 +564,44 @@ export default function ApplicationForm({
 
     if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
       setOrganizationFacilityError("Please enter your organization facility");
+      if (!hasScrolled) {
+        scrollToRef(organizationFacilityRef);
+        hasScrolled = true;
+      }
     }
 
     if (!sameAddress && !mailingAddressLine1) {
       setMailingAddressLine1Error("Please enter your PO box or street address");
+      if (!hasScrolled) {
+        scrollToRef(mailingAddressLine1Ref);
+        hasScrolled = true;
+      }
     }
 
     if (!sameAddress && !mailingCity) {
       setMailingCityError("Please enter your city");
+      if (!hasScrolled) {
+        scrollToRef(mailingCityRef);
+        hasScrolled = true;
+      }
     }
 
     if (!sameAddress && !mailingProvince) {
       setMailingProvinceError("Please enter your province");
+      if (!hasScrolled) {
+        scrollToRef(mailingProvinceRef);
+        hasScrolled = true;
+      }
     }
 
     if (!sameAddress && !validatePostalCode(mailingPostalCode)) {
       setMailingPostalCodeError(
         "Please enter a valid postal code in the form V9V 9V9"
       );
+      if (!hasScrolled) {
+        scrollToRef(mailingPostalCodeRef);
+        hasScrolled = true;
+      }
     }
 
     if (
@@ -748,7 +773,15 @@ export default function ApplicationForm({
           <div className="heading">
             <span className="previousHeader">Current Mailing Address</span>
           </div>
-          <SimpleForm ref={phoneNumRef} simpleForm={mailing} />
+          <div ref={mailingAddressLine1Ref}>
+            <div ref={mailingCityRef}>
+              <div ref={mailingProvinceRef}>
+                <div ref={mailingPostalCodeRef}>
+                  <SimpleForm simpleForm={mailing} />
+                </div>
+              </div>
+            </div>
+          </div>
           <br />
           <section>
             Entering your mailing address in this application will not update
