@@ -93,7 +93,7 @@ describe("landing page", () => {
       it("Verify if the user is directed to the right page on validating a valid access code", function() {
         landingPage.accessCode.sendKeys(validCode);
 
-        landingPage.validate.click().then(function() {
+        landingPage.validate.click().then(() => {
           browser.sleep(4000);
           expect(process.env.ORGVERIFICATION_URL).toBe(browser.getCurrentUrl());
         });
