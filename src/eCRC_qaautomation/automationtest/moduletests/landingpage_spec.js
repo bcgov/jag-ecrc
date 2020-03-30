@@ -59,8 +59,8 @@ describe("landing page", () => {
       });
     });
 
-    it("Verify if I'm a volunteer organization redirects to the right page", function() {
-      landingPage.iAmAnVolunteerOrganization.click().then(function() {
+    it("Verify if I'm a volunteer organization redirects to the right page", () => {
+      landingPage.iAmAnVolunteerOrganization.click().then(() => {
         expect(process.env.LP_IAMAVOLUNTEERORGANIZATION_NAVTITLE).toBe(
           browser.getTitle()
         );
