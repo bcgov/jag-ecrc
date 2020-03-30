@@ -24,7 +24,7 @@ exports[`OrgVerification Component Matches the snapshot 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/criminalrecord/check/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div

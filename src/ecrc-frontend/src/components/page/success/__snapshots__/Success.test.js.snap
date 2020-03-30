@@ -24,7 +24,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/criminalrecord/check/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -309,7 +309,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/criminalrecord/check/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -579,7 +579,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/criminalrecord/check/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
