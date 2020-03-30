@@ -45,6 +45,7 @@ export default function ApplicationForm({
       driversLicNo,
       phoneNumber,
       emailAddress,
+      emailType,
       jobTitle,
       organizationFacility
     },
@@ -661,6 +662,7 @@ export default function ApplicationForm({
         driversLicNo: driversLicence,
         phoneNumber: phoneNum,
         emailAddress: email,
+        emailType: emailType || "Home",
         jobTitle: job,
         organizationFacility: organizationLocation
       });
@@ -849,6 +851,7 @@ ApplicationForm.propTypes = {
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string,
       emailAddress: PropTypes.string,
+      emailType: PropTypes.string,
       jobTitle: PropTypes.string,
       organizationFacility: PropTypes.string
     }),
@@ -878,6 +881,7 @@ ApplicationForm.defaultProps = {
       driversLicNo: "",
       phoneNumber: "",
       emailAddress: "",
+      emailType: "",
       jobTitle: "",
       organizationFacility: ""
     }
