@@ -55,7 +55,7 @@ describe("terms of use page", () => {
     orgVerificationPage.continue.click();
   });
 
-  it("verify that the continue button is enabled when all checkboxes are checked and the terms of use is scrolled to end of section", function() {
+  it("verify that the continue button is enabled when all checkboxes are checked and the terms of use is scrolled to end of section", () => {
     termsOfUsePage.readAndAcceptCheckBox.click();
 
     termsOfUsePage.authorizeEmailIdCheckBox.click();
