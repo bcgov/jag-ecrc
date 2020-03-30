@@ -18,8 +18,8 @@ describe("landing page", () => {
     browser.get(process.env.URL);
   });
 
-  describe("I need more Information", function() {
-    beforeEach(function() {
+  describe("I need more Information", () => {
+    beforeEach(() => {
       browser.get(process.env.URL);
     });
 
