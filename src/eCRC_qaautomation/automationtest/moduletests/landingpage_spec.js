@@ -100,8 +100,8 @@ describe("landing page", () => {
       });
     });
 
-    using(accessCode.accessCode.invalidCode, function(invalidCode) {
-      it("Verify if the user is directed to the right page on validating a valid access code", function() {
+    using(accessCode.accessCode.invalidCode, (invalidCode) => {
+      it("Verify if the user is directed to the right page on validating a valid access code", () => {
         landingPage.accessCode.sendKeys(invalidCode);
 
         landingPage.validate.click().then(function() {
