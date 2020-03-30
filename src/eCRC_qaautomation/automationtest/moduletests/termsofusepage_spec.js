@@ -30,8 +30,8 @@ var testInput = require("../../input/success");
 
 var using = require("jasmine-data-provider");
 
-describe("terms of use page", function() {
-  beforeEach(function() {
+describe("terms of use page", () => {
+  beforeEach(() => {
     browser.get(process.env.URL);
 
     browser
