@@ -6,8 +6,8 @@ var landingPage = require("../../pageobjectfactory/landingpage");
 
 var using = require("jasmine-data-provider");
 
-describe("landing page", function() {
-  beforeAll(function() {
+describe("landing page", () => {
+  beforeAll(() => {
     browser
       .manage()
       .window()
