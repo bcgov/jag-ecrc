@@ -28,6 +28,9 @@ export default function Declaration({
             check of records in the corrections information system of the
             Ministry of Public Safety and Solicitor General.
           </span>
+          <span id="asterisk" className="mandatory">
+            *
+          </span>
         </label>
       </section>
       <section className="declareSection">
@@ -42,6 +45,9 @@ export default function Declaration({
             omission or misrepresentation may be grounds for any finding of
             suitability to be suspended or revoked.
           </span>
+          <span id="asterisk" className="mandatory">
+            *
+          </span>
         </label>
       </section>
       <section className="declareSection">
@@ -50,6 +56,9 @@ export default function Declaration({
           <span className="declaration-cb">
             The third checkbox for my application and will provide as necessary
             is complete.
+          </span>
+          <span id="asterisk" className="mandatory">
+            *
           </span>
         </label>
       </section>
