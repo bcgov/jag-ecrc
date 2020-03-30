@@ -51,8 +51,8 @@ describe("landing page", () => {
       });
     });
 
-    it("Verify if I'm an employer organization redirects to the right page", function() {
-      landingPage.iAmAnEmployerOrganization.click().then(function() {
+    it("Verify if I'm an employer organization redirects to the right page", () => {
+      landingPage.iAmAnEmployerOrganization.click().then(() => {
         expect(process.env.LP_IAMANEMPLOYERORGANIZATION_NAVTITLE).toBe(
           browser.getTitle()
         );
