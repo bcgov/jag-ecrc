@@ -42,6 +42,8 @@ export default function Consent({
       mailingPostalCode,
       birthPlace,
       driversLicNo,
+      emailAddress,
+      emailType,
       phoneNumber,
       jobTitle
     },
@@ -176,7 +178,9 @@ export default function Consent({
       provinceNm: mailingProvince,
       countryNm,
       postalCodeTxt: mailingPostalCode,
-      driversLicNo
+      driversLicNo,
+      emailAddress,
+      emailType
     };
 
     let partyId;
@@ -453,6 +457,8 @@ Consent.propTypes = {
       mailingPostalCode: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
+      emailAddress: PropTypes.string.isRequired,
+      emailType: PropTypes.string.isRequired,
       phoneNumber: PropTypes.string.isRequired,
       jobTitle: PropTypes.string.isRequired
     }),
