@@ -86,8 +86,8 @@ describe("landing page", () => {
     });
   });
 
-  describe("I am ready", function() {
-    var accessCode = require("../../input/accesscode");
+  describe("I am ready", () => {
+    let accessCode = require("../../input/accesscode");
 
     using(accessCode.accessCode.validCode, function(validCode) {
       it("Verify if the user is directed to the right page on validating a valid access code", function() {
