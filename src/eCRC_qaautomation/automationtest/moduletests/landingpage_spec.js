@@ -68,17 +68,17 @@ describe("landing page", () => {
     });
   });
 
-  it("Verify if Criminal Records Review Act (CRRA) redirects to the right page", function() {
-    landingPage.criminalRecordsReviewAct.click().then(function() {
+  it("Verify if Criminal Records Review Act (CRRA) redirects to the right page", () => {
+    landingPage.criminalRecordsReviewAct.click().then(() => {
       expect(process.env.LP_CRIMINALRECORDSREVIEWACT_NAVTITLE).toBe(
         browser.getTitle()
       );
     });
   });
 
-  xdescribe("I need help", function() {
-    xit("Verify if criminalrecords@gov.bc.ca redirects to the right page", function() {
-      landingPage.criminalRecordsReviewAct.click().then(function() {
+  xdescribe("I need help", () => {
+    xit("Verify if criminalrecords@gov.bc.ca redirects to the right page", () => {
+      landingPage.criminalRecordsReviewAct.click().then(() => {
         expect(properties.properties.lp_criminalrecordsreviewact_navtitle).toBe(
           browser.getTitle()
         );
