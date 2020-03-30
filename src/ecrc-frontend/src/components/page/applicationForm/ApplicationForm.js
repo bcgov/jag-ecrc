@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -491,6 +491,13 @@ export default function ApplicationForm({
     return re.test(postalCode.toUpperCase());
   };
 
+  const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop);
+  const birthLocRef = useRef(null);
+  const phoneNumRef = useRef(null);
+  const emailRef = useRef(null);
+  const jobRef = useRef(null);
+  let hasScrolled = false;
+
   const applicationVerification = () => {
     if (!isAuthorized()) {
       setError({
@@ -503,26 +510,51 @@ export default function ApplicationForm({
 
     if (!birthLoc) {
       setBirthPlaceError("Please enter your city and country of birth");
+      if (!hasScrolled) {
+        scrollToRef(birthLocRef);
+        hasScrolled = true;
+      }
     }
 
     if (!phoneNum) {
       setPhoneNumberError("Please enter your primary phone number");
+      if (!hasScrolled) {
+        scrollToRef(phoneNumRef);
+        hasScrolled = true;
+      }
     } else if (!validatePhoneNumber(phoneNum)) {
       setPhoneNumberError(
         "Please enter a phone number in the form XXX XXX-XXXX"
       );
+
+      if (!hasScrolled) {
+        scrollToRef(phoneNumRef);
+        hasScrolled = true;
+      }
     }
 
     if (!email) {
       setEmailAddressError("Please enter your personal email address");
+      if (!hasScrolled) {
+        scrollToRef(emailRef);
+        hasScrolled = true;
+      }
     } else if (!validateEmail(email)) {
       setEmailAddressError(
         "Please enter a valid email address eg. name@company.ca"
       );
+      if (!hasScrolled) {
+        scrollToRef(emailRef);
+        hasScrolled = true;
+      }
     }
 
     if (!job) {
       setJobTitleError("Please enter your position/job title");
+      if (!hasScrolled) {
+        scrollToRef(jobRef);
+        hasScrolled = true;
+      }
     }
 
     if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
@@ -603,6 +635,8 @@ export default function ApplicationForm({
 
       history.push("/criminalrecordcheck/informationreview");
     }
+
+    hasScrolled = false;
   };
 
   const back = () => {
@@ -669,9 +703,17 @@ export default function ApplicationForm({
               </button>
             </span>
           )}
-          <SimpleForm simpleForm={applicantInformation} />
+          <div ref={birthLocRef}>
+            <div ref={phoneNumRef}>
+              <div ref={emailRef}>
+                <SimpleForm simpleForm={applicantInformation} />
+              </div>
+            </div>
+          </div>
           <br />
-          <SimpleForm simpleForm={positionInformation} />
+          <div ref={jobRef}>
+            <SimpleForm simpleForm={positionInformation} />
+          </div>
           <br />
           <div className="smallHeading">
             <span className="simpleForm_title">Addresses</span>
@@ -706,7 +748,7 @@ export default function ApplicationForm({
           <div className="heading">
             <span className="previousHeader">Current Mailing Address</span>
           </div>
-          <SimpleForm simpleForm={mailing} />
+          <SimpleForm ref={phoneNumRef} simpleForm={mailing} />
           <br />
           <section>
             Entering your mailing address in this application will not update
