@@ -1,7 +1,9 @@
+/* eslint-disable camelcase */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Redirect, useHistory } from "react-router-dom";
+import { useLocation, Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import queryString from "query-string";
 
 import "./ApplicationForm.css";
 import Header from "../../base/header/Header";
@@ -13,7 +15,6 @@ import SideCards from "../../composite/sideCards/SideCards";
 import {
   generateJWTToken,
   accessJWTToken,
-  isActionPerformed,
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
 
@@ -49,7 +50,9 @@ export default function ApplicationForm({
     },
     setApplicant,
     org: { defaultScheduleTypeCd },
-    setError
+    setError,
+    provinces,
+    setProvinces
   }
 }) {
   const history = useHistory();
@@ -97,52 +100,122 @@ export default function ApplicationForm({
   const [mailingProvinceError, setMailingProvinceError] = useState("");
   const [mailingPostalCode, setMailingPostalCode] = useState("");
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
+  const [toTransition, setToTransition] = useState(false);
 
-  const [provinces, setProvinces] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
-    if (!isAuthorized() || !isActionPerformed("userConfirmation"))
-      setToHome(true);
+    const urlParam = queryString.parse(location.search);
+    const { code } = urlParam;
 
-    let token = sessionStorage.getItem("jwt");
+    const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
-    const payload = accessJWTToken(token);
-    token = generateJWTToken({
-      ...payload,
-      authorities: ["Authorized", "ROLE"]
-    });
-
-    axios
-      .get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      .then(res => {
-        setProvinces(res.data.provinces.province);
-      })
-      .catch(error => {
-        setToError(true);
-        if (error && error.response && error.response.status) {
-          if (
-            error.request &&
-            error.request.response &&
-            JSON.parse(error.request.response)
-          ) {
-            setToError(true);
-            setError({
-              status: error.response.status,
-              message: JSON.parse(error.request.response).message
-            });
-          } else {
-            setError({
-              status: error.response.status,
-              message: error.response.data
-            });
+    if (code) {
+      Promise.all([
+        axios.get(`/ecrc/protected/login?code=${code}&requestGuid=${uuid}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
           }
-        }
-      });
+        }),
+        axios.get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+      ])
+        .then(res => {
+          sessionStorage.setItem("jwt", res[0].data);
+
+          if (!isAuthorized()) setToHome(true);
+
+          setProvinces(res[1].data.provinces.province);
+
+          const {
+            userInfo: {
+              birthdate,
+              address: { street_address, locality, region, postal_code },
+              gender,
+              given_name,
+              given_names,
+              family_name,
+              identity_assurance_level
+            }
+          } = accessJWTToken(res[0].data);
+
+          if (identity_assurance_level < 3) {
+            setToTransition(true);
+          }
+
+          // Convert gender text
+          const formatGender = gender === "female" ? "F" : "M";
+
+          // Convert date format
+          const formatBirthDt = birthdate.split("-").join("/");
+
+          // Convert given names
+          const givenNamesArray = given_names.split(" ");
+
+          givenNamesArray.shift();
+
+          const formatSecondNm = givenNamesArray.join(" ");
+
+          // Convert province name
+          const regionMap = new Map([
+            ["BC", "BRITISH COLUMBIA"],
+            ["AB", "ALBERTA"],
+            ["NL", "NEWFOUNDLAND"],
+            ["PE", "PRINCE EDWARD ISLAND"],
+            ["NS", "NOVA SCOTIA"],
+            ["NB", "NEW BRUNSWICK"],
+            ["QC", "QUEBEC"],
+            ["ON", "ONTARIO"],
+            ["MB", "MANITOBA"],
+            ["SK", "SASKATCHEWAN"],
+            ["YT", "YUKON"],
+            ["NT", "NORTH WEST TERRITORIES"],
+            ["NU", "NUNAVUT"]
+          ]);
+
+          let formatProvinceNm = regionMap.get(region);
+          if (formatProvinceNm === undefined) {
+            formatProvinceNm = "Invalid Province";
+          }
+
+          setApplicant({
+            legalFirstNm: given_name,
+            legalSecondNm: formatSecondNm,
+            legalSurnameNm: family_name,
+            birthDt: formatBirthDt,
+            genderTxt: formatGender,
+            addressLine1: street_address,
+            cityNm: locality,
+            provinceNm: formatProvinceNm,
+            postalCodeTxt: postal_code,
+            countryNm: "CANADA"
+          });
+        })
+        .catch(error => {
+          if (error && error.response && error.response.status) {
+            if (
+              error.request &&
+              error.request.response &&
+              JSON.parse(error.request.response)
+            ) {
+              setToError(true);
+              setError({
+                status: error.response.status,
+                message: JSON.parse(error.request.response).message
+              });
+            } else {
+              setError({
+                status: error.response.status,
+                message: error.response.data
+              });
+            }
+          }
+        });
+    }
 
     window.scrollTo(0, 0);
   }, [setError]);
@@ -595,7 +668,7 @@ export default function ApplicationForm({
       const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
       const newPayload = {
         ...currentPayload,
-        actionsPerformed: [...currentPayload.actionsPerformed, "appForm"]
+        actionsPerformed: ["appForm"]
       };
       generateJWTToken(newPayload);
 
@@ -629,8 +702,8 @@ export default function ApplicationForm({
     return <Redirect to="/" />;
   }
 
-  if (toError) {
-    return <Redirect to="/criminalrecordcheck/error" />;
+  if (toTransition) {
+    return <Redirect to="/criminalrecordcheck/transition" />;
   }
 
   return (
@@ -783,7 +856,9 @@ ApplicationForm.propTypes = {
     org: PropTypes.shape({
       defaultScheduleTypeCd: PropTypes.string.isRequired
     }),
-    setError: PropTypes.func.isRequired
+    setError: PropTypes.func.isRequired,
+    provinces: PropTypes.array,
+    setProvinces: PropTypes.func
   })
 };
 
