@@ -3,7 +3,6 @@ package ca.bc.gov.open.ecrc.service;
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
-import ca.bc.gov.open.ecrc.util.EcrcUtil;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -44,7 +43,6 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
     }
 
     public ResponseEntity<String> callWebMethodsService(String uri, Object returnObject) {
-		uri = EcrcUtil.encodeUriSpaces(uri);
         Mono<?> responseBody = this.webClient.get().uri(uri).retrieve()
                 .bodyToMono(returnObject.getClass());
 
