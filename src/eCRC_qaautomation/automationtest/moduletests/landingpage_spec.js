@@ -33,10 +33,10 @@ describe("landing page", () => {
         });
     });
 
-    it("Verify if why I need to apply for a criminal record check redirects to the right page", function() {
+    it("Verify if why I need to apply for a criminal record check redirects to the right page", () => {
       landingPage.whyINeedToApplyForACriminalRecordCheck
         .click()
-        .then(function() {
+        .then(() => {
           expect(
             process.env.LP_WHYINEEDTOAPPLYFORCRIMINALRECORDCHECK_NAVTITLE
           ).toBe(browser.getTitle());
