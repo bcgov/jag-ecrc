@@ -111,9 +111,9 @@ describe("landing page", () => {
       });
     });
 
-    xit("Verify if visit the criminal record review website redirects to the right page", function() {
-      landingPage.visitTheCriminalRecordReviewWebsite.click().then(function() {
-        browser.getAllWindowHandles().then(function(windowHandle) {
+    xit("Verify if visit the criminal record review website redirects to the right page", () => {
+      landingPage.visitTheCriminalRecordReviewWebsite.click().then(() => {
+        browser.getAllWindowHandles().then((windowHandle) => {
           browser.switchTo().window(windowHandle[1]);
           expect(
             process.env.LP_VISITTHECRIMINALRECORDREVIEWWEBSITE_NAVTITLE
