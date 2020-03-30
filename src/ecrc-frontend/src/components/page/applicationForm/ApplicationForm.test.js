@@ -186,7 +186,7 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(container, "Please enter your PO box or street address")
+      getByText(container, "Street or PO box is required")
     ).toBeInTheDocument();
   });
 
@@ -213,7 +213,7 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(container, "Please enter your personal email address")
+      getByText(container, "Personal email address is required")
     ).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "example@test.com"), {
@@ -223,10 +223,7 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(
-        container,
-        "Please enter a valid email address eg. name@company.ca"
-      )
+      getByText(container, "Email address must be in the form name@company.ca")
     ).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "example@test.com"), {
@@ -263,7 +260,7 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(container, "Please enter your primary phone number")
+      getByText(container, "Primary phone number is required")
     ).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "123 456 7890"), {
@@ -273,10 +270,7 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(
-        container,
-        "Please enter a phone number in the form XXX XXX-XXXX"
-      )
+      getByText(container, "Phone number must be in the form XXX XXX-XXXX")
     ).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "123 456 7890"), {
@@ -314,24 +308,16 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(
-      getByText(
-        container,
-        "Please enter a valid postal code in the form V9V 9V9"
-      )
-    ).toBeInTheDocument();
+    expect(getByText(container, "Postal code is required")).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "V9V 9V9"), {
-      target: { value: "V99 9V9" }
+      target: { value: "V9999V9" }
     });
 
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(
-        container,
-        "Please enter a valid postal code in the form V9V 9V9"
-      )
+      getByText(container, "Postal code must be in the form V9V 9V9")
     ).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "V9V 9V9"), {
@@ -371,7 +357,7 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(container, "Please enter your city and country of birth")
+      getByText(container, "City and country of birth are required")
     ).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "City, Country"), {
@@ -379,7 +365,7 @@ describe("ApplicationForm Component", () => {
     });
 
     expect(
-      queryByText(container, "Please enter your city and country of birth")
+      queryByText(container, "City and country of birth are required")
     ).toBeNull();
 
     fireEvent.click(getByText(container, "Continue"));
@@ -412,16 +398,14 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(container, "Please enter your position/job title")
+      getByText(container, "Position/job title is required")
     ).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "Position/Job Title"), {
       target: { value: "Painter" }
     });
 
-    expect(
-      queryByText(container, "Please enter your position/job title")
-    ).toBeNull();
+    expect(queryByText(container, "Position/job title is required")).toBeNull();
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -453,7 +437,7 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(container, "Please enter your organization facility")
+      getByText(container, "Organization facility is required")
     ).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "Organization Facility"), {
@@ -461,7 +445,7 @@ describe("ApplicationForm Component", () => {
     });
 
     expect(
-      queryByText(container, "Please enter your organization facility")
+      queryByText(container, "Organization facility is required")
     ).toBeNull();
 
     fireEvent.click(getByText(container, "Continue"));
@@ -496,22 +480,18 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(
-      getByText(container, "Please enter your PO box or street address")
+      getByText(container, "Street or PO box is required")
     ).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "Street or PO Box"), {
       target: { value: "234 Here St" }
     });
 
-    expect(
-      queryByText(container, "Please enter your PO box or street address")
-    ).toBeNull();
+    expect(queryByText(container, "Street or PO box is required")).toBeNull();
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(
-      queryByText(container, "Please enter your PO box or street address")
-    ).toBeNull();
+    expect(queryByText(container, "Street or PO box is required")).toBeNull();
   });
 
   test("Requires city if different mailing address selected", async () => {
@@ -538,17 +518,17 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(getByText(container, "Please enter your city")).toBeInTheDocument();
+    expect(getByText(container, "City is required")).toBeInTheDocument();
 
     fireEvent.change(getByPlaceholderText(container, "City"), {
       target: { value: "Nowhere" }
     });
 
-    expect(queryByText(container, "Please enter your city")).toBeNull();
+    expect(queryByText(container, "City is required")).toBeNull();
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(queryByText(container, "Please enter your city")).toBeNull();
+    expect(queryByText(container, "City is required")).toBeNull();
   });
 
   test("Select province if different mailing address selected", async () => {

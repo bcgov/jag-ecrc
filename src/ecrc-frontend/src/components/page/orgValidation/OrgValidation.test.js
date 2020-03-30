@@ -145,7 +145,7 @@ describe("OrgValidation Component", () => {
     await wait(() => {});
 
     expect(
-      getByText(container, "Please enter a valid org code")
+      getByText(container, "The access code is invalid")
     ).toBeInTheDocument();
   });
 });
