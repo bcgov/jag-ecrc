@@ -23,7 +23,9 @@ export default function App() {
     JSON.parse(sessionStorage.getItem("applicationInfo")) || {}
   );
 
-  const [error, setError] = useState({});
+  const [error, setError] = useState("");
+  const [provinces, setProvinces] = useState([]);
+  const [sameAddress, setSameAddress] = useState(true);
 
   const [transitionReason, setTransitionReason] = useState("bcsc");
 
@@ -57,7 +59,17 @@ export default function App() {
         </Route>
         <Route path="/(ecrc/applicationform|criminalrecordcheck/applicationform)">
           <ApplicationForm
-            page={{ header, org, applicant, setApplicant, setError }}
+            page={{
+              header,
+              org,
+              applicant,
+              setApplicant,
+              setError,
+              provinces,
+              setProvinces,
+              sameAddress,
+              setSameAddress
+            }}
           />
         </Route>
         <Route path="/(ecrc/transition|criminalrecordcheck/transition)">

@@ -38,10 +38,10 @@ export default function InformationReview({
       provinceNm,
       postalCodeTxt,
       countryNm,
-      mailingAddressLine1,
-      mailingCity,
-      mailingProvince,
-      mailingPostalCode,
+      mailingLine1,
+      mailingCityNm,
+      mailingProvinceNm,
+      mailingPostalCodeTxt,
       birthPlace,
       driversLicNo,
       phoneNumber,
@@ -227,19 +227,19 @@ export default function InformationReview({
   const mailingAddressElement = [
     {
       name: "Mailing Address",
-      value: mailingAddressLine1
+      value: mailingLine1
     },
     {
       name: "City",
-      value: mailingCity
+      value: mailingCityNm
     },
     {
       name: "Province",
-      value: mailingProvince
+      value: mailingProvinceNm
     },
     {
       name: "Postal Code",
-      value: mailingPostalCode
+      value: mailingPostalCodeTxt
     },
     {
       name: "Country",
@@ -381,10 +381,10 @@ InformationReview.propTypes = {
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
       countryNm: PropTypes.string.isRequired,
-      mailingAddressLine1: PropTypes.string.isRequired,
-      mailingCity: PropTypes.string.isRequired,
-      mailingProvince: PropTypes.string.isRequired,
-      mailingPostalCode: PropTypes.string.isRequired,
+      mailingLine1: PropTypes.string.isRequired,
+      mailingCityNm: PropTypes.string.isRequired,
+      mailingProvinceNm: PropTypes.string.isRequired,
+      mailingPostalCodeTxt: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string.isRequired,

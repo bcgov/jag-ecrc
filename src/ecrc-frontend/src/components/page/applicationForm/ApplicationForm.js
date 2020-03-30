@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Redirect, useHistory } from "react-router-dom";
@@ -11,9 +12,9 @@ import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
+  isActionPerformed,
   generateJWTToken,
   accessJWTToken,
-  isActionPerformed,
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
 
@@ -45,11 +46,19 @@ export default function ApplicationForm({
       phoneNumber,
       emailAddress,
       jobTitle,
-      organizationFacility
+      organizationFacility,
+      mailingLine1 = "",
+      mailingCityNm = "",
+      mailingProvinceNm = "",
+      mailingPostalCodeTxt = ""
     },
     setApplicant,
     org: { defaultScheduleTypeCd },
-    setError
+    setError,
+    provinces,
+    setProvinces,
+    sameAddress,
+    setSameAddress
   }
 }) {
   const history = useHistory();
@@ -88,17 +97,16 @@ export default function ApplicationForm({
     ""
   );
 
-  const [sameAddress, setSameAddress] = useState(true);
-  const [mailingAddressLine1, setMailingAddressLine1] = useState("");
+  const [mailingAddressLine1, setMailingAddressLine1] = useState(mailingLine1);
   const [mailingAddressLine1Error, setMailingAddressLine1Error] = useState("");
-  const [mailingCity, setMailingCity] = useState("");
+  const [mailingCity, setMailingCity] = useState(mailingCityNm);
   const [mailingCityError, setMailingCityError] = useState("");
-  const [mailingProvince, setMailingProvince] = useState("");
+  const [mailingProvince, setMailingProvince] = useState(mailingProvinceNm);
   const [mailingProvinceError, setMailingProvinceError] = useState("");
-  const [mailingPostalCode, setMailingPostalCode] = useState("");
+  const [mailingPostalCode, setMailingPostalCode] = useState(
+    mailingPostalCodeTxt
+  );
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
-
-  const [provinces, setProvinces] = useState([]);
 
   useEffect(() => {
     if (!isAuthorized() || !isActionPerformed("userConfirmation"))
@@ -145,21 +153,7 @@ export default function ApplicationForm({
       });
 
     window.scrollTo(0, 0);
-  }, [setError]);
-
-  useEffect(() => {
-    if (sameAddress) {
-      setMailingAddressLine1(addressLine1);
-      setMailingCity(cityNm);
-      setMailingProvince(provinceNm);
-      setMailingPostalCode(postalCodeTxt);
-    } else {
-      setMailingAddressLine1("");
-      setMailingCity("");
-      setMailingProvince("BRITISH COLUMBIA");
-      setMailingPostalCode("");
-    }
-  }, [sameAddress, addressLine1, cityNm, postalCodeTxt, provinceNm]);
+  }, [setError, setProvinces]);
 
   const currentName = {
     legalFirstNm: {
@@ -300,7 +294,7 @@ export default function ApplicationForm({
       {
         label: "Primary Phone Number",
         id: "phoneNumber",
-        placeholder: "123 456 7890",
+        placeholder: "250 555-1234",
         value: phoneNum,
         note: "(Including area code)",
         isRequired: true,
@@ -411,6 +405,7 @@ export default function ApplicationForm({
         isRequired: true,
         errorMsg: mailingAddressLine1Error,
         onChange: event => {
+          console.log(event);
           setMailingAddressLine1(event);
           setMailingAddressLine1Error("");
         }
@@ -476,18 +471,23 @@ export default function ApplicationForm({
     type: "submit"
   };
 
+  const validateBirthPlace = birthPlaceTxt => {
+    const re = /^[\w]+,?[ ]{1}[\w]+/;
+    return re.test(birthPlaceTxt);
+  };
+
   const validatePhoneNumber = phone => {
     const re = /1?[ \-(]*\d{3}[ \-)]*\d{3}[ -]*\d{4}/;
     return re.test(phone);
   };
 
   const validateEmail = emailTxt => {
-    const re = /[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    const re = /[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return re.test(emailTxt);
   };
 
   const validatePostalCode = postalCode => {
-    const re = /[A-Z][0-9][A-Z][ -]*[0-9][A-Z][0-9]/;
+    const re = /^[A-Z][0-9][A-Z][ -]*[0-9][A-Z][0-9]$/;
     return re.test(postalCode.toUpperCase());
   };
 
@@ -501,7 +501,7 @@ export default function ApplicationForm({
       return;
     }
 
-    if (!birthLoc) {
+    if (!birthLoc || !validateBirthPlace(birthLoc)) {
       setBirthPlaceError("Please enter your city and country of birth");
     }
 
@@ -549,6 +549,7 @@ export default function ApplicationForm({
 
     if (
       birthLoc !== "" &&
+      validateBirthPlace(birthLoc) &&
       phoneNum !== "" &&
       validatePhoneNumber(phoneNum) &&
       email !== "" &&
@@ -578,13 +579,13 @@ export default function ApplicationForm({
         birthDt,
         genderTxt,
         addressLine1,
-        mailingAddressLine1,
+        mailingLine1: mailingAddressLine1,
         cityNm,
-        mailingCity,
+        mailingCityNm: mailingCity,
         provinceNm,
-        mailingProvince,
+        mailingProvinceNm: mailingProvince,
         postalCodeTxt,
-        mailingPostalCode,
+        mailingPostalCodeTxt: mailingPostalCode,
         countryNm,
         birthPlace: birthLoc,
         driversLicNo: driversLicence,
@@ -621,6 +622,21 @@ export default function ApplicationForm({
 
   const mailingAddress = event => {
     setSameAddress(event.target.id === "yes");
+
+    // if () {
+    //   console.log("yes")
+    //   setMailingAddressLine1(addressLine1.slice(0));
+    //   setMailingCity(cityNm);
+    //   setMailingProvince(provinceNm);
+    //   setMailingPostalCode(postalCodeTxt.slice(0));
+    // } else {
+    //   console.log("no")
+    //   setMailingAddressLine1(mailingLine1.slice(0));
+    //   setMailingCity(mailingCityNm);
+    //   setMailingProvince(mailingProvinceNm);
+    //   setMailingPostalCode(mailingPostalCodeTxt.slice(0));
+    //   setSameAddress(false);
+    // }
   };
 
   if (toError) {
@@ -629,10 +645,6 @@ export default function ApplicationForm({
 
   if (toHome) {
     return <Redirect to="/" />;
-  }
-
-  if (toError) {
-    return <Redirect to="/criminalrecordcheck/error" />;
   }
 
   return (
@@ -706,7 +718,8 @@ export default function ApplicationForm({
           <div className="heading">
             <span className="previousHeader">Current Mailing Address</span>
           </div>
-          <SimpleForm simpleForm={mailing} />
+          {sameAddress && <SimpleForm simpleForm={address} />}
+          {!sameAddress && <SimpleForm simpleForm={mailing} />}
           <br />
           <section>
             Entering your mailing address in this application will not update
@@ -782,13 +795,21 @@ ApplicationForm.propTypes = {
       phoneNumber: PropTypes.string,
       emailAddress: PropTypes.string,
       jobTitle: PropTypes.string,
-      organizationFacility: PropTypes.string
+      organizationFacility: PropTypes.string,
+      mailingLine1: PropTypes.string,
+      mailingCityNm: PropTypes.string,
+      mailingProvinceNm: PropTypes.string,
+      mailingPostalCodeTxt: PropTypes.string
     }),
     setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({
       defaultScheduleTypeCd: PropTypes.string.isRequired
     }),
-    setError: PropTypes.func.isRequired
+    setError: PropTypes.func.isRequired,
+    provinces: PropTypes.array,
+    setProvinces: PropTypes.func,
+    sameAddress: PropTypes.bool.isRequired,
+    setSameAddress: PropTypes.func.isRequired
   })
 };
 
@@ -809,7 +830,11 @@ ApplicationForm.defaultProps = {
       phoneNumber: "",
       emailAddress: "",
       jobTitle: "",
-      organizationFacility: ""
+      organizationFacility: "",
+      mailingLine1: "",
+      mailingCityNm: "",
+      mailingProvinceNm: "",
+      mailingPostalCodeTxt: ""
     }
   }
 };
