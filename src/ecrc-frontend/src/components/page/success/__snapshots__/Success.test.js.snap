@@ -223,7 +223,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           >
             <a
               className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home"
+              href="https://www2.gov.bc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -493,7 +493,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
           >
             <a
               className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home"
+              href="https://www2.gov.bc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -739,7 +739,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
           >
             <a
               className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home"
+              href="https://www2.gov.bc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >

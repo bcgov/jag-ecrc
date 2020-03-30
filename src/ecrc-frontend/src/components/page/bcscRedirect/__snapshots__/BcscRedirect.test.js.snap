@@ -264,7 +264,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
             >
               <a
                 class="nav-link"
-                href="https://www2.gov.bc.ca/gov/content/home"
+                href="https://www2.gov.bc.ca"
                 rel="noopener noreferrer"
                 target="_blank"
               >
