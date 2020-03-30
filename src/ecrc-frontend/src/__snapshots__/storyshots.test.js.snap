@@ -456,12 +456,16 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 </span>
               </label>
               <input
+                autoComplete="tel"
                 className="textinput_editable_white"
-                defaultValue=""
                 id="phoneNumber"
                 onChange={[Function]}
-                placeholder="123 456 7890"
-                type="text"
+                onCut={[Function]}
+                onKeyDown={[Function]}
+                onPaste={[Function]}
+                placeholder="250 555-1234"
+                type="tel"
+                value=""
               />
               <br />
               <span
@@ -755,7 +759,6 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           Yes 
         </span>
         <input
-          checked={true}
           data-testid="sameAddress"
           id="yes"
           onChange={[Function]}
@@ -765,7 +768,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
            No 
         </span>
         <input
-          checked={false}
+          checked={true}
           data-testid="differentAddress"
           id="no"
           onChange={[Function]}
@@ -884,12 +887,20 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                   className="note"
                 />
               </label>
-              <select
+              <input
                 className="textinput_editable_white"
+                defaultValue="BRITISH COLUMBIA"
                 id="mailingProvinceNm"
                 onChange={[Function]}
-                value=""
+                placeholder="Select Province"
+                type="text"
               />
+              <br />
+              <span
+                className="error"
+              >
+                
+              </span>
             </div>
           </li>
           <li>
@@ -1765,12 +1776,16 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 </span>
               </label>
               <input
+                autoComplete="tel"
                 className="textinput_editable_white"
-                defaultValue=""
                 id="phoneNumber"
                 onChange={[Function]}
-                placeholder="123 456 7890"
-                type="text"
+                onCut={[Function]}
+                onKeyDown={[Function]}
+                onPaste={[Function]}
+                placeholder="250 555-1234"
+                type="tel"
+                value=""
               />
               <br />
               <span
@@ -2104,7 +2119,6 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           Yes 
         </span>
         <input
-          checked={true}
           data-testid="sameAddress"
           id="yes"
           onChange={[Function]}
@@ -2114,7 +2128,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
            No 
         </span>
         <input
-          checked={false}
+          checked={true}
           data-testid="differentAddress"
           id="no"
           onChange={[Function]}
@@ -2233,12 +2247,20 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                   className="note"
                 />
               </label>
-              <select
+              <input
                 className="textinput_editable_white"
+                defaultValue="BRITISH COLUMBIA"
                 id="mailingProvinceNm"
                 onChange={[Function]}
-                value=""
+                placeholder="Select Province"
+                type="text"
               />
+              <br />
+              <span
+                className="error"
+              >
+                
+              </span>
             </div>
           </li>
           <li>

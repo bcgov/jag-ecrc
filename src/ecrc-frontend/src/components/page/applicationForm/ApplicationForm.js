@@ -431,7 +431,7 @@ export default function ApplicationForm({
         isRequired: true,
         errorMsg: mailingProvinceError,
         onChange: event => {
-          setMailingProvince(event.target.value);
+          setMailingProvince(event);
           setMailingProvinceError("");
         }
       },
@@ -636,21 +636,6 @@ export default function ApplicationForm({
 
   const mailingAddress = event => {
     setSameAddress(event.target.id === "yes");
-
-    // if () {
-    //   console.log("yes")
-    //   setMailingAddressLine1(addressLine1.slice(0));
-    //   setMailingCity(cityNm);
-    //   setMailingProvince(provinceNm);
-    //   setMailingPostalCode(postalCodeTxt.slice(0));
-    // } else {
-    //   console.log("no")
-    //   setMailingAddressLine1(mailingLine1.slice(0));
-    //   setMailingCity(mailingCityNm);
-    //   setMailingProvince(mailingProvinceNm);
-    //   setMailingPostalCode(mailingPostalCodeTxt.slice(0));
-    //   setSameAddress(false);
-    // }
   };
 
   if (toError) {

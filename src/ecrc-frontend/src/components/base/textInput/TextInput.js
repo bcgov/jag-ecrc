@@ -71,7 +71,12 @@ export const TextInput = ({
     return (
       <div>
         {labelPart && labelPart}
-        <select className={textStyle} id={id} value={value} onChange={onChange}>
+        <select
+          className={textStyle}
+          id={id}
+          value={value}
+          onChange={event => onChange(event.target.value)}
+        >
           {options.map(item => {
             return (
               <option key={item.name} value={item.name}>
@@ -127,6 +132,7 @@ TextInput.propTypes = {
     textInputStyle: PropTypes.string,
     value: PropTypes.string,
     placeholder: PropTypes.string,
+    phone: PropTypes.bool,
     options: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired
@@ -140,6 +146,7 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   textInput: {
+    phone: false,
     placeholder: "",
     note: "",
     errorMsg: ""
