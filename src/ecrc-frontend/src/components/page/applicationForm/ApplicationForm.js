@@ -502,49 +502,47 @@ export default function ApplicationForm({
     }
 
     if (!birthLoc) {
-      setBirthPlaceError("Please enter your city and country of birth");
+      setBirthPlaceError("City and country of birth are required");
     }
 
     if (!phoneNum) {
-      setPhoneNumberError("Please enter your primary phone number");
+      setPhoneNumberError("Primary phone number is required");
     } else if (!validatePhoneNumber(phoneNum)) {
-      setPhoneNumberError(
-        "Please enter a phone number in the form XXX XXX-XXXX"
-      );
+      setPhoneNumberError("Phone number must be in the form XXX XXX-XXXX");
     }
 
     if (!email) {
-      setEmailAddressError("Please enter your personal email address");
+      setEmailAddressError("Personal email address is required");
     } else if (!validateEmail(email)) {
-      setEmailAddressError(
-        "Please enter a valid email address eg. name@company.ca"
-      );
+      setEmailAddressError("Email address must be in the form name@company.ca");
     }
 
     if (!job) {
-      setJobTitleError("Please enter your position/job title");
+      setJobTitleError("Position/job title is required");
     }
 
     if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
-      setOrganizationFacilityError("Please enter your organization facility");
+      setOrganizationFacilityError("Organization facility is required");
     }
 
     if (!sameAddress && !mailingAddressLine1) {
-      setMailingAddressLine1Error("Please enter your PO box or street address");
+      setMailingAddressLine1Error("Street or PO box is required");
     }
 
     if (!sameAddress && !mailingCity) {
-      setMailingCityError("Please enter your city");
+      setMailingCityError("City is required");
     }
 
     if (!sameAddress && !mailingProvince) {
-      setMailingProvinceError("Please enter your province");
+      setMailingProvinceError("Province is required");
     }
 
-    if (!sameAddress && !validatePostalCode(mailingPostalCode)) {
-      setMailingPostalCodeError(
-        "Please enter a valid postal code in the form V9V 9V9"
-      );
+    if (!sameAddress) {
+      if (!mailingPostalCode) {
+        setMailingPostalCodeError("Postal code is required");
+      } else if (!validatePostalCode(mailingPostalCode)) {
+        setMailingPostalCodeError("Postal code must be in the form V9V 9V9");
+      }
     }
 
     if (

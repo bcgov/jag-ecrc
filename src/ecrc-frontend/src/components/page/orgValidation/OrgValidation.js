@@ -41,7 +41,7 @@ export default function OrgValidation({
 
   const orgValidation = () => {
     if (!orgTicketNumber) {
-      setOrgError("An access code is required to continue.");
+      setOrgError("An access code is required to continue");
       return false;
     }
 
@@ -68,7 +68,7 @@ export default function OrgValidation({
         setLoading(false);
         if (error && error.response && error.response.status) {
           if (error.response.status === 404) {
-            setOrgError("Please enter a valid org code");
+            setOrgError("The access code is not valid");
           } else if (error.response.status === 401) {
             setTransitionReason("notwhitelisted");
             history.push("/criminalrecordcheck/transition");
