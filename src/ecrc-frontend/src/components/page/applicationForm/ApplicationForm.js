@@ -143,7 +143,6 @@ export default function ApplicationForm({
             }
           } = accessJWTToken(res[0].data);
 
-          // TODO Check identity assurance level
           if (identity_assurance_level < 3) {
             setToTransition(true);
           }

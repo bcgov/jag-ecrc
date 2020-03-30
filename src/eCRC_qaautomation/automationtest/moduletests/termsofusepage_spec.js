@@ -66,8 +66,6 @@ describe("terms of use page", () => {
       .perform();
 
     termsOfUsePage.continueButton.click();
-
-    // bcscRedirectPage.login.click();
   });
 
   using(
