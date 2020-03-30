@@ -66,7 +66,6 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
         <h1>
           Criminal Record Check
         </h1>
-        <br />
         <p>
           In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
            
@@ -271,7 +270,6 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
               or by phone at 1-855-587-0185 (Option 2).
             </p>
           </div>
-          <br />
         </div>
       </div>
     </div>
@@ -299,6 +297,18 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -345,18 +355,6 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>

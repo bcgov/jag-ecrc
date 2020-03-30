@@ -672,7 +672,7 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
           </label>
         </section>
         <section
-          className="buttons pt-5"
+          className="buttons pt-4"
         >
           <button
             className="btn ecrc_accessary_btn btn"
@@ -735,6 +735,18 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -776,18 +788,6 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>

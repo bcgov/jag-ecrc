@@ -30,3 +30,8 @@
 .alignRight {
   text-align: right;
 }
+
+/* could not read the text when hovering */
+a:hover {
+  color: inherit;
+}

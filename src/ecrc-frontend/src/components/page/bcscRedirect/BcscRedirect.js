@@ -80,7 +80,6 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
       <div className="page">
         <div className="content col-md-8">
           <h1>Apply for a Criminal Record Check</h1>
-          <br />
           <p>
             To apply for a criminal record check online, you must use your{" "}
             <a
@@ -105,7 +104,6 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
           </p>
 
           <p>Please select an option below:</p>
-          <br />
           <div className="option">
             <div className="row">
               <div

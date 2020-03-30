@@ -35,3 +35,9 @@ ul#buttonList li {
   display: inline;
   padding: 5px;
 }
+
+@media (max-width: 768px) {
+  ul {
+    padding: 0;
+  }
+}

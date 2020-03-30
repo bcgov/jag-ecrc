@@ -64,9 +64,8 @@ exports[`Error Component Matches the snapshot 1`] = `
     >
       <div>
         <h1>
-          Unauthorized Entry
+          Unauthorized entry
         </h1>
-        <br />
         <p>
           Unauthorized user entry, please return to the home page and begin your session again.
         </p>
@@ -119,6 +118,18 @@ exports[`Error Component Matches the snapshot 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -160,18 +171,6 @@ exports[`Error Component Matches the snapshot 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>

@@ -15,7 +15,6 @@ export default function OrgValidationText({
   return (
     <div>
       <h1>Criminal Record Check</h1>
-      <br />
       <p>
         In British Columbia, if you work or volunteer with, or have the
         potential for unsupervised access to children and/or vulnerable adults,
@@ -151,7 +150,6 @@ export default function OrgValidationText({
             or by phone at 1-855-587-0185 (Option 2).
           </p>
         </div>
-        <br />
       </div>
     </div>
   );
