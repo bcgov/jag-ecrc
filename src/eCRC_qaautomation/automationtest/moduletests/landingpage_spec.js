@@ -124,7 +124,7 @@ describe("landing page", () => {
       });
     });
 
-    afterEach(function() {
+    afterEach(() => {
       browser.get(process.env.URL);
     });
   });
