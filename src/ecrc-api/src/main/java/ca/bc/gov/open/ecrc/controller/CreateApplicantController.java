@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.service.EcrcServices;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 
-import java.util.UUID;
 
 /**
  * @author sivakaruna

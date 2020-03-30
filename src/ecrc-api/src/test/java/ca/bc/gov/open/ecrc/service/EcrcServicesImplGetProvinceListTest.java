@@ -25,7 +25,8 @@ import javassist.NotFoundException;
  */
 class EcrcServicesImplGetProvinceListTest {
 
-    private ResponseEntity<String> serviceResult;
+	private static final String GUID = "GUID";
+	private ResponseEntity<String> serviceResult;
 	private final String result = "{\n" + "\"Provinces\": {\n" + "\"Province\": [\n" + "{\n"
 			+ "\"Name\": \"BRITISH COLUMBIA\"\n" + "},\n" + "{\n" + "\"Name\": \"ALBERTA\"\n" + "},\n" + "{\n"
 			+ "\"Name\": \"MANITOBA\"\n" + "},\n" + "{\n" + "\"Name\": \"NEW BRUNSWICK\"\n" + "},\n" + "{\n"
@@ -54,9 +55,9 @@ class EcrcServicesImplGetProvinceListTest {
 	@DisplayName("Success - ecrcService getProvinceList")
 	@Test
 	public void testGetProvinceListResultSuccess() throws NotFoundException, EcrcServiceException {
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
 				.thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
-		serviceResult = ecrcServices.getProvinceList();
+		serviceResult = ecrcServices.getProvinceList(GUID);
 		Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());
 		Assertions.assertEquals(result, serviceResult.getBody());
 	}

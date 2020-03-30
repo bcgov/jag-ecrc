@@ -20,6 +20,7 @@ import static org.mockito.ArgumentMatchers.any;
 
 
 public class EcrcServicesImplDoAuthenticateTest {
+    private static final String GUID = "GUID";
     private ResponseEntity<String> serviceResult;
     private final String result = "{\n" +
             "    \"accessCodeResponse\": {\n" +
@@ -89,8 +90,8 @@ public class EcrcServicesImplDoAuthenticateTest {
     @DisplayName("Success - ecrcService doAuthenticate")
     @Test
     public void testDoAuthenticateResultSuccess() throws NotFoundException, EcrcServiceException {
-        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any())).thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
-        serviceResult = ecrcServices.doAuthenticateUser("CRCE");
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any())).thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
+        serviceResult = ecrcServices.doAuthenticateUser("CRCE", GUID);
         Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());
         Assertions.assertEquals(result, serviceResult.getBody());
     }
@@ -98,7 +99,7 @@ public class EcrcServicesImplDoAuthenticateTest {
     @DisplayName("Not Whitelisted - ecrcService doAuthenticate")
     @Test
     public void testDoAuthenticateResultNotWhitelist() throws NotFoundException, EcrcServiceException {
-        serviceResult = ecrcServices.doAuthenticateUser("NOTWHITLIST");
+        serviceResult = ecrcServices.doAuthenticateUser("NOTWHITLIST", GUID);
         Assertions.assertEquals(HttpStatus.UNAUTHORIZED, serviceResult.getStatusCode());
         Assertions.assertEquals(notWhitelistResult, serviceResult.getBody());
     }
