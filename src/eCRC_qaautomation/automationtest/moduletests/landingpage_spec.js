@@ -89,8 +89,8 @@ describe("landing page", () => {
   describe("I am ready", () => {
     let accessCode = require("../../input/accesscode");
 
-    using(accessCode.accessCode.validCode, function(validCode) {
-      it("Verify if the user is directed to the right page on validating a valid access code", function() {
+    using(accessCode.accessCode.validCode, (validCode) => {
+      it("Verify if the user is directed to the right page on validating a valid access code", () => {
         landingPage.accessCode.sendKeys(validCode);
 
         landingPage.validate.click().then(() => {
