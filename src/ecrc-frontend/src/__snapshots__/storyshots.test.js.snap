@@ -65,7 +65,6 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
       <h1>
         Criminal Record Check - Application
       </h1>
-      <br />
       <p>
         Complete the application form below to continue.
       </p>
@@ -963,8 +962,9 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </li>
         </ul>
       </form>
-      <br />
-      <section>
+      <section
+        className="p-4"
+      >
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
@@ -990,9 +990,8 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           AddressChangeBC
         </a>
       </section>
-      <br />
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -1009,7 +1008,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -1247,6 +1246,18 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -1288,18 +1299,6 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -1374,7 +1373,6 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
       <h1>
         Criminal Record Check - Application
       </h1>
-      <br />
       <p>
         Complete the application form below to continue.
       </p>
@@ -2312,8 +2310,9 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </li>
         </ul>
       </form>
-      <br />
-      <section>
+      <section
+        className="p-4"
+      >
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
@@ -2339,9 +2338,8 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           AddressChangeBC
         </a>
       </section>
-      <br />
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -2358,7 +2356,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -2596,6 +2594,18 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -2637,18 +2647,6 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -2723,7 +2721,6 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
       <h1>
         Apply for a Criminal Record Check
       </h1>
-      <br />
       <p>
         To apply for a criminal record check online, you must use your
          
@@ -2753,7 +2750,6 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
       <p>
         Please select an option below:
       </p>
-      <br />
       <div
         className="option"
       >
@@ -2947,6 +2943,18 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -2988,18 +2996,6 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -3074,7 +3070,6 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
       <h1>
         Apply for a Criminal Record Check
       </h1>
-      <br />
       <p>
         To apply for a criminal record check online, you must use your
          
@@ -3104,7 +3099,6 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
       <p>
         Please select an option below:
       </p>
-      <br />
       <div
         className="option"
       >
@@ -3298,6 +3292,18 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -3339,18 +3345,6 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -3587,7 +3581,7 @@ exports[`Storyshots Consent page Default 1`] = `
         </section>
       </div>
       <div
-        className="buttons pt-5"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -3921,6 +3915,18 @@ exports[`Storyshots Consent page Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -3962,18 +3968,6 @@ exports[`Storyshots Consent page Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -4141,7 +4135,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
         </section>
       </div>
       <div
-        className="buttons pt-5"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -4475,6 +4469,18 @@ exports[`Storyshots Consent page Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -4516,18 +4522,6 @@ exports[`Storyshots Consent page Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -4683,9 +4677,8 @@ exports[`Storyshots Error Api Error 1`] = `
     >
       <div>
         <h1>
-          An unknown error has occurred.
+          An unknown error has occurred
         </h1>
-        <br />
         <p>
           The error description is below. If this error persists, please try again later.
           <br />
@@ -4741,6 +4734,18 @@ exports[`Storyshots Error Api Error 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -4782,18 +4787,6 @@ exports[`Storyshots Error Api Error 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -4867,9 +4860,8 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
     >
       <div>
         <h1>
-          Unauthorized Entry
+          Unauthorized entry
         </h1>
-        <br />
         <p>
           Unauthorized user entry, please return to the home page and begin your session again.
         </p>
@@ -4922,6 +4914,18 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -4963,18 +4967,6 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -5048,9 +5040,8 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
     >
       <div>
         <h1>
-          Login failed.
+          Login failed
         </h1>
-        <br />
         <p>
           Unable to login using your BCSC account, please try again later.
         </p>
@@ -5103,6 +5094,18 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -5144,18 +5147,6 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -5229,9 +5220,8 @@ exports[`Storyshots Error Default 1`] = `
     >
       <div>
         <h1>
-          An unknown error has occurred.
+          An unknown error has occurred
         </h1>
-        <br />
         <p>
           The error description is below. If this error persists, please try again later.
           <br />
@@ -5286,6 +5276,18 @@ exports[`Storyshots Error Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -5327,18 +5329,6 @@ exports[`Storyshots Error Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -5412,9 +5402,8 @@ exports[`Storyshots Error Mobile 1`] = `
     >
       <div>
         <h1>
-          An unknown error has occurred.
+          An unknown error has occurred
         </h1>
-        <br />
         <p>
           The error description is below. If this error persists, please try again later.
           <br />
@@ -5469,6 +5458,18 @@ exports[`Storyshots Error Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -5510,18 +5511,6 @@ exports[`Storyshots Error Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -5595,9 +5584,8 @@ exports[`Storyshots Error Session Expired 1`] = `
     >
       <div>
         <h1>
-          Your session has expired.
+          Your session has expired
         </h1>
-        <br />
         <p>
           Please return to the home page and begin your session again.
         </p>
@@ -5650,6 +5638,18 @@ exports[`Storyshots Error Session Expired 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -5693,18 +5693,6 @@ exports[`Storyshots Error Session Expired 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -5736,6 +5724,18 @@ exports[`Storyshots Footer Default 1`] = `
       <ul
         className="navbar-nav text-right"
       >
+        <li
+          className="nav-item m-1"
+        >
+          <a
+            className="nav-link"
+            href="https://www2.gov.bc.ca"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            BC Government
+          </a>
+        </li>
         <li
           className="nav-item m-1"
         >
@@ -5782,18 +5782,6 @@ exports[`Storyshots Footer Default 1`] = `
             target="_blank"
           >
             Copyright
-          </a>
-        </li>
-        <li
-          className="nav-item m-1"
-        >
-          <a
-            className="nav-link"
-            href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Contact Us
           </a>
         </li>
       </ul>
@@ -5831,6 +5819,18 @@ exports[`Storyshots Footer Mobile 1`] = `
         >
           <a
             className="nav-link"
+            href="https://www2.gov.bc.ca"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            BC Government
+          </a>
+        </li>
+        <li
+          className="nav-item m-1"
+        >
+          <a
+            className="nav-link"
             href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
             rel="noopener noreferrer"
             target="_blank"
@@ -5872,18 +5872,6 @@ exports[`Storyshots Footer Mobile 1`] = `
             target="_blank"
           >
             Copyright
-          </a>
-        </li>
-        <li
-          className="nav-item m-1"
-        >
-          <a
-            className="nav-link"
-            href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Contact Us
           </a>
         </li>
       </ul>
@@ -6610,6 +6598,18 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -6651,18 +6651,6 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -7174,6 +7162,18 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -7215,18 +7215,6 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -7746,6 +7734,18 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -7787,18 +7787,6 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -8318,6 +8306,18 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -8359,18 +8359,6 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -8644,7 +8632,6 @@ exports[`Storyshots OrgValidation Default 1`] = `
         <h1>
           Criminal Record Check
         </h1>
-        <br />
         <p>
           In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
            
@@ -8849,7 +8836,6 @@ exports[`Storyshots OrgValidation Default 1`] = `
               or by phone at 1-855-587-0185 (Option 2).
             </p>
           </div>
-          <br />
         </div>
       </div>
     </div>
@@ -8877,6 +8863,18 @@ exports[`Storyshots OrgValidation Default 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -8923,18 +8921,6 @@ exports[`Storyshots OrgValidation Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -9010,7 +8996,6 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
         <h1>
           Criminal Record Check
         </h1>
-        <br />
         <p>
           In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
            
@@ -9215,7 +9200,6 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               or by phone at 1-855-587-0185 (Option 2).
             </p>
           </div>
-          <br />
         </div>
       </div>
     </div>
@@ -9243,6 +9227,18 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -9291,18 +9287,6 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -9315,7 +9299,6 @@ exports[`Storyshots OrgValidationText Default 1`] = `
   <h1>
     Criminal Record Check
   </h1>
-  <br />
   <p>
     In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
      
@@ -9537,7 +9520,6 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         or by phone at 1-855-587-0185 (Option 2).
       </p>
     </div>
-    <br />
   </div>
 </div>
 `;
@@ -9607,7 +9589,6 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
       <h1>
         Organization Information
       </h1>
-      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -9754,7 +9735,7 @@ Canada
         </p>
       </div>
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -9771,7 +9752,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -10216,6 +10197,18 @@ Canada
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -10257,18 +10250,6 @@ Canada
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -10343,7 +10324,6 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
       <h1>
         Organization Information
       </h1>
-      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -10490,7 +10470,7 @@ Canada
         </p>
       </div>
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -10507,7 +10487,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -10952,6 +10932,18 @@ Canada
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -10993,18 +10985,6 @@ Canada
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -11079,7 +11059,6 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
       <h1>
         Organization Information
       </h1>
-      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -11226,7 +11205,7 @@ Canada
         </p>
       </div>
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -11243,7 +11222,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -11688,6 +11667,18 @@ Canada
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -11729,18 +11720,6 @@ Canada
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -11815,7 +11794,6 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
       <h1>
         Organization Information
       </h1>
-      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -11962,7 +11940,7 @@ Canada
         </p>
       </div>
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -11979,7 +11957,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -12424,6 +12402,18 @@ Canada
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -12465,18 +12455,6 @@ Canada
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -14113,6 +14091,18 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -14154,18 +14144,6 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -14383,6 +14361,18 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -14424,18 +14414,6 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -14629,6 +14607,18 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -14670,18 +14660,6 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -14914,6 +14892,18 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -14955,18 +14945,6 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -15184,6 +15162,18 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -15225,18 +15215,6 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -15430,6 +15408,18 @@ exports[`Storyshots Success page Volunteer 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -15471,18 +15461,6 @@ exports[`Storyshots Success page Volunteer 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -16219,7 +16197,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
           </label>
         </section>
         <section
-          className="buttons pt-5"
+          className="buttons pt-4"
         >
           <button
             className="btn ecrc_accessary_btn btn"
@@ -16282,6 +16260,18 @@ exports[`Storyshots Term Of Use page Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -16323,18 +16313,6 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -17016,7 +16994,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
           </label>
         </section>
         <section
-          className="buttons pt-5"
+          className="buttons pt-4"
         >
           <button
             className="btn ecrc_accessary_btn btn"
@@ -17079,6 +17057,18 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -17120,18 +17110,6 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -17752,7 +17730,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
     </label>
   </section>
   <section
-    className="buttons pt-5"
+    className="buttons pt-4"
   >
     <button
       className="btn ecrc_accessary_btn btn"
@@ -18090,6 +18068,18 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -18131,18 +18121,6 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -18257,6 +18235,18 @@ exports[`Storyshots Transition Page Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -18298,18 +18288,6 @@ exports[`Storyshots Transition Page Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -18434,6 +18412,18 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -18475,18 +18465,6 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -18646,6 +18624,18 @@ exports[`Storyshots User Confirmation page Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -18687,18 +18677,6 @@ exports[`Storyshots User Confirmation page Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -18858,6 +18836,18 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -18899,18 +18889,6 @@ exports[`Storyshots User Confirmation page Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>

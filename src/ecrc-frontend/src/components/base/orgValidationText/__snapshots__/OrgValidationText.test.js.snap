@@ -5,7 +5,6 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
   <h1>
     Criminal Record Check
   </h1>
-  <br />
   <p>
     In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
      
@@ -227,7 +226,6 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
         or by phone at 1-855-587-0185 (Option 2).
       </p>
     </div>
-    <br />
   </div>
 </div>
 `;

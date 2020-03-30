@@ -405,7 +405,7 @@ export default function Consent({
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
           />
-          <div className="buttons pt-5">
+          <div className="buttons pt-4">
             <Button
               button={cancelButton}
               onClick={() => {

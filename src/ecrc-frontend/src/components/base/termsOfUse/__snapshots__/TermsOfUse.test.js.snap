@@ -611,7 +611,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
     </label>
   </section>
   <section
-    className="buttons pt-5"
+    className="buttons pt-4"
   >
     <button
       className="btn ecrc_accessary_btn btn"

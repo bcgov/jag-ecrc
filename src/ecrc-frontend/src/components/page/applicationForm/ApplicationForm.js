@@ -464,7 +464,7 @@ export default function ApplicationForm({
 
   const continueButton = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -641,7 +641,6 @@ export default function ApplicationForm({
       <div className="page">
         <div className="content col-md-8">
           <h1>Criminal Record Check - Application</h1>
-          <br />
           <p>Complete the application form below to continue.</p>
           <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
           <div className="heading">
@@ -707,8 +706,7 @@ export default function ApplicationForm({
             <span className="previousHeader">Current Mailing Address</span>
           </div>
           <SimpleForm simpleForm={mailing} />
-          <br />
-          <section>
+          <section className="p-4">
             Entering your mailing address in this application will not update
             your BC Services Card Address. To update your BC Services Card
             information you must contact&nbsp;
@@ -736,8 +734,7 @@ export default function ApplicationForm({
               AddressChangeBC
             </a>
           </section>
-          <br />
-          <div className="buttons">
+          <div className="buttons pt-4">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />
           </div>
