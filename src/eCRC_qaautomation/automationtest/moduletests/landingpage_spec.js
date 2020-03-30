@@ -14,7 +14,7 @@ describe("landing page", () => {
       .maximize();
   });
 
-  beforeEach(function() {
+  beforeEach(() => {
     browser.get(process.env.URL);
   });
 
