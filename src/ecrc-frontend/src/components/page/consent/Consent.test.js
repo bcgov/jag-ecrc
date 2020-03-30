@@ -52,7 +52,9 @@ describe("Consent Page Component", () => {
     mailingCity: "There",
     mailingProvince: "Ontario",
     mailingPostalCode: "V1V 1A1",
-    jobTitle: "Painter"
+    jobTitle: "Painter",
+    emailAddress: "bob.ross@example.com",
+    emailType: "Home"
   };
 
   const org = {

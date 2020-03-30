@@ -29,7 +29,8 @@ const applicant = {
   mailingCityNm: "There",
   mailingProvinceNm: "Ontario",
   mailingPostalCodeTxt: "V1V 1A1",
-  jobTitle: "Painter"
+  jobTitle: "Painter",
+  emailType: "Home"
 };
 
 const org = {
