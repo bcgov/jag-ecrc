@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MemoryRouter } from "react-router-dom";
 
 import ApplicationForm from "./ApplicationForm";
@@ -34,6 +34,10 @@ const applicant = {
 
 const setApplicant = () => {};
 const setError = () => {};
+// const sameAddress = true;
+// const setSameAddress = () => {};
+
+const [sameAddress, setSameAddress] = useState(true);
 
 const org = {
   defaultScheduleTypeCd: "WBSD"
