@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
+import Input from "react-phone-number-input/input";
 import PropTypes from "prop-types";
 import "./TextInput.css";
 
@@ -12,6 +13,7 @@ export const TextInput = ({
     value,
     placeholder,
     options,
+    phone = false,
     isRequired,
     errorMsg
   },
@@ -78,6 +80,22 @@ export const TextInput = ({
             );
           })}
         </select>
+      </div>
+    );
+  }
+
+  if (phone) {
+    return (
+      <div>
+        {labelPart && labelPart}
+        <Input
+          country={"CA"}
+          className={textStyle}
+          id={id}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
       </div>
     );
   }
