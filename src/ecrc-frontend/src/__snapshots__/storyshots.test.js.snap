@@ -13488,7 +13488,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
           Non-expired date
         </li>
         <li>
-          Availale funds to transfer
+          Available funds to transfer
         </li>
       </ul>
       <p>
@@ -14241,7 +14241,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
           Non-expired date
         </li>
         <li>
-          Availale funds to transfer
+          Available funds to transfer
         </li>
       </ul>
       <p>
