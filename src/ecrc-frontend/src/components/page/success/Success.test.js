@@ -63,13 +63,15 @@ describe("Success Page Component", () => {
   };
 
   const saveApplicationInfo = jest.fn();
+  const setError = jest.fn();
 
   const page = {
     header,
     applicant,
     org,
     applicationInfo,
-    saveApplicationInfo
+    saveApplicationInfo,
+    setError
   };
 
   const successUrl =
