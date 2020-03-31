@@ -53,11 +53,13 @@ describe("Consent Page Component", () => {
     mailingProvince: "Ontario",
     mailingPostalCode: "V1V 1A1",
     jobTitle: "Painter",
+    organizationFacility: "PBS",
     emailAddress: "bob.ross@example.com",
     emailType: "Home"
   };
 
   const org = {
+    orgNm: "Public Broadcast Network",
     orgApplicantRelationship: "EMPLOYEE",
     orgTicketNumber: "crce",
     defaultScheduleTypeCd: "WBSD",
