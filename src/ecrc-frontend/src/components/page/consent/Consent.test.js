@@ -108,6 +108,7 @@ describe("Consent Page Component", () => {
       </Router>
     );
 
+    window.confirm = () => true;
     fireEvent.click(getByText(container, "Cancel and Exit"));
     expect(history.location.pathname).toEqual("/hosthome");
   });

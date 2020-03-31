@@ -20,6 +20,8 @@ import ca.bc.gov.open.ecrc.service.EcrcServices;
 
 class GetNextInvoiceIdControllerTest {
 
+	private static final String GUID = "SOMEUUID";
+
 	@BeforeEach
 	public void initMocks() {
 		MockitoAnnotations.initMocks(this);
@@ -34,8 +36,8 @@ class GetNextInvoiceIdControllerTest {
 	@DisplayName("Success - getNextInvoiceIdController controller")
 	@Test
 	void testSuccess() throws EcrcServiceException {
-		when(ecrcServices.getNextInvoiceId("request")).thenReturn(new ResponseEntity<String>("success", HttpStatus.OK));
-		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request", "SOMEUUID");
+		when(ecrcServices.getNextInvoiceId("request", GUID)).thenReturn(new ResponseEntity<String>("success", HttpStatus.OK));
+		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request", GUID);
 		Assert.assertEquals("success", response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -43,7 +45,7 @@ class GetNextInvoiceIdControllerTest {
 	@DisplayName("Failure - getNextInvoiceIdController controller")
 	@Test
 	void testFailure() throws EcrcServiceException {
-		when(ecrcServices.getNextInvoiceId("request")).thenReturn(new ResponseEntity<>(
+		when(ecrcServices.getNextInvoiceId("request", GUID)).thenReturn(new ResponseEntity<>(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
 				HttpStatus.NOT_FOUND));
@@ -58,7 +60,7 @@ class GetNextInvoiceIdControllerTest {
 	@DisplayName("Error - getNextInvoiceIdController controller")
 	@Test
 	void testError() throws EcrcServiceException {
-		when(ecrcServices.getNextInvoiceId("request")).thenReturn(new ResponseEntity<>(
+		when(ecrcServices.getNextInvoiceId("request", GUID)).thenReturn(new ResponseEntity<>(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 				HttpStatus.BAD_REQUEST));

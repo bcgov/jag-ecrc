@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
@@ -64,7 +65,7 @@ export default function Consent({
 }) {
   const history = useHistory();
   const [toAppHome, setToAppHome] = useState(false);
-  const [toHome, setToHome] = useState(false);
+  const [toHostHome, setToHostHome] = useState(false);
   const [loading, setLoading] = useState(false);
   const [toError, setToError] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
@@ -103,6 +104,17 @@ export default function Consent({
     type: "submit",
     disabled: !continueBtnEnabled || loading,
     loader: loading
+  };
+
+  const cancelClick = () => {
+    const wishToRedirect = window.confirm(
+      "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+    );
+
+    if (wishToRedirect) {
+      sessionStorage.clear();
+      setToHostHome(true);
+    }
   };
 
   const toSuccess = () => {
@@ -377,7 +389,7 @@ export default function Consent({
     }
   };
 
-  if (toHome) {
+  if (toHostHome) {
     return <Redirect to="/hosthome" />;
   }
 
@@ -412,12 +424,7 @@ export default function Consent({
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
           />
           <div className="buttons pt-4">
-            <Button
-              button={cancelButton}
-              onClick={() => {
-                setToHome(true);
-              }}
-            />
+            <Button button={cancelButton} onClick={cancelClick} />
             <Button button={continueButton} onClick={confirm} />
           </div>
         </div>

@@ -76,7 +76,7 @@ export default function OrgValidationText({
         </div>
         <br />
 
-        <div>
+        <div className="mt-4">
           <h3>I need more information</h3>
           <ul className="bodyList">
             <li>

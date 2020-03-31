@@ -61,7 +61,7 @@ public class EcrcProperties {
 	@Value("#{'${ecrc.whitelist}'.split(',')}")
 	private List<String> whiteList;
 	
-	private Map<String, String> links = new HashMap<String, String>();
+	private Map<String, String> links = new HashMap<>();
 	
 	//Payment properties
 	private String paymentUrl;

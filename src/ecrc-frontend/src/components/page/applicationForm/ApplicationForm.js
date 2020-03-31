@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-alert */
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useLocation, Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -13,6 +14,7 @@ import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
+  isActionPerformed,
   generateJWTToken,
   accessJWTToken,
   isAuthorized
@@ -123,7 +125,7 @@ export default function ApplicationForm({
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
-    if (code) {
+    if (!isActionPerformed("appForm") && code) {
       Promise.all([
         axios.get(`/ecrc/protected/login?code=${code}&requestGuid=${uuid}`, {
           headers: {
@@ -565,6 +567,25 @@ export default function ApplicationForm({
     return re.test(postalCode.toUpperCase());
   };
 
+  let hasScrolled = false;
+
+  const scrollToRef = ref => {
+    if (ref && ref.current) {
+      window.scrollTo(0, ref.current.offsetTop);
+      hasScrolled = true;
+    }
+  };
+
+  const birthLocRef = useRef(null);
+  const phoneNumRef = useRef(null);
+  const emailRef = useRef(null);
+  const jobRef = useRef(null);
+  const organizationFacilityRef = useRef(null);
+  const mailingAddressLine1Ref = useRef(null);
+  const mailingCityRef = useRef(null);
+  const mailingProvinceRef = useRef(null);
+  const mailingPostalCodeRef = useRef(null);
+
   const applicationVerification = () => {
     if (!isAuthorized()) {
       setError({
@@ -575,47 +596,83 @@ export default function ApplicationForm({
       return;
     }
 
-    if (!birthLoc) {
+    if (!birthLoc || !validateBirthPlace(birthLoc)) {
       setBirthPlaceError("City and country of birth are required");
+      if (!hasScrolled) {
+        scrollToRef(birthLocRef);
+      }
     }
 
     if (!phoneNum) {
       setPhoneNumberError("Primary phone number is required");
+      if (!hasScrolled) {
+        scrollToRef(phoneNumRef);
+      }
     } else if (!validatePhoneNumber(phoneNum)) {
       setPhoneNumberError("Phone number must be in the form XXX XXX-XXXX");
+      if (!hasScrolled) {
+        scrollToRef(phoneNumRef);
+      }
     }
 
     if (!email) {
       setEmailAddressError("Personal email address is required");
+      if (!hasScrolled) {
+        scrollToRef(emailRef);
+      }
     } else if (!validateEmail(email)) {
       setEmailAddressError("Email address must be in the form name@company.ca");
+      if (!hasScrolled) {
+        scrollToRef(emailRef);
+      }
     }
 
     if (!job) {
       setJobTitleError("Position/job title is required");
+      if (!hasScrolled) {
+        scrollToRef(jobRef);
+      }
     }
 
     if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
       setOrganizationFacilityError("Organization facility is required");
+      if (!hasScrolled) {
+        scrollToRef(organizationFacilityRef);
+      }
     }
 
     if (!sameAddress && !mailingAddressLine1) {
       setMailingAddressLine1Error("Street or PO box is required");
+      if (!hasScrolled) {
+        scrollToRef(mailingAddressLine1Ref);
+      }
     }
 
     if (!sameAddress && !mailingCity) {
       setMailingCityError("City is required");
+      if (!hasScrolled) {
+        scrollToRef(mailingCityRef);
+      }
     }
 
     if (!sameAddress && !mailingProvince) {
       setMailingProvinceError("Province is required");
+      if (!hasScrolled) {
+        scrollToRef(mailingProvinceRef);
+      }
     }
 
     if (!sameAddress) {
       if (!mailingPostalCode) {
         setMailingPostalCodeError("Postal code is required");
+        if (!hasScrolled) {
+          scrollToRef(mailingPostalCodeRef);
+        }
       } else if (!validatePostalCode(mailingPostalCode)) {
         setMailingPostalCodeError("Postal code must be in the form V9V 9V9");
+        if (!hasScrolled) {
+          scrollToRef(mailingPostalCodeRef);
+        }
       }
     }
 
@@ -692,10 +749,19 @@ export default function ApplicationForm({
 
       history.push("/criminalrecordcheck/informationreview");
     }
+
+    hasScrolled = false;
   };
 
   const back = () => {
-    setToHome(true);
+    const wishToRedirect = window.confirm(
+      "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+    );
+
+    if (wishToRedirect) {
+      sessionStorage.clear();
+      setToHome(true);
+    }
   };
 
   const additionalNames = event => {
@@ -757,9 +823,17 @@ export default function ApplicationForm({
               </button>
             </span>
           )}
-          <SimpleForm simpleForm={applicantInformation} />
+          <div ref={birthLocRef}>
+            <div ref={phoneNumRef}>
+              <div ref={emailRef}>
+                <SimpleForm simpleForm={applicantInformation} />
+              </div>
+            </div>
+          </div>
           <br />
-          <SimpleForm simpleForm={positionInformation} />
+          <div ref={jobRef}>
+            <SimpleForm simpleForm={positionInformation} />
+          </div>
           <br />
           <div className="smallHeading">
             <span className="simpleForm_title">Addresses</span>
@@ -794,8 +868,16 @@ export default function ApplicationForm({
           <div className="heading">
             <span className="previousHeader">Current Mailing Address</span>
           </div>
-          {sameAddress && <SimpleForm simpleForm={address} />}
-          {!sameAddress && <SimpleForm simpleForm={mailing} />}
+          <div ref={mailingAddressLine1Ref}>
+            <div ref={mailingCityRef}>
+              <div ref={mailingProvinceRef}>
+                <div ref={mailingPostalCodeRef}>
+                  {sameAddress && <SimpleForm simpleForm={address} />}
+                  {!sameAddress && <SimpleForm simpleForm={mailing} />}
+                </div>
+              </div>
+            </div>
+          </div>
           <br />
           <section className="p-4">
             Entering your mailing address in this application will not update

@@ -61,6 +61,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
       setToHome(true);
       return;
     }
+    sessionStorage.setItem("validExit", true);
     saveOrg();
     // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");
@@ -108,16 +109,16 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
           <p>Please select an option below:</p>
           <div className="option">
             <div className="row">
-              <div className="col-lg-6 col-md-12 " style={{ marginTop: "9px" }}>
+              <div className="col-sm-8 mt-lg-2 mb-2">
                 I have a photo BC Services Card
               </div>
-              <div className="col-lg-6 col-md-4 alignRight">
+              <div className="col-sm-4">
                 <Button button={loginBtn} onClick={onLoginClick} />
               </div>
             </div>
           </div>
 
-          <div style={{ marginTop: "40px" }}>
+          <div className="mt-5">
             <a href="/criminalrecordcheck/transition">
               I do not have a BC Services Card, or I have non-photo BC Services
               Card

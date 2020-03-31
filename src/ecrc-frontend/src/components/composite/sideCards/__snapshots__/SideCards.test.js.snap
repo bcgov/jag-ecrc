@@ -437,7 +437,7 @@ exports[`SideCards Component ContactInformation sidecard 1`] = `
                     >
                       <a
                         className="email link-email"
-                        href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
