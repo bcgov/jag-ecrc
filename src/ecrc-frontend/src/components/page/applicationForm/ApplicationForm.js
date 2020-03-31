@@ -492,7 +492,9 @@ export default function ApplicationForm({
   };
 
   const scrollToRef = ref => {
-    window.scrollTo(0, ref.current.offsetTop);
+    if (ref !== null && ref.current !== null) {
+      window.scrollTo(0, ref.current.offsetTop);
+    }
   };
   const birthLocRef = useRef(null);
   const phoneNumRef = useRef(null);
