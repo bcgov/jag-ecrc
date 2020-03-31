@@ -569,7 +569,7 @@ export default function ApplicationForm({
   let hasScrolled = false;
 
   const scrollToRef = ref => {
-    if (ref !== null && ref.current !== null) {
+    if (ref && ref.current) {
       window.scrollTo(0, ref.current.offsetTop);
       hasScrolled = true;
     }
