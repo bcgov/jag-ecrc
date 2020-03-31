@@ -138,7 +138,6 @@ export default function Consent({
         error.request.response &&
         JSON.parse(error.request.response)
       ) {
-        setToError(true);
         setError({
           status: error.response.status,
           message: JSON.parse(error.request.response).message
