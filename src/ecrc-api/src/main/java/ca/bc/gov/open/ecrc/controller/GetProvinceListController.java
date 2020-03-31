@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.service.EcrcServices;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-
-import java.util.UUID;
 
 /**
  * @author sivakaruna
@@ -33,7 +30,7 @@ public class GetProvinceListController {
 	public ResponseEntity<String> getProvinceList(@RequestParam(required=true) String requestGuid) {
 		logger.info("Get province list request received {}", requestGuid);
 		try {
-			return ecrcServices.getProvinceList();
+			return ecrcServices.getProvinceList(requestGuid);
 		} catch (Exception ex) {
 			logger.error("Error in ecrc service: ", ex);
 			return new ResponseEntity(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,

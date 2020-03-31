@@ -6,7 +6,7 @@ import {
   FaQuestion,
   FaEnvelope,
   FaFax,
-  FaPhone
+  FaGlobeAmericas
 } from "react-icons/fa";
 import PropTypes from "prop-types";
 
@@ -42,7 +42,7 @@ export default function SideCards({ type, sideCardLinks }) {
       button={bcscbutton}
       onClick={() =>
         window.open(
-          "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
         )
       }
     />
@@ -87,7 +87,7 @@ export default function SideCards({ type, sideCardLinks }) {
       </div>,
       <div key="bcscLearnMore">
         <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -99,11 +99,11 @@ export default function SideCards({ type, sideCardLinks }) {
       <div key="bcscEligibility" className="side-card-text">
         <br />
         Eligibility for a BC Services Card is the same as for the Medical
-        Services Plan(MSP).
+        Services Plan (MSP).
       </div>,
       <div key="bcscEligibilityLink">
         <a
-          href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -139,17 +139,26 @@ export default function SideCards({ type, sideCardLinks }) {
           <div className="row">
             <div className="text-nowrap col-lg-12 col-xl-3">
               <FaFax />
-              &nbsp;<div className="contact-title">Fax: </div>
+              &nbsp;<div className="contact-title">Phone: </div>
             </div>
-            <div className="col-lg-12 col-xl-9 pr-0">(250) 356-1889</div>
+            <div className="col-lg-12 col-xl-9 pr-0">
+              1 855 587-0185 (option 2)
+            </div>
           </div>
           <div className="row">
             <div className="text-nowrap col-lg-12 col-xl-3">
-              <FaPhone />
-              &nbsp;<div className="contact-title">Office: </div>
+              <FaGlobeAmericas />
+              &nbsp;<div className="contact-title">Website: </div>
             </div>
             <div className="col-lg-12 col-xl-9 pr-0">
-              Toll free - 1 855 587-0185 (press option 2)
+              <a
+                className="email link-email"
+                href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Criminal Records Review Program
+              </a>
             </div>
           </div>
           <div className="row">
@@ -160,7 +169,7 @@ export default function SideCards({ type, sideCardLinks }) {
             <div className="col-lg-12 col-xl-9 pr-0">
               <a
                 key="criminalRecordsEmail"
-                className="email"
+                className="email link-email"
                 href="mailto:criminalrecords@gov.bc.ca"
               >
                 criminalrecords@gov.bc.ca
@@ -301,13 +310,13 @@ export default function SideCards({ type, sideCardLinks }) {
       <div key="collectionNotice" style={{ fontSize: "12px" }}>
         The Security Programs Division will collect your personal information
         for the purpose of fulfilling the criminal record check requirements of
-        the Criminal Records Review Act (CRRA) and in accordance with sections
-        26(a) and (c) of the Freedom of Information and Protection of Privacy
-        Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect
-        personal information under section 26(e) of FoIPPA for the purpose of
-        evaluating the Criminal Records Review Program and activities to better
-        serve you. Should you have any questions about the collection, use, or
-        disclosure of personal information, please contact the Criminal Records
+        the Criminal Records Review Act and in accordance with section 26(c) of
+        the Freedom of Information and Protection of Privacy Act (FoIPPA).
+        Additionally, SPD may collect personal information under section 26(e)
+        of FoIPPA for the purpose of evaluating the Criminal Records Review
+        Program and activities to better serve you. Should you have any
+        questions about the collection, use, or disclosure of your personal
+        information, please contact the Policy Analyst of the Criminal Records
         Review Program, Security Programs Division via mail to PO Box 9217 Stn
         Prov Govt Victoria, BC V8W 9J1; email to&nbsp;
         <a key="criminalRecordsEmail" href="mailto:criminalrecords@gov.bc.ca">

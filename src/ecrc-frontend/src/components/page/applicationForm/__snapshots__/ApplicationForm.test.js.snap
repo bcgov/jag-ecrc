@@ -16,14 +16,14 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             alt="B.C. Government Logo"
             class="img-fluid d-none d-md-block"
             height="44"
-            src="/images/bcid-logo-rev-en.svg"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             class="img-fluid d-md-none"
             height="44"
-            src="/images/bcid-symbol-rev.svg"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
             width="64"
           />
           <div
@@ -62,7 +62,6 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         <h1>
           Criminal Record Check - Application
         </h1>
-        <br />
         <p>
           Complete the application form below to continue.
         </p>
@@ -434,10 +433,11 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                         </span>
                       </label>
                       <input
+                        autocomplete="tel"
                         class="textinput_editable_white"
                         id="phoneNumber"
-                        placeholder="123 456 7890"
-                        type="text"
+                        placeholder="250 555-1234"
+                        type="tel"
                         value=""
                       />
                       <br />
@@ -792,28 +792,22 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                       <div>
                         <label
                           class="label"
-                          for="mailingAddressLine1"
+                          for="addressLine1"
                         >
                           <div
                             class="textinput_label"
                           >
                             Street
                           </div>
-                          <span
-                            class="mandatory"
-                            id="asterisk"
-                          >
-                            *
-                          </span>
                            
                           <span
                             class="note"
                           />
                         </label>
                         <input
-                          class="textinput_editable_white"
-                          id="mailingAddressLine1"
-                          placeholder="Street or PO Box"
+                          class="textinput_non_editable_gray"
+                          id="addressLine1"
+                          readonly=""
                           type="text"
                           value="123 Somewhere"
                         />
@@ -827,28 +821,22 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                       <div>
                         <label
                           class="label"
-                          for="mailingCityNm"
+                          for="cityNm"
                         >
                           <div
                             class="textinput_label"
                           >
                             City
                           </div>
-                          <span
-                            class="mandatory"
-                            id="asterisk"
-                          >
-                            *
-                          </span>
                            
                           <span
                             class="note"
                           />
                         </label>
                         <input
-                          class="textinput_editable_white"
-                          id="mailingCityNm"
-                          placeholder="City"
+                          class="textinput_non_editable_gray"
+                          id="cityNm"
+                          readonly=""
                           type="text"
                           value="Here"
                         />
@@ -862,72 +850,51 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                       <div>
                         <label
                           class="label"
-                          for="mailingProvinceNm"
+                          for="provinceNm"
                         >
                           <div
                             class="textinput_label"
                           >
                             Province
                           </div>
-                          <span
-                            class="mandatory"
-                            id="asterisk"
-                          >
-                            *
-                          </span>
-                           
-                          <span
-                            class="note"
-                          />
-                        </label>
-                        <select
-                          class="textinput_editable_white"
-                          id="mailingProvinceNm"
-                        >
-                          <option
-                            value="British Columbia"
-                          >
-                            British Columbia
-                          </option>
-                          <option
-                            value="Ontario"
-                          >
-                            Ontario
-                          </option>
-                          <option
-                            value="Alberta"
-                          >
-                            Alberta
-                          </option>
-                        </select>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="mailingPostalCodeTxt"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Postal Code
-                          </div>
-                          <span
-                            class="mandatory"
-                            id="asterisk"
-                          >
-                            *
-                          </span>
                            
                           <span
                             class="note"
                           />
                         </label>
                         <input
-                          class="textinput_editable_white"
-                          id="mailingPostalCodeTxt"
-                          placeholder="V9V 9V9"
+                          class="textinput_non_editable_gray"
+                          id="provinceNm"
+                          readonly=""
+                          type="text"
+                          value="British Columbia"
+                        />
+                        <br />
+                        <span
+                          class="error"
+                        />
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <label
+                          class="label"
+                          for="postalCodeTxt"
+                        >
+                          <div
+                            class="textinput_label"
+                          >
+                            Postal Code
+                          </div>
+                           
+                          <span
+                            class="note"
+                          />
+                        </label>
+                        <input
+                          class="textinput_non_editable_gray"
+                          id="postalCodeTxt"
+                          readonly=""
                           type="text"
                           value="V9V 9V9"
                         />
@@ -941,7 +908,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                       <div>
                         <label
                           class="label"
-                          for="mailingCountryNm"
+                          for="countryNm"
                         >
                           <div
                             class="textinput_label"
@@ -955,7 +922,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                         </label>
                         <input
                           class="textinput_non_editable_gray"
-                          id="mailingCountryNm"
+                          id="countryNm"
                           readonly=""
                           type="text"
                           value="Canada"
@@ -973,7 +940,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           </div>
         </div>
         <br />
-        <section>
+        <section
+          class="p-4"
+        >
           Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
@@ -999,9 +968,8 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             AddressChangeBC
           </a>
         </section>
-        <br />
         <div
-          class="buttons"
+          class="buttons pt-4"
         >
           <button
             class="btn ecrc_accessary_btn btn"
@@ -1017,7 +985,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </div>
           </button>
           <button
-            class="btn ecrc_go_btn btn"
+            class="btn ecrc_go_btn mr-0 btn"
             type="submit"
           >
             Continue
@@ -1174,7 +1142,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                       <div
                         style="font-size: 12px;"
                       >
-                        The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                        The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                         <a
                           href="mailto:criminalrecords@gov.bc.ca"
                         >
@@ -1214,6 +1182,18 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           <ul
             class="navbar-nav text-right"
           >
+            <li
+              class="nav-item m-1"
+            >
+              <a
+                class="nav-link"
+                href="https://www2.gov.bc.ca"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                BC Government
+              </a>
+            </li>
             <li
               class="nav-item m-1"
             >
@@ -1260,18 +1240,6 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 target="_blank"
               >
                 Copyright
-              </a>
-            </li>
-            <li
-              class="nav-item m-1"
-            >
-              <a
-                class="nav-link"
-                href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Contact Us
               </a>
             </li>
           </ul>

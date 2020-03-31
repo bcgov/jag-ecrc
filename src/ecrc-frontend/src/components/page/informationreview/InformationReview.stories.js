@@ -3,10 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import { storiesOf } from "@storybook/react";
 
 import InformationReview from "./InformationReview";
-import {
-  generateJWTToken,
-  accessJWTToken
-} from "../../../modules/AuthenticationHelper";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 export default {
   title: "InformationReview",
@@ -32,10 +29,10 @@ const applicant = {
   provinceNm: "British Columbia",
   postalCodeTxt: "V9V 9V9",
   countryNm: "Canada",
-  mailingAddressLine1: "456 Elsewhere",
-  mailingCity: "There",
-  mailingProvince: "Ontario",
-  mailingPostalCode: "V1V 1A1",
+  mailingLine1: "456 Elsewhere",
+  mailingCityNm: "There",
+  mailingProvinceNm: "Ontario",
+  mailingPostalCodeTxt: "V1V 1A1",
   jobTitle: "Painter",
   organizationFacility: ""
 };
@@ -51,19 +48,16 @@ const page = {
 sessionStorage.setItem("validator", "secret");
 sessionStorage.setItem("uuid", "unique123");
 
-const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
 const newPayload = {
-  ...currentPayload,
   actionsPerformed: [
     "infoReview",
     "appForm",
     "tou",
     "bcscRedirect",
     "orgVerification",
-    "consent",
-    "userConfirmation"
+    "consent"
   ],
-  authorities: ["Authorized"]
+  authorities: ["Authorized", "ROLE"]
 };
 generateJWTToken(newPayload);
 

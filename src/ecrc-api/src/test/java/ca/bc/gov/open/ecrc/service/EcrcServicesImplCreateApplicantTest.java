@@ -51,7 +51,7 @@ class EcrcServicesImplCreateApplicantTest {
 	@DisplayName("Success - ecrcService createApplicant")
 	@Test
 	public void testCreateApplicantResultSuccess() throws NotFoundException, EcrcServiceException {
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
 				.thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
 		serviceResult = ecrcServices.createApplicant(new RequestCreateApplicant());
 		Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());

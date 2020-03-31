@@ -1,7 +1,9 @@
+/* eslint-disable camelcase */
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { Redirect, useHistory } from "react-router-dom";
+import { useLocation, Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import queryString from "query-string";
 
 import "./ApplicationForm.css";
 import Header from "../../base/header/Header";
@@ -11,9 +13,9 @@ import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
+  isActionPerformed,
   generateJWTToken,
   accessJWTToken,
-  isActionPerformed,
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
 
@@ -44,12 +46,21 @@ export default function ApplicationForm({
       driversLicNo,
       phoneNumber,
       emailAddress,
+      emailType,
       jobTitle,
-      organizationFacility
+      organizationFacility,
+      mailingLine1 = "",
+      mailingCityNm = "",
+      mailingProvinceNm = "BRITISH COLUMBIA",
+      mailingPostalCodeTxt = ""
     },
     setApplicant,
     org: { defaultScheduleTypeCd },
-    setError
+    setError,
+    provinces,
+    setProvinces,
+    sameAddress,
+    setSameAddress
   }
 }) {
   const history = useHistory();
@@ -88,78 +99,137 @@ export default function ApplicationForm({
     ""
   );
 
-  const [sameAddress, setSameAddress] = useState(true);
-  const [mailingAddressLine1, setMailingAddressLine1] = useState("");
+  const [mailingAddressLine1, setMailingAddressLine1] = useState(mailingLine1);
   const [mailingAddressLine1Error, setMailingAddressLine1Error] = useState("");
-  const [mailingCity, setMailingCity] = useState("");
+  const [mailingCity, setMailingCity] = useState(mailingCityNm);
   const [mailingCityError, setMailingCityError] = useState("");
-  const [mailingProvince, setMailingProvince] = useState("");
+  const [mailingProvince, setMailingProvince] = useState(mailingProvinceNm);
   const [mailingProvinceError, setMailingProvinceError] = useState("");
-  const [mailingPostalCode, setMailingPostalCode] = useState("");
+  const [mailingPostalCode, setMailingPostalCode] = useState(
+    mailingPostalCodeTxt
+  );
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
+  const [toTransition, setToTransition] = useState(false);
 
-  const [provinces, setProvinces] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
-    if (!isAuthorized() || !isActionPerformed("userConfirmation"))
-      setToHome(true);
+    window.scrollTo(0, 0);
+  }, []);
 
-    let token = sessionStorage.getItem("jwt");
+  useEffect(() => {
+    const urlParam = queryString.parse(location.search);
+    const { code } = urlParam;
+
+    const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
-    const payload = accessJWTToken(token);
-    token = generateJWTToken({
-      ...payload,
-      authorities: ["Authorized", "ROLE"]
-    });
-
-    axios
-      .get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      .then(res => {
-        setProvinces(res.data.provinces.province);
-      })
-      .catch(error => {
-        setToError(true);
-        if (error && error.response && error.response.status) {
-          if (
-            error.request &&
-            error.request.response &&
-            JSON.parse(error.request.response)
-          ) {
-            setToError(true);
-            setError({
-              status: error.response.status,
-              message: JSON.parse(error.request.response).message
-            });
-          } else {
-            setError({
-              status: error.response.status,
-              message: error.response.data
-            });
+    if (!isActionPerformed("appForm") && code) {
+      Promise.all([
+        axios.get(`/ecrc/protected/login?code=${code}&requestGuid=${uuid}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
           }
-        }
-      });
+        }),
+        axios.get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+      ])
+        .then(res => {
+          sessionStorage.setItem("jwt", res[0].data);
 
-    window.scrollTo(0, 0);
-  }, [setError]);
+          if (!isAuthorized()) setToHome(true);
 
-  useEffect(() => {
-    if (sameAddress) {
-      setMailingAddressLine1(addressLine1);
-      setMailingCity(cityNm);
-      setMailingProvince(provinceNm);
-      setMailingPostalCode(postalCodeTxt);
-    } else {
-      setMailingAddressLine1("");
-      setMailingCity("");
-      setMailingProvince("BRITISH COLUMBIA");
-      setMailingPostalCode("");
+          setProvinces(res[1].data.provinces.province);
+
+          const {
+            userInfo: {
+              birthdate,
+              address: { street_address, locality, region, postal_code },
+              gender,
+              given_name,
+              given_names,
+              family_name,
+              identity_assurance_level
+            }
+          } = accessJWTToken(res[0].data);
+
+          if (identity_assurance_level < 3) {
+            setToTransition(true);
+          }
+
+          // Convert gender text
+          const formatGender = gender === "female" ? "F" : "M";
+
+          // Convert date format
+          const formatBirthDt = birthdate.split("-").join("/");
+
+          // Convert given names
+          const givenNamesArray = given_names.split(" ");
+
+          givenNamesArray.shift();
+
+          const formatSecondNm = givenNamesArray.join(" ");
+
+          // Convert province name
+          const regionMap = new Map([
+            ["BC", "BRITISH COLUMBIA"],
+            ["AB", "ALBERTA"],
+            ["NL", "NEWFOUNDLAND"],
+            ["PE", "PRINCE EDWARD ISLAND"],
+            ["NS", "NOVA SCOTIA"],
+            ["NB", "NEW BRUNSWICK"],
+            ["QC", "QUEBEC"],
+            ["ON", "ONTARIO"],
+            ["MB", "MANITOBA"],
+            ["SK", "SASKATCHEWAN"],
+            ["YT", "YUKON"],
+            ["NT", "NORTH WEST TERRITORIES"],
+            ["NU", "NUNAVUT"]
+          ]);
+
+          let formatProvinceNm = regionMap.get(region);
+          if (formatProvinceNm === undefined) {
+            formatProvinceNm = "Invalid Province";
+          }
+
+          setApplicant({
+            legalFirstNm: given_name,
+            legalSecondNm: formatSecondNm,
+            legalSurnameNm: family_name,
+            birthDt: formatBirthDt,
+            genderTxt: formatGender,
+            addressLine1: street_address,
+            cityNm: locality,
+            provinceNm: formatProvinceNm,
+            postalCodeTxt: postal_code,
+            countryNm: "CANADA"
+          });
+        })
+        .catch(error => {
+          if (error && error.response && error.response.status) {
+            if (
+              error.request &&
+              error.request.response &&
+              JSON.parse(error.request.response)
+            ) {
+              setToError(true);
+              setError({
+                status: error.response.status,
+                message: JSON.parse(error.request.response).message
+              });
+            } else {
+              setError({
+                status: error.response.status,
+                message: error.response.data
+              });
+            }
+          }
+        });
     }
-  }, [sameAddress, addressLine1, cityNm, postalCodeTxt, provinceNm]);
+  }, [setError, setProvinces]);
 
   const currentName = {
     legalFirstNm: {
@@ -300,7 +370,8 @@ export default function ApplicationForm({
       {
         label: "Primary Phone Number",
         id: "phoneNumber",
-        placeholder: "123 456 7890",
+        phone: true,
+        placeholder: "250 555-1234",
         value: phoneNum,
         note: "(Including area code)",
         isRequired: true,
@@ -436,7 +507,7 @@ export default function ApplicationForm({
         isRequired: true,
         errorMsg: mailingProvinceError,
         onChange: event => {
-          setMailingProvince(event.target.value);
+          setMailingProvince(event);
           setMailingProvinceError("");
         }
       },
@@ -464,7 +535,7 @@ export default function ApplicationForm({
 
   const continueButton = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -476,18 +547,22 @@ export default function ApplicationForm({
     type: "submit"
   };
 
+  const validateBirthPlace = birthPlaceTxt => {
+    const re = /^[\w]+,?[ ]{1}[\w]+/;
+    return re.test(birthPlaceTxt);
+  };
+
   const validatePhoneNumber = phone => {
-    const re = /1?[ \-(]*\d{3}[ \-)]*\d{3}[ -]*\d{4}/;
-    return re.test(phone);
+    return phone.length === 12;
   };
 
   const validateEmail = emailTxt => {
-    const re = /[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    const re = /[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return re.test(emailTxt);
   };
 
   const validatePostalCode = postalCode => {
-    const re = /[A-Z][0-9][A-Z][ -]*[0-9][A-Z][0-9]/;
+    const re = /^[A-Z][0-9][A-Z][ -]*[0-9][A-Z][0-9]$/;
     return re.test(postalCode.toUpperCase());
   };
 
@@ -517,8 +592,8 @@ export default function ApplicationForm({
       return;
     }
 
-    if (!birthLoc) {
-      setBirthPlaceError("Please enter your city and country of birth");
+    if (!birthLoc || !validateBirthPlace(birthLoc)) {
+      setBirthPlaceError("City and country of birth are required");
       if (!hasScrolled) {
         scrollToRef(birthLocRef);
         hasScrolled = true;
@@ -526,16 +601,13 @@ export default function ApplicationForm({
     }
 
     if (!phoneNum) {
-      setPhoneNumberError("Please enter your primary phone number");
+      setPhoneNumberError("Primary phone number is required");
       if (!hasScrolled) {
         scrollToRef(phoneNumRef);
         hasScrolled = true;
       }
     } else if (!validatePhoneNumber(phoneNum)) {
-      setPhoneNumberError(
-        "Please enter a phone number in the form XXX XXX-XXXX"
-      );
-
+      setPhoneNumberError("Phone number must be in the form XXX XXX-XXXX");
       if (!hasScrolled) {
         scrollToRef(phoneNumRef);
         hasScrolled = true;
@@ -543,15 +615,13 @@ export default function ApplicationForm({
     }
 
     if (!email) {
-      setEmailAddressError("Please enter your personal email address");
+      setEmailAddressError("Personal email address is required");
       if (!hasScrolled) {
         scrollToRef(emailRef);
         hasScrolled = true;
       }
     } else if (!validateEmail(email)) {
-      setEmailAddressError(
-        "Please enter a valid email address eg. name@company.ca"
-      );
+      setEmailAddressError("Email address must be in the form name@company.ca");
       if (!hasScrolled) {
         scrollToRef(emailRef);
         hasScrolled = true;
@@ -559,7 +629,7 @@ export default function ApplicationForm({
     }
 
     if (!job) {
-      setJobTitleError("Please enter your position/job title");
+      setJobTitleError("Position/job title is required");
       if (!hasScrolled) {
         scrollToRef(jobRef);
         hasScrolled = true;
@@ -567,7 +637,7 @@ export default function ApplicationForm({
     }
 
     if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
-      setOrganizationFacilityError("Please enter your organization facility");
+      setOrganizationFacilityError("Organization facility is required");
       if (!hasScrolled) {
         scrollToRef(organizationFacilityRef);
         hasScrolled = true;
@@ -575,7 +645,7 @@ export default function ApplicationForm({
     }
 
     if (!sameAddress && !mailingAddressLine1) {
-      setMailingAddressLine1Error("Please enter your PO box or street address");
+      setMailingAddressLine1Error("Street or PO box is required");
       if (!hasScrolled) {
         scrollToRef(mailingAddressLine1Ref);
         hasScrolled = true;
@@ -583,7 +653,7 @@ export default function ApplicationForm({
     }
 
     if (!sameAddress && !mailingCity) {
-      setMailingCityError("Please enter your city");
+      setMailingCityError("City is required");
       if (!hasScrolled) {
         scrollToRef(mailingCityRef);
         hasScrolled = true;
@@ -591,25 +661,32 @@ export default function ApplicationForm({
     }
 
     if (!sameAddress && !mailingProvince) {
-      setMailingProvinceError("Please enter your province");
+      setMailingProvinceError("Province is required");
       if (!hasScrolled) {
         scrollToRef(mailingProvinceRef);
         hasScrolled = true;
       }
     }
 
-    if (!sameAddress && !validatePostalCode(mailingPostalCode)) {
-      setMailingPostalCodeError(
-        "Please enter a valid postal code in the form V9V 9V9"
-      );
-      if (!hasScrolled) {
-        scrollToRef(mailingPostalCodeRef);
-        hasScrolled = true;
+    if (!sameAddress) {
+      if (!mailingPostalCode) {
+        setMailingPostalCodeError("Postal code is required");
+        if (!hasScrolled) {
+          scrollToRef(mailingPostalCodeRef);
+          hasScrolled = true;
+        }
+      } else if (!validatePostalCode(mailingPostalCode)) {
+        setMailingPostalCodeError("Postal code must be in the form V9V 9V9");
+        if (!hasScrolled) {
+          scrollToRef(mailingPostalCodeRef);
+          hasScrolled = true;
+        }
       }
     }
 
     if (
       birthLoc !== "" &&
+      validateBirthPlace(birthLoc) &&
       phoneNum !== "" &&
       validatePhoneNumber(phoneNum) &&
       email !== "" &&
@@ -623,6 +700,19 @@ export default function ApplicationForm({
         validatePostalCode(mailingPostalCode)) ||
         (sameAddress && addressLine1 && cityNm && provinceNm && postalCodeTxt))
     ) {
+      const areaCode = phoneNum.slice(2, 5);
+      const localCode = phoneNum.slice(5, 8);
+      const phoneEnd = phoneNum.slice(8, 12);
+      const formatedPhone = `${areaCode} ${localCode}-${phoneEnd}`;
+
+      let formatedMailingPostalCode = mailingPostalCode
+        .replace(/[ -]*/g, "")
+        .toUpperCase();
+
+      const postalCodeFront = formatedMailingPostalCode.slice(0, 3);
+      const postalCodeEnd = formatedMailingPostalCode.slice(3, 6);
+      formatedMailingPostalCode = `${postalCodeFront} ${postalCodeEnd}`;
+
       setApplicant({
         legalFirstNm,
         legalSecondNm,
@@ -639,18 +729,21 @@ export default function ApplicationForm({
         birthDt,
         genderTxt,
         addressLine1,
-        mailingAddressLine1,
+        mailingLine1: sameAddress ? addressLine1 : mailingAddressLine1,
         cityNm,
-        mailingCity,
+        mailingCityNm: sameAddress ? cityNm : mailingCity,
         provinceNm,
-        mailingProvince,
+        mailingProvinceNm: sameAddress ? provinceNm : mailingProvince,
         postalCodeTxt,
-        mailingPostalCode,
+        mailingPostalCodeTxt: sameAddress
+          ? postalCodeTxt
+          : formatedMailingPostalCode,
         countryNm,
         birthPlace: birthLoc,
         driversLicNo: driversLicence,
-        phoneNumber: phoneNum,
+        phoneNumber: formatedPhone,
         emailAddress: email,
+        emailType: emailType || "Home",
         jobTitle: job,
         organizationFacility: organizationLocation
       });
@@ -658,7 +751,7 @@ export default function ApplicationForm({
       const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
       const newPayload = {
         ...currentPayload,
-        actionsPerformed: [...currentPayload.actionsPerformed, "appForm"]
+        actionsPerformed: ["appForm"]
       };
       generateJWTToken(newPayload);
 
@@ -694,8 +787,8 @@ export default function ApplicationForm({
     return <Redirect to="/" />;
   }
 
-  if (toError) {
-    return <Redirect to="/criminalrecordcheck/error" />;
+  if (toTransition) {
+    return <Redirect to="/criminalrecordcheck/transition" />;
   }
 
   return (
@@ -704,7 +797,6 @@ export default function ApplicationForm({
       <div className="page">
         <div className="content col-md-8">
           <h1>Criminal Record Check - Application</h1>
-          <br />
           <p>Complete the application form below to continue.</p>
           <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
           <div className="heading">
@@ -781,13 +873,14 @@ export default function ApplicationForm({
             <div ref={mailingCityRef}>
               <div ref={mailingProvinceRef}>
                 <div ref={mailingPostalCodeRef}>
-                  <SimpleForm simpleForm={mailing} />
+                  {sameAddress && <SimpleForm simpleForm={address} />}
+                  {!sameAddress && <SimpleForm simpleForm={mailing} />}
                 </div>
               </div>
             </div>
           </div>
           <br />
-          <section>
+          <section className="p-4">
             Entering your mailing address in this application will not update
             your BC Services Card Address. To update your BC Services Card
             information you must contact&nbsp;
@@ -815,8 +908,7 @@ export default function ApplicationForm({
               AddressChangeBC
             </a>
           </section>
-          <br />
-          <div className="buttons">
+          <div className="buttons pt-4">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={applicationVerification} />
           </div>
@@ -860,14 +952,23 @@ ApplicationForm.propTypes = {
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string,
       emailAddress: PropTypes.string,
+      emailType: PropTypes.string,
       jobTitle: PropTypes.string,
-      organizationFacility: PropTypes.string
+      organizationFacility: PropTypes.string,
+      mailingLine1: PropTypes.string,
+      mailingCityNm: PropTypes.string,
+      mailingProvinceNm: PropTypes.string,
+      mailingPostalCodeTxt: PropTypes.string
     }),
     setApplicant: PropTypes.func.isRequired,
     org: PropTypes.shape({
       defaultScheduleTypeCd: PropTypes.string.isRequired
     }),
-    setError: PropTypes.func.isRequired
+    setError: PropTypes.func.isRequired,
+    provinces: PropTypes.array,
+    setProvinces: PropTypes.func,
+    sameAddress: PropTypes.bool.isRequired,
+    setSameAddress: PropTypes.func.isRequired
   })
 };
 
@@ -887,8 +988,13 @@ ApplicationForm.defaultProps = {
       driversLicNo: "",
       phoneNumber: "",
       emailAddress: "",
+      emailType: "",
       jobTitle: "",
-      organizationFacility: ""
+      organizationFacility: "",
+      mailingLine1: "",
+      mailingCityNm: "",
+      mailingProvinceNm: "",
+      mailingPostalCodeTxt: ""
     }
   }
 };

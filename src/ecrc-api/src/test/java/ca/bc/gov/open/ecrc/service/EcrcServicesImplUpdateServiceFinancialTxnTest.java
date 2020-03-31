@@ -56,7 +56,7 @@ public class EcrcServicesImplUpdateServiceFinancialTxnTest {
     @Test
     public void testUpdateFinancialTxnResultSuccess() throws EcrcServiceException {
 
-        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any())).thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any())).thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
         serviceResult = ecrcServices.updateServiceFinancialTxn(requestUpdateServiceFinancialTxn);
         Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());
         Assertions.assertEquals(result, serviceResult.getBody());

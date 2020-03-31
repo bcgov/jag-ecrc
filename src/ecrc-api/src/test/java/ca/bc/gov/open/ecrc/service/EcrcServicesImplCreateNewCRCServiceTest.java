@@ -45,7 +45,7 @@ public class EcrcServicesImplCreateNewCRCServiceTest {
 	@DisplayName("Success - ecrcService get CreateNewCRCService")
 	@Test
 	public void testGetCreateNewCRCServiceSuccess() throws EcrcServiceException {
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
 				.thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
 		serviceResult = ecrcServices.createNewCRCService(new RequestNewCRCService());
 		Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());

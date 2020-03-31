@@ -8,7 +8,7 @@
   color: white;
 }
 
-li a:hover {
-  color: #0000ff;
+.menuItem a:hover {
+  color: white;
   text-decoration: underline;
 }

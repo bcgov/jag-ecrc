@@ -158,9 +158,7 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 		try {
 			obj = (JSONObject) p.parse(_tokens);
 			response = TokenResponse.parse(obj);
-		} catch (net.minidev.json.parser.ParseException e) {
-			logger.error("PER Validate Failed to Parse. ", e);
-		} catch (com.nimbusds.oauth2.sdk.ParseException e) {
+		} catch (com.nimbusds.oauth2.sdk.ParseException | net.minidev.json.parser.ParseException e) {
 			logger.error("PER Validate Failed to Parse. ", e);
 		}
 		

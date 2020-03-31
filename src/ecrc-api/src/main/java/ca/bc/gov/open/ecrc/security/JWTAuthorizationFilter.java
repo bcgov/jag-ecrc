@@ -61,7 +61,7 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
 	                		if ( accessToken != null ) {
 	                			ValidationResponse resp = tokenValidationServices.validateBCSCAccessToken(accessToken);  
 	                			if ( !resp.isValid() ) {
-	                				logger.error("Failed to validate Access Token within PER claim. Validation response said : " + resp.getMessage());
+	                				logger.error("Failed to validate Access Token within PER claim. Validation response said : {}", resp.getMessage());
 	                				SecurityContextHolder.clearContext(); // fail
 	                			} else {
 	                				logger.debug("'PER' decypted and Access Token validated.");

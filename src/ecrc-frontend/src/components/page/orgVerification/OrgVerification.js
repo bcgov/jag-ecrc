@@ -57,7 +57,8 @@ export default function OrgVerification({ page: { header, org, setError } }) {
   const links = [
     {
       name: "I'm an employee or volunteer",
-      url: "/tbd"
+      url:
+        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
     },
     {
       name: "Electronic Identity Verification (EIV)",
@@ -73,7 +74,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
 
   const continueButton = {
     label: "Continue",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -143,7 +144,6 @@ export default function OrgVerification({ page: { header, org, setError } }) {
       <div className="page">
         <div className="content col-md-8">
           <h1>Organization Information</h1>
-          <br />
           <p>
             You have provided the access code of the organization that has
             requested you to complete a criminal record check. Below are the
@@ -157,23 +157,15 @@ export default function OrgVerification({ page: { header, org, setError } }) {
           <br />
           <div>
             <p>
-              To continue with your online request for a criminal record check:
+              To continue with your online request for a criminal record check,
+              please note:
             </p>
             <ul className="eligibleList">
               <li>
-                Only BC Services cards with a photo are accepted at this time.
-              </li>
-              <li>
-                If you do not already have a BC Service Card Account, you can
-                initiate the process at the{" "}
-                <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  BC Service Card website
-                </a>
-                .
+                You are requested to login with your BC Services Card. Only
+                cards with a photo are accepted at this point. If you do not
+                already have a BC Services Card, you can initiate the process on
+                the BC Services Card website.
               </li>
               <li>
                 If you are not eligible for a BC Services Card, or have a card
@@ -181,35 +173,33 @@ export default function OrgVerification({ page: { header, org, setError } }) {
                 for you.
               </li>
               <li>
-                Employee applications must pay a fee by credit card (Visa,
-                MasterCard, or AMEX).
+                Employee applicants must pay a fee by credit card (Visa,
+                MasterCard, or AMEX). For volunteers completing a request for a
+                criminal record check, no payment is required.
               </li>
-              <li>There is no fee for Volunteer applications.</li>
             </ul>
             <br />
-            <p>The organization noted above will be notified:</p>
+            <p>
+              Once the criminal record check is carried out, the organization
+              noted above will be notified of whether:
+            </p>
             <ol className="contactList">
               <li>
-                When you are cleared to work with children and/or vulnerable
-                adults:
+                you have an outstanding charge or conviction relating to a
+                relevant or specified offence; and
               </li>
-              <ol className="contactList">
-                <li>
-                  if you have an outstanding charge or conviction relating to a
-                  relevant or specified offence; and
-                </li>
-                <li>
-                  a determination of risk or no risk has been made by the Deputy
-                  Registrar.
-                </li>
-              </ol>
+              <li>
+                a determination of risk or no risk of physical or sexual abuse
+                to children and/or physical, sexual or financial abuse to
+                vulnerable adults has been made by the Deputy Registrar.
+              </li>
             </ol>
             <p>
               By selecting continue, you are consenting to have your information
               released to this organization.
             </p>
           </div>
-          <div className="buttons">
+          <div className="buttons pt-4">
             <Button button={cancelButton} onClick={back} />
             <Button button={continueButton} onClick={orgVerified} />
           </div>
