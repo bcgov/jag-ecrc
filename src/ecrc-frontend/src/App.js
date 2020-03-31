@@ -24,6 +24,7 @@ export default function App() {
 
   const [error, setError] = useState("");
   const [provinces, setProvinces] = useState([]);
+  const [sameAddress, setSameAddress] = useState(true);
 
   const [transitionReason, setTransitionReason] = useState("bcsc");
 
@@ -64,7 +65,9 @@ export default function App() {
               setApplicant,
               setError,
               provinces,
-              setProvinces
+              setProvinces,
+              sameAddress,
+              setSameAddress
             }}
           />
         </Route>

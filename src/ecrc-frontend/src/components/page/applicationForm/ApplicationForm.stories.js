@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MemoryRouter } from "react-router-dom";
 import { storiesOf } from "@storybook/react";
 import axios from "axios";
@@ -74,6 +74,7 @@ function LoadData(props) {
 
   const setApplicant = () => {};
   const setError = () => {};
+  const [sameAddress, setSameAddress] = useState(true);
 
   const org = {
     defaultScheduleTypeCd: "WBSD"
@@ -84,7 +85,9 @@ function LoadData(props) {
     applicant,
     org,
     setApplicant,
-    setError
+    setError,
+    sameAddress,
+    setSameAddress
   };
 
   sessionStorage.setItem("validator", "secret");

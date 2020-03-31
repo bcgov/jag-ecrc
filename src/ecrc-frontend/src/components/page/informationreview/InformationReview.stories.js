@@ -29,10 +29,10 @@ const applicant = {
   provinceNm: "British Columbia",
   postalCodeTxt: "V9V 9V9",
   countryNm: "Canada",
-  mailingAddressLine1: "456 Elsewhere",
-  mailingCity: "There",
-  mailingProvince: "Ontario",
-  mailingPostalCode: "V1V 1A1",
+  mailingLine1: "456 Elsewhere",
+  mailingCityNm: "There",
+  mailingProvinceNm: "Ontario",
+  mailingPostalCodeTxt: "V1V 1A1",
   jobTitle: "Painter",
   organizationFacility: ""
 };

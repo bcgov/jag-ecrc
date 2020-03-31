@@ -430,10 +430,11 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                   </span>
                 </label>
                 <input
+                  autocomplete="tel"
                   class="textinput_editable_white"
                   id="phoneNumber"
-                  placeholder="123 456 7890"
-                  type="text"
+                  placeholder="250 555-1234"
+                  type="tel"
                   value=""
                 />
                 <br />
@@ -779,28 +780,22 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <div>
                 <label
                   class="label"
-                  for="mailingAddressLine1"
+                  for="addressLine1"
                 >
                   <div
                     class="textinput_label"
                   >
                     Street
                   </div>
-                  <span
-                    class="mandatory"
-                    id="asterisk"
-                  >
-                    *
-                  </span>
                    
                   <span
                     class="note"
                   />
                 </label>
                 <input
-                  class="textinput_editable_white"
-                  id="mailingAddressLine1"
-                  placeholder="Street or PO Box"
+                  class="textinput_non_editable_gray"
+                  id="addressLine1"
+                  readonly=""
                   type="text"
                   value="123 Somewhere"
                 />
@@ -814,28 +809,22 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <div>
                 <label
                   class="label"
-                  for="mailingCityNm"
+                  for="cityNm"
                 >
                   <div
                     class="textinput_label"
                   >
                     City
                   </div>
-                  <span
-                    class="mandatory"
-                    id="asterisk"
-                  >
-                    *
-                  </span>
                    
                   <span
                     class="note"
                   />
                 </label>
                 <input
-                  class="textinput_editable_white"
-                  id="mailingCityNm"
-                  placeholder="City"
+                  class="textinput_non_editable_gray"
+                  id="cityNm"
+                  readonly=""
                   type="text"
                   value="Here"
                 />
@@ -849,72 +838,51 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <div>
                 <label
                   class="label"
-                  for="mailingProvinceNm"
+                  for="provinceNm"
                 >
                   <div
                     class="textinput_label"
                   >
                     Province
                   </div>
-                  <span
-                    class="mandatory"
-                    id="asterisk"
-                  >
-                    *
-                  </span>
-                   
-                  <span
-                    class="note"
-                  />
-                </label>
-                <select
-                  class="textinput_editable_white"
-                  id="mailingProvinceNm"
-                >
-                  <option
-                    value="British Columbia"
-                  >
-                    British Columbia
-                  </option>
-                  <option
-                    value="Ontario"
-                  >
-                    Ontario
-                  </option>
-                  <option
-                    value="Alberta"
-                  >
-                    Alberta
-                  </option>
-                </select>
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="mailingPostalCodeTxt"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    Postal Code
-                  </div>
-                  <span
-                    class="mandatory"
-                    id="asterisk"
-                  >
-                    *
-                  </span>
                    
                   <span
                     class="note"
                   />
                 </label>
                 <input
-                  class="textinput_editable_white"
-                  id="mailingPostalCodeTxt"
-                  placeholder="V9V 9V9"
+                  class="textinput_non_editable_gray"
+                  id="provinceNm"
+                  readonly=""
+                  type="text"
+                  value="British Columbia"
+                />
+                <br />
+                <span
+                  class="error"
+                />
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  class="label"
+                  for="postalCodeTxt"
+                >
+                  <div
+                    class="textinput_label"
+                  >
+                    Postal Code
+                  </div>
+                   
+                  <span
+                    class="note"
+                  />
+                </label>
+                <input
+                  class="textinput_non_editable_gray"
+                  id="postalCodeTxt"
+                  readonly=""
                   type="text"
                   value="V9V 9V9"
                 />
@@ -928,7 +896,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               <div>
                 <label
                   class="label"
-                  for="mailingCountryNm"
+                  for="countryNm"
                 >
                   <div
                     class="textinput_label"
@@ -942,7 +910,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 </label>
                 <input
                   class="textinput_non_editable_gray"
-                  id="mailingCountryNm"
+                  id="countryNm"
                   readonly=""
                   type="text"
                   value="Canada"
@@ -955,6 +923,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             </li>
           </ul>
         </form>
+        <br />
         <section
           class="p-4"
         >
