@@ -123,7 +123,7 @@ export default function ApplicationForm({
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
-    if (code) {
+    if (!isActionPerformed("appForm") && code) {
       Promise.all([
         axios.get(`/ecrc/protected/login?code=${code}&requestGuid=${uuid}`, {
           headers: {
@@ -575,7 +575,7 @@ export default function ApplicationForm({
       return;
     }
 
-    if (!birthLoc) {
+    if (!birthLoc && !validateBirthPlace(birthLoc)) {
       setBirthPlaceError("City and country of birth are required");
     }
 
