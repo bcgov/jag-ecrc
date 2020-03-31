@@ -1,6 +1,8 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { storiesOf } from "@storybook/react";
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
 
 import InformationReview from "./InformationReview";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
@@ -68,6 +70,25 @@ const newPayload = {
 };
 generateJWTToken(newPayload);
 
+function LoadData(props) {
+  if (process.env.REACT_APP_API_BASE_URL) {
+    axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+  }
+
+  const mock = new MockAdapter(axios);
+  const API_REQUEST = "/ecrc/private/checkShare?requestGuid=unique123";
+
+  mock.onGet(API_REQUEST).reply(200, {
+    oldOrg: "Old Org",
+    oldCRCExpiration: "2021-10-22"
+  });
+
+  sessionStorage.setItem("validator", "secret");
+  sessionStorage.setItem("uuid", "unique123");
+
+  return props.children({ page });
+}
+
 export const NonScheduleD = () => (
   <MemoryRouter>
     <InformationReview page={page} />
@@ -89,6 +110,15 @@ export const ScheduleD = () => (
 );
 
 storiesOf("Information Review", module)
+  .add("Display Share Option", () => (
+    <LoadData props={page}>
+      {data => (
+        <MemoryRouter>
+          <InformationReview page={data.page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  ))
   .add("NonSchedule D Default", () => (
     <MemoryRouter>
       <InformationReview page={page} />
