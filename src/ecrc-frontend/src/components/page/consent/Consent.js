@@ -155,6 +155,7 @@ export default function Consent({
 
   const confirm = () => {
     setLoading(true);
+    sessionStorage.setItem("validExit", true);
 
     if (!isAuthorized()) {
       setError({
