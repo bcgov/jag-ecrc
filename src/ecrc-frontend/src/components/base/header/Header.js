@@ -1,6 +1,7 @@
+/* eslint-disable no-alert */
 import React from "react";
 import PropTypes from "prop-types";
-import { useHistory, Prompt } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Header.css";
 
 export default function Header({ header: { name } }) {
