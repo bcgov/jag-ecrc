@@ -20,10 +20,15 @@ export default function Transition({
       <div className="page">
         <div className="transition-content col-md-8">
           <p>
-            You are being redirected to the legacy online criminal record check
-            (eCRC) application. You will be required to re-enter your access
-            code to continue. If you are not redirected automatically, please
-            click <a href="https://justice.gov.bc.ca/eCRC/home.htm">here</a>
+            You are unable to login with your BC Services Card at this time.
+          </p>
+          <br />
+          <p>
+            You’ll be provided with an alternative way to submit your criminal
+            record check and will be required to re-enter your access code to
+            continue. You will be redirected automatically. If you are not
+            redirected automatically, please click{" "}
+            <a href="https://justice.gov.bc.ca/eCRC/home.htm">here</a>
             {"."}
           </p>
           <br />
@@ -36,7 +41,7 @@ export default function Transition({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                BC Services Card account
+                BC Services Card
               </a>
               {". Your organization hasn't"} been transitioned to the new system
               yet.

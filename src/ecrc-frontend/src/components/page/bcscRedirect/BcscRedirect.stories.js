@@ -2,54 +2,71 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
 
 import BcscRedirect from "./BcscRedirect";
-import {
-  generateJWTToken,
-  accessJWTToken
-} from "../../../modules/AuthenticationHelper";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
-const header = {
-  name: "BC Services Card"
-};
+function LoadData(props) {
+  if (process.env.REACT_APP_API_BASE_URL) {
+    axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+  }
 
-const saveOrg = () => {};
-const setError = () => {};
+  const mock = new MockAdapter(axios);
+  const API_REQUEST = "/ecrc/protected/getBCSCUrl?requestGuid=unique123";
 
-const page = {
-  header,
-  saveOrg,
-  setError
-};
+  mock.onGet(API_REQUEST).reply(200, "bcscurl.com");
 
-sessionStorage.setItem("validator", "secret");
-sessionStorage.setItem("uuid", "unique123");
+  const header = {
+    name: "BC Services Card"
+  };
 
-const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-const newPayload = {
-  ...currentPayload,
-  actionsPerformed: [
-    "infoReview",
-    "appForm",
-    "tou",
-    "bcscRedirect",
-    "orgVerification",
-    "consent",
-    "userConfirmation"
-  ],
-  authorities: ["Authorized"]
-};
-generateJWTToken(newPayload);
+  const saveOrg = () => {};
+  const setError = () => {};
+
+  const page = {
+    header,
+    saveOrg,
+    setError
+  };
+
+  sessionStorage.setItem("validator", "secret");
+  sessionStorage.setItem("uuid", "unique123");
+
+  const newPayload = {
+    actionsPerformed: [
+      "infoReview",
+      "appForm",
+      "tou",
+      "bcscRedirect",
+      "orgVerification",
+      "consent"
+    ],
+    authorities: ["Authorized", "ROLE"]
+  };
+  generateJWTToken(newPayload);
+
+  return props.children(page);
+}
 
 storiesOf("BcscRedirect page", module)
   .add("Default", () => (
-    <MemoryRouter>
-      <BcscRedirect page={page} />
-    </MemoryRouter>
+    <LoadData>
+      {page => (
+        <MemoryRouter>
+          <BcscRedirect page={page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
   ))
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
   .add("Mobile", () => (
-    <MemoryRouter>
-      <BcscRedirect page={page} />
-    </MemoryRouter>
+    <LoadData>
+      {page => (
+        <MemoryRouter>
+          <BcscRedirect page={page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
   ));

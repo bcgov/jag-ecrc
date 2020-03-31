@@ -36,16 +36,20 @@ export default function Consent({
       birthDt,
       genderTxt,
       countryNm,
-      mailingAddressLine1,
-      mailingCity,
-      mailingProvince,
-      mailingPostalCode,
+      mailingLine1,
+      mailingCityNm,
+      mailingProvinceNm,
+      mailingPostalCodeTxt,
       birthPlace,
       driversLicNo,
+      emailAddress,
+      emailType,
       phoneNumber,
-      jobTitle
+      jobTitle,
+      organizationFacility
     },
     org: {
+      orgNm,
       orgApplicantRelationship,
       orgTicketNumber,
       defaultScheduleTypeCd,
@@ -171,12 +175,14 @@ export default function Consent({
       alias3SecondNm,
       alias3SurnameNm,
       phoneNumber,
-      addressLine1: mailingAddressLine1,
-      cityNm: mailingCity,
-      provinceNm: mailingProvince,
+      addressLine1: mailingLine1,
+      cityNm: mailingCityNm,
+      provinceNm: mailingProvinceNm,
       countryNm,
-      postalCodeTxt: mailingPostalCode,
-      driversLicNo
+      postalCodeTxt: mailingPostalCodeTxt,
+      driversLicNo,
+      emailAddress,
+      emailType
     };
 
     let partyId;
@@ -195,8 +201,8 @@ export default function Consent({
       appl_Party_Id: null,
       org_Appl_To_Pay: "A",
       applicant_Posn: jobTitle,
-      child_Care_Fac_Nm: "child_Care_Fac_Nm",
-      governing_Body_Nm: "governing_Body_Nm",
+      child_Care_Fac_Nm: organizationFacility,
+      governing_Body_Nm: orgNm,
       session_Id: null,
       invoice_Id: null,
       auth_Release_EIV_Vendor_YN: "Y",
@@ -284,9 +290,9 @@ export default function Consent({
           const createURL = {
             invoiceNumber: invoiceId,
             requestGuid: uuid,
-            approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-            declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-            errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+            approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+            declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+            errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
             totalItemsAmount: serviceFeeAmount,
             serviceIdRef1: serviceId,
             partyIdRef2: partyId
@@ -405,7 +411,7 @@ export default function Consent({
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
           />
-          <div className="buttons pt-5">
+          <div className="buttons pt-4">
             <Button
               button={cancelButton}
               onClick={() => {
@@ -447,16 +453,20 @@ Consent.propTypes = {
       birthDt: PropTypes.string.isRequired,
       genderTxt: PropTypes.string.isRequired,
       countryNm: PropTypes.string.isRequired,
-      mailingAddressLine1: PropTypes.string.isRequired,
-      mailingCity: PropTypes.string.isRequired,
-      mailingProvince: PropTypes.string.isRequired,
-      mailingPostalCode: PropTypes.string.isRequired,
+      mailingLine1: PropTypes.string.isRequired,
+      mailingCityNm: PropTypes.string.isRequired,
+      mailingProvinceNm: PropTypes.string.isRequired,
+      mailingPostalCodeTxt: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
+      emailAddress: PropTypes.string.isRequired,
+      emailType: PropTypes.string.isRequired,
       phoneNumber: PropTypes.string.isRequired,
-      jobTitle: PropTypes.string.isRequired
+      jobTitle: PropTypes.string.isRequired,
+      organizationFacility: PropTypes.string.isRequired
     }),
     org: PropTypes.shape({
+      orgNm: PropTypes.string.isRequired,
       orgApplicantRelationship: PropTypes.string.isRequired,
       orgTicketNumber: PropTypes.string.isRequired,
       defaultScheduleTypeCd: PropTypes.string.isRequired,

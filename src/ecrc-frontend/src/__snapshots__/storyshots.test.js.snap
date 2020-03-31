@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
+exports[`Storyshots Application Form Page Non Schedule D 1`] = `
 <main>
   <header>
     <nav
@@ -17,14 +17,14 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -65,7 +65,6 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
       <h1>
         Criminal Record Check - Application
       </h1>
-      <br />
       <p>
         Complete the application form below to continue.
       </p>
@@ -456,12 +455,16 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                 </span>
               </label>
               <input
+                autoComplete="tel"
                 className="textinput_editable_white"
-                defaultValue=""
                 id="phoneNumber"
                 onChange={[Function]}
-                placeholder="123 456 7890"
-                type="text"
+                onCut={[Function]}
+                onKeyDown={[Function]}
+                onPaste={[Function]}
+                placeholder="250 555-1234"
+                type="tel"
+                value=""
               />
               <br />
               <span
@@ -790,151 +793,131 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
             <div>
               <label
                 className="label"
-                htmlFor="mailingAddressLine1"
+                htmlFor="addressLine1"
               >
                 <div
                   className="textinput_label"
                 >
                   Street
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingAddressLine1"
+                className="textinput_non_editable_gray"
+                defaultValue="123 Somewhere"
+                id="addressLine1"
                 onChange={[Function]}
-                placeholder="Street or PO Box"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingCityNm"
+                htmlFor="cityNm"
               >
                 <div
                   className="textinput_label"
                 >
                   City
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingCityNm"
+                className="textinput_non_editable_gray"
+                defaultValue="Here"
+                id="cityNm"
                 onChange={[Function]}
-                placeholder="City"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingProvinceNm"
+                htmlFor="provinceNm"
               >
                 <div
                   className="textinput_label"
                 >
                   Province
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <select
-                className="textinput_editable_white"
-                id="mailingProvinceNm"
-                onChange={[Function]}
-                value=""
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="mailingPostalCodeTxt"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Postal Code
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingPostalCodeTxt"
+                className="textinput_non_editable_gray"
+                defaultValue="British Columbia"
+                id="provinceNm"
                 onChange={[Function]}
-                placeholder="V9V 9V9"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingCountryNm"
+                htmlFor="postalCodeTxt"
+              >
+                <div
+                  className="textinput_label"
+                >
+                  Postal Code
+                </div>
+                
+                 
+                <span
+                  className="note"
+                />
+              </label>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="V9V 9V9"
+                id="postalCodeTxt"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+              <br />
+              <span
+                className="error"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <label
+                className="label"
+                htmlFor="countryNm"
               >
                 <div
                   className="textinput_label"
@@ -950,7 +933,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Canada"
-                id="mailingCountryNm"
+                id="countryNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -964,7 +947,9 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         </ul>
       </form>
       <br />
-      <section>
+      <section
+        className="p-4"
+      >
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
@@ -990,9 +975,8 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           AddressChangeBC
         </a>
       </section>
-      <br />
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -1009,7 +993,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -1202,7 +1186,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
                         }
                       }
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                       <a
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
@@ -1242,6 +1226,18 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -1290,18 +1286,6 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -1309,7 +1293,7 @@ exports[`Storyshots ApplicationForm Non Schedule D 1`] = `
 </main>
 `;
 
-exports[`Storyshots ApplicationForm Schedule D 1`] = `
+exports[`Storyshots Application Form Page Schedule D 1`] = `
 <main>
   <header>
     <nav
@@ -1326,14 +1310,14 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -1374,7 +1358,6 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
       <h1>
         Criminal Record Check - Application
       </h1>
-      <br />
       <p>
         Complete the application form below to continue.
       </p>
@@ -1765,12 +1748,16 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                 </span>
               </label>
               <input
+                autoComplete="tel"
                 className="textinput_editable_white"
-                defaultValue=""
                 id="phoneNumber"
                 onChange={[Function]}
-                placeholder="123 456 7890"
-                type="text"
+                onCut={[Function]}
+                onKeyDown={[Function]}
+                onPaste={[Function]}
+                placeholder="250 555-1234"
+                type="tel"
+                value=""
               />
               <br />
               <span
@@ -2139,151 +2126,131 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
             <div>
               <label
                 className="label"
-                htmlFor="mailingAddressLine1"
+                htmlFor="addressLine1"
               >
                 <div
                   className="textinput_label"
                 >
                   Street
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingAddressLine1"
+                className="textinput_non_editable_gray"
+                defaultValue="123 Somewhere"
+                id="addressLine1"
                 onChange={[Function]}
-                placeholder="Street or PO Box"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingCityNm"
+                htmlFor="cityNm"
               >
                 <div
                   className="textinput_label"
                 >
                   City
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingCityNm"
+                className="textinput_non_editable_gray"
+                defaultValue="Here"
+                id="cityNm"
                 onChange={[Function]}
-                placeholder="City"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingProvinceNm"
+                htmlFor="provinceNm"
               >
                 <div
                   className="textinput_label"
                 >
                   Province
                 </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <select
-                className="textinput_editable_white"
-                id="mailingProvinceNm"
-                onChange={[Function]}
-                value=""
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="mailingPostalCodeTxt"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Postal Code
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
+                
                  
                 <span
                   className="note"
                 />
               </label>
               <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="mailingPostalCodeTxt"
+                className="textinput_non_editable_gray"
+                defaultValue="British Columbia"
+                id="provinceNm"
                 onChange={[Function]}
-                placeholder="V9V 9V9"
+                readOnly={true}
                 type="text"
               />
               <br />
               <span
                 className="error"
-              >
-                
-              </span>
+              />
             </div>
           </li>
           <li>
             <div>
               <label
                 className="label"
-                htmlFor="mailingCountryNm"
+                htmlFor="postalCodeTxt"
+              >
+                <div
+                  className="textinput_label"
+                >
+                  Postal Code
+                </div>
+                
+                 
+                <span
+                  className="note"
+                />
+              </label>
+              <input
+                className="textinput_non_editable_gray"
+                defaultValue="V9V 9V9"
+                id="postalCodeTxt"
+                onChange={[Function]}
+                readOnly={true}
+                type="text"
+              />
+              <br />
+              <span
+                className="error"
+              />
+            </div>
+          </li>
+          <li>
+            <div>
+              <label
+                className="label"
+                htmlFor="countryNm"
               >
                 <div
                   className="textinput_label"
@@ -2299,7 +2266,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
               <input
                 className="textinput_non_editable_gray"
                 defaultValue="Canada"
-                id="mailingCountryNm"
+                id="countryNm"
                 onChange={[Function]}
                 readOnly={true}
                 type="text"
@@ -2313,7 +2280,9 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
         </ul>
       </form>
       <br />
-      <section>
+      <section
+        className="p-4"
+      >
         Entering your mailing address in this application will not update your BC Services Card Address. To update your BC Services Card information you must contact 
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
@@ -2339,9 +2308,8 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           AddressChangeBC
         </a>
       </section>
-      <br />
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -2358,7 +2326,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -2551,7 +2519,7 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
                         }
                       }
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                       <a
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
@@ -2596,6 +2564,18 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -2637,18 +2617,6 @@ exports[`Storyshots ApplicationForm Schedule D 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -2675,14 +2643,14 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -2723,19 +2691,20 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
       <h1>
         Apply for a Criminal Record Check
       </h1>
-      <br />
       <p>
         To apply for a criminal record check online, you must use your
          
         <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
           rel="noopener noreferrer"
           target="_blank"
         >
-          BC Services Card
+          BC Services Card.
         </a>
          
-        Account. Only cards 
+      </p>
+      <p>
+        Only cards 
         <b>
           with a photo
         </b>
@@ -2753,7 +2722,6 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
       <p>
         Please select an option below:
       </p>
-      <br />
       <div
         className="option"
       >
@@ -2764,17 +2732,11 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
             className="col-lg-6 col-md-12 "
             style={
               Object {
-                "marginBottom": "10px",
+                "marginTop": "9px",
               }
             }
           >
-            I have a BC Services Card
-             
-            <span
-              className="underlineText"
-            >
-              with a photo
-            </span>
+            I have a photo BC Services Card
           </div>
           <div
             className="col-lg-6 col-md-4 alignRight"
@@ -2886,7 +2848,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -2901,11 +2863,11 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                       className="side-card-text"
                     >
                       <br />
-                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                      Eligibility for a BC Services Card is the same as for the Medical Services Plan (MSP).
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -2953,6 +2915,18 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -2994,18 +2968,6 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -3032,14 +2994,14 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -3080,19 +3042,20 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
       <h1>
         Apply for a Criminal Record Check
       </h1>
-      <br />
       <p>
         To apply for a criminal record check online, you must use your
          
         <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
           rel="noopener noreferrer"
           target="_blank"
         >
-          BC Services Card
+          BC Services Card.
         </a>
          
-        Account. Only cards 
+      </p>
+      <p>
+        Only cards 
         <b>
           with a photo
         </b>
@@ -3110,7 +3073,6 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
       <p>
         Please select an option below:
       </p>
-      <br />
       <div
         className="option"
       >
@@ -3121,17 +3083,11 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
             className="col-lg-6 col-md-12 "
             style={
               Object {
-                "marginBottom": "10px",
+                "marginTop": "9px",
               }
             }
           >
-            I have a BC Services Card
-             
-            <span
-              className="underlineText"
-            >
-              with a photo
-            </span>
+            I have a photo BC Services Card
           </div>
           <div
             className="col-lg-6 col-md-4 alignRight"
@@ -3243,7 +3199,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -3258,11 +3214,11 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                       className="side-card-text"
                     >
                       <br />
-                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                      Eligibility for a BC Services Card is the same as for the Medical Services Plan (MSP).
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -3310,6 +3266,18 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -3351,18 +3319,6 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -3458,14 +3414,14 @@ exports[`Storyshots Consent page Default 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -3541,6 +3497,12 @@ exports[`Storyshots Consent page Default 1`] = `
             >
               I, the undersigned, do hereby consent to the collection and disclosure by the Royal Canadian Mounted Police (RCMP) and other law enforcement agencies, as well as other duly authorized agencies of the government, of any and all information related to the security screening checks in support of this application for up to two years. This may include some or all of: (a) criminal record check or fingerprint-based criminal record verification by searching the Canadian Police Information Centre database; (b) a police information check; (c) a check of intelligence databases maintained by law enforcement agencies; (d) a check of records in the justice information system of the Ministry of Attorney General and; (e) a check of records in the corrections information system of the Ministry of Public Safety and Solicitor General.
             </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
           </label>
         </section>
         <section
@@ -3558,6 +3520,12 @@ exports[`Storyshots Consent page Default 1`] = `
               className="declaration-cb"
             >
               I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
             </span>
           </label>
         </section>
@@ -3577,11 +3545,17 @@ exports[`Storyshots Consent page Default 1`] = `
             >
               The third checkbox for my application and will provide as necessary is complete.
             </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
           </label>
         </section>
       </div>
       <div
-        className="buttons pt-5"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -3721,13 +3695,13 @@ exports[`Storyshots Consent page Default 1`] = `
                             <div
                               className="contact-title"
                             >
-                              Fax: 
+                              Phone: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            (250) 356-1889
+                            1 855 587-0185 (option 2)
                           </div>
                         </div>
                         <div
@@ -3746,25 +3720,32 @@ exports[`Storyshots Consent page Default 1`] = `
                                   "color": undefined,
                                 }
                               }
-                              viewBox="0 0 512 512"
+                              viewBox="0 0 496 512"
                               width="1em"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
                               />
                             </svg>
                              
                             <div
                               className="contact-title"
                             >
-                              Office: 
+                              Website: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            Toll free - 1 855 587-0185 (press option 2)
+                            <a
+                              className="email link-email"
+                              href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Criminal Records Review Program
+                            </a>
                           </div>
                         </div>
                         <div
@@ -3802,7 +3783,7 @@ exports[`Storyshots Consent page Default 1`] = `
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -3870,7 +3851,7 @@ exports[`Storyshots Consent page Default 1`] = `
                         }
                       }
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                       <a
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
@@ -3910,6 +3891,18 @@ exports[`Storyshots Consent page Default 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -3956,18 +3949,6 @@ exports[`Storyshots Consent page Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -3994,14 +3975,14 @@ exports[`Storyshots Consent page Mobile 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -4077,6 +4058,12 @@ exports[`Storyshots Consent page Mobile 1`] = `
             >
               I, the undersigned, do hereby consent to the collection and disclosure by the Royal Canadian Mounted Police (RCMP) and other law enforcement agencies, as well as other duly authorized agencies of the government, of any and all information related to the security screening checks in support of this application for up to two years. This may include some or all of: (a) criminal record check or fingerprint-based criminal record verification by searching the Canadian Police Information Centre database; (b) a police information check; (c) a check of intelligence databases maintained by law enforcement agencies; (d) a check of records in the justice information system of the Ministry of Attorney General and; (e) a check of records in the corrections information system of the Ministry of Public Safety and Solicitor General.
             </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
           </label>
         </section>
         <section
@@ -4094,6 +4081,12 @@ exports[`Storyshots Consent page Mobile 1`] = `
               className="declaration-cb"
             >
               I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
             </span>
           </label>
         </section>
@@ -4113,11 +4106,17 @@ exports[`Storyshots Consent page Mobile 1`] = `
             >
               The third checkbox for my application and will provide as necessary is complete.
             </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
           </label>
         </section>
       </div>
       <div
-        className="buttons pt-5"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -4257,13 +4256,13 @@ exports[`Storyshots Consent page Mobile 1`] = `
                             <div
                               className="contact-title"
                             >
-                              Fax: 
+                              Phone: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            (250) 356-1889
+                            1 855 587-0185 (option 2)
                           </div>
                         </div>
                         <div
@@ -4282,25 +4281,32 @@ exports[`Storyshots Consent page Mobile 1`] = `
                                   "color": undefined,
                                 }
                               }
-                              viewBox="0 0 512 512"
+                              viewBox="0 0 496 512"
                               width="1em"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
                               />
                             </svg>
                              
                             <div
                               className="contact-title"
                             >
-                              Office: 
+                              Website: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            Toll free - 1 855 587-0185 (press option 2)
+                            <a
+                              className="email link-email"
+                              href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Criminal Records Review Program
+                            </a>
                           </div>
                         </div>
                         <div
@@ -4338,7 +4344,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -4406,7 +4412,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
                         }
                       }
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                       <a
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
@@ -4446,6 +4452,18 @@ exports[`Storyshots Consent page Mobile 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -4492,18 +4510,6 @@ exports[`Storyshots Consent page Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -4536,6 +4542,12 @@ exports[`Storyshots Declaration Default 1`] = `
       >
         I, the undersigned, do hereby consent to the collection and disclosure by the Royal Canadian Mounted Police (RCMP) and other law enforcement agencies, as well as other duly authorized agencies of the government, of any and all information related to the security screening checks in support of this application for up to two years. This may include some or all of: (a) criminal record check or fingerprint-based criminal record verification by searching the Canadian Police Information Centre database; (b) a police information check; (c) a check of intelligence databases maintained by law enforcement agencies; (d) a check of records in the justice information system of the Ministry of Attorney General and; (e) a check of records in the corrections information system of the Ministry of Public Safety and Solicitor General.
       </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
     </label>
   </section>
   <section
@@ -4554,6 +4566,12 @@ exports[`Storyshots Declaration Default 1`] = `
       >
         I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may lead to a denial of a cannabis workers registration. I am also aware that later discovery of an omission or misrepresentation may be grounds for any finding of suitability to be suspended or revoked.
       </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
     </label>
   </section>
   <section
@@ -4571,6 +4589,12 @@ exports[`Storyshots Declaration Default 1`] = `
         className="declaration-cb"
       >
         The third checkbox for my application and will provide as necessary is complete.
+      </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
       </span>
     </label>
   </section>
@@ -4594,14 +4618,14 @@ exports[`Storyshots Error Api Error 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -4641,9 +4665,8 @@ exports[`Storyshots Error Api Error 1`] = `
     >
       <div>
         <h1>
-          An unknown error has occurred.
+          An unknown error has occurred
         </h1>
-        <br />
         <p>
           The error description is below. If this error persists, please try again later.
           <br />
@@ -4699,6 +4722,18 @@ exports[`Storyshots Error Api Error 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -4742,18 +4777,6 @@ exports[`Storyshots Error Api Error 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -4778,14 +4801,14 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -4825,9 +4848,8 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
     >
       <div>
         <h1>
-          Unauthorized Entry
+          Unauthorized entry
         </h1>
-        <br />
         <p>
           Unauthorized user entry, please return to the home page and begin your session again.
         </p>
@@ -4880,6 +4902,18 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -4923,18 +4957,6 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -4959,14 +4981,14 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -5006,9 +5028,8 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
     >
       <div>
         <h1>
-          Login failed.
+          Login failed
         </h1>
-        <br />
         <p>
           Unable to login using your BCSC account, please try again later.
         </p>
@@ -5061,6 +5082,18 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -5102,18 +5135,6 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -5140,14 +5161,14 @@ exports[`Storyshots Error Default 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -5187,9 +5208,8 @@ exports[`Storyshots Error Default 1`] = `
     >
       <div>
         <h1>
-          An unknown error has occurred.
+          An unknown error has occurred
         </h1>
-        <br />
         <p>
           The error description is below. If this error persists, please try again later.
           <br />
@@ -5244,6 +5264,18 @@ exports[`Storyshots Error Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -5285,18 +5317,6 @@ exports[`Storyshots Error Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -5323,14 +5343,14 @@ exports[`Storyshots Error Mobile 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -5370,9 +5390,8 @@ exports[`Storyshots Error Mobile 1`] = `
     >
       <div>
         <h1>
-          An unknown error has occurred.
+          An unknown error has occurred
         </h1>
-        <br />
         <p>
           The error description is below. If this error persists, please try again later.
           <br />
@@ -5427,6 +5446,18 @@ exports[`Storyshots Error Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -5470,18 +5501,6 @@ exports[`Storyshots Error Mobile 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -5506,14 +5525,14 @@ exports[`Storyshots Error Session Expired 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -5553,9 +5572,8 @@ exports[`Storyshots Error Session Expired 1`] = `
     >
       <div>
         <h1>
-          Your session has expired.
+          Your session has expired
         </h1>
-        <br />
         <p>
           Please return to the home page and begin your session again.
         </p>
@@ -5608,6 +5626,18 @@ exports[`Storyshots Error Session Expired 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -5651,18 +5681,6 @@ exports[`Storyshots Error Session Expired 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -5694,6 +5712,18 @@ exports[`Storyshots Footer Default 1`] = `
       <ul
         className="navbar-nav text-right"
       >
+        <li
+          className="nav-item m-1"
+        >
+          <a
+            className="nav-link"
+            href="https://www2.gov.bc.ca"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            BC Government
+          </a>
+        </li>
         <li
           className="nav-item m-1"
         >
@@ -5740,18 +5770,6 @@ exports[`Storyshots Footer Default 1`] = `
             target="_blank"
           >
             Copyright
-          </a>
-        </li>
-        <li
-          className="nav-item m-1"
-        >
-          <a
-            className="nav-link"
-            href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Contact Us
           </a>
         </li>
       </ul>
@@ -5789,6 +5807,18 @@ exports[`Storyshots Footer Mobile 1`] = `
         >
           <a
             className="nav-link"
+            href="https://www2.gov.bc.ca"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            BC Government
+          </a>
+        </li>
+        <li
+          className="nav-item m-1"
+        >
+          <a
+            className="nav-link"
             href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
             rel="noopener noreferrer"
             target="_blank"
@@ -5830,18 +5860,6 @@ exports[`Storyshots Footer Mobile 1`] = `
             target="_blank"
           >
             Copyright
-          </a>
-        </li>
-        <li
-          className="nav-item m-1"
-        >
-          <a
-            className="nav-link"
-            href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Contact Us
           </a>
         </li>
       </ul>
@@ -5968,14 +5986,14 @@ exports[`Storyshots Header Default 1`] = `
         alt="B.C. Government Logo"
         className="img-fluid d-none d-md-block"
         height="44"
-        src="/images/bcid-logo-rev-en.svg"
+        src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
         width="181"
       />
       <img
         alt="B.C. Government Logo"
         className="img-fluid d-md-none"
         height="44"
-        src="/images/bcid-symbol-rev.svg"
+        src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
         width="64"
       />
       <div
@@ -6025,14 +6043,14 @@ exports[`Storyshots Header Mobile 1`] = `
         alt="B.C. Government Logo"
         className="img-fluid d-none d-md-block"
         height="44"
-        src="/images/bcid-logo-rev-en.svg"
+        src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
         width="181"
       />
       <img
         alt="B.C. Government Logo"
         className="img-fluid d-md-none"
         height="44"
-        src="/images/bcid-symbol-rev.svg"
+        src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
         width="64"
       />
       <div
@@ -6083,14 +6101,14 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -6370,6 +6388,12 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
           >
             I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
           </span>
+          <span
+            className="mandatory"
+            id="asterisk"
+          >
+            *
+          </span>
         </label>
       </section>
       <div
@@ -6562,6 +6586,18 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -6603,18 +6639,6 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -6641,14 +6665,14 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -6928,6 +6952,12 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
           >
             I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
           </span>
+          <span
+            className="mandatory"
+            id="asterisk"
+          >
+            *
+          </span>
         </label>
       </section>
       <div
@@ -7120,6 +7150,18 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -7161,18 +7203,6 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -7199,14 +7229,14 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -7494,6 +7524,12 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
           >
             I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
           </span>
+          <span
+            className="mandatory"
+            id="asterisk"
+          >
+            *
+          </span>
         </label>
       </section>
       <div
@@ -7686,6 +7722,18 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -7727,18 +7775,6 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -7765,14 +7801,14 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -8060,6 +8096,12 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
           >
             I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
           </span>
+          <span
+            className="mandatory"
+            id="asterisk"
+          >
+            *
+          </span>
         </label>
       </section>
       <div
@@ -8252,6 +8294,18 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -8293,18 +8347,6 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -8529,14 +8571,14 @@ exports[`Storyshots OrgValidation Default 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -8578,7 +8620,6 @@ exports[`Storyshots OrgValidation Default 1`] = `
         <h1>
           Criminal Record Check
         </h1>
-        <br />
         <p>
           In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
            
@@ -8587,7 +8628,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            Criminal Records Review Act (CRRA).
+            Criminal Records Review Act.
           </a>
         </p>
         <div>
@@ -8603,7 +8644,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
               className="bodyList"
             >
               <li>
-                Be at least 12 years of age as of today's date
+                Be at least 12 years of age as of today's date.
               </li>
               <li>
                 Have your identity verified by using your
@@ -8613,13 +8654,13 @@ exports[`Storyshots OrgValidation Default 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  BC Services Card
+                  BC Services Card.
                 </a>
                  
-                (BCSC). The BCSC provides secure access to provincial government online services. If you don't have a BCSC, an alternative option may be available for you.
+                The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
               </li>
               <li>
-                Have an access code provided by your organization
+                Have an access code provided by your organization.
               </li>
             </ul>
           </div>
@@ -8703,7 +8744,8 @@ exports[`Storyshots OrgValidation Default 1`] = `
             >
               <li>
                 <a
-                  href="volunteer"
+                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   I'm an employee or a volunteer
@@ -8725,8 +8767,10 @@ exports[`Storyshots OrgValidation Default 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  I don't have a BC Services Card
+                  I don't have a BC Services Card.
                 </a>
+                 
+                Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
               </li>
               <li>
                 <a
@@ -8783,7 +8827,6 @@ exports[`Storyshots OrgValidation Default 1`] = `
               or by phone at 1-855-587-0185 (Option 2).
             </p>
           </div>
-          <br />
         </div>
       </div>
     </div>
@@ -8811,6 +8854,18 @@ exports[`Storyshots OrgValidation Default 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -8857,18 +8912,6 @@ exports[`Storyshots OrgValidation Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -8895,14 +8938,14 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -8944,7 +8987,6 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
         <h1>
           Criminal Record Check
         </h1>
-        <br />
         <p>
           In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
            
@@ -8953,7 +8995,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            Criminal Records Review Act (CRRA).
+            Criminal Records Review Act.
           </a>
         </p>
         <div>
@@ -8969,7 +9011,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               className="bodyList"
             >
               <li>
-                Be at least 12 years of age as of today's date
+                Be at least 12 years of age as of today's date.
               </li>
               <li>
                 Have your identity verified by using your
@@ -8979,13 +9021,13 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  BC Services Card
+                  BC Services Card.
                 </a>
                  
-                (BCSC). The BCSC provides secure access to provincial government online services. If you don't have a BCSC, an alternative option may be available for you.
+                The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
               </li>
               <li>
-                Have an access code provided by your organization
+                Have an access code provided by your organization.
               </li>
             </ul>
           </div>
@@ -9069,7 +9111,8 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             >
               <li>
                 <a
-                  href="volunteer"
+                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   I'm an employee or a volunteer
@@ -9091,8 +9134,10 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  I don't have a BC Services Card
+                  I don't have a BC Services Card.
                 </a>
+                 
+                Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
               </li>
               <li>
                 <a
@@ -9149,7 +9194,6 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               or by phone at 1-855-587-0185 (Option 2).
             </p>
           </div>
-          <br />
         </div>
       </div>
     </div>
@@ -9177,6 +9221,18 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -9225,18 +9281,6 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -9249,7 +9293,6 @@ exports[`Storyshots OrgValidationText Default 1`] = `
   <h1>
     Criminal Record Check
   </h1>
-  <br />
   <p>
     In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
      
@@ -9258,7 +9301,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      Criminal Records Review Act (CRRA).
+      Criminal Records Review Act.
     </a>
   </p>
   <div>
@@ -9274,7 +9317,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         className="bodyList"
       >
         <li>
-          Be at least 12 years of age as of today's date
+          Be at least 12 years of age as of today's date.
         </li>
         <li>
           Have your identity verified by using your
@@ -9284,13 +9327,13 @@ exports[`Storyshots OrgValidationText Default 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            BC Services Card
+            BC Services Card.
           </a>
            
-          (BCSC). The BCSC provides secure access to provincial government online services. If you don't have a BCSC, an alternative option may be available for you.
+          The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
         </li>
         <li>
-          Have an access code provided by your organization
+          Have an access code provided by your organization.
         </li>
       </ul>
     </div>
@@ -9391,7 +9434,8 @@ exports[`Storyshots OrgValidationText Default 1`] = `
       >
         <li>
           <a
-            href="volunteer"
+            href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+            rel="noopener noreferrer"
             target="_blank"
           >
             I'm an employee or a volunteer
@@ -9413,8 +9457,10 @@ exports[`Storyshots OrgValidationText Default 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            I don't have a BC Services Card
+            I don't have a BC Services Card.
           </a>
+           
+          Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
         </li>
         <li>
           <a
@@ -9471,7 +9517,6 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         or by phone at 1-855-587-0185 (Option 2).
       </p>
     </div>
-    <br />
   </div>
 </div>
 `;
@@ -9493,14 +9538,14 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -9541,7 +9586,6 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
       <h1>
         Organization Information
       </h1>
-      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -9632,63 +9676,41 @@ Canada
       <br />
       <div>
         <p>
-          To continue with your online request for a criminal record check:
+          To continue with your online request for a criminal record check, please note:
         </p>
         <ul
           className="eligibleList"
         >
           <li>
-            Only BC Services cards with a photo are accepted at this time.
-          </li>
-          <li>
-            If you do not already have a BC Service Card Account, you can initiate the process at the
-             
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              BC Service Card website
-            </a>
-            .
+            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
             If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
           </li>
           <li>
-            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
-          </li>
-          <li>
-            There is no fee for Volunteer applications.
+            Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
           </li>
         </ul>
         <br />
         <p>
-          The organization noted above will be notified:
+          Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
         <ol
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults:
+            you have an outstanding charge or conviction relating to a relevant or specified offence; and
           </li>
-          <ol
-            className="contactList"
-          >
-            <li>
-              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
-            </li>
-            <li>
-              a determination of risk or no risk has been made by the Deputy Registrar.
-            </li>
-          </ol>
+          <li>
+            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+          </li>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
       </div>
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -9705,7 +9727,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -9883,7 +9905,7 @@ Canada
                       className="menuItem"
                     >
                       <a
-                        href="/tbd"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -10023,13 +10045,13 @@ Canada
                             <div
                               className="contact-title"
                             >
-                              Fax: 
+                              Phone: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            (250) 356-1889
+                            1 855 587-0185 (option 2)
                           </div>
                         </div>
                         <div
@@ -10048,25 +10070,32 @@ Canada
                                   "color": undefined,
                                 }
                               }
-                              viewBox="0 0 512 512"
+                              viewBox="0 0 496 512"
                               width="1em"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
                               />
                             </svg>
                              
                             <div
                               className="contact-title"
                             >
-                              Office: 
+                              Website: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            Toll free - 1 855 587-0185 (press option 2)
+                            <a
+                              className="email link-email"
+                              href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Criminal Records Review Program
+                            </a>
                           </div>
                         </div>
                         <div
@@ -10104,7 +10133,7 @@ Canada
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -10145,6 +10174,18 @@ Canada
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -10191,18 +10232,6 @@ Canada
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -10229,14 +10258,14 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -10277,7 +10306,6 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
       <h1>
         Organization Information
       </h1>
-      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -10368,63 +10396,41 @@ Canada
       <br />
       <div>
         <p>
-          To continue with your online request for a criminal record check:
+          To continue with your online request for a criminal record check, please note:
         </p>
         <ul
           className="eligibleList"
         >
           <li>
-            Only BC Services cards with a photo are accepted at this time.
-          </li>
-          <li>
-            If you do not already have a BC Service Card Account, you can initiate the process at the
-             
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              BC Service Card website
-            </a>
-            .
+            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
             If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
           </li>
           <li>
-            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
-          </li>
-          <li>
-            There is no fee for Volunteer applications.
+            Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
           </li>
         </ul>
         <br />
         <p>
-          The organization noted above will be notified:
+          Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
         <ol
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults:
+            you have an outstanding charge or conviction relating to a relevant or specified offence; and
           </li>
-          <ol
-            className="contactList"
-          >
-            <li>
-              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
-            </li>
-            <li>
-              a determination of risk or no risk has been made by the Deputy Registrar.
-            </li>
-          </ol>
+          <li>
+            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+          </li>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
       </div>
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -10441,7 +10447,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -10619,7 +10625,7 @@ Canada
                       className="menuItem"
                     >
                       <a
-                        href="/tbd"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -10759,13 +10765,13 @@ Canada
                             <div
                               className="contact-title"
                             >
-                              Fax: 
+                              Phone: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            (250) 356-1889
+                            1 855 587-0185 (option 2)
                           </div>
                         </div>
                         <div
@@ -10784,25 +10790,32 @@ Canada
                                   "color": undefined,
                                 }
                               }
-                              viewBox="0 0 512 512"
+                              viewBox="0 0 496 512"
                               width="1em"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
                               />
                             </svg>
                              
                             <div
                               className="contact-title"
                             >
-                              Office: 
+                              Website: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            Toll free - 1 855 587-0185 (press option 2)
+                            <a
+                              className="email link-email"
+                              href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Criminal Records Review Program
+                            </a>
                           </div>
                         </div>
                         <div
@@ -10840,7 +10853,7 @@ Canada
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -10881,6 +10894,18 @@ Canada
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -10929,18 +10954,6 @@ Canada
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -10965,14 +10978,14 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -11013,7 +11026,6 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
       <h1>
         Organization Information
       </h1>
-      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -11104,63 +11116,41 @@ Canada
       <br />
       <div>
         <p>
-          To continue with your online request for a criminal record check:
+          To continue with your online request for a criminal record check, please note:
         </p>
         <ul
           className="eligibleList"
         >
           <li>
-            Only BC Services cards with a photo are accepted at this time.
-          </li>
-          <li>
-            If you do not already have a BC Service Card Account, you can initiate the process at the
-             
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              BC Service Card website
-            </a>
-            .
+            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
             If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
           </li>
           <li>
-            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
-          </li>
-          <li>
-            There is no fee for Volunteer applications.
+            Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
           </li>
         </ul>
         <br />
         <p>
-          The organization noted above will be notified:
+          Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
         <ol
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults:
+            you have an outstanding charge or conviction relating to a relevant or specified offence; and
           </li>
-          <ol
-            className="contactList"
-          >
-            <li>
-              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
-            </li>
-            <li>
-              a determination of risk or no risk has been made by the Deputy Registrar.
-            </li>
-          </ol>
+          <li>
+            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+          </li>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
       </div>
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -11177,7 +11167,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -11355,7 +11345,7 @@ Canada
                       className="menuItem"
                     >
                       <a
-                        href="/tbd"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -11495,13 +11485,13 @@ Canada
                             <div
                               className="contact-title"
                             >
-                              Fax: 
+                              Phone: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            (250) 356-1889
+                            1 855 587-0185 (option 2)
                           </div>
                         </div>
                         <div
@@ -11520,25 +11510,32 @@ Canada
                                   "color": undefined,
                                 }
                               }
-                              viewBox="0 0 512 512"
+                              viewBox="0 0 496 512"
                               width="1em"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
                               />
                             </svg>
                              
                             <div
                               className="contact-title"
                             >
-                              Office: 
+                              Website: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            Toll free - 1 855 587-0185 (press option 2)
+                            <a
+                              className="email link-email"
+                              href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Criminal Records Review Program
+                            </a>
                           </div>
                         </div>
                         <div
@@ -11576,7 +11573,7 @@ Canada
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -11617,6 +11614,18 @@ Canada
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -11665,18 +11674,6 @@ Canada
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -11701,14 +11698,14 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -11749,7 +11746,6 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
       <h1>
         Organization Information
       </h1>
-      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -11840,63 +11836,41 @@ Canada
       <br />
       <div>
         <p>
-          To continue with your online request for a criminal record check:
+          To continue with your online request for a criminal record check, please note:
         </p>
         <ul
           className="eligibleList"
         >
           <li>
-            Only BC Services cards with a photo are accepted at this time.
-          </li>
-          <li>
-            If you do not already have a BC Service Card Account, you can initiate the process at the
-             
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              BC Service Card website
-            </a>
-            .
+            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
             If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
           </li>
           <li>
-            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
-          </li>
-          <li>
-            There is no fee for Volunteer applications.
+            Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
           </li>
         </ul>
         <br />
         <p>
-          The organization noted above will be notified:
+          Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
         <ol
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults:
+            you have an outstanding charge or conviction relating to a relevant or specified offence; and
           </li>
-          <ol
-            className="contactList"
-          >
-            <li>
-              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
-            </li>
-            <li>
-              a determination of risk or no risk has been made by the Deputy Registrar.
-            </li>
-          </ol>
+          <li>
+            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+          </li>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
       </div>
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -11913,7 +11887,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -12091,7 +12065,7 @@ Canada
                       className="menuItem"
                     >
                       <a
-                        href="/tbd"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -12231,13 +12205,13 @@ Canada
                             <div
                               className="contact-title"
                             >
-                              Fax: 
+                              Phone: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            (250) 356-1889
+                            1 855 587-0185 (option 2)
                           </div>
                         </div>
                         <div
@@ -12256,25 +12230,32 @@ Canada
                                   "color": undefined,
                                 }
                               }
-                              viewBox="0 0 512 512"
+                              viewBox="0 0 496 512"
                               width="1em"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
                               />
                             </svg>
                              
                             <div
                               className="contact-title"
                             >
-                              Office: 
+                              Website: 
                             </div>
                           </div>
                           <div
                             className="col-lg-12 col-xl-9 pr-0"
                           >
-                            Toll free - 1 855 587-0185 (press option 2)
+                            <a
+                              className="email link-email"
+                              href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Criminal Records Review Program
+                            </a>
                           </div>
                         </div>
                         <div
@@ -12312,7 +12293,7 @@ Canada
                             className="col-lg-12 col-xl-9 pr-0"
                           >
                             <a
-                              className="email"
+                              className="email link-email"
                               href="mailto:criminalrecords@gov.bc.ca"
                             >
                               criminalrecords@gov.bc.ca
@@ -12353,6 +12334,18 @@ Canada
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -12399,18 +12392,6 @@ Canada
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -12557,7 +12538,7 @@ exports[`Storyshots SideCard notice 1`] = `
           className="submit-content"
         >
           <span>
-            The information requested on this form is collected by the Liquor and Cannabis Regulation Branch under Sections 26 (a) and (c) of the Freedom of Information and Protection of Privacy Act for the purpose of cannabis licensing, compliance and enforcement matters in accordance with the Cannabis
+            The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26 (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to criminalrecords@gov.bc.ca; or by telephone at 1- 855-587-0185 (option 2).
           </span>
         </div>
       </section>
@@ -12695,7 +12676,7 @@ exports[`Storyshots SideCards Bc Service 1`] = `
               </div>
               <div>
                 <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -12710,11 +12691,11 @@ exports[`Storyshots SideCards Bc Service 1`] = `
                 className="side-card-text"
               >
                 <br />
-                Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                Eligibility for a BC Services Card is the same as for the Medical Services Plan (MSP).
               </div>
               <div>
                 <a
-                  href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -12787,7 +12768,7 @@ exports[`Storyshots SideCards Collection Notice 1`] = `
                   }
                 }
               >
-                The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                 <a
                   href="mailto:criminalrecords@gov.bc.ca"
                 >
@@ -12909,13 +12890,13 @@ exports[`Storyshots SideCards Contact Information 1`] = `
                       <div
                         className="contact-title"
                       >
-                        Fax: 
+                        Phone: 
                       </div>
                     </div>
                     <div
                       className="col-lg-12 col-xl-9 pr-0"
                     >
-                      (250) 356-1889
+                      1 855 587-0185 (option 2)
                     </div>
                   </div>
                   <div
@@ -12934,25 +12915,32 @@ exports[`Storyshots SideCards Contact Information 1`] = `
                             "color": undefined,
                           }
                         }
-                        viewBox="0 0 512 512"
+                        viewBox="0 0 496 512"
                         width="1em"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                          d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
                         />
                       </svg>
                        
                       <div
                         className="contact-title"
                       >
-                        Office: 
+                        Website: 
                       </div>
                     </div>
                     <div
                       className="col-lg-12 col-xl-9 pr-0"
                     >
-                      Toll free - 1 855 587-0185 (press option 2)
+                      <a
+                        className="email link-email"
+                        href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Criminal Records Review Program
+                      </a>
                     </div>
                   </div>
                   <div
@@ -12990,7 +12978,7 @@ exports[`Storyshots SideCards Contact Information 1`] = `
                       className="col-lg-12 col-xl-9 pr-0"
                     >
                       <a
-                        className="email"
+                        className="email link-email"
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
                         criminalrecords@gov.bc.ca
@@ -13841,14 +13829,14 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -14047,6 +14035,18 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -14088,18 +14088,6 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -14126,14 +14114,14 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -14317,6 +14305,18 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -14360,18 +14360,6 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -14396,14 +14384,14 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -14563,6 +14551,18 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -14606,18 +14606,6 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -14642,14 +14630,14 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -14848,6 +14836,18 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -14891,18 +14891,6 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -14927,14 +14915,14 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -15118,6 +15106,18 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -15161,18 +15161,6 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -15197,14 +15185,14 @@ exports[`Storyshots Success page Volunteer 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -15364,6 +15352,18 @@ exports[`Storyshots Success page Volunteer 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -15405,18 +15405,6 @@ exports[`Storyshots Success page Volunteer 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -15498,14 +15486,14 @@ exports[`Storyshots Term Of Use page Default 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -16153,7 +16141,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
           </label>
         </section>
         <section
-          className="buttons pt-5"
+          className="buttons pt-4"
         >
           <button
             className="btn ecrc_accessary_btn btn"
@@ -16216,6 +16204,18 @@ exports[`Storyshots Term Of Use page Default 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -16257,18 +16257,6 @@ exports[`Storyshots Term Of Use page Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -16295,14 +16283,14 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -16950,7 +16938,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
           </label>
         </section>
         <section
-          className="buttons pt-5"
+          className="buttons pt-4"
         >
           <button
             className="btn ecrc_accessary_btn btn"
@@ -17013,6 +17001,18 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -17054,18 +17054,6 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -17686,7 +17674,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
     </label>
   </section>
   <section
-    className="buttons pt-5"
+    className="buttons pt-4"
   >
     <button
       className="btn ecrc_accessary_btn btn"
@@ -17936,14 +17924,14 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -17982,7 +17970,12 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       className="transition-content col-md-8"
     >
       <p>
-        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        You are unable to login with your BC Services Card at this time.
+      </p>
+      <br />
+      <p>
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -18019,6 +18012,18 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -18065,18 +18070,6 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
@@ -18103,14 +18096,14 @@ exports[`Storyshots Transition Page Mobile 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -18149,7 +18142,12 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       className="transition-content col-md-8"
     >
       <p>
-        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        You are unable to login with your BC Services Card at this time.
+      </p>
+      <br />
+      <p>
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -18186,6 +18184,18 @@ exports[`Storyshots Transition Page Mobile 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -18234,18 +18244,6 @@ exports[`Storyshots Transition Page Mobile 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -18270,14 +18268,14 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/images/bcid-logo-rev-en.svg"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/images/bcid-symbol-rev.svg"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
@@ -18316,7 +18314,12 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
       className="transition-content col-md-8"
     >
       <p>
-        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        You are unable to login with your BC Services Card at this time.
+      </p>
+      <br />
+      <p>
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -18333,7 +18336,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          BC Services Card account
+          BC Services Card
         </a>
         . Your organization hasn't
          been transitioned to the new system yet.
@@ -18368,213 +18371,13 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
           >
             <a
               className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              href="https://www2.gov.bc.ca"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Disclaimer
+              BC Government
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/privacy"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Privacy
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Accessibility
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/copyright"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </footer>
-</main>
-`;
-
-exports[`Storyshots User Confirmation page Default 1`] = `
-<main>
-  <header>
-    <nav
-      className="navbar navbar-expand-lg navbar-dark"
-    >
-      <div
-        className="container-fluid navbar-brand pointer"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-        tabIndex={0}
-      >
-        <img
-          alt="B.C. Government Logo"
-          className="img-fluid d-none d-md-block"
-          height="44"
-          src="/images/bcid-logo-rev-en.svg"
-          width="181"
-        />
-        <img
-          alt="B.C. Government Logo"
-          className="img-fluid d-md-none"
-          height="44"
-          src="/images/bcid-symbol-rev.svg"
-          width="64"
-        />
-        <div
-          className="pointer navbar-brand nav-item nav-link"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          header name
-        </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
-      </div>
-    </nav>
-  </header>
-  <div
-    className="page"
-  >
-    <div
-      className="user-confirm-content col-md-12"
-    >
-      <strong>
-        Please confirm the name associated with the BC Service card login provided.
-      </strong>
-      <p />
-      <div
-        style={
-          Object {
-            "display": "inline-block",
-          }
-        }
-      >
-        <div
-          className="page-loader"
-        />
-      </div>
-      <p>
-        
-      </p>
-      <p>
-        Is this correct?
-      </p>
-      <div
-        className="row"
-      >
-        <div
-          className="col-md-12"
-        >
-          <button
-            className="btn btn-primary btn"
-            onClick={[Function]}
-            type="submit"
-          >
-            Yes
-            <div
-              className="loader-hide"
-            >
-              <div
-                className="btn-loader"
-              />
-            </div>
-          </button>
-          <button
-            className="btn ecrc_accessary_btn btn"
-            onClick={[Function]}
-            type="submit"
-          >
-            No
-            <div
-              className="loader-hide"
-            >
-              <div
-                className="btn-loader"
-              />
-            </div>
-          </button>
-          <br />
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer
-    className="footer"
-  >
-    <nav
-      className="navbar navbar-expand-sm navbar-dark justify-content-end"
-    >
-      <button
-        className="navbar-toggler"
-        data-target="#footerBar"
-        data-toggle="collapse"
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        className="collapse navbar-collapse flex-grow-0"
-        id="footerBar"
-      >
-        <ul
-          className="navbar-nav text-right"
-        >
           <li
             className="nav-item m-1"
           >
@@ -18621,230 +18424,6 @@ exports[`Storyshots User Confirmation page Default 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </footer>
-</main>
-`;
-
-exports[`Storyshots User Confirmation page Mobile 1`] = `
-<main>
-  <header>
-    <nav
-      className="navbar navbar-expand-lg navbar-dark"
-    >
-      <div
-        className="container-fluid navbar-brand pointer"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-        tabIndex={0}
-      >
-        <img
-          alt="B.C. Government Logo"
-          className="img-fluid d-none d-md-block"
-          height="44"
-          src="/images/bcid-logo-rev-en.svg"
-          width="181"
-        />
-        <img
-          alt="B.C. Government Logo"
-          className="img-fluid d-md-none"
-          height="44"
-          src="/images/bcid-symbol-rev.svg"
-          width="64"
-        />
-        <div
-          className="pointer navbar-brand nav-item nav-link"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          header name
-        </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
-      </div>
-    </nav>
-  </header>
-  <div
-    className="page"
-  >
-    <div
-      className="user-confirm-content col-md-12"
-    >
-      <strong>
-        Please confirm the name associated with the BC Service card login provided.
-      </strong>
-      <p />
-      <div
-        style={
-          Object {
-            "display": "inline-block",
-          }
-        }
-      >
-        <div
-          className="page-loader"
-        />
-      </div>
-      <p>
-        
-      </p>
-      <p>
-        Is this correct?
-      </p>
-      <div
-        className="row"
-      >
-        <div
-          className="col-md-12"
-        >
-          <button
-            className="btn btn-primary btn"
-            onClick={[Function]}
-            type="submit"
-          >
-            Yes
-            <div
-              className="loader-hide"
-            >
-              <div
-                className="btn-loader"
-              />
-            </div>
-          </button>
-          <button
-            className="btn ecrc_accessary_btn btn"
-            onClick={[Function]}
-            type="submit"
-          >
-            No
-            <div
-              className="loader-hide"
-            >
-              <div
-                className="btn-loader"
-              />
-            </div>
-          </button>
-          <br />
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer
-    className="footer"
-  >
-    <nav
-      className="navbar navbar-expand-sm navbar-dark justify-content-end"
-    >
-      <button
-        className="navbar-toggler"
-        data-target="#footerBar"
-        data-toggle="collapse"
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        className="collapse navbar-collapse flex-grow-0"
-        id="footerBar"
-      >
-        <ul
-          className="navbar-nav text-right"
-        >
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Disclaimer
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/privacy"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Privacy
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Accessibility
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/copyright"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
