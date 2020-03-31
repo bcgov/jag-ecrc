@@ -277,278 +277,286 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
           click here to add them
         </button>
       </span>
-      <form
-        className="simpleForm"
-      >
-        <ul>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="birthLoc"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  City and Country of Birth
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="birthLoc"
-                onChange={[Function]}
-                placeholder="City, Country"
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="birthDt"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Date of Birth
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="1942-10-29"
-                id="birthDt"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="genderTxt"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Sex
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="Male"
-                id="genderTxt"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="bcDLNumber"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  BC Driver's Licence Number
-                </div>
-                
-                 
-                <span
-                  className="note"
-                >
-                  (Current or Expired)
-                </span>
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="bcDLNumber"
-                onChange={[Function]}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="phoneNumber"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Primary Phone Number
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                >
-                  (Including area code)
-                </span>
-              </label>
-              <input
-                autoComplete="tel"
-                className="textinput_editable_white"
-                id="phoneNumber"
-                onChange={[Function]}
-                onCut={[Function]}
-                onKeyDown={[Function]}
-                onPaste={[Function]}
-                placeholder="250 555-1234"
-                type="tel"
-                value=""
-              />
-              <br />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="emailAddress"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Personal Email Address
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                >
-                  We may use this to communicate with you about your application
-                </span>
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="emailAddress"
-                onChange={[Function]}
-                placeholder="example@test.com"
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-        </ul>
-      </form>
-      <br />
-      <form
-        className="simpleForm"
-      >
-        <div
-          className="simpleForm_title"
-        >
-          Position Information
+      <div>
+        <div>
+          <div>
+            <form
+              className="simpleForm"
+            >
+              <ul>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="birthLoc"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        City and Country of Birth
+                      </div>
+                      <span
+                        className="mandatory"
+                        id="asterisk"
+                      >
+                        *
+                      </span>
+                       
+                      <span
+                        className="note"
+                      />
+                    </label>
+                    <input
+                      className="textinput_editable_white"
+                      defaultValue=""
+                      id="birthLoc"
+                      onChange={[Function]}
+                      placeholder="City, Country"
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    >
+                      
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="birthDt"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        Date of Birth
+                      </div>
+                      
+                       
+                      <span
+                        className="note"
+                      />
+                    </label>
+                    <input
+                      className="textinput_non_editable_gray"
+                      defaultValue="1942-10-29"
+                      id="birthDt"
+                      onChange={[Function]}
+                      readOnly={true}
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="genderTxt"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        Sex
+                      </div>
+                      
+                       
+                      <span
+                        className="note"
+                      />
+                    </label>
+                    <input
+                      className="textinput_non_editable_gray"
+                      defaultValue="Male"
+                      id="genderTxt"
+                      onChange={[Function]}
+                      readOnly={true}
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="bcDLNumber"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        BC Driver's Licence Number
+                      </div>
+                      
+                       
+                      <span
+                        className="note"
+                      >
+                        (Current or Expired)
+                      </span>
+                    </label>
+                    <input
+                      className="textinput_editable_white"
+                      defaultValue=""
+                      id="bcDLNumber"
+                      onChange={[Function]}
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="phoneNumber"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        Primary Phone Number
+                      </div>
+                      <span
+                        className="mandatory"
+                        id="asterisk"
+                      >
+                        *
+                      </span>
+                       
+                      <span
+                        className="note"
+                      >
+                        (Including area code)
+                      </span>
+                    </label>
+                    <input
+                      autoComplete="tel"
+                      className="textinput_editable_white"
+                      id="phoneNumber"
+                      onChange={[Function]}
+                      onCut={[Function]}
+                      onKeyDown={[Function]}
+                      onPaste={[Function]}
+                      placeholder="250 555-1234"
+                      type="tel"
+                      value=""
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    >
+                      
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="emailAddress"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        Personal Email Address
+                      </div>
+                      <span
+                        className="mandatory"
+                        id="asterisk"
+                      >
+                        *
+                      </span>
+                       
+                      <span
+                        className="note"
+                      >
+                        We may use this to communicate with you about your application
+                      </span>
+                    </label>
+                    <input
+                      className="textinput_editable_white"
+                      defaultValue=""
+                      id="emailAddress"
+                      onChange={[Function]}
+                      placeholder="example@test.com"
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    >
+                      
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </form>
+          </div>
         </div>
-        <ul>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="applicantPosition"
-              >
-                <div
-                  className="textinput_label"
+      </div>
+      <br />
+      <div>
+        <form
+          className="simpleForm"
+        >
+          <div
+            className="simpleForm_title"
+          >
+            Position Information
+          </div>
+          <ul>
+            <li>
+              <div>
+                <label
+                  className="label"
+                  htmlFor="applicantPosition"
                 >
-                  Applicant's Position/Job Title
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
+                  <div
+                    className="textinput_label"
+                  >
+                    Applicant's Position/Job Title
+                  </div>
+                  <span
+                    className="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    className="note"
+                  />
+                </label>
+                <input
+                  className="textinput_editable_white"
+                  defaultValue=""
+                  id="applicantPosition"
+                  onChange={[Function]}
+                  placeholder="Position/Job Title"
+                  type="text"
                 />
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="applicantPosition"
-                onChange={[Function]}
-                placeholder="Position/Job Title"
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-        </ul>
-      </form>
+                <br />
+                <span
+                  className="error"
+                >
+                  
+                </span>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
       <br />
       <div
         className="smallHeading"
@@ -768,167 +776,175 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
           Current Mailing Address
         </span>
       </div>
-      <form
-        className="simpleForm"
-      >
-        <ul>
-          <li>
+      <div>
+        <div>
+          <div>
             <div>
-              <label
-                className="label"
-                htmlFor="addressLine1"
+              <form
+                className="simpleForm"
               >
-                <div
-                  className="textinput_label"
-                >
-                  Street
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="123 Somewhere"
-                id="addressLine1"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
+                <ul>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="addressLine1"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          Street
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="123 Somewhere"
+                        id="addressLine1"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="cityNm"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          City
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="Here"
+                        id="cityNm"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="provinceNm"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          Province
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="British Columbia"
+                        id="provinceNm"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="postalCodeTxt"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          Postal Code
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="V9V 9V9"
+                        id="postalCodeTxt"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="countryNm"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          Country
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="Canada"
+                        id="countryNm"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </form>
             </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="cityNm"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  City
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="Here"
-                id="cityNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="provinceNm"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Province
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="British Columbia"
-                id="provinceNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="postalCodeTxt"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Postal Code
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="V9V 9V9"
-                id="postalCodeTxt"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="countryNm"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Country
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="Canada"
-                id="countryNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-        </ul>
-      </form>
+          </div>
+        </div>
+      </div>
       <br />
       <section
         className="p-4"
@@ -1553,318 +1569,326 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
           click here to add them
         </button>
       </span>
-      <form
-        className="simpleForm"
-      >
-        <ul>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="birthLoc"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  City and Country of Birth
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="birthLoc"
-                onChange={[Function]}
-                placeholder="City, Country"
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="birthDt"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Date of Birth
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="1942-10-29"
-                id="birthDt"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="genderTxt"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Sex
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="Male"
-                id="genderTxt"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="bcDLNumber"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  BC Driver's Licence Number
-                </div>
-                
-                 
-                <span
-                  className="note"
-                >
-                  (Current or Expired)
-                </span>
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="bcDLNumber"
-                onChange={[Function]}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="phoneNumber"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Primary Phone Number
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                >
-                  (Including area code)
-                </span>
-              </label>
-              <input
-                autoComplete="tel"
-                className="textinput_editable_white"
-                id="phoneNumber"
-                onChange={[Function]}
-                onCut={[Function]}
-                onKeyDown={[Function]}
-                onPaste={[Function]}
-                placeholder="250 555-1234"
-                type="tel"
-                value=""
-              />
-              <br />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="emailAddress"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Personal Email Address
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
-                >
-                  We may use this to communicate with you about your application
-                </span>
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="emailAddress"
-                onChange={[Function]}
-                placeholder="example@test.com"
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-        </ul>
-      </form>
-      <br />
-      <form
-        className="simpleForm"
-      >
-        <div
-          className="simpleForm_title"
-        >
-          Position Information
+      <div>
+        <div>
+          <div>
+            <form
+              className="simpleForm"
+            >
+              <ul>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="birthLoc"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        City and Country of Birth
+                      </div>
+                      <span
+                        className="mandatory"
+                        id="asterisk"
+                      >
+                        *
+                      </span>
+                       
+                      <span
+                        className="note"
+                      />
+                    </label>
+                    <input
+                      className="textinput_editable_white"
+                      defaultValue=""
+                      id="birthLoc"
+                      onChange={[Function]}
+                      placeholder="City, Country"
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    >
+                      
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="birthDt"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        Date of Birth
+                      </div>
+                      
+                       
+                      <span
+                        className="note"
+                      />
+                    </label>
+                    <input
+                      className="textinput_non_editable_gray"
+                      defaultValue="1942-10-29"
+                      id="birthDt"
+                      onChange={[Function]}
+                      readOnly={true}
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="genderTxt"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        Sex
+                      </div>
+                      
+                       
+                      <span
+                        className="note"
+                      />
+                    </label>
+                    <input
+                      className="textinput_non_editable_gray"
+                      defaultValue="Male"
+                      id="genderTxt"
+                      onChange={[Function]}
+                      readOnly={true}
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="bcDLNumber"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        BC Driver's Licence Number
+                      </div>
+                      
+                       
+                      <span
+                        className="note"
+                      >
+                        (Current or Expired)
+                      </span>
+                    </label>
+                    <input
+                      className="textinput_editable_white"
+                      defaultValue=""
+                      id="bcDLNumber"
+                      onChange={[Function]}
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="phoneNumber"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        Primary Phone Number
+                      </div>
+                      <span
+                        className="mandatory"
+                        id="asterisk"
+                      >
+                        *
+                      </span>
+                       
+                      <span
+                        className="note"
+                      >
+                        (Including area code)
+                      </span>
+                    </label>
+                    <input
+                      autoComplete="tel"
+                      className="textinput_editable_white"
+                      id="phoneNumber"
+                      onChange={[Function]}
+                      onCut={[Function]}
+                      onKeyDown={[Function]}
+                      onPaste={[Function]}
+                      placeholder="250 555-1234"
+                      type="tel"
+                      value=""
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    >
+                      
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      className="label"
+                      htmlFor="emailAddress"
+                    >
+                      <div
+                        className="textinput_label"
+                      >
+                        Personal Email Address
+                      </div>
+                      <span
+                        className="mandatory"
+                        id="asterisk"
+                      >
+                        *
+                      </span>
+                       
+                      <span
+                        className="note"
+                      >
+                        We may use this to communicate with you about your application
+                      </span>
+                    </label>
+                    <input
+                      className="textinput_editable_white"
+                      defaultValue=""
+                      id="emailAddress"
+                      onChange={[Function]}
+                      placeholder="example@test.com"
+                      type="text"
+                    />
+                    <br />
+                    <span
+                      className="error"
+                    >
+                      
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </form>
+          </div>
         </div>
-        <ul>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="applicantPosition"
-              >
-                <div
-                  className="textinput_label"
+      </div>
+      <br />
+      <div>
+        <form
+          className="simpleForm"
+        >
+          <div
+            className="simpleForm_title"
+          >
+            Position Information
+          </div>
+          <ul>
+            <li>
+              <div>
+                <label
+                  className="label"
+                  htmlFor="applicantPosition"
                 >
-                  Applicant's Position/Job Title
-                </div>
-                <span
-                  className="mandatory"
-                  id="asterisk"
-                >
-                  *
-                </span>
-                 
-                <span
-                  className="note"
+                  <div
+                    className="textinput_label"
+                  >
+                    Applicant's Position/Job Title
+                  </div>
+                  <span
+                    className="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    className="note"
+                  />
+                </label>
+                <input
+                  className="textinput_editable_white"
+                  defaultValue=""
+                  id="applicantPosition"
+                  onChange={[Function]}
+                  placeholder="Position/Job Title"
+                  type="text"
                 />
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="applicantPosition"
-                onChange={[Function]}
-                placeholder="Position/Job Title"
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="organizationFacility"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Organization Facility
-                </div>
+                <br />
                 <span
-                  className="mandatory"
-                  id="asterisk"
+                  className="error"
                 >
-                  *
+                  
                 </span>
-                 
+              </div>
+            </li>
+            <li>
+              <div>
+                <label
+                  className="label"
+                  htmlFor="organizationFacility"
+                >
+                  <div
+                    className="textinput_label"
+                  >
+                    Organization Facility
+                  </div>
+                  <span
+                    className="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
+                   
+                  <span
+                    className="note"
+                  >
+                    (Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)
+                  </span>
+                </label>
+                <input
+                  className="textinput_editable_white"
+                  defaultValue=""
+                  id="organizationFacility"
+                  onChange={[Function]}
+                  placeholder="Organization Facility"
+                  type="text"
+                />
+                <br />
                 <span
-                  className="note"
+                  className="error"
                 >
-                  (Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)
+                  
                 </span>
-              </label>
-              <input
-                className="textinput_editable_white"
-                defaultValue=""
-                id="organizationFacility"
-                onChange={[Function]}
-                placeholder="Organization Facility"
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              >
-                
-              </span>
-            </div>
-          </li>
-        </ul>
-      </form>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
       <br />
       <div
         className="smallHeading"
@@ -2084,167 +2108,175 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
           Current Mailing Address
         </span>
       </div>
-      <form
-        className="simpleForm"
-      >
-        <ul>
-          <li>
+      <div>
+        <div>
+          <div>
             <div>
-              <label
-                className="label"
-                htmlFor="addressLine1"
+              <form
+                className="simpleForm"
               >
-                <div
-                  className="textinput_label"
-                >
-                  Street
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="123 Somewhere"
-                id="addressLine1"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
+                <ul>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="addressLine1"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          Street
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="123 Somewhere"
+                        id="addressLine1"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="cityNm"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          City
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="Here"
+                        id="cityNm"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="provinceNm"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          Province
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="British Columbia"
+                        id="provinceNm"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="postalCodeTxt"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          Postal Code
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="V9V 9V9"
+                        id="postalCodeTxt"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        className="label"
+                        htmlFor="countryNm"
+                      >
+                        <div
+                          className="textinput_label"
+                        >
+                          Country
+                        </div>
+                        
+                         
+                        <span
+                          className="note"
+                        />
+                      </label>
+                      <input
+                        className="textinput_non_editable_gray"
+                        defaultValue="Canada"
+                        id="countryNm"
+                        onChange={[Function]}
+                        readOnly={true}
+                        type="text"
+                      />
+                      <br />
+                      <span
+                        className="error"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </form>
             </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="cityNm"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  City
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="Here"
-                id="cityNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="provinceNm"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Province
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="British Columbia"
-                id="provinceNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="postalCodeTxt"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Postal Code
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="V9V 9V9"
-                id="postalCodeTxt"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-          <li>
-            <div>
-              <label
-                className="label"
-                htmlFor="countryNm"
-              >
-                <div
-                  className="textinput_label"
-                >
-                  Country
-                </div>
-                
-                 
-                <span
-                  className="note"
-                />
-              </label>
-              <input
-                className="textinput_non_editable_gray"
-                defaultValue="Canada"
-                id="countryNm"
-                onChange={[Function]}
-                readOnly={true}
-                type="text"
-              />
-              <br />
-              <span
-                className="error"
-              />
-            </div>
-          </li>
-        </ul>
-      </form>
+          </div>
+        </div>
+      </div>
       <br />
       <section
         className="p-4"

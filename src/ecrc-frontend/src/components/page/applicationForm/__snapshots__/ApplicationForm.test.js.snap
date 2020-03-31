@@ -261,294 +261,302 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             click here to add them
           </button>
         </span>
-        <form
-          class="simpleForm"
-        >
-          <ul>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="birthLoc"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    City and Country of Birth
-                  </div>
-                  <span
-                    class="mandatory"
-                    id="asterisk"
-                  >
-                    *
-                  </span>
-                   
-                  <span
-                    class="note"
-                  />
-                </label>
-                <input
-                  class="textinput_editable_white"
-                  id="birthLoc"
-                  placeholder="City, Country"
-                  type="text"
-                  value=""
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="birthDt"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    Date of Birth
-                  </div>
-                   
-                  <span
-                    class="note"
-                  />
-                </label>
-                <input
-                  class="textinput_non_editable_gray"
-                  id="birthDt"
-                  readonly=""
-                  type="text"
-                  value="1942-10-29"
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="genderTxt"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    Sex
-                  </div>
-                   
-                  <span
-                    class="note"
-                  />
-                </label>
-                <input
-                  class="textinput_non_editable_gray"
-                  id="genderTxt"
-                  readonly=""
-                  type="text"
-                  value="Male"
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="bcDLNumber"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    BC Driver's Licence Number
-                  </div>
-                   
-                  <span
-                    class="note"
-                  >
-                    (Current or Expired)
-                  </span>
-                </label>
-                <input
-                  class="textinput_editable_white"
-                  id="bcDLNumber"
-                  type="text"
-                  value=""
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="phoneNumber"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    Primary Phone Number
-                  </div>
-                  <span
-                    class="mandatory"
-                    id="asterisk"
-                  >
-                    *
-                  </span>
-                   
-                  <span
-                    class="note"
-                  >
-                    (Including area code)
-                  </span>
-                </label>
-                <input
-                  autocomplete="tel"
-                  class="textinput_editable_white"
-                  id="phoneNumber"
-                  placeholder="250 555-1234"
-                  type="tel"
-                  value=""
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="emailAddress"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    Personal Email Address
-                  </div>
-                  <span
-                    class="mandatory"
-                    id="asterisk"
-                  >
-                    *
-                  </span>
-                   
-                  <span
-                    class="note"
-                  >
-                    We may use this to communicate with you about your application
-                  </span>
-                </label>
-                <input
-                  class="textinput_editable_white"
-                  id="emailAddress"
-                  placeholder="example@test.com"
-                  type="text"
-                  value=""
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-          </ul>
-        </form>
-        <br />
-        <form
-          class="simpleForm"
-        >
-          <div
-            class="simpleForm_title"
-          >
-            Position Information
+        <div>
+          <div>
+            <div>
+              <form
+                class="simpleForm"
+              >
+                <ul>
+                  <li>
+                    <div>
+                      <label
+                        class="label"
+                        for="birthLoc"
+                      >
+                        <div
+                          class="textinput_label"
+                        >
+                          City and Country of Birth
+                        </div>
+                        <span
+                          class="mandatory"
+                          id="asterisk"
+                        >
+                          *
+                        </span>
+                         
+                        <span
+                          class="note"
+                        />
+                      </label>
+                      <input
+                        class="textinput_editable_white"
+                        id="birthLoc"
+                        placeholder="City, Country"
+                        type="text"
+                        value=""
+                      />
+                      <br />
+                      <span
+                        class="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        class="label"
+                        for="birthDt"
+                      >
+                        <div
+                          class="textinput_label"
+                        >
+                          Date of Birth
+                        </div>
+                         
+                        <span
+                          class="note"
+                        />
+                      </label>
+                      <input
+                        class="textinput_non_editable_gray"
+                        id="birthDt"
+                        readonly=""
+                        type="text"
+                        value="1942-10-29"
+                      />
+                      <br />
+                      <span
+                        class="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        class="label"
+                        for="genderTxt"
+                      >
+                        <div
+                          class="textinput_label"
+                        >
+                          Sex
+                        </div>
+                         
+                        <span
+                          class="note"
+                        />
+                      </label>
+                      <input
+                        class="textinput_non_editable_gray"
+                        id="genderTxt"
+                        readonly=""
+                        type="text"
+                        value="Male"
+                      />
+                      <br />
+                      <span
+                        class="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        class="label"
+                        for="bcDLNumber"
+                      >
+                        <div
+                          class="textinput_label"
+                        >
+                          BC Driver's Licence Number
+                        </div>
+                         
+                        <span
+                          class="note"
+                        >
+                          (Current or Expired)
+                        </span>
+                      </label>
+                      <input
+                        class="textinput_editable_white"
+                        id="bcDLNumber"
+                        type="text"
+                        value=""
+                      />
+                      <br />
+                      <span
+                        class="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        class="label"
+                        for="phoneNumber"
+                      >
+                        <div
+                          class="textinput_label"
+                        >
+                          Primary Phone Number
+                        </div>
+                        <span
+                          class="mandatory"
+                          id="asterisk"
+                        >
+                          *
+                        </span>
+                         
+                        <span
+                          class="note"
+                        >
+                          (Including area code)
+                        </span>
+                      </label>
+                      <input
+                        autocomplete="tel"
+                        class="textinput_editable_white"
+                        id="phoneNumber"
+                        placeholder="250 555-1234"
+                        type="tel"
+                        value=""
+                      />
+                      <br />
+                      <span
+                        class="error"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label
+                        class="label"
+                        for="emailAddress"
+                      >
+                        <div
+                          class="textinput_label"
+                        >
+                          Personal Email Address
+                        </div>
+                        <span
+                          class="mandatory"
+                          id="asterisk"
+                        >
+                          *
+                        </span>
+                         
+                        <span
+                          class="note"
+                        >
+                          We may use this to communicate with you about your application
+                        </span>
+                      </label>
+                      <input
+                        class="textinput_editable_white"
+                        id="emailAddress"
+                        placeholder="example@test.com"
+                        type="text"
+                        value=""
+                      />
+                      <br />
+                      <span
+                        class="error"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </form>
+            </div>
           </div>
-          <ul>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="applicantPosition"
-                >
-                  <div
-                    class="textinput_label"
+        </div>
+        <br />
+        <div>
+          <form
+            class="simpleForm"
+          >
+            <div
+              class="simpleForm_title"
+            >
+              Position Information
+            </div>
+            <ul>
+              <li>
+                <div>
+                  <label
+                    class="label"
+                    for="applicantPosition"
                   >
-                    Applicant's Position/Job Title
-                  </div>
-                  <span
-                    class="mandatory"
-                    id="asterisk"
-                  >
-                    *
-                  </span>
-                   
-                  <span
-                    class="note"
+                    <div
+                      class="textinput_label"
+                    >
+                      Applicant's Position/Job Title
+                    </div>
+                    <span
+                      class="mandatory"
+                      id="asterisk"
+                    >
+                      *
+                    </span>
+                     
+                    <span
+                      class="note"
+                    />
+                  </label>
+                  <input
+                    class="textinput_editable_white"
+                    id="applicantPosition"
+                    placeholder="Position/Job Title"
+                    type="text"
+                    value=""
                   />
-                </label>
-                <input
-                  class="textinput_editable_white"
-                  id="applicantPosition"
-                  placeholder="Position/Job Title"
-                  type="text"
-                  value=""
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="organizationFacility"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    Organization Facility
-                  </div>
+                  <br />
                   <span
-                    class="mandatory"
-                    id="asterisk"
+                    class="error"
+                  />
+                </div>
+              </li>
+              <li>
+                <div>
+                  <label
+                    class="label"
+                    for="organizationFacility"
                   >
-                    *
-                  </span>
-                   
+                    <div
+                      class="textinput_label"
+                    >
+                      Organization Facility
+                    </div>
+                    <span
+                      class="mandatory"
+                      id="asterisk"
+                    >
+                      *
+                    </span>
+                     
+                    <span
+                      class="note"
+                    >
+                      (Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)
+                    </span>
+                  </label>
+                  <input
+                    class="textinput_editable_white"
+                    id="organizationFacility"
+                    placeholder="Organization Facility"
+                    type="text"
+                    value=""
+                  />
+                  <br />
                   <span
-                    class="note"
-                  >
-                    (Licenced Child Care Name, Adult Care Facility Name, or Contracted Company Name)
-                  </span>
-                </label>
-                <input
-                  class="textinput_editable_white"
-                  id="organizationFacility"
-                  placeholder="Organization Facility"
-                  type="text"
-                  value=""
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-          </ul>
-        </form>
+                    class="error"
+                  />
+                </div>
+              </li>
+            </ul>
+          </form>
+        </div>
         <br />
         <div
           class="smallHeading"
@@ -755,157 +763,165 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             Current Mailing Address
           </span>
         </div>
-        <form
-          class="simpleForm"
-        >
-          <ul>
-            <li>
+        <div>
+          <div>
+            <div>
               <div>
-                <label
-                  class="label"
-                  for="addressLine1"
+                <form
+                  class="simpleForm"
                 >
-                  <div
-                    class="textinput_label"
-                  >
-                    Street
-                  </div>
-                   
-                  <span
-                    class="note"
-                  />
-                </label>
-                <input
-                  class="textinput_non_editable_gray"
-                  id="addressLine1"
-                  readonly=""
-                  type="text"
-                  value="123 Somewhere"
-                />
-                <br />
-                <span
-                  class="error"
-                />
+                  <ul>
+                    <li>
+                      <div>
+                        <label
+                          class="label"
+                          for="addressLine1"
+                        >
+                          <div
+                            class="textinput_label"
+                          >
+                            Street
+                          </div>
+                           
+                          <span
+                            class="note"
+                          />
+                        </label>
+                        <input
+                          class="textinput_non_editable_gray"
+                          id="addressLine1"
+                          readonly=""
+                          type="text"
+                          value="123 Somewhere"
+                        />
+                        <br />
+                        <span
+                          class="error"
+                        />
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <label
+                          class="label"
+                          for="cityNm"
+                        >
+                          <div
+                            class="textinput_label"
+                          >
+                            City
+                          </div>
+                           
+                          <span
+                            class="note"
+                          />
+                        </label>
+                        <input
+                          class="textinput_non_editable_gray"
+                          id="cityNm"
+                          readonly=""
+                          type="text"
+                          value="Here"
+                        />
+                        <br />
+                        <span
+                          class="error"
+                        />
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <label
+                          class="label"
+                          for="provinceNm"
+                        >
+                          <div
+                            class="textinput_label"
+                          >
+                            Province
+                          </div>
+                           
+                          <span
+                            class="note"
+                          />
+                        </label>
+                        <input
+                          class="textinput_non_editable_gray"
+                          id="provinceNm"
+                          readonly=""
+                          type="text"
+                          value="British Columbia"
+                        />
+                        <br />
+                        <span
+                          class="error"
+                        />
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <label
+                          class="label"
+                          for="postalCodeTxt"
+                        >
+                          <div
+                            class="textinput_label"
+                          >
+                            Postal Code
+                          </div>
+                           
+                          <span
+                            class="note"
+                          />
+                        </label>
+                        <input
+                          class="textinput_non_editable_gray"
+                          id="postalCodeTxt"
+                          readonly=""
+                          type="text"
+                          value="V9V 9V9"
+                        />
+                        <br />
+                        <span
+                          class="error"
+                        />
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <label
+                          class="label"
+                          for="countryNm"
+                        >
+                          <div
+                            class="textinput_label"
+                          >
+                            Country
+                          </div>
+                           
+                          <span
+                            class="note"
+                          />
+                        </label>
+                        <input
+                          class="textinput_non_editable_gray"
+                          id="countryNm"
+                          readonly=""
+                          type="text"
+                          value="Canada"
+                        />
+                        <br />
+                        <span
+                          class="error"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                </form>
               </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="cityNm"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    City
-                  </div>
-                   
-                  <span
-                    class="note"
-                  />
-                </label>
-                <input
-                  class="textinput_non_editable_gray"
-                  id="cityNm"
-                  readonly=""
-                  type="text"
-                  value="Here"
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="provinceNm"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    Province
-                  </div>
-                   
-                  <span
-                    class="note"
-                  />
-                </label>
-                <input
-                  class="textinput_non_editable_gray"
-                  id="provinceNm"
-                  readonly=""
-                  type="text"
-                  value="British Columbia"
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="postalCodeTxt"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    Postal Code
-                  </div>
-                   
-                  <span
-                    class="note"
-                  />
-                </label>
-                <input
-                  class="textinput_non_editable_gray"
-                  id="postalCodeTxt"
-                  readonly=""
-                  type="text"
-                  value="V9V 9V9"
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-            <li>
-              <div>
-                <label
-                  class="label"
-                  for="countryNm"
-                >
-                  <div
-                    class="textinput_label"
-                  >
-                    Country
-                  </div>
-                   
-                  <span
-                    class="note"
-                  />
-                </label>
-                <input
-                  class="textinput_non_editable_gray"
-                  id="countryNm"
-                  readonly=""
-                  type="text"
-                  value="Canada"
-                />
-                <br />
-                <span
-                  class="error"
-                />
-              </div>
-            </li>
-          </ul>
-        </form>
+            </div>
+          </div>
+        </div>
         <br />
         <section
           class="p-4"
