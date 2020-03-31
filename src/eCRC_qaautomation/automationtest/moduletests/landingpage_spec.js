@@ -24,23 +24,19 @@ describe("landing page", () => {
     });
 
     it("Verify if I am an employee or organization redirects to the right page", () => {
-      landingPage.needMoreInformationEmployeeOrVolunteer
-        .click()
-        .then(() => {
-          expect(process.env.LP_NEEDMOREINFORMATION_EMPORGNAVTITLE).toBe(
-            browser.getTitle()
-          );
-        });
+      landingPage.needMoreInformationEmployeeOrVolunteer.click().then(() => {
+        expect(process.env.LP_NEEDMOREINFORMATION_EMPORGNAVTITLE).toBe(
+          browser.getTitle()
+        );
+      });
     });
 
     it("Verify if why I need to apply for a criminal record check redirects to the right page", () => {
-      landingPage.whyINeedToApplyForACriminalRecordCheck
-        .click()
-        .then(() => {
-          expect(
-            process.env.LP_WHYINEEDTOAPPLYFORCRIMINALRECORDCHECK_NAVTITLE
-          ).toBe(browser.getTitle());
-        });
+      landingPage.whyINeedToApplyForACriminalRecordCheck.click().then(() => {
+        expect(
+          process.env.LP_WHYINEEDTOAPPLYFORCRIMINALRECORDCHECK_NAVTITLE
+        ).toBe(browser.getTitle());
+      });
     });
 
     it("Verify if I'm an authorized contact redirects to the right page", () => {
@@ -89,7 +85,7 @@ describe("landing page", () => {
   describe("I am ready", () => {
     let accessCode = require("../../input/accesscode");
 
-    using(accessCode.accessCode.validCode, (validCode) => {
+    using(accessCode.accessCode.validCode, validCode => {
       it("Verify if the user is directed to the right page on validating a valid access code", () => {
         landingPage.accessCode.sendKeys(validCode);
 
@@ -100,7 +96,7 @@ describe("landing page", () => {
       });
     });
 
-    using(accessCode.accessCode.invalidCode, (invalidCode) => {
+    using(accessCode.accessCode.invalidCode, invalidCode => {
       it("Verify if the user is directed to the right page on validating a valid access code", () => {
         landingPage.accessCode.sendKeys(invalidCode);
 
@@ -113,7 +109,7 @@ describe("landing page", () => {
 
     xit("Verify if visit the criminal record review website redirects to the right page", () => {
       landingPage.visitTheCriminalRecordReviewWebsite.click().then(() => {
-        browser.getAllWindowHandles().then((windowHandle) => {
+        browser.getAllWindowHandles().then(windowHandle => {
           browser.switchTo().window(windowHandle[1]);
           expect(
             process.env.LP_VISITTHECRIMINALRECORDREVIEWWEBSITE_NAVTITLE

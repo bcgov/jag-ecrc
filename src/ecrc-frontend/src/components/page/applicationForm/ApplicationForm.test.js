@@ -45,6 +45,9 @@ describe("ApplicationForm Component", () => {
     defaultScheduleTypeCd: "WBSD"
   };
 
+  const sameAddress = true;
+  const setSameAddress = jest.fn();
+
   const provinces = [
     { name: "British Columbia" },
     { name: "Ontario" },
@@ -59,6 +62,8 @@ describe("ApplicationForm Component", () => {
     org,
     setApplicant,
     setError,
+    sameAddress,
+    setSameAddress,
     provinces,
     setProvinces
   };
@@ -167,7 +172,7 @@ describe("ApplicationForm Component", () => {
       alias2FirstNm: "Rob",
       birthPlace: "Daytona Beach, Florida",
       driversLicNo: "123456",
-      phoneNumber: "1234567890",
+      phoneNumber: "2345678901",
       emailAddress: "bob@ross.com",
       jobTitle: "Painter",
       organizationFacility: "PBS"
@@ -184,7 +189,6 @@ describe("ApplicationForm Component", () => {
 
     expect(getByDisplayValue(container, "Bob")).toBeInTheDocument();
     expect(getByDisplayValue(container, "Rob")).toBeInTheDocument();
-    expect(getByDisplayValue(container, "1234567890")).toBeInTheDocument();
     expect(getByDisplayValue(container, "PBS")).toBeInTheDocument();
   });
 
@@ -193,7 +197,7 @@ describe("ApplicationForm Component", () => {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
       driversLicNo: "123456",
-      phoneNumber: "1234567890",
+      phoneNumber: "2345678901",
       emailAddress: "bob@ross.com",
       jobTitle: "Painter",
       organizationFacility: "PBS"
@@ -206,14 +210,18 @@ describe("ApplicationForm Component", () => {
         history={history}
         initialEntries={["/applicationform?code=code"]}
       >
-        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+        <ApplicationForm
+          page={{ ...page, applicant: completeApplicant, sameAddress: false }}
+        />
       </MemoryRouter>
     );
     await wait(() => {});
 
     fireEvent.click(getByTestId(container, "differentAddress"));
 
-    expect(getByText(container, "Current Mailing Address")).toBeInTheDocument();
+    expect(
+      getByPlaceholderText(container, "Street or PO Box")
+    ).toBeInTheDocument();
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -227,7 +235,7 @@ describe("ApplicationForm Component", () => {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
       driversLicNo: "123456",
-      phoneNumber: "1234567890",
+      phoneNumber: "+12345678901",
       emailAddress: "",
       jobTitle: "Painter",
       organizationFacility: "PBS"
@@ -301,7 +309,7 @@ describe("ApplicationForm Component", () => {
       getByText(container, "Primary phone number is required")
     ).toBeInTheDocument();
 
-    fireEvent.change(getByPlaceholderText(container, "123 456 7890"), {
+    fireEvent.change(getByPlaceholderText(container, "250 555-1234"), {
       target: { value: "123456" }
     });
 
@@ -311,8 +319,8 @@ describe("ApplicationForm Component", () => {
       getByText(container, "Phone number must be in the form XXX XXX-XXXX")
     ).toBeInTheDocument();
 
-    fireEvent.change(getByPlaceholderText(container, "123 456 7890"), {
-      target: { value: "1234567890" }
+    fireEvent.change(getByPlaceholderText(container, "250 555-1234"), {
+      target: { value: "2345678901" }
     });
 
     // fireEvent.click(getByText(container, "Continue"));
@@ -340,7 +348,9 @@ describe("ApplicationForm Component", () => {
         history={history}
         initialEntries={["/applicationform?code=code"]}
       >
-        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+        <ApplicationForm
+          page={{ ...page, applicant: completeApplicant, sameAddress: false }}
+        />
       </MemoryRouter>
     );
     await wait(() => {});
@@ -380,7 +390,7 @@ describe("ApplicationForm Component", () => {
       ...applicant,
       birthPlace: "",
       driversLicNo: "123456",
-      phoneNumber: "1234567890",
+      phoneNumber: "+12345678901",
       emailAddress: "bob@ross.com",
       jobTitle: "Painter",
       organizationFacility: "PBS"
@@ -424,7 +434,7 @@ describe("ApplicationForm Component", () => {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
       driversLicNo: "123456",
-      phoneNumber: "1234567890",
+      phoneNumber: "+12505551234",
       emailAddress: "bob@ross.com",
       jobTitle: "",
       organizationFacility: "PBS"
@@ -466,7 +476,7 @@ describe("ApplicationForm Component", () => {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
       driversLicNo: "123456",
-      phoneNumber: "1234567890",
+      phoneNumber: "+12345678901",
       emailAddress: "bob@ross.com",
       jobTitle: "Painter",
       organizationFacility: ""
@@ -523,7 +533,9 @@ describe("ApplicationForm Component", () => {
         history={history}
         initialEntries={["/applicationform?code=code"]}
       >
-        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+        <ApplicationForm
+          page={{ ...page, applicant: completeApplicant, sameAddress: false }}
+        />
       </MemoryRouter>
     );
     await wait(() => {});
@@ -565,12 +577,16 @@ describe("ApplicationForm Component", () => {
         history={history}
         initialEntries={["/applicationform?code=code"]}
       >
-        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+        <ApplicationForm
+          page={{ ...page, applicant: completeApplicant, sameAddress: false }}
+        />
       </MemoryRouter>
     );
     await wait(() => {});
 
     fireEvent.click(getByTestId(container, "differentAddress"));
+
+    await wait(() => {});
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -605,7 +621,9 @@ describe("ApplicationForm Component", () => {
         history={history}
         initialEntries={["/applicationform?code=code"]}
       >
-        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
+        <ApplicationForm
+          page={{ ...page, applicant: completeApplicant, sameAddress: false }}
+        />
       </MemoryRouter>
     );
 
@@ -621,8 +639,6 @@ describe("ApplicationForm Component", () => {
     expect(displayedProvinces).toHaveLength(2);
 
     fireEvent.mouseDown(displayedProvinces[1]);
-
-    expect(getByText(container, "Ontario")).toBeInTheDocument();
 
     fireEvent.change(displayedProvinces[1], {
       target: { value: "Ontario" }
