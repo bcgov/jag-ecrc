@@ -1,6 +1,7 @@
 {
   "name": "ecrc-frontend",
   "version": "0.1.0",
+  "homepage": "/criminalrecordcheck",
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.8.3",
