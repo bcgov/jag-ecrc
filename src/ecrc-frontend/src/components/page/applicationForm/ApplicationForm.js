@@ -210,13 +210,13 @@ export default function ApplicationForm({
           });
         })
         .catch(error => {
+          setToError(true);
           if (error && error.response && error.response.status) {
             if (
               error.request &&
               error.request.response &&
               JSON.parse(error.request.response)
             ) {
-              setToError(true);
               setError({
                 status: error.response.status,
                 message: JSON.parse(error.request.response).message
