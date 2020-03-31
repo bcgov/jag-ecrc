@@ -36,23 +36,6 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -208,23 +191,6 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
