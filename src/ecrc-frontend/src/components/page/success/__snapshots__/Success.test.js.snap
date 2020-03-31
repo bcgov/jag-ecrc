@@ -326,7 +326,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+        Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
       <div
         className="print"
@@ -585,7 +585,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+        Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
       <div
         className="print"

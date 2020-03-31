@@ -1,8 +1,9 @@
 /* eslint-disable new-cap */
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
-import { useLocation, Redirect } from "react-router-dom";
+import { useLocation, Redirect, useHistory } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import PropTypes from "prop-types";
@@ -49,6 +50,31 @@ export default function Success({
       setToHome(true);
     }
   }, [paymentInfo.trnApproved, orgApplicantRelationship]);
+
+  const history = useHistory();
+  let isBackClicked = false;
+
+  history.listen((_, action) => {
+    if (action === "POP") {
+      // If a "POP" action event occurs, send user back to the originating location
+      history.go(1);
+
+      setTimeout(() => {
+        if (!isBackClicked) {
+          const wishToRedirect = window.confirm(
+            "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+          );
+
+          if (wishToRedirect) {
+            sessionStorage.clear();
+            history.push("/");
+          }
+
+          isBackClicked = true;
+        }
+      }, 100);
+    }
+  });
 
   if (toError) {
     return <Redirect to="/criminalrecordcheck/error" />;
@@ -249,10 +275,8 @@ export default function Success({
                 Records Review Program.
               </p>
               <p>
-                Your application will be reviewed shortly. Once complete, the
-                results will be provided directly to the requesting
-                organization. We will contact you if further information is
-                required.
+                Your application will be reviewed shortly. We will contact you
+                if further information is required.
               </p>
             </>
           )}
