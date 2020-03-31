@@ -6,7 +6,7 @@ import {
   FaQuestion,
   FaEnvelope,
   FaFax,
-  FaPhone
+  FaGlobeAmericas
 } from "react-icons/fa";
 import PropTypes from "prop-types";
 
@@ -139,17 +139,26 @@ export default function SideCards({ type, sideCardLinks }) {
           <div className="row">
             <div className="text-nowrap col-lg-12 col-xl-3">
               <FaFax />
-              &nbsp;<div className="contact-title">Fax: </div>
+              &nbsp;<div className="contact-title">Phone: </div>
             </div>
-            <div className="col-lg-12 col-xl-9 pr-0">(250) 356-1889</div>
+            <div className="col-lg-12 col-xl-9 pr-0">
+              1 855 587-0185 (option 2)
+            </div>
           </div>
           <div className="row">
             <div className="text-nowrap col-lg-12 col-xl-3">
-              <FaPhone />
-              &nbsp;<div className="contact-title">Office: </div>
+              <FaGlobeAmericas />
+              &nbsp;<div className="contact-title">Website: </div>
             </div>
             <div className="col-lg-12 col-xl-9 pr-0">
-              Toll free - 1 855 587-0185 (press option 2)
+              <a
+                className="email link-email"
+                href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Criminal Records Review Program
+              </a>
             </div>
           </div>
           <div className="row">
