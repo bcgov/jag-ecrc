@@ -16,8 +16,6 @@ import ca.bc.gov.open.ecrc.service.EcrcServices;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
 
-import java.util.UUID;
-
 /**
  * @author sivakaruna
  *

@@ -3,7 +3,6 @@ package ca.bc.gov.open.ecrc.controller;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -137,7 +137,9 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
       />
     </div>
     <br />
-    <div>
+    <div
+      className="mt-4"
+    >
       <h3>
         I need more information
       </h3>

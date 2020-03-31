@@ -36,23 +36,6 @@ exports[`OrgVerification Component Matches the snapshot 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -569,7 +552,7 @@ Canada
                           >
                             <a
                               className="email link-email"
-                              href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                              href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
                               rel="noopener noreferrer"
                               target="_blank"
                             >

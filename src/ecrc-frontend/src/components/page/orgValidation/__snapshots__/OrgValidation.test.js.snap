@@ -36,23 +36,6 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -181,7 +164,9 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
             />
           </div>
           <br />
-          <div>
+          <div
+            className="mt-4"
+          >
             <h3>
               I need more information
             </h3>
