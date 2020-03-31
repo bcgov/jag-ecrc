@@ -56,8 +56,7 @@ export default function Success({
 
   history.listen((_, action) => {
     if (action === "POP") {
-      // If a "POP" action event occurs,
-      // Send user back to the originating location
+      // If a "POP" action event occurs, send user back to the originating location
       history.go(1);
 
       setTimeout(() => {
