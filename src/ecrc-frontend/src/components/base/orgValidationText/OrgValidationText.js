@@ -83,6 +83,7 @@ export default function OrgValidationText({
               <a
                 href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {"I'm an employee or a volunteer"}
               </a>{" "}
