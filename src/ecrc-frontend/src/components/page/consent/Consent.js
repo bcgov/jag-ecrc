@@ -45,9 +45,11 @@ export default function Consent({
       emailAddress,
       emailType,
       phoneNumber,
-      jobTitle
+      jobTitle,
+      organizationFacility
     },
     org: {
+      orgNm,
       orgApplicantRelationship,
       orgTicketNumber,
       defaultScheduleTypeCd,
@@ -199,8 +201,8 @@ export default function Consent({
       appl_Party_Id: null,
       org_Appl_To_Pay: "A",
       applicant_Posn: jobTitle,
-      child_Care_Fac_Nm: "child_Care_Fac_Nm",
-      governing_Body_Nm: "governing_Body_Nm",
+      child_Care_Fac_Nm: organizationFacility,
+      governing_Body_Nm: orgNm,
       session_Id: null,
       invoice_Id: null,
       auth_Release_EIV_Vendor_YN: "Y",
@@ -460,9 +462,11 @@ Consent.propTypes = {
       emailAddress: PropTypes.string.isRequired,
       emailType: PropTypes.string.isRequired,
       phoneNumber: PropTypes.string.isRequired,
-      jobTitle: PropTypes.string.isRequired
+      jobTitle: PropTypes.string.isRequired,
+      organizationFacility: PropTypes.string.isRequired
     }),
     org: PropTypes.shape({
+      orgNm: PropTypes.string.isRequired,
       orgApplicantRelationship: PropTypes.string.isRequired,
       orgTicketNumber: PropTypes.string.isRequired,
       defaultScheduleTypeCd: PropTypes.string.isRequired,
