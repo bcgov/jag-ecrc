@@ -19,6 +19,7 @@ import java.lang.reflect.Method;
 import static org.mockito.ArgumentMatchers.any;
 
 public class EcrcWebMethodsServiceImplTest {
+    private static final String GUID = "GUID";
     private final String jsonResp = "{\"accessCodeResponse\":{\"ticketFoundYn\":\"Y\",\"contactSurnameNm\":\"ANOTHERRIDICULOUSLYLONGSURNAMETOBEENTERE\",\"cityNm\":\"VANCOUVER\",\"defaultScheduleTypeCd\":\"WBSD\",\"alreadyUsedYn\":\"N\",\"provinceNm\":\"BRITISH COLUMBIA\",\"orgApplicantRelationship\":\"EMPLOYEE\",\"countryNm\":\"CANADA\",\"validDateRangeYn\":\"Y\",\"defaultCrcScopeLevelCd\":\"WWCA\",\"orgNm\":\"ORGNAME\\n\",\"contactFirstNm\":\"ASDFASDFASDFASFSADF\",\"contactPhoneNo\":\"604\",\"addressLine1\":\"55 SEVENTH AVE\",\"addressLine2\":\"\",\"contactFaxNo\":\"604\",\"orgPartyId\":47430,\"postalCodeTxt\":\"V8V 7V6\"},\"scheduleTypes\":{\"scheduleType\":[{\"crcScheduleTypeDsc\":\"SCHEDULE D - WEB EIV\",\"crcScheduleTypeCd\":\"WBSD\"}]},\"message\":\"Success\",\"scopeLevels\":{\"scopeLevel\":[{\"crcScopeLevelCd\":\"WWCH\",\"crcScopeLevelDsc\":\"CHILDREN\"},{\"crcScopeLevelCd\":\"WWCA\",\"crcScopeLevelDsc\":\"CHILDREN AND VULNERABLE ADULTS\"},{\"crcScopeLevelCd\":\"WWAD\",\"crcScopeLevelDsc\":\"VULNERABLE ADULTS\"}]},\"responseCode\":0}";
     private final String jsonNotFoundResp = "{\"message\":\"Requested data not found\", \"responseCode\":1}";
     private final String jsonServiceUnavailableResp = "{\"message\":\"Service unavailable returned\", \"responseCode\":-1}";
@@ -68,7 +69,7 @@ public class EcrcWebMethodsServiceImplTest {
         mockResponse.addHeader("content-type: application/xml;");
         mockResponse.setResponseCode(200);
         mockBackEnd.enqueue(mockResponse);
-        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser());
+        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser(), GUID);
         Assertions.assertEquals(HttpStatus.OK, res.getStatusCode());
         Assertions.assertEquals(jsonResp, res.getBody());
     }
@@ -82,7 +83,7 @@ public class EcrcWebMethodsServiceImplTest {
         mockResponse.addHeader("content-type: application/xml;");
         mockResponse.setResponseCode(200);
         mockBackEnd.enqueue(mockResponse);
-        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser());
+        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser(), GUID);
         Assertions.assertEquals(HttpStatus.NOT_FOUND, res.getStatusCode());
         Assertions.assertEquals(jsonNotFoundResp, res.getBody());
     }
@@ -96,7 +97,7 @@ public class EcrcWebMethodsServiceImplTest {
         mockResponse.addHeader("content-type: application/xml;");
         mockResponse.setResponseCode(200);
         mockBackEnd.enqueue(mockResponse);
-        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser());
+        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser(), GUID);
         Assertions.assertEquals(HttpStatus.SERVICE_UNAVAILABLE, res.getStatusCode());
         Assertions.assertEquals(jsonServiceUnavailableResp, res.getBody());
     }
@@ -110,7 +111,7 @@ public class EcrcWebMethodsServiceImplTest {
         mockResponse.addHeader("content-type: application/xml;");
         mockResponse.setResponseCode(200);
         mockBackEnd.enqueue(mockResponse);
-        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser());
+        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser(), GUID);
         Assertions.assertEquals(HttpStatus.BAD_REQUEST , res.getStatusCode());
         Assertions.assertEquals(jsonUnknownResp, res.getBody());
     }
@@ -126,7 +127,7 @@ public class EcrcWebMethodsServiceImplTest {
         mockResponse.addHeader("content-type: application/xml;");
         mockResponse.setResponseCode(200);
         mockBackEnd.enqueue(mockResponse);
-        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser());
+        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser(), GUID);
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, res.getStatusCode());
     }
 
@@ -137,7 +138,7 @@ public class EcrcWebMethodsServiceImplTest {
         mockResponse.setBody("SOMEXML");
         mockResponse.setResponseCode(400);
         mockBackEnd.enqueue(mockResponse);
-        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser());
+        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser(), GUID);
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, res.getStatusCode());
     }
 

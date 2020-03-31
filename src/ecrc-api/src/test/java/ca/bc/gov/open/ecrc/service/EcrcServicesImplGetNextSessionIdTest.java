@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import static org.mockito.ArgumentMatchers.any;
 
 public class EcrcServicesImplGetNextSessionIdTest {
+    private static final String GUID = "GUID";
     private ResponseEntity<String> serviceResult;
     private String result = "{\"sessionId\":1234,\"message\":\"Success\",\"responseCode\":0}";
     @InjectMocks
@@ -36,8 +37,8 @@ public class EcrcServicesImplGetNextSessionIdTest {
     @DisplayName("Success - ecrcService get NextSessionId")
     @Test
     public void testGetNextInvoiceIdSuccess() throws EcrcServiceException {
-        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any())).thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
-        serviceResult = ecrcServices.getNextSessionId("CRCE");
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any())).thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
+        serviceResult = ecrcServices.getNextSessionId("CRCE", GUID);
         Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());
         Assertions.assertEquals(result, serviceResult.getBody());
     }

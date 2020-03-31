@@ -1,6 +1,5 @@
 package ca.bc.gov.open.ecrc.controller;
 
-import java.util.UUID;
 
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestPaymentService;
 import ca.bc.gov.open.ecrc.service.EcrcPaymentService;
 

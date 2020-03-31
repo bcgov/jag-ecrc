@@ -26,6 +26,8 @@ import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
  */
 class GetProvinceListControllerTest {
 
+	private static final String GUID = "SOMEUUID";
+
 	@BeforeEach
 	public void initMocks() {
 		MockitoAnnotations.initMocks(this);
@@ -40,7 +42,7 @@ class GetProvinceListControllerTest {
 	@DisplayName("Success - getProvinceList controller")
 	@Test
 	void testSuccess() throws EcrcServiceException {
-		when(ecrcServices.getProvinceList()).thenReturn(new ResponseEntity<String>(
+		when(ecrcServices.getProvinceList(GUID)).thenReturn(new ResponseEntity<String>(
 				"{\"provinces\":{\"province\":[{\"name\":\"BRITISH COLUMBIA\"},{\"name\":\"ALBERTA\"},{\"name\":\"MANITOBA\"},{\"name\":\"NEW BRUNSWICK\"},{\"name\":\"NEWFOUNDLAND\"},{\"name\":\"NORTH WEST TERRITORIES\"},{\"name\":\"NOVA SCOTIA\"},{\"name\":\"NUNAVUT\"},{\"name\":\"ONTARIO\"},{\"name\":\"PRINCE EDWARD ISLAND\"},{\"name\":\"QUEBEC\"},{\"name\":\"SASKATCHEWAN\"},{\"name\":\"YUKON\"}]},\"message\":\"Success\",\"responseCode\":0}",
 				HttpStatus.OK));
 		ResponseEntity<String> response = getProvinceListController.getProvinceList("SOMEUUID");
@@ -53,7 +55,7 @@ class GetProvinceListControllerTest {
 	@DisplayName("Failure - getProvinceList controller")
 	@Test
 	void testFailure() throws EcrcServiceException {
-		when(ecrcServices.getProvinceList()).thenReturn(new ResponseEntity<>(
+		when(ecrcServices.getProvinceList(GUID)).thenReturn(new ResponseEntity<>(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()),
 				HttpStatus.NOT_FOUND));
@@ -68,11 +70,11 @@ class GetProvinceListControllerTest {
 	@DisplayName("Error - getProvinceList controller")
 	@Test
 	void testError() throws EcrcServiceException {
-		when(ecrcServices.getProvinceList()).thenReturn(new ResponseEntity<>(
+		when(ecrcServices.getProvinceList(GUID)).thenReturn(new ResponseEntity<>(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 				HttpStatus.BAD_REQUEST));
-		ResponseEntity<String> response = getProvinceListController.getProvinceList("SOMEUUID");
+		ResponseEntity<String> response = getProvinceListController.getProvinceList(GUID);
 		Assertions.assertEquals(
 				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),

@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 
-import java.util.UUID;
 
 @RestController
 public class GetNextInvoiceIdController {
@@ -30,7 +28,7 @@ public class GetNextInvoiceIdController {
         logger.info("Get next invoice id request received {}", requestGuid);
 
         try {
-            return ecrcServices.getNextInvoiceId(orgTicketNumber);
+            return ecrcServices.getNextInvoiceId(orgTicketNumber, requestGuid);
         } catch (Exception ex) {
             logger.error("Error in ecrc service: ", ex);
             return new ResponseEntity(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,

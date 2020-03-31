@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
 
 /**
  * 
@@ -32,7 +31,7 @@ public class DoAuthenticateUserController {
 													 @RequestParam(required=true) String requestGuid) {
 		logger.info("Do Authenticate request received {}", requestGuid);
 		try {
-			return ecrcServices.doAuthenticateUser(orgTicketNumber);
+			return ecrcServices.doAuthenticateUser(orgTicketNumber, requestGuid);
 		} catch (Exception ex) {
 			logger.error("Error in ecrc service: ", ex);
 			return new ResponseEntity(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
