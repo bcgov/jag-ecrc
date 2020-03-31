@@ -111,6 +111,7 @@ export default function OrgValidation({
       <Header header={header} />
       <div className="page">
         <div className="content col-md-10">
+          {window.REACT_APP_HOME}
           <OrgValidationText
             textInput={textInput}
             onChange={setOrgTicketNumber}
