@@ -566,11 +566,15 @@ export default function ApplicationForm({
     return re.test(postalCode.toUpperCase());
   };
 
+  let hasScrolled = false;
+
   const scrollToRef = ref => {
     if (ref !== null && ref.current !== null) {
       window.scrollTo(0, ref.current.offsetTop);
+      hasScrolled = true;
     }
   };
+
   const birthLocRef = useRef(null);
   const phoneNumRef = useRef(null);
   const emailRef = useRef(null);
@@ -580,7 +584,6 @@ export default function ApplicationForm({
   const mailingCityRef = useRef(null);
   const mailingProvinceRef = useRef(null);
   const mailingPostalCodeRef = useRef(null);
-  let hasScrolled = false;
 
   const applicationVerification = () => {
     if (!isAuthorized()) {
@@ -596,7 +599,6 @@ export default function ApplicationForm({
       setBirthPlaceError("City and country of birth are required");
       if (!hasScrolled) {
         scrollToRef(birthLocRef);
-        hasScrolled = true;
       }
     }
 
@@ -604,13 +606,11 @@ export default function ApplicationForm({
       setPhoneNumberError("Primary phone number is required");
       if (!hasScrolled) {
         scrollToRef(phoneNumRef);
-        hasScrolled = true;
       }
     } else if (!validatePhoneNumber(phoneNum)) {
       setPhoneNumberError("Phone number must be in the form XXX XXX-XXXX");
       if (!hasScrolled) {
         scrollToRef(phoneNumRef);
-        hasScrolled = true;
       }
     }
 
@@ -618,13 +618,11 @@ export default function ApplicationForm({
       setEmailAddressError("Personal email address is required");
       if (!hasScrolled) {
         scrollToRef(emailRef);
-        hasScrolled = true;
       }
     } else if (!validateEmail(email)) {
       setEmailAddressError("Email address must be in the form name@company.ca");
       if (!hasScrolled) {
         scrollToRef(emailRef);
-        hasScrolled = true;
       }
     }
 
@@ -632,7 +630,6 @@ export default function ApplicationForm({
       setJobTitleError("Position/job title is required");
       if (!hasScrolled) {
         scrollToRef(jobRef);
-        hasScrolled = true;
       }
     }
 
@@ -640,7 +637,6 @@ export default function ApplicationForm({
       setOrganizationFacilityError("Organization facility is required");
       if (!hasScrolled) {
         scrollToRef(organizationFacilityRef);
-        hasScrolled = true;
       }
     }
 
@@ -648,7 +644,6 @@ export default function ApplicationForm({
       setMailingAddressLine1Error("Street or PO box is required");
       if (!hasScrolled) {
         scrollToRef(mailingAddressLine1Ref);
-        hasScrolled = true;
       }
     }
 
@@ -656,7 +651,6 @@ export default function ApplicationForm({
       setMailingCityError("City is required");
       if (!hasScrolled) {
         scrollToRef(mailingCityRef);
-        hasScrolled = true;
       }
     }
 
@@ -664,7 +658,6 @@ export default function ApplicationForm({
       setMailingProvinceError("Province is required");
       if (!hasScrolled) {
         scrollToRef(mailingProvinceRef);
-        hasScrolled = true;
       }
     }
 
@@ -673,13 +666,11 @@ export default function ApplicationForm({
         setMailingPostalCodeError("Postal code is required");
         if (!hasScrolled) {
           scrollToRef(mailingPostalCodeRef);
-          hasScrolled = true;
         }
       } else if (!validatePostalCode(mailingPostalCode)) {
         setMailingPostalCodeError("Postal code must be in the form V9V 9V9");
         if (!hasScrolled) {
           scrollToRef(mailingPostalCodeRef);
-          hasScrolled = true;
         }
       }
     }
