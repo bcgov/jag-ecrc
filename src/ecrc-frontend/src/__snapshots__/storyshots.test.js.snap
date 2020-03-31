@@ -36,23 +36,6 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -1345,23 +1328,6 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -2694,23 +2660,6 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
         >
           BC Services Card
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -2761,17 +2710,12 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
           className="row"
         >
           <div
-            className="col-lg-6 col-md-12 "
-            style={
-              Object {
-                "marginTop": "9px",
-              }
-            }
+            className="col-sm-8 mt-lg-2 mb-2"
           >
             I have a photo BC Services Card
           </div>
           <div
-            className="col-lg-6 col-md-4 alignRight"
+            className="col-sm-4"
           >
             <button
               className="btn ecrc_btn_login_bcsc btn"
@@ -2791,11 +2735,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginTop": "40px",
-          }
-        }
+        className="mt-5"
       >
         <a
           href="/criminalrecordcheck/transition"
@@ -3045,23 +2985,6 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
         >
           BC Services Card
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -3112,17 +3035,12 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
           className="row"
         >
           <div
-            className="col-lg-6 col-md-12 "
-            style={
-              Object {
-                "marginTop": "9px",
-              }
-            }
+            className="col-sm-8 mt-lg-2 mb-2"
           >
             I have a photo BC Services Card
           </div>
           <div
-            className="col-lg-6 col-md-4 alignRight"
+            className="col-sm-4"
           >
             <button
               className="btn ecrc_btn_login_bcsc btn"
@@ -3142,11 +3060,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "marginTop": "40px",
-          }
-        }
+        className="mt-5"
       >
         <a
           href="/criminalrecordcheck/transition"
@@ -3465,23 +3379,6 @@ exports[`Storyshots Consent page Default 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -4026,23 +3923,6 @@ exports[`Storyshots Consent page Mobile 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -4669,23 +4549,6 @@ exports[`Storyshots Error Api Error 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -4852,23 +4715,6 @@ exports[`Storyshots Error App Unauthorized Error 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -5032,23 +4878,6 @@ exports[`Storyshots Error Bcsc Unauthorized Error 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -5212,23 +5041,6 @@ exports[`Storyshots Error Default 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -5394,23 +5206,6 @@ exports[`Storyshots Error Mobile 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -5576,23 +5371,6 @@ exports[`Storyshots Error Session Expired 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -6037,23 +5815,6 @@ exports[`Storyshots Header Default 1`] = `
       >
         eCrc
       </div>
-      <button
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        className="navbar-toggler"
-        data-target="#navbarNavAltMarkup"
-        data-toggle="collapse"
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        className="collapse navbar-collapse"
-        id="navbarNavAltMarkup"
-      />
     </div>
   </nav>
 </header>
@@ -6094,23 +5855,6 @@ exports[`Storyshots Header Mobile 1`] = `
       >
         eCrc
       </div>
-      <button
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        className="navbar-toggler"
-        data-target="#navbarNavAltMarkup"
-        data-toggle="collapse"
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        className="collapse navbar-collapse"
-        id="navbarNavAltMarkup"
-      />
     </div>
   </nav>
 </header>
@@ -6152,23 +5896,6 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -6716,23 +6443,6 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -7280,23 +6990,6 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -7852,23 +7545,6 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -8622,23 +8298,6 @@ exports[`Storyshots OrgValidation Default 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -8767,7 +8426,9 @@ exports[`Storyshots OrgValidation Default 1`] = `
             />
           </div>
           <br />
-          <div>
+          <div
+            className="mt-4"
+          >
             <h3>
               I need more information
             </h3>
@@ -8989,23 +8650,6 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -9134,7 +8778,9 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             />
           </div>
           <br />
-          <div>
+          <div
+            className="mt-4"
+          >
             <h3>
               I need more information
             </h3>
@@ -9457,7 +9103,9 @@ exports[`Storyshots OrgValidationText Default 1`] = `
       />
     </div>
     <br />
-    <div>
+    <div
+      className="mt-4"
+    >
       <h3>
         I need more information
       </h3>
@@ -9589,23 +9237,6 @@ exports[`Storyshots OrgVerification Mobile 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -10309,23 +9940,6 @@ exports[`Storyshots OrgVerification Works With Adults And Children 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -11029,23 +10643,6 @@ exports[`Storyshots OrgVerification Works With Children 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -11749,23 +11346,6 @@ exports[`Storyshots OrgVerification Works With Vulnerable Adults 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -13880,23 +13460,6 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -13909,7 +13472,6 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
       <h1>
         Payment Declined
       </h1>
-      <br />
       <span>
         Unfortunately, your payment transaction was declined. Please ensure you have the correct credit card information:
       </span>
@@ -13939,7 +13501,6 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -14008,35 +13569,38 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -14165,23 +13729,6 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -14194,14 +13741,12 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
       <h1>
         Payment Approved
       </h1>
-      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -14278,35 +13823,38 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -14435,23 +13983,6 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -14464,14 +13995,12 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
       <h1>
         Application Submitted
       </h1>
-      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -14524,35 +14053,38 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -14681,23 +14213,6 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -14710,7 +14225,6 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
       <h1>
         Payment Declined
       </h1>
-      <br />
       <span>
         Unfortunately, your payment transaction was declined. Please ensure you have the correct credit card information:
       </span>
@@ -14740,7 +14254,6 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -14809,35 +14322,38 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -14966,23 +14482,6 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -14995,14 +14494,12 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
       <h1>
         Payment Approved
       </h1>
-      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -15079,35 +14576,38 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -15236,23 +14736,6 @@ exports[`Storyshots Success page Volunteer 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -15265,14 +14748,12 @@ exports[`Storyshots Success page Volunteer 1`] = `
       <h1>
         Application Submitted
       </h1>
-      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -15325,35 +14806,38 @@ exports[`Storyshots Success page Volunteer 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -15537,23 +15021,6 @@ exports[`Storyshots Term Of Use page Default 1`] = `
         >
           Terms of Use
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -16334,23 +15801,6 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
         >
           Terms of Use
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -17975,23 +17425,6 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
         >
           header name
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -18147,23 +17580,6 @@ exports[`Storyshots Transition Page Mobile 1`] = `
         >
           header name
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -18319,23 +17735,6 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
         >
           header name
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>

@@ -136,7 +136,7 @@ export default function Success({
 
   const pdfButton = {
     label: "Download",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -206,7 +206,6 @@ export default function Success({
             {paymentInfo.trnApproved === "0" && "Payment Declined"}
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
-          <br />
           {paymentInfo.trnApproved !== "0" && (
             <>
               <p>
@@ -245,13 +244,13 @@ export default function Success({
               </p>
             </>
           )}
-          <br />
           <div className="print">
             <Table table={receiptInfoTable} />
           </div>
-          <br />
-          <Button button={printButton} onClick={printAppInfo} />
-          <Button button={pdfButton} onClick={downloadPDF} />
+          <div className="buttons pt-4">
+            <Button button={printButton} onClick={printAppInfo} />
+            <Button button={pdfButton} onClick={downloadPDF} />
+          </div>
         </div>
       </div>
       <Footer />
