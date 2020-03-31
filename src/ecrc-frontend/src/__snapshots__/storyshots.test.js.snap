@@ -1162,6 +1162,47 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
                   </div>
                 </section>
               </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    If you find an error with your:
+                    <ul
+                      className="discStyle"
+                    >
+                      <li>
+                        First Name
+                      </li>
+                      <li>
+                        Middle Name
+                      </li>
+                      <li>
+                        Last Name
+                      </li>
+                      <li>
+                        Date Of Birth
+                      </li>
+                      <li>
+                        Sex
+                      </li>
+                      <li>
+                        Current Street Address
+                      </li>
+                    </ul>
+                    Please visit the 
+                    <a
+                      className="link"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      BC Services Card website
+                    </a>
+                     to change your personal information
+                  </span>
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -2527,6 +2568,47 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
                   </div>
                 </section>
               </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    If you find an error with your:
+                    <ul
+                      className="discStyle"
+                    >
+                      <li>
+                        First Name
+                      </li>
+                      <li>
+                        Middle Name
+                      </li>
+                      <li>
+                        Last Name
+                      </li>
+                      <li>
+                        Date Of Birth
+                      </li>
+                      <li>
+                        Sex
+                      </li>
+                      <li>
+                        Current Street Address
+                      </li>
+                    </ul>
+                    Please visit the 
+                    <a
+                      className="link"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      BC Services Card website
+                    </a>
+                     to change your personal information
+                  </span>
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -6346,34 +6428,16 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
                         Current Street Address
                       </li>
                     </ul>
-                    Please contact either 
+                    Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      Service BC
+                      BC Services Card website
                     </a>
-                    , 
-                    <a
-                      className="link"
-                      href="https://www.icbc.com/Pages/default.aspx"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      ICBC
-                    </a>
-                     or 
-                    <a
-                      className="link"
-                      href="https://www.addresschange.gov.bc.ca/"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      AddressChangeBC
-                    </a>
-                     to correct it.
+                     to change your personal information
                   </span>
                 </div>
               </section>
@@ -6893,34 +6957,16 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
                         Current Street Address
                       </li>
                     </ul>
-                    Please contact either 
+                    Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      Service BC
+                      BC Services Card website
                     </a>
-                    , 
-                    <a
-                      className="link"
-                      href="https://www.icbc.com/Pages/default.aspx"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      ICBC
-                    </a>
-                     or 
-                    <a
-                      className="link"
-                      href="https://www.addresschange.gov.bc.ca/"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      AddressChangeBC
-                    </a>
-                     to correct it.
+                     to change your personal information
                   </span>
                 </div>
               </section>
@@ -7448,34 +7494,16 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
                         Current Street Address
                       </li>
                     </ul>
-                    Please contact either 
+                    Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      Service BC
+                      BC Services Card website
                     </a>
-                    , 
-                    <a
-                      className="link"
-                      href="https://www.icbc.com/Pages/default.aspx"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      ICBC
-                    </a>
-                     or 
-                    <a
-                      className="link"
-                      href="https://www.addresschange.gov.bc.ca/"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      AddressChangeBC
-                    </a>
-                     to correct it.
+                     to change your personal information
                   </span>
                 </div>
               </section>
@@ -8003,34 +8031,16 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
                         Current Street Address
                       </li>
                     </ul>
-                    Please contact either 
+                    Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      Service BC
+                      BC Services Card website
                     </a>
-                    , 
-                    <a
-                      className="link"
-                      href="https://www.icbc.com/Pages/default.aspx"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      ICBC
-                    </a>
-                     or 
-                    <a
-                      className="link"
-                      href="https://www.addresschange.gov.bc.ca/"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      AddressChangeBC
-                    </a>
-                     to correct it.
+                     to change your personal information
                   </span>
                 </div>
               </section>
@@ -12916,34 +12926,16 @@ exports[`Storyshots SideCards Personal Information 1`] = `
                   Current Street Address
                 </li>
               </ul>
-              Please contact either 
+              Please visit the 
               <a
                 className="link"
-                href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Service BC
+                BC Services Card website
               </a>
-              , 
-              <a
-                className="link"
-                href="https://www.icbc.com/Pages/default.aspx"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                ICBC
-              </a>
-               or 
-              <a
-                className="link"
-                href="https://www.addresschange.gov.bc.ca/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                AddressChangeBC
-              </a>
-               to correct it.
+               to change your personal information
             </span>
           </div>
         </section>
@@ -13554,7 +13546,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
           Non-expired date
         </li>
         <li>
-          Availale funds to transfer
+          Available funds to transfer
         </li>
       </ul>
       <p>
@@ -13637,6 +13629,11 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
       </div>
       <div
         className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
         <button
           className="btn ecrc_go_btn btn"
@@ -13653,7 +13650,7 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn mr-0 btn"
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -13811,7 +13808,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+        Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
       <div
         className="print"
@@ -13891,6 +13888,11 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
       </div>
       <div
         className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
         <button
           className="btn ecrc_go_btn btn"
@@ -13907,7 +13909,7 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn mr-0 btn"
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -14065,7 +14067,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+        Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
       <div
         className="print"
@@ -14121,6 +14123,11 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
       </div>
       <div
         className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
         <button
           className="btn ecrc_go_btn btn"
@@ -14137,7 +14144,7 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn mr-0 btn"
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -14307,7 +14314,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
           Non-expired date
         </li>
         <li>
-          Availale funds to transfer
+          Available funds to transfer
         </li>
       </ul>
       <p>
@@ -14390,6 +14397,11 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
       </div>
       <div
         className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
         <button
           className="btn ecrc_go_btn btn"
@@ -14406,7 +14418,7 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn mr-0 btn"
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -14564,7 +14576,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+        Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
       <div
         className="print"
@@ -14644,6 +14656,11 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
       </div>
       <div
         className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
         <button
           className="btn ecrc_go_btn btn"
@@ -14660,7 +14677,7 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn mr-0 btn"
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -14818,7 +14835,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+        Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
       <div
         className="print"
@@ -14874,6 +14891,11 @@ exports[`Storyshots Success page Volunteer 1`] = `
       </div>
       <div
         className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
         <button
           className="btn ecrc_go_btn btn"
@@ -14890,7 +14912,7 @@ exports[`Storyshots Success page Volunteer 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn mr-0 btn"
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
           onClick={[Function]}
           type="submit"
         >

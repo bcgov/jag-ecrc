@@ -1110,6 +1110,47 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                     </div>
                   </section>
                 </div>
+                  </h2>
+                  <div
+                    class="submit-content"
+                  >
+                    <span>
+                      If you find an error with your:
+                      <ul
+                        class="discStyle"
+                      >
+                        <li>
+                          First Name
+                        </li>
+                        <li>
+                          Middle Name
+                        </li>
+                        <li>
+                          Last Name
+                        </li>
+                        <li>
+                          Date Of Birth
+                        </li>
+                        <li>
+                          Sex
+                        </li>
+                        <li>
+                          Current Street Address
+                        </li>
+                      </ul>
+                      Please visit the 
+                      <a
+                        class="link"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        BC Services Card website
+                      </a>
+                       to change your personal information
+                    </span>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
