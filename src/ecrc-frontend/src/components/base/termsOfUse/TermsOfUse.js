@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable no-alert */
 import { Redirect } from "react-router-dom";
 
 import React, { useState, useLayoutEffect } from "react";

@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
