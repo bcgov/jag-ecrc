@@ -27,6 +27,8 @@ export default function Header({ header: { name } }) {
       sessionStorage.clear();
       history.push("/");
     }
+
+    return true;
   };
 
   return (
