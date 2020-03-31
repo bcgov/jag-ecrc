@@ -30,10 +30,12 @@ const applicant = {
   mailingProvince: "Ontario",
   mailingPostalCode: "V1V 1A1",
   jobTitle: "Painter",
+  organizationFacility: "PBS",
   emailType: "Home"
 };
 
 const org = {
+  orgNm: "Org Name",
   orgApplicantRelationship: "EMPLOYEE",
   orgTicketNumber: "crce",
   defaultScheduleTypeCd: "WBSD",
