@@ -696,7 +696,14 @@ export default function ApplicationForm({
   };
 
   const back = () => {
-    setToHome(true);
+    const wishToRedirect = window.confirm(
+      "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+    );
+
+    if (wishToRedirect) {
+      sessionStorage.clear();
+      setToHome(true);
+    }
   };
 
   const additionalNames = event => {

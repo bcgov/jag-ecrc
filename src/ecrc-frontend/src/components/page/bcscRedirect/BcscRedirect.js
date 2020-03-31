@@ -61,6 +61,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
       setToHome(true);
       return;
     }
+    sessionStorage.setItem("validExit", true);
     saveOrg();
     // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");
