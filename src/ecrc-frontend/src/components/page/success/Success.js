@@ -169,7 +169,7 @@ export default function Success({
 
   const pdfButton = {
     label: "Download",
-    buttonStyle: "btn ecrc_go_btn mr-0",
+    buttonStyle: "btn ecrc_go_btn ml-5 mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -282,7 +282,10 @@ export default function Success({
           <div className="print">
             <Table table={receiptInfoTable} />
           </div>
-          <div className="buttons pt-4">
+          <div
+            className="buttons pt-4"
+            style={{ justifyContent: "flex-start" }}
+          >
             <Button button={printButton} onClick={printAppInfo} />
             <Button button={pdfButton} onClick={downloadPDF} />
           </div>

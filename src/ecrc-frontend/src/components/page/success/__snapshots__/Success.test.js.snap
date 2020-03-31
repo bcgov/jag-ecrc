@@ -147,6 +147,11 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       </div>
       <div
         className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
         <button
           className="btn ecrc_go_btn btn"
@@ -163,7 +168,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn mr-0 btn"
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -401,6 +406,11 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       </div>
       <div
         className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
         <button
           className="btn ecrc_go_btn btn"
@@ -417,7 +427,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn mr-0 btn"
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -631,6 +641,11 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       </div>
       <div
         className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
         <button
           className="btn ecrc_go_btn btn"
@@ -647,7 +662,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn mr-0 btn"
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
