@@ -79,7 +79,13 @@ export default function Error({ page: { header, error } }) {
         <div className="content col-md-8">
           {errorContent}
           <div className="buttons">
-            <Button button={homeButton} onClick={() => setToHome(true)} />
+            <Button
+              button={homeButton}
+              onClick={() => {
+                sessionStorage.clear();
+                setToHome(true);
+              }}
+            />
           </div>
         </div>
       </div>
