@@ -36,23 +36,6 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -65,7 +48,6 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       <h1>
         Payment Declined
       </h1>
-      <br />
       <span>
         Unfortunately, your payment transaction was declined. Please ensure you have the correct credit card information:
       </span>
@@ -95,7 +77,6 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -164,35 +145,38 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -321,23 +305,6 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -350,14 +317,12 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       <h1>
         Payment Approved
       </h1>
-      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -434,35 +399,38 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -591,23 +559,6 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -620,14 +571,12 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       <h1>
         Application Submitted
       </h1>
-      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
         Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -680,35 +629,38 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
