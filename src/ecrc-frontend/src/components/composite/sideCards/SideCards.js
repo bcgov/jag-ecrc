@@ -268,37 +268,16 @@ export default function SideCards({ type, sideCardLinks }) {
         <li>Sex</li>
         <li>Current Street Address</li>
       </ul>,
-      "Please contact either ",
+      "Please visit the ",
       <a
-        key="serviceBC"
         className="link"
-        href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Service BC
+        BC Services Card website
       </a>,
-      ", ",
-      <a
-        key="icbc"
-        className="link"
-        href="https://www.icbc.com/Pages/default.aspx"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ICBC
-      </a>,
-      " or ",
-      <a
-        key="addressChangeBC"
-        className="link"
-        href="https://www.addresschange.gov.bc.ca/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        AddressChangeBC
-      </a>,
-      " to correct it."
+      " to change your personal information"
     ],
     type: "blue",
     isWide: true

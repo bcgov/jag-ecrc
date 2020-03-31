@@ -275,10 +275,8 @@ export default function Success({
                 Records Review Program.
               </p>
               <p>
-                Your application will be reviewed shortly. Once complete, the
-                results will be provided directly to the requesting
-                organization. We will contact you if further information is
-                required.
+                Your application will be reviewed shortly. We will contact you
+                if further information is required.
               </p>
             </>
           )}
