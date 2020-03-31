@@ -6445,23 +6445,6 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -7011,23 +6994,6 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
@@ -7585,23 +7551,6 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
         >
           Criminal Record Check
         </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
-        />
       </div>
     </nav>
   </header>
