@@ -113,12 +113,12 @@ export default function Success({
       bcepErrorMsg: paymentInfo.messageText
     };
 
-    // axios
-    //   .post("/ecrc/private/logPaymentFailure", logFailure)
-    //   .then(() => {})
-    //   .catch(error => {
-    //     handleError(error);
-    //   });
+    axios
+      .post("/ecrc/private/logPaymentFailure", logFailure)
+      .then(() => {})
+      .catch(error => {
+        handleError(error);
+      });
   }
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
