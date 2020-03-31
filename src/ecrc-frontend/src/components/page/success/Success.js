@@ -181,6 +181,7 @@ export default function Success({
   };
 
   const retryPayment = () => {
+    sessionStorage.setItem("validExit", true);
     const token = sessionStorage.getItem("jwt");
 
     axios
@@ -206,9 +207,9 @@ export default function Success({
         const createURL = {
           invoiceNumber: newInvoiceId,
           requestGuid: uuid,
-          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
           totalItemsAmount: serviceFeeAmount,
           serviceIdRef1: serviceId,
           partyIdRef2: partyId
@@ -265,7 +266,7 @@ export default function Success({
                 <li>16 digit credit card number</li>
                 <li>3 digit CVD number</li>
                 <li>Non-expired date</li>
-                <li>Availale funds to transfer</li>
+                <li>Available funds to transfer</li>
               </ul>
               <p>
                 <button

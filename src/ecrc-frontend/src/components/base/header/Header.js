@@ -19,6 +19,12 @@ export default function Header({ header: { name } }) {
       return false;
     }
 
+    if (history.location.pathname === "/criminalrecordcheck/error") {
+      sessionStorage.clear();
+      history.push("/");
+      return true;
+    }
+
     const wishToRedirect = window.confirm(
       "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
     );
