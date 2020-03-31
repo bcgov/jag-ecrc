@@ -153,7 +153,7 @@ export default function SideCards({ type, sideCardLinks }) {
             <div className="col-lg-12 col-xl-9 pr-0">
               <a
                 className="email link-email"
-                href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
                 target="_blank"
                 rel="noopener noreferrer"
               >
