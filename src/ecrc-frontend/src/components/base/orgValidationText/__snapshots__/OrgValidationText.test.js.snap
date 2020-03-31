@@ -147,6 +147,7 @@ exports[`OrgValidationText Component Matches the snapshot 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+            rel="noopener noreferrer"
             target="_blank"
           >
             I'm an employee or a volunteer

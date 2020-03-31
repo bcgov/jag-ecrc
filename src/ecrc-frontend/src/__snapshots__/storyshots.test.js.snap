@@ -8731,6 +8731,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   I'm an employee or a volunteer
@@ -9097,6 +9098,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               <li>
                 <a
                   href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   I'm an employee or a volunteer
@@ -9419,6 +9421,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         <li>
           <a
             href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+            rel="noopener noreferrer"
             target="_blank"
           >
             I'm an employee or a volunteer
@@ -17922,7 +17925,8 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       </p>
       <br />
       <p>
-        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click 
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -18093,7 +18097,8 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       </p>
       <br />
       <p>
-        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click 
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -18264,7 +18269,8 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
       </p>
       <br />
       <p>
-        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click 
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
