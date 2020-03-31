@@ -28,13 +28,15 @@ export default function Success({
       serviceFeeAmount,
       serviceId
     },
-    saveApplicationInfo
+    saveApplicationInfo,
+    setError
   }
 }) {
   const [toHome, setToHome] = useState(false);
   const location = useLocation();
   const paymentInfo = queryString.parse(location.search);
   const uuid = sessionStorage.getItem("uuid");
+  const [toError, setToError] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,6 +49,32 @@ export default function Success({
       setToHome(true);
     }
   }, [paymentInfo.trnApproved, orgApplicantRelationship]);
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
+
+  const handleError = error => {
+    setToError(true);
+    if (error && error.response && error.response.status) {
+      if (
+        error.request &&
+        error.request.response &&
+        JSON.parse(error.request.response)
+      ) {
+        setToError(true);
+        setError({
+          status: error.response.status,
+          message: JSON.parse(error.request.response).message
+        });
+      } else {
+        setError({
+          status: error.response.status,
+          message: error.response.data
+        });
+      }
+    }
+  };
 
   const receiptInfo = [
     { name: "Service Number", value: serviceId },
@@ -73,7 +101,7 @@ export default function Success({
     tableElements: receiptInfo,
     tableStyle: "white"
   };
-  // IF PaymentFailure: LogPaumentFailure
+  // IF PaymentFailure: LogPaymentFailure
   if (paymentInfo.trnApproved === "0") {
     const logFailure = {
       orgTicketNumber,
@@ -89,7 +117,9 @@ export default function Success({
     axios
       .post("/ecrc/private/logPaymentFailure", logFailure)
       .then(() => {})
-      .catch(() => {});
+      .catch(error => {
+        handleError(error);
+      });
   }
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
@@ -98,13 +128,15 @@ export default function Success({
   if (paymentInfo.trnApproved === "1") {
     const token = sessionStorage.getItem("jwt");
 
+    const paymentDateArr = paymentInfo.trnDate.split(" ")[0].split("/");
+
     const logSuccess = {
       orgTicketNumber,
       requestGuid: uuid,
       appl_Party_Id: partyId,
       service_Id: serviceId,
       cC_Authorization: paymentInfo.trnId,
-      payment_Date: paymentInfo.trnDate,
+      payment_Date: `${paymentDateArr[2]}/${paymentDateArr[0]}/${paymentDateArr[1]}`,
       payor_Type_Cd: "A",
       payment_Status_Cd: "A",
       session_Id: sessionId,
@@ -120,7 +152,9 @@ export default function Success({
         }
       })
       .then(() => {})
-      .catch(() => {});
+      .catch(error => {
+        handleError(error);
+      });
   }
 
   const printButton = {
@@ -188,7 +222,9 @@ export default function Success({
       .then(urlResponse => {
         window.location.href = urlResponse.data.paymentUrl;
       })
-      .catch(() => {});
+      .catch(error => {
+        handleError(error);
+      });
   };
 
   if (toHome) {
@@ -280,6 +316,7 @@ Success.propTypes = {
       serviceFeeAmount: PropTypes.number,
       serviceId: PropTypes.number.isRequired
     }),
-    saveApplicationInfo: PropTypes.func.isRequired
+    saveApplicationInfo: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired
   }).isRequired
 };
