@@ -40,10 +40,7 @@ export default function TermsOfUse({
     type: "submit"
   };
 
-  const onCancelClicked = e => {
-    e.stopPropagation();
-    e.preventDefault();
-
+  const onCancelClicked = () => {
     const wishToRedirect = window.confirm(
       "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
     );
@@ -739,7 +736,7 @@ export default function TermsOfUse({
         </label>
       </section>
       <section className="buttons pt-4">
-        <Button button={cancelButton} onClick={e => onCancelClicked(e)} />
+        <Button button={cancelButton} onClick={onCancelClicked} />
         <Button button={button} onClick={onContinueClick} />
       </section>
     </div>

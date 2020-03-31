@@ -106,10 +106,7 @@ export default function Consent({
     loader: loading
   };
 
-  const cancelClick = e => {
-    e.stopPropagation();
-    e.preventDefault();
-
+  const cancelClick = () => {
     const wishToRedirect = window.confirm(
       "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
     );
@@ -427,7 +424,7 @@ export default function Consent({
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
           />
           <div className="buttons pt-4">
-            <Button button={cancelButton} onClick={e => cancelClick(e)} />
+            <Button button={cancelButton} onClick={cancelClick} />
             <Button button={continueButton} onClick={confirm} />
           </div>
         </div>
