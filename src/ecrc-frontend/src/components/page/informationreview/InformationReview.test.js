@@ -8,12 +8,11 @@ import {
   getByText
 } from "@testing-library/react";
 import { createMemoryHistory } from "history";
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
 
 import InformationReview from "./InformationReview";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
-
-// Mock axios
-jest.mock("axios");
 
 describe("InformationReview Component", () => {
   const header = {
@@ -44,10 +43,10 @@ describe("InformationReview Component", () => {
     provinceNm: "British Columbia",
     postalCodeTxt: "V9V 9V9",
     countryNm: "Canada",
-    mailingAddressLine1: "456 Elsewhere",
-    mailingCity: "There",
-    mailingProvince: "Ontario",
-    mailingPostalCode: "V1V 1A1",
+    mailingLine1: "456 Elsewhere",
+    mailingCityNm: "There",
+    mailingProvinceNm: "Ontario",
+    mailingPostalCodeTxt: "V1V 1A1",
     jobTitle: "Painter",
     organizationFacility: "Something"
   };
@@ -66,6 +65,14 @@ describe("InformationReview Component", () => {
     generateJWTToken({
       actionsPerformed: ["appForm"],
       authorities: ["Authorized"]
+    });
+
+    const mock = new MockAdapter(axios);
+    const API_REQUEST_SHARE = "/ecrc/private/checkShare?requestGuid=unique123";
+
+    mock.onGet(API_REQUEST_SHARE).reply(200, {
+      oldOrg: "Old org name",
+      oldCRCExpiration: "2021-10-12"
     });
   });
 
@@ -89,7 +96,8 @@ describe("InformationReview Component", () => {
     const page = {
       header,
       applicant,
-      setError
+      setError,
+      org
     };
     const history = createMemoryHistory();
     const { container } = render(
@@ -109,7 +117,8 @@ describe("InformationReview Component", () => {
     const page = {
       header,
       applicant,
-      setError
+      setError,
+      org
     };
     const history = createMemoryHistory();
     const { container } = render(

@@ -7,34 +7,34 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container-fluid"
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        <a
-          className="navbar-brand"
-          href="/"
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
-          <a
-            className="navbar-brand nav-item nav-link"
-            href="/"
-          >
-            Criminal Record Check
-          </a>
+          Criminal Record Check
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -66,7 +66,6 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
         <h1>
           Criminal Record Check
         </h1>
-        <br />
         <p>
           In British Columbia, if you work or volunteer with, or have the potential for unsupervised access to children and/or vulnerable adults, you are required to complete a criminal record check. This portal enables you to easily apply for a criminal record check under the
            
@@ -75,7 +74,7 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            Criminal Records Review Act (CRRA).
+            Criminal Records Review Act.
           </a>
         </p>
         <div>
@@ -91,7 +90,7 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
               className="bodyList"
             >
               <li>
-                Be at least 12 years of age as of today's date
+                Be at least 12 years of age as of today's date.
               </li>
               <li>
                 Have your identity verified by using your
@@ -101,13 +100,13 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  BC Services Card
+                  BC Services Card.
                 </a>
                  
-                (BCSC). The BCSC provides secure access to provincial government online services. If you don't have a BCSC, an alternative option may be available for you.
+                The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
               </li>
               <li>
-                Have an access code provided by your organization
+                Have an access code provided by your organization.
               </li>
             </ul>
           </div>
@@ -191,7 +190,8 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
             >
               <li>
                 <a
-                  href="volunteer"
+                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   I'm an employee or a volunteer
@@ -213,8 +213,10 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  I don't have a BC Services Card
+                  I don't have a BC Services Card.
                 </a>
+                 
+                Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
               </li>
               <li>
                 <a
@@ -271,7 +273,6 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
               or by phone at 1-855-587-0185 (Option 2).
             </p>
           </div>
-          <br />
         </div>
       </div>
     </div>
@@ -299,6 +300,18 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -345,18 +358,6 @@ exports[`OrgValidation Component Matches the snapshot 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>

@@ -7,34 +7,34 @@ exports[`OrgVerification Component Matches the snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container-fluid"
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        <a
-          className="navbar-brand"
-          href="/"
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
-          <a
-            className="navbar-brand nav-item nav-link"
-            href="/"
-          >
-            Criminal Record Check
-          </a>
+          Criminal Record Check
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -65,7 +65,6 @@ exports[`OrgVerification Component Matches the snapshot 1`] = `
       <h1>
         Organization Information
       </h1>
-      <br />
       <p>
         You have provided the access code of the organization that has requested you to complete a criminal record check. Below are the details of that organization. Please confirm that this is the organization. If it's not, please contact the organization that has requested you to complete a criminal record check.
       </p>
@@ -156,63 +155,41 @@ Canada
       <br />
       <div>
         <p>
-          To continue with your online request for a criminal record check:
+          To continue with your online request for a criminal record check, please note:
         </p>
         <ul
           className="eligibleList"
         >
           <li>
-            Only BC Services cards with a photo are accepted at this time.
-          </li>
-          <li>
-            If you do not already have a BC Service Card Account, you can initiate the process at the
-             
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              BC Service Card website
-            </a>
-            .
+            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
             If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
           </li>
           <li>
-            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
-          </li>
-          <li>
-            There is no fee for Volunteer applications.
+            Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
           </li>
         </ul>
         <br />
         <p>
-          The organization noted above will be notified:
+          Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
         <ol
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults:
+            you have an outstanding charge or conviction relating to a relevant or specified offence; and
           </li>
-          <ol
-            className="contactList"
-          >
-            <li>
-              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
-            </li>
-            <li>
-              a determination of risk or no risk has been made by the Deputy Registrar.
-            </li>
-          </ol>
+          <li>
+            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+          </li>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
       </div>
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -229,7 +206,7 @@ Canada
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
@@ -407,7 +384,7 @@ Canada
                       className="menuItem"
                     >
                       <a
-                        href="/tbd"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -516,92 +493,132 @@ Canada
                     <div
                       className="side-card-text"
                     >
-                      <br />
-                      <div>
-                        <svg
-                          fill="currentColor"
-                          height="1em"
-                          stroke="currentColor"
-                          strokeWidth="0"
-                          style={
-                            Object {
-                              "color": undefined,
-                            }
-                          }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
-                          />
-                        </svg>
-                         
+                      <div
+                        className="container p-0 m-0 mt-2"
+                      >
                         <div
-                          className="contact-title"
+                          className="row"
                         >
-                          Fax: 
+                          <div
+                            className="text-nowrap col-lg-12 col-xl-3"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              strokeWidth="0"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                }
+                              }
+                              viewBox="0 0 512 512"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
+                              />
+                            </svg>
+                             
+                            <div
+                              className="contact-title"
+                            >
+                              Phone: 
+                            </div>
+                          </div>
+                          <div
+                            className="col-lg-12 col-xl-9 pr-0"
+                          >
+                            1 855 587-0185 (option 2)
+                          </div>
                         </div>
-                        (250) 356-1889
-                      </div>
-                      <div>
-                        <svg
-                          fill="currentColor"
-                          height="1em"
-                          stroke="currentColor"
-                          strokeWidth="0"
-                          style={
-                            Object {
-                              "color": undefined,
-                            }
-                          }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                          />
-                        </svg>
-                         
                         <div
-                          className="contact-title"
+                          className="row"
                         >
-                          Office: 
+                          <div
+                            className="text-nowrap col-lg-12 col-xl-3"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              strokeWidth="0"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                }
+                              }
+                              viewBox="0 0 496 512"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
+                              />
+                            </svg>
+                             
+                            <div
+                              className="contact-title"
+                            >
+                              Website: 
+                            </div>
+                          </div>
+                          <div
+                            className="col-lg-12 col-xl-9 pr-0"
+                          >
+                            <a
+                              className="email link-email"
+                              href="http://www.bclaws.ca/EPLibraries/bclaws_new/document/ID/freeside/00_96086_01"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Criminal Records Review Program
+                            </a>
+                          </div>
                         </div>
-                        Toll free - 1 855 587-0185 (press option 2)
-                      </div>
-                      <div>
-                        <svg
-                          fill="currentColor"
-                          height="1em"
-                          stroke="currentColor"
-                          strokeWidth="0"
-                          style={
-                            Object {
-                              "color": undefined,
-                            }
-                          }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                          />
-                        </svg>
-                          
                         <div
-                          className="contact-title"
+                          className="row"
                         >
-                          Email: 
+                          <div
+                            className="text-nowrap col-lg-12 col-xl-3"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              strokeWidth="0"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                }
+                              }
+                              viewBox="0 0 512 512"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                              />
+                            </svg>
+                             
+                            <div
+                              className="contact-title"
+                            >
+                              Email: 
+                            </div>
+                          </div>
+                          <div
+                            className="col-lg-12 col-xl-9 pr-0"
+                          >
+                            <a
+                              className="email link-email"
+                              href="mailto:criminalrecords@gov.bc.ca"
+                            >
+                              criminalrecords@gov.bc.ca
+                            </a>
+                          </div>
                         </div>
-                        <a
-                          className="email"
-                          href="mailto:criminalrecords@gov.bc.ca"
-                        >
-                          criminalrecords@gov.bc.ca
-                        </a>
                       </div>
                     </div>
                   </span>
@@ -636,6 +653,18 @@ Canada
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -682,18 +711,6 @@ Canada
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>

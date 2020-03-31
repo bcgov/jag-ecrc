@@ -7,34 +7,34 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container-fluid"
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        <a
-          className="navbar-brand"
-          href="/"
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
-          <a
-            className="navbar-brand nav-item nav-link"
-            href="/"
-          >
-            Criminal Record Check
-          </a>
+          Criminal Record Check
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -65,7 +65,6 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
       <h1>
         Information Review
       </h1>
-      <br />
       <p>
         Please confirm that the information provided below is accurate. If it is not, please select Edit Application.
       </p>
@@ -385,9 +384,8 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </tr>
         </tbody>
       </table>
-      <br />
       <div
-        className="declareTitle"
+        className="declareTitle mt-4"
       >
         DECLARATION
       </div>
@@ -407,11 +405,18 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           >
             I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
           </span>
+          <span
+            className="mandatory"
+            id="asterisk"
+          >
+            *
+          </span>
         </label>
       </section>
       <br />
+      <br />
       <div
-        className="buttons"
+        className="buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -428,7 +433,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_go_btn mr-0 btn"
           disabled={true}
           onClick={[Function]}
           type="submit"
@@ -517,22 +522,22 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                       className="discStyle"
                     >
                       <li>
-                        FIRST NAME
+                        First Name
                       </li>
                       <li>
-                        MIDDLE NAME
+                        Middle Name
                       </li>
                       <li>
-                        LAST NAME
+                        Last Name
                       </li>
                       <li>
-                        DATE OF BIRTH
+                        Date Of Birth
                       </li>
                       <li>
-                        SEX
+                        Sex
                       </li>
                       <li>
-                        CURRENT STREET ADDRESS
+                        Current Street Address
                       </li>
                     </ul>
                     Please contact either 
@@ -600,6 +605,18 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -641,18 +658,6 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>

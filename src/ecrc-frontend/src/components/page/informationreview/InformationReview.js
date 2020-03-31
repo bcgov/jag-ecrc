@@ -40,10 +40,10 @@ export default function InformationReview({
       provinceNm,
       postalCodeTxt,
       countryNm,
-      mailingAddressLine1,
-      mailingCity,
-      mailingProvince,
-      mailingPostalCode,
+      mailingLine1,
+      mailingCityNm,
+      mailingProvinceNm,
+      mailingPostalCodeTxt,
       birthPlace,
       driversLicNo,
       phoneNumber,
@@ -72,9 +72,11 @@ export default function InformationReview({
     if (!isAuthorized() || !isActionPerformed("appForm")) {
       setToHome(true);
     } else {
+      const uuid = sessionStorage.getItem("uuid");
+
       // Make axios call to check for sharing service
       axios
-        .get("/private/checkShare")
+        .get(`/ecrc/private/checkShare?requestGuid=${uuid}`)
         .then(res => {
           // Check if share was allowed?
           // if it was, setShare -> true
@@ -259,19 +261,19 @@ export default function InformationReview({
   const mailingAddressElement = [
     {
       name: "Mailing Address",
-      value: mailingAddressLine1
+      value: mailingLine1
     },
     {
       name: "City",
-      value: mailingCity
+      value: mailingCityNm
     },
     {
       name: "Province",
-      value: mailingProvince
+      value: mailingProvinceNm
     },
     {
       name: "Postal Code",
-      value: mailingPostalCode
+      value: mailingPostalCodeTxt
     },
     {
       name: "Country",
@@ -286,7 +288,7 @@ export default function InformationReview({
 
   const confirmButton = {
     label: "Submit",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit",
     disabled: !boxChecked
@@ -320,7 +322,7 @@ export default function InformationReview({
     };
     generateJWTToken(newPayload);
 
-    history.push("/criminalrecordcheck/userconfirmation");
+    history.push("/criminalrecordcheck/consent");
   };
 
   if (toHome) {
@@ -337,7 +339,6 @@ export default function InformationReview({
       <div className="page">
         <div className="content col-md-8">
           <h1>Information Review</h1>
-          <br />
           <p>
             Please confirm that the information provided below is accurate. If
             it is not, please select Edit Application.
@@ -355,8 +356,7 @@ export default function InformationReview({
           <Table table={contactTable} />
           <br />
           <Table table={mailingAddressTable} />
-          <br />
-          <div className="declareTitle">DECLARATION</div>
+          <div className="declareTitle mt-4">DECLARATION</div>
           <section className="declareSection">
             <label htmlFor="certify">
               <input
@@ -374,6 +374,9 @@ export default function InformationReview({
                 the CRRP to accurately determine whether the applicant poses a
                 risk to children or vulnerable adults.
               </span>
+              <span id="asterisk" className="mandatory">
+                *
+              </span>
             </label>
           </section>
           <br />
@@ -387,7 +390,7 @@ export default function InformationReview({
             />
           )}
           <br />
-          <div className="buttons">
+          <div className="buttons pt-4">
             <Button button={cancelButton} onClick={edit} />
             <Button button={confirmButton} onClick={confirm} />
           </div>
@@ -426,10 +429,10 @@ InformationReview.propTypes = {
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
       countryNm: PropTypes.string.isRequired,
-      mailingAddressLine1: PropTypes.string.isRequired,
-      mailingCity: PropTypes.string.isRequired,
-      mailingProvince: PropTypes.string.isRequired,
-      mailingPostalCode: PropTypes.string.isRequired,
+      mailingLine1: PropTypes.string.isRequired,
+      mailingCityNm: PropTypes.string.isRequired,
+      mailingProvinceNm: PropTypes.string.isRequired,
+      mailingPostalCodeTxt: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string.isRequired,

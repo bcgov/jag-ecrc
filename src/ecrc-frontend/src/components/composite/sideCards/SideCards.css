@@ -31,6 +31,14 @@
   font-weight: 600;
 }
 
+.link-email {
+  color: white;
+}
+
+.link-email:hover {
+  color: white;
+}
+
 .link:hover {
   color: white;
 }
@@ -74,4 +82,18 @@
 .textAlign {
   display: flex;
   align-self: center;
+}
+
+@media (min-width: 1200px) {
+  .col-xl-3 {
+    flex: 0 0 25%;
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-xl-9 {
+    flex: 0 0 75%;
+    max-width: 70%;
+  }
 }

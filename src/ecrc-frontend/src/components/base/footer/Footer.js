@@ -17,6 +17,16 @@ export default function Footer() {
             <li className="nav-item m-1">
               <a
                 className="nav-link"
+                href="https://www2.gov.bc.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                BC Government
+              </a>
+            </li>
+            <li className="nav-item m-1">
+              <a
+                className="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -52,16 +62,6 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 Copyright
-              </a>
-            </li>
-            <li className="nav-item m-1">
-              <a
-                className="nav-link"
-                href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Contact Us
               </a>
             </li>
           </ul>

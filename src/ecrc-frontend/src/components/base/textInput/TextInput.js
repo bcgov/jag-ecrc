@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
+import Input from "react-phone-number-input/input";
 import PropTypes from "prop-types";
 import "./TextInput.css";
 
@@ -12,6 +13,7 @@ export const TextInput = ({
     value,
     placeholder,
     options,
+    phone = false,
     isRequired,
     errorMsg
   },
@@ -69,7 +71,12 @@ export const TextInput = ({
     return (
       <div>
         {labelPart && labelPart}
-        <select className={textStyle} id={id} value={value} onChange={onChange}>
+        <select
+          className={textStyle}
+          id={id}
+          value={value}
+          onChange={event => onChange(event.target.value)}
+        >
           {options.map(item => {
             return (
               <option key={item.name} value={item.name}>
@@ -78,6 +85,24 @@ export const TextInput = ({
             );
           })}
         </select>
+      </div>
+    );
+  }
+
+  if (phone) {
+    return (
+      <div>
+        {labelPart && labelPart}
+        <Input
+          country={"CA"}
+          className={textStyle}
+          id={id}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
+        <br />
+        <span className="error">{errorMsg}</span>
       </div>
     );
   }
@@ -107,6 +132,7 @@ TextInput.propTypes = {
     textInputStyle: PropTypes.string,
     value: PropTypes.string,
     placeholder: PropTypes.string,
+    phone: PropTypes.bool,
     options: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired
@@ -120,6 +146,7 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   textInput: {
+    phone: false,
     placeholder: "",
     note: "",
     errorMsg: ""

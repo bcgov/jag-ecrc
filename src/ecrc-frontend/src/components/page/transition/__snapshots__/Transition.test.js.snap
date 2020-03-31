@@ -7,34 +7,34 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container-fluid"
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        <a
-          className="navbar-brand"
-          href="/"
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
-          <a
-            className="navbar-brand nav-item nav-link"
-            href="/"
-          >
-            Criminal Record Check
-          </a>
+          Criminal Record Check
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -63,7 +63,12 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
       className="transition-content col-md-8"
     >
       <p>
-        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        You are unable to login with your BC Services Card at this time.
+      </p>
+      <br />
+      <p>
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -105,6 +110,18 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -148,18 +165,6 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -174,34 +179,34 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container-fluid"
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        <a
-          className="navbar-brand"
-          href="/"
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
-          <a
-            className="navbar-brand nav-item nav-link"
-            href="/"
-          >
-            Criminal Record Check
-          </a>
+          Criminal Record Check
         </div>
         <button
           aria-controls="navbarNavAltMarkup"
@@ -230,7 +235,12 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
       className="transition-content col-md-8"
     >
       <p>
-        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        You are unable to login with your BC Services Card at this time.
+      </p>
+      <br />
+      <p>
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -247,7 +257,7 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          BC Services Card account
+          BC Services Card
         </a>
         . Your organization hasn't
          been transitioned to the new system yet.
@@ -282,6 +292,18 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
           >
             <a
               className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               rel="noopener noreferrer"
               target="_blank"
@@ -323,18 +345,6 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>
