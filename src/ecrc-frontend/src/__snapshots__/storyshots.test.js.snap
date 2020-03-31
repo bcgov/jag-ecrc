@@ -1186,7 +1186,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
                         }
                       }
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                       <a
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
@@ -2519,7 +2519,7 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
                         }
                       }
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                       <a
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
@@ -2695,14 +2695,16 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
         To apply for a criminal record check online, you must use your
          
         <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
           rel="noopener noreferrer"
           target="_blank"
         >
-          BC Services Card
+          BC Services Card.
         </a>
          
-        Account. Only cards 
+      </p>
+      <p>
+        Only cards 
         <b>
           with a photo
         </b>
@@ -2730,7 +2732,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
             className="col-lg-6 col-md-12 "
             style={
               Object {
-                "marginBottom": "10px",
+                "marginTop": "9px",
               }
             }
           >
@@ -2846,7 +2848,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -2861,11 +2863,11 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                       className="side-card-text"
                     >
                       <br />
-                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                      Eligibility for a BC Services Card is the same as for the Medical Services Plan (MSP).
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -3044,14 +3046,16 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
         To apply for a criminal record check online, you must use your
          
         <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
           rel="noopener noreferrer"
           target="_blank"
         >
-          BC Services Card
+          BC Services Card.
         </a>
          
-        Account. Only cards 
+      </p>
+      <p>
+        Only cards 
         <b>
           with a photo
         </b>
@@ -3079,7 +3083,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
             className="col-lg-6 col-md-12 "
             style={
               Object {
-                "marginBottom": "10px",
+                "marginTop": "9px",
               }
             }
           >
@@ -3195,7 +3199,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -3210,11 +3214,11 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                       className="side-card-text"
                     >
                       <br />
-                      Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                      Eligibility for a BC Services Card is the same as for the Medical Services Plan (MSP).
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -3840,7 +3844,7 @@ exports[`Storyshots Consent page Default 1`] = `
                         }
                       }
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                       <a
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
@@ -4394,7 +4398,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
                         }
                       }
                     >
-                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                       <a
                         href="mailto:criminalrecords@gov.bc.ca"
                       >
@@ -8610,7 +8614,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            Criminal Records Review Act (CRRA).
+            Criminal Records Review Act.
           </a>
         </p>
         <div>
@@ -8626,7 +8630,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
               className="bodyList"
             >
               <li>
-                Be at least 12 years of age as of today's date
+                Be at least 12 years of age as of today's date.
               </li>
               <li>
                 Have your identity verified by using your
@@ -8636,13 +8640,13 @@ exports[`Storyshots OrgValidation Default 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  BC Services Card
+                  BC Services Card.
                 </a>
                  
-                (BCSC). The BCSC provides secure access to provincial government online services. If you don't have a BCSC, an alternative option may be available for you.
+                The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
               </li>
               <li>
-                Have an access code provided by your organization
+                Have an access code provided by your organization.
               </li>
             </ul>
           </div>
@@ -8726,7 +8730,8 @@ exports[`Storyshots OrgValidation Default 1`] = `
             >
               <li>
                 <a
-                  href="volunteer"
+                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   I'm an employee or a volunteer
@@ -8748,8 +8753,10 @@ exports[`Storyshots OrgValidation Default 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  I don't have a BC Services Card
+                  I don't have a BC Services Card.
                 </a>
+                 
+                Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
               </li>
               <li>
                 <a
@@ -8974,7 +8981,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            Criminal Records Review Act (CRRA).
+            Criminal Records Review Act.
           </a>
         </p>
         <div>
@@ -8990,7 +8997,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               className="bodyList"
             >
               <li>
-                Be at least 12 years of age as of today's date
+                Be at least 12 years of age as of today's date.
               </li>
               <li>
                 Have your identity verified by using your
@@ -9000,13 +9007,13 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  BC Services Card
+                  BC Services Card.
                 </a>
                  
-                (BCSC). The BCSC provides secure access to provincial government online services. If you don't have a BCSC, an alternative option may be available for you.
+                The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
               </li>
               <li>
-                Have an access code provided by your organization
+                Have an access code provided by your organization.
               </li>
             </ul>
           </div>
@@ -9090,7 +9097,8 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
             >
               <li>
                 <a
-                  href="volunteer"
+                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   I'm an employee or a volunteer
@@ -9112,8 +9120,10 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  I don't have a BC Services Card
+                  I don't have a BC Services Card.
                 </a>
+                 
+                Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
               </li>
               <li>
                 <a
@@ -9277,7 +9287,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      Criminal Records Review Act (CRRA).
+      Criminal Records Review Act.
     </a>
   </p>
   <div>
@@ -9293,7 +9303,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         className="bodyList"
       >
         <li>
-          Be at least 12 years of age as of today's date
+          Be at least 12 years of age as of today's date.
         </li>
         <li>
           Have your identity verified by using your
@@ -9303,13 +9313,13 @@ exports[`Storyshots OrgValidationText Default 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            BC Services Card
+            BC Services Card.
           </a>
            
-          (BCSC). The BCSC provides secure access to provincial government online services. If you don't have a BCSC, an alternative option may be available for you.
+          The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
         </li>
         <li>
-          Have an access code provided by your organization
+          Have an access code provided by your organization.
         </li>
       </ul>
     </div>
@@ -9410,7 +9420,8 @@ exports[`Storyshots OrgValidationText Default 1`] = `
       >
         <li>
           <a
-            href="volunteer"
+            href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+            rel="noopener noreferrer"
             target="_blank"
           >
             I'm an employee or a volunteer
@@ -9432,8 +9443,10 @@ exports[`Storyshots OrgValidationText Default 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            I don't have a BC Services Card
+            I don't have a BC Services Card.
           </a>
+           
+          Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
         </li>
         <li>
           <a
@@ -9649,56 +9662,34 @@ Canada
       <br />
       <div>
         <p>
-          To continue with your online request for a criminal record check:
+          To continue with your online request for a criminal record check, please note:
         </p>
         <ul
           className="eligibleList"
         >
           <li>
-            Only BC Services cards with a photo are accepted at this time.
-          </li>
-          <li>
-            If you do not already have a BC Service Card Account, you can initiate the process at the
-             
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              BC Service Card website
-            </a>
-            .
+            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
             If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
           </li>
           <li>
-            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
-          </li>
-          <li>
-            There is no fee for Volunteer applications.
+            Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
           </li>
         </ul>
         <br />
         <p>
-          The organization noted above will be notified:
+          Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
         <ol
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults:
+            you have an outstanding charge or conviction relating to a relevant or specified offence; and
           </li>
-          <ol
-            className="contactList"
-          >
-            <li>
-              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
-            </li>
-            <li>
-              a determination of risk or no risk has been made by the Deputy Registrar.
-            </li>
-          </ol>
+          <li>
+            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+          </li>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
@@ -9900,7 +9891,7 @@ Canada
                       className="menuItem"
                     >
                       <a
-                        href="/tbd"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -10384,56 +10375,34 @@ Canada
       <br />
       <div>
         <p>
-          To continue with your online request for a criminal record check:
+          To continue with your online request for a criminal record check, please note:
         </p>
         <ul
           className="eligibleList"
         >
           <li>
-            Only BC Services cards with a photo are accepted at this time.
-          </li>
-          <li>
-            If you do not already have a BC Service Card Account, you can initiate the process at the
-             
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              BC Service Card website
-            </a>
-            .
+            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
             If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
           </li>
           <li>
-            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
-          </li>
-          <li>
-            There is no fee for Volunteer applications.
+            Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
           </li>
         </ul>
         <br />
         <p>
-          The organization noted above will be notified:
+          Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
         <ol
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults:
+            you have an outstanding charge or conviction relating to a relevant or specified offence; and
           </li>
-          <ol
-            className="contactList"
-          >
-            <li>
-              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
-            </li>
-            <li>
-              a determination of risk or no risk has been made by the Deputy Registrar.
-            </li>
-          </ol>
+          <li>
+            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+          </li>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
@@ -10635,7 +10604,7 @@ Canada
                       className="menuItem"
                     >
                       <a
-                        href="/tbd"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -11119,56 +11088,34 @@ Canada
       <br />
       <div>
         <p>
-          To continue with your online request for a criminal record check:
+          To continue with your online request for a criminal record check, please note:
         </p>
         <ul
           className="eligibleList"
         >
           <li>
-            Only BC Services cards with a photo are accepted at this time.
-          </li>
-          <li>
-            If you do not already have a BC Service Card Account, you can initiate the process at the
-             
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              BC Service Card website
-            </a>
-            .
+            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
             If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
           </li>
           <li>
-            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
-          </li>
-          <li>
-            There is no fee for Volunteer applications.
+            Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
           </li>
         </ul>
         <br />
         <p>
-          The organization noted above will be notified:
+          Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
         <ol
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults:
+            you have an outstanding charge or conviction relating to a relevant or specified offence; and
           </li>
-          <ol
-            className="contactList"
-          >
-            <li>
-              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
-            </li>
-            <li>
-              a determination of risk or no risk has been made by the Deputy Registrar.
-            </li>
-          </ol>
+          <li>
+            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+          </li>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
@@ -11370,7 +11317,7 @@ Canada
                       className="menuItem"
                     >
                       <a
-                        href="/tbd"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -11854,56 +11801,34 @@ Canada
       <br />
       <div>
         <p>
-          To continue with your online request for a criminal record check:
+          To continue with your online request for a criminal record check, please note:
         </p>
         <ul
           className="eligibleList"
         >
           <li>
-            Only BC Services cards with a photo are accepted at this time.
-          </li>
-          <li>
-            If you do not already have a BC Service Card Account, you can initiate the process at the
-             
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              BC Service Card website
-            </a>
-            .
+            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
             If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
           </li>
           <li>
-            Employee applications must pay a fee by credit card (Visa, MasterCard, or AMEX).
-          </li>
-          <li>
-            There is no fee for Volunteer applications.
+            Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
           </li>
         </ul>
         <br />
         <p>
-          The organization noted above will be notified:
+          Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
         <ol
           className="contactList"
         >
           <li>
-            When you are cleared to work with children and/or vulnerable adults:
+            you have an outstanding charge or conviction relating to a relevant or specified offence; and
           </li>
-          <ol
-            className="contactList"
-          >
-            <li>
-              if you have an outstanding charge or conviction relating to a relevant or specified offence; and
-            </li>
-            <li>
-              a determination of risk or no risk has been made by the Deputy Registrar.
-            </li>
-          </ol>
+          <li>
+            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+          </li>
         </ol>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
@@ -12105,7 +12030,7 @@ Canada
                       className="menuItem"
                     >
                       <a
-                        href="/tbd"
+                        href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -12571,7 +12496,7 @@ exports[`Storyshots SideCard notice 1`] = `
           className="submit-content"
         >
           <span>
-            The information requested on this form is collected by the Liquor and Cannabis Regulation Branch under Sections 26 (a) and (c) of the Freedom of Information and Protection of Privacy Act for the purpose of cannabis licensing, compliance and enforcement matters in accordance with the Cannabis
+            The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26 (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to criminalrecords@gov.bc.ca; or by telephone at 1- 855-587-0185 (option 2).
           </span>
         </div>
       </section>
@@ -12709,7 +12634,7 @@ exports[`Storyshots SideCards Bc Service 1`] = `
               </div>
               <div>
                 <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -12724,11 +12649,11 @@ exports[`Storyshots SideCards Bc Service 1`] = `
                 className="side-card-text"
               >
                 <br />
-                Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                Eligibility for a BC Services Card is the same as for the Medical Services Plan (MSP).
               </div>
               <div>
                 <a
-                  href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -12801,7 +12726,7 @@ exports[`Storyshots SideCards Collection Notice 1`] = `
                   }
                 }
               >
-                The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act (CRRA) and in accordance with sections 26(a) and (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA) and section 6 of the CRRA . Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of personal information, please contact the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
                 <a
                   href="mailto:criminalrecords@gov.bc.ca"
                 >
@@ -17996,7 +17921,12 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       className="transition-content col-md-8"
     >
       <p>
-        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        You are unable to login with your BC Services Card at this time.
+      </p>
+      <br />
+      <p>
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -18163,7 +18093,12 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       className="transition-content col-md-8"
     >
       <p>
-        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        You are unable to login with your BC Services Card at this time.
+      </p>
+      <br />
+      <p>
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -18330,7 +18265,12 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
       className="transition-content col-md-8"
     >
       <p>
-        You are being redirected to the legacy online criminal record check (eCRC) application. You will be required to re-enter your access code to continue. If you are not redirected automatically, please click 
+        You are unable to login with your BC Services Card at this time.
+      </p>
+      <br />
+      <p>
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
         <a
           href="https://justice.gov.bc.ca/eCRC/home.htm"
         >
@@ -18347,7 +18287,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          BC Services Card account
+          BC Services Card
         </a>
         . Your organization hasn't
          been transitioned to the new system yet.

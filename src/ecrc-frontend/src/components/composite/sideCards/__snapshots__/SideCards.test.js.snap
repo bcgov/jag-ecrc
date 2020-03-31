@@ -248,7 +248,7 @@ exports[`SideCards Component BcServices sidecard 1`] = `
               </div>
               <div>
                 <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -263,11 +263,11 @@ exports[`SideCards Component BcServices sidecard 1`] = `
                 className="side-card-text"
               >
                 <br />
-                Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                Eligibility for a BC Services Card is the same as for the Medical Services Plan (MSP).
               </div>
               <div>
                 <a
-                  href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
