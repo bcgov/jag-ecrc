@@ -239,6 +239,11 @@ export default function ApplicationForm({
             }
           }
         });
+    } else {
+      setToggleLoader({
+        loader: { display: "none" },
+        content: { display: "block" }
+      });
     }
   }, [setError, setProvinces]);
 
