@@ -13,6 +13,7 @@ import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
 import {
+  isActionPerformed,
   generateJWTToken,
   accessJWTToken,
   isAuthorized
@@ -575,7 +576,7 @@ export default function ApplicationForm({
       return;
     }
 
-    if (!birthLoc && !validateBirthPlace(birthLoc)) {
+    if (!birthLoc || !validateBirthPlace(birthLoc)) {
       setBirthPlaceError("City and country of birth are required");
     }
 
