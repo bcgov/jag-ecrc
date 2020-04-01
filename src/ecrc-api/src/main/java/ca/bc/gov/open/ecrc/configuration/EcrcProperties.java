@@ -33,6 +33,7 @@ public class EcrcProperties {
 	private String logPaymentFailureUri;
 	private String getNextInvoiceIdUri;
 	private String updateServiceFinancialTxnUri;
+	private String checkApplicantForPrevCrcUri;
 	
 	//CORS properties
 	private String corsMapping;
@@ -154,6 +155,14 @@ public class EcrcProperties {
 
 	public void setGetNextInvoiceIdUri(String getNextInvoiceIdUri) {
 		this.getNextInvoiceIdUri = getNextInvoiceIdUri;
+	}
+
+	public String getCheckApplicantForPrevCrcUri() {
+		return checkApplicantForPrevCrcUri;
+	}
+
+	public void setCheckApplicantForPrevCrcUri(String checkApplicantForPrevCrcUri) {
+		this.checkApplicantForPrevCrcUri = checkApplicantForPrevCrcUri;
 	}
 
 	public String getCorsMapping() {
