@@ -128,6 +128,8 @@ export default function Success({
   };
   // IF PaymentFailure: LogPaymentFailure
   if (paymentInfo.trnApproved === "0") {
+    const token = sessionStorage.getItem("jwt");
+
     const logFailure = {
       orgTicketNumber,
       requestGuid: uuid,
@@ -140,7 +142,11 @@ export default function Success({
     };
 
     axios
-      .post("/ecrc/private/logPaymentFailure", logFailure)
+      .post("/ecrc/private/logPaymentFailure", logFailure, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       .then(() => {})
       .catch(error => {
         handleError(error);
