@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Share Component Matches the snapshot of Share 1`] = `
+<div
+  className="share"
+>
+  <span>
+    You have a valid previous CRC.
+  </span>
+  <span>
+    It was prepared for: 
+  </span>
+  <span>
+    It is valid until: 
+  </span>
+  <p>
+    Would you like to share it with 
+    ?
+  </p>
+  <button
+    className="btn ecrc_go_btn btn"
+    disabled={true}
+    type="submit"
+  >
+    Share
+    <div
+      className="loader-hide"
+    >
+      <div
+        className="btn-loader"
+      />
+    </div>
+  </button>
+</div>
+`;

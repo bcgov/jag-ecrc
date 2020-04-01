@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+import Share from "../../composite/share/Share";
 import {
   generateJWTToken,
   accessJWTToken,
@@ -49,7 +51,9 @@ export default function InformationReview({
       jobTitle,
       organizationFacility
     },
-    setError
+    org: { orgNm },
+    setError,
+    setShare
   }
 }) {
   const history = useHistory();
@@ -57,11 +61,41 @@ export default function InformationReview({
   const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
+  // SHARE STATES
+  const [shareAvailable, setShareAvailable] = useState(false);
+  const [oldOrg, setOldOrg] = useState("");
+  const [oldCRCExpiration, setOldCRCExpiration] = useState("");
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     if (!isAuthorized() || !isActionPerformed("appForm")) {
       setToHome(true);
+    } else {
+      const uuid = sessionStorage.getItem("uuid");
+
+      // Make axios call to check for sharing service
+      axios
+        .get(`/ecrc/private/checkShare?requestGuid=${uuid}`)
+        .then(res => {
+          // Check if share was allowed?
+          // if it was, setShare -> true
+
+          // May get info back that need to be displayed more than just here
+          // Might need to add to a state, or create new state
+          // Old Org name:
+          // Available CRC expiration
+
+          setOldOrg(res.data.oldOrg);
+          setOldCRCExpiration(res.data.oldCRCExpiration);
+          setShareAvailable(true);
+        })
+        .catch(error => {
+          console.log(error);
+          // This could be fine...
+          // If checkShare errors rather than responds, continue
+          // If different error, ERROR
+        });
     }
   }, []);
 
@@ -345,6 +379,17 @@ export default function InformationReview({
               </span>
             </label>
           </section>
+          <br />
+          {shareAvailable && (
+            <Share
+              previousOrg={oldOrg}
+              expiration={oldCRCExpiration}
+              newOrg={orgNm}
+              clickShare={setShare(true)}
+              boxChecked={boxChecked}
+            />
+          )}
+          <br />
           <div className="buttons pt-4">
             <Button button={cancelButton} onClick={edit} />
             <Button button={confirmButton} onClick={confirm} />
@@ -395,7 +440,11 @@ InformationReview.propTypes = {
       jobTitle: PropTypes.string.isRequired,
       organizationFacility: PropTypes.string
     }),
-    setError: PropTypes.func.isRequired
+    org: PropTypes.shape({
+      orgNm: PropTypes.string.isRequired
+    }),
+    setError: PropTypes.func.isRequired,
+    setShare: PropTypes.func.isRequired
   })
 };
 

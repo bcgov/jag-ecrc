@@ -280,6 +280,7 @@ export default function SideCards({ type, sideCardLinks }) {
       </ul>,
       "Please visit the ",
       <a
+        key="personalInfoLink"
         className="link"
         href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
         target="_blank"
