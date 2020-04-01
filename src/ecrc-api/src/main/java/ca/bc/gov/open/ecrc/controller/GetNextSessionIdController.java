@@ -23,7 +23,7 @@ public class GetNextSessionIdController {
     @GetMapping(value = "/private/getNextSessionId", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getNextSessionId(@RequestParam(required=true) String orgTicketNumber,
                                                    @RequestParam(required=true) String requestGuid) {
-        logger.info("Get next session id request received {}", requestGuid);
+        logger.info("Get next session id request received [{}]", requestGuid);
 
         try {
             return ecrcServices.getNextSessionId(orgTicketNumber, requestGuid);

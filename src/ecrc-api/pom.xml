@@ -165,6 +165,13 @@
 			<artifactId>logback-access-spring-boot-starter</artifactId>
 			<version>2.7.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.splunk.logging</groupId>
+			<artifactId>splunk-library-javalogging</artifactId>
+			<version>1.7.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/jars/splunk-library-javalogging-1.7.1.jar</systemPath>
+		</dependency>
 	</dependencies>
 	
 	<build>

@@ -28,7 +28,7 @@ public class GetProvinceListController {
 
 	@GetMapping(value = "/protected/getProvinceList", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> getProvinceList(@RequestParam(required=true) String requestGuid) {
-		logger.info("Get province list request received {}", requestGuid);
+		logger.info("Get province list request received [{}]", requestGuid);
 		try {
 			return ecrcServices.getProvinceList(requestGuid);
 		} catch (Exception ex) {
