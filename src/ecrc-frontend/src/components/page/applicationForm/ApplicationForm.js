@@ -19,6 +19,7 @@ import {
   accessJWTToken,
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
+import Loader from "../../base/loader/Loader";
 
 export default function ApplicationForm({
   page: {
@@ -111,6 +112,10 @@ export default function ApplicationForm({
   );
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
   const [toTransition, setToTransition] = useState(false);
+  const [toggleLoader, setToggleLoader] = useState({
+    loader: { width: "100%", textAlign: "center", display: "inline-block" },
+    content: { display: "none" }
+  });
 
   const location = useLocation();
 
@@ -208,6 +213,11 @@ export default function ApplicationForm({
             postalCodeTxt: postal_code,
             countryNm: "CANADA"
           });
+
+          setToggleLoader({
+            loader: { display: "none" },
+            content: { display: "block" }
+          });
         })
         .catch(error => {
           setToError(true);
@@ -229,6 +239,11 @@ export default function ApplicationForm({
             }
           }
         });
+    } else {
+      setToggleLoader({
+        loader: { display: "none" },
+        content: { display: "block" }
+      });
     }
   }, [setError, setProvinces]);
 
@@ -797,124 +812,140 @@ export default function ApplicationForm({
         <div className="content col-md-8">
           <h1>Criminal Record Check - Application</h1>
           <p>Complete the application form below to continue.</p>
-          <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
-          <div className="heading">
-            <span className="previousHeader">PREVIOUS NAME&nbsp;</span>
-            <span className="note">
-              - Including birth name, previous name, maiden name, and/or alias
-            </span>
+          <div style={toggleLoader.loader}>
+            <br />
+            <br />
+            <Loader page />
+            <br />
+            Loading... Please Wait
           </div>
-          <FullName title={null} fullname={previousNameOne} />
-          {previousNames.previousTwo && (
-            <FullName title={null} fullname={previousNameTwo} />
-          )}
-          {previousNames.previousThree && (
-            <FullName title={null} fullname={previousNameThree} />
-          )}
-          {(!previousNames.previousTwo || !previousNames.previousThree) && (
-            <span className="heading note previousFooter">
-              If you have more than one previous name, please&nbsp;
-              <button
-                className="notAButton"
-                type="button"
-                onClick={event => additionalNames(event)}
-              >
-                click here to add them
-              </button>
-            </span>
-          )}
-          <div ref={birthLocRef}>
-            <div ref={phoneNumRef}>
-              <div ref={emailRef}>
-                <SimpleForm simpleForm={applicantInformation} />
-              </div>
+          <div style={toggleLoader.content}>
+            <FullName title={"PERSONAL INFORMATION"} fullname={currentName} />
+            <div className="heading">
+              <span className="previousHeader">PREVIOUS NAME&nbsp;</span>
+              <span className="note">
+                - Including birth name, previous name, maiden name, and/or alias
+              </span>
             </div>
-          </div>
-          <br />
-          <div ref={jobRef}>
-            <SimpleForm simpleForm={positionInformation} />
-          </div>
-          <br />
-          <div className="smallHeading">
-            <span className="simpleForm_title">Addresses</span>
-          </div>
-          <div className="heading">
-            <span className="previousHeader">Current Residential Address</span>
-          </div>
-          <SimpleForm simpleForm={address} />
-          <p className="heading">
-            Is your current mailing address the same as your current residential
-            address?&nbsp;
-          </p>
-          <div className="heading">
-            <span>Yes&nbsp;</span>
-            <input
-              type="radio"
-              id="yes"
-              checked={sameAddress}
-              onChange={mailingAddress}
-              data-testid="sameAddress"
-            />
-            <span>&nbsp;No&nbsp;</span>
-            <input
-              type="radio"
-              id="no"
-              checked={!sameAddress}
-              onChange={mailingAddress}
-              data-testid="differentAddress"
-            />
-          </div>
-          <br />
-          <div className="heading">
-            <span className="previousHeader">Current Mailing Address</span>
-          </div>
-          <div ref={mailingAddressLine1Ref}>
-            <div ref={mailingCityRef}>
-              <div ref={mailingProvinceRef}>
-                <div ref={mailingPostalCodeRef}>
-                  {sameAddress && <SimpleForm simpleForm={address} />}
-                  {!sameAddress && <SimpleForm simpleForm={mailing} />}
+            <FullName title={null} fullname={previousNameOne} />
+            {previousNames.previousTwo && (
+              <FullName title={null} fullname={previousNameTwo} />
+            )}
+            {previousNames.previousThree && (
+              <FullName title={null} fullname={previousNameThree} />
+            )}
+            {(!previousNames.previousTwo || !previousNames.previousThree) && (
+              <span className="heading note previousFooter">
+                If you have more than one previous name, please&nbsp;
+                <button
+                  className="notAButton"
+                  type="button"
+                  onClick={event => additionalNames(event)}
+                >
+                  click here to add them
+                </button>
+              </span>
+            )}
+            <div ref={birthLocRef}>
+              <div ref={phoneNumRef}>
+                <div ref={emailRef}>
+                  <SimpleForm simpleForm={applicantInformation} />
                 </div>
               </div>
             </div>
-          </div>
-          <br />
-          <section className="p-4">
-            Entering your mailing address in this application will not update
-            your BC Services Card Address. To update your BC Services Card
-            information you must contact&nbsp;
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Service BC
-            </a>
-            ,&nbsp;
-            <a
-              href="https://www.icbc.com/Pages/default.aspx"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ICBC
-            </a>
-            &nbsp;or&nbsp;
-            <a
-              href="https://www.addresschange.gov.bc.ca/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              AddressChangeBC
-            </a>
-          </section>
-          <div className="buttons pt-4">
-            <Button button={cancelButton} onClick={back} />
-            <Button button={continueButton} onClick={applicationVerification} />
+            <br />
+            <div ref={jobRef}>
+              <SimpleForm simpleForm={positionInformation} />
+            </div>
+            <br />
+            <div className="smallHeading">
+              <span className="simpleForm_title">Addresses</span>
+            </div>
+            <div className="heading">
+              <span className="previousHeader">
+                Current Residential Address
+              </span>
+            </div>
+            <SimpleForm simpleForm={address} />
+            <p className="heading">
+              Is your current mailing address the same as your current
+              residential address?&nbsp;
+            </p>
+            <div className="heading">
+              <span>Yes&nbsp;</span>
+              <input
+                type="radio"
+                id="yes"
+                checked={sameAddress}
+                onChange={mailingAddress}
+                data-testid="sameAddress"
+              />
+              <span>&nbsp;No&nbsp;</span>
+              <input
+                type="radio"
+                id="no"
+                checked={!sameAddress}
+                onChange={mailingAddress}
+                data-testid="differentAddress"
+              />
+            </div>
+            <br />
+            <div className="heading">
+              <span className="previousHeader">Current Mailing Address</span>
+            </div>
+            <div ref={mailingAddressLine1Ref}>
+              <div ref={mailingCityRef}>
+                <div ref={mailingProvinceRef}>
+                  <div ref={mailingPostalCodeRef}>
+                    {sameAddress && <SimpleForm simpleForm={address} />}
+                    {!sameAddress && <SimpleForm simpleForm={mailing} />}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <section className="p-4">
+              Entering your mailing address in this application will not update
+              your BC Services Card Address. To update your BC Services Card
+              information you must contact&nbsp;
+              <a
+                href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Service BC
+              </a>
+              ,&nbsp;
+              <a
+                href="https://www.icbc.com/Pages/default.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ICBC
+              </a>
+              &nbsp;or&nbsp;
+              <a
+                href="https://www.addresschange.gov.bc.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AddressChangeBC
+              </a>
+            </section>
+            <div className="buttons pt-4">
+              <Button button={cancelButton} onClick={back} />
+              <Button
+                button={continueButton}
+                onClick={applicationVerification}
+              />
+            </div>
           </div>
         </div>
-        <div className="sidecard">
-          <SideCards type={"personalinformation"} />
-          <SideCards type={"collectionnotice"} />
+        <div style={toggleLoader.content}>
+          <div className="sidecard">
+            <SideCards type={"personalinformation"} />
+            <SideCards type={"collectionnotice"} />
+          </div>
         </div>
       </div>
       <Footer />
