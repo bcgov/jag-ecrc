@@ -5,7 +5,8 @@ import {
   render,
   fireEvent,
   getByRole,
-  getByText
+  getByText,
+  wait
 } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import axios from "axios";
@@ -59,6 +60,14 @@ describe("InformationReview Component", () => {
   const setShare = jest.fn();
   window.scrollTo = jest.fn();
 
+  const page = {
+    header,
+    applicant,
+    org,
+    setError,
+    setShare
+  };
+
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
     sessionStorage.setItem("uuid", "unique123");
@@ -76,29 +85,19 @@ describe("InformationReview Component", () => {
     });
   });
 
-  test("Matches the snapshot", () => {
-    const page = {
-      header,
-      applicant,
-      org,
-      setError,
-      setShare
-    };
+  test("Matches the snapshot", async () => {
     const infoReview = create(
       <MemoryRouter>
         <InformationReview page={page} />
       </MemoryRouter>
     );
+
+    await wait(() => {});
+
     expect(infoReview.toJSON()).toMatchSnapshot();
   });
 
   test("Validate checkbox", () => {
-    const page = {
-      header,
-      applicant,
-      setError,
-      org
-    };
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
@@ -113,13 +112,24 @@ describe("InformationReview Component", () => {
     expect(getByText(container, "Submit").disabled).toBeFalsy();
   });
 
+  test("Validate share button", async () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
+
+    await wait(() => {});
+
+    expect(getByText(container, "Share").disabled).toBeTruthy();
+
+    fireEvent.click(getByRole(container, "checkbox"));
+
+    expect(getByText(container, "Share").disabled).toBeFalsy();
+  });
+
   test("Validate Back button", () => {
-    const page = {
-      header,
-      applicant,
-      setError,
-      org
-    };
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
