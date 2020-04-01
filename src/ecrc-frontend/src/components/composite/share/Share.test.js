@@ -11,7 +11,7 @@ describe("Share Component", () => {
         expiration="2021-01-04"
         newOrg="New Org"
         clickShare={() => jest.fn()}
-        boxChecked={true}
+        boxChecked
       />
     );
     expect(displayShare.toJSON()).toMatchSnapshot();
