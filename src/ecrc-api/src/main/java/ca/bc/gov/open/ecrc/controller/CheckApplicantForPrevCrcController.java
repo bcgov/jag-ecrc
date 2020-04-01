@@ -30,7 +30,7 @@ public class CheckApplicantForPrevCrcController {
 
 	@GetMapping(value = "/checkApplicantForPrevCRC", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> checkApplicantForPrevCrc(@RequestBody RequestCheckApplicantForPrevCrc applicantInfo) {
-		logger.info("Check applicant for previous CRC request received {}", applicantInfo.getRequestGuid());
+		logger.info("Check applicant for previous CRC request received [{}]", applicantInfo.getRequestGuid());
 
 		try {
 			return ecrcServices.checkApplicantForPrevCrc(applicantInfo);
