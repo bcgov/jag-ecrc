@@ -18,7 +18,7 @@ storiesOf("SideCard", module)
         ...sideCard,
         heading: "Collection Notice",
         content: [
-          "The information requested on this form is collected by the Liquor and Cannabis Regulation Branch under Sections 26 (a) and (c) of the Freedom of Information and Protection of Privacy Act for the purpose of cannabis licensing, compliance and enforcement matters in accordance with the Cannabis"
+          "The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26 (c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to criminalrecords@gov.bc.ca; or by telephone at 1- 855-587-0185 (option 2)."
         ],
         type: "notice"
       }}

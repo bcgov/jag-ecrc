@@ -1,8 +1,9 @@
 /* eslint-disable new-cap */
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
-import { useLocation, Redirect } from "react-router-dom";
+import { useLocation, Redirect, useHistory } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import PropTypes from "prop-types";
@@ -28,13 +29,15 @@ export default function Success({
       serviceFeeAmount,
       serviceId
     },
-    saveApplicationInfo
+    saveApplicationInfo,
+    setError
   }
 }) {
   const [toHome, setToHome] = useState(false);
   const location = useLocation();
   const paymentInfo = queryString.parse(location.search);
   const uuid = sessionStorage.getItem("uuid");
+  const [toError, setToError] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,6 +50,56 @@ export default function Success({
       setToHome(true);
     }
   }, [paymentInfo.trnApproved, orgApplicantRelationship]);
+
+  const history = useHistory();
+  let isBackClicked = false;
+
+  history.listen((_, action) => {
+    if (action === "POP") {
+      // If a "POP" action event occurs, send user back to the originating location
+      history.go(1);
+
+      setTimeout(() => {
+        if (!isBackClicked) {
+          const wishToRedirect = window.confirm(
+            "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+          );
+
+          if (wishToRedirect) {
+            sessionStorage.clear();
+            history.push("/");
+          }
+
+          isBackClicked = true;
+        }
+      }, 100);
+    }
+  });
+
+  if (toError) {
+    return <Redirect to="/criminalrecordcheck/error" />;
+  }
+
+  const handleError = error => {
+    setToError(true);
+    if (error && error.response && error.response.status) {
+      if (
+        error.request &&
+        error.request.response &&
+        JSON.parse(error.request.response)
+      ) {
+        setError({
+          status: error.response.status,
+          message: JSON.parse(error.request.response).message
+        });
+      } else {
+        setError({
+          status: error.response.status,
+          message: error.response.data
+        });
+      }
+    }
+  };
 
   const receiptInfo = [
     { name: "Service Number", value: serviceId },
@@ -73,7 +126,7 @@ export default function Success({
     tableElements: receiptInfo,
     tableStyle: "white"
   };
-  // IF PaymentFailure: LogPaumentFailure
+  // IF PaymentFailure: LogPaymentFailure
   if (paymentInfo.trnApproved === "0") {
     const logFailure = {
       orgTicketNumber,
@@ -89,7 +142,9 @@ export default function Success({
     axios
       .post("/ecrc/private/logPaymentFailure", logFailure)
       .then(() => {})
-      .catch(() => {});
+      .catch(error => {
+        handleError(error);
+      });
   }
 
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
@@ -98,13 +153,15 @@ export default function Success({
   if (paymentInfo.trnApproved === "1") {
     const token = sessionStorage.getItem("jwt");
 
+    const paymentDateArr = paymentInfo.trnDate.split(" ")[0].split("/");
+
     const logSuccess = {
       orgTicketNumber,
       requestGuid: uuid,
       appl_Party_Id: partyId,
       service_Id: serviceId,
       cC_Authorization: paymentInfo.trnId,
-      payment_Date: paymentInfo.trnDate,
+      payment_Date: `${paymentDateArr[2]}/${paymentDateArr[0]}/${paymentDateArr[1]}`,
       payor_Type_Cd: "A",
       payment_Status_Cd: "A",
       session_Id: sessionId,
@@ -120,7 +177,9 @@ export default function Success({
         }
       })
       .then(() => {})
-      .catch(() => {});
+      .catch(error => {
+        handleError(error);
+      });
   }
 
   const printButton = {
@@ -136,7 +195,7 @@ export default function Success({
 
   const pdfButton = {
     label: "Download",
-    buttonStyle: "btn ecrc_go_btn",
+    buttonStyle: "btn ecrc_go_btn ml-5 mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -148,6 +207,7 @@ export default function Success({
   };
 
   const retryPayment = () => {
+    sessionStorage.setItem("validExit", true);
     const token = sessionStorage.getItem("jwt");
 
     axios
@@ -173,9 +233,9 @@ export default function Success({
         const createURL = {
           invoiceNumber: newInvoiceId,
           requestGuid: uuid,
-          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
           totalItemsAmount: serviceFeeAmount,
           serviceIdRef1: serviceId,
           partyIdRef2: partyId
@@ -188,7 +248,9 @@ export default function Success({
       .then(urlResponse => {
         window.location.href = urlResponse.data.paymentUrl;
       })
-      .catch(() => {});
+      .catch(error => {
+        handleError(error);
+      });
   };
 
   if (toHome) {
@@ -206,7 +268,6 @@ export default function Success({
             {paymentInfo.trnApproved === "0" && "Payment Declined"}
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
-          <br />
           {paymentInfo.trnApproved !== "0" && (
             <>
               <p>
@@ -214,10 +275,8 @@ export default function Success({
                 Records Review Program.
               </p>
               <p>
-                Your application will be reviewed shortly. Once complete, the
-                results will be provided directly to the requesting
-                organization. We will contact you if further information is
-                required.
+                Your application will be reviewed shortly. We will contact you
+                if further information is required.
               </p>
             </>
           )}
@@ -231,7 +290,7 @@ export default function Success({
                 <li>16 digit credit card number</li>
                 <li>3 digit CVD number</li>
                 <li>Non-expired date</li>
-                <li>Availale funds to transfer</li>
+                <li>Available funds to transfer</li>
               </ul>
               <p>
                 <button
@@ -245,13 +304,16 @@ export default function Success({
               </p>
             </>
           )}
-          <br />
           <div className="print">
             <Table table={receiptInfoTable} />
           </div>
-          <br />
-          <Button button={printButton} onClick={printAppInfo} />
-          <Button button={pdfButton} onClick={downloadPDF} />
+          <div
+            className="buttons pt-4"
+            style={{ justifyContent: "flex-start" }}
+          >
+            <Button button={printButton} onClick={printAppInfo} />
+            <Button button={pdfButton} onClick={downloadPDF} />
+          </div>
         </div>
       </div>
       <Footer />
@@ -280,6 +342,7 @@ Success.propTypes = {
       serviceFeeAmount: PropTypes.number,
       serviceId: PropTypes.number.isRequired
     }),
-    saveApplicationInfo: PropTypes.func.isRequired
+    saveApplicationInfo: PropTypes.func.isRequired,
+    setError: PropTypes.func.isRequired
   }).isRequired
 };

@@ -7,52 +7,35 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container-fluid"
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        <a
-          className="navbar-brand"
-          href="/"
-        >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
-          <a
-            className="navbar-brand nav-item nav-link"
-            href="/"
-          >
-            Criminal Record Check
-          </a>
-        </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
         />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Criminal Record Check
+        </div>
       </div>
     </nav>
   </header>
@@ -65,7 +48,6 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       <h1>
         Payment Declined
       </h1>
-      <br />
       <span>
         Unfortunately, your payment transaction was declined. Please ensure you have the correct credit card information:
       </span>
@@ -82,7 +64,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           Non-expired date
         </li>
         <li>
-          Availale funds to transfer
+          Available funds to transfer
         </li>
       </ul>
       <p>
@@ -95,7 +77,6 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -164,35 +145,43 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -218,6 +207,18 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -266,18 +267,6 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -292,52 +281,35 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container-fluid"
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        <a
-          className="navbar-brand"
-          href="/"
-        >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
-          <a
-            className="navbar-brand nav-item nav-link"
-            href="/"
-          >
-            Criminal Record Check
-          </a>
-        </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
         />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Criminal Record Check
+        </div>
       </div>
     </nav>
   </header>
@@ -350,14 +322,12 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       <h1>
         Payment Approved
       </h1>
-      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+        Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -434,35 +404,43 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -488,6 +466,18 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -536,18 +526,6 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
               Copyright
             </a>
           </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -562,52 +540,35 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       className="navbar navbar-expand-lg navbar-dark"
     >
       <div
-        className="container-fluid"
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        <a
-          className="navbar-brand"
-          href="/"
-        >
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-none d-md-block"
-            height="44"
-            src="/images/bcid-logo-rev-en.svg"
-            width="181"
-          />
-          <img
-            alt="B.C. Government Logo"
-            className="img-fluid d-md-none"
-            height="44"
-            src="/images/bcid-symbol-rev.svg"
-            width="64"
-          />
-        </a>
-        <div>
-          <a
-            className="navbar-brand nav-item nav-link"
-            href="/"
-          >
-            Criminal Record Check
-          </a>
-        </div>
-        <button
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          className="navbar-toggler"
-          data-target="#navbarNavAltMarkup"
-          data-toggle="collapse"
-          type="button"
-        >
-          <span
-            className="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNavAltMarkup"
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
         />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Criminal Record Check
+        </div>
       </div>
     </nav>
   </header>
@@ -620,14 +581,12 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       <h1>
         Application Submitted
       </h1>
-      <br />
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. Once complete, the results will be provided directly to the requesting organization. We will contact you if further information is required.
+        Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
-      <br />
       <div
         className="print"
       >
@@ -680,35 +639,43 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
           </tbody>
         </table>
       </div>
-      <br />
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="buttons pt-4"
+        style={
+          Object {
+            "justifyContent": "flex-start",
+          }
+        }
       >
-        Print
-        <div
-          className="loader-hide"
+        <button
+          className="btn ecrc_go_btn btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Print
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
-      <button
-        className="btn ecrc_go_btn btn"
-        onClick={[Function]}
-        type="submit"
-      >
-        Download
-        <div
-          className="loader-hide"
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn ml-5 mr-0 btn"
+          onClick={[Function]}
+          type="submit"
         >
+          Download
           <div
-            className="btn-loader"
-          />
-        </div>
-      </button>
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <footer
@@ -734,6 +701,18 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
         <ul
           className="navbar-nav text-right"
         >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
           <li
             className="nav-item m-1"
           >
@@ -780,18 +759,6 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
               target="_blank"
             >
               Copyright
-            </a>
-          </li>
-          <li
-            className="nav-item m-1"
-          >
-            <a
-              className="nav-link"
-              href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Contact Us
             </a>
           </li>
         </ul>

@@ -4,10 +4,7 @@ import { storiesOf } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
 
 import Consent from "./Consent";
-import {
-  generateJWTToken,
-  accessJWTToken
-} from "../../../modules/AuthenticationHelper";
+import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 const header = {
   name: "Criminal Record Check"
@@ -28,14 +25,17 @@ const applicant = {
   provinceNm: "British Columbia",
   postalCodeTxt: "V9V 9V9",
   countryNm: "Canada",
-  mailingAddressLine1: "456 Elsewhere",
-  mailingCity: "There",
-  mailingProvince: "Ontario",
-  mailingPostalCode: "V1V 1A1",
-  jobTitle: "Painter"
+  mailingLine1: "456 Elsewhere",
+  mailingCityNm: "There",
+  mailingProvinceNm: "Ontario",
+  mailingPostalCodeTxt: "V1V 1A1",
+  jobTitle: "Painter",
+  organizationFacility: "PBS",
+  emailType: "Home"
 };
 
 const org = {
+  orgNm: "Org Name",
   orgApplicantRelationship: "EMPLOYEE",
   orgTicketNumber: "crce",
   defaultScheduleTypeCd: "WBSD",
@@ -62,19 +62,16 @@ const page = {
 sessionStorage.setItem("validator", "secret");
 sessionStorage.setItem("uuid", "unique123");
 
-const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
 const newPayload = {
-  ...currentPayload,
   actionsPerformed: [
     "infoReview",
     "appForm",
     "tou",
     "bcscRedirect",
     "orgVerification",
-    "consent",
-    "userConfirmation"
+    "consent"
   ],
-  authorities: ["Authorized"]
+  authorities: ["Authorized", "ROLE"]
 };
 generateJWTToken(newPayload);
 

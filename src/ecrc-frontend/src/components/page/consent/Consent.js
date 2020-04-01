@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
@@ -36,16 +37,20 @@ export default function Consent({
       birthDt,
       genderTxt,
       countryNm,
-      mailingAddressLine1,
-      mailingCity,
-      mailingProvince,
-      mailingPostalCode,
+      mailingLine1,
+      mailingCityNm,
+      mailingProvinceNm,
+      mailingPostalCodeTxt,
       birthPlace,
       driversLicNo,
+      emailAddress,
+      emailType,
       phoneNumber,
-      jobTitle
+      jobTitle,
+      organizationFacility
     },
     org: {
+      orgNm,
       orgApplicantRelationship,
       orgTicketNumber,
       defaultScheduleTypeCd,
@@ -60,12 +65,13 @@ export default function Consent({
 }) {
   const history = useHistory();
   const [toAppHome, setToAppHome] = useState(false);
-  const [toHome, setToHome] = useState(false);
+  const [toHostHome, setToHostHome] = useState(false);
   const [loading, setLoading] = useState(false);
   const [toError, setToError] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [thirdBoxChecked, setThirdBoxChecked] = useState(false);
+  const [fourthBoxChecked, setFourthBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
 
   useEffect(() => {
@@ -78,12 +84,17 @@ export default function Consent({
   }, []);
 
   useEffect(() => {
-    if (firstBoxChecked && secondBoxChecked && thirdBoxChecked) {
+    if (
+      firstBoxChecked &&
+      secondBoxChecked &&
+      thirdBoxChecked &&
+      fourthBoxChecked
+    ) {
       setContinueBtnEnabled(true);
     } else {
       setContinueBtnEnabled(false);
     }
-  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked]);
+  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked, fourthBoxChecked]);
 
   const cancelButton = {
     label: "Cancel and Exit",
@@ -99,6 +110,17 @@ export default function Consent({
     type: "submit",
     disabled: !continueBtnEnabled || loading,
     loader: loading
+  };
+
+  const cancelClick = () => {
+    const wishToRedirect = window.confirm(
+      "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+    );
+
+    if (wishToRedirect) {
+      sessionStorage.clear();
+      setToHostHome(true);
+    }
   };
 
   const toSuccess = () => {
@@ -122,7 +144,6 @@ export default function Consent({
         error.request.response &&
         JSON.parse(error.request.response)
       ) {
-        setToError(true);
         setError({
           status: error.response.status,
           message: JSON.parse(error.request.response).message
@@ -139,6 +160,7 @@ export default function Consent({
 
   const confirm = () => {
     setLoading(true);
+    sessionStorage.setItem("validExit", true);
 
     if (!isAuthorized()) {
       setError({
@@ -171,12 +193,14 @@ export default function Consent({
       alias3SecondNm,
       alias3SurnameNm,
       phoneNumber,
-      addressLine1: mailingAddressLine1,
-      cityNm: mailingCity,
-      provinceNm: mailingProvince,
+      addressLine1: mailingLine1,
+      cityNm: mailingCityNm,
+      provinceNm: mailingProvinceNm,
       countryNm,
-      postalCodeTxt: mailingPostalCode,
-      driversLicNo
+      postalCodeTxt: mailingPostalCodeTxt,
+      driversLicNo,
+      emailAddress,
+      emailType
     };
 
     let partyId;
@@ -195,8 +219,8 @@ export default function Consent({
       appl_Party_Id: null,
       org_Appl_To_Pay: "A",
       applicant_Posn: jobTitle,
-      child_Care_Fac_Nm: "child_Care_Fac_Nm",
-      governing_Body_Nm: "governing_Body_Nm",
+      child_Care_Fac_Nm: organizationFacility,
+      governing_Body_Nm: orgNm,
       session_Id: null,
       invoice_Id: null,
       auth_Release_EIV_Vendor_YN: "Y",
@@ -284,9 +308,9 @@ export default function Consent({
           const createURL = {
             invoiceNumber: invoiceId,
             requestGuid: uuid,
-            approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-            declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-            errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+            approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+            declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+            errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
             totalItemsAmount: serviceFeeAmount,
             serviceIdRef1: serviceId,
             partyIdRef2: partyId
@@ -371,7 +395,7 @@ export default function Consent({
     }
   };
 
-  if (toHome) {
+  if (toHostHome) {
     return <Redirect to="/hosthome" />;
   }
 
@@ -404,14 +428,10 @@ export default function Consent({
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
+            checkFourthBox={() => setFourthBoxChecked(!fourthBoxChecked)}
           />
-          <div className="buttons pt-5">
-            <Button
-              button={cancelButton}
-              onClick={() => {
-                setToHome(true);
-              }}
-            />
+          <div className="buttons pt-4">
+            <Button button={cancelButton} onClick={cancelClick} />
             <Button button={continueButton} onClick={confirm} />
           </div>
         </div>
@@ -447,16 +467,20 @@ Consent.propTypes = {
       birthDt: PropTypes.string.isRequired,
       genderTxt: PropTypes.string.isRequired,
       countryNm: PropTypes.string.isRequired,
-      mailingAddressLine1: PropTypes.string.isRequired,
-      mailingCity: PropTypes.string.isRequired,
-      mailingProvince: PropTypes.string.isRequired,
-      mailingPostalCode: PropTypes.string.isRequired,
+      mailingLine1: PropTypes.string.isRequired,
+      mailingCityNm: PropTypes.string.isRequired,
+      mailingProvinceNm: PropTypes.string.isRequired,
+      mailingPostalCodeTxt: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
+      emailAddress: PropTypes.string.isRequired,
+      emailType: PropTypes.string.isRequired,
       phoneNumber: PropTypes.string.isRequired,
-      jobTitle: PropTypes.string.isRequired
+      jobTitle: PropTypes.string.isRequired,
+      organizationFacility: PropTypes.string.isRequired
     }),
     org: PropTypes.shape({
+      orgNm: PropTypes.string.isRequired,
       orgApplicantRelationship: PropTypes.string.isRequired,
       orgTicketNumber: PropTypes.string.isRequired,
       defaultScheduleTypeCd: PropTypes.string.isRequired,

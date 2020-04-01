@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable no-alert */
 import { Redirect } from "react-router-dom";
 
 import React, { useState, useLayoutEffect } from "react";
@@ -40,7 +41,14 @@ export default function TermsOfUse({
   };
 
   const onCancelClicked = () => {
-    setToHostHome(true);
+    const wishToRedirect = window.confirm(
+      "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+    );
+
+    if (wishToRedirect) {
+      sessionStorage.clear();
+      setToHostHome(true);
+    }
   };
 
   if (toHostHome) {
@@ -727,7 +735,7 @@ export default function TermsOfUse({
           </span>
         </label>
       </section>
-      <section className="buttons pt-5">
+      <section className="buttons pt-4">
         <Button button={cancelButton} onClick={onCancelClicked} />
         <Button button={button} onClick={onContinueClick} />
       </section>

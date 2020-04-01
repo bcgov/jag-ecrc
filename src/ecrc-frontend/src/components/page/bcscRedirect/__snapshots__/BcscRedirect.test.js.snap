@@ -8,52 +8,31 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
         class="navbar navbar-expand-lg navbar-dark"
       >
         <div
-          class="container-fluid"
+          class="container-fluid navbar-brand pointer"
+          role="button"
+          tabindex="0"
         >
-          <a
-            class="navbar-brand"
-            href="/"
-          >
-            <img
-              alt="B.C. Government Logo"
-              class="img-fluid d-none d-md-block"
-              height="44"
-              src="/images/bcid-logo-rev-en.svg"
-              width="181"
-            />
-            <img
-              alt="B.C. Government Logo"
-              class="img-fluid d-md-none"
-              height="44"
-              src="/images/bcid-symbol-rev.svg"
-              width="64"
-            />
-          </a>
-          <div>
-            <a
-              class="navbar-brand nav-item nav-link"
-              href="/"
-            >
-              Criminal Record Check
-            </a>
-          </div>
-          <button
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            class="navbar-toggler"
-            data-target="#navbarNavAltMarkup"
-            data-toggle="collapse"
-            type="button"
-          >
-            <span
-              class="navbar-toggler-icon"
-            />
-          </button>
-          <div
-            class="collapse navbar-collapse"
-            id="navbarNavAltMarkup"
+          <img
+            alt="B.C. Government Logo"
+            class="img-fluid d-none d-md-block"
+            height="44"
+            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+            width="181"
           />
+          <img
+            alt="B.C. Government Logo"
+            class="img-fluid d-md-none"
+            height="44"
+            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+            width="64"
+          />
+          <div
+            class="pointer navbar-brand nav-item nav-link"
+            role="button"
+            tabindex="0"
+          >
+            Criminal Record Check
+          </div>
         </div>
       </nav>
     </header>
@@ -66,17 +45,19 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
         <h1>
           Apply for a Criminal Record Check
         </h1>
-        <br />
         <p>
           To apply for a criminal record check online, you must use your 
           <a
-            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
             rel="noopener noreferrer"
             target="_blank"
           >
-            BC Services Card
+            BC Services Card.
           </a>
-           Account. Only cards 
+           
+        </p>
+        <p>
+          Only cards 
           <b>
             with a photo
           </b>
@@ -93,7 +74,6 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
         <p>
           Please select an option below:
         </p>
-        <br />
         <div
           class="option"
         >
@@ -101,18 +81,12 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
             class="row"
           >
             <div
-              class="col-lg-6 col-md-12 "
-              style="margin-bottom: 10px;"
+              class="col-sm-8 mt-lg-2 mb-2"
             >
-              I have a BC Services Card 
-              <span
-                class="underlineText"
-              >
-                with a photo
-              </span>
+              I have a photo BC Services Card
             </div>
             <div
-              class="col-lg-6 col-md-4 alignRight"
+              class="col-sm-4"
             >
               <button
                 class="btn ecrc_btn_login_bcsc btn"
@@ -131,7 +105,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
           </div>
         </div>
         <div
-          style="margin-top: 40px;"
+          class="mt-5"
         >
           <a
             href="/criminalrecordcheck/transition"
@@ -203,7 +177,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                       </div>
                       <div>
                         <a
-                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -218,11 +192,11 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                         class="side-card-text"
                       >
                         <br />
-                        Eligibility for a BC Services Card is the same as for the Medical Services Plan(MSP).
+                        Eligibility for a BC Services Card is the same as for the Medical Services Plan (MSP).
                       </div>
                       <div>
                         <a
-                          href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible"
+                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -270,6 +244,18 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
             >
               <a
                 class="nav-link"
+                href="https://www2.gov.bc.ca"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                BC Government
+              </a>
+            </li>
+            <li
+              class="nav-item m-1"
+            >
+              <a
+                class="nav-link"
                 href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -311,18 +297,6 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                 target="_blank"
               >
                 Copyright
-              </a>
-            </li>
-            <li
-              class="nav-item m-1"
-            >
-              <a
-                class="nav-link"
-                href="https://www2.gov.bc.ca/gov/content/home/contact-us"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Contact Us
               </a>
             </li>
           </ul>

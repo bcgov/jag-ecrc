@@ -9,7 +9,6 @@ import Consent from "./components/page/consent/Consent";
 import BcscRedirect from "./components/page/bcscRedirect/BcscRedirect";
 import Success from "./components/page/success/Success";
 import InformationReview from "./components/page/informationreview/InformationReview";
-import UserConfirmation from "./components/page/userConfirmation/UserConfirmation";
 import Error from "./components/page/error/Error";
 
 export default function App() {
@@ -24,6 +23,8 @@ export default function App() {
   );
 
   const [error, setError] = useState({});
+  const [provinces, setProvinces] = useState([]);
+  const [sameAddress, setSameAddress] = useState(true);
 
   const [transitionReason, setTransitionReason] = useState("bcsc");
 
@@ -47,32 +48,39 @@ export default function App() {
     <div>
       <Switch>
         <Redirect exact from="/" to="/criminalrecordcheck" />
-        <Route exact path="/(ecrc|criminalrecordcheck)">
+        <Route exact path="/criminalrecordcheck">
           <OrgValidation
             page={{ header, setOrg, setTransitionReason, setError }}
           />
         </Route>
-        <Route path="/(ecrc/orgverification|criminalrecordcheck/orgverification)">
+        <Route path="/criminalrecordcheck/orgverification">
           <OrgVerification page={{ header, org, setError }} />
         </Route>
-        <Route path="/(ecrc/applicationform|criminalrecordcheck/applicationform)">
+        <Route path="/criminalrecordcheck/applicationform">
           <ApplicationForm
-            page={{ header, org, applicant, setApplicant, setError }}
+            page={{
+              header,
+              org,
+              applicant,
+              setApplicant,
+              setError,
+              provinces,
+              setProvinces,
+              sameAddress,
+              setSameAddress
+            }}
           />
         </Route>
-        <Route path="/(ecrc/transition|criminalrecordcheck/transition)">
+        <Route path="/criminalrecordcheck/transition">
           <Transition page={{ header, transitionReason }} />
         </Route>
-        <Route path="/(ecrc/termsofuse|criminalrecordcheck/termsofuse)">
+        <Route path="/criminalrecordcheck/termsofuse">
           <TOU page={{ header, setError }} />
         </Route>
-        <Route path="/(ecrc/consent|criminalrecordcheck/consent)">
-          <UserConfirmation page={{ header, setApplicant, setError }} />
-        </Route>
-        <Route path="/(ecrc/bcscredirect|criminalrecordcheck/bcscredirect)">
+        <Route path="/criminalrecordcheck/bcscredirect">
           <BcscRedirect page={{ header, saveOrg, setError }} />
         </Route>
-        <Route path="/(ecrc/success|criminalrecordcheck/success)">
+        <Route path="/criminalrecordcheck/success">
           <Success
             page={{
               header,
@@ -84,7 +92,7 @@ export default function App() {
             }}
           />
         </Route>
-        <Route path="/(ecrc/informationreview|criminalrecordcheck/informationreview)">
+        <Route path="/criminalrecordcheck/informationreview">
           <InformationReview
             page={{
               header,
@@ -94,7 +102,7 @@ export default function App() {
             }}
           />
         </Route>
-        <Route path="/(ecrc/userconfirmation|criminalrecordcheck/userconfirmation)">
+        <Route path="/criminalrecordcheck/consent">
           <Consent
             page={{
               header,
@@ -108,7 +116,7 @@ export default function App() {
             }}
           />
         </Route>
-        <Route path="/(ecrc/error|criminalrecordcheck/error)">
+        <Route path="/criminalrecordcheck/error">
           <Error page={{ header, error }} />
         </Route>
         <Route

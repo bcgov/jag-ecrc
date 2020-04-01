@@ -52,10 +52,14 @@ describe("Consent Page Component", () => {
     mailingCity: "There",
     mailingProvince: "Ontario",
     mailingPostalCode: "V1V 1A1",
-    jobTitle: "Painter"
+    jobTitle: "Painter",
+    organizationFacility: "PBS",
+    emailAddress: "bob.ross@example.com",
+    emailType: "Home"
   };
 
   const org = {
+    orgNm: "Public Broadcast Network",
     orgApplicantRelationship: "EMPLOYEE",
     orgTicketNumber: "crce",
     defaultScheduleTypeCd: "WBSD",
@@ -104,6 +108,7 @@ describe("Consent Page Component", () => {
       </Router>
     );
 
+    window.confirm = () => true;
     fireEvent.click(getByText(container, "Cancel and Exit"));
     expect(history.location.pathname).toEqual("/hosthome");
   });
@@ -158,6 +163,7 @@ describe("Consent Page Component", () => {
     fireEvent.click(checkbox[0]);
     fireEvent.click(checkbox[1]);
     fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
@@ -216,6 +222,7 @@ describe("Consent Page Component", () => {
     fireEvent.click(checkbox[0]);
     fireEvent.click(checkbox[1]);
     fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {

@@ -61,6 +61,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
       setToHome(true);
       return;
     }
+    sessionStorage.setItem("validExit", true);
     saveOrg();
     // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");
@@ -80,20 +81,21 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
       <div className="page">
         <div className="content col-md-8">
           <h1>Apply for a Criminal Record Check</h1>
-          <br />
           <p>
             To apply for a criminal record check online, you must use your{" "}
             <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
+              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
               target="_blank"
               rel="noopener noreferrer"
             >
-              BC Services Card
+              BC Services Card.
             </a>{" "}
-            Account. Only cards <b>with a photo</b> are accepted. If it&apos;s
-            your first time using your BC Services Card to access an online
-            service, you need to set up your account for use online. Completing
-            a one-time security check to{" "}
+          </p>
+          <p>
+            Only cards <b>with a photo</b> are accepted. If it&apos;s your first
+            time using your BC Services Card to access an online service, you
+            need to set up your account for use online. Completing a one-time
+            security check to{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
               target="_blank"
@@ -105,23 +107,18 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
           </p>
 
           <p>Please select an option below:</p>
-          <br />
           <div className="option">
             <div className="row">
-              <div
-                className="col-lg-6 col-md-12 "
-                style={{ marginBottom: "10px" }}
-              >
-                I have a BC Services Card{" "}
-                <span className="underlineText">with a photo</span>
+              <div className="col-sm-8 mt-lg-2 mb-2">
+                I have a photo BC Services Card
               </div>
-              <div className="col-lg-6 col-md-4 alignRight">
+              <div className="col-sm-4">
                 <Button button={loginBtn} onClick={onLoginClick} />
               </div>
             </div>
           </div>
 
-          <div style={{ marginTop: "40px" }}>
+          <div className="mt-5">
             <a href="/criminalrecordcheck/transition">
               I do not have a BC Services Card, or I have non-photo BC Services
               Card

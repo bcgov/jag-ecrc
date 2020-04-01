@@ -25,8 +25,7 @@ export default function Error({ page: { header, error } }) {
   if (!error) {
     errorContent = (
       <div>
-        <h1>Service is currently unavailable.</h1>
-        <br />
+        <h1>Service is currently unavailable</h1>
         <p>Please try again later.</p>
       </div>
     );
@@ -34,8 +33,7 @@ export default function Error({ page: { header, error } }) {
     if (error.message === "BCSC login failed") {
       errorContent = (
         <div>
-          <h1>Login failed.</h1>
-          <br />
+          <h1>Login failed</h1>
           <p>
             Unable to login using your BCSC account, please try again later.
           </p>
@@ -44,8 +42,7 @@ export default function Error({ page: { header, error } }) {
     } else {
       errorContent = (
         <div>
-          <h1>Unauthorized Entry</h1>
-          <br />
+          <h1>Unauthorized entry</h1>
           <p>
             Unauthorized user entry, please return to the home page and begin
             your session again.
@@ -56,16 +53,14 @@ export default function Error({ page: { header, error } }) {
   } else if (error.status === 590) {
     errorContent = (
       <div>
-        <h1>Your session has expired.</h1>
-        <br />
+        <h1>Your session has expired</h1>
         <p>Please return to the home page and begin your session again.</p>
       </div>
     );
   } else {
     errorContent = (
       <div>
-        <h1>An unknown error has occurred.</h1>
-        <br />
+        <h1>An unknown error has occurred</h1>
         <p>
           The error description is below. If this error persists, please try
           again later.
@@ -84,7 +79,13 @@ export default function Error({ page: { header, error } }) {
         <div className="content col-md-8">
           {errorContent}
           <div className="buttons">
-            <Button button={homeButton} onClick={() => setToHome(true)} />
+            <Button
+              button={homeButton}
+              onClick={() => {
+                sessionStorage.clear();
+                setToHome(true);
+              }}
+            />
           </div>
         </div>
       </div>

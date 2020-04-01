@@ -32,12 +32,13 @@ class RequestCreateApplicantTest {
 			+ "&Alias3_Second_Nm=alias3SecondNm"
 			+ "&Phone_Number=phoneNumber"
 			+ "&Address_Line1=addressLine1"
-			+ "&Address_Line2=addressLine2"
 			+ "&City_Nm=cityNm"
 			+ "&Province_Nm=provinceNm"
 			+ "&Country_Nm=countryNm"
 			+ "&Postal_Code_Txt=postalCodeTxt"
-			+ "&Drivers_Lic_No=driversLicNo";
+			+ "&Drivers_Lic_No=driversLicNo"
+			+ "&Email_Address=emailAddress"
+			+ "&Email_Type=emailType";
 
 	@DisplayName("Success - createApplicant request queryString")
 	@Test
@@ -68,6 +69,8 @@ class RequestCreateApplicantTest {
 		requestCreateApplicant.setPhoneNumber("phoneNumber");
 		requestCreateApplicant.setPostalCodeTxt("postalCodeTxt");
 		requestCreateApplicant.setProvinceNm("provinceNm");
+		requestCreateApplicant.setEmailAddress("emailAddress");
+		requestCreateApplicant.setEmailType("emailType");
 
 		Assertions.assertEquals("addressLine1", requestCreateApplicant.getAddressLine1());
 		Assertions.assertEquals("addressLine2", requestCreateApplicant.getAddressLine2());
@@ -94,6 +97,8 @@ class RequestCreateApplicantTest {
 		Assertions.assertEquals("phoneNumber", requestCreateApplicant.getPhoneNumber());
 		Assertions.assertEquals("postalCodeTxt", requestCreateApplicant.getPostalCodeTxt());
 		Assertions.assertEquals("provinceNm", requestCreateApplicant.getProvinceNm());
+		Assertions.assertEquals("emailAddress", requestCreateApplicant.getEmailAddress());
+		Assertions.assertEquals("emailType", requestCreateApplicant.getEmailType());
 
 		Assertions.assertEquals(expectedQueryString, requestCreateApplicant.toQueryString());
 	}

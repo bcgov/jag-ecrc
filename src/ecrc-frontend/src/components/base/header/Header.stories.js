@@ -1,5 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { Router } from "react-router-dom";
+import { createMemoryHistory } from "history";
 
 import Header from "./Header";
 
@@ -12,7 +14,17 @@ const header = {
   name: "eCrc"
 };
 
+const history = createMemoryHistory();
+
 storiesOf("Header", module)
-  .add("Default", () => <Header header={header} />)
+  .add("Default", () => (
+    <Router history={history}>
+      <Header header={header} />
+    </Router>
+  ))
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
-  .add("Mobile", () => <Header header={header} />);
+  .add("Mobile", () => (
+    <Router history={history}>
+      <Header header={header} />
+    </Router>
+  ));

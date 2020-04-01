@@ -38,10 +38,10 @@ export default function InformationReview({
       provinceNm,
       postalCodeTxt,
       countryNm,
-      mailingAddressLine1,
-      mailingCity,
-      mailingProvince,
-      mailingPostalCode,
+      mailingLine1,
+      mailingCityNm,
+      mailingProvinceNm,
+      mailingPostalCodeTxt,
       birthPlace,
       driversLicNo,
       phoneNumber,
@@ -227,19 +227,19 @@ export default function InformationReview({
   const mailingAddressElement = [
     {
       name: "Mailing Address",
-      value: mailingAddressLine1
+      value: mailingLine1
     },
     {
       name: "City",
-      value: mailingCity
+      value: mailingCityNm
     },
     {
       name: "Province",
-      value: mailingProvince
+      value: mailingProvinceNm
     },
     {
       name: "Postal Code",
-      value: mailingPostalCode
+      value: mailingPostalCodeTxt
     },
     {
       name: "Country",
@@ -288,7 +288,7 @@ export default function InformationReview({
     };
     generateJWTToken(newPayload);
 
-    history.push("/criminalrecordcheck/userconfirmation");
+    history.push("/criminalrecordcheck/consent");
   };
 
   if (toHome) {
@@ -334,11 +334,14 @@ export default function InformationReview({
               />
               <span className="declaration-cb">
                 I certify that, to the best of my knowledge, the information I
-                have provided on my application is complete, honest and
-                accurate. Any false statements or deliberate omissions on a
-                consent form filed with the CRRP may result in the inability of
-                the CRRP to accurately determine whether the applicant poses a
-                risk to children or vulnerable adults.
+                have provided on my application and will provide as necessary is
+                complete, honest and accurate. I understand that a false
+                statement or omission of facts herein may result in the
+                inability of the CRRP to accurately determine whether the
+                applicant poses a risk to children or vulnerable adults.
+              </span>
+              <span id="asterisk" className="mandatory">
+                *
               </span>
             </label>
           </section>
@@ -381,10 +384,10 @@ InformationReview.propTypes = {
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
       countryNm: PropTypes.string.isRequired,
-      mailingAddressLine1: PropTypes.string.isRequired,
-      mailingCity: PropTypes.string.isRequired,
-      mailingProvince: PropTypes.string.isRequired,
-      mailingPostalCode: PropTypes.string.isRequired,
+      mailingLine1: PropTypes.string.isRequired,
+      mailingCityNm: PropTypes.string.isRequired,
+      mailingProvinceNm: PropTypes.string.isRequired,
+      mailingPostalCodeTxt: PropTypes.string.isRequired,
       birthPlace: PropTypes.string.isRequired,
       driversLicNo: PropTypes.string,
       phoneNumber: PropTypes.string.isRequired,

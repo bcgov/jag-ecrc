@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import static org.mockito.ArgumentMatchers.any;
 
 public class EcrcServicesImplGetServiceFeeAmountTest {
+    private static final String GUID = "GUID";
     private final String result = "{\"serviceFeeAmount\":28,\"message\":\"Success\",\"responseCode\":0}";
     private ResponseEntity<String> serviceResult;
     @InjectMocks
@@ -36,8 +37,8 @@ public class EcrcServicesImplGetServiceFeeAmountTest {
     @DisplayName("Success - ecrcService get ServiceFeeAmount")
     @Test
     public void testGetServiceFeeAmount() throws EcrcServiceException {
-        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any())).thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
-        serviceResult = ecrcServices.getServiceFeeAmount("CRCE","SCHED", "SCOPE");
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any())).thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
+        serviceResult = ecrcServices.getServiceFeeAmount("CRCE","SCHED", "SCOPE", GUID);
         Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());
         Assertions.assertEquals(result, serviceResult.getBody());
     }

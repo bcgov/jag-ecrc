@@ -15,7 +15,6 @@ export default function OrgValidationText({
   return (
     <div>
       <h1>Criminal Record Check</h1>
-      <br />
       <p>
         In British Columbia, if you work or volunteer with, or have the
         potential for unsupervised access to children and/or vulnerable adults,
@@ -26,7 +25,7 @@ export default function OrgValidationText({
           target="_blank"
           rel="noopener noreferrer"
         >
-          Criminal Records Review Act (CRRA).
+          Criminal Records Review Act.
         </a>
       </p>
       <div>
@@ -37,7 +36,7 @@ export default function OrgValidationText({
             To submit an online request for a criminal record check, you must:
           </p>
           <ul className="bodyList">
-            <li>{"Be at least 12 years of age as of today's date"}</li>
+            <li>{"Be at least 12 years of age as of today's date."}</li>
             <li>
               Have your identity verified by using your{" "}
               <a
@@ -45,13 +44,13 @@ export default function OrgValidationText({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                BC Services Card
+                BC Services Card.
               </a>{" "}
-              (BCSC). The BCSC provides secure access to provincial government
-              online services. If you don&apos;t have a BCSC, an alternative
-              option may be available for you.
+              The BC Services Card provides secure access to government online
+              services. If you don&apos;t have a BC Services Card, an
+              alternative option is available.
             </li>
-            <li>Have an access code provided by your organization</li>
+            <li>Have an access code provided by your organization.</li>
           </ul>
         </div>
 
@@ -77,11 +76,15 @@ export default function OrgValidationText({
         </div>
         <br />
 
-        <div>
+        <div className="mt-4">
           <h3>I need more information</h3>
           <ul className="bodyList">
             <li>
-              <a href="volunteer" target="_blank">
+              <a
+                href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {"I'm an employee or a volunteer"}
               </a>{" "}
               and I want to know{" "}
@@ -99,8 +102,12 @@ export default function OrgValidationText({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                I don&apos;t have a BC Services Card
-              </a>
+                I don&apos;t have a BC Services Card.
+              </a>{" "}
+              Applicants without a BC Services Card who haven’t lived in B.C.
+              for at least six months or who live outside the province should
+              contact your organization and inquire for an alternative option to
+              submit their criminal record check request
             </li>
             <li>
               <a
@@ -151,7 +158,6 @@ export default function OrgValidationText({
             or by phone at 1-855-587-0185 (Option 2).
           </p>
         </div>
-        <br />
       </div>
     </div>
   );

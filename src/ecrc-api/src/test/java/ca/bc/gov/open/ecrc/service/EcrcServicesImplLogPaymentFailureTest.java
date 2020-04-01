@@ -50,7 +50,7 @@ class EcrcServicesImplLogPaymentFailureTest {
 	@DisplayName("Success - ecrcService logPaymentFailure")
 	@Test
 	public void testCreateApplicantResultSuccess() throws NotFoundException, EcrcServiceException {
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
 				.thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
 		serviceResult = ecrcServices.logPaymentFailure(new RequestLogPaymentFailure());
 		Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());
