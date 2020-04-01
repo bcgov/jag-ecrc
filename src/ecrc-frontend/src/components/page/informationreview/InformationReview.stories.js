@@ -70,11 +70,19 @@ const newPayload = {
 };
 generateJWTToken(newPayload);
 
-function LoadData(props) {
-  if (process.env.REACT_APP_API_BASE_URL) {
-    axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
-  }
+const FailData = props => {
+  const mock = new MockAdapter(axios);
+  const API_REQUEST = "/ecrc/private/checkShare?requestGuid=unique123";
 
+  mock.onGet(API_REQUEST).reply(404, { message: "No share available." });
+
+  sessionStorage.setItem("validator", "secret");
+  sessionStorage.setItem("uuid", "unique123");
+
+  return props.children({ page });
+};
+
+const LoadData = props => {
   const mock = new MockAdapter(axios);
   const API_REQUEST = "/ecrc/private/checkShare?requestGuid=unique123";
 
@@ -87,27 +95,7 @@ function LoadData(props) {
   sessionStorage.setItem("uuid", "unique123");
 
   return props.children({ page });
-}
-
-export const NonScheduleD = () => (
-  <MemoryRouter>
-    <InformationReview page={page} />
-  </MemoryRouter>
-);
-
-export const ScheduleD = () => (
-  <MemoryRouter>
-    <InformationReview
-      page={{
-        ...page,
-        applicant: {
-          ...applicant,
-          organizationFacility: "PBS WIPB"
-        }
-      }}
-    />
-  </MemoryRouter>
-);
+};
 
 storiesOf("Information Review", module)
   .add("Display Share Option", () => (
@@ -120,39 +108,64 @@ storiesOf("Information Review", module)
     </LoadData>
   ))
   .add("NonSchedule D Default", () => (
-    <MemoryRouter>
-      <InformationReview page={page} />
-    </MemoryRouter>
+    <FailData props={page}>
+      {data => (
+        <MemoryRouter>
+          <InformationReview page={data.page} />
+        </MemoryRouter>
+      )}
+    </FailData>
   ))
   .add("Schedule D Default", () => (
-    <MemoryRouter>
-      <InformationReview
-        page={{
-          ...page,
-          applicant: {
-            ...applicant,
-            organizationFacility: "PBS WIPB"
-          }
-        }}
-      />
-    </MemoryRouter>
+    <FailData props={page}>
+      {data => (
+        <MemoryRouter>
+          <InformationReview
+            page={{
+              ...data.page,
+              applicant: {
+                ...applicant,
+                organizationFacility: "PBS WIPB"
+              }
+            }}
+          />
+        </MemoryRouter>
+      )}
+    </FailData>
   ))
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
   .add("NonSchedule D Mobile", () => (
-    <MemoryRouter>
-      <InformationReview page={page} />
-    </MemoryRouter>
+    <FailData props={page}>
+      {data => (
+        <MemoryRouter>
+          <InformationReview page={data.page} />
+        </MemoryRouter>
+      )}
+    </FailData>
   ))
   .add("Schedule D Mobile", () => (
-    <MemoryRouter>
-      <InformationReview
-        page={{
-          ...page,
-          applicant: {
-            ...applicant,
-            organizationFacility: "PBS WIPB"
-          }
-        }}
-      />
-    </MemoryRouter>
+    <FailData props={page}>
+      {data => (
+        <MemoryRouter>
+          <InformationReview
+            page={{
+              ...data.page,
+              applicant: {
+                ...applicant,
+                organizationFacility: "PBS WIPB"
+              }
+            }}
+          />
+        </MemoryRouter>
+      )}
+    </FailData>
+  ))
+  .add("Display Share Mobile", () => (
+    <LoadData props={page}>
+      {data => (
+        <MemoryRouter>
+          <InformationReview page={data.page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
   ));
