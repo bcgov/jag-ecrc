@@ -62,7 +62,7 @@ export default function Success({
       setTimeout(() => {
         if (!isBackClicked) {
           const wishToRedirect = window.confirm(
-            "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+            "Are you sure you would like to leave this page?"
           );
 
           if (wishToRedirect) {
