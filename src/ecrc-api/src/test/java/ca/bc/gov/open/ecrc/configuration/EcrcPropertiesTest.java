@@ -47,6 +47,7 @@ class EcrcPropertiesTest {
 		Assert.assertEquals("wellknown", ecrcProperties.getOauthWellKnown());
 		
 		Assert.assertEquals(3000, ecrcProperties.getOauthJwtExpiry());
+		Assert.assertEquals(60000, ecrcProperties.getOauthBCSCTimeout());
 	}
 
 }
