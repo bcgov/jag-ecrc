@@ -25,9 +25,11 @@ export default function Header({ header: { name } }) {
       return true;
     }
 
-    const wishToRedirect = window.confirm(
-      "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
-    );
+    const warningMessage =
+      history.location.pathname === "/criminalrecordcheck/success"
+        ? "Are you sure you would like to leave this page?"
+        : "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?";
+    const wishToRedirect = window.confirm(warningMessage);
 
     if (wishToRedirect) {
       sessionStorage.clear();
