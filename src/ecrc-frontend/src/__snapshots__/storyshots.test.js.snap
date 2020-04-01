@@ -2778,7 +2778,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
         <a
           href="/criminalrecordcheck/transition"
         >
-          I do not have a BC Services Card, or I have non-photo BC Services Card
+          I do not have a BC Services Card, or I have a non-photo BC Services Card
         </a>
         .
       </div>
@@ -3107,7 +3107,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
         <a
           href="/criminalrecordcheck/transition"
         >
-          I do not have a BC Services Card, or I have non-photo BC Services Card
+          I do not have a BC Services Card, or I have a non-photo BC Services Card
         </a>
         .
       </div>

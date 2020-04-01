@@ -120,8 +120,8 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
 
           <div className="mt-5">
             <a href="/criminalrecordcheck/transition">
-              I do not have a BC Services Card, or I have non-photo BC Services
-              Card
+              I do not have a BC Services Card, or I have a non-photo BC
+              Services Card
             </a>
             .
           </div>
