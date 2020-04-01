@@ -304,7 +304,18 @@ export default function Success({
               </p>
             </>
           )}
+          <br />
           <div className="print">
+            <div>
+              <img
+                src="/criminalrecordcheck/images/bc-gov-logo.png"
+                width="181"
+                height="64"
+                alt="B.C. Government Logo"
+                style={{ marginRight: "30px" }}
+              />
+              <b>Criminal Record Check</b>
+            </div>
             <Table table={receiptInfoTable} />
           </div>
           <div
