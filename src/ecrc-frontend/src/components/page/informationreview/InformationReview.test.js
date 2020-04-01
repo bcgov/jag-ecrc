@@ -87,13 +87,17 @@ describe("InformationReview Component", () => {
   });
 
   test("Matches the snapshot", async () => {
-    const infoReview = create(
-      <MemoryRouter>
-        <InformationReview page={page} />
-      </MemoryRouter>
-    );
+    let infoReview;
 
-    await act(async () => {});
+    await act(async () => {
+      infoReview = create(
+        <MemoryRouter>
+          <InformationReview page={page} />
+        </MemoryRouter>
+      );
+    });
+
+    await wait(() => {});
 
     expect(infoReview.toJSON()).toMatchSnapshot();
   });
