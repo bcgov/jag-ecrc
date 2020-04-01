@@ -31,7 +31,7 @@ public class LogPaymentFailureController {
 	@PostMapping(value = "/private/logPaymentFailure", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> logPaymentFailure(@RequestBody(required=true) RequestLogPaymentFailure paymentFailure)
 			throws EcrcServiceException {
-		logger.info("Log payment failure request received {}", paymentFailure.getRequestGuid());
+		logger.info("Log payment failure request received [{}]", paymentFailure.getRequestGuid());
 		try {
 			return ecrcServices.logPaymentFailure(paymentFailure);
 		} catch (Exception ex) {

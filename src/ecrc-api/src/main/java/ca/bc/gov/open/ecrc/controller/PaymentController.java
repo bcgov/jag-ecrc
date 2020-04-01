@@ -32,7 +32,7 @@ public class PaymentController {
 
 	@PostMapping(value = "/private/createPaymentUrl", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createPaymentUrl(@RequestBody RequestPaymentService paymentInfo) {
-		logger.info("Payment request received {}", paymentInfo.getRequestGuid());
+		logger.info("Payment request received [{}]", paymentInfo.getRequestGuid());
 		try {
 			return paymentService.createPaymentUrl(paymentInfo);
 		} catch (Exception ex) {

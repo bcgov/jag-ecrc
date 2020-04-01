@@ -25,7 +25,7 @@ public class GetNextInvoiceIdController {
     @GetMapping(value = "/private/getNextInvoiceId", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getNextInvoiceId(@RequestParam(required=true) String orgTicketNumber,
                                                    @RequestParam(required=true) String requestGuid) {
-        logger.info("Get next invoice id request received {}", requestGuid);
+        logger.info("Get next invoice id request received [{}]", requestGuid);
 
         try {
             return ecrcServices.getNextInvoiceId(orgTicketNumber, requestGuid);

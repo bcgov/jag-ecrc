@@ -29,7 +29,7 @@ public class DoAuthenticateUserController {
 	@GetMapping(value = "/protected/doAuthenticateUser", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> doAuthenticateUser(@RequestParam(required=true) String orgTicketNumber,
 													 @RequestParam(required=true) String requestGuid) {
-		logger.info("Do Authenticate request received {}", requestGuid);
+		logger.info("Do Authenticate request received [{}]", requestGuid);
 		try {
 			return ecrcServices.doAuthenticateUser(orgTicketNumber, requestGuid);
 		} catch (Exception ex) {

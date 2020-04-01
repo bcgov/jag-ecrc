@@ -31,7 +31,7 @@ public class CreateApplicantController {
 
 	@PostMapping(value = "/private/createApplicant", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createApplicant(@RequestBody RequestCreateApplicant applicantInfo) {
-		logger.info("Create applicant request received {}", applicantInfo.getRequestGuid());
+		logger.info("Create applicant request received [{}]", applicantInfo.getRequestGuid());
 
 		try {
 			return ecrcServices.createApplicant(applicantInfo);

@@ -24,7 +24,7 @@ public class UpdateServiceFinancialTxnController {
 
     @PostMapping(value = "/private/updateServiceFinancialTxn", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> updateServiceFinancialTxn(@RequestBody(required=true) RequestUpdateServiceFinancialTxn requestUpdateServiceFinancialTxn) {
-        logger.info("Update service transaction request received {}", requestUpdateServiceFinancialTxn.getRequestGuid());
+        logger.info("Update service transaction request received [{}]", requestUpdateServiceFinancialTxn.getRequestGuid());
         try {
             return  ecrcServices.updateServiceFinancialTxn(requestUpdateServiceFinancialTxn);
         } catch (Exception ex) {

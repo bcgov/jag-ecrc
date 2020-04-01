@@ -84,7 +84,7 @@ public class EcrcPaymentServiceImpl implements EcrcPaymentService {
 			JSONObject obj = new JSONObject(objectMapper.writeValueAsString(responseBody.block()));
 			int respCode = obj.getInt("respCode");
 			String respMsg = obj.getString("respMsg");
-			logger.info("For request guid: {} Response code {} recieved for payment url request", paymentInfo.getRequestGuid(), respCode);
+			logger.info("For request guid: [{}] Response code {} recieved for payment url request", paymentInfo.getRequestGuid(), respCode);
 			if (respCode == WebServiceStatusCodes.SUCCESS.getErrorCode()) {
 				return new ResponseEntity<>(
 						String.format(PAYMENT_SUCCESS_RESPONSE, obj.getString("respValue"), respMsg, respCode),
@@ -103,7 +103,7 @@ public class EcrcPaymentServiceImpl implements EcrcPaymentService {
 						HttpStatus.BAD_REQUEST);
 			}
 		} catch (Exception e) {
-			logger.error("For request guid: {} Error in retrieving payment url ", paymentInfo.getRequestGuid(), e);
+			logger.error("For request guid: [{}] Error in retrieving payment url ", paymentInfo.getRequestGuid(), e);
 			return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 					EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 					HttpStatus.BAD_REQUEST);

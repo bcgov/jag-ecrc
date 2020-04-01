@@ -32,7 +32,7 @@ public class LinksController {
 
 	@GetMapping(value = "/protected/links", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> getLinks(@RequestParam(required=true) String requestGuid) {
-		logger.info("Get links request received {}", requestGuid);
+		logger.info("Get links request received [{}]", requestGuid);
 
 		try {
 			return new ResponseEntity<>(ecrcServices.getLinks(), HttpStatus.OK);
