@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import {
   render,
@@ -25,7 +26,7 @@ describe("ApplicationForm Component", () => {
 
   // to silence [react-phone-number-input] Phone number +12345678901 corresponds to country US but CA was specified instead error
   // uncomment when adding new tests to ensure no new errors are produced
-  console.error = jest.fn(); // eslint-disable no-console
+  console.error = jest.fn();
 
   const header = {
     name: "Criminal Record Check"
