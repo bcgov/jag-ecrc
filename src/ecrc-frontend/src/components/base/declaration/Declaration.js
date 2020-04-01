@@ -5,7 +5,8 @@ import "./Declaration.css";
 export default function Declaration({
   checkFirstBox,
   checkSecondBox,
-  checkThirdBox
+  checkThirdBox,
+  checkFourthBox
 }) {
   return (
     <div>
@@ -14,19 +15,12 @@ export default function Declaration({
         <label htmlFor="checkbox1">
           <input id="checkbox1" type="checkbox" onClick={checkFirstBox} />
           <span className="declaration-cb">
-            I, the undersigned, do hereby consent to the collection and
-            disclosure by the Royal Canadian Mounted Police (RCMP) and other law
-            enforcement agencies, as well as other duly authorized agencies of
-            the government, of any and all information related to the security
-            screening checks in support of this application for up to two years.
-            This may include some or all of: (a) criminal record check or
-            fingerprint-based criminal record verification by searching the
-            Canadian Police Information Centre database; (b) a police
-            information check; (c) a check of intelligence databases maintained
-            by law enforcement agencies; (d) a check of records in the justice
-            information system of the Ministry of Attorney General and; (e) a
-            check of records in the corrections information system of the
-            Ministry of Public Safety and Solicitor General.
+            I hereby consent to a check of criminal charges and convictions to
+            determine whether I have a conviction or outstanding charge for any
+            relevant or specified offence(s) under the{" "}
+            <i>Criminal Records Review Act</i>. I hereby consent to a check of
+            all available law enforcement systems, including any local police
+            records.
           </span>
           <span id="asterisk" className="mandatory">
             *
@@ -37,13 +31,24 @@ export default function Declaration({
         <label htmlFor="checkbox2">
           <input id="checkbox2" type="checkbox" onClick={checkSecondBox} />
           <span className="declaration-cb">
-            I certify that, to the best of my knowledge, the information I have
-            provided on my application and will provide as necessary is
-            complete, honest and accurate. I understand that a false statement
-            or omission of facts herein may lead to a denial of a cannabis
-            workers registration. I am also aware that later discovery of an
-            omission or misrepresentation may be grounds for any finding of
-            suitability to be suspended or revoked.
+            I hereby consent to a Vulnerable Sector search to check if I have
+            been convicted of and received a record suspension (formerly known
+            as a pardon) for any sexual offences as per the{" "}
+            <i>Criminal Records Review Act</i>. For more information on
+            Vulnerable Sector searches, please visit the{" "}
+            <a
+              href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              RCMP website.
+            </a>{" "}
+            I understand that as part of the Vulnerable Sector search, I may be
+            required to submit fingerprints to confirm my identity. In addition,
+            where the results of a check indicate that a criminal record or
+            outstanding charge for a relevant or specified offence(s) may exist,
+            I agree to provide my fingerprints to verify any such criminal
+            record.
           </span>
           <span id="asterisk" className="mandatory">
             *
@@ -54,8 +59,39 @@ export default function Declaration({
         <label htmlFor="checkbox3">
           <input id="checkbox3" type="checkbox" onClick={checkThirdBox} />
           <span className="declaration-cb">
-            The third checkbox for my application and will provide as necessary
-            is complete.
+            I hereby consent to the disclosure by BC Corrections to the Deputy
+            Registrar of my identifying information (i.e. name), charges,
+            convictions and outstanding warrants; information relevant to
+            contact with police, BC Corrections, and the judicial system; and my
+            date of birth. I hereby consent to the disclosure by the Deputy
+            Registrar to the Criminal Records Review Unit of my name, date of
+            birth, gender, and relevant involvement with BC Corrections. I
+            consent to the disclosure to the Deputy Registrar by the Criminal
+            Records Review Unit of any personal information relating to any
+            outstanding charges or convictions for any relevant or specified
+            offence(s) as defined under the <i>Criminal Records Review Act</i>{" "}
+            or any police investigations, charges, or convictions deemed
+            relevant by the Deputy Registrar. I further authorize the release to
+            the Deputy Registrar of any documents in the custody of the police,
+            the courts, corrections and crown counsel relating to any such
+            outstanding charges or convictions for any relevant or specified
+            offence(s) as defined under the <i>Criminal Records Review Act</i>{" "}
+            or any such police investigations, charges, or convictions deemed
+            relevant by the Deputy Registrar.
+          </span>
+          <span id="asterisk" className="mandatory">
+            *
+          </span>
+        </label>
+      </section>
+      <section className="declareSection">
+        <label htmlFor="checkbox4">
+          <input id="checkbox4" type="checkbox" onClick={checkFourthBox} />
+          <span className="declaration-cb">
+            If I am charged with or convicted of any relevant or specified
+            offence(s) at any time subsequent to the criminal record check
+            authorization herein, I further agree to report the charge(s) or
+            conviction(s) to my organization.
           </span>
           <span id="asterisk" className="mandatory">
             *
@@ -69,11 +105,13 @@ export default function Declaration({
 Declaration.propTypes = {
   checkFirstBox: PropTypes.func,
   checkSecondBox: PropTypes.func,
-  checkThirdBox: PropTypes.func
+  checkThirdBox: PropTypes.func,
+  checkFourthBox: PropTypes.func
 };
 
 Declaration.defaultProps = {
   checkFirstBox: () => {},
   checkSecondBox: () => {},
-  checkThirdBox: () => {}
+  checkThirdBox: () => {},
+  checkFourthBox: () => {}
 };
