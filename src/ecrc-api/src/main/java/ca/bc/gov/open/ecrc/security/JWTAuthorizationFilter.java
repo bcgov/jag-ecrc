@@ -87,6 +87,7 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
             }
             chain.doFilter(request, response);
         } catch (Exception e) {
+            logger.info("Authentication failed: {}", e.getMessage());
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             (response).sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
         }
