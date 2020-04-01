@@ -1,8 +1,9 @@
 /* eslint-disable new-cap */
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
-import { useLocation, Redirect } from "react-router-dom";
+import { useLocation, Redirect, useHistory } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import PropTypes from "prop-types";
@@ -49,6 +50,31 @@ export default function Success({
       setToHome(true);
     }
   }, [paymentInfo.trnApproved, orgApplicantRelationship]);
+
+  const history = useHistory();
+  let isBackClicked = false;
+
+  history.listen((_, action) => {
+    if (action === "POP") {
+      // If a "POP" action event occurs, send user back to the originating location
+      history.go(1);
+
+      setTimeout(() => {
+        if (!isBackClicked) {
+          const wishToRedirect = window.confirm(
+            "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+          );
+
+          if (wishToRedirect) {
+            sessionStorage.clear();
+            history.push("/");
+          }
+
+          isBackClicked = true;
+        }
+      }, 100);
+    }
+  });
 
   if (toError) {
     return <Redirect to="/criminalrecordcheck/error" />;
@@ -169,7 +195,7 @@ export default function Success({
 
   const pdfButton = {
     label: "Download",
-    buttonStyle: "btn ecrc_go_btn mr-0",
+    buttonStyle: "btn ecrc_go_btn ml-5 mr-0",
     buttonSize: "btn",
     type: "submit"
   };
@@ -181,6 +207,7 @@ export default function Success({
   };
 
   const retryPayment = () => {
+    sessionStorage.setItem("validExit", true);
     const token = sessionStorage.getItem("jwt");
 
     axios
@@ -206,9 +233,9 @@ export default function Success({
         const createURL = {
           invoiceNumber: newInvoiceId,
           requestGuid: uuid,
-          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
-          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/ecrc/success`,
+          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
           totalItemsAmount: serviceFeeAmount,
           serviceIdRef1: serviceId,
           partyIdRef2: partyId
@@ -248,10 +275,8 @@ export default function Success({
                 Records Review Program.
               </p>
               <p>
-                Your application will be reviewed shortly. Once complete, the
-                results will be provided directly to the requesting
-                organization. We will contact you if further information is
-                required.
+                Your application will be reviewed shortly. We will contact you
+                if further information is required.
               </p>
             </>
           )}
@@ -265,7 +290,7 @@ export default function Success({
                 <li>16 digit credit card number</li>
                 <li>3 digit CVD number</li>
                 <li>Non-expired date</li>
-                <li>Availale funds to transfer</li>
+                <li>Available funds to transfer</li>
               </ul>
               <p>
                 <button
@@ -282,7 +307,10 @@ export default function Success({
           <div className="print">
             <Table table={receiptInfoTable} />
           </div>
-          <div className="buttons pt-4">
+          <div
+            className="buttons pt-4"
+            style={{ justifyContent: "flex-start" }}
+          >
             <Button button={printButton} onClick={printAppInfo} />
             <Button button={pdfButton} onClick={downloadPDF} />
           </div>

@@ -368,11 +368,11 @@ export default function InformationReview({
               />
               <span className="declaration-cb">
                 I certify that, to the best of my knowledge, the information I
-                have provided on my application is complete, honest and
-                accurate. Any false statements or deliberate omissions on a
-                consent form filed with the CRRP may result in the inability of
-                the CRRP to accurately determine whether the applicant poses a
-                risk to children or vulnerable adults.
+                have provided on my application and will provide as necessary is
+                complete, honest and accurate. I understand that a false
+                statement or omission of facts herein may result in the
+                inability of the CRRP to accurately determine whether the
+                applicant poses a risk to children or vulnerable adults.
               </span>
               <span id="asterisk" className="mandatory">
                 *

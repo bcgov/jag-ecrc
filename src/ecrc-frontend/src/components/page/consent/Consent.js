@@ -71,6 +71,7 @@ export default function Consent({
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [thirdBoxChecked, setThirdBoxChecked] = useState(false);
+  const [fourthBoxChecked, setFourthBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
 
   useEffect(() => {
@@ -83,12 +84,17 @@ export default function Consent({
   }, []);
 
   useEffect(() => {
-    if (firstBoxChecked && secondBoxChecked && thirdBoxChecked) {
+    if (
+      firstBoxChecked &&
+      secondBoxChecked &&
+      thirdBoxChecked &&
+      fourthBoxChecked
+    ) {
       setContinueBtnEnabled(true);
     } else {
       setContinueBtnEnabled(false);
     }
-  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked]);
+  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked, fourthBoxChecked]);
 
   const cancelButton = {
     label: "Cancel and Exit",
@@ -422,6 +428,7 @@ export default function Consent({
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
+            checkFourthBox={() => setFourthBoxChecked(!fourthBoxChecked)}
           />
           <div className="buttons pt-4">
             <Button button={cancelButton} onClick={cancelClick} />

@@ -386,7 +386,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           <span
             className="declaration-cb"
           >
-            I certify that, to the best of my knowledge, the information I have provided on my application is complete, honest and accurate. Any false statements or deliberate omissions on a consent form filed with the CRRP may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
           </span>
           <span
             className="mandatory"
@@ -523,34 +523,16 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
                         Current Street Address
                       </li>
                     </ul>
-                    Please contact either 
+                    Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      Service BC
+                      BC Services Card website
                     </a>
-                    , 
-                    <a
-                      className="link"
-                      href="https://www.icbc.com/Pages/default.aspx"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      ICBC
-                    </a>
-                     or 
-                    <a
-                      className="link"
-                      href="https://www.addresschange.gov.bc.ca/"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      AddressChangeBC
-                    </a>
-                     to correct it.
+                     to change your personal information
                   </span>
                 </div>
               </section>
