@@ -90,8 +90,7 @@ export default function InformationReview({
           setOldCRCExpiration(res.data.oldCRCExpiration);
           setShareAvailable(true);
         })
-        .catch(error => {
-          console.log(error);
+        .catch(() => {
           // This could be fine...
           // If checkShare errors rather than responds, continue
           // If different error, ERROR

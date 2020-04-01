@@ -14831,9 +14831,26 @@ exports[`Storyshots Success page Mobile Payment Failure 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
+      <br />
       <div
         className="print"
       >
+        <div>
+          <img
+            alt="B.C. Government Logo"
+            height="64"
+            src="/criminalrecordcheck/images/bc-gov-logo.png"
+            style={
+              Object {
+                "marginRight": "30px",
+              }
+            }
+            width="181"
+          />
+          <b>
+            Criminal Record Check
+          </b>
+        </div>
         <table
           className="white"
           id="print"
@@ -15082,9 +15099,26 @@ exports[`Storyshots Success page Mobile Payment Success 1`] = `
       <p>
         Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >
+        <div>
+          <img
+            alt="B.C. Government Logo"
+            height="64"
+            src="/criminalrecordcheck/images/bc-gov-logo.png"
+            style={
+              Object {
+                "marginRight": "30px",
+              }
+            }
+            width="181"
+          />
+          <b>
+            Criminal Record Check
+          </b>
+        </div>
         <table
           className="white"
           id="print"
@@ -15341,9 +15375,26 @@ exports[`Storyshots Success page Mobile Volunteer 1`] = `
       <p>
         Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >
+        <div>
+          <img
+            alt="B.C. Government Logo"
+            height="64"
+            src="/criminalrecordcheck/images/bc-gov-logo.png"
+            style={
+              Object {
+                "marginRight": "30px",
+              }
+            }
+            width="181"
+          />
+          <b>
+            Criminal Record Check
+          </b>
+        </div>
         <table
           className="white"
           id="print"
@@ -15599,9 +15650,26 @@ exports[`Storyshots Success page PaymentFailure 1`] = `
         </button>
         . Otherwise, please refer to our website for submission options.
       </p>
+      <br />
       <div
         className="print"
       >
+        <div>
+          <img
+            alt="B.C. Government Logo"
+            height="64"
+            src="/criminalrecordcheck/images/bc-gov-logo.png"
+            style={
+              Object {
+                "marginRight": "30px",
+              }
+            }
+            width="181"
+          />
+          <b>
+            Criminal Record Check
+          </b>
+        </div>
         <table
           className="white"
           id="print"
@@ -15850,9 +15918,26 @@ exports[`Storyshots Success page PaymentSuccess 1`] = `
       <p>
         Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >
+        <div>
+          <img
+            alt="B.C. Government Logo"
+            height="64"
+            src="/criminalrecordcheck/images/bc-gov-logo.png"
+            style={
+              Object {
+                "marginRight": "30px",
+              }
+            }
+            width="181"
+          />
+          <b>
+            Criminal Record Check
+          </b>
+        </div>
         <table
           className="white"
           id="print"
@@ -16109,9 +16194,26 @@ exports[`Storyshots Success page Volunteer 1`] = `
       <p>
         Your application will be reviewed shortly. We will contact you if further information is required.
       </p>
+      <br />
       <div
         className="print"
       >
+        <div>
+          <img
+            alt="B.C. Government Logo"
+            height="64"
+            src="/criminalrecordcheck/images/bc-gov-logo.png"
+            style={
+              Object {
+                "marginRight": "30px",
+              }
+            }
+            width="181"
+          />
+          <b>
+            Criminal Record Check
+          </b>
+        </div>
         <table
           className="white"
           id="print"
