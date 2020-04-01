@@ -6,8 +6,7 @@ import {
   fireEvent,
   getByRole,
   getByText,
-  wait,
-  act as actor
+  wait
 } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import axios from "axios";
