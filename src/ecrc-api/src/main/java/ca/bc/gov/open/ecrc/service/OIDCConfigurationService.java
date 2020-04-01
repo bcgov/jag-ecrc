@@ -68,8 +68,8 @@ public class OIDCConfigurationService {
 	private ClientHttpRequestFactory getClientHttpRequestFactory() {
 		SimpleClientHttpRequestFactory clientHttpRequestFactory
 				= new SimpleClientHttpRequestFactory();
-		clientHttpRequestFactory.setConnectTimeout(300000);
-		clientHttpRequestFactory.setReadTimeout(300000);
+		clientHttpRequestFactory.setConnectTimeout(ecrcProps.getOauthBCSCTimeout());
+		clientHttpRequestFactory.setReadTimeout(ecrcProps.getOauthBCSCTimeout());
 		return clientHttpRequestFactory;
 	}
 }

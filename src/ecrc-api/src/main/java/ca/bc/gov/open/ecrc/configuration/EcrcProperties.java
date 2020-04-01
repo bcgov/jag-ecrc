@@ -50,6 +50,7 @@ public class EcrcProperties {
 	private String oauthAuthorizePath;
 	private String oauthWellKnown;
 	private String oauthPERSecret;
+	private int oauthBCSCTimeout;
 
 	// JWT properties
 	private String jwtHeader;
@@ -315,5 +316,9 @@ public class EcrcProperties {
 	public void setOauthPERSecret(String oauthPERSecret) {
 		this.oauthPERSecret = oauthPERSecret;
 	}
+
+	public int getOauthBCSCTimeout() { return oauthBCSCTimeout; }
+
+	public void setOauthBCSCTimeout(int oauthBCSCTimeout) { this.oauthBCSCTimeout = oauthBCSCTimeout; }
 
 }
