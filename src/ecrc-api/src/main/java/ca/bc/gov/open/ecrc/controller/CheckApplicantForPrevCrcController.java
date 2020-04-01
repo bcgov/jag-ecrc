@@ -28,7 +28,7 @@ public class CheckApplicantForPrevCrcController {
 
 	Logger logger = LoggerFactory.getLogger(CheckApplicantForPrevCrcController.class);
 
-	@GetMapping(value = "/checkApplicantForPrevCRC", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/private/checkApplicantForPrevCRC", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> checkApplicantForPrevCrc(@RequestBody RequestCheckApplicantForPrevCrc applicantInfo) {
 		logger.info("Check applicant for previous CRC request received [{}]", applicantInfo.getRequestGuid());
 
