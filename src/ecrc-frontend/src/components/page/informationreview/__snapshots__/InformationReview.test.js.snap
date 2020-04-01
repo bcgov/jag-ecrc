@@ -397,40 +397,6 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
         </label>
       </section>
       <br />
-      <div
-        className="share"
-      >
-        <span>
-          You have a valid previous CRC.
-        </span>
-        <span>
-          It was prepared for: 
-          Old org name
-        </span>
-        <span>
-          It is valid until: 
-          2021-10-12
-        </span>
-        <p>
-          Would you like to share it with 
-          Some org
-          ?
-        </p>
-        <button
-          className="btn ecrc_go_btn btn"
-          disabled={true}
-          type="submit"
-        >
-          Share
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
-      </div>
       <br />
       <div
         className="buttons pt-4"

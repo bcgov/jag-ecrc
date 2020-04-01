@@ -49,6 +49,8 @@ describe("Consent Page Component", () => {
     phoneNumber: "2501234567",
     countryNm: "Canada",
     mailingAddressLine1: "456 Elsewhere",
+    mailingLine1: "432 address",
+    mailingCityNm: "Toronto",
     mailingCity: "There",
     mailingProvince: "Ontario",
     mailingPostalCode: "V1V 1A1",
