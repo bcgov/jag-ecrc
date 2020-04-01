@@ -3454,7 +3454,8 @@ exports[`Storyshots Consent page Default 1`] = `
             <span
               className="declaration-cb"
             >
-              I hereby consent to a check of criminal charges and convictions to determine whether I have a conviction or outstanding charge for any relevant or specified offence(s) under the 
+              I hereby consent to a check of criminal charges and convictions to determine whether I have a conviction or outstanding charge for any relevant or specified offence(s) under the
+               
               <i>
                 Criminal Records Review Act
               </i>
@@ -3482,7 +3483,8 @@ exports[`Storyshots Consent page Default 1`] = `
             <span
               className="declaration-cb"
             >
-              I hereby consent to a Vulnerable Sector search to check if I have been convicted of and received a record suspension (formerly known as a pardon) for any sexual offences as per the 
+              I hereby consent to a Vulnerable Sector search to check if I have been convicted of and received a record suspension (formerly known as a pardon) for any sexual offences as per the
+               
               <i>
                 Criminal Records Review Act
               </i>
@@ -3524,11 +3526,13 @@ exports[`Storyshots Consent page Default 1`] = `
               <i>
                 Criminal Records Review Act
               </i>
-               or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
+               
+              or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
               <i>
                 Criminal Records Review Act
               </i>
-               or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
+               
+              or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
             </span>
             <span
               className="mandatory"
@@ -4048,7 +4052,8 @@ exports[`Storyshots Consent page Mobile 1`] = `
             <span
               className="declaration-cb"
             >
-              I hereby consent to a check of criminal charges and convictions to determine whether I have a conviction or outstanding charge for any relevant or specified offence(s) under the 
+              I hereby consent to a check of criminal charges and convictions to determine whether I have a conviction or outstanding charge for any relevant or specified offence(s) under the
+               
               <i>
                 Criminal Records Review Act
               </i>
@@ -4076,7 +4081,8 @@ exports[`Storyshots Consent page Mobile 1`] = `
             <span
               className="declaration-cb"
             >
-              I hereby consent to a Vulnerable Sector search to check if I have been convicted of and received a record suspension (formerly known as a pardon) for any sexual offences as per the 
+              I hereby consent to a Vulnerable Sector search to check if I have been convicted of and received a record suspension (formerly known as a pardon) for any sexual offences as per the
+               
               <i>
                 Criminal Records Review Act
               </i>
@@ -4118,11 +4124,13 @@ exports[`Storyshots Consent page Mobile 1`] = `
               <i>
                 Criminal Records Review Act
               </i>
-               or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
+               
+              or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
               <i>
                 Criminal Records Review Act
               </i>
-               or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
+               
+              or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
             </span>
             <span
               className="mandatory"
@@ -4582,7 +4590,8 @@ exports[`Storyshots Declaration Default 1`] = `
       <span
         className="declaration-cb"
       >
-        I hereby consent to a check of criminal charges and convictions to determine whether I have a conviction or outstanding charge for any relevant or specified offence(s) under the 
+        I hereby consent to a check of criminal charges and convictions to determine whether I have a conviction or outstanding charge for any relevant or specified offence(s) under the
+         
         <i>
           Criminal Records Review Act
         </i>
@@ -4610,7 +4619,8 @@ exports[`Storyshots Declaration Default 1`] = `
       <span
         className="declaration-cb"
       >
-        I hereby consent to a Vulnerable Sector search to check if I have been convicted of and received a record suspension (formerly known as a pardon) for any sexual offences as per the 
+        I hereby consent to a Vulnerable Sector search to check if I have been convicted of and received a record suspension (formerly known as a pardon) for any sexual offences as per the
+         
         <i>
           Criminal Records Review Act
         </i>
@@ -4652,11 +4662,13 @@ exports[`Storyshots Declaration Default 1`] = `
         <i>
           Criminal Records Review Act
         </i>
-         or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
+         
+        or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
         <i>
           Criminal Records Review Act
         </i>
-         or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
+         
+        or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
       </span>
       <span
         className="mandatory"
