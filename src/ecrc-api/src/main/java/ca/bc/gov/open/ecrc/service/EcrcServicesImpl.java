@@ -97,4 +97,10 @@ public class EcrcServicesImpl implements EcrcServices {
 	public String getJwtSecret() {
 		return ecrcProps.getJwtSecret();
 	}
+
+	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo)
+			throws EcrcServiceException {
+		String _checkApplicantForPrevCrcUri = String.format(ecrcProps.getCheckApplicantForPrevCrcUri(), applicantInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(_checkApplicantForPrevCrcUri, new CheckApplicantForPrevCrc(), applicantInfo.getRequestGuid());
+	}
 }

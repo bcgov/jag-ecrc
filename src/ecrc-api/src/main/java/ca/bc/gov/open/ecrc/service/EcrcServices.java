@@ -3,6 +3,7 @@ package ca.bc.gov.open.ecrc.service;
 import java.util.Map;
 
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.model.RequestCheckApplicantForPrevCrc;
 import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
@@ -41,5 +42,7 @@ public interface EcrcServices {
 	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber, String requestGuid) throws EcrcServiceException;
 	
 	public String getJwtSecret() throws EcrcServiceException;
+
+	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo) throws EcrcServiceException;
 
 }
