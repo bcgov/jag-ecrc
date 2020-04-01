@@ -1130,79 +1130,20 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
                           Current Street Address
                         </li>
                       </ul>
-                      Please contact either 
+                      Please visit the 
                       <a
                         className="link"
-                        href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        Service BC
+                        BC Services Card website
                       </a>
-                      , 
-                      <a
-                        className="link"
-                        href="https://www.icbc.com/Pages/default.aspx"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        ICBC
-                      </a>
-                       or 
-                      <a
-                        className="link"
-                        href="https://www.addresschange.gov.bc.ca/"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        AddressChangeBC
-                      </a>
-                       to correct it.
+                       to change your personal information
                     </span>
                   </div>
                 </section>
               </div>
-                </h2>
-                <div
-                  className="submit-content"
-                >
-                  <span>
-                    If you find an error with your:
-                    <ul
-                      className="discStyle"
-                    >
-                      <li>
-                        First Name
-                      </li>
-                      <li>
-                        Middle Name
-                      </li>
-                      <li>
-                        Last Name
-                      </li>
-                      <li>
-                        Date Of Birth
-                      </li>
-                      <li>
-                        Sex
-                      </li>
-                      <li>
-                        Current Street Address
-                      </li>
-                    </ul>
-                    Please visit the 
-                    <a
-                      className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      BC Services Card website
-                    </a>
-                     to change your personal information
-                  </span>
-                </div>
-              </section>
             </div>
           </div>
         </div>
@@ -2536,79 +2477,20 @@ exports[`Storyshots Application Form Page Schedule D 1`] = `
                           Current Street Address
                         </li>
                       </ul>
-                      Please contact either 
+                      Please visit the 
                       <a
                         className="link"
-                        href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services/servicebc"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        Service BC
+                        BC Services Card website
                       </a>
-                      , 
-                      <a
-                        className="link"
-                        href="https://www.icbc.com/Pages/default.aspx"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        ICBC
-                      </a>
-                       or 
-                      <a
-                        className="link"
-                        href="https://www.addresschange.gov.bc.ca/"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        AddressChangeBC
-                      </a>
-                       to correct it.
+                       to change your personal information
                     </span>
                   </div>
                 </section>
               </div>
-                </h2>
-                <div
-                  className="submit-content"
-                >
-                  <span>
-                    If you find an error with your:
-                    <ul
-                      className="discStyle"
-                    >
-                      <li>
-                        First Name
-                      </li>
-                      <li>
-                        Middle Name
-                      </li>
-                      <li>
-                        Last Name
-                      </li>
-                      <li>
-                        Date Of Birth
-                      </li>
-                      <li>
-                        Sex
-                      </li>
-                      <li>
-                        Current Street Address
-                      </li>
-                    </ul>
-                    Please visit the 
-                    <a
-                      className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      BC Services Card website
-                    </a>
-                     to change your personal information
-                  </span>
-                </div>
-              </section>
             </div>
           </div>
         </div>
