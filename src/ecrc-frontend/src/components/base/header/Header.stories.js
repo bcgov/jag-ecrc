@@ -1,5 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 
@@ -11,20 +10,27 @@ export default {
 };
 
 const header = {
-  name: "eCrc"
+  name: "Criminal Record Check"
 };
 
 const history = createMemoryHistory();
 
-storiesOf("Header", module)
-  .add("Default", () => (
-    <Router history={history}>
-      <Header header={header} />
-    </Router>
-  ))
-  .addParameters({ viewport: { defaultViewport: "mobile2" } })
-  .add("Mobile", () => (
-    <Router history={history}>
-      <Header header={header} />
-    </Router>
-  ));
+export const Default = () => (
+  <Router history={history}>
+    <Header header={header} />
+  </Router>
+);
+
+export const Mobile = () => (
+  <Router history={history}>
+    <Header header={header} />
+  </Router>
+);
+
+Mobile.story = {
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile2"
+    }
+  }
+};
