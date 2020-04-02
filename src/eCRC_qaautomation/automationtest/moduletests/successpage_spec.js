@@ -147,45 +147,45 @@ describe("success page", () => {
     applicationFormPage.continueButton.click();
     informationReviewPage.cityAndCountryBirth
       .getText()
-      .then(function(cityAndCountryBirth) {
+      .then(cityAndCountryBirth => {
         expect(cityAndCountryBirth).toBe(
           testInput.applicationFormCityAndCountryBirth
         );
       });
 
-    informationReviewPage.phoneNumber.getText().then(function(phoneNumber) {
+    informationReviewPage.phoneNumber.getText().then(phoneNumber => {
       expect(phoneNumber).toBe(testInput.applicationFormPhoneNumber);
     });
 
-    informationReviewPage.emailAddress.getText().then(function(emailAddress) {
+    informationReviewPage.emailAddress.getText().then(emailAddress => {
       expect(emailAddress).toBe(testInput.applicationFormEmailAddress);
     });
 
     informationReviewPage.applicantPosition
       .getText()
-      .then(function(applicantPosition) {
+      .then(applicantPosition => {
         expect(applicantPosition).toBe(
           testInput.applicationFormApplicantPosition
         );
       });
 
-    informationReviewPage.street.getText().then(function(street) {
+    informationReviewPage.street.getText().then(street => {
       expect(street).toBe(testInput.applicationFormMailingAddressStreet);
     });
 
-    informationReviewPage.city.getText().then(function(city) {
+    informationReviewPage.city.getText().then(city => {
       expect(city).toBe(testInput.applicationFormCurrentAddressCity);
     });
 
-    informationReviewPage.province.getText().then(function(province) {
+    informationReviewPage.province.getText().then(province => {
       expect(province).toBe(testInput.applicationFormCurrentAddressProvince);
     });
 
-    informationReviewPage.postalCode.getText().then(function(postalCode) {
+    informationReviewPage.postalCode.getText().then(postalCode => {
       expect(postalCode).toBe(testInput.applicationFormCurrentAddresPostalCode);
     });
 
-    informationReviewPage.country.getText().then(function(country) {
+    informationReviewPage.country.getText().then(country => {
       expect(country).toBe(testInput.applicationFormMailingAddresCountry);
     });
 
