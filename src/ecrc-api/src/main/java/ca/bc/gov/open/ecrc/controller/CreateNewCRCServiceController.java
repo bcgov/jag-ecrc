@@ -23,7 +23,7 @@ public class CreateNewCRCServiceController {
 
     @PostMapping(value = "/private/createNewCRCService", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> createNewCRCService(@RequestBody(required=true) RequestNewCRCService requestNewCRCService) {
-        logger.info("Create new crc request received {}", UUID.randomUUID());
+        logger.info("Create new crc request received [{}]", UUID.randomUUID());
         try {
             return ecrcServices.createNewCRCService(requestNewCRCService);
         } catch (Exception ex) {

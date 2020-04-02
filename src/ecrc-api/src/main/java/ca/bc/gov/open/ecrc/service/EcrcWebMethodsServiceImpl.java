@@ -49,7 +49,7 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
         try {
             JSONObject obj = new JSONObject(objectMapper.writeValueAsString(responseBody.block()));
             int respCode = obj.getInt("responseCode");
-            logger.info("For request guid: {} webMethods returned code: {} and message: {} ", requestGuid, respCode, obj.getString("message"));
+            logger.info("For request guid: [{}] webMethods returned code: {} and message: {} ", requestGuid, respCode, obj.getString("message"));
             if (respCode == WebServiceStatusCodes.SUCCESS.getErrorCode()) {
                 return new ResponseEntity<>(obj.toString(), HttpStatus.OK);
             } else if (respCode == WebServiceStatusCodes.NOTFOUND.getErrorCode()) {
@@ -63,11 +63,11 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
                         obj.getString("message"), respCode), HttpStatus.BAD_REQUEST);
             }
         } catch (JsonProcessingException e) {
-            logger.error("For request guid: {} Failed to convert to json processing exception: {}", requestGuid, e.getMessage());
+            logger.error("For request guid: [{}] Failed to convert to json processing exception: {}", requestGuid, e.getMessage());
             return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                     EcrcExceptionConstants.CONVERT_TO_JSON_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
-            logger.error("For request guid: {} Error in call to webMethods: {}", requestGuid, e.getMessage());
+            logger.error("For request guid: [{}] Error in call to webMethods: {}", requestGuid, e.getMessage());
             return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                     EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
         }

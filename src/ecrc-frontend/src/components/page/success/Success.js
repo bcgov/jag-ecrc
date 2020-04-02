@@ -62,7 +62,7 @@ export default function Success({
       setTimeout(() => {
         if (!isBackClicked) {
           const wishToRedirect = window.confirm(
-            "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+            "Are you sure you would like to leave this page?"
           );
 
           if (wishToRedirect) {
@@ -128,6 +128,8 @@ export default function Success({
   };
   // IF PaymentFailure: LogPaymentFailure
   if (paymentInfo.trnApproved === "0") {
+    const token = sessionStorage.getItem("jwt");
+
     const logFailure = {
       orgTicketNumber,
       requestGuid: uuid,
@@ -140,7 +142,11 @@ export default function Success({
     };
 
     axios
-      .post("/ecrc/private/logPaymentFailure", logFailure)
+      .post("/ecrc/private/logPaymentFailure", logFailure, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       .then(() => {})
       .catch(error => {
         handleError(error);
@@ -304,7 +310,18 @@ export default function Success({
               </p>
             </>
           )}
+          <br />
           <div className="print">
+            <div>
+              <img
+                src="/criminalrecordcheck/images/bc-gov-logo.png"
+                width="181"
+                height="64"
+                alt="B.C. Government Logo"
+                style={{ marginRight: "30px" }}
+              />
+              <b>Criminal Record Check</b>
+            </div>
             <Table table={receiptInfoTable} />
           </div>
           <div

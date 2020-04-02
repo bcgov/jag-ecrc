@@ -51,11 +51,13 @@ export default function SideCards({ type, sideCardLinks }) {
   const getBCService = {
     heading: (
       <div className="row">
-        <div key="bcServiceIcon" className="round-icon-wrapper">
-          <FaIdCard className="side-card-icon" />
-        </div>
-        <div key="bcServiceHeader" className="sideCardTitle textAlign">
-          Get a BC Service Card
+        <div className="sideCardRow">
+          <div key="bcServiceIcon" className="round-icon-wrapper">
+            <FaIdCard className="side-card-icon" />
+          </div>
+          <div key="bcServiceHeader" className="sideCardTitle">
+            Get a BC Service Card
+          </div>
         </div>
       </div>
     ),
@@ -72,11 +74,13 @@ export default function SideCards({ type, sideCardLinks }) {
   const bcservice = {
     heading: (
       <div className="row">
-        <div key="bcServiceIcon" className="round-icon-wrapper">
-          <FaIdCard className="side-card-icon" />
-        </div>
-        <div key="bcServiceHeader" className="sideCardTitle">
-          Using the BC Services Card
+        <div className="sideCardRow">
+          <div key="bcServiceIcon" className="round-icon-wrapper">
+            <FaIdCard className="side-card-icon" />
+          </div>
+          <div key="bcServiceHeader" className="sideCardTitle">
+            Using the BC Services Card
+          </div>
         </div>
       </div>
     ),
@@ -121,11 +125,13 @@ export default function SideCards({ type, sideCardLinks }) {
   const contact = {
     heading: (
       <div className="row">
-        <div key="contactIcon" className="round-icon-wrapper">
-          <FaEnvelope className="side-card-icon" />
-        </div>
-        <div key="contactHeader" className="sideCardTitle">
-          Contact the Criminal Records Review Program
+        <div className="sideCardRow">
+          <div key="contactIcon" className="round-icon-wrapper">
+            <FaEnvelope className="side-card-icon" />
+          </div>
+          <div key="contactHeader" className="sideCardTitle">
+            Contact the Criminal Records Review Program
+          </div>
         </div>
       </div>
     ),
@@ -212,11 +218,13 @@ export default function SideCards({ type, sideCardLinks }) {
   const withoutBCServiceCard = {
     heading: (
       <div className="row">
-        <div key="withoutBCServiceCardIcon" className="round-icon-wrapper">
-          <FaQuestion className="side-card-icon" />
-        </div>
-        <div key="withoutBCServiceCardHeader" className="sideCardTitle">
-          Applicants Without a BC Services Card with a photo
+        <div className="sideCardRow">
+          <div key="withoutBCServiceCardIcon" className="round-icon-wrapper">
+            <FaQuestion className="side-card-icon" />
+          </div>
+          <div key="withoutBCServiceCardHeader" className="sideCardTitle">
+            Applicants Without a BC Services Card with a photo
+          </div>
         </div>
       </div>
     ),
@@ -250,11 +258,13 @@ export default function SideCards({ type, sideCardLinks }) {
   const personalInformation = {
     heading: (
       <div className="row">
-        <div key="withoutBCServiceCardIcon" className="round-icon-wrapper">
-          <FaQuestion className="side-card-icon" />
-        </div>
-        <div key="withoutBCServiceCardHeader" className="sideCardTitle">
-          Update your BC Services Card Information
+        <div className="sideCardRow">
+          <div key="withoutBCServiceCardIcon" className="round-icon-wrapper">
+            <FaQuestion className="side-card-icon" />
+          </div>
+          <div key="withoutBCServiceCardHeader" className="sideCardTitle">
+            Update your BC Services Card Information
+          </div>
         </div>
       </div>
     ),
@@ -270,6 +280,7 @@ export default function SideCards({ type, sideCardLinks }) {
       </ul>,
       "Please visit the ",
       <a
+        key="personalInfoLink"
         className="link"
         href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
         target="_blank"
@@ -316,11 +327,13 @@ export default function SideCards({ type, sideCardLinks }) {
   const usefulLinks = {
     heading: (
       <div className="row">
-        <div key="usefulLinksIcon" className="round-icon-wrapper">
-          <FaQuestion className="side-card-icon" />
-        </div>
-        <div key="usefulLinksHeader" className="sideCardTitle textAlign">
-          Useful Links
+        <div className="sideCardRow">
+          <div key="usefulLinksIcon" className="round-icon-wrapper">
+            <FaQuestion className="side-card-icon" />
+          </div>
+          <div key="usefulLinksHeader" className="sideCardTitle pt-2">
+            Useful Links
+          </div>
         </div>
       </div>
     ),

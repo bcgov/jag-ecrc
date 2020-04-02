@@ -23,6 +23,7 @@ export default function App() {
   );
 
   const [error, setError] = useState({});
+  const [share, setShare] = useState(false);
   const [provinces, setProvinces] = useState([]);
   const [sameAddress, setSameAddress] = useState(true);
 
@@ -98,7 +99,8 @@ export default function App() {
               header,
               applicant,
               org,
-              setError
+              setError,
+              setShare
             }}
           />
         </Route>
@@ -112,7 +114,8 @@ export default function App() {
               saveOrg,
               saveApplicant,
               saveApplicationInfo,
-              setError
+              setError,
+              share
             }}
           />
         </Route>

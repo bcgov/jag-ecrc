@@ -26,7 +26,7 @@ public class GetServiceFeeAmountController {
                                                       @RequestParam(required=true) String scheduleTypeCd,
                                                       @RequestParam(required=true) String scopeLevelCd,
                                                       @RequestParam(required=true) String requestGuid) {
-        logger.info("Get fee amount request received {}", requestGuid);
+        logger.info("Get fee amount request received [{}]", requestGuid);
 
         try {
             return ecrcServices.getServiceFeeAmount(orgTicketNumber, scheduleTypeCd, scopeLevelCd, requestGuid);

@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loader Component Matches the snapshot 1`] = `
+exports[`Loader Component Btn loader matches the snapshot 1`] = `
 <div
   className="btn-loader"
+/>
+`;
+
+exports[`Loader Component Page loader matches the snapshot 1`] = `
+<div
+  className="page-loader"
 />
 `;

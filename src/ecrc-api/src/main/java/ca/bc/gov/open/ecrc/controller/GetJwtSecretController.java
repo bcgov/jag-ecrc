@@ -30,6 +30,7 @@ public class GetJwtSecretController {
 	
 	@GetMapping(value = "/initialHandshake")
 	public ResponseEntity<String> getJwtSecret(@RequestParam(required=true) String requestGuid) {
+		logger.info("Initial handshake received: [{}]", requestGuid);
 		try {
 			return new ResponseEntity<>(ecrcServices.getJwtSecret(), HttpStatus.OK);		
 		} catch (EcrcServiceException e) {

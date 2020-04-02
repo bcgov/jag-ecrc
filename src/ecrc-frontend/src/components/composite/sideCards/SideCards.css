@@ -44,6 +44,7 @@
 }
 
 .round-icon-wrapper {
+  vertical-align: top;
   height: 48px;
   line-height: 55px;
   width: 48px;
@@ -60,6 +61,11 @@
   font-weight: Semi-bold;
   display: inline-block;
   width: 70%;
+  white-space: normal;
+}
+
+.sideCardRow {
+  white-space: nowrap;
 }
 
 .side-card-text {
@@ -77,11 +83,6 @@
   width: 35px;
   height: 35px;
   padding-bottom: 10px;
-}
-
-.textAlign {
-  display: flex;
-  align-self: center;
 }
 
 @media (min-width: 1200px) {

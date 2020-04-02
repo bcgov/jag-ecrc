@@ -33,6 +33,8 @@ public class EcrcProperties {
 	private String logPaymentFailureUri;
 	private String getNextInvoiceIdUri;
 	private String updateServiceFinancialTxnUri;
+	private String checkApplicantForPrevCrcUri;
+	private String createSharingServiceUri;
 	
 	//CORS properties
 	private String corsMapping;
@@ -50,6 +52,7 @@ public class EcrcProperties {
 	private String oauthAuthorizePath;
 	private String oauthWellKnown;
 	private String oauthPERSecret;
+	private int oauthBCSCTimeout;
 
 	// JWT properties
 	private String jwtHeader;
@@ -153,6 +156,22 @@ public class EcrcProperties {
 
 	public void setGetNextInvoiceIdUri(String getNextInvoiceIdUri) {
 		this.getNextInvoiceIdUri = getNextInvoiceIdUri;
+	}
+
+	public String getCheckApplicantForPrevCrcUri() {
+		return checkApplicantForPrevCrcUri;
+	}
+
+	public void setCheckApplicantForPrevCrcUri(String checkApplicantForPrevCrcUri) {
+		this.checkApplicantForPrevCrcUri = checkApplicantForPrevCrcUri;
+	}
+
+	public String getCreateSharingServiceUri() {
+		return createSharingServiceUri;
+	}
+
+	public void setCreateSharingServiceUri(String createSharingServiceUri) {
+		this.createSharingServiceUri = createSharingServiceUri;
 	}
 
 	public String getCorsMapping() {
@@ -315,5 +334,9 @@ public class EcrcProperties {
 	public void setOauthPERSecret(String oauthPERSecret) {
 		this.oauthPERSecret = oauthPERSecret;
 	}
+
+	public int getOauthBCSCTimeout() { return oauthBCSCTimeout; }
+
+	public void setOauthBCSCTimeout(int oauthBCSCTimeout) { this.oauthBCSCTimeout = oauthBCSCTimeout; }
 
 }

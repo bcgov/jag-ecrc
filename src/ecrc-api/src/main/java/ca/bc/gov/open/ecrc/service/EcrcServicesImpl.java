@@ -41,11 +41,11 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber, String requestGuid) {
 	    if (ecrcProps.getWhiteList().contains(orgTicketNumber.toLowerCase())) {
-			logger.info("For request guid: {} Provided org ticket number white listed", requestGuid);
+			logger.info("For request guid: [{}] Provided org ticket number white listed", requestGuid);
             String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
             return ecrcWebMethodsService.callWebMethodsService(_doAuthenticateUserUri, new DoAuthenticateUser(), requestGuid);
         } else {
-			logger.info("For request guid: {} Provided org ticket number not white listed", requestGuid);
+			logger.info("For request guid: [{}] Provided org ticket number not white listed", requestGuid);
 	        return new ResponseEntity<>(String.format(WEBSERVICE_ERROR_JSON_RESPONSE,"Org not on whitelist", WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.UNAUTHORIZED);
         }
 	}
@@ -96,5 +96,17 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	public String getJwtSecret() {
 		return ecrcProps.getJwtSecret();
+	}
+
+	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo)
+			throws EcrcServiceException {
+		String _checkApplicantForPrevCrcUri = String.format(ecrcProps.getCheckApplicantForPrevCrcUri(), applicantInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(_checkApplicantForPrevCrcUri, new CheckApplicantForPrevCrc(), applicantInfo.getRequestGuid());
+	}
+
+	public ResponseEntity<String> createSharingService(RequestCreateSharingService serviceInfo)
+			throws EcrcServiceException {
+		String _createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(_createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
 	}
 }
