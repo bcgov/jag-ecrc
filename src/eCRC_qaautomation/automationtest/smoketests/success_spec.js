@@ -85,12 +85,6 @@ describe("success", () => {
 
     bcServicesCardLoginPage.continueButton.click();
 
-    bcscConsentPage.name.count().then(function(count) {
-      expect(count).toBe(1);
-    });
-
-    bcscConsentPage.yes.click();
-
     expect(applicationFormPage.firstName.getAttribute("value")).toBe(
       testInput.applicationFormFirstName
     );
@@ -223,7 +217,7 @@ describe("success", () => {
 
     consentPage.certifyCheckBox.click();
 
-    consentPage.unknownCheckBox.click();
+    consentPage.disclosureCheckBox.click();
 
     consentPage.continueButton.click();
 

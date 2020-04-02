@@ -56,14 +56,6 @@ describe("success page", () => {
     bcServicesCardLoginPage.password.sendKeys(testInput.bcServicesCardPassword);
     bcServicesCardLoginPage.continueButton.click();
     bcServicesCardLoginPage.continueButton.click();
-    bcscConsentPage.name.count().then(function(count) {
-      expect(count).toBe(1);
-    });
-
-    bcscConsentPage.yes.click();
-    expect(applicationFormPage.firstName.getAttribute("value")).toBe(
-      testInput.applicationFormFirstName
-    );
 
     expect(applicationFormPage.lastName.getAttribute("value")).toBe(
       testInput.applicationFormLastName
@@ -187,8 +179,12 @@ describe("success page", () => {
     informationReviewPage.submitButton.click();
     consentPage.consentCheckBox.click();
     consentPage.certifyCheckBox.click();
-    consentPage.unknownCheckBox.click();
+    consentPage.disclosureCheckBox.click();
+    consentPage.reportChargesCheckBox.click();
     consentPage.continueButton.click();
+
+    browser.wait(browserWait.elementToBeClickable(paymentPage.payNow), 10000);
+
     paymentPage.cardNumber.sendKeys(testInput.approvedCardNumber);
     paymentPage.cardCVD.sendKeys(testInput.approvedCardCVD);
     paymentPage.payNow.click();
@@ -208,31 +204,54 @@ describe("success page", () => {
   // });
 
   it("verify when download button is clicked that pdf is downloaded containing receipt info", () => {
-    const filename =
-      process.env.PDF_PATH +
-      "\\" +
-      successPage.serviceNumber.getAttribute("value") +
-      successPage.lastName.getAttribute("value") +
-      successPage.firstName.getAttribute("value") +
-      ".pdf";
-    console.log("filename: " + filename);
+    //console.dir(successPage.serviceNumber.getText());
+    //console.log(successPage.lastName.getText());
+    //console.log(successPage.firstName.getText());
 
-    if (fs.existsSync(filename)) {
-      //Delete file if it already exists
-      fs.unlinkSync(filename);
-    }
+    expect(successPage.lastName.getText()).toBe(
+      testInput.applicationFormLastName
+    );
+    expect(successPage.firstName.getText()).toBe(
+      testInput.applicationFormFirstName
+    );
 
-    successPage.downloadButton.click();
+    let filename = process.env.PDF_PATH.concat("\\");
+    //let serviceNumberVal;
+    //let lastNameVal;
+    //let firstNameVal;
 
-    browser.driver
-      .wait(() => {
-        //Wait until file has finished downloading.
-        return fs.existsSync(filename);
-      }, 300000)
-      .then(() => {
-        expect(fs.readFileSync(filename, { encoding: "utf8" })).toContain(
-          "Robert"
-        );
+    successPage.serviceNumber.getText().then(serviceNumberVal => {
+      console.log(serviceNumberVal);
+      filename = filename.concat(serviceNumberVal);
+
+      successPage.lastName.getText().then(lastNameVal => {
+        console.log(lastNameVal);
+        filename = filename.concat(lastNameVal);
+
+        successPage.firstName.getText().then(firstNameVal => {
+          console.log(firstNameVal);
+          filename = filename.concat(firstNameVal, ".pdf");
+          console.log(filename);
+
+          if (fs.existsSync(filename)) {
+            //Delete file if it already exists
+            fs.unlinkSync(filename);
+          }
+
+          successPage.downloadButton.click();
+
+          browser.driver
+            .wait(() => {
+              //Wait until file has finished downloading.
+              return fs.existsSync(filename);
+            }, 300000)
+            .then(() => {
+              expect(fs.readFileSync(filename, { encoding: "utf8" })).toContain(
+                testInput.applicationFormLastName
+              );
+            });
+        });
       });
+    });
   });
 });

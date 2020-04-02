@@ -221,7 +221,7 @@ describe("success", () => {
 
     consentPage.certifyCheckBox.click();
 
-    consentPage.unknownCheckBox.click();
+    consentPage.disclosureCheckBox.click();
 
     consentPage.continueButton.click();
 
