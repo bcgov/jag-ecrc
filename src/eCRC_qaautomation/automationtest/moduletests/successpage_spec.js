@@ -23,6 +23,9 @@ describe("success page", () => {
       .window()
       .maximize();
 
+    originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+
     landingPage.accessCode.sendKeys(testInput.validAccessCode);
     landingPage.validate.click();
     browserWait = protractor.ExpectedConditions;
@@ -56,6 +59,14 @@ describe("success page", () => {
     bcServicesCardLoginPage.password.sendKeys(testInput.bcServicesCardPassword);
     bcServicesCardLoginPage.continueButton.click();
     bcServicesCardLoginPage.continueButton.click();
+
+    browser.wait(
+      browserWait.textToBePresentInElementValue(
+        applicationFormPage.lastName,
+        testInput.applicationFormLastName
+      ),
+      5000
+    );
 
     expect(applicationFormPage.lastName.getAttribute("value")).toBe(
       testInput.applicationFormLastName
@@ -108,6 +119,10 @@ describe("success page", () => {
 
     applicationFormPage.applicantPosition.sendKeys(
       testInput.applicationFormApplicantPosition
+    );
+
+    applicationFormPage.organizationFacility.sendKeys(
+      testInput.applicationFormOrganizationFacility
     );
 
     applicationFormPage.mailingAddressStreet.sendKeys(
