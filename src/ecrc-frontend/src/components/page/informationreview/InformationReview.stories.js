@@ -40,7 +40,9 @@ const applicant = {
 };
 
 const org = {
-  orgNm: "New Org Name"
+  orgNm: "New Org Name",
+  orgTicketNumber: "wsde",
+  defaultCrcScopeLevelCd: "WWCH"
 };
 
 const setError = () => {};

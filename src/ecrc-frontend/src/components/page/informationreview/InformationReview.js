@@ -97,7 +97,7 @@ export default function InformationReview({
         .then(res => {
           // May get info back that needs to be displayed more than just here
 
-          //Expected return could include: (var names not finalized)
+          // Expected return could include: (var names not finalized)
           // Old Org name
           // Available CRC expiration
 
@@ -454,7 +454,9 @@ InformationReview.propTypes = {
       organizationFacility: PropTypes.string
     }),
     org: PropTypes.shape({
-      orgNm: PropTypes.string.isRequired
+      orgNm: PropTypes.string.isRequired,
+      orgTicketNumber: PropTypes.string.isRequired,
+      defaultCrcScopeLevelCd: PropTypes.string.isRequired
     }),
     setError: PropTypes.func.isRequired,
     setShare: PropTypes.func.isRequired

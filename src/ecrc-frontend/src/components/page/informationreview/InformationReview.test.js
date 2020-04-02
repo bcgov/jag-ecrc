@@ -53,7 +53,9 @@ describe("InformationReview Component", () => {
   };
 
   const org = {
-    orgNm: "Some org"
+    orgNm: "Some org",
+    orgTicketNumber: "wsde",
+    defaultCrcScopeLevelCd: "WWCH"
   };
 
   const setError = jest.fn();
