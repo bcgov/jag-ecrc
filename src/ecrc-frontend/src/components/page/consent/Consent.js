@@ -268,12 +268,19 @@ export default function Consent({
           invoiceId = all[2].data.invoiceId;
           serviceFeeAmount = all[3].data.serviceFeeAmount;
 
-          const newCRC = {
+          let newCRC = {
             ...CRC,
             appl_Party_Id: partyId,
             session_Id: sessionId,
             invoice_Id: invoiceId
           };
+
+          if (orgApplicantRelationship === "ONETIME") {
+            newCRC = {
+              ...newCRC,
+              org_Appl_To_Pay: "O"
+            };
+          }
 
           return axios.post("/ecrc/private/createNewCRCService", newCRC, {
             headers: {
@@ -304,6 +311,11 @@ export default function Consent({
           saveApplicant();
           saveOrg();
           saveApplicationInfo(appInfo);
+
+          if (orgApplicantRelationship === "ONETIME") {
+            toSuccess();
+            setLoading(false);
+          }
 
           const createURL = {
             invoiceNumber: invoiceId,
