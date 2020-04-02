@@ -163,7 +163,7 @@ describe("success page", () => {
 
     informationReviewPage.applicantPosition
       .getText()
-      .then(function(applicantPosition) {
+      .then(applicantPosition => {
         expect(applicantPosition).toBe(
           testInput.applicationFormApplicantPosition
         );
