@@ -25,7 +25,7 @@ import io.jsonwebtoken.Jwts;
 
 public class JWTAuthorizationFilter  extends OncePerRequestFilter {
 	
-	private final Logger logger = LoggerFactory.getLogger(JWTAuthorizationFilter.class);
+	private final Logger jwtLogger = LoggerFactory.getLogger(JWTAuthorizationFilter.class);
 
     private EcrcProperties ecrcProps;
     
@@ -41,14 +41,14 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
         try {
             if (checkJWTToken(request)) {
             	
-            	logger.debug("JWT found in header.");
+            	jwtLogger.debug("JWT found in header.");
             	
                 Claims claims = validateToken(request);
-                logger.debug("JWT passed basic validation checks.");
+                jwtLogger.debug("JWT passed basic validation checks.");
                 
                 if ( null != claims.get("authorities") ) {
                 	
-                	logger.debug("Authority found JWT.");
+                	jwtLogger.debug("Authority found JWT.");
                 	
                 	// Accessing a private resource requires validating the 'PER' claim. 
                 	// Any errors during validation or a missing 'PER' claim will result in 403. 
@@ -56,38 +56,38 @@ public class JWTAuthorizationFilter  extends OncePerRequestFilter {
                 	
                 		// "per" block must be found in private context. 
 	                	if ( claims.get("per") != null ) {
-	                		logger.debug("Found 'PER' claim. Validating....");
+	                		jwtLogger.debug("Found 'PER' claim. Validating....");
 	                		String accessToken = AES256.decrypt((String)claims.get("per"), ecrcProps.getOauthPERSecret()); 
 	                		if ( accessToken != null ) {
 	                			ValidationResponse resp = tokenValidationServices.validateBCSCAccessToken(accessToken);  
 	                			if ( !resp.isValid() ) {
-	                				logger.error("Failed to validate Access Token within PER claim. Validation response said : {}", resp.getMessage());
+	                				jwtLogger.error("Failed to validate Access Token within PER claim. Validation response said : {}", resp.getMessage());
 	                				SecurityContextHolder.clearContext(); // fail
 	                			} else {
-	                				logger.debug("'PER' decypted and Access Token validated.");
+	                				jwtLogger.debug("'PER' decypted and Access Token validated.");
 	                				setUpSpringAuthentication(claims); // pass
 	                			}
 	                		} else {
-	                			logger.error("Error decrypting 'PER' block while accessing private resource");
+	                			jwtLogger.error("Error decrypting 'PER' block while accessing private resource");
 	                			SecurityContextHolder.clearContext(); // fail
 	                		}
 	                	} else {
-	                		logger.error("No 'PER' block found during attempt to access private resource");
+	                		jwtLogger.error("No 'PER' block found during attempt to access private resource");
 	                		SecurityContextHolder.clearContext(); // fail
 	                	}
                 	} else {
-                		logger.debug("Authorities checked. Allowing non private access.");
+                		jwtLogger.debug("Authorities checked. Allowing non private access.");
                 		setUpSpringAuthentication(claims); // pass
                 	}
                     
                 } else {
-                	logger.debug("No Authorities found. Blocking access.");
+                	jwtLogger.debug("No Authorities found. Blocking access.");
                     SecurityContextHolder.clearContext(); // fail
                 }
             }
             chain.doFilter(request, response);
         } catch (Exception e) {
-            logger.info("Authentication failed: {}", e.getMessage());
+            jwtLogger.info("Authentication failed: {}", e.getMessage());
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             (response).sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
         }
