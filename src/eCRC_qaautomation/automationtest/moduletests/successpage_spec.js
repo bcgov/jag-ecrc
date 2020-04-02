@@ -185,7 +185,7 @@ describe("success page", () => {
       expect(postalCode).toBe(testInput.applicationFormCurrentAddresPostalCode);
     });
 
-    informationReviewPage.country.getText().then(function(country) {
+    informationReviewPage.country.getText().then(country => {
       expect(country).toBe(testInput.applicationFormMailingAddresCountry);
     });
 
