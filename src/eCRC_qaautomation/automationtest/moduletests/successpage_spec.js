@@ -169,7 +169,7 @@ describe("success page", () => {
         );
       });
 
-    informationReviewPage.street.getText().then(function(street) {
+    informationReviewPage.street.getText().then(street => {
       expect(street).toBe(testInput.applicationFormMailingAddressStreet);
     });
 
