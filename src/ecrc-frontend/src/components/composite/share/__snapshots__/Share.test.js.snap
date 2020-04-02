@@ -9,15 +9,15 @@ exports[`Share Component Matches the snapshot of Share 1`] = `
   </span>
   <span>
     It was prepared for: 
-    prevOrg
+    Previous Org
   </span>
   <span>
     It is valid until: 
-    expiration
+    2021-01-04
   </span>
   <p>
     Would you like to share it with 
-    newOrg
+    New Org
     ?
   </p>
   <button

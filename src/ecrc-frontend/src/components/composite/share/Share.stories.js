@@ -15,6 +15,6 @@ export const Default = () => (
     expiration="2021-01-04"
     newOrg="New Org"
     clickShare={clickShare}
-    boxChecked
+    boxChecked={false}
   />
 );
