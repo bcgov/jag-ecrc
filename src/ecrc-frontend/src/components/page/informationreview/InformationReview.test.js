@@ -77,9 +77,9 @@ describe("InformationReview Component", () => {
     });
 
     const mock = new MockAdapter(axios);
-    const API_REQUEST_SHARE = "/ecrc/private/checkShare?requestGuid=unique123";
+    const API_REQUEST_SHARE = "/ecrc/private/checkApplicantForPrevCRC";
 
-    mock.onGet(API_REQUEST_SHARE).reply(200, {
+    mock.onPost(API_REQUEST_SHARE).reply(200, {
       oldOrg: "Old org name",
       oldCRCExpiration: "2021-10-12"
     });

@@ -51,7 +51,7 @@ export default function InformationReview({
       jobTitle,
       organizationFacility
     },
-    org: { orgNm },
+    org: { orgNm, orgTicketNumber, defaultCrcScopeLevelCd },
     setError,
     setShare
   }
@@ -73,17 +73,32 @@ export default function InformationReview({
       setToHome(true);
     } else {
       const uuid = sessionStorage.getItem("uuid");
+      const token = sessionStorage.getItem("jwt");
+
+      const shareInfo = {
+        orgTicketNumber,
+        legalSurnameNm,
+        legalFirstNm,
+        birthDt,
+        genderTxt,
+        postalCodeTxt,
+        driversLicNo,
+        scopeLevelCd: defaultCrcScopeLevelCd,
+        requestGuid: uuid
+      };
 
       // Make axios call to check for sharing service
       axios
-        .get(`/ecrc/private/checkShare?requestGuid=${uuid}`)
+        .post("/ecrc/private/checkApplicantForPrevCRC", shareInfo, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
         .then(res => {
-          // Check if share was allowed?
-          // if it was, setShare -> true
+          // May get info back that needs to be displayed more than just here
 
-          // May get info back that need to be displayed more than just here
-          // Might need to add to a state, or create new state
-          // Old Org name:
+          //Expected return could include: (var names not finalized)
+          // Old Org name
           // Available CRC expiration
 
           setOldOrg(res.data.oldOrg);
@@ -91,9 +106,8 @@ export default function InformationReview({
           setShareAvailable(true);
         })
         .catch(() => {
-          // This could be fine...
-          // If checkShare errors rather than responds, continue
-          // If different error, ERROR
+          // If error = no share, do nothing
+          // else if other error, go to error page and display correct error
         });
     }
   }, []);

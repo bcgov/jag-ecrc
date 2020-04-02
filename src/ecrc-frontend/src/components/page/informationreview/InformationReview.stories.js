@@ -84,9 +84,9 @@ const FailData = props => {
 
 const LoadData = props => {
   const mock = new MockAdapter(axios);
-  const API_REQUEST = "/ecrc/private/checkShare?requestGuid=unique123";
+  const API_REQUEST = "/ecrc/private/checkApplicantForPrevCRC";
 
-  mock.onGet(API_REQUEST).reply(200, {
+  mock.onPost(API_REQUEST).reply(200, {
     oldOrg: "Old Org",
     oldCRCExpiration: "2021-10-22"
   });
