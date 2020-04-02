@@ -25,7 +25,6 @@ module.exports.config = {
   capabilities: {
     browserName: "chrome",
     chromeOptions: {
-      //args: ["--headless", "--window-size=800x600"],
       prefs: {
         download: {
           default_directory: "/tmp/pdfdownloads",
