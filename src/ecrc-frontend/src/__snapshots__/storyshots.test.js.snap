@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Application Form Page Non Schedule D 1`] = `
+exports[`Storyshots Application Form Non Schedule D 1`] = `
 <main>
   <header>
     <nav
@@ -1311,7 +1311,7 @@ exports[`Storyshots Application Form Page Non Schedule D 1`] = `
 </main>
 `;
 
-exports[`Storyshots Application Form Page Schedule D 1`] = `
+exports[`Storyshots Application Form Schedule D 1`] = `
 <main>
   <header>
     <nav
