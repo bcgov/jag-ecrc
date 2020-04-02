@@ -34,6 +34,7 @@ public class EcrcProperties {
 	private String getNextInvoiceIdUri;
 	private String updateServiceFinancialTxnUri;
 	private String checkApplicantForPrevCrcUri;
+	private String createSharingServiceUri;
 	
 	//CORS properties
 	private String corsMapping;
@@ -163,6 +164,14 @@ public class EcrcProperties {
 
 	public void setCheckApplicantForPrevCrcUri(String checkApplicantForPrevCrcUri) {
 		this.checkApplicantForPrevCrcUri = checkApplicantForPrevCrcUri;
+	}
+
+	public String getCreateSharingServiceUri() {
+		return createSharingServiceUri;
+	}
+
+	public void setCreateSharingServiceUri(String createSharingServiceUri) {
+		this.createSharingServiceUri = createSharingServiceUri;
 	}
 
 	public String getCorsMapping() {

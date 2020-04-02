@@ -103,4 +103,10 @@ public class EcrcServicesImpl implements EcrcServices {
 		String _checkApplicantForPrevCrcUri = String.format(ecrcProps.getCheckApplicantForPrevCrcUri(), applicantInfo.toQueryString());
 		return ecrcWebMethodsService.callWebMethodsService(_checkApplicantForPrevCrcUri, new CheckApplicantForPrevCrc(), applicantInfo.getRequestGuid());
 	}
+
+	public ResponseEntity<String> createSharingService(RequestCreateSharingService serviceInfo)
+			throws EcrcServiceException {
+		String _createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(_createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
+	}
 }
