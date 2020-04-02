@@ -42,14 +42,11 @@ export default function Success({
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    console.log(paymentInfo);
-
     if (
       !isAuthorized() ||
       !isActionPerformed("consent") ||
       (!paymentInfo.trnApproved && orgApplicantRelationship !== "VOLUNTEER")
     ) {
-      console.log("setting to home");
       setToHome(true);
     }
   }, [paymentInfo.trnApproved, orgApplicantRelationship]);
@@ -84,7 +81,6 @@ export default function Success({
   }
 
   const handleError = error => {
-    console.log(error);
     setToError(true);
     if (error && error.response && error.response.status) {
       if (
