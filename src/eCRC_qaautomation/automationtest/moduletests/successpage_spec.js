@@ -147,7 +147,7 @@ describe("success page", () => {
     applicationFormPage.continueButton.click();
     informationReviewPage.cityAndCountryBirth
       .getText()
-      .then(function(cityAndCountryBirth) {
+      .then(cityAndCountryBirth => {
         expect(cityAndCountryBirth).toBe(
           testInput.applicationFormCityAndCountryBirth
         );
