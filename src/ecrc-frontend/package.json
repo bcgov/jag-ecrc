@@ -81,7 +81,8 @@
     "husky": "^4.2.3",
     "prettier": "1.19.1",
     "pretty-quick": "^2.0.1",
-    "react-test-renderer": "^16.12.0"
+    "react-test-renderer": "^16.12.0",
+    "jest-sonar-reporter": "^2.0.0"
   },
   "jest": {
     "watchPathIgnorePatterns": [
@@ -89,18 +90,34 @@
     ],
     "collectCoverageFrom": [
       "src/**/*.js",
-      "!src/index.js"
+      "!src/index.js",
+      "!**/node_modules/**",
+      "!**/vendor/**"
     ],
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
     },
     "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
+      "<rootDir>/src/setupTests.js",
+      "./src/setupTests.js"
     ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|PNG|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|pdf)$": "<rootDir>/src/AssetsTransformer.js",
       "\\.(css|less)$": "<rootDir>/src/AssetsTransformer.js"
-    }
+    },
+    "verbose": true,
+    "testResultsProcessor": "jest-sonar-reporter",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ],
+    "coverageDirectory": "coverage"
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "test-report.xml",
+    "indent": 4
   },
   "husky": {
     "hooks": {
