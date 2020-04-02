@@ -122,6 +122,21 @@ export const NonScheduleD = () => (
   </LoadData>
 );
 
+export const MobileNonScheduleD = () => (
+  <LoadData>
+    {data => (
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm
+          page={{
+            ...data.page,
+            org: { ...data.org, defaultScheduleTypeCd: "WBSC" }
+          }}
+        />
+      </MemoryRouter>
+    )}
+  </LoadData>
+);
+
 export const ScheduleD = () => (
   <LoadData>
     {data => (
@@ -131,3 +146,29 @@ export const ScheduleD = () => (
     )}
   </LoadData>
 );
+
+export const MobileScheduleD = () => (
+  <LoadData>
+    {data => (
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={data.page} />
+      </MemoryRouter>
+    )}
+  </LoadData>
+);
+
+MobileNonScheduleD.story = {
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile2"
+    }
+  }
+};
+
+MobileScheduleD.story = {
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile2"
+    }
+  }
+};
