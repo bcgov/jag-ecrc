@@ -107,6 +107,6 @@ public class EcrcServicesImpl implements EcrcServices {
 	public ResponseEntity<String> createSharingService(RequestCreateSharingService serviceInfo)
 			throws EcrcServiceException {
 		String _createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_createSharingServiceUri, new CheckApplicantForPrevCrc(), serviceInfo.getRequestGuid());
+		return ecrcWebMethodsService.callWebMethodsService(_createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
 	}
 }
