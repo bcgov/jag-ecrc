@@ -181,7 +181,7 @@ describe("success page", () => {
       expect(province).toBe(testInput.applicationFormCurrentAddressProvince);
     });
 
-    informationReviewPage.postalCode.getText().then(function(postalCode) {
+    informationReviewPage.postalCode.getText().then(postalCode => {
       expect(postalCode).toBe(testInput.applicationFormCurrentAddresPostalCode);
     });
 
