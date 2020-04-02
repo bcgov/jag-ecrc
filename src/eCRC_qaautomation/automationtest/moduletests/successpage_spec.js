@@ -157,7 +157,7 @@ describe("success page", () => {
       expect(phoneNumber).toBe(testInput.applicationFormPhoneNumber);
     });
 
-    informationReviewPage.emailAddress.getText().then(function(emailAddress) {
+    informationReviewPage.emailAddress.getText().then(emailAddress => {
       expect(emailAddress).toBe(testInput.applicationFormEmailAddress);
     });
 
