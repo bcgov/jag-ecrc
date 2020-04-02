@@ -7,7 +7,6 @@ const orgVerificationPage = require("../../pageobjectfactory/orgverificationpage
 const termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
 const bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
 const bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
-const bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
 const consentPage = require("../../pageobjectfactory/consentpage.js");
 const applicationFormPage = require("../../pageobjectfactory/applicationformpage");
 const paymentPage = require("../../pageobjectfactory/paymentpage");
@@ -197,31 +196,14 @@ describe("success page", () => {
     consentPage.disclosureCheckBox.click();
     consentPage.reportChargesCheckBox.click();
     consentPage.continueButton.click();
+  });
 
+  it("verify when download button is clicked that pdf is downloaded containing receipt info", () => {
     browser.wait(browserWait.elementToBeClickable(paymentPage.payNow), 10000);
-
     paymentPage.cardNumber.sendKeys(testInput.approvedCardNumber);
     paymentPage.cardCVD.sendKeys(testInput.approvedCardCVD);
     paymentPage.payNow.click();
     expect(paymentPage.paymentStatus.getText()).toBe(testInput.approvedStatus);
-  });
-
-  // it("verify when print button is clicked that print screen opens", () => {
-  //     browser.sleep(4000);
-
-  //     successPage.printButton.click();
-
-  //     browser.actions().sendKeys(protractor.Key.ESCAPE).perform();
-
-  //     expect(paymentPage.paymentStatus.getText()).toBe(testInput.approvedStatus);
-
-  //     browser.sleep(4000);
-  // });
-
-  it("verify when download button is clicked that pdf is downloaded containing receipt info", () => {
-    //console.dir(successPage.serviceNumber.getText());
-    //console.log(successPage.lastName.getText());
-    //console.log(successPage.firstName.getText());
 
     expect(successPage.lastName.getText()).toBe(
       testInput.applicationFormLastName
@@ -231,22 +213,15 @@ describe("success page", () => {
     );
 
     let filename = process.env.PDF_PATH.concat("\\");
-    //let serviceNumberVal;
-    //let lastNameVal;
-    //let firstNameVal;
 
     successPage.serviceNumber.getText().then(serviceNumberVal => {
-      console.log(serviceNumberVal);
       filename = filename.concat(serviceNumberVal);
 
       successPage.lastName.getText().then(lastNameVal => {
-        console.log(lastNameVal);
         filename = filename.concat(lastNameVal);
 
         successPage.firstName.getText().then(firstNameVal => {
-          console.log(firstNameVal);
           filename = filename.concat(firstNameVal, ".pdf");
-          console.log(filename);
 
           if (fs.existsSync(filename)) {
             //Delete file if it already exists
@@ -268,5 +243,20 @@ describe("success page", () => {
         });
       });
     });
+  });
+
+  it("verify that after a failed payment, we can retry successfully", () => {
+    browser.wait(browserWait.elementToBeClickable(paymentPage.payNow), 10000);
+    paymentPage.cardNumber.sendKeys(testInput.declinedCardNumber);
+    paymentPage.cardCVD.sendKeys(testInput.declinedCardCVD);
+    paymentPage.payNow.click();
+    expect(paymentPage.paymentStatus.getText()).toBe(testInput.declinedStatus);
+
+    successPage.retryPaymentLink.click();
+    browser.wait(browserWait.elementToBeClickable(paymentPage.payNow), 10000);
+    paymentPage.cardNumber.sendKeys(testInput.approvedCardNumber);
+    paymentPage.cardCVD.sendKeys(testInput.approvedCardCVD);
+    paymentPage.payNow.click();
+    expect(paymentPage.paymentStatus.getText()).toBe(testInput.approvedStatus);
   });
 });

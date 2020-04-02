@@ -25,12 +25,12 @@ module.exports.config = {
   capabilities: {
     browserName: "chrome",
     chromeOptions: {
-      //args: ["--headless", "--window-size=800x600"]
+      //args: ["--headless", "--window-size=800x600"],
       prefs: {
         download: {
-          prompt_for_download: false,
+          default_directory: "/tmp/pdfdownloads",
           directory_upgrade: true,
-          default_directory: "/tmp/pdfdownloads"
+          prompt_for_download: false
         }
       }
     }
