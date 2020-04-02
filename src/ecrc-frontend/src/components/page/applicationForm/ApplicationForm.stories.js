@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from "react";
 import { MemoryRouter } from "react-router-dom";
 import { storiesOf } from "@storybook/react";
@@ -6,6 +7,8 @@ import MockAdapter from "axios-mock-adapter";
 
 import ApplicationForm from "./ApplicationForm";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
+
+console.error = () => {}; // for async storyshot errors, due to lack of support
 
 function LoadData(props) {
   if (process.env.REACT_APP_API_BASE_URL) {

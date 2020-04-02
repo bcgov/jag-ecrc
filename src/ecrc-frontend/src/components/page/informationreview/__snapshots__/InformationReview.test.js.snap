@@ -419,6 +419,7 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
         <button
           className="btn ecrc_go_btn btn"
           disabled={true}
+          onClick={[Function]}
           type="submit"
         >
           Share

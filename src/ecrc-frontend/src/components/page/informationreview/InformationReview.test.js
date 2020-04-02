@@ -1,5 +1,5 @@
 import React from "react";
-import { create } from "react-test-renderer";
+import { create, act } from "react-test-renderer";
 import { MemoryRouter, Router } from "react-router-dom";
 import {
   render,
@@ -86,24 +86,30 @@ describe("InformationReview Component", () => {
   });
 
   test("Matches the snapshot", async () => {
-    const infoReview = create(
-      <MemoryRouter>
-        <InformationReview page={page} />
-      </MemoryRouter>
-    );
+    let infoReview;
+
+    await act(async () => {
+      infoReview = create(
+        <MemoryRouter>
+          <InformationReview page={page} />
+        </MemoryRouter>
+      );
+    });
 
     await wait(() => {});
 
     expect(infoReview.toJSON()).toMatchSnapshot();
   });
 
-  test("Validate checkbox", () => {
+  test("Validate checkbox", async () => {
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
         <InformationReview page={page} />
       </Router>
     );
+
+    await wait(() => {});
 
     expect(getByText(container, "Submit").disabled).toBeTruthy();
 
@@ -129,14 +135,18 @@ describe("InformationReview Component", () => {
     expect(getByText(container, "Share").disabled).toBeFalsy();
   });
 
-  test("Validate Back button", () => {
+  test("Validate Back button", async () => {
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
         <InformationReview page={page} />
       </Router>
     );
+
+    await wait(() => {});
+
     fireEvent.click(getByText(container, "Edit Application"));
+
     expect(history.location.pathname).toEqual(
       "/criminalrecordcheck/applicationform"
     );

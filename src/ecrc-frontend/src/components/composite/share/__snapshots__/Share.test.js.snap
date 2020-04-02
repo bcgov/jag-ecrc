@@ -9,17 +9,21 @@ exports[`Share Component Matches the snapshot of Share 1`] = `
   </span>
   <span>
     It was prepared for: 
+    Previous Org
   </span>
   <span>
     It is valid until: 
+    2021-01-04
   </span>
   <p>
     Would you like to share it with 
+    New Org
     ?
   </p>
   <button
     className="btn ecrc_go_btn btn"
-    disabled={true}
+    disabled={false}
+    onClick={[Function]}
     type="submit"
   >
     Share
