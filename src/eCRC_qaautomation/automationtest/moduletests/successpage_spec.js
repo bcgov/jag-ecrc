@@ -177,7 +177,7 @@ describe("success page", () => {
       expect(city).toBe(testInput.applicationFormCurrentAddressCity);
     });
 
-    informationReviewPage.province.getText().then(function(province) {
+    informationReviewPage.province.getText().then(province => {
       expect(province).toBe(testInput.applicationFormCurrentAddressProvince);
     });
 
