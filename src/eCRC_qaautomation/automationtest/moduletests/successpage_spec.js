@@ -173,7 +173,7 @@ describe("success page", () => {
       expect(street).toBe(testInput.applicationFormMailingAddressStreet);
     });
 
-    informationReviewPage.city.getText().then(function(city) {
+    informationReviewPage.city.getText().then(city => {
       expect(city).toBe(testInput.applicationFormCurrentAddressCity);
     });
 
