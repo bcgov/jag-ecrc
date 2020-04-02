@@ -5,6 +5,7 @@ import java.util.Map;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestCheckApplicantForPrevCrc;
 import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
+import ca.bc.gov.open.ecrc.model.RequestCreateSharingService;
 import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
 import ca.bc.gov.open.ecrc.model.RequestUpdateServiceFinancialTxn;
@@ -44,5 +45,7 @@ public interface EcrcServices {
 	public String getJwtSecret() throws EcrcServiceException;
 
 	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo) throws EcrcServiceException;
+
+	public ResponseEntity<String> createSharingService(RequestCreateSharingService serviceInfo) throws EcrcServiceException;
 
 }

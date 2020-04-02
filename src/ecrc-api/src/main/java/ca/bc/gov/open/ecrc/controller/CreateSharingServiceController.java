@@ -12,28 +12,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
-import ca.bc.gov.open.ecrc.model.RequestCheckApplicantForPrevCrc;
+import ca.bc.gov.open.ecrc.model.RequestCreateSharingService;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 
 /**
- * Check applicant for previous crc controller
+ * Create sharing service controller
  * 
  * @author sivakaruna
  *
  */
 @RestController
-public class CheckApplicantForPrevCrcController {
+public class CreateSharingServiceController {
+
 	@Autowired
 	EcrcServices ecrcServices;
 
-	Logger logger = LoggerFactory.getLogger(CheckApplicantForPrevCrcController.class);
+	Logger logger = LoggerFactory.getLogger(CreateSharingServiceController.class);
 
-	@PostMapping(value = "/private/checkApplicantForPrevCRC", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> checkApplicantForPrevCrc(@RequestBody RequestCheckApplicantForPrevCrc applicantInfo) {
-		logger.info("Check applicant for previous CRC request received [{}]", applicantInfo.getRequestGuid());
+	@PostMapping(value = "/private/createSharingService", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> createSharingService(@RequestBody RequestCreateSharingService serviceInfo) {
+		logger.info("Create sharing service request received [{}]", serviceInfo.getRequestGuid());
 
 		try {
-			return ecrcServices.checkApplicantForPrevCrc(applicantInfo);
+			return ecrcServices.createSharingService(serviceInfo);
 		} catch (Exception ex) {
 			logger.error("Error in ecrc service: ", ex);
 			return new ResponseEntity<>(
