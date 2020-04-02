@@ -153,7 +153,7 @@ describe("success page", () => {
         );
       });
 
-    informationReviewPage.phoneNumber.getText().then(function(phoneNumber) {
+    informationReviewPage.phoneNumber.getText().then(phoneNumber => {
       expect(phoneNumber).toBe(testInput.applicationFormPhoneNumber);
     });
 
