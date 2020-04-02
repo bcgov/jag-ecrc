@@ -19,12 +19,19 @@ module.exports.config = {
     termsofuse: "./automationtest/moduletests/termsofusepage_spec.js",
     success: "./automationtest/smoketests/success_spec.js",
     routing: "./automationtest/routingtests/routingtests.js",
-    volunteer: "./automationtest/smoketests/success_volunteer_spec.js"
+    volunteer: "./automationtest/smoketests/success_volunteer_spec.js",
+    successpage: "./automationtest/moduletests/successpage_spec.js"
   },
   capabilities: {
-    browserName: "chrome"
-    /* chromeOptions: {
-            args: ["--headless", "--window-size=800x600"]
-        }*/
+    browserName: "chrome",
+    chromeOptions: {
+      prefs: {
+        download: {
+          default_directory: "/tmp/pdfdownloads",
+          directory_upgrade: true,
+          prompt_for_download: false
+        }
+      }
+    }
   }
 };

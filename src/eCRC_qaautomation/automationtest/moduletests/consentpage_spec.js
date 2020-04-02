@@ -248,11 +248,11 @@ describe("consent page", function() {
         if (unchecked.unchecked === "consent") {
           consentPage.certifyCheckBox.click();
 
-          consentPage.unknownCheckBox.click();
+          consentPage.disclosureCheckBox.click();
         } else if (unchecked.unchecked === "certify") {
           consentPage.consentCheckBox.click();
 
-          consentPage.unknownCheckBox.click();
+          consentPage.disclosureCheckBox.click();
         } else {
           consentPage.consentCheckBox.click();
 
@@ -271,7 +271,7 @@ describe("consent page", function() {
 
     consentPage.certifyCheckBox.click();
 
-    consentPage.unknownCheckBox.click();
+    consentPage.disclosureCheckBox.click();
 
     expect("true").toBe(consentPage.continueButton.getAttribute("disabled"));
   });
@@ -281,7 +281,7 @@ describe("consent page", function() {
 
     consentPage.certifyCheckBox.click();
 
-    consentPage.unknownCheckBox.click();
+    consentPage.disclosureCheckBox.click();
 
     consentPage.continueButton.click();
 
