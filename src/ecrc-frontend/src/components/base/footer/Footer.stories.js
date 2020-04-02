@@ -1,5 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import Footer from "./Footer";
 
@@ -8,7 +7,14 @@ export default {
   component: Footer
 };
 
-storiesOf("Footer", module)
-  .add("Default", () => <Footer />)
-  .addParameters({ viewport: { defaultViewport: "mobile2" } })
-  .add("Mobile", () => <Footer />);
+export const Default = () => <Footer />;
+
+export const Mobile = () => <Footer />;
+
+Mobile.story = {
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile2"
+    }
+  }
+};

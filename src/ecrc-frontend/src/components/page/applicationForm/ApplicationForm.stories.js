@@ -46,6 +46,14 @@ function LoadData(props) {
       family_name: "fam",
       identity_assurance_level: 3
     },
+    actionsPerformed: [
+      "infoReview",
+      "appForm",
+      "tou",
+      "bcscRedirect",
+      "orgVerification",
+      "consent"
+    ],
     authorities: ["Authorized", "ROLE"]
   };
   const token = generateJWTToken(tokenPayload);
