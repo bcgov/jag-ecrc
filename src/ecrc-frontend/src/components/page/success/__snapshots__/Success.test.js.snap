@@ -81,7 +81,9 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
       <div
         className="print"
       >
-        <div>
+        <div
+          hidden={true}
+        >
           <img
             alt="B.C. Government Logo"
             height="64"
@@ -105,9 +107,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
             <tr>
               <th
                 colSpan="2"
-              >
-                Application Information
-              </th>
+              />
             </tr>
           </thead>
           <tbody>
@@ -349,7 +349,9 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
       <div
         className="print"
       >
-        <div>
+        <div
+          hidden={true}
+        >
           <img
             alt="B.C. Government Logo"
             height="64"
@@ -373,9 +375,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
             <tr>
               <th
                 colSpan="2"
-              >
-                Application Information
-              </th>
+              />
             </tr>
           </thead>
           <tbody>
@@ -625,7 +625,9 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
       <div
         className="print"
       >
-        <div>
+        <div
+          hidden={true}
+        >
           <img
             alt="B.C. Government Logo"
             height="64"
@@ -649,9 +651,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
             <tr>
               <th
                 colSpan="2"
-              >
-                Application Information
-              </th>
+              />
             </tr>
           </thead>
           <tbody>
