@@ -24,4 +24,4 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
     - name: Sonar Scan
-      run: mvn clean verify sonar:sonar --file src/ecrc-api/pom.xml -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dsonar-language=java -Dsonar.jacoco.reportPath=/home/runner/work/jag-ecrc/jag-ecrc/src/ecrc-api/target/jacoco.exec
+      run: mvn clean verify sonar:sonar --file src/ecrc-api/pom.xml -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dsonar.jacoco.reportPath=/home/runner/work/jag-ecrc/jag-ecrc/src/ecrc-api/target/jacoco.exec
