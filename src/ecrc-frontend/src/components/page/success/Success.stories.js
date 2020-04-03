@@ -101,6 +101,22 @@ export const MobileVolunteer = () => (
   </MemoryRouter>
 );
 
+export const Onetime = () => (
+  <MemoryRouter>
+    <Success
+      page={{ ...page, org: { ...org, orgApplicantRelationship: "ONETIME" } }}
+    />
+  </MemoryRouter>
+);
+
+export const MobileOnetime = () => (
+  <MemoryRouter>
+    <Success
+      page={{ ...page, org: { ...org, orgApplicantRelationship: "ONETIME" } }}
+    />
+  </MemoryRouter>
+);
+
 export const PaymentSuccess = () => (
   <LoadData props={page}>
     {data => (

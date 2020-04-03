@@ -284,8 +284,7 @@ export default function Success({
       <div className="page">
         <div className="content col-md-8">
           <h1>
-            {orgApplicantRelationship === "VOLUNTEER" &&
-              "Application Submitted"}
+            {orgApplicantRelationship !== "EMPLOYEE" && "Application Submitted"}
             {paymentInfo.trnApproved === "0" && "Payment Declined"}
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
