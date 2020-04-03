@@ -19,6 +19,29 @@ public class RequestPaymentService {
 	private String partyIdRef2;
 	private String requestGuid;
 
+	public RequestPaymentService(String transType,
+								 String invoiceNumber,
+								 String approvedPage,
+								 String declinedPage,
+								 String errorPage,
+								 String totalItemsAmount,
+								 String minutesToExpire,
+								 String serviceIdRef1,
+								 String partyIdRef2,
+								 String requestGuid) {
+		this.transType = transType;
+		this.invoiceNumber = invoiceNumber;
+		this.approvedPage = approvedPage;
+		this.declinedPage = declinedPage;
+		this.errorPage = errorPage;
+		this.totalItemsAmount = totalItemsAmount;
+		this.minutesToExpire = minutesToExpire;
+		this.serviceIdRef1 = serviceIdRef1;
+		this.partyIdRef2 = partyIdRef2;
+		this.requestGuid = requestGuid;
+	}
+	public RequestPaymentService() {}
+
 	public String getTransType() {
 		return transType;
 	}
