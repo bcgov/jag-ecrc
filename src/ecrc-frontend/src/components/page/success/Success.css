@@ -1,0 +1,13 @@
+.print-page-success {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #1a5a96;
+  margin-bottom: 30px;
+}
+
+.content-success-sidecard {
+  flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-left: 20px;
+}

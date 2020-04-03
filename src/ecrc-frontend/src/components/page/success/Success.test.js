@@ -124,7 +124,7 @@ describe("Success Page Component", () => {
       </MemoryRouter>
     );
 
-    fireEvent.click(getByText(container, "Click here to try again"));
+    fireEvent.click(getByText(container, "Try Again"));
 
     await wait(() => {
       expect(saveApplicationInfo).toHaveBeenCalled();
