@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
+import { FaPrint, FaDownload, FaEnvelope } from "react-icons/fa";
 import { useLocation, Redirect, useHistory } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
@@ -16,6 +17,7 @@ import {
   isActionPerformed,
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
+import "./Success.css";
 
 export default function Success({
   page: {
@@ -37,7 +39,9 @@ export default function Success({
   const paymentInfo = queryString.parse(location.search);
   const uuid = sessionStorage.getItem("uuid");
   const [toError, setToError] = useState(false);
+  const [toHostHome, setToHostHome] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
+  const headerColor = paymentInfo.trnApproved === "0" ? "#ff0000" : "#00d000";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -112,23 +116,47 @@ export default function Success({
   };
 
   const receiptInfo = [
-    { name: "Service Number", value: serviceId },
     { name: "First Name", value: legalFirstNm },
-    { name: "Last Name", value: legalSurnameNm },
-    { name: "Organization", value: orgNm }
+    { name: "Last Name", value: legalSurnameNm }
   ];
 
   if (paymentInfo.trnApproved === "1") {
+    receiptInfo.unshift({ name: "Service Number", value: serviceId });
+    receiptInfo.push({ name: "Organization", value: orgNm });
     receiptInfo.push({ name: "Amount", value: paymentInfo.trnAmount });
-  }
-
-  if (orgApplicantRelationship === "EMPLOYEE") {
     receiptInfo.push({ name: "Date/Time", value: paymentInfo.trnDate });
     receiptInfo.push({
       name: "Transaction ID",
       value: paymentInfo.trnOrderNumber
     });
   }
+
+  if (paymentInfo.trnApproved === "0") {
+    receiptInfo.push({ name: "Date/Time", value: paymentInfo.trnDate });
+    receiptInfo.push({
+      name: "Transaction ID",
+      value: paymentInfo.trnOrderNumber
+    });
+  }
+
+  if (orgApplicantRelationship !== "EMPLOYEE") {
+    receiptInfo.unshift({ name: "Service Number", value: serviceId });
+    receiptInfo.push({ name: "Organization", value: orgNm });
+  }
+
+  const cancelButton = {
+    label: "Cancel and Exit",
+    buttonStyle: "btn ecrc_accessary_btn",
+    buttonSize: "btn",
+    type: "submit"
+  };
+
+  const tryAgainButton = {
+    label: "Try Again",
+    buttonStyle: "btn ecrc_go_btn mr-0",
+    buttonSize: "btn",
+    type: "submit"
+  };
 
   const receiptInfoTable = {
     id: "print",
@@ -197,24 +225,6 @@ export default function Success({
       });
   }
 
-  const printButton = {
-    label: "Print",
-    buttonStyle: "btn ecrc_go_btn",
-    buttonSize: "btn",
-    type: "submit"
-  };
-
-  const printAppInfo = () => {
-    setIsHidden(false);
-  };
-
-  const pdfButton = {
-    label: "Download",
-    buttonStyle: "btn ecrc_go_btn ml-5 mr-0",
-    buttonSize: "btn",
-    type: "submit"
-  };
-
   const downloadPDF = () => {
     const doc = new jsPDF();
 
@@ -278,18 +288,36 @@ export default function Success({
       });
   };
 
+  const cancelClick = () => {
+    const wishToRedirect = window.confirm(
+      "Are you sure you would like to leave this page?"
+    );
+
+    if (wishToRedirect) {
+      sessionStorage.clear();
+      setToHostHome(true);
+    }
+  };
+
+  const emailReceipt = () => {
+    window.open("mailto:?subject=Criminal Record Check");
+  };
+
+  if (toHostHome) {
+    return <Redirect to="/hosthome" />;
+  }
+
   return (
     <main>
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
-          <h1>
-            {orgApplicantRelationship === "VOLUNTEER" &&
-              "Application Submitted"}
-            {paymentInfo.trnApproved === "0" && "Payment Declined"}
+          <h1 style={{ color: headerColor }}>
+            {orgApplicantRelationship !== "EMPLOYEE" && "Application Submitted"}
+            {paymentInfo.trnApproved === "0" && "Payment Declined/Cancelled"}
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
-          {paymentInfo.trnApproved !== "0" && (
+          {orgApplicantRelationship !== "EMPLOYEE" && (
             <>
               <p>
                 Thank you for submitting your application to the Criminal
@@ -303,25 +331,27 @@ export default function Success({
           )}
           {paymentInfo.trnApproved === "0" && (
             <>
-              <span>
-                Unfortunately, your payment transaction was declined. Please
-                ensure you have the correct credit card information:
-              </span>
-              <ul className="bodyList">
-                <li>16 digit credit card number</li>
-                <li>3 digit CVD number</li>
-                <li>Non-expired date</li>
-                <li>Available funds to transfer</li>
-              </ul>
               <p>
-                <button
-                  className="notAButton"
-                  type="button"
-                  onClick={() => retryPayment()}
-                >
-                  Click here to try again
-                </button>
-                . Otherwise, please refer to our website for submission options.
+                The transaction has been declined, or cancelled, and payment was
+                not received. Please ensure you have entered your credit card
+                information correctly or try a different payment method.
+              </p>
+              <p>
+                Otherwise, please refer to our Criminal Records Review Program
+                website, or your organization, for submission options.
+              </p>
+            </>
+          )}
+          {paymentInfo.trnApproved === "1" && (
+            <>
+              <p>
+                Thank you for submitting your application to the Criminal
+                Records Review Program.
+              </p>
+              <p>
+                Your payment has been received and your application will be
+                reviewed shortly. You will be contacted if it is found to be
+                incomplete or inaccurate.
               </p>
             </>
           )}
@@ -339,12 +369,47 @@ export default function Success({
             </div>
             <Table table={receiptInfoTable} />
           </div>
+
+          <div className="buttons pt-4">
+            <Button button={cancelButton} onClick={cancelClick} />
+            <Button button={tryAgainButton} onClick={retryPayment} />
+          </div>
+        </div>
+
+        <div className="content-success-sidecard">
           <div
-            className="buttons pt-4"
-            style={{ justifyContent: "flex-start" }}
+            role="button"
+            className="print-page-success"
+            onKeyDown={() => {
+              setIsHidden(false);
+            }}
+            onClick={() => {
+              setIsHidden(false);
+            }}
+            tabIndex={0}
           >
-            <Button button={printButton} onClick={printAppInfo} />
-            <Button button={pdfButton} onClick={downloadPDF} />
+            <FaPrint style={{ marginRight: "10px" }} />
+            Print
+          </div>
+          <div
+            className="print-page-success"
+            role="button"
+            onKeyDown={downloadPDF}
+            onClick={downloadPDF}
+            tabIndex={0}
+          >
+            <FaDownload style={{ marginRight: "10px" }} />
+            Download
+          </div>
+          <div
+            className="print-page-success"
+            role="button"
+            onKeyDown={emailReceipt}
+            onClick={emailReceipt}
+            tabIndex={0}
+          >
+            <FaEnvelope style={{ marginRight: "10px" }} />
+            Email
           </div>
         </div>
       </div>

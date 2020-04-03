@@ -17461,37 +17461,20 @@ exports[`Storyshots Success Mobile Payment Failure 1`] = `
     <div
       className="content col-md-8"
     >
-      <h1>
-        Payment Declined
-      </h1>
-      <span>
-        Unfortunately, your payment transaction was declined. Please ensure you have the correct credit card information:
-      </span>
-      <ul
-        className="bodyList"
+      <h1
+        style={
+          Object {
+            "color": "#ff0000",
+          }
+        }
       >
-        <li>
-          16 digit credit card number
-        </li>
-        <li>
-          3 digit CVD number
-        </li>
-        <li>
-          Non-expired date
-        </li>
-        <li>
-          Available funds to transfer
-        </li>
-      </ul>
+        Payment Declined/Cancelled
+      </h1>
       <p>
-        <button
-          className="notAButton"
-          onClick={[Function]}
-          type="button"
-        >
-          Click here to try again
-        </button>
-        . Otherwise, please refer to our website for submission options.
+        The transaction has been declined, or cancelled, and payment was not received. Please ensure you have entered your credit card information correctly or try a different payment method.
+      </p>
+      <p>
+        Otherwise, please refer to our Criminal Records Review Program website, or your organization, for submission options.
       </p>
       <br />
       <div
@@ -17529,14 +17512,6 @@ exports[`Storyshots Success Mobile Payment Failure 1`] = `
           <tbody>
             <tr>
               <td>
-                Service Number
-              </td>
-              <td>
-                987
-              </td>
-            </tr>
-            <tr>
-              <td>
                 First Name
               </td>
               <td>
@@ -17549,14 +17524,6 @@ exports[`Storyshots Success Mobile Payment Failure 1`] = `
               </td>
               <td>
                 Ross
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Organization
-              </td>
-              <td>
-                Public Broadcast Network
               </td>
             </tr>
             <tr>
@@ -17580,18 +17547,13 @@ exports[`Storyshots Success Mobile Payment Failure 1`] = `
       </div>
       <div
         className="buttons pt-4"
-        style={
-          Object {
-            "justifyContent": "flex-start",
-          }
-        }
       >
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
-          Print
+          Cancel and Exit
           <div
             className="loader-hide"
           >
@@ -17601,11 +17563,11 @@ exports[`Storyshots Success Mobile Payment Failure 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn ml-5 mr-0 btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
-          Download
+          Try Again
           <div
             className="loader-hide"
           >
@@ -17614,6 +17576,94 @@ exports[`Storyshots Success Mobile Payment Failure 1`] = `
             />
           </div>
         </button>
+      </div>
+    </div>
+    <div
+      className="content-success-sidecard"
+    >
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
+          />
+        </svg>
+        Print
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+          />
+        </svg>
+        Download
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+          />
+        </svg>
+        Email
       </div>
     </div>
   </div>
@@ -17752,14 +17802,20 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
     <div
       className="content col-md-8"
     >
-      <h1>
+      <h1
+        style={
+          Object {
+            "color": "#00d000",
+          }
+        }
+      >
         Payment Approved
       </h1>
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. We will contact you if further information is required.
+        Your payment has been received and your application will be reviewed shortly. You will be contacted if it is found to be incomplete or inaccurate.
       </p>
       <br />
       <div
@@ -17856,18 +17912,13 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
       </div>
       <div
         className="buttons pt-4"
-        style={
-          Object {
-            "justifyContent": "flex-start",
-          }
-        }
       >
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
-          Print
+          Cancel and Exit
           <div
             className="loader-hide"
           >
@@ -17877,11 +17928,11 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn ml-5 mr-0 btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
-          Download
+          Try Again
           <div
             className="loader-hide"
           >
@@ -17890,6 +17941,94 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
             />
           </div>
         </button>
+      </div>
+    </div>
+    <div
+      className="content-success-sidecard"
+    >
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
+          />
+        </svg>
+        Print
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+          />
+        </svg>
+        Download
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+          />
+        </svg>
+        Email
       </div>
     </div>
   </div>
@@ -18028,7 +18167,13 @@ exports[`Storyshots Success Mobile Volunteer 1`] = `
     <div
       className="content col-md-8"
     >
-      <h1>
+      <h1
+        style={
+          Object {
+            "color": "#00d000",
+          }
+        }
+      >
         Application Submitted
       </h1>
       <p>
@@ -18108,18 +18253,13 @@ exports[`Storyshots Success Mobile Volunteer 1`] = `
       </div>
       <div
         className="buttons pt-4"
-        style={
-          Object {
-            "justifyContent": "flex-start",
-          }
-        }
       >
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
-          Print
+          Cancel and Exit
           <div
             className="loader-hide"
           >
@@ -18129,11 +18269,11 @@ exports[`Storyshots Success Mobile Volunteer 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn ml-5 mr-0 btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
-          Download
+          Try Again
           <div
             className="loader-hide"
           >
@@ -18142,6 +18282,94 @@ exports[`Storyshots Success Mobile Volunteer 1`] = `
             />
           </div>
         </button>
+      </div>
+    </div>
+    <div
+      className="content-success-sidecard"
+    >
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
+          />
+        </svg>
+        Print
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+          />
+        </svg>
+        Download
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+          />
+        </svg>
+        Email
       </div>
     </div>
   </div>
@@ -18280,37 +18508,20 @@ exports[`Storyshots Success Payment Failure 1`] = `
     <div
       className="content col-md-8"
     >
-      <h1>
-        Payment Declined
-      </h1>
-      <span>
-        Unfortunately, your payment transaction was declined. Please ensure you have the correct credit card information:
-      </span>
-      <ul
-        className="bodyList"
+      <h1
+        style={
+          Object {
+            "color": "#ff0000",
+          }
+        }
       >
-        <li>
-          16 digit credit card number
-        </li>
-        <li>
-          3 digit CVD number
-        </li>
-        <li>
-          Non-expired date
-        </li>
-        <li>
-          Available funds to transfer
-        </li>
-      </ul>
+        Payment Declined/Cancelled
+      </h1>
       <p>
-        <button
-          className="notAButton"
-          onClick={[Function]}
-          type="button"
-        >
-          Click here to try again
-        </button>
-        . Otherwise, please refer to our website for submission options.
+        The transaction has been declined, or cancelled, and payment was not received. Please ensure you have entered your credit card information correctly or try a different payment method.
+      </p>
+      <p>
+        Otherwise, please refer to our Criminal Records Review Program website, or your organization, for submission options.
       </p>
       <br />
       <div
@@ -18348,14 +18559,6 @@ exports[`Storyshots Success Payment Failure 1`] = `
           <tbody>
             <tr>
               <td>
-                Service Number
-              </td>
-              <td>
-                987
-              </td>
-            </tr>
-            <tr>
-              <td>
                 First Name
               </td>
               <td>
@@ -18368,14 +18571,6 @@ exports[`Storyshots Success Payment Failure 1`] = `
               </td>
               <td>
                 Ross
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Organization
-              </td>
-              <td>
-                Public Broadcast Network
               </td>
             </tr>
             <tr>
@@ -18399,18 +18594,13 @@ exports[`Storyshots Success Payment Failure 1`] = `
       </div>
       <div
         className="buttons pt-4"
-        style={
-          Object {
-            "justifyContent": "flex-start",
-          }
-        }
       >
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
-          Print
+          Cancel and Exit
           <div
             className="loader-hide"
           >
@@ -18420,11 +18610,11 @@ exports[`Storyshots Success Payment Failure 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn ml-5 mr-0 btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
-          Download
+          Try Again
           <div
             className="loader-hide"
           >
@@ -18433,6 +18623,94 @@ exports[`Storyshots Success Payment Failure 1`] = `
             />
           </div>
         </button>
+      </div>
+    </div>
+    <div
+      className="content-success-sidecard"
+    >
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
+          />
+        </svg>
+        Print
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+          />
+        </svg>
+        Download
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+          />
+        </svg>
+        Email
       </div>
     </div>
   </div>
@@ -18571,14 +18849,20 @@ exports[`Storyshots Success Payment Success 1`] = `
     <div
       className="content col-md-8"
     >
-      <h1>
+      <h1
+        style={
+          Object {
+            "color": "#00d000",
+          }
+        }
+      >
         Payment Approved
       </h1>
       <p>
         Thank you for submitting your application to the Criminal Records Review Program.
       </p>
       <p>
-        Your application will be reviewed shortly. We will contact you if further information is required.
+        Your payment has been received and your application will be reviewed shortly. You will be contacted if it is found to be incomplete or inaccurate.
       </p>
       <br />
       <div
@@ -18675,18 +18959,13 @@ exports[`Storyshots Success Payment Success 1`] = `
       </div>
       <div
         className="buttons pt-4"
-        style={
-          Object {
-            "justifyContent": "flex-start",
-          }
-        }
       >
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
-          Print
+          Cancel and Exit
           <div
             className="loader-hide"
           >
@@ -18696,11 +18975,11 @@ exports[`Storyshots Success Payment Success 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn ml-5 mr-0 btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
-          Download
+          Try Again
           <div
             className="loader-hide"
           >
@@ -18709,6 +18988,94 @@ exports[`Storyshots Success Payment Success 1`] = `
             />
           </div>
         </button>
+      </div>
+    </div>
+    <div
+      className="content-success-sidecard"
+    >
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
+          />
+        </svg>
+        Print
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+          />
+        </svg>
+        Download
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+          />
+        </svg>
+        Email
       </div>
     </div>
   </div>
@@ -18847,7 +19214,13 @@ exports[`Storyshots Success Volunteer 1`] = `
     <div
       className="content col-md-8"
     >
-      <h1>
+      <h1
+        style={
+          Object {
+            "color": "#00d000",
+          }
+        }
+      >
         Application Submitted
       </h1>
       <p>
@@ -18927,18 +19300,13 @@ exports[`Storyshots Success Volunteer 1`] = `
       </div>
       <div
         className="buttons pt-4"
-        style={
-          Object {
-            "justifyContent": "flex-start",
-          }
-        }
       >
         <button
-          className="btn ecrc_go_btn btn"
+          className="btn ecrc_accessary_btn btn"
           onClick={[Function]}
           type="submit"
         >
-          Print
+          Cancel and Exit
           <div
             className="loader-hide"
           >
@@ -18948,11 +19316,11 @@ exports[`Storyshots Success Volunteer 1`] = `
           </div>
         </button>
         <button
-          className="btn ecrc_go_btn ml-5 mr-0 btn"
+          className="btn ecrc_go_btn mr-0 btn"
           onClick={[Function]}
           type="submit"
         >
-          Download
+          Try Again
           <div
             className="loader-hide"
           >
@@ -18961,6 +19329,94 @@ exports[`Storyshots Success Volunteer 1`] = `
             />
           </div>
         </button>
+      </div>
+    </div>
+    <div
+      className="content-success-sidecard"
+    >
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
+          />
+        </svg>
+        Print
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+          />
+        </svg>
+        Download
+      </div>
+      <div
+        className="print-page-success"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginRight": "10px",
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+          />
+        </svg>
+        Email
       </div>
     </div>
   </div>

@@ -14,6 +14,7 @@ describe("Success Page Component", () => {
 
   // Mock browser print
   window.print = jest.fn();
+  window.open = jest.fn();
 
   // Mock window location
   const mockWindow = jest.fn();
@@ -124,7 +125,7 @@ describe("Success Page Component", () => {
       </MemoryRouter>
     );
 
-    fireEvent.click(getByText(container, "Click here to try again"));
+    fireEvent.click(getByText(container, "Try Again"));
 
     await wait(() => {
       expect(saveApplicationInfo).toHaveBeenCalled();
@@ -140,5 +141,16 @@ describe("Success Page Component", () => {
 
     fireEvent.click(getByText(container, "Print"));
     expect(window.print).toHaveBeenCalled();
+  });
+
+  test("Validate Email", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={[successUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(getByText(container, "Email"));
+    expect(window.open).toHaveBeenCalled();
   });
 });
