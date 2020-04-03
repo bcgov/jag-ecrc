@@ -57,7 +57,6 @@ export default function InformationReview({
   }
 }) {
   const history = useHistory();
-  const [toHome, setToHome] = useState(false);
   const [toError, setToError] = useState(false);
   const [boxChecked, setBoxChecked] = useState(false);
 
@@ -70,7 +69,10 @@ export default function InformationReview({
     window.scrollTo(0, 0);
 
     if (!isAuthorized() || !isActionPerformed("appForm")) {
-      setToHome(true);
+      setError({
+        status: 403
+      });
+      setToError(true);
     } else {
       const uuid = sessionStorage.getItem("uuid");
       const token = sessionStorage.getItem("jwt");
@@ -337,10 +339,6 @@ export default function InformationReview({
 
     history.push("/criminalrecordcheck/consent");
   };
-
-  if (toHome) {
-    return <Redirect to="/" />;
-  }
 
   if (toError) {
     return <Redirect to="/criminalrecordcheck/error" />;

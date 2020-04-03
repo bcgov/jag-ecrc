@@ -33,7 +33,6 @@ export default function Success({
     setError
   }
 }) {
-  const [toHome, setToHome] = useState(false);
   const location = useLocation();
   const paymentInfo = queryString.parse(location.search);
   const uuid = sessionStorage.getItem("uuid");
@@ -48,7 +47,10 @@ export default function Success({
       !isActionPerformed("consent") ||
       (!paymentInfo.trnApproved && orgApplicantRelationship !== "VOLUNTEER")
     ) {
-      setToHome(true);
+      setError({
+        status: 403
+      });
+      setToError(true);
     }
   }, [paymentInfo.trnApproved, orgApplicantRelationship]);
 
@@ -275,10 +277,6 @@ export default function Success({
         handleError(error);
       });
   };
-
-  if (toHome) {
-    return <Redirect to="/" />;
-  }
 
   return (
     <main>

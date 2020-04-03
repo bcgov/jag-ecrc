@@ -25,7 +25,10 @@ export default function OrgVerification({ page: { header, org, setError } }) {
     window.scrollTo(0, 0);
 
     if (!isAuthenticated() || !org.orgNm) {
-      setToHome(true);
+      setError({
+        status: 403
+      });
+      setToError(true);
     }
 
     window.scrollTo(0, 0);

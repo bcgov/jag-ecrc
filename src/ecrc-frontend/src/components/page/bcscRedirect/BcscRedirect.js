@@ -24,7 +24,12 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
   React.useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isAuthenticated() || !isActionPerformed("tou")) setToHome(true);
+    if (!isAuthenticated() || !isActionPerformed("tou")) {
+      setError({
+        status: 403
+      });
+      setToError(true);
+    }
 
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");

@@ -63,7 +63,7 @@ describe("BcscRedirect Page Component", () => {
     expect(window.open).toHaveBeenCalledWith("http://test.com", "_self");
   });
 
-  test("Validate Redirect to Home when unauthorized", async () => {
+  test("Validate Redirect to Error when unauthorized", async () => {
     axios.get.mockResolvedValueOnce(axiosCall);
     const history = createMemoryHistory();
     generateJWTToken({
@@ -76,7 +76,7 @@ describe("BcscRedirect Page Component", () => {
       </Router>
     );
     await wait(() => {});
-    expect(history.location.pathname).toEqual("/");
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
   test("Validate Redirect to Error page", async () => {

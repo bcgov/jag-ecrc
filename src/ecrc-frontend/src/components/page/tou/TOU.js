@@ -15,7 +15,6 @@ import {
 
 export default function TOU({ page: { header, setError } }) {
   const history = useHistory();
-  const [toHome, setToHome] = useState(false);
   const [toError, setToError] = useState(false);
   const [firstBoxChecked, setFirstBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
@@ -25,7 +24,10 @@ export default function TOU({ page: { header, setError } }) {
     window.scrollTo(0, 0);
 
     if (!isAuthenticated() || !isActionPerformed("orgVerification")) {
-      setToHome(true);
+      setError({
+        status: 403
+      });
+      setToError(true);
     }
   }, []);
 
@@ -63,10 +65,6 @@ export default function TOU({ page: { header, setError } }) {
       setReachedEnd(true);
     }
   };
-
-  if (toHome) {
-    return <Redirect to="/" />;
-  }
 
   if (toError) {
     return <Redirect to="/criminalrecordcheck/error" />;
