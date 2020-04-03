@@ -109,4 +109,15 @@ public class EcrcServicesImpl implements EcrcServices {
 		String _createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
 		return ecrcWebMethodsService.callWebMethodsService(_createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
 	}
+
+	public ResponseEntity<String> createNewCRCApplicant(RequestNewCRCApplicant requestNewCRCApplicant) {
+		try {
+			return new ResponseEntity<String>(new ResponseServiceDetails().toString(),HttpStatus.OK);
+		} catch (Exception e) {
+			logger.info("Failed to create New CRC Applicant", e);
+			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+		}
+
+	}
+
 }

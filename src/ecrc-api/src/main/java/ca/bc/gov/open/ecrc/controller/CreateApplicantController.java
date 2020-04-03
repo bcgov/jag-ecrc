@@ -3,6 +3,7 @@ package ca.bc.gov.open.ecrc.controller;
 
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
+import ca.bc.gov.open.ecrc.model.RequestNewCRCApplicant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,19 @@ public class CreateApplicantController {
 
 		try {
 			return ecrcServices.createApplicant(applicantInfo);
+		} catch (Exception ex) {
+			logger.error("Error in ecrc service: ", ex);
+			return new ResponseEntity(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+					EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@PostMapping(value = "/private/createNewCRCApplicant", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> createNewApplicant(@RequestBody RequestNewCRCApplicant newCRCApplicant) {
+		logger.info("Create new applicant request received [{}]", newCRCApplicant.getRequestGuid());
+
+		try {
+			return ecrcServices.createApplicant(newCRCApplicant);
 		} catch (Exception ex) {
 			logger.error("Error in ecrc service: ", ex);
 			return new ResponseEntity(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
