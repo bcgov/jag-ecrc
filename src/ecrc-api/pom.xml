@@ -17,7 +17,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<nimbus.oauth.version>7.0.3</nimbus.oauth.version>
-		<jjwt.version>0.6.0</jjwt.version>
+		<jjwt.version>0.9.1</jjwt.version>
 		<javax.mail.version>1.4</javax.mail.version>
 	</properties>
 
@@ -74,11 +74,6 @@
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
 			<version>2.2.11</version>
-		</dependency>
-		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt</artifactId>
-			<version>0.9.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
