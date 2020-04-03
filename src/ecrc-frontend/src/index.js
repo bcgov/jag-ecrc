@@ -16,7 +16,6 @@ if (process.env.REACT_APP_API_BASE_URL) {
 // prevent user from leaving site and losing saved data
 window.addEventListener("beforeunload", e => {
   if (sessionStorage.getItem("validExit")) {
-    sessionStorage.removeItem("validExit");
     return false;
   }
 
@@ -39,7 +38,11 @@ window.addEventListener("beforeunload", e => {
 });
 
 window.addEventListener("unload", () => {
-  sessionStorage.clear();
+  if (sessionStorage.getItem("validExit")) {
+    sessionStorage.removeItem("validExit");
+  } else {
+    sessionStorage.clear();
+  }
 });
 
 ReactDOM.render(
