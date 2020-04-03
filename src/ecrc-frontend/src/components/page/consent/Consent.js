@@ -64,7 +64,6 @@ export default function Consent({
   }
 }) {
   const history = useHistory();
-  const [toAppHome, setToAppHome] = useState(false);
   const [toHostHome, setToHostHome] = useState(false);
   const [loading, setLoading] = useState(false);
   const [toError, setToError] = useState(false);
@@ -79,7 +78,10 @@ export default function Consent({
     setLoading(false);
 
     if (!isAuthorized() || !isActionPerformed("infoReview")) {
-      setToAppHome(true);
+      setError({
+        status: 403
+      });
+      setToError(true);
     }
   }, []);
 
@@ -409,10 +411,6 @@ export default function Consent({
 
   if (toHostHome) {
     return <Redirect to="/hosthome" />;
-  }
-
-  if (toAppHome) {
-    return <Redirect to="/" />;
   }
 
   const asterisk = (

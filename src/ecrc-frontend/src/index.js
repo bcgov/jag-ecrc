@@ -38,6 +38,10 @@ window.addEventListener("beforeunload", e => {
   return confirmationMessage;
 });
 
+window.addEventListener("unload", () => {
+  sessionStorage.clear();
+});
+
 ReactDOM.render(
   <BrowserRouter>
     <App />
