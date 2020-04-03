@@ -49,7 +49,7 @@ export default function Success({
     if (
       !isAuthorized() ||
       !isActionPerformed("consent") ||
-      (!paymentInfo.trnApproved && orgApplicantRelationship !== "VOLUNTEER")
+      (!paymentInfo.trnApproved && orgApplicantRelationship === "EMPLOYEE")
     ) {
       setError({
         status: 403
