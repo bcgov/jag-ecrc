@@ -317,6 +317,7 @@ export default function Consent({
           if (orgApplicantRelationship === "ONETIME") {
             toSuccess();
             setLoading(false);
+            return;
           }
 
           const createURL = {
