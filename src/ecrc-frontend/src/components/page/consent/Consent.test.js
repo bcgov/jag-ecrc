@@ -117,7 +117,7 @@ describe("Consent Page Component", () => {
     expect(history.location.pathname).toEqual("/hosthome");
   });
 
-  test("Validate Redirect to Home when unauthorized", () => {
+  test("Validate Redirect to Error when unauthorized", () => {
     const history = createMemoryHistory();
 
     generateJWTToken({
@@ -131,7 +131,7 @@ describe("Consent Page Component", () => {
       </Router>
     );
 
-    expect(history.location.pathname).toEqual("/");
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
   test("Validate Employee relationship flow", async () => {

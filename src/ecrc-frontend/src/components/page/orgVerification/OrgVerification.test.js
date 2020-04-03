@@ -72,7 +72,7 @@ describe("OrgVerification Component", () => {
     );
   });
 
-  test("Redirect to Home on empty organization", () => {
+  test("Redirect to Error on empty organization", () => {
     page.org.orgNm = "";
     const history = createMemoryHistory();
     render(
@@ -81,6 +81,6 @@ describe("OrgVerification Component", () => {
       </Router>
     );
 
-    expect(history.location.pathname).toEqual("/");
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 });
