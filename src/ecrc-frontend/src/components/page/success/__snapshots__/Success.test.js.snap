@@ -165,7 +165,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
     <div
       className="content-success-sidecard"
     >
-      <p
+      <div
         className="print-page-success"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -192,8 +192,8 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           />
         </svg>
         Print
-      </p>
-      <p
+      </div>
+      <div
         className="print-page-success"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -220,10 +220,13 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           />
         </svg>
         Download
-      </p>
-      <a
+      </div>
+      <div
         className="print-page-success"
-        href="mailto:?subject=Criminal Record Check"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <svg
           fill="currentColor"
@@ -245,7 +248,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
           />
         </svg>
         Email
-      </a>
+      </div>
     </div>
   </div>
   <footer
@@ -527,7 +530,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
     <div
       className="content-success-sidecard"
     >
-      <p
+      <div
         className="print-page-success"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -554,8 +557,8 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
           />
         </svg>
         Print
-      </p>
-      <p
+      </div>
+      <div
         className="print-page-success"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -582,10 +585,13 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
           />
         </svg>
         Download
-      </p>
-      <a
+      </div>
+      <div
         className="print-page-success"
-        href="mailto:?subject=Criminal Record Check"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <svg
           fill="currentColor"
@@ -607,7 +613,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
           />
         </svg>
         Email
-      </a>
+      </div>
     </div>
   </div>
   <footer
@@ -865,7 +871,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
     <div
       className="content-success-sidecard"
     >
-      <p
+      <div
         className="print-page-success"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -892,8 +898,8 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
           />
         </svg>
         Print
-      </p>
-      <p
+      </div>
+      <div
         className="print-page-success"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -920,10 +926,13 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
           />
         </svg>
         Download
-      </p>
-      <a
+      </div>
+      <div
         className="print-page-success"
-        href="mailto:?subject=Criminal Record Check"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
       >
         <svg
           fill="currentColor"
@@ -945,7 +954,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
           />
         </svg>
         Email
-      </a>
+      </div>
     </div>
   </div>
   <footer

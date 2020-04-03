@@ -41,7 +41,7 @@ export default function Success({
   const [toError, setToError] = useState(false);
   const [toHostHome, setToHostHome] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
-  let headerColor = paymentInfo.trnApproved === "0" ? "#ff0000" : "#00d000";
+  const headerColor = paymentInfo.trnApproved === "0" ? "#ff0000" : "#00d000";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -299,6 +299,10 @@ export default function Success({
     }
   };
 
+  const emailReceipt = () => {
+    window.open("mailto:?subject=Criminal Record Check");
+  };
+
   if (toHostHome) {
     return <Redirect to="/hosthome" />;
   }
@@ -374,7 +378,7 @@ export default function Success({
         </div>
 
         <div className="content-success-sidecard">
-          <p
+          <div
             role="button"
             className="print-page-success"
             onKeyDown={() => {
@@ -387,8 +391,8 @@ export default function Success({
           >
             <FaPrint style={{ marginRight: "10px" }} />
             Print
-          </p>
-          <p
+          </div>
+          <div
             className="print-page-success"
             role="button"
             onKeyDown={downloadPDF}
@@ -397,14 +401,17 @@ export default function Success({
           >
             <FaDownload style={{ marginRight: "10px" }} />
             Download
-          </p>
-          <a
+          </div>
+          <div
             className="print-page-success"
-            href="mailto:?subject=Criminal Record Check"
+            role="button"
+            onKeyDown={emailReceipt}
+            onClick={emailReceipt}
+            tabIndex={0}
           >
             <FaEnvelope style={{ marginRight: "10px" }} />
             Email
-          </a>
+          </div>
         </div>
       </div>
       <Footer />
