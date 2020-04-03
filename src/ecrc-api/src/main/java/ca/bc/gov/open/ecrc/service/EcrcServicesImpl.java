@@ -6,7 +6,6 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.*;
 import ca.bc.gov.open.ecrc.objects.*;
-import com.google.gson.Gson;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
