@@ -49,7 +49,7 @@ export default function Success({
     if (
       !isAuthorized() ||
       !isActionPerformed("consent") ||
-      (!paymentInfo.trnApproved && orgApplicantRelationship !== "VOLUNTEER")
+      (!paymentInfo.trnApproved && orgApplicantRelationship === "EMPLOYEE")
     ) {
       setError({
         status: 403
@@ -139,7 +139,7 @@ export default function Success({
     });
   }
 
-  if (orgApplicantRelationship === "VOLUNTEER") {
+  if (orgApplicantRelationship !== "EMPLOYEE") {
     receiptInfo.unshift({ name: "Service Number", value: serviceId });
     receiptInfo.push({ name: "Organization", value: orgNm });
   }
@@ -313,12 +313,11 @@ export default function Success({
       <div className="page">
         <div className="content col-md-8">
           <h1 style={{ color: headerColor }}>
-            {orgApplicantRelationship === "VOLUNTEER" &&
-              "Application Submitted"}
+            {orgApplicantRelationship !== "EMPLOYEE" && "Application Submitted"}
             {paymentInfo.trnApproved === "0" && "Payment Declined/Cancelled"}
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
-          {orgApplicantRelationship === "VOLUNTEER" && (
+          {orgApplicantRelationship !== "EMPLOYEE" && (
             <>
               <p>
                 Thank you for submitting your application to the Criminal
