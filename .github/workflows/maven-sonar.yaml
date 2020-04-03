@@ -25,4 +25,5 @@ jobs:
           ${{ runner.os }}-maven-
     - name: Sonar Scan
       #run: mvn clean verify sonar:sonar --file src/ecrc-api/pom.xml -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dsonar.jacoco.reportPath=target/jacoco.exec
-      run: mvn test
+    - run: mvn test
+    - run: ls -al
