@@ -15,9 +15,6 @@ describe("Success Page Component", () => {
   // Mock browser print
   window.print = jest.fn();
 
-  // Mock browser download function
-  URL.createObjectURL = jest.fn();
-
   // Mock window location
   const mockWindow = jest.fn();
   delete window.location;
@@ -143,16 +140,5 @@ describe("Success Page Component", () => {
 
     fireEvent.click(getByText(container, "Print"));
     expect(window.print).toHaveBeenCalled();
-  });
-
-  test("Validate Download", () => {
-    const { container } = render(
-      <MemoryRouter initialEntries={[successUrl]}>
-        <Success page={page} />
-      </MemoryRouter>
-    );
-
-    fireEvent.click(getByText(container, "Download"));
-    expect(URL.createObjectURL).toHaveBeenCalled();
   });
 });

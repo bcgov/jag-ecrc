@@ -1,6 +1,6 @@
 /* eslint-disable new-cap */
 /* eslint-disable no-alert */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
 import { useLocation, Redirect, useHistory } from "react-router-dom";
@@ -38,6 +38,7 @@ export default function Success({
   const paymentInfo = queryString.parse(location.search);
   const uuid = sessionStorage.getItem("uuid");
   const [toError, setToError] = useState(false);
+  const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,6 +51,13 @@ export default function Success({
       setToHome(true);
     }
   }, [paymentInfo.trnApproved, orgApplicantRelationship]);
+
+  useLayoutEffect(() => {
+    if (!isHidden) {
+      window.print();
+    }
+    setIsHidden(true);
+  }, [isHidden]);
 
   const history = useHistory();
   let isBackClicked = false;
@@ -122,7 +130,6 @@ export default function Success({
 
   const receiptInfoTable = {
     id: "print",
-    header: "Application Information",
     tableElements: receiptInfo,
     tableStyle: "white"
   };
@@ -196,7 +203,7 @@ export default function Success({
   };
 
   const printAppInfo = () => {
-    window.print();
+    setIsHidden(false);
   };
 
   const pdfButton = {
@@ -208,6 +215,16 @@ export default function Success({
 
   const downloadPDF = () => {
     const doc = new jsPDF();
+
+    doc.setFontSize(10);
+    doc.setFontType("bold");
+
+    const img = new Image();
+    img.src = "/criminalrecordcheck/images/bc-gov-logo.png";
+    doc.addImage(img, "png", 15, 5, 30, 15);
+
+    doc.text(50, 14, "Criminal Record Check");
+
     doc.autoTable({ theme: "plain", html: "#print" });
     doc.save(`${serviceId}${legalSurnameNm}${legalFirstNm}.pdf`);
   };
@@ -312,7 +329,7 @@ export default function Success({
           )}
           <br />
           <div className="print">
-            <div>
+            <div hidden={isHidden}>
               <img
                 src="/criminalrecordcheck/images/bc-gov-logo.png"
                 width="181"

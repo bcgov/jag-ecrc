@@ -17497,7 +17497,9 @@ exports[`Storyshots Success Mobile Payment Failure 1`] = `
       <div
         className="print"
       >
-        <div>
+        <div
+          hidden={true}
+        >
           <img
             alt="B.C. Government Logo"
             height="64"
@@ -17521,9 +17523,7 @@ exports[`Storyshots Success Mobile Payment Failure 1`] = `
             <tr>
               <th
                 colSpan="2"
-              >
-                Application Information
-              </th>
+              />
             </tr>
           </thead>
           <tbody>
@@ -17765,7 +17765,9 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
       <div
         className="print"
       >
-        <div>
+        <div
+          hidden={true}
+        >
           <img
             alt="B.C. Government Logo"
             height="64"
@@ -17789,9 +17791,7 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
             <tr>
               <th
                 colSpan="2"
-              >
-                Application Information
-              </th>
+              />
             </tr>
           </thead>
           <tbody>
@@ -18041,7 +18041,9 @@ exports[`Storyshots Success Mobile Volunteer 1`] = `
       <div
         className="print"
       >
-        <div>
+        <div
+          hidden={true}
+        >
           <img
             alt="B.C. Government Logo"
             height="64"
@@ -18065,9 +18067,7 @@ exports[`Storyshots Success Mobile Volunteer 1`] = `
             <tr>
               <th
                 colSpan="2"
-              >
-                Application Information
-              </th>
+              />
             </tr>
           </thead>
           <tbody>
@@ -18316,7 +18316,9 @@ exports[`Storyshots Success Payment Failure 1`] = `
       <div
         className="print"
       >
-        <div>
+        <div
+          hidden={true}
+        >
           <img
             alt="B.C. Government Logo"
             height="64"
@@ -18340,9 +18342,7 @@ exports[`Storyshots Success Payment Failure 1`] = `
             <tr>
               <th
                 colSpan="2"
-              >
-                Application Information
-              </th>
+              />
             </tr>
           </thead>
           <tbody>
@@ -18584,7 +18584,9 @@ exports[`Storyshots Success Payment Success 1`] = `
       <div
         className="print"
       >
-        <div>
+        <div
+          hidden={true}
+        >
           <img
             alt="B.C. Government Logo"
             height="64"
@@ -18608,9 +18610,7 @@ exports[`Storyshots Success Payment Success 1`] = `
             <tr>
               <th
                 colSpan="2"
-              >
-                Application Information
-              </th>
+              />
             </tr>
           </thead>
           <tbody>
@@ -18860,7 +18860,9 @@ exports[`Storyshots Success Volunteer 1`] = `
       <div
         className="print"
       >
-        <div>
+        <div
+          hidden={true}
+        >
           <img
             alt="B.C. Government Logo"
             height="64"
@@ -18884,9 +18886,7 @@ exports[`Storyshots Success Volunteer 1`] = `
             <tr>
               <th
                 colSpan="2"
-              >
-                Application Information
-              </th>
+              />
             </tr>
           </thead>
           <tbody>
