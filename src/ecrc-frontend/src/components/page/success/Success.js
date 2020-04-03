@@ -122,7 +122,7 @@ export default function Success({
     receiptInfo.push({ name: "Amount", value: paymentInfo.trnAmount });
   }
 
-  if (orgApplicantRelationship !== "VOLUNTEER") {
+  if (orgApplicantRelationship === "EMPLOYEE") {
     receiptInfo.push({ name: "Date/Time", value: paymentInfo.trnDate });
     receiptInfo.push({
       name: "Transaction ID",
