@@ -1,7 +1,7 @@
 class SuccessPage {
   constructor() {
     this.printButton = element(by.buttonText("Print"));
-    this.downloadButton = element(by.buttonText("Download"));
+    this.downloadButton = element(by.xpath("//div[text()='Download']")); //by.buttonText("Download"));
     this.serviceNumber = element(
       by.xpath("//td[text()='Service Number']/following-sibling::td")
     );
@@ -11,7 +11,7 @@ class SuccessPage {
     this.lastName = element(
       by.xpath("//td[text()='Last Name']/following-sibling::td")
     );
-    this.retryPaymentLink = element(by.buttonText("Click here to try again"));
+    this.retryPaymentLink = element(by.buttonText("Try Again"));
   }
 }
 

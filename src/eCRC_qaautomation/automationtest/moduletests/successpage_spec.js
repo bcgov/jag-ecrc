@@ -243,6 +243,14 @@ describe("success page", () => {
         });
       });
     });
+
+    //Deal with alert pop up when getting ready for next test
+    browser.get(process.env.url);
+    browser.wait(browserWait.alertIsPresent(), 5000);
+    browser
+      .switchTo()
+      .alert()
+      .accept();
   });
 
   it("verify that after a failed payment, we can retry successfully", () => {
@@ -258,5 +266,7 @@ describe("success page", () => {
     paymentPage.cardCVD.sendKeys(testInput.approvedCardCVD);
     paymentPage.payNow.click();
     expect(paymentPage.paymentStatus.getText()).toBe(testInput.approvedStatus);
+
+    //No need to deal with alert pop up at the end of this test
   });
 });
