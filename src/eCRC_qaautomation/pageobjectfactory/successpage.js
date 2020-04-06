@@ -12,6 +12,9 @@ class SuccessPage {
       by.xpath("//td[text()='Last Name']/following-sibling::td")
     );
     this.retryPaymentLink = element(by.buttonText("Try Again"));
+    this.paymentStatus = element(
+      by.xpath("//div[@id='root']/div/main/div/div/h1")
+    );
   }
 }
 

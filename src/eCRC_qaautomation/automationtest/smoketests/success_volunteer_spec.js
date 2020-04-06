@@ -12,15 +12,15 @@ const bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescar
 
 const bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
 
-const bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
-
 const consentPage = require("../../pageobjectfactory/consentpage.js");
 
 const applicationFormPage = require("../../pageobjectfactory/applicationformpage");
 
-const paymentPage = require("../../pageobjectfactory/paymentpage");
-
 const informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
+
+const paymentPage = require("../../pageobjectfactory/paymentpage.js");
+
+const successPage = require("../../pageobjectfactory/successpage.js");
 
 const testInput = require("../../input/success");
 
@@ -30,18 +30,18 @@ describe("success", () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
   });
 
-  it("verify that entering a valid org code and validating redirects to the orgverification page", () => {
+  it("verify that users with a valid volunteer code can navigate through the complete application flow", () => {
     browser.get(process.env.URL);
-
     browser
       .manage()
       .window()
       .maximize();
 
+    originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+
     landingPage.accessCode.sendKeys(testInput.validVolunteerAccessCode);
-
     landingPage.validate.click();
-
     browserWait = protractor.ExpectedConditions;
 
     browser.wait(
@@ -50,47 +50,36 @@ describe("success", () => {
     );
 
     browser.sleep(4000);
-
     orgVerificationPage.continue.click();
-
     termsOfUsePage.readAndAcceptCheckBox.click();
-
     browser.executeScript(
       "arguments[0].scrollIntoView(true)",
       termsOfUsePage.termsOfUseFinalParagraph
     );
 
     termsOfUsePage.continueButton.click();
-
     browser.wait(
       browserWait.elementToBeClickable(bcscRedirectPage.login),
       10000
     );
 
     bcscRedirectPage.login.click();
-
     bcServicesCardLandingPage.virtualCardTesting.click();
-
     bcServicesCardLoginPage.cardSerialNumber.sendKeys(
       testInput.bcServicesCardSerialNumber
     );
 
     bcServicesCardLoginPage.continueButton.click();
-
     bcServicesCardLoginPage.password.sendKeys(testInput.bcServicesCardPassword);
-
+    bcServicesCardLoginPage.continueButton.click();
     bcServicesCardLoginPage.continueButton.click();
 
-    bcServicesCardLoginPage.continueButton.click();
-
-    bcscConsentPage.name.count().then(function(count) {
-      expect(count).toBe(1);
-    });
-
-    bcscConsentPage.yes.click();
-
-    expect(applicationFormPage.firstName.getAttribute("value")).toBe(
-      testInput.applicationFormFirstName
+    browser.wait(
+      browserWait.textToBePresentInElementValue(
+        applicationFormPage.lastName,
+        testInput.applicationFormLastName
+      ),
+      5000
     );
 
     expect(applicationFormPage.lastName.getAttribute("value")).toBe(
@@ -130,7 +119,6 @@ describe("success", () => {
     ).toBe(testInput.applicationFormCurrentAddressProvince);
 
     applicationFormPage.currentAddressNotSameAsMailingAddressCheckBox.click();
-
     applicationFormPage.cityAndCountryBirth.sendKeys(
       testInput.applicationFormCityAndCountryBirth
     );
@@ -168,66 +156,64 @@ describe("success", () => {
     );
 
     applicationFormPage.continueButton.click();
-
     informationReviewPage.cityAndCountryBirth
       .getText()
-      .then(function(cityAndCountryBirth) {
+      .then(cityAndCountryBirth => {
         expect(cityAndCountryBirth).toBe(
           testInput.applicationFormCityAndCountryBirth
         );
       });
 
-    informationReviewPage.phoneNumber.getText().then(function(phoneNumber) {
+    informationReviewPage.phoneNumber.getText().then(phoneNumber => {
       expect(phoneNumber).toBe(testInput.applicationFormPhoneNumber);
     });
 
-    informationReviewPage.emailAddress.getText().then(function(emailAddress) {
+    informationReviewPage.emailAddress.getText().then(emailAddress => {
       expect(emailAddress).toBe(testInput.applicationFormEmailAddress);
     });
 
     informationReviewPage.applicantPosition
       .getText()
-      .then(function(applicantPosition) {
+      .then(applicantPosition => {
         expect(applicantPosition).toBe(
           testInput.applicationFormApplicantPosition
         );
       });
 
-    informationReviewPage.street.getText().then(function(street) {
+    informationReviewPage.street.getText().then(street => {
       expect(street).toBe(testInput.applicationFormMailingAddressStreet);
     });
 
-    informationReviewPage.city.getText().then(function(city) {
+    informationReviewPage.city.getText().then(city => {
       expect(city).toBe(testInput.applicationFormCurrentAddressCity);
     });
 
-    informationReviewPage.province.getText().then(function(province) {
+    informationReviewPage.province.getText().then(province => {
       expect(province).toBe(testInput.applicationFormCurrentAddressProvince);
     });
 
-    informationReviewPage.postalCode.getText().then(function(postalCode) {
+    informationReviewPage.postalCode.getText().then(postalCode => {
       expect(postalCode).toBe(testInput.applicationFormCurrentAddresPostalCode);
     });
 
-    informationReviewPage.country.getText().then(function(country) {
+    informationReviewPage.country.getText().then(country => {
       expect(country).toBe(testInput.applicationFormMailingAddresCountry);
     });
 
     informationReviewPage.certifyCheckBox.click();
-
     informationReviewPage.submitButton.click();
-
     consentPage.consentCheckBox.click();
-
     consentPage.certifyCheckBox.click();
-
     consentPage.disclosureCheckBox.click();
-
+    consentPage.reportChargesCheckBox.click();
     consentPage.continueButton.click();
 
-    browser.sleep(4000);
+    browser.wait(
+      browserWait.elementToBeClickable(successPage.downloadButton),
+      10000
+    );
 
-    expect(paymentPage.paymentStatus.getText()).toBe(
+    expect(successPage.paymentStatus.getText()).toBe(
       testInput.approvedStatusVolunteer
     );
   });
