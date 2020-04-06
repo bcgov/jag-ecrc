@@ -70,7 +70,6 @@ export default function Success({
   let isBackClicked = false;
 
   history.listen((_, action) => {
-    console.log("jhshdgsdsghsjgjh");
     if (action === "POP") {
       // If a "POP" action event occurs, send user back to the originating location
       history.go(1);
