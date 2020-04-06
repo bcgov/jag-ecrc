@@ -2,6 +2,7 @@ package ca.bc.gov.open.ecrc.controller;
 
 import static org.mockito.Mockito.when;
 
+import ca.bc.gov.open.ecrc.model.RequestCreateSharingService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -71,5 +72,15 @@ class GetNextInvoiceIdControllerTest {
 				response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
-
+	@DisplayName("Exception - getNextInvoiceIdController controller")
+	@Test
+	void testConsolidatedException() throws EcrcServiceException {
+		when(ecrcServices.getNextInvoiceId("request", GUID)).thenThrow(new EcrcServiceException("FAIL"));
+		ResponseEntity<String> response = getNextInvoiceIdController.getNextInvoiceId("request", GUID);
+		Assertions.assertEquals(
+				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
+				response.getBody());
+		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+	}
 }

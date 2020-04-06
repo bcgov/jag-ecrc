@@ -44,7 +44,7 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	private final Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
 
-	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber, String requestGuid) {
+	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
 	    if (ecrcProps.getWhiteList().contains(orgTicketNumber.toLowerCase())) {
 			logger.info("For request guid: [{}] Provided org ticket number white listed", requestGuid);
             String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);

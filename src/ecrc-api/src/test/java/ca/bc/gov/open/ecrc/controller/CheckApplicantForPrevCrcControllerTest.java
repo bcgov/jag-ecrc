@@ -80,5 +80,16 @@ class CheckApplicantForPrevCrcControllerTest {
 				response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
-
+	@DisplayName("Exception - checkApplicantForPrevCrc controller")
+	@Test
+	void testException() throws EcrcServiceException {
+		RequestCheckApplicantForPrevCrc request = new RequestCheckApplicantForPrevCrc();
+		when(ecrcServices.checkApplicantForPrevCrc(request)).thenThrow(new EcrcServiceException("FAIL"));
+		ResponseEntity<String> response = checkApplicantForPrevCrcController.checkApplicantForPrevCrc(request);
+		Assertions.assertEquals(
+				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
+				response.getBody());
+		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+	}
 }
