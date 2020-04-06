@@ -6,6 +6,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.*;
 import ca.bc.gov.open.ecrc.objects.*;
+import com.google.gson.Gson;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -116,6 +117,7 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	public ResponseEntity<String> createNewCRCApplicant(RequestNewCRCApplicant requestNewCRCApplicant) {
 		ResponseServiceDetails serviceDetails = new ResponseServiceDetails();
+		Gson gson = new Gson();
 		JSONObject obj;
 		logger.info("Beginning CRC creation process for {}", requestNewCRCApplicant.getRequestGuid());
 		try {
@@ -178,7 +180,7 @@ public class EcrcServicesImpl implements EcrcServices {
 				return paymentURl;
 			}
 			logger.info("Applicant and CRC Created {}", requestNewCRCApplicant.getRequestGuid());
-			return new ResponseEntity<>(serviceDetails.toString(),HttpStatus.OK);
+			return new ResponseEntity<>(gson.toJson(serviceDetails),HttpStatus.OK);
 		} catch (Exception e) {
 			logger.info("Failed to create New CRC Applicant", e);
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
