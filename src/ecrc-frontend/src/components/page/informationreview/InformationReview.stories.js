@@ -47,11 +47,13 @@ const org = {
 
 const setError = () => {};
 const setShare = () => {};
+const setApplicationInfo = () => {};
 
 const page = {
   header,
   applicant,
   org,
+  setApplicationInfo,
   setError,
   setShare
 };
@@ -89,6 +91,7 @@ const LoadData = props => {
   const API_REQUEST = "/ecrc/private/checkApplicantForPrevCRC";
 
   mock.onPost(API_REQUEST).reply(200, {
+    serviceId: "1234",
     oldOrg: "Old Org",
     oldCRCExpiration: "2021-10-22"
   });

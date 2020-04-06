@@ -23,6 +23,8 @@ describe("Consent Page Component", () => {
     name: "Criminal Record Check"
   };
 
+  const applicationInfo = {};
+
   const setApplicationInfo = jest.fn();
   const saveApplicant = jest.fn();
   const saveOrg = jest.fn();
@@ -75,6 +77,7 @@ describe("Consent Page Component", () => {
     header,
     applicant,
     org,
+    applicationInfo,
     setApplicationInfo,
     saveApplicant,
     saveOrg,
@@ -199,9 +202,7 @@ describe("Consent Page Component", () => {
     axios.get.mockImplementation(() =>
       Promise.resolve({
         data: {
-          sessionId: "123",
-          invoiceId: "123",
-          serviceFeeAmount: "123"
+          sessionId: "123"
         }
       })
     );
