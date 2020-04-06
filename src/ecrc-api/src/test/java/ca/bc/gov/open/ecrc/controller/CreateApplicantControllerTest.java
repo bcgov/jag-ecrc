@@ -125,7 +125,6 @@ class CreateApplicantControllerTest {
 				gson.toJson(responseServiceDetails), HttpStatus.OK));
 		ResponseEntity<String> response = createApplicantController.createNewApplicant(request);
 
-
 		ResponseServiceDetails res = gson.fromJson(response.getBody(), ResponseServiceDetails.class);
 		Assert.assertEquals(TESTPARTY, res.getPartyId());
 		Assert.assertEquals(TESTINVOICE, res.getInvoiceId());
