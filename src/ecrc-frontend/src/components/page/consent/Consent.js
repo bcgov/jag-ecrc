@@ -60,7 +60,8 @@ export default function Consent({
     saveApplicant,
     saveOrg,
     saveApplicationInfo,
-    setError
+    setError,
+    share
   }
 }) {
   const history = useHistory();
@@ -440,6 +441,7 @@ export default function Consent({
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
             checkFourthBox={() => setFourthBoxChecked(!fourthBoxChecked)}
+            shareConsent={share}
           />
           <div className="buttons pt-4">
             <Button button={cancelButton} onClick={cancelClick} />
@@ -501,6 +503,7 @@ Consent.propTypes = {
     saveApplicant: PropTypes.func.isRequired,
     saveOrg: PropTypes.func.isRequired,
     saveApplicationInfo: PropTypes.func.isRequired,
-    setError: PropTypes.func.isRequired
+    setError: PropTypes.func.isRequired,
+    share: PropTypes.bool.isRequired
   }).isRequired
 };

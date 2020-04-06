@@ -7391,6 +7391,112 @@ exports[`Storyshots Declaration Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Declaration ShareDeclaration 1`] = `
+<div>
+  <div
+    className="declareTitle"
+  >
+    CONSENT
+  </div>
+  <section
+    className="declareSection"
+  >
+    <label
+      htmlFor="checkbox1"
+    >
+      <input
+        id="checkbox1"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        This is checkbox1 for sharing on consent.
+      </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
+    </label>
+  </section>
+  <section
+    className="declareSection"
+  >
+    <label
+      htmlFor="checkbox2"
+    >
+      <input
+        id="checkbox2"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        This is checkbox2 for sharing on consent.
+      </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
+    </label>
+  </section>
+  <section
+    className="declareSection"
+  >
+    <label
+      htmlFor="checkbox3"
+    >
+      <input
+        id="checkbox3"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        This is checkbox3 for sharing on consent.
+      </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
+    </label>
+  </section>
+  <section
+    className="declareSection"
+  >
+    <label
+      htmlFor="checkbox4"
+    >
+      <input
+        id="checkbox4"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        This is checkbox4 for sharing on consent.
+      </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
+    </label>
+  </section>
+</div>
+`;
+
 exports[`Storyshots Error Api Error 1`] = `
 <main>
   <header>

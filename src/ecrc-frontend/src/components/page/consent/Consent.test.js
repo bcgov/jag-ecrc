@@ -28,6 +28,7 @@ describe("Consent Page Component", () => {
   const saveOrg = jest.fn();
   const saveApplicationInfo = jest.fn();
   const setError = jest.fn();
+  const share = false;
 
   const applicant = {
     legalFirstNm: "Robert",
@@ -78,7 +79,8 @@ describe("Consent Page Component", () => {
     saveApplicant,
     saveOrg,
     saveApplicationInfo,
-    setError
+    setError,
+    share
   };
 
   // Mock window location

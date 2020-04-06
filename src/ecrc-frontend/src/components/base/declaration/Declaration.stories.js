@@ -4,4 +4,6 @@ import { storiesOf } from "@storybook/react";
 
 import Declaration from "./Declaration";
 
-storiesOf("Declaration", module).add("Default", () => <Declaration />);
+storiesOf("Declaration", module)
+  .add("Default", () => <Declaration shareConsent={false} />)
+  .add("ShareDeclaration", () => <Declaration shareConsent={true} />);
