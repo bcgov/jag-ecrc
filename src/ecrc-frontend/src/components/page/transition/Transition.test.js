@@ -2,6 +2,7 @@ import React from "react";
 import { create } from "react-test-renderer";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
+import { render, wait } from "@testing-library/react";
 
 import Transition from "./Transition";
 
@@ -13,6 +14,8 @@ describe("Transition Page Component", () => {
   const page = {
     header
   };
+
+  window.open = jest.fn();
 
   test("Matches the default/BCSC snapshot", () => {
     const history = createMemoryHistory();
@@ -35,5 +38,19 @@ describe("Transition Page Component", () => {
       </Router>
     );
     expect(nonWhitelistTransition.toJSON()).toMatchSnapshot();
+  });
+
+  test("Component waits 4 seconds before automatically redirecting the user", async () => {
+    const history = createMemoryHistory();
+
+    render(
+      <Router history={history}>
+        <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
+      </Router>
+    );
+
+    await wait(() => {
+      expect(window.open).toHaveBeenCalled();
+    }, 4000);
   });
 });
