@@ -18714,7 +18714,7 @@ exports[`Storyshots Success Mobile Onetime 1`] = `
       <h1
         style={
           Object {
-            "color": "#00d000",
+            "color": "rgb(43, 153, 76)",
           }
         }
       >
@@ -18794,38 +18794,6 @@ exports[`Storyshots Success Mobile Onetime 1`] = `
             </tr>
           </tbody>
         </table>
-      </div>
-      <div
-        className="buttons pt-4"
-      >
-        <button
-          className="btn ecrc_accessary_btn btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Cancel and Exit
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
-        <button
-          className="btn ecrc_go_btn mr-0 btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Try Again
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
       </div>
     </div>
     <div
@@ -19396,7 +19364,7 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
       <h1
         style={
           Object {
-            "color": "#00d000",
+            "color": "rgb(43, 153, 76)",
           }
         }
       >
@@ -19479,7 +19447,7 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
                 Amount
               </td>
               <td>
-                28.00
+                $28.00
               </td>
             </tr>
             <tr>
@@ -19500,38 +19468,6 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
             </tr>
           </tbody>
         </table>
-      </div>
-      <div
-        className="buttons pt-4"
-      >
-        <button
-          className="btn ecrc_accessary_btn btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Cancel and Exit
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
-        <button
-          className="btn ecrc_go_btn mr-0 btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Try Again
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
       </div>
     </div>
     <div
@@ -19761,7 +19697,7 @@ exports[`Storyshots Success Mobile Volunteer 1`] = `
       <h1
         style={
           Object {
-            "color": "#00d000",
+            "color": "rgb(43, 153, 76)",
           }
         }
       >
@@ -19841,38 +19777,6 @@ exports[`Storyshots Success Mobile Volunteer 1`] = `
             </tr>
           </tbody>
         </table>
-      </div>
-      <div
-        className="buttons pt-4"
-      >
-        <button
-          className="btn ecrc_accessary_btn btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Cancel and Exit
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
-        <button
-          className="btn ecrc_go_btn mr-0 btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Try Again
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
       </div>
     </div>
     <div
@@ -20102,7 +20006,7 @@ exports[`Storyshots Success Onetime 1`] = `
       <h1
         style={
           Object {
-            "color": "#00d000",
+            "color": "rgb(43, 153, 76)",
           }
         }
       >
@@ -20182,38 +20086,6 @@ exports[`Storyshots Success Onetime 1`] = `
             </tr>
           </tbody>
         </table>
-      </div>
-      <div
-        className="buttons pt-4"
-      >
-        <button
-          className="btn ecrc_accessary_btn btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Cancel and Exit
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
-        <button
-          className="btn ecrc_go_btn mr-0 btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Try Again
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
       </div>
     </div>
     <div
@@ -20784,7 +20656,7 @@ exports[`Storyshots Success Payment Success 1`] = `
       <h1
         style={
           Object {
-            "color": "#00d000",
+            "color": "rgb(43, 153, 76)",
           }
         }
       >
@@ -20867,7 +20739,7 @@ exports[`Storyshots Success Payment Success 1`] = `
                 Amount
               </td>
               <td>
-                28.00
+                $28.00
               </td>
             </tr>
             <tr>
@@ -20888,38 +20760,6 @@ exports[`Storyshots Success Payment Success 1`] = `
             </tr>
           </tbody>
         </table>
-      </div>
-      <div
-        className="buttons pt-4"
-      >
-        <button
-          className="btn ecrc_accessary_btn btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Cancel and Exit
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
-        <button
-          className="btn ecrc_go_btn mr-0 btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Try Again
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
       </div>
     </div>
     <div
@@ -21149,7 +20989,7 @@ exports[`Storyshots Success Volunteer 1`] = `
       <h1
         style={
           Object {
-            "color": "#00d000",
+            "color": "rgb(43, 153, 76)",
           }
         }
       >
@@ -21229,38 +21069,6 @@ exports[`Storyshots Success Volunteer 1`] = `
             </tr>
           </tbody>
         </table>
-      </div>
-      <div
-        className="buttons pt-4"
-      >
-        <button
-          className="btn ecrc_accessary_btn btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Cancel and Exit
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
-        <button
-          className="btn ecrc_go_btn mr-0 btn"
-          onClick={[Function]}
-          type="submit"
-        >
-          Try Again
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
       </div>
     </div>
     <div
