@@ -139,6 +139,29 @@ describe("Consent Page Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
+  test("Validate Redirect to Error when failed axios call", async () => {
+    axios.post.mockImplementation(() => Promise.reject(new Error("fail")));
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {});
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
   test("Validate Employee relationship flow", async () => {
     axios.get.mockImplementation(() =>
       Promise.resolve({
@@ -181,6 +204,38 @@ describe("Consent Page Component", () => {
       expect(saveOrg).toHaveBeenCalled();
       expect(saveApplicationInfo).toHaveBeenCalled();
     });
+  });
+
+  test("Validate Employee relationship flow with Share", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          partyId: "123",
+          serviceId: "123"
+        }
+      })
+    );
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={{ ...page, share: true }} />
+      </Router>
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(setApplicationInfo).toHaveBeenCalled();
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/success");
   });
 
   test("Validate Onetime relationship flow", async () => {

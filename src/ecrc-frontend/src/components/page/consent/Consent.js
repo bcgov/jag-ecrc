@@ -285,7 +285,6 @@ export default function Consent({
 
               toSuccess();
               setLoading(false);
-              return;
             });
         }
 
@@ -330,8 +329,6 @@ export default function Consent({
 
           setLoading(false);
           toSuccess();
-
-          return;
         }
 
         return Promise.all([
@@ -354,10 +351,6 @@ export default function Consent({
         ]);
       })
       .then(allResponse => {
-        if (!allResponse) {
-          return;
-        }
-
         invoiceId = allResponse[0].data.invoiceId;
         serviceFeeAmount = allResponse[1].data.serviceFeeAmount;
 
@@ -677,7 +670,7 @@ Consent.propTypes = {
     saveApplicationInfo: PropTypes.func.isRequired,
     setError: PropTypes.func.isRequired,
     share: PropTypes.bool.isRequired
-  }).isRequired
+  })
 };
 
 Consent.defaultProps = {

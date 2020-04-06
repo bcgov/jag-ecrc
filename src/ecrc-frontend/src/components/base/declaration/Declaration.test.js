@@ -10,7 +10,7 @@ describe("Declaration Component", () => {
     expect(declaration.toJSON()).toMatchSnapshot();
   });
   test("Matches the sharing snapshot", () => {
-    const declaration = create(<Declaration shareConsent={true} />);
+    const declaration = create(<Declaration shareConsent />);
     expect(declaration.toJSON()).toMatchSnapshot();
   });
 });
