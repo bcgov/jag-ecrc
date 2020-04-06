@@ -1,7 +1,12 @@
 import React from "react";
 import { create } from "react-test-renderer";
 import { MemoryRouter, Router } from "react-router-dom";
-import { render, fireEvent, getByText } from "@testing-library/react";
+import {
+  render,
+  fireEvent,
+  getByText,
+  findByText
+} from "@testing-library/react";
 import { createMemoryHistory } from "history";
 
 import OrgVerification from "./OrgVerification";
@@ -46,6 +51,81 @@ describe("OrgVerification Component", () => {
     expect(orgVerificationPage.toJSON()).toMatchSnapshot();
   });
 
+  test("It updates the works with field as required when scope level code is WWCA", async () => {
+    const newOrg = {
+      ...org,
+      defaultCrcScopeLevelCd: "WWCA"
+    };
+
+    const newPage = {
+      ...page,
+      org: newOrg
+    };
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <OrgVerification page={newPage} />
+      </Router>
+    );
+
+    await expect(() => {
+      getByText(container, "wrongtext");
+    }).toThrow();
+
+    expect(getByText(container, "Children & Vulnerable Adults")).toBeTruthy();
+  });
+
+  test("It updates the works with field as required when scope level code is WWAD", async () => {
+    const newOrg = {
+      ...org,
+      defaultCrcScopeLevelCd: "WWAD"
+    };
+
+    const newPage = {
+      ...page,
+      org: newOrg
+    };
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <OrgVerification page={newPage} />
+      </Router>
+    );
+
+    await expect(() => {
+      getByText(container, "wrongtext");
+    }).toThrow();
+
+    expect(getByText(container, "Vulnerable Adults")).toBeTruthy();
+  });
+
+  test("It updates the works with field as required when scope level code is WWCH", async () => {
+    const newOrg = {
+      ...org,
+      defaultCrcScopeLevelCd: "WWCH"
+    };
+
+    const newPage = {
+      ...page,
+      org: newOrg
+    };
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <OrgVerification page={newPage} />
+      </Router>
+    );
+
+    await expect(() => {
+      getByText(container, "wrongtext");
+    }).toThrow();
+
+    expect(getByText(container, "Children")).toBeTruthy();
+  });
+
   test("Redirect to Home", () => {
     const history = createMemoryHistory();
 
@@ -74,6 +154,19 @@ describe("OrgVerification Component", () => {
 
   test("Redirect to Error on empty organization", () => {
     page.org.orgNm = "";
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <OrgVerification page={page} />
+      </Router>
+    );
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Redirects to error page when unauthenticated", () => {
+    sessionStorage.removeItem("jwt");
+
     const history = createMemoryHistory();
     render(
       <Router history={history}>
