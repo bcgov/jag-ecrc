@@ -52,7 +52,7 @@ describe("OrgValidation Component", () => {
     expect(orgValidationPage.toJSON()).toMatchSnapshot();
   });
 
-  test("redirects to Org Verification page", async () => {
+  test("Redirects to Org Verification page", async () => {
     axios.get.mockImplementation(() =>
       Promise.resolve({
         data: "string",
@@ -89,7 +89,7 @@ describe("OrgValidation Component", () => {
     );
   });
 
-  test("redirects to Transition page", async () => {
+  test("Redirects to Transition page", async () => {
     axios.get.mockResolvedValueOnce({ data: "secret" });
     axios.get.mockRejectedValueOnce({ response: { status: 401 } });
 
@@ -120,7 +120,36 @@ describe("OrgValidation Component", () => {
     );
   });
 
-  test("displays org code error", async () => {
+  test("Redirects to Error page", async () => {
+    axios.get.mockResolvedValueOnce({ data: "secret" });
+    axios.get.mockRejectedValueOnce({ response: { status: 400 } });
+
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <OrgValidation page={page} />
+      </Router>
+    );
+
+    expect(getByText(container, "I'm ready")).toBeInTheDocument();
+
+    fireEvent.change(getByRole(container, "textbox"), {
+      target: { value: "somebadvalue123" }
+    });
+
+    expect(getByDisplayValue(container, "somebadvalue123")).toBeInTheDocument();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Displays org code error", async () => {
     axios.get.mockResolvedValueOnce({ data: "secret" });
     axios.get.mockRejectedValueOnce({ response: { status: 404 } });
 
