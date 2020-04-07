@@ -76,4 +76,17 @@ describe("TermOfUse Page Component", () => {
       "/criminalrecordcheck/bcscredirect"
     );
   });
+
+  test("Redirects to error page when unauthenticated", () => {
+    sessionStorage.removeItem("jwt");
+
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <TOU page={page} />
+      </Router>
+    );
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
 });

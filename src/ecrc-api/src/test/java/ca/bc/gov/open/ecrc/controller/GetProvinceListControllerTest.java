@@ -81,4 +81,15 @@ class GetProvinceListControllerTest {
 				response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
+	@DisplayName("Exception - getProvinceList controller")
+	@Test
+	void testException() throws EcrcServiceException {
+		when(ecrcServices.getProvinceList(GUID)).thenThrow(new EcrcServiceException("FAIL"));
+		ResponseEntity<String> response = getProvinceListController.getProvinceList(GUID);
+		Assertions.assertEquals(
+				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
+				response.getBody());
+		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+	}
 }

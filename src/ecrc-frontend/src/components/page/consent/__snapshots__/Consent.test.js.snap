@@ -154,12 +154,12 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
                 Criminal Records Review Act
               </i>
                
-              or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
+              or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the
+               
               <i>
                 Criminal Records Review Act
               </i>
-               
-              or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
+               or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
             </span>
             <span
               className="mandatory"

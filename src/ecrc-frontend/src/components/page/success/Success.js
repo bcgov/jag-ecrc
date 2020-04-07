@@ -41,7 +41,8 @@ export default function Success({
   const [toError, setToError] = useState(false);
   const [toHostHome, setToHostHome] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
-  const headerColor = paymentInfo.trnApproved === "0" ? "#ff0000" : "#00d000";
+  const headerColor =
+    paymentInfo.trnApproved === "0" ? "#ff0000" : "rgb(43, 153, 76)";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -123,7 +124,7 @@ export default function Success({
   if (paymentInfo.trnApproved === "1") {
     receiptInfo.unshift({ name: "Service Number", value: serviceId });
     receiptInfo.push({ name: "Organization", value: orgNm });
-    receiptInfo.push({ name: "Amount", value: paymentInfo.trnAmount });
+    receiptInfo.push({ name: "Amount", value: `$${paymentInfo.trnAmount}` });
     receiptInfo.push({ name: "Date/Time", value: paymentInfo.trnDate });
     receiptInfo.push({
       name: "Transaction ID",
@@ -370,10 +371,12 @@ export default function Success({
             <Table table={receiptInfoTable} />
           </div>
 
-          <div className="buttons pt-4">
-            <Button button={cancelButton} onClick={cancelClick} />
-            <Button button={tryAgainButton} onClick={retryPayment} />
-          </div>
+          {paymentInfo.trnApproved === "0" && (
+            <div className="buttons pt-4">
+              <Button button={cancelButton} onClick={cancelClick} />
+              <Button button={tryAgainButton} onClick={retryPayment} />
+            </div>
+          )}
         </div>
 
         <div className="content-success-sidecard">
