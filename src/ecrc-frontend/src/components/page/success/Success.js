@@ -208,16 +208,16 @@ export default function Success({
     const logSuccess = {
       orgTicketNumber,
       requestGuid: uuid,
-      applPartyId: partyId,
-      serviceId,
-      cCAuthorization: paymentInfo.trnId,
-      paymentDate: `${paymentDateArr[2]}/${paymentDateArr[0]}/${paymentDateArr[1]}`,
-      payorTypeCd: "A",
-      paymentStatusCd: "A",
-      sessionId,
-      invoiceId,
-      transactionId: paymentInfo.trnId,
-      transactionAmount: paymentInfo.trnAmount
+      appl_Party_Id: partyId,
+      service_Id: serviceId,
+      cC_Authorization: paymentInfo.trnId,
+      payment_Date: `${paymentDateArr[2]}/${paymentDateArr[0]}/${paymentDateArr[1]}`,
+      payor_Type_Cd: "A",
+      payment_Status_Cd: "A",
+      session_Id: sessionId,
+      invoice_Id: invoiceId,
+      transaction_Id: paymentInfo.trnId,
+      transaction_Amount: paymentInfo.trnAmount
     };
 
     axios
