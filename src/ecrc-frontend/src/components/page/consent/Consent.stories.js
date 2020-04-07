@@ -42,21 +42,25 @@ const org = {
   defaultCrcScopeLevelCd: "WWCH"
 };
 
+const applicationInfo = {};
 const setApplicationInfo = () => {};
 const saveApplicant = () => {};
 const saveOrg = () => {};
 const saveApplicationInfo = () => {};
 const setError = () => {};
+const share = false;
 
 const page = {
   header,
   applicant,
   org,
+  applicationInfo,
   setApplicationInfo,
   saveApplicant,
   saveOrg,
   saveApplicationInfo,
-  setError
+  setError,
+  share
 };
 
 sessionStorage.setItem("validator", "secret");
@@ -83,9 +87,25 @@ storiesOf("Consent page", module)
       <Consent page={page} onContinueClick={onContinueClick} />
     </MemoryRouter>
   ))
+  .add("Sharing", () => (
+    <MemoryRouter>
+      <Consent
+        page={{ ...page, share: true }}
+        onContinueClick={onContinueClick}
+      />
+    </MemoryRouter>
+  ))
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
   .add("Mobile", () => (
     <MemoryRouter>
       <Consent page={page} onContinueClick={onContinueClick} />
+    </MemoryRouter>
+  ))
+  .add("MobileSharing", () => (
+    <MemoryRouter>
+      <Consent
+        page={{ ...page, share: true }}
+        onContinueClick={onContinueClick}
+      />
     </MemoryRouter>
   ));

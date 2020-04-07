@@ -23,11 +23,14 @@ describe("Consent Page Component", () => {
     name: "Criminal Record Check"
   };
 
+  const applicationInfo = {};
+
   const setApplicationInfo = jest.fn();
   const saveApplicant = jest.fn();
   const saveOrg = jest.fn();
   const saveApplicationInfo = jest.fn();
   const setError = jest.fn();
+  const share = false;
 
   const applicant = {
     legalFirstNm: "Robert",
@@ -74,11 +77,13 @@ describe("Consent Page Component", () => {
     header,
     applicant,
     org,
+    applicationInfo,
     setApplicationInfo,
     saveApplicant,
     saveOrg,
     saveApplicationInfo,
-    setError
+    setError,
+    share
   };
 
   // Mock window location
@@ -134,6 +139,29 @@ describe("Consent Page Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
+  test("Validate Redirect to Error when failed axios call", async () => {
+    axios.post.mockImplementation(() => Promise.reject(new Error("fail")));
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {});
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
   test("Validate Employee relationship flow", async () => {
     axios.get.mockImplementation(() =>
       Promise.resolve({
@@ -178,6 +206,38 @@ describe("Consent Page Component", () => {
     });
   });
 
+  test("Validate Employee relationship flow with Share", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          partyId: "123",
+          serviceId: "123"
+        }
+      })
+    );
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={{ ...page, share: true }} />
+      </Router>
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(setApplicationInfo).toHaveBeenCalled();
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/success");
+  });
+
   test("Validate Onetime relationship flow", async () => {
     applicant.driversLicNo = "";
     applicant.alias1FirstNm = "";
@@ -197,9 +257,7 @@ describe("Consent Page Component", () => {
     axios.get.mockImplementation(() =>
       Promise.resolve({
         data: {
-          sessionId: "123",
-          invoiceId: "123",
-          serviceFeeAmount: "123"
+          sessionId: "123"
         }
       })
     );

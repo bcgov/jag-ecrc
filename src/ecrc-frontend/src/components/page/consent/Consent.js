@@ -56,11 +56,13 @@ export default function Consent({
       defaultScheduleTypeCd,
       defaultCrcScopeLevelCd
     },
+    applicationInfo: { previousServiceId },
     setApplicationInfo,
     saveApplicant,
     saveOrg,
     saveApplicationInfo,
-    setError
+    setError,
+    share
   }
 }) {
   const history = useHistory();
@@ -175,6 +177,13 @@ export default function Consent({
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
+    const currentPayload = accessJWTToken(token);
+    const newPayload = {
+      ...currentPayload,
+      actionsPerformed: [...currentPayload.actionsPerformed, "consent"]
+    };
+    generateJWTToken(newPayload);
+
     const createApplicantInfo = {
       orgTicketNumber,
       requestGuid: uuid,
@@ -211,6 +220,10 @@ export default function Consent({
     let serviceFeeAmount;
     let serviceId;
 
+    let appInfo = {
+      previousServiceId
+    };
+
     // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
     // eivPassDetailsResults - String returned from equifax, see Shaun
     const CRC = {
@@ -232,182 +245,154 @@ export default function Consent({
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
-    if (orgApplicantRelationship !== "VOLUNTEER") {
-      Promise.all([
-        axios.post("/ecrc/private/createApplicant", createApplicantInfo, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }),
-        axios.get(
-          `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          }
-        ),
-        axios.get(
-          `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          }
-        ),
-        axios.get(
-          `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          }
-        )
-      ])
-        .then(all => {
-          partyId = all[0].data.partyId;
-          sessionId = all[1].data.sessionId;
-          invoiceId = all[2].data.invoiceId;
-          serviceFeeAmount = all[3].data.serviceFeeAmount;
+    axios
+      .post("/ecrc/private/createApplicant", createApplicantInfo, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(createApplicantResponse => {
+        partyId = createApplicantResponse.data.partyId;
 
-          let newCRC = {
-            ...CRC,
-            appl_Party_Id: partyId,
-            session_Id: sessionId,
-            invoice_Id: invoiceId
-          };
-
-          if (orgApplicantRelationship === "ONETIME") {
-            newCRC = {
-              ...newCRC,
-              org_Appl_To_Pay: "O"
-            };
-          }
-
-          return axios.post("/ecrc/private/createNewCRCService", newCRC, {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          });
-        })
-        .then(crcResponse => {
-          serviceId = crcResponse.data.serviceId;
-
-          const appInfo = {
-            partyId,
-            sessionId,
-            invoiceId,
-            serviceFeeAmount,
-            serviceId
-          };
-
-          setApplicationInfo(appInfo);
-
-          const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-          const newPayload = {
-            ...currentPayload,
-            actionsPerformed: [...currentPayload.actionsPerformed, "consent"]
-          };
-          generateJWTToken(newPayload);
-
-          saveApplicant();
-          saveOrg();
-          saveApplicationInfo(appInfo);
-
-          if (orgApplicantRelationship === "ONETIME") {
-            toSuccess();
-            setLoading(false);
-            return;
-          }
-
-          const createURL = {
-            invoiceNumber: invoiceId,
-            requestGuid: uuid,
-            approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-            declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-            errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-            totalItemsAmount: serviceFeeAmount,
-            serviceIdRef1: serviceId,
-            partyIdRef2: partyId
+        if (share) {
+          const shareCRC = {
+            orgTicketNumber,
+            applPartyId: partyId,
+            scopeLevelCd: defaultCrcScopeLevelCd,
+            applicantPosn: jobTitle,
+            authReleaseEivVendorYN: "Y",
+            authReleaseToOrgYN: "Y",
+            applIdentityVerifiedEivYN: "Y",
+            previousServiceId,
+            eivPassDetailsResults: "eivPassDetailsResults",
+            requestGuid: uuid
           };
 
           axios
-            .post("/ecrc/private/createPaymentUrl", createURL, {
+            .post("/ecrc/private/createSharingService", shareCRC, {
               headers: {
                 Authorization: `Bearer ${token}`
               }
             })
-            .then(urlResponse => {
-              window.location.href = urlResponse.data.paymentUrl;
+            .then(createShareResponse => {
+              serviceId = createShareResponse.data.serviceId;
+
+              appInfo = {
+                ...appInfo,
+                serviceId
+              };
+              setApplicationInfo(appInfo);
+
+              toSuccess();
               setLoading(false);
-            })
-            .catch(error => {
-              handleError(error);
             });
-        })
-        .catch(error => {
-          handleError(error);
-        });
-    } else if (orgApplicantRelationship === "VOLUNTEER") {
-      Promise.all([
-        axios.post("/ecrc/private/createApplicant", createApplicantInfo, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }),
-        axios.get(
+        }
+
+        return axios.get(
           `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
           {
             headers: {
               Authorization: `Bearer ${token}`
             }
           }
-        )
-      ])
-        .then(all => {
-          partyId = all[0].data.partyId;
-          sessionId = all[1].data.sessionId;
+        );
+      })
+      .then(getSessionResponse => {
+        sessionId = getSessionResponse.data.sessionId;
 
-          const newCRC = {
-            ...CRC,
-            appl_Party_Id: partyId,
-            org_Appl_To_Pay: "",
-            session_Id: sessionId
-          };
+        const newCRC = {
+          ...CRC,
+          appl_Party_Id: partyId,
+          org_Appl_To_Pay: orgApplicantRelationship === "ONETIME" ? "O" : "A",
+          session_Id: sessionId
+        };
 
-          return axios.post("/ecrc/private/createNewCRCService", newCRC, {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          });
-        })
-        .then(crcResponse => {
-          serviceId = crcResponse.data.serviceId;
+        return axios.post("/ecrc/private/createNewCRCService", newCRC, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+      })
+      .then(newCRCRespose => {
+        serviceId = newCRCRespose.data.serviceId;
 
-          const appInfo = {
-            partyId,
-            sessionId,
-            invoiceId,
-            serviceFeeAmount,
-            serviceId
-          };
+        appInfo = {
+          ...appInfo,
+          serviceId
+        };
 
+        if (
+          orgApplicantRelationship === "VOLUNTEER" ||
+          orgApplicantRelationship === "ONETIME"
+        ) {
           setApplicationInfo(appInfo);
-
-          const currentPayload = accessJWTToken(sessionStorage.getItem("jwt"));
-          const newPayload = {
-            ...currentPayload,
-            actionsPerformed: [...currentPayload.actionsPerformed, "consent"]
-          };
-          generateJWTToken(newPayload);
 
           setLoading(false);
           toSuccess();
-        })
-        .catch(error => {
-          handleError(error);
+        }
+
+        return Promise.all([
+          axios.get(
+            `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            }
+          ),
+          axios.get(
+            `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            }
+          )
+        ]);
+      })
+      .then(allResponse => {
+        invoiceId = allResponse[0].data.invoiceId;
+        serviceFeeAmount = allResponse[1].data.serviceFeeAmount;
+
+        appInfo = {
+          ...appInfo,
+          invoiceId,
+          serviceFeeAmount
+        };
+
+        setApplicationInfo(appInfo);
+        saveApplicant();
+        saveOrg();
+        saveApplicationInfo(appInfo);
+
+        const createURL = {
+          invoiceNumber: invoiceId,
+          requestGuid: uuid,
+          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          totalItemsAmount: serviceFeeAmount,
+          serviceIdRef1: serviceId,
+          partyIdRef2: partyId
+        };
+
+        return axios.post("/ecrc/private/createPaymentUrl", createURL, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         });
-    }
+      })
+      .then(urlResponse => {
+        if (!urlResponse) {
+          return;
+        }
+
+        window.location.href = urlResponse.data.paymentUrl;
+        setLoading(false);
+      })
+      .catch(error => {
+        handleError(error);
+      });
   };
 
   if (toHostHome) {
@@ -440,6 +425,7 @@ export default function Consent({
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
             checkFourthBox={() => setFourthBoxChecked(!fourthBoxChecked)}
+            shareConsent={share}
           />
           <div className="buttons pt-4">
             <Button button={cancelButton} onClick={cancelClick} />
@@ -497,10 +483,22 @@ Consent.propTypes = {
       defaultScheduleTypeCd: PropTypes.string.isRequired,
       defaultCrcScopeLevelCd: PropTypes.string.isRequired
     }),
+    applicationInfo: PropTypes.shape({
+      previousServiceId: PropTypes.string
+    }),
     setApplicationInfo: PropTypes.func.isRequired,
     saveApplicant: PropTypes.func.isRequired,
     saveOrg: PropTypes.func.isRequired,
     saveApplicationInfo: PropTypes.func.isRequired,
-    setError: PropTypes.func.isRequired
-  }).isRequired
+    setError: PropTypes.func.isRequired,
+    share: PropTypes.bool.isRequired
+  })
+};
+
+Consent.defaultProps = {
+  page: {
+    applicationInfo: {
+      previousServiceId: ""
+    }
+  }
 };
