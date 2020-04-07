@@ -142,15 +142,21 @@ export default function Consent({
 
   const handleError = error => {
     setToError(true);
+    let errorMessage = "";
+
     if (error && error.response && error.response.status) {
-      if (
-        error.request &&
-        error.request.response &&
-        JSON.parse(error.request.response)
-      ) {
+      if (error.request && error.request.response) {
+        try {
+          JSON.parse(error.request.response);
+          errorMessage = JSON.parse(error.request.response).message;
+        } catch (err) {
+          errorMessage =
+            "An unexpected error occurred. Please make sure all your data is accurate and complete. We apologize for the inconvenience.";
+        }
+
         setError({
           status: error.response.status,
-          message: JSON.parse(error.request.response).message
+          message: errorMessage
         });
       } else {
         setError({
@@ -229,19 +235,19 @@ export default function Consent({
     const CRC = {
       orgTicketNumber,
       requestGuid: uuid,
-      schedule_Type_Cd: defaultScheduleTypeCd,
-      scope_Level_Cd: defaultCrcScopeLevelCd,
-      appl_Party_Id: null,
-      org_Appl_To_Pay: "A",
-      applicant_Posn: jobTitle,
-      child_Care_Fac_Nm: organizationFacility,
-      governing_Body_Nm: orgNm,
-      session_Id: null,
-      invoice_Id: null,
-      auth_Release_EIV_Vendor_YN: "Y",
-      auth_Conduct_CRC_Check_YN: "Y",
-      auth_Release_To_Org_YN: "Y",
-      appl_Identity_Verified_EIV_YN: "Y",
+      scheduleTypeCd: defaultScheduleTypeCd,
+      scopeLevelCd: defaultCrcScopeLevelCd,
+      applPartyId: null,
+      orgApplToPay: "",
+      applicantPosn: jobTitle,
+      childCareFacNm: organizationFacility,
+      governingBodyNm: orgNm,
+      sessionId: null,
+      invoiceId: null,
+      authReleaseEIVVendorYN: "Y",
+      authConductCRCCheckYN: "Y",
+      authReleaseToOrgYN: "Y",
+      applIdentityVerifiedEIVYN: "Y",
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
@@ -302,10 +308,15 @@ export default function Consent({
 
         const newCRC = {
           ...CRC,
-          appl_Party_Id: partyId,
-          org_Appl_To_Pay: orgApplicantRelationship === "ONETIME" ? "O" : "A",
-          session_Id: sessionId
+          applPartyId: partyId,
+          sessionId
         };
+
+        if (orgApplicantRelationship === "ONETIME") {
+          newCRC.orgApplToPay = "O";
+        } else if (orgApplicantRelationship === "EMPLOYEE") {
+          newCRC.orgApplToPay = "A";
+        }
 
         return axios.post("/ecrc/private/createNewCRCService", newCRC, {
           headers: {

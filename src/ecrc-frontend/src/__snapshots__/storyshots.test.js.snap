@@ -473,7 +473,7 @@ exports[`Storyshots Application Form Mobile Non Schedule D 1`] = `
                         onKeyDown={[Function]}
                         onPaste={[Function]}
                         placeholder="250 555-1234"
-                        type="tel"
+                        type="text"
                         value=""
                       />
                       <br />
@@ -1784,7 +1784,7 @@ exports[`Storyshots Application Form Mobile Schedule D 1`] = `
                         onKeyDown={[Function]}
                         onPaste={[Function]}
                         placeholder="250 555-1234"
-                        type="tel"
+                        type="text"
                         value=""
                       />
                       <br />
@@ -3135,7 +3135,7 @@ exports[`Storyshots Application Form Non Schedule D 1`] = `
                         onKeyDown={[Function]}
                         onPaste={[Function]}
                         placeholder="250 555-1234"
-                        type="tel"
+                        type="text"
                         value=""
                       />
                       <br />
@@ -4446,7 +4446,7 @@ exports[`Storyshots Application Form Schedule D 1`] = `
                         onKeyDown={[Function]}
                         onPaste={[Function]}
                         placeholder="250 555-1234"
-                        type="tel"
+                        type="text"
                         value=""
                       />
                       <br />

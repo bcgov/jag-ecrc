@@ -5,19 +5,19 @@ package ca.bc.gov.open.ecrc.model;
  */
 public class RequestNewCRCService {
     private String orgTicketNumber;
-    private String schedule_Type_Cd;
-    private String scope_Level_Cd;
-    private String appl_Party_Id;
-    private String org_Appl_To_Pay;
-    private String applicant_Posn;
-    private String child_Care_Fac_Nm;
-    private String governing_Body_Nm;
-    private String session_Id;
-    private String invoice_Id;
-    private String auth_Release_EIV_Vendor_YN;
-    private String auth_Conduct_CRC_Check_YN;
-    private String auth_Release_To_Org_YN;
-    private String appl_Identity_Verified_EIV_YN;
+    private String scheduleTypeCd;
+    private String scopeLevelCd;
+    private String applPartyId;
+    private String orgApplToPay;
+    private String applicantPosn;
+    private String childCareFacNm;
+    private String governingBodyNm;
+    private String sessionId;
+    private String invoiceId;
+    private String authReleaseEIVVendorYN;
+    private String authConductCRCCheckYN;
+    private String authReleaseToOrgYN;
+    private String applIdentityVerifiedEIVYN;
     private String eivPassDetailsResults;
     private String requestGuid;
 
@@ -29,108 +29,108 @@ public class RequestNewCRCService {
         this.orgTicketNumber = orgTicketNumber;
     }
 
-    public String getSchedule_Type_Cd() {
-        return schedule_Type_Cd;
+    public String getScheduleTypeCd() {
+        return scheduleTypeCd;
     }
 
-    public void setSchedule_Type_Cd(String schedule_Type_Cd) {
-        this.schedule_Type_Cd = schedule_Type_Cd;
+    public void setScheduleTypeCd(String scheduleTypeCd) {
+        this.scheduleTypeCd = scheduleTypeCd;
     }
 
-    public String getScope_Level_Cd() {
-        return scope_Level_Cd;
+    public String getScopeLevelCd() {
+        return scopeLevelCd;
     }
 
-    public void setScope_Level_Cd(String scope_Level_Cd) {
-        this.scope_Level_Cd = scope_Level_Cd;
+    public void setScopeLevelCd(String scopeLevelCd) {
+        this.scopeLevelCd = scopeLevelCd;
     }
 
-    public String getAppl_Party_Id() {
-        return appl_Party_Id;
+    public String getApplPartyId() {
+        return applPartyId;
     }
 
-    public void setAppl_Party_Id(String appl_Party_Id) {
-        this.appl_Party_Id = appl_Party_Id;
+    public void setApplPartyId(String applPartyId) {
+        this.applPartyId = applPartyId;
     }
 
-    public String getOrg_Appl_To_Pay() {
-        return org_Appl_To_Pay;
+    public String getOrgApplToPay() {
+        return orgApplToPay;
     }
 
-    public void setOrg_Appl_To_Pay(String org_Appl_To_Pay) {
-        this.org_Appl_To_Pay = org_Appl_To_Pay;
+    public void setOrgApplToPay(String orgApplToPay) {
+        this.orgApplToPay = orgApplToPay;
     }
 
-    public String getApplicant_Posn() {
-        return applicant_Posn;
+    public String getApplicantPosn() {
+        return applicantPosn;
     }
 
-    public void setApplicant_Posn(String applicant_Posn) {
-        this.applicant_Posn = applicant_Posn;
+    public void setApplicantPosn(String applicantPosn) {
+        this.applicantPosn = applicantPosn;
     }
 
-    public String getChild_Care_Fac_Nm() {
-        return child_Care_Fac_Nm;
+    public String getChildCareFacNm() {
+        return childCareFacNm;
     }
 
-    public void setChild_Care_Fac_Nm(String child_Care_Fac_Nm) {
-        this.child_Care_Fac_Nm = child_Care_Fac_Nm;
+    public void setChildCareFacNm(String childCareFacNm) {
+        this.childCareFacNm = childCareFacNm;
     }
 
-    public String getGoverning_Body_Nm() {
-        return governing_Body_Nm;
+    public String getGoverningBodyNm() {
+        return governingBodyNm;
     }
 
-    public void setGoverning_Body_Nm(String governing_Body_Nm) {
-        this.governing_Body_Nm = governing_Body_Nm;
+    public void setGoverningBodyNm(String governingBodyNm) {
+        this.governingBodyNm = governingBodyNm;
     }
 
-    public String getSession_Id() {
-        return session_Id;
+    public String getSessionId() {
+        return sessionId;
     }
 
-    public void setSession_Id(String session_Id) {
-        this.session_Id = session_Id;
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
     }
 
-    public String getInvoice_Id() {
-        return invoice_Id;
+    public String getInvoiceId() {
+        return invoiceId;
     }
 
-    public void setInvoice_Id(String invoice_Id) {
-        this.invoice_Id = invoice_Id;
+    public void setInvoiceId(String invoiceId) {
+        this.invoiceId = invoiceId;
     }
 
-    public String getAuth_Release_EIV_Vendor_YN() {
-        return auth_Release_EIV_Vendor_YN;
+    public String getAuthReleaseEIVVendorYN() {
+        return authReleaseEIVVendorYN;
     }
 
-    public void setAuth_Release_EIV_Vendor_YN(String auth_Release_EIV_Vendor_YN) {
-        this.auth_Release_EIV_Vendor_YN = auth_Release_EIV_Vendor_YN;
+    public void setAuthReleaseEIVVendorYN(String authReleaseEIVVendorYN) {
+        this.authReleaseEIVVendorYN = authReleaseEIVVendorYN;
     }
 
-    public String getAuth_Conduct_CRC_Check_YN() {
-        return auth_Conduct_CRC_Check_YN;
+    public String getAuthConductCRCCheckYN() {
+        return authConductCRCCheckYN;
     }
 
-    public void setAuth_Conduct_CRC_Check_YN(String auth_Conduct_CRC_Check_YN) {
-        this.auth_Conduct_CRC_Check_YN = auth_Conduct_CRC_Check_YN;
+    public void setAuthConductCRCCheckYN(String authConductCRCCheckYN) {
+        this.authConductCRCCheckYN = authConductCRCCheckYN;
     }
 
-    public String getAuth_Release_To_Org_YN() {
-        return auth_Release_To_Org_YN;
+    public String getAuthReleaseToOrgYN() {
+        return authReleaseToOrgYN;
     }
 
-    public void setAuth_Release_To_Org_YN(String auth_Release_To_Org_YN) {
-        this.auth_Release_To_Org_YN = auth_Release_To_Org_YN;
+    public void setAuthReleaseToOrgYN(String authReleaseToOrgYN) {
+        this.authReleaseToOrgYN = authReleaseToOrgYN;
     }
 
-    public String getAppl_Identity_Verified_EIV_YN() {
-        return appl_Identity_Verified_EIV_YN;
+    public String getApplIdentityVerifiedEIVYN() {
+        return applIdentityVerifiedEIVYN;
     }
 
-    public void setAppl_Identity_Verified_EIV_YN(String appl_Identity_Verified_EIV_YN) {
-        this.appl_Identity_Verified_EIV_YN = appl_Identity_Verified_EIV_YN;
+    public void setApplIdentityVerifiedEIVYN(String applIdentityVerifiedEIVYN) {
+        this.applIdentityVerifiedEIVYN = applIdentityVerifiedEIVYN;
     }
 
     public String getEivPassDetailsResults() {
@@ -147,19 +147,19 @@ public class RequestNewCRCService {
     public String toQueryString() {
         return "?" +
                 "OrgTicketNumber=" + orgTicketNumber +
-                "&Schedule_Type_Cd=" + schedule_Type_Cd +
-                "&Scope_Level_Cd=" + scope_Level_Cd +
-                "&Appl_Party_Id=" + appl_Party_Id  +
-                "&Org_Appl_To_Pay=" + org_Appl_To_Pay +
-                "&Applicant_Posn=" + applicant_Posn +
-                "&Child_Care_Fac_Nm=" + child_Care_Fac_Nm +
-                "&Governing_Body_Nm=" + governing_Body_Nm +
-                "&Session_Id=" + session_Id +
-                "&Invoice_Id=" + invoice_Id +
-                "&Auth_Release_EIV_Vendor_YN=" + auth_Release_EIV_Vendor_YN +
-                "&Auth_Conduct_CRC_Check_YN=" + auth_Conduct_CRC_Check_YN +
-                "&Auth_Release_To_Org_YN=" + auth_Release_To_Org_YN +
-                "&Appl_Identity_Verified_EIV_YN=" + appl_Identity_Verified_EIV_YN +
+                "&Schedule_Type_Cd=" + scheduleTypeCd +
+                "&Scope_Level_Cd=" + scopeLevelCd +
+                "&Appl_Party_Id=" + applPartyId +
+                "&Org_Appl_To_Pay=" + orgApplToPay +
+                "&Applicant_Posn=" + applicantPosn +
+                "&Child_Care_Fac_Nm=" + childCareFacNm +
+                "&Governing_Body_Nm=" + governingBodyNm +
+                "&Session_Id=" + sessionId +
+                "&Invoice_Id=" + invoiceId +
+                "&Auth_Release_EIV_Vendor_YN=" + authReleaseEIVVendorYN +
+                "&Auth_Conduct_CRC_Check_YN=" + authConductCRCCheckYN +
+                "&Auth_Release_To_Org_YN=" + authReleaseToOrgYN +
+                "&Appl_Identity_Verified_EIV_YN=" + applIdentityVerifiedEIVYN +
                 "&EivPassDetailsResults=" + eivPassDetailsResults;
     }
 }

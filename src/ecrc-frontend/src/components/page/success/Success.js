@@ -97,15 +97,21 @@ export default function Success({
 
   const handleError = error => {
     setToError(true);
+    let errorMessage = "";
+
     if (error && error.response && error.response.status) {
-      if (
-        error.request &&
-        error.request.response &&
-        JSON.parse(error.request.response)
-      ) {
+      if (error.request && error.request.response) {
+        try {
+          JSON.parse(error.request.response);
+          errorMessage = JSON.parse(error.request.response).message;
+        } catch (err) {
+          errorMessage =
+            "An unexpected error occurred. Please make sure all your data is accurate and complete. We apologize for the inconvenience.";
+        }
+
         setError({
           status: error.response.status,
-          message: JSON.parse(error.request.response).message
+          message: errorMessage
         });
       } else {
         setError({
@@ -202,16 +208,16 @@ export default function Success({
     const logSuccess = {
       orgTicketNumber,
       requestGuid: uuid,
-      appl_Party_Id: partyId,
-      service_Id: serviceId,
-      cC_Authorization: paymentInfo.trnId,
-      payment_Date: `${paymentDateArr[2]}/${paymentDateArr[0]}/${paymentDateArr[1]}`,
-      payor_Type_Cd: "A",
-      payment_Status_Cd: "A",
-      session_Id: sessionId,
-      invoice_Id: invoiceId,
-      transaction_Id: paymentInfo.trnId,
-      transaction_Amount: paymentInfo.trnAmount
+      applPartyId: partyId,
+      serviceId,
+      cCAuthorization: paymentInfo.trnId,
+      paymentDate: `${paymentDateArr[2]}/${paymentDateArr[0]}/${paymentDateArr[1]}`,
+      payorTypeCd: "A",
+      paymentStatusCd: "A",
+      sessionId,
+      invoiceId,
+      transactionId: paymentInfo.trnId,
+      transactionAmount: paymentInfo.trnAmount
     };
 
     axios

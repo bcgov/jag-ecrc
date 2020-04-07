@@ -29,6 +29,7 @@ export const TextInput = ({
   }
 
   let labelPart = null;
+  const labelPartExists = label !== false;
   if (label) {
     labelPart = (
       <label htmlFor={id} className="label">
@@ -53,7 +54,7 @@ export const TextInput = ({
   if (textStyle === "textinput_non_editable_gray")
     return (
       <div>
-        {labelPart && labelPart}
+        {labelPartExists && labelPart}
         <input
           className={`${textStyle}`}
           type="text"
@@ -70,7 +71,7 @@ export const TextInput = ({
   if (options) {
     return (
       <div>
-        {labelPart && labelPart}
+        {labelPartExists && labelPart}
         <select
           className={textStyle}
           id={id}
@@ -92,10 +93,11 @@ export const TextInput = ({
   if (phone) {
     return (
       <div>
-        {labelPart && labelPart}
+        {labelPartExists && labelPart}
         <Input
           country={"CA"}
           className={textStyle}
+          type="text"
           id={id}
           placeholder={placeholder}
           value={value}
@@ -109,7 +111,7 @@ export const TextInput = ({
 
   return (
     <div>
-      {labelPart && labelPart}
+      {labelPartExists && labelPart}
       <input
         className={`${textStyle}`}
         type="text"
