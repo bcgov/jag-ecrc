@@ -237,7 +237,7 @@ export default function ApplicationForm({
                 errorMessage = JSON.parse(error.request.response).message;
               } catch (err) {
                 errorMessage =
-                  "An unexpected error occurred. Please make sure all your data is entered accurately and is complete. We apologize for the inconvenience.";
+                  "An unexpected error occurred. Please make sure all your data is accurate and complete. We apologize for the inconvenience.";
               }
 
               setError({
