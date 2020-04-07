@@ -78,6 +78,7 @@ describe("ApplicationForm Component", () => {
     sessionStorage.setItem("validator", "secret");
     sessionStorage.setItem("uuid", "unique123");
     sessionStorage.setItem("org", org);
+    sessionStorage.setItem("bcscLogin", true);
 
     const mock = new MockAdapter(axios);
     const API_REQUEST_PROVINCES =
