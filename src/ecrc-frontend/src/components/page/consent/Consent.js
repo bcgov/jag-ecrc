@@ -232,7 +232,7 @@ export default function Consent({
       schedule_Type_Cd: defaultScheduleTypeCd,
       scope_Level_Cd: defaultCrcScopeLevelCd,
       appl_Party_Id: null,
-      org_Appl_To_Pay: "A",
+      org_Appl_To_Pay: "",
       applicant_Posn: jobTitle,
       child_Care_Fac_Nm: organizationFacility,
       governing_Body_Nm: orgNm,
@@ -303,9 +303,14 @@ export default function Consent({
         const newCRC = {
           ...CRC,
           appl_Party_Id: partyId,
-          org_Appl_To_Pay: orgApplicantRelationship === "ONETIME" ? "O" : "A",
           session_Id: sessionId
         };
+
+        if (orgApplicantRelationship === "ONETIME") {
+          newCRC.org_Appl_To_Pay = "O";
+        } else if (orgApplicantRelationship === "EMPLOYEE") {
+          newCRC.org_Appl_To_Pay = "A";
+        }
 
         return axios.post("/ecrc/private/createNewCRCService", newCRC, {
           headers: {
