@@ -46,17 +46,15 @@ describe("Error Component", () => {
   test("Validate service unavailable case", async () => {
     console.error = jest.fn();
 
-    const error = null;
-
-    const page = {
+    const newPage = {
       header,
-      error
+      error: null
     };
 
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
-        <Error page={page} />
+        <Error page={newPage} />
       </Router>
     );
 
@@ -85,17 +83,17 @@ describe("Error Component", () => {
   });
 
   test("Validate login failed case", async () => {
-    const error = { status: 403, message: "BCSC login failed" };
+    const newError = { status: 403, message: "BCSC login failed" };
 
-    const page = {
+    const newPage = {
       header,
-      error
+      error: newError
     };
 
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
-        <Error page={page} />
+        <Error page={newPage} />
       </Router>
     );
 
@@ -107,17 +105,17 @@ describe("Error Component", () => {
   });
 
   test("Validate session expired case", async () => {
-    const error = { ...error, status: 590 };
+    const updatedError = { ...error, status: 590 };
 
-    const page = {
+    const newPage = {
       header,
-      error
+      error: updatedError
     };
 
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
-        <Error page={page} />
+        <Error page={newPage} />
       </Router>
     );
 
@@ -129,17 +127,17 @@ describe("Error Component", () => {
   });
 
   test("Validate unexpected error case", async () => {
-    const error = { ...error, status: 204 };
+    const updatedError = { ...error, status: 204 };
 
-    const page = {
+    const newPage = {
       header,
-      error
+      error: updatedError
     };
 
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
-        <Error page={page} />
+        <Error page={newPage} />
       </Router>
     );
 
