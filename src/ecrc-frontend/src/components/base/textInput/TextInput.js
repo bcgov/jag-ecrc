@@ -29,7 +29,7 @@ export const TextInput = ({
   }
 
   let labelPart = null;
-  let labelPartExists = label ? true : false;
+  const labelPartExists = label !== false;
   if (label) {
     labelPart = (
       <label htmlFor={id} className="label">
