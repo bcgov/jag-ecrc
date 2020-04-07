@@ -40,6 +40,7 @@ public class RequestPaymentService {
 		this.partyIdRef2 = partyIdRef2;
 		this.requestGuid = requestGuid;
 	}
+
 	public RequestPaymentService() {}
 
 	public String getTransType() {

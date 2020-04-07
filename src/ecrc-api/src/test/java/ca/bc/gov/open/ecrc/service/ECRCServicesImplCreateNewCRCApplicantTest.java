@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 
 public class ECRCServicesImplCreateNewCRCApplicantTest {
 
-    private static final String WEBMETHODSRES = "{\"message\":\"Success\",\"partyId\":49060,\"invoiceId\":49060,\"sessionId\":49060,\"serviceId\":49060,\"serviceFeeAmount\":28,\"responseCode\":0}";
+    private static final String WEBMETHODSRES = "{\"message\":\"Success\",\"partyId\":\"49060\",\"invoiceId\":\"49060\",\"sessionId\":\"49060\",\"serviceId\":\"49060\",\"serviceFeeAmount\":\"28\",\"responseCode\":0}";
     private static final String serviceResp =  "{\"respValue\":\"test.com\",\"respMsg\":\"success\",\"respCode\":0}";
     private static final String successResp = "{\"paymentUrl\":\"test.com\",\"serviceId\":\"49060\",\"partyId\":\"49060\",\"sessionId\":\"49060\",\"invoiceId\":\"49060\",\"serviceFeeAmount\":\"28\"}";
     @InjectMocks
@@ -56,7 +56,7 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
         Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
                 .thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 
-        Mockito.when(ecrcPaymentService.createPaymentUrl(any())).thenReturn(new ResponseEntity<String>(serviceResp, HttpStatus.OK));
+        Mockito.when(ecrcPaymentService.createPaymentUrl(any())).thenReturn(new ResponseEntity<>(serviceResp, HttpStatus.OK));
         ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
         Assert.assertEquals(successResp, response.getBody());
         Assert.assertEquals(HttpStatus.OK, response.getStatusCode());

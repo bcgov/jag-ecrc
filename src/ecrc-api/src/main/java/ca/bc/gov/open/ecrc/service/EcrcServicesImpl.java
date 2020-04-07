@@ -183,7 +183,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			return new ResponseEntity<>(gson.toJson(serviceDetails),HttpStatus.OK);
 		} catch (Exception e) {
 			logger.info("Failed to create New CRC Applicant", e);
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 
 	}
