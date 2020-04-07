@@ -1,5 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
+import { render, fireEvent, getByText, wait } from "@testing-library/react";
 
 import SideCards from "./SideCards";
 
@@ -23,6 +24,8 @@ describe("SideCards Component", () => {
     }
   ];
 
+  window.open = jest.fn();
+
   test("AccessCode sidecard", () => {
     const accessCode = create(<SideCards type={"accesscode"} />);
     expect(accessCode.toJSON()).toMatchSnapshot();
@@ -31,6 +34,18 @@ describe("SideCards Component", () => {
   test("GetBcServices sidecard", () => {
     const bcServices = create(<SideCards type={"getbcservice"} />);
     expect(bcServices.toJSON()).toMatchSnapshot();
+  });
+
+  test("Clicking Get BCSC Button on GetBcServices sidecard opens the appropriate link", async () => {
+    const { container } = render(<SideCards type={"getbcservice"} />);
+
+    fireEvent.click(getByText(container, "READ MORE"));
+
+    await wait(() => {
+      expect(window.open).toHaveBeenCalledWith(
+        "https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
+      );
+    });
   });
 
   test("BcServices sidecard", () => {
@@ -48,6 +63,20 @@ describe("SideCards Component", () => {
   test("CriminalRecord sidecard", () => {
     const criminalRecord = create(<SideCards type={"criminalrecord"} />);
     expect(criminalRecord.toJSON()).toMatchSnapshot();
+  });
+
+  test("Clicking Visit CRRW Button on CriminalRecord sidecard opens the appropriate link", async () => {
+    const { container } = render(<SideCards type={"criminalrecord"} />);
+
+    fireEvent.click(
+      getByText(container, "VISIT THE CRIMINAL RECORD REVIEW WEBSITE")
+    );
+
+    await wait(() => {
+      expect(window.open).toHaveBeenCalledWith(
+        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
+      );
+    });
   });
 
   test("AccessCode sidecard", () => {
