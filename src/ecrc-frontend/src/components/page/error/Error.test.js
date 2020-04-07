@@ -1,13 +1,7 @@
 import React from "react";
 import { create } from "react-test-renderer";
 import { MemoryRouter, Router } from "react-router-dom";
-import {
-  render,
-  fireEvent,
-  getByText,
-  wait,
-  getByDisplayValue
-} from "@testing-library/react";
+import { render, fireEvent, getByText, wait } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 
 import Error from "./Error";
