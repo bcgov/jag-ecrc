@@ -343,7 +343,7 @@ export default function Consent({
               setLoading(false);
             });
 
-          return;
+          return undefined;
         }
 
         return axios.get(
@@ -356,6 +356,10 @@ export default function Consent({
         );
       })
       .then(getInvoiceResponse => {
+        if (!getInvoiceResponse) {
+          return getInvoiceResponse;
+        }
+
         invoiceId = getInvoiceResponse.data.invoiceId;
 
         appInfo = {
@@ -372,6 +376,9 @@ export default function Consent({
         });
       })
       .then(newCRCRespose => {
+        if (!newCRCRespose) {
+          return newCRCRespose;
+        }
         serviceId = newCRCRespose.data.serviceId;
 
         appInfo = {
@@ -396,6 +403,9 @@ export default function Consent({
         );
       })
       .then(serviceFeeResponse => {
+        if (!serviceFeeResponse) {
+          return serviceFeeResponse;
+        }
         serviceFeeAmount = serviceFeeResponse.data.serviceFeeAmount;
 
         appInfo = {
@@ -434,7 +444,6 @@ export default function Consent({
         setLoading(false);
       })
       .catch(error => {
-        console.log(error);
         handleError(error);
       });
   };
