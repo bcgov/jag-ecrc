@@ -18,7 +18,7 @@ module.exports.config = {
     consent: "./automationtest/moduletests/consentpage_spec.js",
     termsofuse: "./automationtest/moduletests/termsofusepage_spec.js",
     success: "./automationtest/smoketests/success_spec.js",
-    routing: "./automationtest/routingtests/routingtests.js",
+    routing: "./automationtest/routingtests/routing_spec.js",
     volunteer: "./automationtest/smoketests/success_volunteer_spec.js",
     successpage: "./automationtest/moduletests/successpage_spec.js"
   },
