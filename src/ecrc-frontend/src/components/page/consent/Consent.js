@@ -318,7 +318,9 @@ export default function Consent({
 
         appInfo = {
           ...appInfo,
-          serviceId
+          serviceId,
+          partyId,
+          sessionId
         };
 
         if (
