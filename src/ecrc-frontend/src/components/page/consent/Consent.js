@@ -229,19 +229,19 @@ export default function Consent({
     const CRC = {
       orgTicketNumber,
       requestGuid: uuid,
-      schedule_Type_Cd: defaultScheduleTypeCd,
-      scope_Level_Cd: defaultCrcScopeLevelCd,
-      appl_Party_Id: null,
-      org_Appl_To_Pay: "A",
-      applicant_Posn: jobTitle,
-      child_Care_Fac_Nm: organizationFacility,
-      governing_Body_Nm: orgNm,
-      session_Id: null,
-      invoice_Id: null,
-      auth_Release_EIV_Vendor_YN: "Y",
-      auth_Conduct_CRC_Check_YN: "Y",
-      auth_Release_To_Org_YN: "Y",
-      appl_Identity_Verified_EIV_YN: "Y",
+      scheduleTypeCd: defaultScheduleTypeCd,
+      scopeLevelCd: defaultCrcScopeLevelCd,
+      applPartyId: null,
+      orgApplToPay: "A",
+      applicantPosn: jobTitle,
+      childCareFacNm: organizationFacility,
+      governingBodyNm: orgNm,
+      sessionId: null,
+      invoiceId: null,
+      authReleaseEIVVendorYN: "Y",
+      authConductCRCCheckYN: "Y",
+      authReleaseToOrgYN: "Y",
+      applIdentityVerifiedEIVYN: "Y",
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
@@ -302,9 +302,9 @@ export default function Consent({
 
         const newCRC = {
           ...CRC,
-          appl_Party_Id: partyId,
-          org_Appl_To_Pay: orgApplicantRelationship === "ONETIME" ? "O" : "A",
-          session_Id: sessionId
+          applPartyId: partyId,
+          orgApplToPay: orgApplicantRelationship === "ONETIME" ? "O" : "A",
+          sessionId
         };
 
         return axios.post("/ecrc/private/createNewCRCService", newCRC, {
