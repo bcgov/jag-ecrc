@@ -40,16 +40,16 @@ public class EcrcServicesImplUpdateServiceFinancialTxnTest {
 
         requestUpdateServiceFinancialTxn = new RequestUpdateServiceFinancialTxn();
         requestUpdateServiceFinancialTxn.setOrgTicketNumber("CRCE");
-        requestUpdateServiceFinancialTxn.setAppl_Party_Id("123");
-        requestUpdateServiceFinancialTxn.setService_Id("123");
-        requestUpdateServiceFinancialTxn.setcC_Authorization("111");
-        requestUpdateServiceFinancialTxn.setPayment_Date("1/1/2000");
-        requestUpdateServiceFinancialTxn.setPayor_Type_Cd("CD");
-        requestUpdateServiceFinancialTxn.setPayment_Status_Cd("CD");
-        requestUpdateServiceFinancialTxn.setSession_Id("111");
-        requestUpdateServiceFinancialTxn.setInvoice_Id("111");
-        requestUpdateServiceFinancialTxn.setTransaction_Id("111");
-        requestUpdateServiceFinancialTxn.setTransaction_Amount("111");
+        requestUpdateServiceFinancialTxn.setApplPartyId("123");
+        requestUpdateServiceFinancialTxn.setServiceId("123");
+        requestUpdateServiceFinancialTxn.setcCAuthorization("111");
+        requestUpdateServiceFinancialTxn.setPaymentDate("1/1/2000");
+        requestUpdateServiceFinancialTxn.setPayorTypeCd("CD");
+        requestUpdateServiceFinancialTxn.setPaymentStatusCd("CD");
+        requestUpdateServiceFinancialTxn.setSessionId("111");
+        requestUpdateServiceFinancialTxn.setInvoiceId("111");
+        requestUpdateServiceFinancialTxn.setTransactionId("111");
+        requestUpdateServiceFinancialTxn.setTransactionAmount("111");
     }
 
     @DisplayName("Success - ecrcService UpdateFinancialTxn")
