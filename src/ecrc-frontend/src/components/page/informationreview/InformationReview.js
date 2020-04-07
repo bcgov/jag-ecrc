@@ -52,6 +52,7 @@ export default function InformationReview({
       organizationFacility
     },
     org: { orgNm, orgTicketNumber, defaultCrcScopeLevelCd },
+    setApplicationInfo,
     setError,
     setShare
   }
@@ -102,6 +103,7 @@ export default function InformationReview({
           // Expected return could include: (var names not finalized)
           // Old Org name
           // Available CRC expiration
+          setApplicationInfo({ previousServiceId: res.data.serviceId });
 
           setOldOrg(res.data.oldOrg);
           setOldCRCExpiration(res.data.oldCRCExpiration);
@@ -456,6 +458,7 @@ InformationReview.propTypes = {
       orgTicketNumber: PropTypes.string.isRequired,
       defaultCrcScopeLevelCd: PropTypes.string.isRequired
     }),
+    setApplicationInfo: PropTypes.func.isRequired,
     setError: PropTypes.func.isRequired,
     setShare: PropTypes.func.isRequired
   })

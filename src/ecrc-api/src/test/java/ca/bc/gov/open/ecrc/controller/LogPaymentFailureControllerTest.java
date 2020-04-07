@@ -2,6 +2,7 @@ package ca.bc.gov.open.ecrc.controller;
 
 import static org.mockito.Mockito.when;
 
+import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -79,5 +80,16 @@ class LogPaymentFailureControllerTest {
 				response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
-
+	@DisplayName("Exception - logPaymentFailure controller")
+	@Test
+	void testException() throws EcrcServiceException {
+		RequestLogPaymentFailure request = new RequestLogPaymentFailure();
+		when(ecrcServices.logPaymentFailure(request)).thenThrow(new EcrcServiceException("FAIL"));
+		ResponseEntity<String> response =  logPaymentFailureController.logPaymentFailure(request);
+		Assertions.assertEquals(
+				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
+				response.getBody());
+		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+	}
 }

@@ -58,6 +58,7 @@ describe("InformationReview Component", () => {
     defaultCrcScopeLevelCd: "WWCH"
   };
 
+  const setApplicationInfo = jest.fn();
   const setError = jest.fn();
   const setShare = jest.fn();
   window.scrollTo = jest.fn();
@@ -66,6 +67,7 @@ describe("InformationReview Component", () => {
     header,
     applicant,
     org,
+    setApplicationInfo,
     setError,
     setShare
   };
@@ -82,6 +84,7 @@ describe("InformationReview Component", () => {
     const API_REQUEST_SHARE = "/ecrc/private/checkApplicantForPrevCRC";
 
     mock.onPost(API_REQUEST_SHARE).reply(200, {
+      serviceId: "1234",
       oldOrg: "Old org name",
       oldCRCExpiration: "2021-10-12"
     });

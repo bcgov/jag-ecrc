@@ -5,6 +5,7 @@ import ca.bc.gov.open.ecrc.service.EcrcServicesImpl;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -15,6 +16,8 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import static org.mockito.Mockito.when;
 
 public class GetNextSessionIdControllerTest {
     private static final String GUID = "GUID";
@@ -58,5 +61,16 @@ public class GetNextSessionIdControllerTest {
                 EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.BAD_REQUEST));
         ResponseEntity<String> result = getNextSessionIdController.getNextSessionId("SOMEDATA", GUID);
         Assertions.assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
+    }
+    @DisplayName("Exception - getNextSessionId controller")
+    @Test
+    void testException() throws EcrcServiceException {
+        when(ecrcServices.getNextSessionId("SOMEDATA", GUID)).thenThrow(new EcrcServiceException("FAIL"));
+        ResponseEntity<String> response = getNextSessionIdController.getNextSessionId("SOMEDATA", GUID);
+        Assertions.assertEquals(
+                String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                        EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
+                response.getBody());
+        Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
     }
 }

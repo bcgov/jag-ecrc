@@ -99,6 +99,7 @@ export default function App() {
               header,
               applicant,
               org,
+              setApplicationInfo,
               setError,
               setShare
             }}
@@ -110,6 +111,7 @@ export default function App() {
               header,
               applicant,
               org,
+              applicationInfo,
               setApplicationInfo,
               saveOrg,
               saveApplicant,
