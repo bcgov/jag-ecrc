@@ -19,7 +19,7 @@ export default function TermsOfUse({
   const [isHidden, setIsHidden] = useState(true);
 
   const content = (
-    <React.Fragment>
+    <>
       <p>
         In these Terms of Use, &quot;you&quot; or &quot;your&quot; includes the
         individual using or accessing the Electronic Criminal Record Check
@@ -323,7 +323,7 @@ export default function TermsOfUse({
           Associated Service.
         </li>
       </ol>
-    </React.Fragment>
+    </>
   );
 
   useLayoutEffect(() => {
