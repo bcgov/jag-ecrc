@@ -20,10 +20,10 @@ describe("success page", () => {
       .switchTo()
       .alert()
       .then(
-        function(alert) {
+        alert => {
           alert.accept();
         },
-        function(err) {}
+        err => {}
       );
   };
 

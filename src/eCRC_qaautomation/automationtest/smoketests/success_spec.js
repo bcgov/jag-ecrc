@@ -20,7 +20,7 @@ describe("success", () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
   });
 
-  it("verify that user with a valid org code can get through the entire application flow", () => {
+  it("verify that user with a valid org code and bcsc can get through the entire application flow", () => {
     browser.get(process.env.URL);
 
     browser
