@@ -121,6 +121,16 @@ export default function ApplicationForm({
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    if (
+      !sessionStorage.getItem("org") ||
+      !JSON.parse(sessionStorage.getItem("org")).orgTicketNumber
+    ) {
+      setError({
+        status: 403
+      });
+      setToError(true);
+    }
   }, []);
 
   useEffect(() => {
