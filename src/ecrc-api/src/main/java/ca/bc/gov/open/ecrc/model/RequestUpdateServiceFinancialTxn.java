@@ -2,16 +2,16 @@ package ca.bc.gov.open.ecrc.model;
 
 public class RequestUpdateServiceFinancialTxn {
     private String orgTicketNumber;
-    private String appl_Party_Id;
-    private String service_Id;
-    private String cC_Authorization;
-    private String payment_Date;
-    private String payor_Type_Cd;
-    private String payment_Status_Cd;
-    private String session_Id;
-    private String invoice_Id;
-    private String transaction_Id;
-    private String transaction_Amount;
+    private String applPartyId;
+    private String serviceId;
+    private String cCAuthorization;
+    private String paymentDate;
+    private String payorTypeCd;
+    private String paymentStatusCd;
+    private String sessionId;
+    private String invoiceId;
+    private String transactionId;
+    private String transactionAmount;
     private String requestGuid;
     
     public String getOrgTicketNumber() {
@@ -22,84 +22,84 @@ public class RequestUpdateServiceFinancialTxn {
         this.orgTicketNumber = orgTicketNumber;
     }
 
-    public String getAppl_Party_Id() {
-        return appl_Party_Id;
+    public String getApplPartyId() {
+        return applPartyId;
     }
 
-    public void setAppl_Party_Id(String appl_Party_Id) {
-        this.appl_Party_Id = appl_Party_Id;
+    public void setApplPartyId(String applPartyId) {
+        this.applPartyId = applPartyId;
     }
 
-    public String getService_Id() {
-        return service_Id;
+    public String getServiceId() {
+        return serviceId;
     }
 
-    public void setService_Id(String service_Id) {
-        this.service_Id = service_Id;
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
     }
 
-    public String getcC_Authorization() {
-        return cC_Authorization;
+    public String getcCAuthorization() {
+        return cCAuthorization;
     }
 
-    public void setcC_Authorization(String cC_Authorization) {
-        this.cC_Authorization = cC_Authorization;
+    public void setcCAuthorization(String cCAuthorization) {
+        this.cCAuthorization = cCAuthorization;
     }
 
-    public String getPayment_Date() {
-        return payment_Date;
+    public String getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setPayment_Date(String payment_Date) {
-        this.payment_Date = payment_Date;
+    public void setPaymentDate(String paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
-    public String getPayor_Type_Cd() {
-        return payor_Type_Cd;
+    public String getPayorTypeCd() {
+        return payorTypeCd;
     }
 
-    public void setPayor_Type_Cd(String payor_Type_Cd) {
-        this.payor_Type_Cd = payor_Type_Cd;
+    public void setPayorTypeCd(String payorTypeCd) {
+        this.payorTypeCd = payorTypeCd;
     }
 
-    public String getPayment_Status_Cd() {
-        return payment_Status_Cd;
+    public String getPaymentStatusCd() {
+        return paymentStatusCd;
     }
 
-    public void setPayment_Status_Cd(String payment_Status_Cd) {
-        this.payment_Status_Cd = payment_Status_Cd;
+    public void setPaymentStatusCd(String paymentStatusCd) {
+        this.paymentStatusCd = paymentStatusCd;
     }
 
-    public String getSession_Id() {
-        return session_Id;
+    public String getSessionId() {
+        return sessionId;
     }
 
-    public void setSession_Id(String session_Id) {
-        this.session_Id = session_Id;
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
     }
 
-    public String getInvoice_Id() {
-        return invoice_Id;
+    public String getInvoiceId() {
+        return invoiceId;
     }
 
-    public void setInvoice_Id(String invoice_Id) {
-        this.invoice_Id = invoice_Id;
+    public void setInvoiceId(String invoiceId) {
+        this.invoiceId = invoiceId;
     }
 
-    public String getTransaction_Id() {
-        return transaction_Id;
+    public String getTransactionId() {
+        return transactionId;
     }
 
-    public void setTransaction_Id(String transaction_Id) {
-        this.transaction_Id = transaction_Id;
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
     }
 
-    public String getTransaction_Amount() {
-        return transaction_Amount;
+    public String getTransactionAmount() {
+        return transactionAmount;
     }
 
-    public void setTransaction_Amount(String transaction_Amount) {
-        this.transaction_Amount = transaction_Amount;
+    public void setTransactionAmount(String transactionAmount) {
+        this.transactionAmount = transactionAmount;
     }
 
     public String getRequestGuid() { return requestGuid; }
@@ -109,15 +109,15 @@ public class RequestUpdateServiceFinancialTxn {
     public String toQueryString() {
         return "?" +
                 "OrgTicketNumber=" + orgTicketNumber +
-                "&Appl_Party_Id=" + appl_Party_Id +
-                "&Service_Id=" + service_Id +
-                "&CC_Authorization=" + cC_Authorization +
-                "&Payment_Date=" + payment_Date +
-                "&Payor_Type_Cd=" + payor_Type_Cd +
-                "&Payment_Status_Cd=" + payment_Status_Cd +
-                "&Session_Id=" + session_Id +
-                "&Invoice_Id=" + invoice_Id +
-                "&Transaction_Id=" + transaction_Id +
-                "&Transaction_Amount=" + transaction_Amount;
+                "&Appl_Party_Id=" + applPartyId +
+                "&Service_Id=" + serviceId +
+                "&CC_Authorization=" + cCAuthorization +
+                "&Payment_Date=" + paymentDate +
+                "&Payor_Type_Cd=" + payorTypeCd +
+                "&Payment_Status_Cd=" + paymentStatusCd +
+                "&Session_Id=" + sessionId +
+                "&Invoice_Id=" + invoiceId +
+                "&Transaction_Id=" + transactionId +
+                "&Transaction_Amount=" + transactionAmount;
     }
 }
