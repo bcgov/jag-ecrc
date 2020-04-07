@@ -15,15 +15,31 @@ const successPage = require("../../pageobjectfactory/successpage");
 const testInput = require("../../input/success");
 
 describe("success page", () => {
-  beforeEach(() => {
-    browser.get(process.env.URL);
+  const handleAlert = () => {
+    browser
+      .switchTo()
+      .alert()
+      .then(
+        function(alert) {
+          alert.accept();
+        },
+        function(err) {}
+      );
+  };
+
+  beforeAll(() => {
     browser
       .manage()
       .window()
       .maximize();
+  });
+
+  beforeEach(() => {
+    browser.get(process.env.URL);
+    handleAlert();
 
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 150000;
 
     landingPage.accessCode.sendKeys(testInput.validAccessCode);
     landingPage.validate.click();
@@ -118,10 +134,6 @@ describe("success page", () => {
 
     applicationFormPage.applicantPosition.sendKeys(
       testInput.applicationFormApplicantPosition
-    );
-
-    applicationFormPage.organizationFacility.sendKeys(
-      testInput.applicationFormOrganizationFacility
     );
 
     applicationFormPage.mailingAddressStreet.sendKeys(
@@ -243,14 +255,6 @@ describe("success page", () => {
         });
       });
     });
-
-    //Deal with alert pop up when getting ready for next test
-    browser.get(process.env.url);
-    browser.wait(browserWait.alertIsPresent(), 5000);
-    browser
-      .switchTo()
-      .alert()
-      .accept();
   });
 
   it("verify that after a failed payment, we can retry successfully", () => {
@@ -266,7 +270,5 @@ describe("success page", () => {
     paymentPage.cardCVD.sendKeys(testInput.approvedCardCVD);
     paymentPage.payNow.click();
     expect(paymentPage.paymentStatus.getText()).toBe(testInput.approvedStatus);
-
-    //No need to deal with alert pop up at the end of this test
   });
 });

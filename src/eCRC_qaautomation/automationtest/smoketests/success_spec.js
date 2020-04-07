@@ -3,27 +3,15 @@
 require("dotenv").config();
 
 const bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
-
 const landingPage = require("../../pageobjectfactory/landingpage");
-
 const orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
-
 const termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
-
 const bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
-
 const bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
-
-const bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
-
 const consentPage = require("../../pageobjectfactory/consentpage.js");
-
 const applicationFormPage = require("../../pageobjectfactory/applicationformpage");
-
 const paymentPage = require("../../pageobjectfactory/paymentpage");
-
 const informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
-
 const testInput = require("../../input/success");
 
 describe("success", () => {
