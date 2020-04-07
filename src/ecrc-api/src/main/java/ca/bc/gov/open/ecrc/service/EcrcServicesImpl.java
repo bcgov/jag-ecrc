@@ -44,7 +44,7 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	private final Logger logger = LoggerFactory.getLogger(EcrcServicesImpl.class);
 
-	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber, String requestGuid) {
+	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
 	    if (ecrcProps.getWhiteList().contains(orgTicketNumber.toLowerCase())) {
 			logger.info("For request guid: [{}] Provided org ticket number white listed", requestGuid);
             String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
@@ -183,7 +183,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			return new ResponseEntity<>(gson.toJson(serviceDetails),HttpStatus.OK);
 		} catch (Exception e) {
 			logger.info("Failed to create New CRC Applicant", e);
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 
 	}

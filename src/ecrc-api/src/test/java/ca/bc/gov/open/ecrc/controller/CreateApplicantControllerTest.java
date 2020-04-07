@@ -5,7 +5,7 @@ import static org.mockito.Mockito.when;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCApplicant;
 import ca.bc.gov.open.ecrc.model.ResponseServiceDetails;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,8 +14,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.boot.configurationprocessor.json.JSONException;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -111,7 +109,7 @@ class CreateApplicantControllerTest {
 	//Consolidated Call
 	@DisplayName("Success - createNewCRCApplicant controller")
 	@Test
-	void testConsolidatedSuccess() throws EcrcServiceException, JSONException {
+	void testConsolidatedSuccess() throws EcrcServiceException {
 		Gson gson = new Gson();
 		RequestNewCRCApplicant request = new RequestNewCRCApplicant();
 		ResponseServiceDetails responseServiceDetails = new ResponseServiceDetails();
@@ -179,4 +177,5 @@ class CreateApplicantControllerTest {
 				response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
+
 }

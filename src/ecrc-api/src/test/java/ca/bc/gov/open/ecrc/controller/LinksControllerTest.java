@@ -65,5 +65,4 @@ public class LinksControllerTest {
 				response.getBody());
 		Assert.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 	}
-
 }

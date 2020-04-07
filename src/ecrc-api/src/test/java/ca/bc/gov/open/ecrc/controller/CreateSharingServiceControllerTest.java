@@ -80,5 +80,16 @@ class CreateSharingServiceControllerTest {
 				response.getBody());
 		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
-
+	@DisplayName("Exception - createSharingService controller")
+	@Test
+	void testException() throws EcrcServiceException {
+		RequestCreateSharingService request = new RequestCreateSharingService();
+		when(ecrcServices.createSharingService(request)).thenThrow(new EcrcServiceException("FAIL"));
+		ResponseEntity<String> response = createSharingServiceController.createSharingService(request);
+		Assertions.assertEquals(
+				String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+						EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
+				response.getBody());
+		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+	}
 }
