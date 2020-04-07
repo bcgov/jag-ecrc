@@ -341,18 +341,19 @@ export default function Consent({
 
               toSuccess();
               setLoading(false);
-              return;
             });
-        } else {
-          return axios.get(
-            `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            }
-          );
+
+          return;
         }
+
+        return axios.get(
+          `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
       })
       .then(getInvoiceResponse => {
         invoiceId = getInvoiceResponse.data.invoiceId;
