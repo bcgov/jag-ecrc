@@ -434,7 +434,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                           class="textinput_editable_white"
                           id="phoneNumber"
                           placeholder="250 555-1234"
-                          type="tel"
+                          type="text"
                           value=""
                         />
                         <br />
