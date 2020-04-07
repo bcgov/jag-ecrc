@@ -30,7 +30,7 @@ describe("success", () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
   });
 
-  it("verify that users with a valid volunteer code can navigate through the complete application flow", () => {
+  it("verify that users with a valid volunteer code and bcsc can navigate through the complete application flow", () => {
     browser.get(process.env.URL);
     browser
       .manage()
