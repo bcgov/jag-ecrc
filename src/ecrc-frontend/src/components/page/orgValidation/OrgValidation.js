@@ -66,21 +66,27 @@ export default function OrgValidation({
       })
       .catch(error => {
         setLoading(false);
+        let errorMessage = "";
+
         if (error && error.response && error.response.status) {
           if (error.response.status === 404) {
             setOrgError("The access code is invalid");
           } else if (error.response.status === 401) {
             setTransitionReason("notwhitelisted");
             history.push("/criminalrecordcheck/transition");
-          } else if (
-            error.request &&
-            error.request.response &&
-            JSON.parse(error.request.response)
-          ) {
+          } else if (error.request && error.request.response) {
+            try {
+              JSON.parse(error.request.response);
+              errorMessage = JSON.parse(error.request.response).message;
+            } catch (err) {
+              errorMessage =
+                "An unexpected error occurred. Please make sure all your data is entered accurately and is complete. We apologize for the inconvenience.";
+            }
+
             setToError(true);
             setError({
               status: error.response.status,
-              message: JSON.parse(error.request.response).message
+              message: errorMessage
             });
           } else {
             setToError(true);

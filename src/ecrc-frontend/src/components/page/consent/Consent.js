@@ -142,15 +142,21 @@ export default function Consent({
 
   const handleError = error => {
     setToError(true);
+    let errorMessage = "";
+
     if (error && error.response && error.response.status) {
-      if (
-        error.request &&
-        error.request.response &&
-        JSON.parse(error.request.response)
-      ) {
+      if (error.request && error.request.response) {
+        try {
+          JSON.parse(error.request.response);
+          errorMessage = JSON.parse(error.request.response).message;
+        } catch (err) {
+          errorMessage =
+            "An unexpected error occurred. Please make sure all your data is entered accurately and is complete. We apologize for the inconvenience.";
+        }
+
         setError({
           status: error.response.status,
-          message: JSON.parse(error.request.response).message
+          message: errorMessage
         });
       } else {
         setError({
