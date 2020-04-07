@@ -1,4 +1,4 @@
-package ca.bc.gov.open.ecrc.service;
+package ca.bc.gov.open.oauth.service;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -6,7 +6,7 @@ import java.net.URISyntaxException;
 import com.nimbusds.oauth2.sdk.AccessTokenResponse;
 import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 
-import ca.bc.gov.open.ecrc.exception.OauthServiceException;
+import ca.bc.gov.open.oauth.exception.OauthServiceException;
 import net.minidev.json.JSONObject;
 
 /**

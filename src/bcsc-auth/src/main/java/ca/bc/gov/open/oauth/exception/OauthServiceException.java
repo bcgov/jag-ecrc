@@ -1,4 +1,4 @@
-package ca.bc.gov.open.ecrc.exception;
+package ca.bc.gov.open.oauth.exception;
 
 /**
  * 

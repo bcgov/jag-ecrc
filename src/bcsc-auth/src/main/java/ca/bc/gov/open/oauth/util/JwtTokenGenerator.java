@@ -1,4 +1,4 @@
-package ca.bc.gov.open.ecrc.util;
+package ca.bc.gov.open.oauth.util;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;

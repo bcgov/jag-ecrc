@@ -1,4 +1,4 @@
-package ca.bc.gov.open.ecrc.util;
+package ca.bc.gov.open.oauth.util;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

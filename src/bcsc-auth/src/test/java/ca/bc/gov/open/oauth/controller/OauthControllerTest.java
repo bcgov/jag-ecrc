@@ -1,16 +1,12 @@
-package ca.bc.gov.open.ecrc.controller;
+package ca.bc.gov.open.oauth.controller;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import net.minidev.json.JSONObject;
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +15,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -29,11 +24,11 @@ import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 import com.nimbusds.oauth2.sdk.token.RefreshToken;
 import com.nimbusds.oauth2.sdk.token.Tokens;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.OauthServiceException;
-import ca.bc.gov.open.ecrc.model.ValidationResponse;
-import ca.bc.gov.open.ecrc.service.ECRCJWTValidationServiceImpl;
-import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
+import ca.bc.gov.open.oauth.configuration.OauthProperties;
+import ca.bc.gov.open.oauth.exception.OauthServiceException;
+import ca.bc.gov.open.oauth.model.ValidationResponse;
+import ca.bc.gov.open.oauth.service.ECRCJWTValidationServiceImpl;
+import ca.bc.gov.open.oauth.service.OauthServicesImpl;
 
 import static org.mockito.ArgumentMatchers.any;
 
@@ -52,7 +47,7 @@ class OauthControllerTest {
 	ECRCJWTValidationServiceImpl tokenServices;
 
 	@Mock
-	EcrcProperties ecrcProperties;
+	OauthProperties ecrcProperties;
 
 	@InjectMocks
 	OauthController oauthController = new OauthController();
@@ -63,7 +58,7 @@ class OauthControllerTest {
 	public void initMocks() {
 		MockitoAnnotations.initMocks(this);
 		Mockito.when(ecrcProperties.getJwtSecret()).thenReturn("secret");
-		Mockito.when(ecrcProperties.getOauthJwtExpiry()).thenReturn(300);
+		Mockito.when(ecrcProperties.getJwtExpiry()).thenReturn(300);
 		Mockito.when(ecrcProperties.getJwtAuthorizedRole()).thenReturn("role");
 		userInfo = new JSONObject();
 		userInfo.put("sub", "test");
@@ -75,8 +70,8 @@ class OauthControllerTest {
 	void testGetBCSCUrlSuccess() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getIDPRedirect()).thenReturn(new URI("test"));
 		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID");
-		Assert.assertEquals("test", response.getBody());
-		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
+		Assertions.assertEquals("test", response.getBody());
+		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
 
 	@DisplayName("Error - getBCSCUrl oauth controller")
@@ -99,7 +94,7 @@ class OauthControllerTest {
 				.thenReturn(new ValidationResponse(true, "success"));
 	
 		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID");
-		Assert.assertNotNull(response);
+		Assertions.assertNotNull(response);
 	}
 
 	@DisplayName("Error - login oauth controller (getToken)")
@@ -107,7 +102,7 @@ class OauthControllerTest {
 	void testLoginError1() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getToken(any())).thenThrow(new OauthServiceException("error"));
 		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
-		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+		Assertions.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 
 	@DisplayName("Error - login oauth controller (getUserInfo)")
@@ -119,6 +114,6 @@ class OauthControllerTest {
 			thenReturn(new ValidationResponse(true, "success"));
 		when(oauthServices.getUserInfo(any())).thenThrow(new OauthServiceException("error"));
 		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
-		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+		Assertions.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 }

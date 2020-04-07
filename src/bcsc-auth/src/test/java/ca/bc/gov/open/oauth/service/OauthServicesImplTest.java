@@ -1,4 +1,4 @@
-package ca.bc.gov.open.ecrc.service;
+package ca.bc.gov.open.oauth.service;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -20,8 +20,8 @@ import org.mockito.MockitoAnnotations;
 import com.nimbusds.oauth2.sdk.AccessTokenResponse;
 import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.OauthServiceException;
+import ca.bc.gov.open.oauth.configuration.OauthProperties;
+import ca.bc.gov.open.oauth.exception.OauthServiceException;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 
@@ -47,7 +47,7 @@ class OauthServicesImplTest {
 	OauthServicesImpl oauthServices;
 
 	@Mock
-	EcrcProperties ecrcProperties;
+	OauthProperties ecrcProperties;
 
 	public static MockWebServer mockBackEnd;
 
@@ -66,14 +66,14 @@ class OauthServicesImplTest {
 	void initialize() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 		MockitoAnnotations.initMocks(this);
 		String baseUrl = String.format("http://localhost:%s", mockBackEnd.getPort());
-		Mockito.when(ecrcProperties.getOauthIdp()).thenReturn(baseUrl);
-		Mockito.when(ecrcProperties.getOauthClientId()).thenReturn("123");
-		Mockito.when(ecrcProperties.getOauthScope()).thenReturn("scope");
-		Mockito.when(ecrcProperties.getOauthReturnUri()).thenReturn("test.com");
-		Mockito.when(ecrcProperties.getOauthSecret()).thenReturn("secret");
-		Mockito.when(ecrcProperties.getOauthAuthorizePath()).thenReturn("/test");
-		Mockito.when(ecrcProperties.getOauthTokenPath()).thenReturn("/test");
-		Mockito.when(ecrcProperties.getOauthUserinfoPath()).thenReturn("/test");
+		Mockito.when(ecrcProperties.getIdp()).thenReturn(baseUrl);
+		Mockito.when(ecrcProperties.getClientId()).thenReturn("123");
+		Mockito.when(ecrcProperties.getScope()).thenReturn("scope");
+		Mockito.when(ecrcProperties.getReturnUri()).thenReturn("test.com");
+		Mockito.when(ecrcProperties.getSecret()).thenReturn("secret");
+		Mockito.when(ecrcProperties.getAuthorizePath()).thenReturn("/test");
+		Mockito.when(ecrcProperties.getTokenPath()).thenReturn("/test");
+		Mockito.when(ecrcProperties.getUserinfoPath()).thenReturn("/test");
 	}
 
 	@DisplayName("Success - getIDPRedirect oauth service")
@@ -134,7 +134,7 @@ class OauthServicesImplTest {
 	@DisplayName("Failure - getToken oauth service")
 	@Test
 	void testGetTokenFailure4() throws OauthServiceException {
-		Mockito.when(ecrcProperties.getOauthReturnUri()).thenReturn("\"");
+		Mockito.when(ecrcProperties.getReturnUri()).thenReturn("\"");
 		Assertions.assertThrows(OauthServiceException.class, () -> {
 			oauthServices.getToken("test");
 		});

@@ -40,16 +40,7 @@ public class EcrcProperties {
 	private String corsMapping;
 	private String corsAllowedOrigins;
 	
-	//OAUTH Properties
 	private String oauthIdp;
-	private String oauthClientId;
-	private String oauthSecret;
-	private String oauthScope;
-	private String oauthReturnUri;
-	private int oauthJwtExpiry;
-	private String oauthTokenPath;
-	private String oauthUserinfoPath;
-	private String oauthAuthorizePath;
 	private String oauthWellKnown;
 	private String oauthPERSecret;
 	private int oauthBCSCTimeout;
@@ -267,58 +258,6 @@ public class EcrcProperties {
 		this.oauthIdp = oauthIdp;
 	}
 
-	public String getOauthClientId() {
-		return oauthClientId;
-	}
-
-	public void setOauthClientId(String oauthClientId) {
-		this.oauthClientId = oauthClientId;
-	}
-
-	public String getOauthSecret() {
-		return oauthSecret;
-	}
-
-	public void setOauthSecret(String oauthSecret) {
-		this.oauthSecret = oauthSecret;
-	}
-
-	public String getOauthScope() {
-		return oauthScope;
-	}
-
-	public void setOauthScope(String oauthScope) {
-		this.oauthScope = oauthScope;
-	}
-
-	public String getOauthReturnUri() {
-		return oauthReturnUri;
-	}
-
-	public void setOauthReturnUri(String oauthReturnUri) {
-		this.oauthReturnUri = oauthReturnUri;
-	}
-
-	public int getOauthJwtExpiry() {
-		return oauthJwtExpiry;
-	}
-
-	public void setOauthJwtExpiry(String oautJwtExpiry) {
-		this.oauthJwtExpiry = Integer.parseInt(oautJwtExpiry);
-	}
-
-	public String getOauthTokenPath() { return oauthTokenPath; }
-
-	public void setOauthTokenPath(String oauthTokenPath) { this.oauthTokenPath = oauthTokenPath; }
-
-	public String getOauthUserinfoPath() { return oauthUserinfoPath; }
-
-	public void setOauthUserinfoPath(String oauthUserinfoPath) { this.oauthUserinfoPath = oauthUserinfoPath; }
-
-	public String getOauthAuthorizePath() { return oauthAuthorizePath; }
-
-	public void setOauthAuthorizePath(String oauthAuthorizePath) { this.oauthAuthorizePath = oauthAuthorizePath; }
-	
 	public String getOauthWellKnown() {
 		return oauthWellKnown;
 	}

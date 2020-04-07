@@ -1,4 +1,4 @@
-package ca.bc.gov.open.ecrc.controller;
+package ca.bc.gov.open.oauth.controller;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.nimbusds.oauth2.sdk.AccessTokenResponse;
 import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.OauthServiceException;
-import ca.bc.gov.open.ecrc.model.ValidationResponse;
-import ca.bc.gov.open.ecrc.service.ECRCJWTValidationServiceImpl;
-import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
-import ca.bc.gov.open.ecrc.util.AES256;
-import ca.bc.gov.open.ecrc.util.JwtTokenGenerator;
+import ca.bc.gov.open.oauth.configuration.OauthProperties;
+import ca.bc.gov.open.oauth.model.ValidationResponse;
+import ca.bc.gov.open.oauth.service.ECRCJWTValidationServiceImpl;
+import ca.bc.gov.open.oauth.service.OauthServicesImpl;
+import ca.bc.gov.open.oauth.util.AES256;
+import ca.bc.gov.open.oauth.util.JwtTokenGenerator;
+import ca.bc.gov.open.oauth.exception.OauthServiceException;
 import ch.qos.logback.classic.Logger;
 import net.minidev.json.JSONObject;
 
@@ -34,7 +34,7 @@ import net.minidev.json.JSONObject;
  *
  */
 @Configuration
-@EnableConfigurationProperties(EcrcProperties.class)
+@EnableConfigurationProperties(OauthProperties.class)
 @RestController
 public class OauthController {
 	
@@ -42,7 +42,7 @@ public class OauthController {
 	private OauthServicesImpl oauthServices;
 	
 	@Autowired
-	private EcrcProperties ecrcProps;
+	private OauthProperties ecrcProps;
 	
 	@Autowired
 	private ECRCJWTValidationServiceImpl tokenServices;
@@ -103,14 +103,14 @@ public class OauthController {
 		// must be decrypted and used for subsequent calls back to the API. 
 	    String encryptedAccessToken = null;
 	    try {
-	    	encryptedAccessToken = AES256.encrypt(token.getTokens().getBearerAccessToken().getValue(), ecrcProps.getOauthPERSecret() );
+	    	encryptedAccessToken = AES256.encrypt(token.getTokens().getBearerAccessToken().getValue(), ecrcProps.getPerSecret() );
 		} catch (Exception e) {
 			logger.error("Error encrypting token:", e);
 			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
 		// Send the new FE JWT in the response body to the caller. 
-	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedAccessToken, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
+	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedAccessToken, ecrcProps.getJwtSecret(), ecrcProps.getJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
         return new ResponseEntity<>(feTokenResponse, HttpStatus.OK);
 	}
 

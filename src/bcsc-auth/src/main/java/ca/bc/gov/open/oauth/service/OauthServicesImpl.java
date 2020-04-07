@@ -1,4 +1,4 @@
-package ca.bc.gov.open.ecrc.service;
+package ca.bc.gov.open.oauth.service;
 
 
 import java.io.IOException;
@@ -34,8 +34,8 @@ import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 import com.nimbusds.openid.connect.sdk.UserInfoRequest;
 import com.nimbusds.openid.connect.sdk.UserInfoResponse;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.OauthServiceException;
+import ca.bc.gov.open.oauth.configuration.OauthProperties;
+import ca.bc.gov.open.oauth.exception.OauthServiceException;
 
 
 /**
@@ -47,11 +47,11 @@ import ca.bc.gov.open.ecrc.exception.OauthServiceException;
  */
 @Service
 @Configuration
-@EnableConfigurationProperties(EcrcProperties.class)
+@EnableConfigurationProperties(OauthProperties.class)
 public class OauthServicesImpl implements OauthServices {
 
 	@Autowired
-	private EcrcProperties ecrcProps;
+	private OauthProperties ecrcProps;
 
 	private final Logger logger = LoggerFactory.getLogger(OauthServicesImpl.class);
 
@@ -60,16 +60,16 @@ public class OauthServicesImpl implements OauthServices {
 		logger.debug("Calling getIDPRedirect");
 		
 		// The authorisation endpoint of IDP the server
-		URI authzEndpoint = new URI(ecrcProps.getOauthIdp() + ecrcProps.getOauthAuthorizePath());
+		URI authzEndpoint = new URI(ecrcProps.getIdp() + ecrcProps.getAuthorizePath());
 
 		// The client identifier provisioned by the server
-		ClientID clientID = new ClientID(ecrcProps.getOauthClientId());
+		ClientID clientID = new ClientID(ecrcProps.getClientId());
 
 		// The requested scope values for the token
-		Scope scope = new Scope(ecrcProps.getOauthScope());
+		Scope scope = new Scope(ecrcProps.getScope());
 
 		// The client callback URI, typically pre-registered with the server
-		URI callback = new URI(ecrcProps.getOauthReturnUri());
+		URI callback = new URI(ecrcProps.getReturnUri());
 
 		// Generate random state string for pairing the response to the request
 		State state = new State();
@@ -95,17 +95,17 @@ public class OauthServicesImpl implements OauthServices {
 		AuthorizationCode code = new AuthorizationCode(authCode);
 		try {
 			
-			URI callback = new URI(ecrcProps.getOauthReturnUri());
+			URI callback = new URI(ecrcProps.getReturnUri());
 			
 			// The credentials to authenticate the client at the token endpoint
-			ClientID clientID = new ClientID(ecrcProps.getOauthClientId());
-			Secret clientSecret = new Secret(ecrcProps.getOauthSecret());
+			ClientID clientID = new ClientID(ecrcProps.getClientId());
+			Secret clientSecret = new Secret(ecrcProps.getSecret());
 			ClientAuthentication clientAuth = new ClientSecretBasic(clientID, clientSecret);
 			
 			AuthorizationGrant codeGrant = new AuthorizationCodeGrant(code, callback);
 			
 			// The IDP token endpoint
-			URI tokenEndpoint = new URI(ecrcProps.getOauthIdp() + ecrcProps.getOauthTokenPath());
+			URI tokenEndpoint = new URI(ecrcProps.getIdp() + ecrcProps.getTokenPath());
 			
 			//authorization_code == grant_type
 
@@ -137,7 +137,7 @@ public class OauthServicesImpl implements OauthServices {
 		try {
 
 			// Build the IdP endpoint for user info data
-			HTTPResponse httpResponse = new UserInfoRequest(new URI(ecrcProps.getOauthIdp() + ecrcProps.getOauthUserinfoPath()),
+			HTTPResponse httpResponse = new UserInfoRequest(new URI(ecrcProps.getIdp() + ecrcProps.getUserinfoPath()),
 					accessToken).toHTTPRequest().send();
 
 			// Parse the response
