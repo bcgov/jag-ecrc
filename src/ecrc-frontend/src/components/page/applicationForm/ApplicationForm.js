@@ -122,10 +122,7 @@ export default function ApplicationForm({
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (
-      !sessionStorage.getItem("org") ||
-      !sessionStorage.getItem("bcscLogin")
-    ) {
+    if (!sessionStorage.getItem("org")) {
       setError({
         status: 403
       });
