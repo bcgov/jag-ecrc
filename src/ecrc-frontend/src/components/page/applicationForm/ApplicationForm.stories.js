@@ -46,6 +46,7 @@ const org = {
 
 sessionStorage.setItem("validator", "secret");
 sessionStorage.setItem("uuid", "unique123");
+sessionStorage.setItem("org", org);
 
 const LoadData = props => {
   const mock = new MockAdapter(axios);
