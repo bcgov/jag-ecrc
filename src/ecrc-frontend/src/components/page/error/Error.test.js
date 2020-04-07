@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import { create } from "react-test-renderer";
 import { MemoryRouter, Router } from "react-router-dom";
