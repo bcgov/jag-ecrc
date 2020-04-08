@@ -48,8 +48,8 @@ import net.minidev.json.parser.JSONParser;
 @EnableConfigurationProperties(EcrcProperties.class)
 public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	
-	private final String[] BCSC_ACCESS_TOKEN_CLAIMS =  {"aud", "iss", "exp", "iat", "jti"}; 
-	private final String[] BCSC_ID_TOKEN_CLAIMS =  {"sub", "aud", "acr", "kid", "iss", "exp", "iat", "jti"}; 
+	private static final String[] BCSC_ACCESS_TOKEN_CLAIMS =  {"aud", "iss", "exp", "iat", "jti"};
+	private static final String[] BCSC_ID_TOKEN_CLAIMS =  {"sub", "aud", "acr", "kid", "iss", "exp", "iat", "jti"};
 	
 	@Autowired
 	private EcrcProperties ecrcProps;
@@ -148,18 +148,20 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	 * 
 	 */
 	@Override
-	public ValidationResponse PERValidate(String tokens) {
-		
+	public ValidationResponse perValidate(String tokens) {
+		ValidationResponse resp = new ValidationResponse();
 		// Decrypt the original claim (labeled "PER") containing the tokens BCSC
-		String _tokens = AES256.decrypt(tokens, ecrcProps.getOauthPERSecret()); 
+		String decryptedTokens = AES256.decrypt(tokens, ecrcProps.getOauthPERSecret());
 		JSONParser p = new JSONParser(JSONParser.MODE_RFC4627);
 		JSONObject obj;
-		TokenResponse response = null; 
+		TokenResponse response;
 		try {
-			obj = (JSONObject) p.parse(_tokens);
+			obj = (JSONObject) p.parse(decryptedTokens);
 			response = TokenResponse.parse(obj);
 		} catch (com.nimbusds.oauth2.sdk.ParseException | net.minidev.json.parser.ParseException e) {
 			logger.error("PER Validate Failed to Parse. ", e);
+			resp.setMessage("PER Claim Invalid");
+			return resp;
 		}
 		
 		// Fetch both tokens within the decrypted string. 
@@ -169,10 +171,9 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 		ValidationResponse val1 = validateBCSCAccessToken(accessToken.getValue());
 		ValidationResponse val2 = validateBCSCIDToken(idToken);
 		Boolean bothValid = val1.isValid() && val2.isValid();
-		ValidationResponse resp = new ValidationResponse();
 		
 		// merge the response of two tests into one. 
-		if ( !bothValid ) {
+		if (Boolean.FALSE.equals(bothValid)) {
 			resp.setValid(false);
 			if ( !val1.isValid() ) 
 				resp.setMessage( val1.getMessage() );
