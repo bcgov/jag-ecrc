@@ -232,7 +232,7 @@ export default function Consent({
 
     // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
     // eivPassDetailsResults - String returned from equifax, see Shaun
-    const CRC = {
+    let CRC = {
       orgTicketNumber,
       requestGuid: uuid,
       scheduleTypeCd: defaultScheduleTypeCd,
@@ -259,6 +259,11 @@ export default function Consent({
       })
       .then(createApplicantResponse => {
         partyId = createApplicantResponse.data.partyId;
+
+        appInfo = {
+          ...appInfo,
+          partyId
+        };
 
         if (share) {
           const shareCRC = {
@@ -306,70 +311,111 @@ export default function Consent({
       .then(getSessionResponse => {
         sessionId = getSessionResponse.data.sessionId;
 
-        const newCRC = {
+        appInfo = {
+          ...appInfo,
+          sessionId
+        };
+
+        CRC = {
           ...CRC,
           applPartyId: partyId,
           sessionId
         };
 
         if (orgApplicantRelationship === "ONETIME") {
-          newCRC.orgApplToPay = "O";
+          CRC.orgApplToPay = "O";
         } else if (orgApplicantRelationship === "EMPLOYEE") {
-          newCRC.orgApplToPay = "A";
+          CRC.orgApplToPay = "A";
         }
 
-        return axios.post("/ecrc/private/createNewCRCService", newCRC, {
+        if (orgApplicantRelationship === "VOLUNTEER") {
+          axios
+            .post("/ecrc/private/createNewCRCService", CRC, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            })
+            .then(volunteerCRCResponse => {
+              serviceId = volunteerCRCResponse.data.serviceId;
+
+              appInfo = {
+                ...appInfo,
+                serviceId
+              };
+
+              setApplicationInfo(appInfo);
+
+              toSuccess();
+              setLoading(false);
+            });
+
+          return false;
+        }
+
+        return axios.get(
+          `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
+      })
+      .then(getInvoiceResponse => {
+        if (!getInvoiceResponse) {
+          return getInvoiceResponse;
+        }
+
+        invoiceId = getInvoiceResponse.data.invoiceId;
+
+        appInfo = {
+          ...appInfo,
+          invoiceId
+        };
+
+        CRC.invoiceId = invoiceId;
+
+        return axios.post("/ecrc/private/createNewCRCService", CRC, {
           headers: {
             Authorization: `Bearer ${token}`
           }
         });
       })
-      .then(newCRCRespose => {
-        serviceId = newCRCRespose.data.serviceId;
+      .then(newCRCResponse => {
+        if (!newCRCResponse) {
+          return newCRCResponse;
+        }
+        serviceId = newCRCResponse.data.serviceId;
 
         appInfo = {
           ...appInfo,
-          serviceId,
-          partyId,
-          sessionId
+          serviceId
         };
 
-        if (
-          orgApplicantRelationship === "VOLUNTEER" ||
-          orgApplicantRelationship === "ONETIME"
-        ) {
+        if (orgApplicantRelationship === "ONETIME") {
           setApplicationInfo(appInfo);
 
           setLoading(false);
           toSuccess();
         }
 
-        return Promise.all([
-          axios.get(
-            `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
+        return axios.get(
+          `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
             }
-          ),
-          axios.get(
-            `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            }
-          )
-        ]);
+          }
+        );
       })
-      .then(allResponse => {
-        invoiceId = allResponse[0].data.invoiceId;
-        serviceFeeAmount = allResponse[1].data.serviceFeeAmount;
+      .then(serviceFeeResponse => {
+        if (!serviceFeeResponse) {
+          return serviceFeeResponse;
+        }
+        serviceFeeAmount = serviceFeeResponse.data.serviceFeeAmount;
 
         appInfo = {
           ...appInfo,
-          invoiceId,
           serviceFeeAmount
         };
 
