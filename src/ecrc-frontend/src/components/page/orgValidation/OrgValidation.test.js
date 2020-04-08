@@ -122,7 +122,9 @@ describe("OrgValidation Component", () => {
 
   test("Redirects to Error page", async () => {
     axios.get.mockResolvedValueOnce({ data: "secret" });
-    axios.get.mockRejectedValueOnce({ response: { status: 400 } });
+    axios.get.mockRejectedValueOnce({
+      response: { status: 400, data: { message: "Error is here" } }
+    });
 
     const history = createMemoryHistory();
 
