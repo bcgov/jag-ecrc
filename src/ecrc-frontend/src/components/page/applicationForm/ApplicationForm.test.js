@@ -12,8 +12,7 @@ import {
   getByDisplayValue,
   wait
 } from "@testing-library/react";
-import { Router, MemoryRouter } from "react-router-dom";
-import { createMemoryHistory } from "history";
+import { MemoryRouter } from "react-router-dom";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 

@@ -2,7 +2,7 @@
 /* eslint-disable no-alert */
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { useLocation, Redirect, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import queryString from "query-string";
 
