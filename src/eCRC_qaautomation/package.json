@@ -14,7 +14,8 @@
     "routing": "./node_modules/.bin/protractor configuration.js --suite routing",
     "volunteer": "./node_modules/.bin/protractor configuration.js --suite volunteer",
     "successpage": "./node_modules/.bin/protractor configuration.js --suite successpage",
-    "consent": "./node_modules/.bin/protractor configuration.js --suite consent"
+    "consent": "./node_modules/.bin/protractor configuration.js --suite consent",
+    "landing": "./node_modules/.bin/protractor configuration.js --suite landing"
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
