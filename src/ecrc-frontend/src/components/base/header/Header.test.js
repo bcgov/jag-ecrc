@@ -24,7 +24,7 @@ describe("Header Component", () => {
     expect(headerComponent.toJSON()).toMatchSnapshot();
   });
 
-  test("Clicking header from a screen such as consent opens a confirmation popup", async () => {
+  test("Clicking header icon from a screen such as consent opens a confirmation popup", async () => {
     const history = createMemoryHistory();
 
     history.location.pathname = "/criminalrecordcheck/consent";
@@ -38,7 +38,69 @@ describe("Header Component", () => {
     fireEvent.click(getAllByRole(container, "button")[0]);
 
     await wait(() => {
-      expect(window.confirm).toHaveBeenCalled();
+      expect(window.confirm).toHaveBeenCalledWith(
+        "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+      );
+    });
+  });
+
+  test("Clicking header text from a screen such as success opens a confirmation popup", async () => {
+    const history = createMemoryHistory();
+
+    history.location.pathname = "/criminalrecordcheck/success";
+
+    const { container } = render(
+      <Router history={history}>
+        <Header header={header} />
+      </Router>
+    );
+
+    fireEvent.click(getAllByRole(container, "button")[1]);
+
+    await wait(() => {
+      expect(window.confirm).toHaveBeenCalledWith(
+        "Are you sure you would like to leave this page?"
+      );
+    });
+  });
+
+  test("Key down on header icon from a screen such as consent opens a confirmation popup", async () => {
+    const history = createMemoryHistory();
+
+    history.location.pathname = "/criminalrecordcheck/consent";
+
+    const { container } = render(
+      <Router history={history}>
+        <Header header={header} />
+      </Router>
+    );
+
+    fireEvent.keyDown(getAllByRole(container, "button")[0]);
+
+    await wait(() => {
+      expect(window.confirm).toHaveBeenCalledWith(
+        "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+      );
+    });
+  });
+
+  test("Key down on header text from a screen such as consent opens a confirmation popup", async () => {
+    const history = createMemoryHistory();
+
+    history.location.pathname = "/criminalrecordcheck/consent";
+
+    const { container } = render(
+      <Router history={history}>
+        <Header header={header} />
+      </Router>
+    );
+
+    fireEvent.keyDown(getAllByRole(container, "button")[1]);
+
+    await wait(() => {
+      expect(window.confirm).toHaveBeenCalledWith(
+        "You are in the middle of completing your eCRC. If you leave, your changes will be lost. Are you sure you would like to leave?"
+      );
     });
   });
 

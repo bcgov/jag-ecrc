@@ -47,8 +47,8 @@ public class EcrcServicesImpl implements EcrcServices {
 	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
 	    if (ecrcProps.getWhiteList().contains(orgTicketNumber.toLowerCase())) {
 			logger.info("For request guid: [{}] Provided org ticket number white listed", requestGuid);
-            String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
-            return ecrcWebMethodsService.callWebMethodsService(_doAuthenticateUserUri, new DoAuthenticateUser(), requestGuid);
+            String doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
+            return ecrcWebMethodsService.callWebMethodsService(doAuthenticateUserUri, new DoAuthenticateUser(), requestGuid);
         } else {
 			logger.info("For request guid: [{}] Provided org ticket number not white listed", requestGuid);
 	        return new ResponseEntity<>(String.format(WEBSERVICE_ERROR_JSON_RESPONSE,"Org not on whitelist", WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.UNAUTHORIZED);
@@ -64,39 +64,39 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 	public ResponseEntity<String> getNextSessionId(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
-		String _getNextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), orgTicketNumber);
-		return ecrcWebMethodsService.callWebMethodsService(_getNextSessionIdUri, new GetNextSessionId(), requestGuid);
+		String nextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), orgTicketNumber);
+		return ecrcWebMethodsService.callWebMethodsService(nextSessionIdUri, new GetNextSessionId(), requestGuid);
 	}
 	
 	public ResponseEntity<String> createApplicant(RequestCreateApplicant applicantInfo) throws EcrcServiceException {
-		String _createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(), applicantInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_createApplicantUri, new CreateApplicant(), applicantInfo.getRequestGuid());
+		String createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(), applicantInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(createApplicantUri, new CreateApplicant(), applicantInfo.getRequestGuid());
 	}
 
 	public ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException {
-		String _createNewCRCServiceUri = String.format(ecrcProps.getCreateNewCRCServiceUri(),crcService.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_createNewCRCServiceUri, new CreateNewCrcService(), crcService.getRequestGuid());
+		String createNewCRCServiceUri = String.format(ecrcProps.getCreateNewCRCServiceUri(),crcService.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(createNewCRCServiceUri, new CreateNewCrcService(), crcService.getRequestGuid());
 	}
 
 	public ResponseEntity<String> updateServiceFinancialTxn(RequestUpdateServiceFinancialTxn updateServiceFinancialTxn) throws EcrcServiceException {
-		String _updateServiceFinancialTxnUri = String.format(ecrcProps.getUpdateServiceFinancialTxnUri(),updateServiceFinancialTxn.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_updateServiceFinancialTxnUri, new UpdateServiceFinancialTxn(), updateServiceFinancialTxn.getRequestGuid());
+		String updateServiceFinancialTxnUri = String.format(ecrcProps.getUpdateServiceFinancialTxnUri(),updateServiceFinancialTxn.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(updateServiceFinancialTxnUri, new UpdateServiceFinancialTxn(), updateServiceFinancialTxn.getRequestGuid());
     }
   
 	public ResponseEntity<String> getServiceFeeAmount(String orgTicketNumber, String scheduleTypeCd, String scopeLevelCd, String requestGuid) throws EcrcServiceException {
-		String _getServiceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), orgTicketNumber, scheduleTypeCd, scopeLevelCd);
-		return ecrcWebMethodsService.callWebMethodsService(_getServiceFeeAmountUri, new GetServiceFeeAmount(), requestGuid);
+		String serviceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), orgTicketNumber, scheduleTypeCd, scopeLevelCd);
+		return ecrcWebMethodsService.callWebMethodsService(serviceFeeAmountUri, new GetServiceFeeAmount(), requestGuid);
 	}
 	
 	public ResponseEntity<String> logPaymentFailure(RequestLogPaymentFailure paymentFailure)
 			throws EcrcServiceException {
-		String _logPaymentFailureUri = String.format(ecrcProps.getLogPaymentFailureUri(), paymentFailure.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_logPaymentFailureUri, new LogPaymentFailure(), paymentFailure.getRequestGuid());
+		String logPaymentFailureUri = String.format(ecrcProps.getLogPaymentFailureUri(), paymentFailure.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(logPaymentFailureUri, new LogPaymentFailure(), paymentFailure.getRequestGuid());
 	}
 
 	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
-		String _getNextInvoiceIdUri = String.format(ecrcProps.getGetNextInvoiceIdUri(), orgTicketNumber);
-		return ecrcWebMethodsService.callWebMethodsService(_getNextInvoiceIdUri, new GetNextInvoiceId(), requestGuid);
+		String nextInvoiceIdUri = String.format(ecrcProps.getGetNextInvoiceIdUri(), orgTicketNumber);
+		return ecrcWebMethodsService.callWebMethodsService(nextInvoiceIdUri, new GetNextInvoiceId(), requestGuid);
 	}
 
 	public String getJwtSecret() {
@@ -105,14 +105,14 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo)
 			throws EcrcServiceException {
-		String _checkApplicantForPrevCrcUri = String.format(ecrcProps.getCheckApplicantForPrevCrcUri(), applicantInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_checkApplicantForPrevCrcUri, new CheckApplicantForPrevCrc(), applicantInfo.getRequestGuid());
+		String checkApplicantForPrevCrcUri = String.format(ecrcProps.getCheckApplicantForPrevCrcUri(), applicantInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(checkApplicantForPrevCrcUri, new CheckApplicantForPrevCrc(), applicantInfo.getRequestGuid());
 	}
 
 	public ResponseEntity<String> createSharingService(RequestCreateSharingService serviceInfo)
 			throws EcrcServiceException {
-		String _createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
+		String createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
 	}
 
 	public ResponseEntity<String> createNewCRCApplicant(RequestNewCRCApplicant requestNewCRCApplicant) {

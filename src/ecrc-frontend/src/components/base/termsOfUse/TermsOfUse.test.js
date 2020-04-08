@@ -9,6 +9,7 @@ import TermsOfUse from "./TermsOfUse";
 describe("TermsOfUse Component", () => {
   window.print = jest.fn();
   window.confirm = jest.fn();
+  window.open = jest.fn();
 
   test("Matches the snapshot", () => {
     const termsOfUse = create(
@@ -23,7 +24,7 @@ describe("TermsOfUse Component", () => {
     expect(termsOfUse.toJSON()).toMatchSnapshot();
   });
 
-  test("Validate print terms of use", async () => {
+  test("Validate print terms of use (click)", async () => {
     const { container } = render(
       <TermsOfUse
         onContinueClick={() => jest.fn()}
@@ -38,6 +39,66 @@ describe("TermsOfUse Component", () => {
 
     await wait(() => {
       expect(window.print).toHaveBeenCalled();
+    });
+  });
+
+  test("Validate print terms of use (keydown)", async () => {
+    const { container } = render(
+      <TermsOfUse
+        onContinueClick={() => jest.fn()}
+        onCancelClick={() => jest.fn()}
+        checkFirstBox={() => jest.fn()}
+        reachedEnd={false}
+        termOfUseOnScroll={() => jest.fn()}
+      />
+    );
+
+    fireEvent.keyDown(getByText(container, "Print"));
+
+    await wait(() => {
+      expect(window.print).toHaveBeenCalled();
+    });
+  });
+
+  test("Validate download terms of use (click)", async () => {
+    const { container } = render(
+      <TermsOfUse
+        onContinueClick={() => jest.fn()}
+        onCancelClick={() => jest.fn()}
+        checkFirstBox={() => jest.fn()}
+        reachedEnd={false}
+        termOfUseOnScroll={() => jest.fn()}
+      />
+    );
+
+    fireEvent.click(getByText(container, "Download"));
+
+    await wait(() => {
+      expect(window.open).toHaveBeenCalledWith(
+        "https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820",
+        "_blank"
+      );
+    });
+  });
+
+  test("Validate download terms of use (keydown)", async () => {
+    const { container } = render(
+      <TermsOfUse
+        onContinueClick={() => jest.fn()}
+        onCancelClick={() => jest.fn()}
+        checkFirstBox={() => jest.fn()}
+        reachedEnd={false}
+        termOfUseOnScroll={() => jest.fn()}
+      />
+    );
+
+    fireEvent.keyDown(getByText(container, "Download"));
+
+    await wait(() => {
+      expect(window.open).toHaveBeenCalledWith(
+        "https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820",
+        "_blank"
+      );
     });
   });
 

@@ -147,8 +147,26 @@ describe("OrgVerification Component", () => {
     );
   });
 
-  test("Redirect to Error on empty organization", () => {
-    page.org.orgNm = "";
+  test("Validate continue button click when session expired", () => {
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <OrgVerification page={page} />
+      </Router>
+    );
+
+    sessionStorage.removeItem("jwt");
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(setError).toHaveBeenCalled();
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Redirects to error page when unauthenticated", () => {
+    sessionStorage.removeItem("jwt");
+
     const history = createMemoryHistory();
     render(
       <Router history={history}>
@@ -159,9 +177,9 @@ describe("OrgVerification Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
-  test("Redirects to error page when unauthenticated", () => {
-    sessionStorage.removeItem("jwt");
-
+  test("Redirect to Error on empty organization", () => {
+    generateJWTToken({ key: "val" });
+    page.org.orgNm = "";
     const history = createMemoryHistory();
     render(
       <Router history={history}>
