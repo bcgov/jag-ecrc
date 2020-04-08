@@ -9,10 +9,6 @@ import BcscRedirect from "./BcscRedirect";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 function LoadData(props) {
-  if (process.env.REACT_APP_API_BASE_URL) {
-    axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
-  }
-
   const mock = new MockAdapter(axios);
   const API_REQUEST = "/ecrc/protected/getBCSCUrl?requestGuid=unique123";
 
