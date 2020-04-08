@@ -127,19 +127,6 @@ export default function Consent({
     }
   };
 
-  const toSuccess = () => {
-    if (!isAuthorized()) {
-      setError({
-        status: 590,
-        message: "Session Expired"
-      });
-      setToError(true);
-      return;
-    }
-
-    history.push("/criminalrecordcheck/success");
-  };
-
   const handleError = error => {
     setToError(true);
 
@@ -283,9 +270,8 @@ export default function Consent({
                 serviceId
               };
               setApplicationInfo(appInfo);
-
-              toSuccess();
               setLoading(false);
+              history.push("/criminalrecordcheck/success");
             });
         }
 
@@ -334,9 +320,8 @@ export default function Consent({
               };
 
               setApplicationInfo(appInfo);
-
-              toSuccess();
               setLoading(false);
+              history.push("/criminalrecordcheck/success");
             });
 
           return false;
@@ -384,9 +369,8 @@ export default function Consent({
 
         if (orgApplicantRelationship === "ONETIME") {
           setApplicationInfo(appInfo);
-
           setLoading(false);
-          toSuccess();
+          history.push("/criminalrecordcheck/success");
         }
 
         return axios.get(
