@@ -1,3 +1,6 @@
+import { wait } from "@testing-library/react";
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
 import {
   isAuthenticated,
   isAuthorized,
@@ -7,10 +10,8 @@ import {
   generateJWTToken,
   accessJWTToken
 } from "./AuthenticationHelper";
+
 const jwt = require("jsonwebtoken");
-import { wait } from "@testing-library/react";
-import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
 
 describe("AuthenticationHelper Module", () => {
   beforeEach(() => {
