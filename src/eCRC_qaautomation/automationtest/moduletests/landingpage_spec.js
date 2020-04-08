@@ -1,10 +1,10 @@
-//import { browser, element, by } from "protractor"
-
 require("dotenv").config();
 
-var landingPage = require("../../pageobjectfactory/landingpage");
+const landingPage = require("../../pageobjectfactory/landingpage");
+const inputCodes = require("../../input/accesscode");
+const input = require("../../input/success");
 
-var using = require("jasmine-data-provider");
+const using = require("jasmine-data-provider");
 
 describe("landing page", () => {
   beforeAll(() => {
@@ -31,6 +31,11 @@ describe("landing page", () => {
     handleAlert();
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+  });
+
+  afterEach(() => {
+    browser.get(process.env.URL);
+    handleAlert();
   });
 
   describe("I need more Information", () => {
@@ -117,47 +122,25 @@ describe("landing page", () => {
         });
       });
     });
-    // describe("I am ready", () => {
-    //   let accessCode = require("../../input/accesscode");
 
-    //   using(accessCode.accessCode.validCode, validCode => {
-    //     it("Verify if the user is directed to the right page on validating a valid access code", () => {
-    //       landingPage.accessCode.sendKeys(validCode);
+    describe("I am ready", () => {
+      it("Verify if the user is directed to the right page on validating a valid access code", () => {
+        landingPage.accessCode.sendKeys(inputCodes.accessCode.validCode.code);
 
-    //       landingPage.validate.click().then(() => {
-    //         browser.sleep(4000);
-    //         expect(process.env.ORGVERIFICATION_URL).toBe(browser.getCurrentUrl());
-    //       });
-    //     });
-    //   });
+        landingPage.validate.click().then(() => {
+          browser.sleep(4000);
+          expect(process.env.ORGVERIFICATION_URL).toBe(browser.getCurrentUrl());
+        });
+      });
 
-    //   using(accessCode.accessCode.invalidCode, invalidCode => {
-    //     it("Verify if the user is directed to the right page on validating a valid access code", () => {
-    //       landingPage.accessCode.sendKeys(invalidCode);
+      it("Verify if the user is directed to the right page on validating a valid access code", () => {
+        landingPage.accessCode.sendKeys(inputCodes.accessCode.invalidCode.code);
 
-    //       landingPage.validate.click().then(() => {
-    //         browser.sleep(4000);
-    //         expect(process.env.TRANSITION_URL).toBe(browser.getCurrentUrl());
-    //       });
-    //     });
-    //   });
-
-    //   xit("Verify if visit the criminal record review website redirects to the right page", () => {
-    //     landingPage.visitTheCriminalRecordReviewWebsite.click().then(() => {
-    //       browser.getAllWindowHandles().then(windowHandle => {
-    //         browser.switchTo().window(windowHandle[1]);
-    //         expect(
-    //           process.env.LP_VISITTHECRIMINALRECORDREVIEWWEBSITE_NAVTITLE
-    //         ).toBe(browser.getTitle());
-    //         browser.close();
-    //         browser.switchTo().window(windowHandle[0]);
-    //       });
-    //     });
-    //   });
-
-    afterEach(() => {
-      browser.get(process.env.URL);
-      handleAlert();
+        landingPage.validate.click().then(() => {
+          browser.sleep(4000);
+          expect(process.env.TRANSITION_URL).toBe(browser.getCurrentUrl());
+        });
+      });
     });
   });
 });
