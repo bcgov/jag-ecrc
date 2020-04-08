@@ -51,7 +51,7 @@ import ca.bc.gov.open.oauth.exception.OauthServiceException;
 public class OauthServicesImpl implements OauthServices {
 
 	@Autowired
-	private OauthProperties ecrcProps;
+	private OauthProperties oauthProps;
 
 	private final Logger logger = LoggerFactory.getLogger(OauthServicesImpl.class);
 
@@ -60,16 +60,16 @@ public class OauthServicesImpl implements OauthServices {
 		logger.debug("Calling getIDPRedirect");
 		
 		// The authorisation endpoint of IDP the server
-		URI authzEndpoint = new URI(ecrcProps.getIdp() + ecrcProps.getAuthorizePath());
+		URI authzEndpoint = new URI(oauthProps.getIdp() + oauthProps.getAuthorizePath());
 
 		// The client identifier provisioned by the server
-		ClientID clientID = new ClientID(ecrcProps.getClientId());
+		ClientID clientID = new ClientID(oauthProps.getClientId());
 
 		// The requested scope values for the token
-		Scope scope = new Scope(ecrcProps.getScope());
+		Scope scope = new Scope(oauthProps.getScope());
 
 		// The client callback URI, typically pre-registered with the server
-		URI callback = new URI(ecrcProps.getReturnUri());
+		URI callback = new URI(oauthProps.getReturnUri());
 
 		// Generate random state string for pairing the response to the request
 		State state = new State();
@@ -95,17 +95,17 @@ public class OauthServicesImpl implements OauthServices {
 		AuthorizationCode code = new AuthorizationCode(authCode);
 		try {
 			
-			URI callback = new URI(ecrcProps.getReturnUri());
+			URI callback = new URI(oauthProps.getReturnUri());
 			
 			// The credentials to authenticate the client at the token endpoint
-			ClientID clientID = new ClientID(ecrcProps.getClientId());
-			Secret clientSecret = new Secret(ecrcProps.getSecret());
+			ClientID clientID = new ClientID(oauthProps.getClientId());
+			Secret clientSecret = new Secret(oauthProps.getSecret());
 			ClientAuthentication clientAuth = new ClientSecretBasic(clientID, clientSecret);
 			
 			AuthorizationGrant codeGrant = new AuthorizationCodeGrant(code, callback);
 			
 			// The IDP token endpoint
-			URI tokenEndpoint = new URI(ecrcProps.getIdp() + ecrcProps.getTokenPath());
+			URI tokenEndpoint = new URI(oauthProps.getIdp() + oauthProps.getTokenPath());
 			
 			//authorization_code == grant_type
 
@@ -137,7 +137,7 @@ public class OauthServicesImpl implements OauthServices {
 		try {
 
 			// Build the IdP endpoint for user info data
-			HTTPResponse httpResponse = new UserInfoRequest(new URI(ecrcProps.getIdp() + ecrcProps.getUserinfoPath()),
+			HTTPResponse httpResponse = new UserInfoRequest(new URI(oauthProps.getIdp() + oauthProps.getUserinfoPath()),
 					accessToken).toHTTPRequest().send();
 
 			// Parse the response

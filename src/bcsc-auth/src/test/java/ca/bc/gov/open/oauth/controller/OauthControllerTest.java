@@ -69,7 +69,7 @@ class OauthControllerTest {
 	@Test
 	void testGetBCSCUrlSuccess() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getIDPRedirect()).thenReturn(new URI("test"));
-		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID");
+		ResponseEntity<String> response = oauthController.getBCSCUrl();
 		Assertions.assertEquals("test", response.getBody());
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -79,7 +79,7 @@ class OauthControllerTest {
 	void testGetBCSCUrlError() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getIDPRedirect()).thenReturn(null);
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthController.getBCSCUrl("SOMEUUID");
+			oauthController.getBCSCUrl();
 		});
 	}
 
@@ -93,7 +93,7 @@ class OauthControllerTest {
 		when(tokenServices.validateBCSCIDToken(any()))
 				.thenReturn(new ValidationResponse(true, "success"));
 	
-		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID");
+		ResponseEntity<String> response = oauthController.login("test");
 		Assertions.assertNotNull(response);
 	}
 
@@ -101,7 +101,7 @@ class OauthControllerTest {
 	@Test
 	void testLoginError1() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getToken(any())).thenThrow(new OauthServiceException("error"));
-		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
+		ResponseEntity<String> response = oauthController.login("code");
 		Assertions.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 
@@ -113,7 +113,7 @@ class OauthControllerTest {
 		when(tokenServices.validateBCSCIDToken(any())).
 			thenReturn(new ValidationResponse(true, "success"));
 		when(oauthServices.getUserInfo(any())).thenThrow(new OauthServiceException("error"));
-		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
+		ResponseEntity<String> response = oauthController.login("code");
 		Assertions.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 }

@@ -1,8 +1,5 @@
 package ca.bc.gov.open.ecrc.service;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-
 import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
@@ -41,26 +38,26 @@ public class OauthServicesImpl implements OauthServices {
 	@PostConstruct
 	public void InitService() {
 
-		this.webClient = WebClient.builder().baseUrl("http://localhost:8083/oauth")
-				.defaultHeaders(header -> header.setBasicAuth("user", "password")).build();
+		this.webClient = WebClient.builder().baseUrl(ecrcProps.getOauthUrl())
+				.defaultHeaders(
+						header -> header.setBasicAuth(ecrcProps.getOauthUsername(), ecrcProps.getOauthPassword()))
+				.build();
 	}
 
 	public ResponseEntity<String> getIDPRedirect() throws OauthServiceException {
-
 		logger.debug("Calling getIDPRedirect");
 
-		Mono<String> responseBody = this.webClient.get().uri("/getBCSCUrl").retrieve().bodyToMono(String.class);
+		Mono<String> responseBody = this.webClient.get().uri(ecrcProps.getOauthGetBCSCRedirectUri()).retrieve()
+				.bodyToMono(String.class);
 		return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
 
 	}
 
 	public ResponseEntity<String> getToken(String authCode) throws OauthServiceException {
-		String loginUri = "/login?code=" + authCode;
-
 		logger.debug("Calling getToken");
 
+		String loginUri = String.format(ecrcProps.getOauthLoginUri(), authCode);
 		Mono<String> responseBody = this.webClient.get().uri(loginUri).retrieve().bodyToMono(String.class);
 		return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
-
 	}
 }

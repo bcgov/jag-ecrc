@@ -34,7 +34,7 @@ public class OauthProperties {
 	private String jwtSecret;
 	private String jwtAuthorizedRole;
 	
-	//Basic Auth
+	//Basic Authentication
 	private String username;
 	private String password;
 

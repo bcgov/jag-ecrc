@@ -42,7 +42,7 @@ public class OauthController {
 	private OauthServicesImpl oauthServices;
 	
 	@Autowired
-	private OauthProperties ecrcProps;
+	private OauthProperties oauthProps;
 	
 	@Autowired
 	private ECRCJWTValidationServiceImpl tokenServices;
@@ -102,14 +102,14 @@ public class OauthController {
 		// must be decrypted and used for subsequent calls back to the API. 
 	    String encryptedAccessToken = null;
 	    try {
-	    	encryptedAccessToken = AES256.encrypt(token.getTokens().getBearerAccessToken().getValue(), ecrcProps.getPerSecret() );
+	    	encryptedAccessToken = AES256.encrypt(token.getTokens().getBearerAccessToken().getValue(), oauthProps.getPerSecret() );
 		} catch (Exception e) {
 			logger.error("Error encrypting token:", e);
 			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
 		// Send the new FE JWT in the response body to the caller. 
-	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedAccessToken, ecrcProps.getJwtSecret(), ecrcProps.getJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
+	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedAccessToken, oauthProps.getJwtSecret(), oauthProps.getJwtExpiry(), oauthProps.getJwtAuthorizedRole());
         return new ResponseEntity<>(feTokenResponse, HttpStatus.OK);
 	}
 

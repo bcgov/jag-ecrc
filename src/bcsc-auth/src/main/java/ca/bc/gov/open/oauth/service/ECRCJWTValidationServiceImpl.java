@@ -47,7 +47,7 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	private final String[] BCSC_ID_TOKEN_CLAIMS =  {"sub", "aud", "acr", "kid", "iss", "exp", "iat", "jti"}; 
 	
 	@Autowired
-	private OauthProperties ecrcProps;
+	private OauthProperties oauthProps;
 
 	@Autowired
 	private OIDCConfigurationService oidcConfigService;
@@ -119,7 +119,7 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 		// This set MUST match those found for the ID_TOKEN rec'd back from BCSC.
 		jwtProcessor.setJWTClaimsSetVerifier(new DefaultJWTClaimsVerifier(
 				// new JWTClaimsSet.Builder().issuer("https://idtest.gov.bc.ca/oauth2/").build(),
-				new JWTClaimsSet.Builder().issuer(ecrcProps.getIdp() + "/oauth2/").build(),
+				new JWTClaimsSet.Builder().issuer(oauthProps.getIdp() + "/oauth2/").build(),
 				new HashSet<>(Arrays.asList(claims))));
 
 		// Process the token

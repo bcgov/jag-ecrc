@@ -35,7 +35,7 @@ public class OIDCConfigurationService {
 	private OIDCConfiguration config = null; 
 	
 	@Autowired
-	private OauthProperties ecrcProps;
+	private OauthProperties oauthProps;
 	
 	/**
 	 * 
@@ -58,7 +58,7 @@ public class OIDCConfigurationService {
 		RestTemplate restTemplate = new RestTemplate(getClientHttpRequestFactory());
 		URI uri = null;
 		try {
-			uri = new URI(ecrcProps.getWellKnown());
+			uri = new URI(oauthProps.getWellKnown());
 			config = restTemplate.getForObject(uri, OIDCConfiguration.class);
 		} catch (URISyntaxException e2) {
 			logger.error("Unable to load remote server well-known configuration endpoint. Check Oauth2 well-known endpoint configuration. ", e2);
@@ -68,8 +68,8 @@ public class OIDCConfigurationService {
 	private ClientHttpRequestFactory getClientHttpRequestFactory() {
 		SimpleClientHttpRequestFactory clientHttpRequestFactory
 				= new SimpleClientHttpRequestFactory();
-		clientHttpRequestFactory.setConnectTimeout(ecrcProps.getBcscTimeout());
-		clientHttpRequestFactory.setReadTimeout(ecrcProps.getBcscTimeout());
+		clientHttpRequestFactory.setConnectTimeout(oauthProps.getBcscTimeout());
+		clientHttpRequestFactory.setReadTimeout(oauthProps.getBcscTimeout());
 		return clientHttpRequestFactory;
 	}
 }

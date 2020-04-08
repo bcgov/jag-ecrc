@@ -40,10 +40,18 @@ public class EcrcProperties {
 	private String corsMapping;
 	private String corsAllowedOrigins;
 	
+	//OAUTH properties
 	private String oauthIdp;
 	private String oauthWellKnown;
 	private String oauthPERSecret;
 	private int oauthBCSCTimeout;
+	
+	private String oauthUsername;
+	private String oauthPassword;
+	private String oauthUrl;
+	private String oauthLoginUri;
+	private String oauthGetBCSCRedirectUri;
+	
 
 	// JWT properties
 	private String jwtHeader;
@@ -277,5 +285,45 @@ public class EcrcProperties {
 	public int getOauthBCSCTimeout() { return oauthBCSCTimeout; }
 
 	public void setOauthBCSCTimeout(int oauthBCSCTimeout) { this.oauthBCSCTimeout = oauthBCSCTimeout; }
+
+	public String getOauthUsername() {
+		return oauthUsername;
+	}
+
+	public void setOauthUsername(String oauthUsername) {
+		this.oauthUsername = oauthUsername;
+	}
+
+	public String getOauthPassword() {
+		return oauthPassword;
+	}
+
+	public void setOauthPassword(String oauthPassword) {
+		this.oauthPassword = oauthPassword;
+	}
+
+	public String getOauthUrl() {
+		return oauthUrl;
+	}
+
+	public void setOauthUrl(String oauthUrl) {
+		this.oauthUrl = oauthUrl;
+	}
+
+	public String getOauthLoginUri() {
+		return oauthLoginUri;
+	}
+
+	public void setOauthLoginUri(String oauthLoginUri) {
+		this.oauthLoginUri = oauthLoginUri;
+	}
+
+	public String getOauthGetBCSCRedirectUri() {
+		return oauthGetBCSCRedirectUri;
+	}
+
+	public void setOauthGetBCSCRedirectUri(String oauthGetBCSCRedirectUri) {
+		this.oauthGetBCSCRedirectUri = oauthGetBCSCRedirectUri;
+	}
 
 }
