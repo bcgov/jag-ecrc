@@ -67,7 +67,6 @@ export default function ApplicationForm({
 }) {
   const history = useHistory();
   const [toHome, setToHome] = useState(false);
-  const [toError, setToError] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
     previousThree: alias3FirstNm || alias3SecondNm || alias3SurnameNm
@@ -113,7 +112,6 @@ export default function ApplicationForm({
     mailingPostalCodeTxt
   );
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
-  const [toTransition, setToTransition] = useState(false);
   const [toggleLoader, setToggleLoader] = useState({
     loader: { width: "100%", textAlign: "center", display: "inline-block" },
     content: { display: "none" }
@@ -128,14 +126,13 @@ export default function ApplicationForm({
       setError({
         status: 403
       });
-      setToError(true);
+      history.push("/criminalrecordcheck/error");
     }
   }, []);
 
   useEffect(() => {
     const urlParam = queryString.parse(location.search);
     const { code } = urlParam;
-
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
@@ -172,7 +169,7 @@ export default function ApplicationForm({
           } = accessJWTToken(res[0].data);
 
           if (identity_assurance_level < 3) {
-            setToTransition(true);
+            history.push("/criminalrecordcheck/transition");
             return;
           }
 
@@ -230,30 +227,19 @@ export default function ApplicationForm({
           });
         })
         .catch(error => {
-          setToError(true);
-          let errorMessage = "";
-
-          if (error && error.response && error.response.status) {
-            if (error.request && error.request.response) {
-              try {
-                JSON.parse(error.request.response);
-                errorMessage = JSON.parse(error.request.response).message;
-              } catch (err) {
-                errorMessage =
-                  "An unexpected error occurred. Please make sure all your data is accurate and complete. We apologize for the inconvenience.";
-              }
-
-              setError({
-                status: error.response.status,
-                message: errorMessage
-              });
-            } else {
-              setError({
-                status: error.response.status,
-                message: error.response.data
-              });
-            }
+          if (
+            error &&
+            error.response &&
+            error.response.status &&
+            error.response.data &&
+            error.response.data.message
+          ) {
+            setError({
+              status: error.response.status,
+              message: error.response.data.message
+            });
           }
+          history.push("/criminalrecordcheck/error");
         });
     } else {
       setToggleLoader({
@@ -623,7 +609,7 @@ export default function ApplicationForm({
         status: 590,
         message: "Session Expired"
       });
-      setToError(true);
+      history.push("/criminalrecordcheck/error");
       return;
     }
 
@@ -809,16 +795,8 @@ export default function ApplicationForm({
     setSameAddress(event.target.id === "yes");
   };
 
-  if (toError) {
-    return <Redirect to="/criminalrecordcheck/error" />;
-  }
-
   if (toHome) {
     return <Redirect to="/" />;
-  }
-
-  if (toTransition) {
-    return <Redirect to="/criminalrecordcheck/transition" />;
   }
 
   return (

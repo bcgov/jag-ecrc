@@ -66,7 +66,6 @@ export default function OrgValidation({
       })
       .catch(error => {
         setLoading(false);
-        let errorMessage = "";
 
         if (error && error.response && error.response.status) {
           if (error.response.status === 404) {
@@ -74,25 +73,14 @@ export default function OrgValidation({
           } else if (error.response.status === 401) {
             setTransitionReason("notwhitelisted");
             history.push("/criminalrecordcheck/transition");
-          } else if (error.request && error.request.response) {
-            try {
-              JSON.parse(error.request.response);
-              errorMessage = JSON.parse(error.request.response).message;
-            } catch (err) {
-              errorMessage =
-                "An unexpected error occurred. Please make sure all your data is accurate and complete. We apologize for the inconvenience.";
-            }
-
+          } else if (error.response.data && error.response.data.message) {
             setToError(true);
             setError({
               status: error.response.status,
-              message: errorMessage
+              message: error.response.data.message
             });
           } else {
             setToError(true);
-            setError({
-              status: error.response.status
-            });
           }
         } else {
           setToError(true);
