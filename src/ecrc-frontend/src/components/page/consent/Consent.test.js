@@ -139,6 +139,54 @@ describe("Consent Page Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
+  test("Validate Redirect to Error when expired", async () => {
+    axios.get.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          sessionId: "123",
+          invoiceId: "123",
+          serviceFeeAmount: "123"
+        }
+      })
+    );
+
+    axios.post.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          partyId: "123",
+          serviceId: "123",
+          urlResponse: "http://sample.com"
+        }
+      })
+    );
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    sessionStorage.setItem(
+      "jwt",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZSIsImF1dGhvcml0aWVzIjpbIkF1dGhvcml6ZWQiXSwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjJ9.2yplvMygyadMIIhyhLtHpsZzPqAqbreDrWVmBcIh0Gg"
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
   test("Validate Redirect to Error when failed axios call", async () => {
     axios.post.mockImplementation(() => Promise.reject(new Error("fail")));
 
@@ -239,20 +287,7 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate Onetime relationship flow", async () => {
-    applicant.driversLicNo = "";
-    applicant.alias1FirstNm = "";
-    applicant.alias1SecondNm = "";
-    applicant.alias1SurnameNm = "";
-    applicant.alias2FirstNm = "";
-    applicant.alias2SecondNm = "";
-    applicant.alias2SurnameNm = "";
-    applicant.alias3FirstNm = "";
-    applicant.alias3SecondNm = "";
-    applicant.alias3SurnameNm = "";
-
-    applicant.organizationFacility = "";
-
-    org.orgApplicantRelationship = "VOLUNTEER";
+    org.orgApplicantRelationship = "ONETIME";
 
     axios.get.mockImplementation(() =>
       Promise.resolve({
