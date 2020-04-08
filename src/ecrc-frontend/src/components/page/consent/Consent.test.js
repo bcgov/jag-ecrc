@@ -1,3 +1,4 @@
+/* eslint-disable prefer-promise-reject-errors */
 import React from "react";
 import axios from "axios";
 import { create } from "react-test-renderer";
