@@ -52,6 +52,30 @@ describe("OrgValidation Component", () => {
     expect(orgValidationPage.toJSON()).toMatchSnapshot();
   });
 
+  test("Sets org error when no org ticket number provided", async () => {
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <OrgValidation page={page} />
+      </Router>
+    );
+
+    expect(getByText(container, "I'm ready")).toBeInTheDocument();
+
+    fireEvent.change(getByRole(container, "textbox"), {
+      target: { value: "" }
+    });
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(
+        getByText(container, "An access code is required to continue")
+      ).toBeInTheDocument();
+    });
+  });
+
   test("Redirects to Org Verification page", async () => {
     axios.get.mockImplementation(() =>
       Promise.resolve({
@@ -120,7 +144,63 @@ describe("OrgValidation Component", () => {
     );
   });
 
-  test("Redirects to Error page", async () => {
+  test("Redirects to error page under case where error has no response", async () => {
+    axios.get.mockResolvedValueOnce({ data: "secret" });
+    axios.get.mockRejectedValueOnce();
+
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <OrgValidation page={page} />
+      </Router>
+    );
+
+    expect(getByText(container, "I'm ready")).toBeInTheDocument();
+
+    fireEvent.change(getByRole(container, "textbox"), {
+      target: { value: "somebadvalue123" }
+    });
+
+    expect(getByDisplayValue(container, "somebadvalue123")).toBeInTheDocument();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {});
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Redirects to error page under circumstance where error has response with status but no data", async () => {
+    axios.get.mockResolvedValueOnce({ data: "secret" });
+    axios.get.mockRejectedValueOnce({
+      response: { status: 400 }
+    });
+
+    const history = createMemoryHistory();
+
+    const { container } = render(
+      <Router history={history}>
+        <OrgValidation page={page} />
+      </Router>
+    );
+
+    expect(getByText(container, "I'm ready")).toBeInTheDocument();
+
+    fireEvent.change(getByRole(container, "textbox"), {
+      target: { value: "somebadvalue123" }
+    });
+
+    expect(getByDisplayValue(container, "somebadvalue123")).toBeInTheDocument();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {});
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Redirects to error page under circumstance where error has response with status, data, and message", async () => {
     axios.get.mockResolvedValueOnce({ data: "secret" });
     axios.get.mockRejectedValueOnce({
       response: { status: 400, data: { message: "Error is here" } }
