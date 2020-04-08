@@ -349,7 +349,7 @@ export default function Consent({
               setLoading(false);
             });
 
-          return undefined;
+          return false;
         }
 
         return axios.get(
