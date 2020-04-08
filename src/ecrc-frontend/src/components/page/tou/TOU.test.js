@@ -77,6 +77,29 @@ describe("TermOfUse Page Component", () => {
     );
   });
 
+  test("Validate continue button click when session expired", () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <TOU page={page} />
+      </Router>
+    );
+
+    expect(getByText(container, "Continue").disabled).toBeTruthy();
+
+    fireEvent.scroll(container.querySelector("section"));
+    fireEvent.click(getAllByRole(container, "checkbox")[0]);
+
+    expect(getByText(container, "Continue").disabled).toBeFalsy();
+
+    sessionStorage.removeItem("jwt");
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(setError).toHaveBeenCalled();
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
   test("Redirects to error page when unauthenticated", () => {
     sessionStorage.removeItem("jwt");
 
