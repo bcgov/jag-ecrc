@@ -2,9 +2,6 @@ require("dotenv").config();
 
 const landingPage = require("../../pageobjectfactory/landingpage");
 const inputCodes = require("../../input/accesscode");
-const input = require("../../input/success");
-
-const using = require("jasmine-data-provider");
 
 describe("landing page", () => {
   beforeAll(() => {
