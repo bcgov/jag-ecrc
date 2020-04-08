@@ -27,7 +27,7 @@ const applicant = {
   genderTxt: "Male",
   driversLicNo: "",
   phoneNumber: "",
-  emailAddress: "",
+  emailAddress: "lol@l.co",
   addressLine1: "123 Somewhere",
   cityNm: "Here",
   provinceNm: "British Columbia",
