@@ -138,6 +138,10 @@ describe("InformationReview Component", () => {
     fireEvent.click(getByRole(container, "checkbox"));
 
     expect(getByText(container, "Share").disabled).toBeFalsy();
+
+    fireEvent.click(getByText(container, "Share"));
+
+    expect(setShare).toHaveBeenCalled();
   });
 
   test("Validate Back button", async () => {
@@ -155,5 +159,84 @@ describe("InformationReview Component", () => {
     expect(history.location.pathname).toEqual(
       "/criminalrecordcheck/applicationform"
     );
+  });
+
+  test("Clicking submit takes you to consent page when checkbox selected and session not expired", async () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
+
+    await wait(() => {});
+
+    fireEvent.click(getByRole(container, "checkbox"));
+    fireEvent.click(getByText(container, "Submit"));
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/consent");
+  });
+
+  test("Clicking submit sets error when checkbox selected and session is expired", async () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
+
+    fireEvent.click(getByRole(container, "checkbox"));
+
+    sessionStorage.removeItem("jwt");
+
+    fireEvent.click(getByText(container, "Submit"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Sets error and redirects to error page when not authorized on landing on page", async () => {
+    sessionStorage.removeItem("jwt");
+
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Validate drivers licence number conditional rendering", async () => {
+    console.error = jest.fn();
+
+    const newApplicant = {
+      ...applicant,
+      driversLicNo: null
+    };
+
+    const newPage = {
+      ...page,
+      applicant: newApplicant
+    };
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <InformationReview page={newPage} />
+      </Router>
+    );
+
+    await expect(() => {
+      getByText(container, "BC Driver's Licence");
+    }).toThrow();
   });
 });
