@@ -66,7 +66,6 @@ export default function ApplicationForm({
   }
 }) {
   const history = useHistory();
-  const [toHome, setToHome] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
     previousThree: alias3FirstNm || alias3SecondNm || alias3SurnameNm
@@ -152,7 +151,9 @@ export default function ApplicationForm({
         .then(res => {
           sessionStorage.setItem("jwt", res[0].data);
 
-          if (!isAuthorized()) setToHome(true);
+          if (!isAuthorized()) {
+            history.push("/");
+          }
 
           setProvinces(res[1].data.provinces.province);
 
@@ -777,7 +778,7 @@ export default function ApplicationForm({
 
     if (wishToRedirect) {
       sessionStorage.clear();
-      setToHome(true);
+      history.push("/");
     }
   };
 
@@ -794,10 +795,6 @@ export default function ApplicationForm({
   const mailingAddress = event => {
     setSameAddress(event.target.id === "yes");
   };
-
-  if (toHome) {
-    return <Redirect to="/" />;
-  }
 
   return (
     <main>
