@@ -71,7 +71,10 @@ export function storeValidator() {
 
       if (value) {
         sessionStorage.setItem("validator", value);
+        return true;
       }
+
+      return false;
     })
     .catch(() => {
       return false;

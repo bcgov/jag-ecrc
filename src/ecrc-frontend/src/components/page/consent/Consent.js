@@ -142,28 +142,18 @@ export default function Consent({
 
   const handleError = error => {
     setToError(true);
-    let errorMessage = "";
 
-    if (error && error.response && error.response.status) {
-      if (error.request && error.request.response) {
-        try {
-          JSON.parse(error.request.response);
-          errorMessage = JSON.parse(error.request.response).message;
-        } catch (err) {
-          errorMessage =
-            "An unexpected error occurred. Please make sure all your data is accurate and complete. We apologize for the inconvenience.";
-        }
-
-        setError({
-          status: error.response.status,
-          message: errorMessage
-        });
-      } else {
-        setError({
-          status: error.response.status,
-          message: error.response.data
-        });
-      }
+    if (
+      error &&
+      error.response &&
+      error.response.status &&
+      error.response.data &&
+      error.response.data.message
+    ) {
+      setError({
+        status: error.response.status,
+        message: error.response.data.message
+      });
     }
     setLoading(false);
   };
@@ -232,7 +222,7 @@ export default function Consent({
 
     // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
     // eivPassDetailsResults - String returned from equifax, see Shaun
-    const CRC = {
+    let CRC = {
       orgTicketNumber,
       requestGuid: uuid,
       scheduleTypeCd: defaultScheduleTypeCd,

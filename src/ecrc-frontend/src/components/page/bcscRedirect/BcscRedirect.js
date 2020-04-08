@@ -18,7 +18,6 @@ import "./BcscRedirect.css";
 
 export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
   const [bcscUrl, setBcscUrl] = useState("");
-  const [toHome, setToHome] = React.useState(false);
   const [toError, setToError] = useState(false);
 
   React.useEffect(() => {
@@ -63,7 +62,11 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
 
   const onLoginClick = () => {
     if (!isAuthenticated()) {
-      setToHome(true);
+      setError({
+        status: 590,
+        message: "Session Expired"
+      });
+      setToError(true);
       return;
     }
     sessionStorage.setItem("validExit", true);
@@ -71,10 +74,6 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
     // REDIRECT TO BCSC
     window.open(bcscUrl, "_self");
   };
-
-  if (toHome) {
-    return <Redirect to="/" />;
-  }
 
   if (toError) {
     return <Redirect to="/criminalrecordcheck/error" />;

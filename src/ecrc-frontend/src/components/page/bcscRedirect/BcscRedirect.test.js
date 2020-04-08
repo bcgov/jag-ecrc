@@ -63,6 +63,24 @@ describe("BcscRedirect Page Component", () => {
     expect(window.open).toHaveBeenCalledWith("http://test.com", "_self");
   });
 
+  test("Validate login button click when session expired", async () => {
+    axios.get.mockResolvedValueOnce(axiosCall);
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <BcscRedirect page={page} />
+      </Router>
+    );
+    await wait(() => {});
+
+    sessionStorage.removeItem("jwt");
+
+    fireEvent.click(getByText(container, "Login with a BC Services Card"));
+
+    expect(setError).toHaveBeenCalled();
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
   test("Validate Redirect to Error when unauthorized", async () => {
     axios.get.mockResolvedValueOnce(axiosCall);
     const history = createMemoryHistory();
@@ -79,8 +97,21 @@ describe("BcscRedirect Page Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
-  test("Validate Redirect to Error page", async () => {
+  test("Validate Redirect to Error page with error response/status", async () => {
     axios.get.mockRejectedValueOnce({ response: { status: 400 } });
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <BcscRedirect page={page} />
+      </Router>
+    );
+    await wait(() => {});
+    expect(setError).toHaveBeenCalled();
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Validate Redirect to Error page without error response/status", async () => {
+    axios.get.mockRejectedValueOnce();
     const history = createMemoryHistory();
     render(
       <Router history={history}>
