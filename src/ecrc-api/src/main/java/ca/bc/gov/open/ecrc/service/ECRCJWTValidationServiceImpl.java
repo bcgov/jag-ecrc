@@ -25,14 +25,9 @@ import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
 import com.nimbusds.jwt.proc.DefaultJWTClaimsVerifier;
 import com.nimbusds.jwt.proc.DefaultJWTProcessor;
-import com.nimbusds.oauth2.sdk.TokenResponse;
-import com.nimbusds.oauth2.sdk.token.AccessToken;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.model.ValidationResponse;
-import ca.bc.gov.open.ecrc.util.AES256;
-import net.minidev.json.JSONObject;
-import net.minidev.json.parser.JSONParser;
 
 /**
  * 
@@ -49,7 +44,6 @@ import net.minidev.json.parser.JSONParser;
 public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	
 	private final String[] BCSC_ACCESS_TOKEN_CLAIMS =  {"aud", "iss", "exp", "iat", "jti"}; 
-	private final String[] BCSC_ID_TOKEN_CLAIMS =  {"sub", "aud", "acr", "kid", "iss", "exp", "iat", "jti"}; 
 	
 	@Autowired
 	private EcrcProperties ecrcProps;
@@ -66,15 +60,6 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	public ValidationResponse validateBCSCAccessToken(String token) { 
 		logger.debug("validateBCSCAccessToken called.");
 		return validateBCSCToken(token, BCSC_ACCESS_TOKEN_CLAIMS);
-	}
-	
-	/**
-	 * Validate BCSC ID Token 
-	 */
-	@Override
-	public ValidationResponse validateBCSCIDToken(String token) {
-		logger.debug("validateBCSCIDToken called.");
-		return validateBCSCToken(token, BCSC_ID_TOKEN_CLAIMS);
 	}
 	
    /**
@@ -140,50 +125,4 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 
 		return val;
 	}
-
-
-	/**
-	 * 
-	 * Validate the PER claim (Decrypts and validates the BCSC tokens within).
-	 * 
-	 */
-	@Override
-	public ValidationResponse PERValidate(String tokens) {
-		
-		// Decrypt the original claim (labeled "PER") containing the tokens BCSC
-		String _tokens = AES256.decrypt(tokens, ecrcProps.getOauthPERSecret()); 
-		JSONParser p = new JSONParser(JSONParser.MODE_RFC4627);
-		JSONObject obj;
-		TokenResponse response = null; 
-		try {
-			obj = (JSONObject) p.parse(_tokens);
-			response = TokenResponse.parse(obj);
-		} catch (com.nimbusds.oauth2.sdk.ParseException | net.minidev.json.parser.ParseException e) {
-			logger.error("PER Validate Failed to Parse. ", e);
-		}
-		
-		// Fetch both tokens within the decrypted string. 
-		AccessToken accessToken = response.toSuccessResponse().getTokens().getAccessToken();
-		String idToken = (String) response.toSuccessResponse().getCustomParameters().get("id_token");
-
-		ValidationResponse val1 = validateBCSCAccessToken(accessToken.getValue());
-		ValidationResponse val2 = validateBCSCIDToken(idToken);
-		Boolean bothValid = val1.isValid() && val2.isValid();
-		ValidationResponse resp = new ValidationResponse();
-		
-		// merge the response of two tests into one. 
-		if ( !bothValid ) {
-			resp.setValid(false);
-			if ( !val1.isValid() ) 
-				resp.setMessage( val1.getMessage() );
-			else 
-				resp.setMessage( val2.getMessage());
-		} else {
-			resp.setValid(true);
-			resp.setMessage("Successful JWT validation");
-		}
-
-		return resp; 
-	}
-
 }

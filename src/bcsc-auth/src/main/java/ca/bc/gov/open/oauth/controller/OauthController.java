@@ -50,9 +50,9 @@ public class OauthController {
 	private final Logger logger = (Logger) LoggerFactory.getLogger(OauthController.class);
 
 	@ResponseStatus(code = HttpStatus.FOUND)
-	@GetMapping(value = "/protected/getBCSCUrl")
-	public ResponseEntity<String> getBCSCUrl(@RequestParam(required=true) String requestGuid) throws OauthServiceException {
-		logger.info("BCSC URL request received [{}]", requestGuid);
+	@GetMapping(value = "/getBCSCUrl")
+	public ResponseEntity<String> getBCSCUrl() throws OauthServiceException {
+		logger.info("BCSC URL request received [{}]");
 
 		try {
 			return new ResponseEntity<>(oauthServices.getIDPRedirect().toString(), HttpStatus.OK);
@@ -69,10 +69,9 @@ public class OauthController {
 	 * Responds to SPA with new JWT (complete with userInfo and encrypted IdP token).
 	 * 
 	 */
-	@GetMapping(value = "/protected/login")
-	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode,
-										@RequestParam(required=true) String requestGuid) throws OauthServiceException {
-		logger.info("Login URL request received {}", requestGuid);
+	@GetMapping(value = "/login")
+	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode) throws OauthServiceException {
+		logger.info("Login URL request received {}");
 		
 		AccessTokenResponse token = null; 
 		try {
