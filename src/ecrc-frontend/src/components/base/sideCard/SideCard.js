@@ -36,8 +36,13 @@ export default function SideCard({
               <h2 className="heading-style">{heading}</h2>
               <div className="submit-content">
                 <span>{content}</span>
-                {image && (
-                  <a href={imageLink} target="_blank" rel="noopener noreferrer">
+                {image && imageLink && (
+                  <a
+                    id="image-link-blue-section"
+                    href={imageLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       src={image}
                       alt="imagelink"

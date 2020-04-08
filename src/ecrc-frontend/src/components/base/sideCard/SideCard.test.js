@@ -22,6 +22,21 @@ describe("SideCard Component", () => {
     expect(sideCard.exists("#blue-section")).toEqual(true);
   });
 
+  test("Renders the blue card with image and imageLink props", () => {
+    const sideCard = shallow(
+      <SideCard
+        sideCard={{
+          ...sideCardProps,
+          type: "blue",
+          image: "myimage",
+          imageLink: "imagelink.com"
+        }}
+      />
+    );
+    expect(sideCard.exists("#blue-section")).toEqual(true);
+    expect(sideCard.exists("#image-link-blue-section")).toEqual(true);
+  });
+
   test("Renders the bluegrey card when the type is bluegrey", () => {
     const sideCard = shallow(
       <SideCard sideCard={{ ...sideCardProps, type: "bluegrey" }} />
