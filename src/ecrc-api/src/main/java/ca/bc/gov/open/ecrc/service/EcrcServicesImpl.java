@@ -124,7 +124,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			ResponseEntity<String> clientResp = createApplicant(requestNewCRCApplicant.getRequestCreateApplicant());
 			if (clientResp.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(clientResp.getBody());
-				serviceDetails.setPartyId(obj.getString("partyId"));
+				serviceDetails.setPartyId(String.valueOf(obj.getInt("partyId")));
 				logger.info("Applicant Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("Applicant Failed {}", requestNewCRCApplicant.getRequestGuid());
@@ -133,7 +133,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			ResponseEntity<String> getNextSession = getNextSessionId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
 			if (getNextSession.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(getNextSession.getBody());
-				serviceDetails.setSessionId(obj.getString("sessionId"));
+				serviceDetails.setSessionId(String.valueOf(obj.getInt("sessionId")));
 				logger.info("Session Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("Session Failed {}", requestNewCRCApplicant.getRequestGuid());
@@ -142,7 +142,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			ResponseEntity<String> getNextInvoice = getNextInvoiceId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
 			if (getNextInvoice.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(getNextInvoice.getBody());
-				serviceDetails.setInvoiceId(obj.getString("invoiceId"));
+				serviceDetails.setInvoiceId(String.valueOf(obj.getInt("invoiceId")));
 				logger.info("Invoice Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("Invoice Failed {}", requestNewCRCApplicant.getRequestGuid());
@@ -151,7 +151,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			ResponseEntity<String> getServiceFeeAmount = getServiceFeeAmount(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(),requestNewCRCApplicant.getRequestNewCRCService().getScheduleTypeCd(),requestNewCRCApplicant.getRequestNewCRCService().getScopeLevelCd(), requestNewCRCApplicant.getRequestGuid());
 			if (getServiceFeeAmount.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(getServiceFeeAmount.getBody());
-				serviceDetails.setServiceFeeAmount(obj.getString("serviceFeeAmount"));
+				serviceDetails.setServiceFeeAmount(String.valueOf(obj.getDouble("serviceFeeAmount")));
 				logger.info("Fee retrieved {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("fee failed {}", requestNewCRCApplicant.getRequestGuid());
@@ -163,7 +163,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			ResponseEntity<String> createCRC = createNewCRCService(requestNewCRCApplicant.getRequestNewCRCService());
 			if (createCRC.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(createCRC.getBody());
-				serviceDetails.setServiceId(obj.getString("serviceId"));
+				serviceDetails.setServiceId(String.valueOf(obj.getInt("serviceId")));
 				logger.info("CRC Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("CRC Failed {}", requestNewCRCApplicant.getRequestGuid());
