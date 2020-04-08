@@ -381,11 +381,11 @@ export default function Consent({
           }
         });
       })
-      .then(newCRCRespose => {
-        if (!newCRCRespose) {
-          return newCRCRespose;
+      .then(newCRCResponse => {
+        if (!newCRCResponse) {
+          return newCRCResponse;
         }
-        serviceId = newCRCRespose.data.serviceId;
+        serviceId = newCRCResponse.data.serviceId;
 
         appInfo = {
           ...appInfo,
