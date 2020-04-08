@@ -1,3 +1,4 @@
+/* eslint-disable prefer-promise-reject-errors */
 import React from "react";
 import axios from "axios";
 import { create } from "react-test-renderer";
@@ -109,7 +110,7 @@ describe("Consent Page Component", () => {
     expect(consent.toJSON()).toMatchSnapshot();
   });
 
-  test("Validate Cancel Redirect", () => {
+  test("Validate Cancel Redirect with confirm box selected as Yes", () => {
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
@@ -120,6 +121,21 @@ describe("Consent Page Component", () => {
     window.confirm = () => true;
     fireEvent.click(getByText(container, "Cancel and Exit"));
     expect(history.location.pathname).toEqual("/hosthome");
+    expect(sessionStorage.getItem("jwt")).toBeFalsy();
+  });
+
+  test("Validate Cancel Redirect with confirm box selected as No", () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    window.confirm = () => false;
+    fireEvent.click(getByText(container, "Cancel and Exit"));
+    expect(history.location.pathname).not.toEqual("/hosthome");
+    expect(sessionStorage.getItem("jwt")).toBeTruthy();
   });
 
   test("Validate Redirect to Error when unauthorized", () => {
@@ -206,6 +222,35 @@ describe("Consent Page Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {});
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Validate error case when error has appropriate response, status, data and message", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.reject({
+        response: { status: 400, data: { message: "This is error" } }
+      })
+    );
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
 
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
