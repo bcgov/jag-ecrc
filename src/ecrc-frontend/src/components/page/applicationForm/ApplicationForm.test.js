@@ -128,6 +128,20 @@ describe("ApplicationForm Component", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test("Validate Redirect to Error when unauthorized", () => {
+    const history = createMemoryHistory();
+
+    sessionStorage.clear();
+
+    render(
+      <Router history={history}>
+        <ApplicationForm page={page} />
+      </Router>
+    );
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
   test("Displays Organization Facility when Schedule D Org", async () => {
     const { container } = render(
       <MemoryRouter initialEntries={["/applicationform?code=code"]}>
@@ -179,7 +193,7 @@ describe("ApplicationForm Component", () => {
       alias2FirstNm: "Rob",
       birthPlace: "Daytona Beach, Florida",
       driversLicNo: "123456",
-      phoneNumber: "2345678901",
+      phoneNumber: "234 567-8901",
       emailAddress: "bob@ross.com",
       jobTitle: "Painter",
       organizationFacility: "PBS"
@@ -197,6 +211,7 @@ describe("ApplicationForm Component", () => {
     expect(getByDisplayValue(container, "Bob")).toBeInTheDocument();
     expect(getByDisplayValue(container, "Rob")).toBeInTheDocument();
     expect(getByDisplayValue(container, "PBS")).toBeInTheDocument();
+    expect(getByDisplayValue(container, "(234) 567-8901")).toBeInTheDocument();
   });
 
   test("Prevents navigation if different address checked but not set", async () => {
@@ -239,7 +254,7 @@ describe("ApplicationForm Component", () => {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
       driversLicNo: "123456",
-      phoneNumber: "+12345678901",
+      phoneNumber: "2345678901",
       emailAddress: "",
       jobTitle: "Painter",
       organizationFacility: "PBS"
@@ -385,7 +400,7 @@ describe("ApplicationForm Component", () => {
       ...applicant,
       birthPlace: "",
       driversLicNo: "123456",
-      phoneNumber: "+12345678901",
+      phoneNumber: "2345678901",
       emailAddress: "bob@ross.com",
       jobTitle: "Painter",
       organizationFacility: "PBS"
@@ -426,7 +441,7 @@ describe("ApplicationForm Component", () => {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
       driversLicNo: "123456",
-      phoneNumber: "+12505551234",
+      phoneNumber: "2505551234",
       emailAddress: "bob@ross.com",
       jobTitle: "",
       organizationFacility: "PBS"
@@ -465,7 +480,7 @@ describe("ApplicationForm Component", () => {
       ...applicant,
       birthPlace: "Daytona Beach, Florida",
       driversLicNo: "123456",
-      phoneNumber: "+12345678901",
+      phoneNumber: "2345678901",
       emailAddress: "bob@ross.com",
       jobTitle: "Painter",
       organizationFacility: ""
