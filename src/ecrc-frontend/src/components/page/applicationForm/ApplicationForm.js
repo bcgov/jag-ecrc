@@ -87,7 +87,9 @@ export default function ApplicationForm({
   const [birthLoc, setBirthLoc] = useState(birthPlace || "");
   const [birthPlaceError, setBirthPlaceError] = useState("");
   const [driversLicence, setDriversLicence] = useState(driversLicNo || "");
-  const [phoneNum, setPhoneNum] = useState(phoneNumber || "");
+  const [phoneNum, setPhoneNum] = useState(
+    phoneNumber ? `+1${phoneNumber}` : ""
+  );
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [email, setEmail] = useState(emailAddress || "");
   const [emailAddressError, setEmailAddressError] = useState("");
@@ -168,6 +170,7 @@ export default function ApplicationForm({
 
           if (identity_assurance_level < 3) {
             history.push("/criminalrecordcheck/transition");
+            return;
           }
 
           // Convert gender text
