@@ -11,7 +11,7 @@ export default function Transition({
   useEffect(() => {
     setTimeout(() => {
       window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
-    }, 4000);
+    }, 6000);
   }, []);
 
   return (
@@ -21,15 +21,6 @@ export default function Transition({
         <div className="transition-content col-md-8">
           <p>
             You are unable to login with your BC Services Card at this time.
-          </p>
-          <br />
-          <p>
-            You’ll be provided with an alternative way to submit your criminal
-            record check and will be required to re-enter your access code to
-            continue. You will be redirected automatically. If you are not
-            redirected automatically, please click{" "}
-            <a href="https://justice.gov.bc.ca/eCRC/home.htm">here</a>
-            {"."}
           </p>
           <br />
           {transitionReason === "notwhitelisted" && (
@@ -53,6 +44,15 @@ export default function Transition({
               Criminal Record Check at this time.
             </p>
           )}
+          <br />
+          <p>
+            You’ll be provided with an alternative way to submit your criminal
+            record check and will be required to re-enter your access code to
+            continue. You will be redirected automatically. If you are not
+            redirected automatically, please click{" "}
+            <a href="https://justice.gov.bc.ca/eCRC/home.htm">here</a>
+            {"."}
+          </p>
         </div>
       </div>
       <Footer />
