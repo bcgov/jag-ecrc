@@ -4,7 +4,7 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
 import { FaPrint, FaDownload, FaEnvelope } from "react-icons/fa";
-import { useLocation, Redirect, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import PropTypes from "prop-types";

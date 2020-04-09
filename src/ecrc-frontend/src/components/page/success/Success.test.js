@@ -142,7 +142,7 @@ describe("Success Page Component", () => {
     });
   });
 
-  test("Validate Print", () => {
+  test("Validate Print (on click)", () => {
     const { container } = render(
       <MemoryRouter initialEntries={[successUrl]}>
         <Success page={page} />
@@ -150,6 +150,17 @@ describe("Success Page Component", () => {
     );
 
     fireEvent.click(getByText(container, "Print"));
+    expect(window.print).toHaveBeenCalled();
+  });
+
+  test("Validate Print (on keydown)", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={[successUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    fireEvent.keyDown(getByText(container, "Print"));
     expect(window.print).toHaveBeenCalled();
   });
 
