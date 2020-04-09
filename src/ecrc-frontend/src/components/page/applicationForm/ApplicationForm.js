@@ -792,10 +792,6 @@ export default function ApplicationForm({
     }
   };
 
-  const mailingAddress = event => {
-    setSameAddress(event.target.id === "yes");
-  };
-
   return (
     <main>
       <Header header={header} />
@@ -868,7 +864,7 @@ export default function ApplicationForm({
                 type="radio"
                 id="yes"
                 checked={sameAddress}
-                onChange={mailingAddress}
+                onChange={e => setSameAddress(e.target.id === "yes")}
                 data-testid="sameAddress"
               />
               <span>&nbsp;No&nbsp;</span>
@@ -876,7 +872,7 @@ export default function ApplicationForm({
                 type="radio"
                 id="no"
                 checked={!sameAddress}
-                onChange={mailingAddress}
+                onChange={e => setSameAddress(e.target.id === "yes")}
                 data-testid="differentAddress"
               />
             </div>

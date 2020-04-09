@@ -49,7 +49,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           Complete the application form below to continue.
         </p>
         <div
-          style="display: none;"
+          style="width: 100%; text-align: center; display: inline-block;"
         >
           <br />
           <br />
@@ -60,7 +60,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           Loading... Please Wait
         </div>
         <div
-          style="display: block;"
+          style="display: none;"
         >
           <form
             class="simpleForm"
@@ -998,7 +998,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
         </div>
       </div>
       <div
-        style="display: block;"
+        style="display: none;"
       >
         <div
           class="sidecard"

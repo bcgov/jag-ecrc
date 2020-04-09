@@ -135,7 +135,6 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={page} />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -180,7 +179,6 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={page} />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
   });
@@ -191,7 +189,6 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={page} />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     expect(getByText(container, "Organization Facility")).toBeInTheDocument();
   });
@@ -204,7 +201,6 @@ describe("ApplicationForm Component", () => {
         />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     expect(queryByText(container, "Organization Facility")).toBeNull();
   });
@@ -215,7 +211,6 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={page} />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     expect(queryAllByText(container, "First Name")).toHaveLength(3);
 
@@ -249,7 +244,6 @@ describe("ApplicationForm Component", () => {
         />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     expect(getByDisplayValue(container, "Bob")).toBeInTheDocument();
     expect(getByDisplayValue(container, "Rob")).toBeInTheDocument();
@@ -275,9 +269,6 @@ describe("ApplicationForm Component", () => {
         />
       </MemoryRouter>
     );
-    await wait(() => {});
-
-    fireEvent.click(getByTestId(container, "differentAddress"));
 
     expect(
       getByPlaceholderText(container, "Street or PO Box")
@@ -306,7 +297,6 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -351,7 +341,6 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -398,9 +387,6 @@ describe("ApplicationForm Component", () => {
         />
       </MemoryRouter>
     );
-    await wait(() => {});
-
-    fireEvent.click(getByTestId(container, "differentAddress"));
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -446,7 +432,6 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -485,7 +470,6 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -522,7 +506,6 @@ describe("ApplicationForm Component", () => {
         <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
-    await wait(() => {});
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -563,9 +546,6 @@ describe("ApplicationForm Component", () => {
         />
       </MemoryRouter>
     );
-    await wait(() => {});
-
-    fireEvent.click(getByTestId(container, "differentAddress"));
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -602,11 +582,6 @@ describe("ApplicationForm Component", () => {
         />
       </MemoryRouter>
     );
-    await wait(() => {});
-
-    fireEvent.click(getByTestId(container, "differentAddress"));
-
-    await wait(() => {});
 
     fireEvent.click(getByText(container, "Continue"));
 
@@ -620,10 +595,38 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
+    await wait(() => {});
+
     expect(queryByText(container, "City is required")).toBeNull();
   });
 
-  test("Changing mailing address works", async () => {});
+  test("Changing mailing address works when selecting yes for same address", async () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, sameAddress: false }} />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(getByTestId(container, "sameAddress"));
+
+    await wait(() => {});
+
+    expect(setSameAddress).toHaveBeenCalledWith(true);
+  });
+
+  test("Changing mailing address works when selecting no for same address", async () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={page} />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(getByTestId(container, "differentAddress"));
+
+    await wait(() => {});
+
+    expect(setSameAddress).toHaveBeenCalledWith(false);
+  });
 
   test("Select province if different mailing address selected", async () => {
     const completeApplicant = {
@@ -638,9 +641,7 @@ describe("ApplicationForm Component", () => {
 
     const { container } = render(
       <MemoryRouter initialEntries={["/applicationform?code=code"]}>
-        <ApplicationForm
-          page={{ ...page, applicant: completeApplicant, sameAddress: false }}
-        />
+        <ApplicationForm page={{ ...page, applicant: completeApplicant }} />
       </MemoryRouter>
     );
 
@@ -660,6 +661,8 @@ describe("ApplicationForm Component", () => {
     fireEvent.change(displayedProvinces[1], {
       target: { value: "Ontario" }
     });
+
+    await wait(() => {});
 
     expect(getByDisplayValue(container, "Ontario")).toBeInTheDocument();
   });
