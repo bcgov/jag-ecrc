@@ -41,6 +41,8 @@ export default function Success({
   const [isHidden, setIsHidden] = useState(true);
   const headerColor =
     paymentInfo.trnApproved === "0" ? "#ff0000" : "rgb(43, 153, 76)";
+  const history = useHistory();
+  let isBackClicked = false;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -63,9 +65,6 @@ export default function Success({
     }
     setIsHidden(true);
   }, [isHidden]);
-
-  const history = useHistory();
-  let isBackClicked = false;
 
   history.listen((_, action) => {
     if (action === "POP") {
