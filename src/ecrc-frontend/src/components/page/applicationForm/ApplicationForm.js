@@ -88,7 +88,7 @@ export default function ApplicationForm({
   const [birthPlaceError, setBirthPlaceError] = useState("");
   const [driversLicence, setDriversLicence] = useState(driversLicNo || "");
   const [phoneNum, setPhoneNum] = useState(
-    phoneNumber ? `+1${phoneNumber}` : ""
+    phoneNumber ? `+1${phoneNumber.replace(" ", "").replace("-", "")}` : ""
   );
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [email, setEmail] = useState(emailAddress || "");
