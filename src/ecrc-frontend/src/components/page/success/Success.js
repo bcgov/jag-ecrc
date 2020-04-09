@@ -38,8 +38,6 @@ export default function Success({
   const location = useLocation();
   const paymentInfo = queryString.parse(location.search);
   const uuid = sessionStorage.getItem("uuid");
-  const [toError, setToError] = useState(false);
-  const [toHostHome, setToHostHome] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
   const headerColor =
     paymentInfo.trnApproved === "0" ? "#ff0000" : "rgb(43, 153, 76)";
@@ -55,7 +53,7 @@ export default function Success({
       setError({
         status: 403
       });
-      setToError(true);
+      history.push("/criminalrecordcheck/error");
     }
   }, [paymentInfo.trnApproved, orgApplicantRelationship]);
 
@@ -91,13 +89,7 @@ export default function Success({
     }
   });
 
-  if (toError) {
-    return <Redirect to="/criminalrecordcheck/error" />;
-  }
-
   const handleError = error => {
-    setToError(true);
-
     if (
       error &&
       error.response &&
@@ -110,6 +102,8 @@ export default function Success({
         message: error.response.data.message
       });
     }
+
+    history.push("/criminalrecordcheck/error");
   };
 
   const receiptInfo = [
@@ -292,17 +286,13 @@ export default function Success({
 
     if (wishToRedirect) {
       sessionStorage.clear();
-      setToHostHome(true);
+      history.push("/hosthome");
     }
   };
 
   const emailReceipt = () => {
     window.open("mailto:?subject=Criminal Record Check");
   };
-
-  if (toHostHome) {
-    return <Redirect to="/hosthome" />;
-  }
 
   return (
     <main>
