@@ -2,31 +2,18 @@
 
 require("dotenv").config();
 
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
-
-var landingPage = require("../../pageobjectfactory/landingpage");
-
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
-
-var orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
-
-var termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
-
-var bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
-
-var bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
-
-var bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
-
-var consentPage = require("../../pageobjectfactory/consentpage.js");
-
-var applicationFormPage = require("../../pageobjectfactory/applicationformpage");
-
-var paymentPage = require("../../pageobjectfactory/paymentpage");
-
-var informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
-
-var testInput = require("../../input/success");
+const bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
+const landingPage = require("../../pageobjectfactory/landingpage");
+const orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
+const termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
+const bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
+const bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
+const consentPage = require("../../pageobjectfactory/consentpage.js");
+const applicationFormPage = require("../../pageobjectfactory/applicationformpage");
+const paymentPage = require("../../pageobjectfactory/paymentpage");
+const informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
+const successPage = require("../../pageobjectfactory/successpage");
+const testInput = require("../../input/success");
 
 describe("success", () => {
   beforeEach(() => {
@@ -34,8 +21,21 @@ describe("success", () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000;
   });
 
-  it("verify that entering a valid org code and validating redirects to the orgverification page", () => {
+  const handleAlert = () => {
+    browser
+      .switchTo()
+      .alert()
+      .then(
+        alert => {
+          alert.accept();
+        },
+        err => {}
+      );
+  };
+
+  it("verify that entering a valid org code and bcsc can decide to cancel a payment at the end of the flow", () => {
     browser.get(process.env.URL);
+    handleAlert();
 
     browser
       .manage()
@@ -43,9 +43,7 @@ describe("success", () => {
       .maximize();
 
     landingPage.accessCode.sendKeys(testInput.validAccessCode);
-
     landingPage.validate.click();
-
     browserWait = protractor.ExpectedConditions;
 
     browser.wait(
@@ -54,55 +52,36 @@ describe("success", () => {
     );
 
     browser.sleep(4000);
-
     orgVerificationPage.continue.click();
-
     termsOfUsePage.readAndAcceptCheckBox.click();
-
-    termsOfUsePage.authorizeEmailIdCheckBox.click();
-
     browser.executeScript(
       "arguments[0].scrollIntoView(true)",
       termsOfUsePage.termsOfUseFinalParagraph
     );
 
     termsOfUsePage.continueButton.click();
-
     browser.wait(
       browserWait.elementToBeClickable(bcscRedirectPage.login),
       10000
     );
 
     bcscRedirectPage.login.click();
-
     bcServicesCardLandingPage.virtualCardTesting.click();
-
     bcServicesCardLoginPage.cardSerialNumber.sendKeys(
       testInput.bcServicesCardSerialNumber
     );
 
     bcServicesCardLoginPage.continueButton.click();
-
     bcServicesCardLoginPage.password.sendKeys(testInput.bcServicesCardPassword);
-
+    bcServicesCardLoginPage.continueButton.click();
     bcServicesCardLoginPage.continueButton.click();
 
-    bcServicesCardLoginPage.continueButton.click();
-
-    expect(true).toBe(
-      browser.getCurrentUrl().then(function(url) {
-        return url.includes(process.env.BCSC_CONSENT_URL);
-      })
-    );
-
-    bcscConsentPage.name.count().then(function(count) {
-      expect(count).toBe(1);
-    });
-
-    bcscConsentPage.yes.click();
-
-    expect(applicationFormPage.firstName.getAttribute("value")).toBe(
-      testInput.applicationFormFirstName
+    browser.wait(
+      browserWait.textToBePresentInElementValue(
+        applicationFormPage.lastName,
+        testInput.applicationFormLastName
+      ),
+      5000
     );
 
     expect(applicationFormPage.lastName.getAttribute("value")).toBe(
@@ -142,7 +121,6 @@ describe("success", () => {
     ).toBe(testInput.applicationFormCurrentAddressProvince);
 
     applicationFormPage.currentAddressNotSameAsMailingAddressCheckBox.click();
-
     applicationFormPage.cityAndCountryBirth.sendKeys(
       testInput.applicationFormCityAndCountryBirth
     );
@@ -157,10 +135,6 @@ describe("success", () => {
 
     applicationFormPage.applicantPosition.sendKeys(
       testInput.applicationFormApplicantPosition
-    );
-
-    applicationFormPage.organizationFacility.sendKeys(
-      testInput.applicationFormOrganizationFacility
     );
 
     applicationFormPage.mailingAddressStreet.sendKeys(
@@ -184,69 +158,56 @@ describe("success", () => {
     );
 
     applicationFormPage.continueButton.click();
-
     informationReviewPage.cityAndCountryBirth
       .getText()
-      .then(function(cityAndCountryBirth) {
+      .then(cityAndCountryBirth => {
         expect(cityAndCountryBirth).toBe(
           testInput.applicationFormCityAndCountryBirth
         );
       });
 
-    informationReviewPage.phoneNumber.getText().then(function(phoneNumber) {
+    informationReviewPage.phoneNumber.getText().then(phoneNumber => {
       expect(phoneNumber).toBe(testInput.applicationFormPhoneNumber);
     });
 
-    informationReviewPage.emailAddress.getText().then(function(emailAddress) {
+    informationReviewPage.emailAddress.getText().then(emailAddress => {
       expect(emailAddress).toBe(testInput.applicationFormEmailAddress);
     });
 
     informationReviewPage.applicantPosition
       .getText()
-      .then(function(applicantPosition) {
+      .then(applicantPosition => {
         expect(applicantPosition).toBe(
           testInput.applicationFormApplicantPosition
         );
       });
 
-    informationReviewPage.organizationFacility
-      .getText()
-      .then(function(organizationFacility) {
-        expect(organizationFacility).toBe(
-          testInput.applicationFormOrganizationFacility
-        );
-      });
-
-    informationReviewPage.street.getText().then(function(street) {
+    informationReviewPage.street.getText().then(street => {
       expect(street).toBe(testInput.applicationFormMailingAddressStreet);
     });
 
-    informationReviewPage.city.getText().then(function(city) {
+    informationReviewPage.city.getText().then(city => {
       expect(city).toBe(testInput.applicationFormCurrentAddressCity);
     });
 
-    informationReviewPage.province.getText().then(function(province) {
+    informationReviewPage.province.getText().then(province => {
       expect(province).toBe(testInput.applicationFormCurrentAddressProvince);
     });
 
-    informationReviewPage.postalCode.getText().then(function(postalCode) {
+    informationReviewPage.postalCode.getText().then(postalCode => {
       expect(postalCode).toBe(testInput.applicationFormCurrentAddresPostalCode);
     });
 
-    informationReviewPage.country.getText().then(function(country) {
+    informationReviewPage.country.getText().then(country => {
       expect(country).toBe(testInput.applicationFormMailingAddresCountry);
     });
 
     informationReviewPage.certifyCheckBox.click();
-
     informationReviewPage.submitButton.click();
-
     consentPage.consentCheckBox.click();
-
     consentPage.certifyCheckBox.click();
-
     consentPage.disclosureCheckBox.click();
-
+    consentPage.reportChargesCheckBox.click();
     consentPage.continueButton.click();
 
     paymentPage.cancel.click();

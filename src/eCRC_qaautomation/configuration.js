@@ -23,7 +23,8 @@ module.exports.config = {
     successpage: "./automationtest/moduletests/successpage_spec.js",
     landing: "./automationtest/moduletests/landingpage_spec.js",
     bcscredirect: "./automationtest/moduletests/bcscredirectpage_spec.js",
-    termsofuse: "./automationtest/moduletests/termsofusepage_spec.js"
+    termsofuse: "./automationtest/moduletests/termsofusepage_spec.js",
+    smoke: "./automationtest/smoketests/*_spec.js"
   },
   capabilities: {
     browserName: "chrome",
