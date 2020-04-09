@@ -127,19 +127,6 @@ export default function Consent({
     }
   };
 
-  const toSuccess = () => {
-    if (!isAuthorized()) {
-      setError({
-        status: 590,
-        message: "Session Expired"
-      });
-      setToError(true);
-      return;
-    }
-
-    history.push("/criminalrecordcheck/success");
-  };
-
   const handleError = error => {
     setToError(true);
 

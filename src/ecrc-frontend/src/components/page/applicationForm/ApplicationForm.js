@@ -2,7 +2,7 @@
 /* eslint-disable no-alert */
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { useLocation, Redirect, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import queryString from "query-string";
 
@@ -66,7 +66,6 @@ export default function ApplicationForm({
   }
 }) {
   const history = useHistory();
-  const [toHome, setToHome] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
     previousThree: alias3FirstNm || alias3SecondNm || alias3SurnameNm
@@ -88,7 +87,7 @@ export default function ApplicationForm({
   const [birthPlaceError, setBirthPlaceError] = useState("");
   const [driversLicence, setDriversLicence] = useState(driversLicNo || "");
   const [phoneNum, setPhoneNum] = useState(
-    phoneNumber ? `+1${phoneNumber}` : ""
+    phoneNumber ? `+1${phoneNumber.replace(" ", "").replace("-", "")}` : ""
   );
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [email, setEmail] = useState(emailAddress || "");
@@ -152,7 +151,9 @@ export default function ApplicationForm({
         .then(res => {
           sessionStorage.setItem("jwt", res[0].data);
 
-          if (!isAuthorized()) setToHome(true);
+          if (!isAuthorized()) {
+            history.push("/");
+          }
 
           setProvinces(res[1].data.provinces.province);
 
@@ -575,7 +576,7 @@ export default function ApplicationForm({
   };
 
   const validateEmail = emailTxt => {
-    const re = /[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    const re = /[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?/;
     return re.test(emailTxt);
   };
 
@@ -777,7 +778,7 @@ export default function ApplicationForm({
 
     if (wishToRedirect) {
       sessionStorage.clear();
-      setToHome(true);
+      history.push("/");
     }
   };
 
@@ -790,14 +791,6 @@ export default function ApplicationForm({
       setPreviousNames({ ...previousNames, previousThree: true });
     }
   };
-
-  const mailingAddress = event => {
-    setSameAddress(event.target.id === "yes");
-  };
-
-  if (toHome) {
-    return <Redirect to="/" />;
-  }
 
   return (
     <main>
@@ -871,7 +864,7 @@ export default function ApplicationForm({
                 type="radio"
                 id="yes"
                 checked={sameAddress}
-                onChange={mailingAddress}
+                onChange={e => setSameAddress(e.target.id === "yes")}
                 data-testid="sameAddress"
               />
               <span>&nbsp;No&nbsp;</span>
@@ -879,7 +872,7 @@ export default function ApplicationForm({
                 type="radio"
                 id="no"
                 checked={!sameAddress}
-                onChange={mailingAddress}
+                onChange={e => setSameAddress(e.target.id === "yes")}
                 data-testid="differentAddress"
               />
             </div>
