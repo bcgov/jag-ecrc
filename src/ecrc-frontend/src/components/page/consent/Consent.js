@@ -233,6 +233,7 @@ export default function Consent({
       approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
       declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
       errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+      applType: orgApplicantRelationship,
       requestCreateApplicant: createApplicantInfo,
       requestNewCRCService: CRC
     };
