@@ -2,7 +2,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
 import { MemoryRouter } from "react-router-dom";
-import { createMemoryHistory } from "history";
 import axios from "axios";
 import { render, fireEvent, getByText, wait } from "@testing-library/react";
 
@@ -195,8 +194,6 @@ describe("Success Page Component", () => {
   });
 
   test("Error case for getNextInvoiceId failing without response data and message", async () => {
-    console.log(sessionStorage.getItem("jwt"));
-
     axios.get.mockImplementation(() =>
       Promise.reject({
         response: {
