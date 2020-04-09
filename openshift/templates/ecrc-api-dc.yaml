@@ -41,7 +41,7 @@ objects:
         app: ${appName}
       name: ${appName}
     spec:
-      replicas: ${replicas}
+      replicas: ${{replicas}}
       selector:
         io.kompose.service: ${appName}
       strategy:
@@ -56,7 +56,7 @@ objects:
           - image: ''
             name: ${appName}
             ports:
-            - containerPort: ${container_port}
+            - containerPort: ${{container_port}}
             resources:
               requests:
                 cpu: ${cpu_request}
