@@ -19,10 +19,6 @@ export default function Transition({
       <Header header={header} />
       <div className="page">
         <div className="transition-content col-md-8">
-          <p>
-            You are unable to login with your BC Services Card at this time.
-          </p>
-          <br />
           {transitionReason === "notwhitelisted" && (
             <p>
               We are transitioning our client organizations currently using
@@ -39,10 +35,16 @@ export default function Transition({
             </p>
           )}
           {transitionReason === "bcsc" && (
-            <p>
-              We require users to have a photo BC Services Card to access the
-              Criminal Record Check at this time.
-            </p>
+            <div>
+              <p>
+                You are unable to login with your BC Services Card at this time.
+              </p>
+              <br />
+              <p>
+                We require users to have a photo BC Services Card to access the
+                Criminal Record Check at this time.
+              </p>
+            </div>
           )}
           <br />
           <p>
