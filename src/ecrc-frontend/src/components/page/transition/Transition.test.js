@@ -6,6 +6,8 @@ import { render, wait } from "@testing-library/react";
 
 import Transition from "./Transition";
 
+jest.setTimeout(7000);
+
 describe("Transition Page Component", () => {
   const header = {
     name: "Criminal Record Check"
@@ -40,7 +42,7 @@ describe("Transition Page Component", () => {
     expect(nonWhitelistTransition.toJSON()).toMatchSnapshot();
   });
 
-  test("Component waits 4 seconds before automatically redirecting the user", async () => {
+  test("Component waits 6 seconds before automatically redirecting the user", async () => {
     const history = createMemoryHistory();
 
     render(
@@ -49,8 +51,11 @@ describe("Transition Page Component", () => {
       </Router>
     );
 
-    await wait(() => {
-      expect(window.open).toHaveBeenCalled();
-    }, 4000);
-  });
+    await wait(
+      () => {
+        expect(window.open).toHaveBeenCalled();
+      },
+      { timeout: 6000 }
+    );
+  }, 7000);
 });

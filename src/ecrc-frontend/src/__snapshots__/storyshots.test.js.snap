@@ -23759,6 +23759,10 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       </p>
       <br />
       <p>
+        We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
+      </p>
+      <br />
+      <p>
         You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
         <a
@@ -23767,10 +23771,6 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
           here
         </a>
         .
-      </p>
-      <br />
-      <p>
-        We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
       </p>
     </div>
   </div>
@@ -23914,6 +23914,10 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       </p>
       <br />
       <p>
+        We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
+      </p>
+      <br />
+      <p>
         You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
         <a
@@ -23922,10 +23926,6 @@ exports[`Storyshots Transition Page Mobile 1`] = `
           here
         </a>
         .
-      </p>
-      <br />
-      <p>
-        We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
       </p>
     </div>
   </div>
@@ -24069,17 +24069,6 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
       </p>
       <br />
       <p>
-        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
-         
-        <a
-          href="https://justice.gov.bc.ca/eCRC/home.htm"
-        >
-          here
-        </a>
-        .
-      </p>
-      <br />
-      <p>
         We are transitioning our client organizations currently using Equifax for identity verification to a new process through a
          
         <a
@@ -24091,6 +24080,17 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
         </a>
         . Your organization hasn't
          been transitioned to the new system yet.
+      </p>
+      <br />
+      <p>
+        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+         
+        <a
+          href="https://justice.gov.bc.ca/eCRC/home.htm"
+        >
+          here
+        </a>
+        .
       </p>
     </div>
   </div>
