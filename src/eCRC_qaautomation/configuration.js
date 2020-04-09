@@ -22,7 +22,8 @@ module.exports.config = {
     volunteer: "./automationtest/smoketests/success_volunteer_spec.js",
     successpage: "./automationtest/moduletests/successpage_spec.js",
     landing: "./automationtest/moduletests/landingpage_spec.js",
-    bcscredirect: "./automationtest/moduletests/bcscredirectpage_spec.js"
+    bcscredirect: "./automationtest/moduletests/bcscredirectpage_spec.js",
+    termsofuse: "./automationtest/moduletests/termsofusepage_spec.js"
   },
   capabilities: {
     browserName: "chrome",

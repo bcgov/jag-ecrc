@@ -16,7 +16,8 @@
     "successpage": "./node_modules/.bin/protractor configuration.js --suite successpage",
     "consent": "./node_modules/.bin/protractor configuration.js --suite consent",
     "landing": "./node_modules/.bin/protractor configuration.js --suite landing",
-    "bcscredirect": "./node_modules/.bin/protractor configuration.js --suite bcscredirect"
+    "bcscredirect": "./node_modules/.bin/protractor configuration.js --suite bcscredirect",
+    "termsofuse": "./node_modules/.bin/protractor configuration.js --suite termsofuse"
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
