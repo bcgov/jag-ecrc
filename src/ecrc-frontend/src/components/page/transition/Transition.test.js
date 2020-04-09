@@ -51,6 +51,6 @@ describe("Transition Page Component", () => {
 
     await wait(() => {
       expect(window.open).toHaveBeenCalled();
-    }, 4000);
+    }, 6000);
   });
 });

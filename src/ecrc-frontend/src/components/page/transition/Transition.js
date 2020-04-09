@@ -12,7 +12,7 @@ export default function Transition({
     setTimeout(() => {
       sessionStorage.setItem("validExit", true);
       window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
-    }, 4000);
+    }, 6000);
   }, []);
 
   return (
