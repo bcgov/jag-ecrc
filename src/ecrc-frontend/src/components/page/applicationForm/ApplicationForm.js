@@ -571,8 +571,6 @@ export default function ApplicationForm({
   };
 
   const validatePhoneNumber = phone => {
-    console.log(phoneNum);
-
     return phone.length === 12;
   };
 
