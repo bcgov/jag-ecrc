@@ -12,11 +12,11 @@ describe("TextInput Component", () => {
     value: "init value"
   };
 
-  const actionData = { onClick: () => jest.fn() };
+  const onChange = jest.fn();
 
   test("Matches the snapshot", () => {
     const textInputBox = create(
-      <TextInput textInput={{ ...textInput }} {...actionData} />
+      <TextInput textInput={{ ...textInput }} onChange={onChange} />
     );
     expect(textInputBox.toJSON()).toMatchSnapshot();
   });
@@ -28,10 +28,27 @@ describe("TextInput Component", () => {
           ...textInput,
           textInputStyle: "textinput_non_editable_gray"
         }}
-        {...actionData}
+        onChange={onChange}
       />
     );
     expect(textInputBox.find("div input").prop("readOnly")).toBe(true);
+  });
+
+  test("Renders the textInput when options provided", () => {
+    const textInputBox = shallow(
+      <TextInput
+        textInput={{
+          ...textInput,
+          options: [{ name: "name1" }, { name: "name2" }]
+        }}
+        onChange={onChange}
+      />
+    );
+
+    const event = { target: { value: "val" } };
+    textInputBox.find("select").simulate("change", event);
+
+    expect(onChange).toHaveBeenCalled();
   });
 
   test("Renders the textInput correctly when isRequired is set", () => {
@@ -41,7 +58,7 @@ describe("TextInput Component", () => {
           ...textInput,
           isRequired: true
         }}
-        {...actionData}
+        onChange={onChange}
       />
     );
     expect(textInputBox.exists("#asterisk")).toEqual(true);

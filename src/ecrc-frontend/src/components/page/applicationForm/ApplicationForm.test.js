@@ -125,10 +125,6 @@ describe("ApplicationForm Component", () => {
     mock.onGet(API_REQUEST_JWT).reply(200, token);
   });
 
-  afterEach(() => {
-    mockHistoryPush.mockClear();
-  });
-
   test("Matches the snapshot", async () => {
     const { asFragment } = render(
       <MemoryRouter initialEntries={["/applicationform?code=code"]}>
@@ -137,6 +133,22 @@ describe("ApplicationForm Component", () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test("After successful login call, if unauthorized, then redirects to error page", async () => {
+    mock.onGet(API_REQUEST_JWT).reply(200, "token");
+
+    render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={page} />
+      </MemoryRouter>
+    );
+
+    await wait(() => {
+      expect(setError).toBeCalledTimes(1);
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
   });
 
   test("Handle error cases effectively", async () => {
@@ -151,7 +163,7 @@ describe("ApplicationForm Component", () => {
     );
 
     await wait(() => {
-      expect(setError).toBeCalledTimes(1);
+      expect(setError).toBeCalledTimes(2);
     });
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
@@ -165,7 +177,7 @@ describe("ApplicationForm Component", () => {
     );
 
     await wait(() => {
-      expect(setError).toBeCalledTimes(1); // it is not called again
+      expect(setError).toBeCalledTimes(2); // it is not called again
     });
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
