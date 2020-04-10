@@ -181,7 +181,8 @@ exports[`Declaration Component Matches the sharing snapshot 1`] = `
       <span
         className="declaration-cb"
       >
-        I confirm I have completed a criminal record check within the past five years with the CRRP which did not result in a determination of risk to children and/or vulnerable adults as defined in the 
+        I confirm I have completed a criminal record check within the past five years with the CRRP which did not result in a determination of risk to children and/or vulnerable adults as defined in the
+         
         <i>
           Criminal Records Review Act
         </i>
