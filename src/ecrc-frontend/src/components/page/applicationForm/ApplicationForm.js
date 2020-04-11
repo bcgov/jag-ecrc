@@ -280,7 +280,6 @@ export default function ApplicationForm({
       id: "alias1First",
       value: alias1First,
       onChange: event => {
-        console.log("jhsgdhjsjdsjhsg")
         setAlias1First(event);
       }
     },
