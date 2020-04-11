@@ -176,14 +176,14 @@ describe("ApplicationForm Component", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("Matches the snapshot with invalid province", async () => {
+  test("Matches the snapshot with valid region/province", async () => {
     const updatePayload = {
       userInfo: {
         birthdate: "04/04/04",
         address: {
           street_address: "123 addy",
           locality: "local",
-          region: "Invalid",
+          region: "BC",
           postal_code: "v9n1d4"
         },
         gender: "F",

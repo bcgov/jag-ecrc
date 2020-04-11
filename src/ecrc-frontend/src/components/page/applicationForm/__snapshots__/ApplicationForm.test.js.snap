@@ -2476,7 +2476,7 @@ exports[`ApplicationForm Component Matches the snapshot with gender being female
 </DocumentFragment>
 `;
 
-exports[`ApplicationForm Component Matches the snapshot with invalid province 1`] = `
+exports[`ApplicationForm Component Matches the snapshot with valid region/province 1`] = `
 <DocumentFragment>
   <main>
     <header>
