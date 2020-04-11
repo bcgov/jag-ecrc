@@ -176,6 +176,37 @@ describe("ApplicationForm Component", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test("Matches the snapshot with invalid province", async () => {
+    const updatePayload = {
+      userInfo: {
+        birthdate: "04/04/04",
+        address: {
+          street_address: "123 addy",
+          locality: "local",
+          region: "Invalid",
+          postal_code: "v9n1d4"
+        },
+        gender: "F",
+        given_name: "given",
+        given_names: "givens",
+        family_name: "fam",
+        identity_assurance_level: 3
+      },
+      authorities: ["Authorized"]
+    };
+    const token = generateJWTToken(updatePayload);
+
+    mock.onGet(API_REQUEST_JWT).reply(200, token);
+
+    const { asFragment } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={page} />
+      </MemoryRouter>
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test("After successful login call, if unauthorized, then redirects to error page", async () => {
     mock.onGet(API_REQUEST_JWT).reply(200, "token");
 
