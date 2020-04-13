@@ -18,7 +18,7 @@ public class RequestPaymentService {
 	private String serviceIdRef1;
 	private String partyIdRef2;
 	private String requestGuid;
-
+	@SuppressWarnings("java:S107")
 	public RequestPaymentService(String transType,
 								 String invoiceNumber,
 								 String approvedPage,
