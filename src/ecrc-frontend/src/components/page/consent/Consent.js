@@ -197,19 +197,13 @@ export default function Consent({
       emailType
     };
 
-    // let partyId;
-    // let sessionId;
-    // let invoiceId;
-    // let serviceFeeAmount;
-    // let serviceId;
-
     let appInfo = {
       previousServiceId
     };
 
     // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
     // eivPassDetailsResults - String returned from equifax, see Shaun
-    let CRC = {
+    const CRC = {
       orgTicketNumber,
       requestGuid: uuid,
       scheduleTypeCd: defaultScheduleTypeCd,
@@ -257,10 +251,8 @@ export default function Consent({
         saveOrg();
         saveApplicationInfo(appInfo);
 
-        console.log(appInfo);
-
         if (appInfo.paymentUrl) {
-          // window.location.href = appInfo.paymentUrl;
+          window.location.href = appInfo.paymentUrl;
           setLoading(false);
         } else {
           history.push("/criminalrecordcheck/success");
@@ -269,162 +261,6 @@ export default function Consent({
       .catch(error => {
         handleError(error);
       });
-
-    // axios
-    //   .post("/ecrc/private/createApplicant", createApplicantInfo, {
-    //     headers: {
-    //       Authorization: `Bearer ${token}`
-    //     }
-    //   })
-    //   .then(createApplicantResponse => {
-    //     partyId = createApplicantResponse.data.partyId;
-
-    //     if (share) {
-    //       const shareCRC = {
-    //         orgTicketNumber,
-    //         applPartyId: partyId,
-    //         scopeLevelCd: defaultCrcScopeLevelCd,
-    //         applicantPosn: jobTitle,
-    //         authReleaseEivVendorYN: "Y",
-    //         authReleaseToOrgYN: "Y",
-    //         applIdentityVerifiedEivYN: "Y",
-    //         previousServiceId,
-    //         eivPassDetailsResults: "eivPassDetailsResults",
-    //         requestGuid: uuid
-    //       };
-
-    //       axios
-    //         .post("/ecrc/private/createSharingService", shareCRC, {
-    //           headers: {
-    //             Authorization: `Bearer ${token}`
-    //           }
-    //         })
-    //         .then(createShareResponse => {
-    //           serviceId = createShareResponse.data.serviceId;
-
-    //           appInfo = {
-    //             ...appInfo,
-    //             serviceId
-    //           };
-    //           setApplicationInfo(appInfo);
-
-    //           toSuccess();
-    //           setLoading(false);
-    //         });
-    //     }
-
-    //     return axios.get(
-    //       `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-    //       {
-    //         headers: {
-    //           Authorization: `Bearer ${token}`
-    //         }
-    //       }
-    //     );
-    //   })
-    //   .then(getSessionResponse => {
-    //     sessionId = getSessionResponse.data.sessionId;
-
-    //     const newCRC = {
-    //       ...CRC,
-    //       applPartyId: partyId,
-    //       sessionId
-    //     };
-
-    //     if (orgApplicantRelationship === "ONETIME") {
-    //       newCRC.orgApplToPay = "O";
-    //     } else if (orgApplicantRelationship === "EMPLOYEE") {
-    //       newCRC.orgApplToPay = "A";
-    //     }
-
-    //     return axios.post("/ecrc/private/createNewCRCService", newCRC, {
-    //       headers: {
-    //         Authorization: `Bearer ${token}`
-    //       }
-    //     });
-    //   })
-    //   .then(newCRCRespose => {
-    //     serviceId = newCRCRespose.data.serviceId;
-
-    //     appInfo = {
-    //       ...appInfo,
-    //       serviceId,
-    //       partyId,
-    //       sessionId
-    //     };
-
-    //     if (
-    //       orgApplicantRelationship === "VOLUNTEER" ||
-    //       orgApplicantRelationship === "ONETIME"
-    //     ) {
-    //       setApplicationInfo(appInfo);
-
-    //       setLoading(false);
-    //       toSuccess();
-    //     }
-
-    //     return Promise.all([
-    //       axios.get(
-    //         `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-    //         {
-    //           headers: {
-    //             Authorization: `Bearer ${token}`
-    //           }
-    //         }
-    //       ),
-    //       axios.get(
-    //         `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
-    //         {
-    //           headers: {
-    //             Authorization: `Bearer ${token}`
-    //           }
-    //         }
-    //       )
-    //     ]);
-    //   })
-    //   .then(allResponse => {
-    //     invoiceId = allResponse[0].data.invoiceId;
-    //     serviceFeeAmount = allResponse[1].data.serviceFeeAmount;
-
-    //     appInfo = {
-    //       ...appInfo,
-    //       invoiceId,
-    //       serviceFeeAmount
-    //     };
-
-    //     setApplicationInfo(appInfo);
-    //     saveApplicant();
-    //     saveOrg();
-    //     saveApplicationInfo(appInfo);
-
-    //     const createURL = {
-    //       invoiceNumber: invoiceId,
-    //       requestGuid: uuid,
-    //       approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-    //       declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-    //       errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-    //       totalItemsAmount: serviceFeeAmount,
-    //       serviceIdRef1: serviceId,
-    //       partyIdRef2: partyId
-    //     };
-
-    //     return axios.post("/ecrc/private/createPaymentUrl", createURL, {
-    //       headers: {
-    //         Authorization: `Bearer ${token}`
-    //       }
-    //     });
-    //   })
-    //   .then(urlResponse => {
-    //     if (!urlResponse) {
-    //       return;
-    //     }
-
-    //     window.location.href = urlResponse.data.paymentUrl;
-    //     setLoading(false);
-    // })
-    // .catch(error => {
-    //   handleError(error);
-    // });
   };
 
   if (toHostHome) {
