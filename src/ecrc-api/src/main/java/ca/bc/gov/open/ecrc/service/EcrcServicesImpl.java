@@ -142,7 +142,7 @@ public class EcrcServicesImpl implements EcrcServices {
 				logger.info("Session Failed {}", requestNewCRCApplicant.getRequestGuid());
 				return getNextSession;
 			}
-			if (requestNewCRCApplicant.getApplType().toUpperCase() == EMPLOYEE_TYPE || requestNewCRCApplicant.getApplType().toUpperCase() == ONETIME_TYPE) {
+			if (EMPLOYEE_TYPE.equalsIgnoreCase(requestNewCRCApplicant.getApplType()) || ONETIME_TYPE.equalsIgnoreCase(requestNewCRCApplicant.getApplType())) {
 				ResponseEntity<String> getNextInvoice = getNextInvoiceId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
 				if (getNextInvoice.getStatusCode() == HttpStatus.OK) {
 					obj = new JSONObject(getNextInvoice.getBody());
@@ -156,9 +156,9 @@ public class EcrcServicesImpl implements EcrcServices {
 			requestNewCRCApplicant.getRequestNewCRCService().setApplPartyId(serviceDetails.getPartyId());
 			requestNewCRCApplicant.getRequestNewCRCService().setSessionId(serviceDetails.getSessionId());
 			requestNewCRCApplicant.getRequestNewCRCService().setInvoiceId(serviceDetails.getInvoiceId());
-			if (requestNewCRCApplicant.getApplType().toUpperCase() == EMPLOYEE_TYPE) {
+			if (EMPLOYEE_TYPE.equalsIgnoreCase(requestNewCRCApplicant.getApplType())) {
 				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay(EMPLOYEE);
-			} else if (requestNewCRCApplicant.getApplType().toUpperCase() == ONETIME_TYPE) {
+			} else if (ONETIME_TYPE.equalsIgnoreCase(requestNewCRCApplicant.getApplType())) {
 				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay(ONETIME);
 			} else {
 				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay("");
@@ -172,7 +172,7 @@ public class EcrcServicesImpl implements EcrcServices {
 				logger.info("CRC Failed {}", requestNewCRCApplicant.getRequestGuid());
 				return createCRC;
 			}
-			if (requestNewCRCApplicant.getApplType().toUpperCase() == EMPLOYEE_TYPE) {
+			if (EMPLOYEE_TYPE.equalsIgnoreCase(requestNewCRCApplicant.getApplType())) {
 				ResponseEntity<String> getServiceFeeAmount = getServiceFeeAmount(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestNewCRCService().getScheduleTypeCd(), requestNewCRCApplicant.getRequestNewCRCService().getScopeLevelCd(), requestNewCRCApplicant.getRequestGuid());
 				if (getServiceFeeAmount.getStatusCode() == HttpStatus.OK) {
 					obj = new JSONObject(getServiceFeeAmount.getBody());
