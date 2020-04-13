@@ -5,11 +5,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import org.springframework.test.context.TestPropertySource;
 
-//@SpringBootTest
-//@TestPropertySource("classpath:application-test.properties")
+@SpringBootTest
+@TestPropertySource("classpath:application-test.properties")
 class EcrcApiApplicationTests {
 
-	//@Test
+	@Test
 	void contextLoads() {
 	}
 
