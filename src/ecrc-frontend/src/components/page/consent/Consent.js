@@ -197,11 +197,11 @@ export default function Consent({
       emailType
     };
 
-    let partyId;
-    let sessionId;
-    let invoiceId;
-    let serviceFeeAmount;
-    let serviceId;
+    // let partyId;
+    // let sessionId;
+    // let invoiceId;
+    // let serviceFeeAmount;
+    // let serviceId;
 
     let appInfo = {
       previousServiceId
@@ -245,10 +245,29 @@ export default function Consent({
         }
       })
       .then(singleCallResponse => {
-        console.log(singleCallResponse.data);
+        const appResponseInfo = singleCallResponse.data;
+
+        appInfo = {
+          ...appInfo,
+          ...appResponseInfo
+        };
+
+        setApplicationInfo(appInfo);
+        saveApplicant();
+        saveOrg();
+        saveApplicationInfo(appInfo);
+
+        console.log(appInfo);
+
+        if (appInfo.paymentUrl) {
+          // window.location.href = appInfo.paymentUrl;
+          setLoading(false);
+        } else {
+          history.push("/criminalrecordcheck/success");
+        }
       })
       .catch(error => {
-        console.log(error);
+        handleError(error);
       });
 
     // axios

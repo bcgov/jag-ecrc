@@ -156,22 +156,15 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate Redirect to Error when expired", async () => {
-    axios.get.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          sessionId: "123",
-          invoiceId: "123",
-          serviceFeeAmount: "123"
-        }
-      })
-    );
-
     axios.post.mockImplementation(() =>
       Promise.resolve({
         data: {
-          partyId: "123",
+          paymentUrl: "http://sample.com",
           serviceId: "123",
-          urlResponse: "http://sample.com"
+          partyId: "123",
+          sessionId: "123",
+          invoiceId: "123",
+          serviceFeeAmount: "123"
         }
       })
     );
@@ -256,22 +249,15 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate Employee relationship flow", async () => {
-    axios.get.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          sessionId: "123",
-          invoiceId: "123",
-          serviceFeeAmount: "123"
-        }
-      })
-    );
-
     axios.post.mockImplementation(() =>
       Promise.resolve({
         data: {
-          partyId: "123",
+          paymentUrl: "http://sample.com",
           serviceId: "123",
-          urlResponse: "http://sample.com"
+          partyId: "123",
+          sessionId: "123",
+          invoiceId: "123",
+          serviceFeeAmount: "123"
         }
       })
     );
@@ -303,8 +289,8 @@ describe("Consent Page Component", () => {
     axios.post.mockImplementation(() =>
       Promise.resolve({
         data: {
-          partyId: "123",
-          serviceId: "123"
+          serviceId: "123",
+          partyId: "123"
         }
       })
     );
@@ -334,19 +320,12 @@ describe("Consent Page Component", () => {
   test("Validate Onetime relationship flow", async () => {
     org.orgApplicantRelationship = "ONETIME";
 
-    axios.get.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          sessionId: "123"
-        }
-      })
-    );
-
     axios.post.mockImplementation(() =>
       Promise.resolve({
         data: {
+          serviceId: "123",
           partyId: "123",
-          serviceId: "123"
+          sessionId: "123"
         }
       })
     );
@@ -389,22 +368,12 @@ describe("Consent Page Component", () => {
 
     org.orgApplicantRelationship = "VOLUNTEER";
 
-    axios.get.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          sessionId: "123",
-          invoiceId: "123",
-          serviceFeeAmount: "123"
-        }
-      })
-    );
-
     axios.post.mockImplementation(() =>
       Promise.resolve({
         data: {
-          partyId: "123",
           serviceId: "123",
-          urlResponse: "http://sample.com"
+          partyId: "123",
+          sessionId: "123"
         }
       })
     );
