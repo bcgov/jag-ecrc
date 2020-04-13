@@ -49,17 +49,15 @@ exports[`Consent Page Component Matches the snapshot 1`] = `
         Consent for Criminal Record Check
       </h1>
       <p>
-        In this section, you consent to a criminal background check. Please read the declaration before agreeing.
-      </p>
-      <p>
-        You must complete all mandatory fields (
-        <span
-          className="mandatory"
-          id="asterisk"
-        >
-          *
-        </span>
-         ):
+        I
+        , 
+        <i>
+          Robert
+           
+          Ross
+        </i>
+        , 
+        consent to the following:
       </p>
       <div>
         <div

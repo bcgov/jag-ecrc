@@ -142,7 +142,7 @@ public class EcrcServicesImpl implements EcrcServices {
 				logger.info("Session Failed {}", requestNewCRCApplicant.getRequestGuid());
 				return getNextSession;
 			}
-			if (requestNewCRCApplicant.getApplType().toUpperCase() == EMPLOYEE_TYPE || requestNewCRCApplicant.getApplType().toUpperCase() == ONETIME_TYPE) {
+			if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE) || requestNewCRCApplicant.getApplType().equalsIgnoreCase(ONETIME_TYPE)) {
 				ResponseEntity<String> getNextInvoice = getNextInvoiceId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
 				if (getNextInvoice.getStatusCode() == HttpStatus.OK) {
 					obj = new JSONObject(getNextInvoice.getBody());
@@ -156,9 +156,9 @@ public class EcrcServicesImpl implements EcrcServices {
 			requestNewCRCApplicant.getRequestNewCRCService().setApplPartyId(serviceDetails.getPartyId());
 			requestNewCRCApplicant.getRequestNewCRCService().setSessionId(serviceDetails.getSessionId());
 			requestNewCRCApplicant.getRequestNewCRCService().setInvoiceId(serviceDetails.getInvoiceId());
-			if (requestNewCRCApplicant.getApplType().toUpperCase() == EMPLOYEE_TYPE) {
+			if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE)) {
 				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay(EMPLOYEE);
-			} else if (requestNewCRCApplicant.getApplType().toUpperCase() == ONETIME_TYPE) {
+			} else if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(ONETIME_TYPE)) {
 				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay(ONETIME);
 			} else {
 				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay("");
@@ -172,7 +172,7 @@ public class EcrcServicesImpl implements EcrcServices {
 				logger.info("CRC Failed {}", requestNewCRCApplicant.getRequestGuid());
 				return createCRC;
 			}
-			if (requestNewCRCApplicant.getApplType().toUpperCase() == EMPLOYEE_TYPE) {
+			if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE)) {
 				ResponseEntity<String> getServiceFeeAmount = getServiceFeeAmount(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestNewCRCService().getScheduleTypeCd(), requestNewCRCApplicant.getRequestNewCRCService().getScopeLevelCd(), requestNewCRCApplicant.getRequestGuid());
 				if (getServiceFeeAmount.getStatusCode() == HttpStatus.OK) {
 					obj = new JSONObject(getServiceFeeAmount.getBody());
@@ -186,7 +186,7 @@ public class EcrcServicesImpl implements EcrcServices {
 				ResponseEntity<String> paymentURl = ecrcPaymentService.createPaymentUrl(requestPaymentService);
 				if (paymentURl.getStatusCode() == HttpStatus.OK) {
 					obj = new JSONObject(paymentURl.getBody());
-					serviceDetails.setPaymentUrl(obj.getString("respValue"));
+					serviceDetails.setPaymentUrl(obj.getString("paymentUrl"));
 					logger.info("Payment URL Created {}", requestNewCRCApplicant.getRequestGuid());
 				} else {
 					logger.info("Payment URL Failed {}", requestNewCRCApplicant.getRequestGuid());

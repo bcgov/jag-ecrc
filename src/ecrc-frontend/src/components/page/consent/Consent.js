@@ -412,12 +412,6 @@ export default function Consent({
     return <Redirect to="/hosthome" />;
   }
 
-  const asterisk = (
-    <span id="asterisk" className="mandatory">
-      *
-    </span>
-  );
-
   if (toError) {
     return <Redirect to="/criminalrecordcheck/error" />;
   }
@@ -429,10 +423,12 @@ export default function Consent({
         <div className="content col-md-8">
           <h1>Consent for Criminal Record Check</h1>
           <p>
-            In this section, you consent to a criminal background check. Please
-            read the declaration before agreeing.
+            I{", "}
+            <i>
+              {legalFirstNm} {legalSurnameNm}
+            </i>
+            {", "}consent to the following:
           </p>
-          <p>You must complete all mandatory fields ({asterisk} ):</p>
           <Declaration
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
