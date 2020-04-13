@@ -152,7 +152,10 @@ export default function ApplicationForm({
           sessionStorage.setItem("jwt", res[0].data);
 
           if (!isAuthorized()) {
-            history.push("/");
+            setError({
+              status: 403
+            });
+            history.push("/criminalrecordcheck/error");
           }
 
           setProvinces(res[1].data.provinces.province);
