@@ -186,7 +186,7 @@ public class EcrcServicesImpl implements EcrcServices {
 				ResponseEntity<String> paymentURl = ecrcPaymentService.createPaymentUrl(requestPaymentService);
 				if (paymentURl.getStatusCode() == HttpStatus.OK) {
 					obj = new JSONObject(paymentURl.getBody());
-					serviceDetails.setPaymentUrl(obj.getString("respValue"));
+					serviceDetails.setPaymentUrl(obj.getString("paymentUrl"));
 					logger.info("Payment URL Created {}", requestNewCRCApplicant.getRequestGuid());
 				} else {
 					logger.info("Payment URL Failed {}", requestNewCRCApplicant.getRequestGuid());

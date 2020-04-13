@@ -22,7 +22,7 @@ import static org.mockito.Mockito.when;
 public class ECRCServicesImplCreateNewCRCApplicantTest {
 
     private static final String WEBMETHODSRES = "{\"message\":\"Success\",\"partyId\":49060,\"invoiceId\":49060,\"sessionId\":49060,\"serviceId\":49060,\"serviceFeeAmount\":28,\"responseCode\":0}";
-    private static final String serviceResp =  "{\"respValue\":\"test.com\",\"respMsg\":\"success\",\"respCode\":0}";
+    private static final String serviceResp =  "{\"paymentUrl\":\"test.com\",\"respMsg\":\"success\",\"respCode\":0}";
     private static final String successEmployeeResp = "{\"paymentUrl\":\"test.com\",\"serviceId\":\"49060\",\"partyId\":\"49060\",\"sessionId\":\"49060\",\"invoiceId\":\"49060\",\"serviceFeeAmount\":\"28.0\"}";
     private static final String successVolunteerResp = "{\"serviceId\":\"49060\",\"partyId\":\"49060\",\"sessionId\":\"49060\"}";
     private static final String successOnetimeResp = "{\"serviceId\":\"49060\",\"partyId\":\"49060\",\"sessionId\":\"49060\",\"invoiceId\":\"49060\"}";
