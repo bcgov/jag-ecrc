@@ -222,7 +222,7 @@ export default function Consent({
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
-    const singleCall = {
+    const crcApplicant = {
       requestGuid: uuid,
       approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
       declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
@@ -233,13 +233,13 @@ export default function Consent({
     };
 
     axios
-      .post("/ecrc/private/createNewCRCApplicant", singleCall, {
+      .post("/ecrc/private/createNewCRCApplicant", crcApplicant, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
-      .then(singleCallResponse => {
-        const appResponseInfo = singleCallResponse.data;
+      .then(crcApplicantResponse => {
+        const appResponseInfo = crcApplicantResponse.data;
 
         appInfo = {
           ...appInfo,
