@@ -176,33 +176,21 @@ describe("Success Page Component", () => {
     expect(window.open).toHaveBeenCalled();
   });
 
-  test("Redirects to host home on cancel click when confirm is selected as Yes", () => {
-    const { container } = render(
+  test("Redirects to error page when not authorized on page load", async () => {
+    sessionStorage.clear();
+
+    render(
       <MemoryRouter initialEntries={[failureUrl]}>
         <Success page={page} />
       </MemoryRouter>
     );
 
-    window.confirm = () => true;
+    await wait(() => {
+      expect(setError).toHaveBeenCalledTimes(1);
+    });
 
-    fireEvent.click(getByText(container, "Cancel and Exit"));
-
-    expect(sessionStorage.getItem("jwt")).toBeFalsy();
-    expect(mockHistoryPush).toHaveBeenCalledWith("/hosthome");
-  });
-
-  test("Does not redirect to host home on cancel click when confirm is selected as No", () => {
-    const { container } = render(
-      <MemoryRouter initialEntries={[failureUrl]}>
-        <Success page={page} />
-      </MemoryRouter>
-    );
-
-    window.confirm = () => false;
-
-    fireEvent.click(getByText(container, "Cancel and Exit"));
-
-    expect(sessionStorage.getItem("jwt")).toBeTruthy();
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(1);
   });
 
   test("Error case for getNextInvoiceId failing without response data and message", async () => {
@@ -231,10 +219,11 @@ describe("Success Page Component", () => {
     fireEvent.click(getByText(container, "Try Again"));
 
     await wait(() => {
-      expect(setError).not.toHaveBeenCalled();
+      expect(setError).toHaveBeenCalledTimes(1);
     });
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(2);
   });
 
   test("Error case for getNextInvoiceId failing with response data and message", async () => {
@@ -266,9 +255,92 @@ describe("Success Page Component", () => {
     fireEvent.click(getByText(container, "Try Again"));
 
     await wait(() => {
-      expect(setError).toHaveBeenCalled();
+      expect(setError).toHaveBeenCalledTimes(2);
     });
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(3);
+  });
+
+  test("Failing logPaymentFailure causes handle error to be called", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.reject({
+        response: {
+          status: 400,
+          data: {
+            message: "This is bad request error"
+          }
+        }
+      })
+    );
+
+    render(
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalledTimes(3);
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(4);
+  });
+
+  test("Failing updateServiceFinancialTxn causes handle error to be called", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.reject({
+        response: {
+          status: 400,
+          data: {
+            message: "This is bad request error"
+          }
+        }
+      })
+    );
+
+    render(
+      <MemoryRouter initialEntries={[successUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalledTimes(4);
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(5);
+  });
+
+  test("Redirects to host home on cancel click when confirm is selected as Yes", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    window.confirm = () => true;
+
+    fireEvent.click(getByText(container, "Cancel and Exit"));
+
+    expect(sessionStorage.getItem("jwt")).toBeFalsy();
+    expect(mockHistoryPush).toHaveBeenCalledWith("/hosthome");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(6);
+  });
+
+  test("Does not redirect to host home on cancel click when confirm is selected as No", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    window.confirm = () => false;
+
+    fireEvent.click(getByText(container, "Cancel and Exit"));
+
+    expect(sessionStorage.getItem("jwt")).toBeTruthy();
   });
 });
