@@ -1,6 +1,6 @@
 class ConsentPage {
   constructor() {
-    this.consentCheckBox = element(by.xpath("//input[@type='checkbox']"));
+    this.consentCheckBox = element(by.xpath("(//input[@type='checkbox'])[1]"));
     this.certifyCheckBox = element(by.xpath("(//input[@type='checkbox'])[2]"));
     this.disclosureCheckBox = element(
       by.xpath("(//input[@type='checkbox'])[3]")

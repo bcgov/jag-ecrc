@@ -17,13 +17,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
 
 public class ECRCServicesImplCreateNewCRCApplicantTest {
 
-    private static final String WEBMETHODSRES = "{\"message\":\"Success\",\"partyId\":\"49060\",\"invoiceId\":\"49060\",\"sessionId\":\"49060\",\"serviceId\":\"49060\",\"serviceFeeAmount\":\"28\",\"responseCode\":0}";
-    private static final String serviceResp =  "{\"respValue\":\"test.com\",\"respMsg\":\"success\",\"respCode\":0}";
-    private static final String successResp = "{\"paymentUrl\":\"test.com\",\"serviceId\":\"49060\",\"partyId\":\"49060\",\"sessionId\":\"49060\",\"invoiceId\":\"49060\",\"serviceFeeAmount\":\"28\"}";
+    private static final String WEBMETHODSRES = "{\"message\":\"Success\",\"partyId\":49060,\"invoiceId\":49060,\"sessionId\":49060,\"serviceId\":49060,\"serviceFeeAmount\":28,\"responseCode\":0}";
+    private static final String serviceResp =  "{\"paymentUrl\":\"test.com\",\"respMsg\":\"success\",\"respCode\":0}";
+    private static final String successEmployeeResp = "{\"paymentUrl\":\"test.com\",\"serviceId\":\"49060\",\"partyId\":\"49060\",\"sessionId\":\"49060\",\"invoiceId\":\"49060\",\"serviceFeeAmount\":\"28.0\"}";
+    private static final String successVolunteerResp = "{\"serviceId\":\"49060\",\"partyId\":\"49060\",\"sessionId\":\"49060\"}";
+    private static final String successOnetimeResp = "{\"serviceId\":\"49060\",\"partyId\":\"49060\",\"sessionId\":\"49060\",\"invoiceId\":\"49060\"}";
     @InjectMocks
     EcrcServicesImpl ecrcServices;
 
@@ -46,11 +47,12 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
         Mockito.when(ecrcProperties.getGetServiceFeeAmountUri()).thenReturn("feeurl?%s");
     }
 
-    @DisplayName("Success - ecrcService CreateNewCRCApplicant")
+    @DisplayName("Success Employee - ecrcService CreateNewCRCApplicant")
     @Test
-    public void testSuccess() throws EcrcServiceException {
+    public void testEmployeeSuccess() throws EcrcServiceException {
 
         RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+        request.setApplType("EMPLOYEE");
         request.setRequestCreateApplicant(new RequestCreateApplicant());
         request.setRequestNewCRCService(new RequestNewCRCService());
         Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
@@ -58,7 +60,39 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 
         Mockito.when(ecrcPaymentService.createPaymentUrl(any())).thenReturn(new ResponseEntity<>(serviceResp, HttpStatus.OK));
         ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
-        Assert.assertEquals(successResp, response.getBody());
+        Assert.assertEquals(successEmployeeResp, response.getBody());
+        Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+    @DisplayName("Success Volunteer - ecrcService CreateNewCRCApplicant")
+    @Test
+    public void testVolunteerSuccess() throws EcrcServiceException {
+
+        RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+        request.setApplType("VOLUNTEER");
+        request.setRequestCreateApplicant(new RequestCreateApplicant());
+        request.setRequestNewCRCService(new RequestNewCRCService());
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
+                .thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+
+        Mockito.when(ecrcPaymentService.createPaymentUrl(any())).thenReturn(new ResponseEntity<>(serviceResp, HttpStatus.OK));
+        ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
+        Assert.assertEquals(successVolunteerResp, response.getBody());
+        Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+    @DisplayName("Success Onetime - ecrcService CreateNewCRCApplicant")
+    @Test
+    public void testOnetimeSuccess() throws EcrcServiceException {
+
+        RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+        request.setApplType("ONETIME");
+        request.setRequestCreateApplicant(new RequestCreateApplicant());
+        request.setRequestNewCRCService(new RequestNewCRCService());
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
+                .thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+
+        Mockito.when(ecrcPaymentService.createPaymentUrl(any())).thenReturn(new ResponseEntity<>(serviceResp, HttpStatus.OK));
+        ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
+        Assert.assertEquals(successOnetimeResp, response.getBody());
         Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
     }
     @DisplayName("Error - ecrcService CreateNewCRCApplicant")

@@ -97,6 +97,7 @@ export const TextInput = ({
         <Input
           country={"CA"}
           className={textStyle}
+          type="text"
           id={id}
           placeholder={placeholder}
           value={value}

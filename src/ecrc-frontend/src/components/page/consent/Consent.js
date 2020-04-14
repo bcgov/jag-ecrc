@@ -127,37 +127,20 @@ export default function Consent({
     }
   };
 
-  const toSuccess = () => {
-    if (!isAuthorized()) {
-      setError({
-        status: 590,
-        message: "Session Expired"
-      });
-      setToError(true);
-      return;
-    }
-
-    history.push("/criminalrecordcheck/success");
-  };
-
   const handleError = error => {
     setToError(true);
-    if (error && error.response && error.response.status) {
-      if (
-        error.request &&
-        error.request.response &&
-        JSON.parse(error.request.response)
-      ) {
-        setError({
-          status: error.response.status,
-          message: JSON.parse(error.request.response).message
-        });
-      } else {
-        setError({
-          status: error.response.status,
-          message: error.response.data
-        });
-      }
+
+    if (
+      error &&
+      error.response &&
+      error.response.status &&
+      error.response.data &&
+      error.response.data.message
+    ) {
+      setError({
+        status: error.response.status,
+        message: error.response.data.message
+      });
     }
     setLoading(false);
   };
@@ -214,12 +197,6 @@ export default function Consent({
       emailType
     };
 
-    let partyId;
-    let sessionId;
-    let invoiceId;
-    let serviceFeeAmount;
-    let serviceId;
-
     let appInfo = {
       previousServiceId
     };
@@ -229,137 +206,42 @@ export default function Consent({
     const CRC = {
       orgTicketNumber,
       requestGuid: uuid,
-      schedule_Type_Cd: defaultScheduleTypeCd,
-      scope_Level_Cd: defaultCrcScopeLevelCd,
-      appl_Party_Id: null,
-      org_Appl_To_Pay: "A",
-      applicant_Posn: jobTitle,
-      child_Care_Fac_Nm: organizationFacility,
-      governing_Body_Nm: orgNm,
-      session_Id: null,
-      invoice_Id: null,
-      auth_Release_EIV_Vendor_YN: "Y",
-      auth_Conduct_CRC_Check_YN: "Y",
-      auth_Release_To_Org_YN: "Y",
-      appl_Identity_Verified_EIV_YN: "Y",
+      scheduleTypeCd: defaultScheduleTypeCd,
+      scopeLevelCd: defaultCrcScopeLevelCd,
+      applPartyId: null,
+      orgApplToPay: "",
+      applicantPosn: jobTitle,
+      childCareFacNm: organizationFacility,
+      governingBodyNm: orgNm,
+      sessionId: null,
+      invoiceId: null,
+      authReleaseEIVVendorYN: "Y",
+      authConductCRCCheckYN: "Y",
+      authReleaseToOrgYN: "Y",
+      applIdentityVerifiedEIVYN: "Y",
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
+    const crcApplicant = {
+      requestGuid: uuid,
+      returnPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+      applType: orgApplicantRelationship,
+      requestCreateApplicant: createApplicantInfo,
+      requestNewCRCService: CRC
+    };
+
     axios
-      .post("/ecrc/private/createApplicant", createApplicantInfo, {
+      .post("/ecrc/private/createNewCRCApplicant", crcApplicant, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
-      .then(createApplicantResponse => {
-        partyId = createApplicantResponse.data.partyId;
-
-        if (share) {
-          const shareCRC = {
-            orgTicketNumber,
-            applPartyId: partyId,
-            scopeLevelCd: defaultCrcScopeLevelCd,
-            applicantPosn: jobTitle,
-            authReleaseEivVendorYN: "Y",
-            authReleaseToOrgYN: "Y",
-            applIdentityVerifiedEivYN: "Y",
-            previousServiceId,
-            eivPassDetailsResults: "eivPassDetailsResults",
-            requestGuid: uuid
-          };
-
-          axios
-            .post("/ecrc/private/createSharingService", shareCRC, {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            })
-            .then(createShareResponse => {
-              serviceId = createShareResponse.data.serviceId;
-
-              appInfo = {
-                ...appInfo,
-                serviceId
-              };
-              setApplicationInfo(appInfo);
-
-              toSuccess();
-              setLoading(false);
-            });
-        }
-
-        return axios.get(
-          `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          }
-        );
-      })
-      .then(getSessionResponse => {
-        sessionId = getSessionResponse.data.sessionId;
-
-        const newCRC = {
-          ...CRC,
-          appl_Party_Id: partyId,
-          org_Appl_To_Pay: orgApplicantRelationship === "ONETIME" ? "O" : "A",
-          session_Id: sessionId
-        };
-
-        return axios.post("/ecrc/private/createNewCRCService", newCRC, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-      })
-      .then(newCRCRespose => {
-        serviceId = newCRCRespose.data.serviceId;
+      .then(crcApplicantResponse => {
+        const appResponseInfo = crcApplicantResponse.data;
 
         appInfo = {
           ...appInfo,
-          serviceId,
-          partyId,
-          sessionId
-        };
-
-        if (
-          orgApplicantRelationship === "VOLUNTEER" ||
-          orgApplicantRelationship === "ONETIME"
-        ) {
-          setApplicationInfo(appInfo);
-
-          setLoading(false);
-          toSuccess();
-        }
-
-        return Promise.all([
-          axios.get(
-            `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            }
-          ),
-          axios.get(
-            `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            }
-          )
-        ]);
-      })
-      .then(allResponse => {
-        invoiceId = allResponse[0].data.invoiceId;
-        serviceFeeAmount = allResponse[1].data.serviceFeeAmount;
-
-        appInfo = {
-          ...appInfo,
-          invoiceId,
-          serviceFeeAmount
+          ...appResponseInfo
         };
 
         setApplicationInfo(appInfo);
@@ -367,30 +249,12 @@ export default function Consent({
         saveOrg();
         saveApplicationInfo(appInfo);
 
-        const createURL = {
-          invoiceNumber: invoiceId,
-          requestGuid: uuid,
-          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          totalItemsAmount: serviceFeeAmount,
-          serviceIdRef1: serviceId,
-          partyIdRef2: partyId
-        };
-
-        return axios.post("/ecrc/private/createPaymentUrl", createURL, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-      })
-      .then(urlResponse => {
-        if (!urlResponse) {
-          return;
+        if (appInfo.paymentUrl) {
+          window.location.href = appInfo.paymentUrl;
+          setLoading(false);
+        } else {
+          history.push("/criminalrecordcheck/success");
         }
-
-        window.location.href = urlResponse.data.paymentUrl;
-        setLoading(false);
       })
       .catch(error => {
         handleError(error);
@@ -400,12 +264,6 @@ export default function Consent({
   if (toHostHome) {
     return <Redirect to="/hosthome" />;
   }
-
-  const asterisk = (
-    <span id="asterisk" className="mandatory">
-      *
-    </span>
-  );
 
   if (toError) {
     return <Redirect to="/criminalrecordcheck/error" />;
@@ -418,10 +276,12 @@ export default function Consent({
         <div className="content col-md-8">
           <h1>Consent for Criminal Record Check</h1>
           <p>
-            In this section, you consent to a criminal background check. Please
-            read the declaration before agreeing.
+            I{", "}
+            <i>
+              {legalFirstNm} {legalSurnameNm}
+            </i>
+            {", "}consent to the following:
           </p>
-          <p>You must complete all mandatory fields ({asterisk} ):</p>
           <Declaration
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}

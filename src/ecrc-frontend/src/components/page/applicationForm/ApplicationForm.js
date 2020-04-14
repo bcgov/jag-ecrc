@@ -2,7 +2,7 @@
 /* eslint-disable no-alert */
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { useLocation, Redirect, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import queryString from "query-string";
 
@@ -66,8 +66,6 @@ export default function ApplicationForm({
   }
 }) {
   const history = useHistory();
-  const [toHome, setToHome] = useState(false);
-  const [toError, setToError] = useState(false);
   const [previousNames, setPreviousNames] = useState({
     previousTwo: alias2FirstNm || alias2SecondNm || alias2SurnameNm,
     previousThree: alias3FirstNm || alias3SecondNm || alias3SurnameNm
@@ -88,7 +86,9 @@ export default function ApplicationForm({
   const [birthLoc, setBirthLoc] = useState(birthPlace || "");
   const [birthPlaceError, setBirthPlaceError] = useState("");
   const [driversLicence, setDriversLicence] = useState(driversLicNo || "");
-  const [phoneNum, setPhoneNum] = useState(phoneNumber || "");
+  const [phoneNum, setPhoneNum] = useState(
+    phoneNumber ? `+1${phoneNumber.replace(" ", "").replace("-", "")}` : ""
+  );
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [email, setEmail] = useState(emailAddress || "");
   const [emailAddressError, setEmailAddressError] = useState("");
@@ -111,7 +111,6 @@ export default function ApplicationForm({
     mailingPostalCodeTxt
   );
   const [mailingPostalCodeError, setMailingPostalCodeError] = useState("");
-  const [toTransition, setToTransition] = useState(false);
   const [toggleLoader, setToggleLoader] = useState({
     loader: { width: "100%", textAlign: "center", display: "inline-block" },
     content: { display: "none" }
@@ -126,14 +125,13 @@ export default function ApplicationForm({
       setError({
         status: 403
       });
-      setToError(true);
+      history.push("/criminalrecordcheck/error");
     }
   }, []);
 
   useEffect(() => {
     const urlParam = queryString.parse(location.search);
     const { code } = urlParam;
-
     const token = sessionStorage.getItem("jwt");
     const uuid = sessionStorage.getItem("uuid");
 
@@ -153,7 +151,12 @@ export default function ApplicationForm({
         .then(res => {
           sessionStorage.setItem("jwt", res[0].data);
 
-          if (!isAuthorized()) setToHome(true);
+          if (!isAuthorized()) {
+            setError({
+              status: 403
+            });
+            history.push("/criminalrecordcheck/error");
+          }
 
           setProvinces(res[1].data.provinces.province);
 
@@ -170,7 +173,8 @@ export default function ApplicationForm({
           } = accessJWTToken(res[0].data);
 
           if (identity_assurance_level < 3) {
-            setToTransition(true);
+            history.push("/criminalrecordcheck/transition");
+            return;
           }
 
           // Convert gender text
@@ -227,24 +231,19 @@ export default function ApplicationForm({
           });
         })
         .catch(error => {
-          setToError(true);
-          if (error && error.response && error.response.status) {
-            if (
-              error.request &&
-              error.request.response &&
-              JSON.parse(error.request.response)
-            ) {
-              setError({
-                status: error.response.status,
-                message: JSON.parse(error.request.response).message
-              });
-            } else {
-              setError({
-                status: error.response.status,
-                message: error.response.data
-              });
-            }
+          if (
+            error &&
+            error.response &&
+            error.response.status &&
+            error.response.data &&
+            error.response.data.message
+          ) {
+            setError({
+              status: error.response.status,
+              message: error.response.data.message
+            });
           }
+          history.push("/criminalrecordcheck/error");
         });
     } else {
       setToggleLoader({
@@ -580,7 +579,7 @@ export default function ApplicationForm({
   };
 
   const validateEmail = emailTxt => {
-    const re = /[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    const re = /[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?/;
     return re.test(emailTxt);
   };
 
@@ -614,7 +613,7 @@ export default function ApplicationForm({
         status: 590,
         message: "Session Expired"
       });
-      setToError(true);
+      history.push("/criminalrecordcheck/error");
       return;
     }
 
@@ -782,7 +781,7 @@ export default function ApplicationForm({
 
     if (wishToRedirect) {
       sessionStorage.clear();
-      setToHome(true);
+      history.push("/");
     }
   };
 
@@ -795,22 +794,6 @@ export default function ApplicationForm({
       setPreviousNames({ ...previousNames, previousThree: true });
     }
   };
-
-  const mailingAddress = event => {
-    setSameAddress(event.target.id === "yes");
-  };
-
-  if (toError) {
-    return <Redirect to="/criminalrecordcheck/error" />;
-  }
-
-  if (toHome) {
-    return <Redirect to="/" />;
-  }
-
-  if (toTransition) {
-    return <Redirect to="/criminalrecordcheck/transition" />;
-  }
 
   return (
     <main>
@@ -884,7 +867,7 @@ export default function ApplicationForm({
                 type="radio"
                 id="yes"
                 checked={sameAddress}
-                onChange={mailingAddress}
+                onChange={e => setSameAddress(e.target.id === "yes")}
                 data-testid="sameAddress"
               />
               <span>&nbsp;No&nbsp;</span>
@@ -892,7 +875,7 @@ export default function ApplicationForm({
                 type="radio"
                 id="no"
                 checked={!sameAddress}
-                onChange={mailingAddress}
+                onChange={e => setSameAddress(e.target.id === "yes")}
                 data-testid="differentAddress"
               />
             </div>

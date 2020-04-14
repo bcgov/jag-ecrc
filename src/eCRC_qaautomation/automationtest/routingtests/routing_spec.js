@@ -1,34 +1,48 @@
 require("dotenv").config();
 
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
-var landingPage = require("../../pageobjectfactory/landingpage");
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
-var orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
-var termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
-var bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
-var bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
-var bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
-var applicationFormPage = require("../../pageobjectfactory/applicationformpage");
-var informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
-var testInput = require("../../input/success");
+const landingPage = require("../../pageobjectfactory/landingpage");
+const orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
+const termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
+const bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
+const bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
+const bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
+const applicationFormPage = require("../../pageobjectfactory/applicationformpage");
+const informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
+const consentPage = require("../../pageobjectfactory/consentpage");
+const errorPage = require("../../pageobjectfactory/errorpage");
+const testInput = require("../../input/success");
 
 describe("Route protection", () => {
-  const routingProtectionPageUrl = process.env.URL;
+  const routingProtectionPageUrl = process.env.URL + "/error";
   const routingTestUrls = [
     process.env.ORGVERIFICATION_URL,
     process.env.TERMSOFUSE_URL,
     process.env.BCSC_URL,
-    process.env.BCSC_CONSENT_URL,
     process.env.APPLICATIONFORM_URL,
     process.env.INFORMATIONREVIEW_URL,
-    process.env.USERCONFIRMATION_URL,
+    process.env.CONSENT_URL,
     process.env.SUCCESS_URL
   ];
 
+  browserWait = protractor.ExpectedConditions;
+
+  const handleAlert = () => {
+    browser
+      .switchTo()
+      .alert()
+      .then(
+        alert => {
+          alert.accept();
+        },
+        err => {}
+      );
+  };
+
   const returnToOrgVerification = () => {
+    browser.get(process.env.URL);
+    handleAlert();
     landingPage.accessCode.sendKeys(testInput.validAccessCode);
     landingPage.validate.click();
-    browserWait = protractor.ExpectedConditions;
   };
 
   const returnToTermsOfUse = () => {
@@ -37,11 +51,11 @@ describe("Route protection", () => {
       browserWait.elementToBeClickable(orgVerificationPage.continue),
       10000
     );
-    browser.sleep(4000);
+
     orgVerificationPage.continue.click();
   };
 
-  const returnToConsent = () => {
+  const returnToApplicationForm = () => {
     returnToTermsOfUse();
     termsOfUsePage.readAndAcceptCheckBox.click();
     browser.executeScript(
@@ -62,14 +76,14 @@ describe("Route protection", () => {
     bcServicesCardLoginPage.password.sendKeys(testInput.bcServicesCardPassword);
     bcServicesCardLoginPage.continueButton.click();
     bcServicesCardLoginPage.continueButton.click();
-  };
 
-  const returnToApplicationForm = () => {
-    returnToConsent();
-    bcscConsentPage.name.count().then(count => {
-      expect(count).toBe(1);
-    });
-    bcscConsentPage.yes.click();
+    browser.wait(
+      browserWait.textToBePresentInElementValue(
+        applicationFormPage.lastName,
+        testInput.applicationFormLastName
+      ),
+      5000
+    );
   };
 
   returnToInformationReview = () => {
@@ -89,13 +103,10 @@ describe("Route protection", () => {
     applicationFormPage.applicantPosition.sendKeys(
       testInput.applicationFormApplicantPosition
     );
-    applicationFormPage.organizationFacility.sendKeys(
-      testInput.applicationFormOrganizationFacility
-    );
     applicationFormPage.continueButton.click();
   };
 
-  returnToUserConfirmation = () => {
+  returnToConsent = () => {
     returnToInformationReview();
     informationReviewPage.certifyCheckBox.click();
     informationReviewPage.submitButton.click();
@@ -112,13 +123,20 @@ describe("Route protection", () => {
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
     browser.get(process.env.URL);
+    handleAlert();
   });
 
   it("verify route protection from orgvalidation page", () => {
     routingTestUrls.forEach(testUrl => {
       if (testUrl !== process.env.URL) {
         browser.get(testUrl);
+        handleAlert();
+        browser.wait(
+          browserWait.elementToBeClickable(errorPage.homeButton),
+          10000
+        );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
+        errorPage.homeButton.click();
       }
     });
   });
@@ -127,6 +145,11 @@ describe("Route protection", () => {
     routingTestUrls.forEach(testUrl => {
       if (testUrl !== process.env.ORGVERIFICATION_URL) {
         browser.get(testUrl);
+        handleAlert();
+        browser.wait(
+          browserWait.elementToBeClickable(errorPage.homeButton),
+          10000
+        );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         returnToOrgVerification();
       }
@@ -138,6 +161,11 @@ describe("Route protection", () => {
     routingTestUrls.forEach(testUrl => {
       if (onSubsequentPages) {
         browser.get(testUrl);
+        handleAlert();
+        browser.wait(
+          browserWait.elementToBeClickable(errorPage.homeButton),
+          10000
+        );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         returnToTermsOfUse();
       }
@@ -148,26 +176,16 @@ describe("Route protection", () => {
     });
   });
 
-  it("verify route protection from consent page", () => {
-    let onSubsequentPages = false;
-    routingTestUrls.forEach(testUrl => {
-      if (onSubsequentPages) {
-        browser.get(testUrl);
-        expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
-        returnToConsent();
-      }
-
-      if (testUrl === process.env.BCSC_CONSENT_URL) {
-        onSubsequentPages = true;
-      }
-    });
-  });
-
   it("verify route protection from applicationform page", () => {
     let onSubsequentPages = false;
     routingTestUrls.forEach(testUrl => {
       if (onSubsequentPages) {
         browser.get(testUrl);
+        handleAlert();
+        browser.wait(
+          browserWait.elementToBeClickable(errorPage.homeButton),
+          10000
+        );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         returnToApplicationForm();
       }
@@ -183,6 +201,11 @@ describe("Route protection", () => {
     routingTestUrls.forEach(testUrl => {
       if (onSubsequentPages) {
         browser.get(testUrl);
+        handleAlert();
+        browser.wait(
+          browserWait.elementToBeClickable(errorPage.homeButton),
+          10000
+        );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         returnToInformationReview();
       }
@@ -193,16 +216,21 @@ describe("Route protection", () => {
     });
   });
 
-  it("verify route protection from userconfirmation page", () => {
+  it("verify route protection from consent page", () => {
     let onSubsequentPages = false;
     routingTestUrls.forEach(testUrl => {
       if (onSubsequentPages) {
         browser.get(testUrl);
+        handleAlert();
+        browser.wait(
+          browserWait.elementToBeClickable(errorPage.homeButton),
+          10000
+        );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
-        returnToUserConfirmation();
+        returnToConsent();
       }
 
-      if (testUrl === process.env.USERCONFIRMATION_URL) {
+      if (testUrl === process.env.CONSENT_URL) {
         onSubsequentPages = true;
       }
     });

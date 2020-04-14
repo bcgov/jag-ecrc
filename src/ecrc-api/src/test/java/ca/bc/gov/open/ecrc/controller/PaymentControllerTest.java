@@ -2,7 +2,6 @@ package ca.bc.gov.open.ecrc.controller;
 
 import static org.mockito.Mockito.when;
 
-import ca.bc.gov.open.ecrc.model.RequestLogPaymentFailure;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

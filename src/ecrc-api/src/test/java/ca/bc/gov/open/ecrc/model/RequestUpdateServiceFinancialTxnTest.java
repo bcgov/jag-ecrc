@@ -20,28 +20,29 @@ public class RequestUpdateServiceFinancialTxnTest {
     public void generateQueryStringTest() {
         RequestUpdateServiceFinancialTxn requestUpdateServiceFinancialTxn = new RequestUpdateServiceFinancialTxn();
         requestUpdateServiceFinancialTxn.setOrgTicketNumber("orgTicketNumber");
-        requestUpdateServiceFinancialTxn.setAppl_Party_Id("appl_Party_Id");
-        requestUpdateServiceFinancialTxn.setService_Id("service_Id");
-        requestUpdateServiceFinancialTxn.setcC_Authorization("cC_Authorization");
-        requestUpdateServiceFinancialTxn.setPayment_Date("payment_Date");
-        requestUpdateServiceFinancialTxn.setPayor_Type_Cd("payor_Type_Cd");
-        requestUpdateServiceFinancialTxn.setPayment_Status_Cd("payment_Status_Cd");
-        requestUpdateServiceFinancialTxn.setSession_Id("session_Id");
-        requestUpdateServiceFinancialTxn.setInvoice_Id("invoice_Id");
-        requestUpdateServiceFinancialTxn.setTransaction_Id("transaction_Id");
-        requestUpdateServiceFinancialTxn.setTransaction_Amount("transaction_Amount");
+        requestUpdateServiceFinancialTxn.setApplPartyId("appl_Party_Id");
+        requestUpdateServiceFinancialTxn.setServiceId("service_Id");
+        requestUpdateServiceFinancialTxn.setcCAuthorization("cC_Authorization");
+        requestUpdateServiceFinancialTxn.setPaymentDate("payment_Date");
+        requestUpdateServiceFinancialTxn.setPayorTypeCd("payor_Type_Cd");
+        requestUpdateServiceFinancialTxn.setPaymentStatusCd("payment_Status_Cd");
+        requestUpdateServiceFinancialTxn.setSessionId("session_Id");
+        requestUpdateServiceFinancialTxn.setInvoiceId("invoice_Id");
+        requestUpdateServiceFinancialTxn.setTransactionId("transaction_Id");
+        requestUpdateServiceFinancialTxn.setTransactionAmount("transaction_Amount");
+        requestUpdateServiceFinancialTxn.setRequestGuid("requestGuid");
         
 		Assertions.assertEquals("orgTicketNumber", requestUpdateServiceFinancialTxn.getOrgTicketNumber());
-		Assertions.assertEquals("appl_Party_Id", requestUpdateServiceFinancialTxn.getAppl_Party_Id());
-		Assertions.assertEquals("service_Id", requestUpdateServiceFinancialTxn.getService_Id());
-		Assertions.assertEquals("cC_Authorization", requestUpdateServiceFinancialTxn.getcC_Authorization());
-		Assertions.assertEquals("payment_Date", requestUpdateServiceFinancialTxn.getPayment_Date());
-		Assertions.assertEquals("payor_Type_Cd", requestUpdateServiceFinancialTxn.getPayor_Type_Cd());
-		Assertions.assertEquals("payment_Status_Cd", requestUpdateServiceFinancialTxn.getPayment_Status_Cd());
-		Assertions.assertEquals("session_Id", requestUpdateServiceFinancialTxn.getSession_Id());
-		Assertions.assertEquals("invoice_Id", requestUpdateServiceFinancialTxn.getInvoice_Id());
-		Assertions.assertEquals("transaction_Id", requestUpdateServiceFinancialTxn.getTransaction_Id());
-		Assertions.assertEquals("transaction_Amount", requestUpdateServiceFinancialTxn.getTransaction_Amount());
+		Assertions.assertEquals("appl_Party_Id", requestUpdateServiceFinancialTxn.getApplPartyId());
+		Assertions.assertEquals("service_Id", requestUpdateServiceFinancialTxn.getServiceId());
+		Assertions.assertEquals("cC_Authorization", requestUpdateServiceFinancialTxn.getcCAuthorization());
+		Assertions.assertEquals("payment_Date", requestUpdateServiceFinancialTxn.getPaymentDate());
+		Assertions.assertEquals("payor_Type_Cd", requestUpdateServiceFinancialTxn.getPayorTypeCd());
+		Assertions.assertEquals("payment_Status_Cd", requestUpdateServiceFinancialTxn.getPaymentStatusCd());
+		Assertions.assertEquals("session_Id", requestUpdateServiceFinancialTxn.getSessionId());
+		Assertions.assertEquals("invoice_Id", requestUpdateServiceFinancialTxn.getInvoiceId());
+		Assertions.assertEquals("transaction_Id", requestUpdateServiceFinancialTxn.getTransactionId());
+		Assertions.assertEquals("transaction_Amount", requestUpdateServiceFinancialTxn.getTransactionAmount());
 
         Assertions.assertEquals(expectedQueryString, requestUpdateServiceFinancialTxn.toQueryString());
     }

@@ -1,3 +1,4 @@
+/* eslint-disable prefer-promise-reject-errors */
 import React from "react";
 import { create } from "react-test-renderer";
 import { MemoryRouter } from "react-router-dom";
@@ -8,6 +9,16 @@ import Success from "./Success";
 import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 jest.mock("axios");
+
+const mockHistoryPush = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useHistory: () => ({
+    push: mockHistoryPush,
+    listen: jest.fn()
+  })
+}));
 
 describe("Success Page Component", () => {
   window.scrollTo = jest.fn();
@@ -132,7 +143,7 @@ describe("Success Page Component", () => {
     });
   });
 
-  test("Validate Print", () => {
+  test("Validate Print (on click)", () => {
     const { container } = render(
       <MemoryRouter initialEntries={[successUrl]}>
         <Success page={page} />
@@ -140,6 +151,17 @@ describe("Success Page Component", () => {
     );
 
     fireEvent.click(getByText(container, "Print"));
+    expect(window.print).toHaveBeenCalled();
+  });
+
+  test("Validate Print (on keydown)", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={[successUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    fireEvent.keyDown(getByText(container, "Print"));
     expect(window.print).toHaveBeenCalled();
   });
 
@@ -152,5 +174,173 @@ describe("Success Page Component", () => {
 
     fireEvent.click(getByText(container, "Email"));
     expect(window.open).toHaveBeenCalled();
+  });
+
+  test("Redirects to error page when not authorized on page load", async () => {
+    sessionStorage.clear();
+
+    render(
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalledTimes(1);
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(1);
+  });
+
+  test("Error case for getNextInvoiceId failing without response data and message", async () => {
+    axios.get.mockImplementation(() =>
+      Promise.reject({
+        response: {
+          status: 400
+        }
+      })
+    );
+
+    axios.post.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          urlResponse: "http://sample.com"
+        }
+      })
+    );
+
+    const { container } = render(
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(getByText(container, "Try Again"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalledTimes(1);
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(2);
+  });
+
+  test("Error case for getNextInvoiceId failing with response data and message", async () => {
+    axios.get.mockImplementation(() =>
+      Promise.reject({
+        response: {
+          status: 400,
+          data: {
+            message: "This is bad request error"
+          }
+        }
+      })
+    );
+
+    axios.post.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          urlResponse: "http://sample.com"
+        }
+      })
+    );
+
+    const { container } = render(
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(getByText(container, "Try Again"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalledTimes(2);
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(3);
+  });
+
+  test("Failing logPaymentFailure causes handle error to be called", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.reject({
+        response: {
+          status: 400,
+          data: {
+            message: "This is bad request error"
+          }
+        }
+      })
+    );
+
+    render(
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalledTimes(3);
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(4);
+  });
+
+  test("Failing updateServiceFinancialTxn causes handle error to be called", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.reject({
+        response: {
+          status: 400,
+          data: {
+            message: "This is bad request error"
+          }
+        }
+      })
+    );
+
+    render(
+      <MemoryRouter initialEntries={[successUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalledTimes(4);
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(5);
+  });
+
+  test("Redirects to host home on cancel click when confirm is selected as Yes", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    window.confirm = () => true;
+
+    fireEvent.click(getByText(container, "Cancel and Exit"));
+
+    expect(sessionStorage.getItem("jwt")).toBeFalsy();
+    expect(mockHistoryPush).toHaveBeenCalledWith("/hosthome");
+    expect(mockHistoryPush).toHaveBeenCalledTimes(6);
+  });
+
+  test("Does not redirect to host home on cancel click when confirm is selected as No", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={[failureUrl]}>
+        <Success page={page} />
+      </MemoryRouter>
+    );
+
+    window.confirm = () => false;
+
+    fireEvent.click(getByText(container, "Cancel and Exit"));
+
+    expect(sessionStorage.getItem("jwt")).toBeTruthy();
   });
 });
