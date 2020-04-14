@@ -86,13 +86,12 @@ class OauthControllerTest {
 	@DisplayName("Success - login oauth controller")
 	@Test
 	void testLoginSuccess() throws OauthServiceException, URISyntaxException {
-		
+
 		when(oauthServices.getUserInfo(any())).thenReturn(userInfo);
 		when(oauthServices.getToken(any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
-		when(tokenServices.validateBCSCIDToken(any()))
-				.thenReturn(new ValidationResponse(true, "success"));
-	
+		when(tokenServices.validateBCSCIDToken(any())).thenReturn(new ValidationResponse(true, "success"));
+
 		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID");
 		Assert.assertNotNull(response);
 	}
@@ -110,9 +109,18 @@ class OauthControllerTest {
 	void testLoginError2() throws OauthServiceException, URISyntaxException {
 		when(oauthServices.getToken(any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
-		when(tokenServices.validateBCSCIDToken(any())).
-			thenReturn(new ValidationResponse(true, "success"));
+		when(tokenServices.validateBCSCIDToken(any())).thenReturn(new ValidationResponse(true, "success"));
 		when(oauthServices.getUserInfo(any())).thenThrow(new OauthServiceException("error"));
+		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
+		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+	}
+
+	@DisplayName("Error - login oauth controller (invalid token)")
+	@Test
+	void testLoginError3() throws OauthServiceException, URISyntaxException {
+		when(oauthServices.getToken(any()))
+				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
+		when(tokenServices.validateBCSCIDToken(any())).thenReturn(new ValidationResponse(false, "failure"));
 		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
 		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
