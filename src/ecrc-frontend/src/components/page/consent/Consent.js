@@ -197,19 +197,13 @@ export default function Consent({
       emailType
     };
 
-    let partyId;
-    let sessionId;
-    let invoiceId;
-    let serviceFeeAmount;
-    let serviceId;
-
     let appInfo = {
       previousServiceId
     };
 
     // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
     // eivPassDetailsResults - String returned from equifax, see Shaun
-    let CRC = {
+    const CRC = {
       orgTicketNumber,
       requestGuid: uuid,
       scheduleTypeCd: defaultScheduleTypeCd,
@@ -228,169 +222,26 @@ export default function Consent({
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
+    const crcApplicant = {
+      requestGuid: uuid,
+      returnPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+      applType: orgApplicantRelationship,
+      requestCreateApplicant: createApplicantInfo,
+      requestNewCRCService: CRC
+    };
+
     axios
-      .post("/ecrc/private/createApplicant", createApplicantInfo, {
+      .post("/ecrc/private/createNewCRCApplicant", crcApplicant, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
-      .then(createApplicantResponse => {
-        partyId = createApplicantResponse.data.partyId;
+      .then(crcApplicantResponse => {
+        const appResponseInfo = crcApplicantResponse.data;
 
         appInfo = {
           ...appInfo,
-          partyId
-        };
-
-        if (share) {
-          const shareCRC = {
-            orgTicketNumber,
-            applPartyId: partyId,
-            scopeLevelCd: defaultCrcScopeLevelCd,
-            applicantPosn: jobTitle,
-            authReleaseEivVendorYN: "Y",
-            authReleaseToOrgYN: "Y",
-            applIdentityVerifiedEivYN: "Y",
-            previousServiceId,
-            eivPassDetailsResults: "eivPassDetailsResults",
-            requestGuid: uuid
-          };
-
-          axios
-            .post("/ecrc/private/createSharingService", shareCRC, {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            })
-            .then(createShareResponse => {
-              serviceId = createShareResponse.data.serviceId;
-
-              appInfo = {
-                ...appInfo,
-                serviceId
-              };
-              setApplicationInfo(appInfo);
-              setLoading(false);
-              history.push("/criminalrecordcheck/success");
-            });
-        }
-
-        return axios.get(
-          `/ecrc/private/getNextSessionId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          }
-        );
-      })
-      .then(getSessionResponse => {
-        sessionId = getSessionResponse.data.sessionId;
-
-        appInfo = {
-          ...appInfo,
-          sessionId
-        };
-
-        CRC = {
-          ...CRC,
-          applPartyId: partyId,
-          sessionId
-        };
-
-        if (orgApplicantRelationship === "ONETIME") {
-          CRC.orgApplToPay = "O";
-        } else if (orgApplicantRelationship === "EMPLOYEE") {
-          CRC.orgApplToPay = "A";
-        }
-
-        if (orgApplicantRelationship === "VOLUNTEER") {
-          axios
-            .post("/ecrc/private/createNewCRCService", CRC, {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            })
-            .then(volunteerCRCResponse => {
-              serviceId = volunteerCRCResponse.data.serviceId;
-
-              appInfo = {
-                ...appInfo,
-                serviceId
-              };
-
-              setApplicationInfo(appInfo);
-              setLoading(false);
-              history.push("/criminalrecordcheck/success");
-            });
-
-          return false;
-        }
-
-        return axios.get(
-          `/ecrc/private/getNextInvoiceId?orgTicketNumber=${orgTicketNumber}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          }
-        );
-      })
-      .then(getInvoiceResponse => {
-        if (!getInvoiceResponse) {
-          return getInvoiceResponse;
-        }
-
-        invoiceId = getInvoiceResponse.data.invoiceId;
-
-        appInfo = {
-          ...appInfo,
-          invoiceId
-        };
-
-        CRC.invoiceId = invoiceId;
-
-        return axios.post("/ecrc/private/createNewCRCService", CRC, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-      })
-      .then(newCRCResponse => {
-        if (!newCRCResponse) {
-          return newCRCResponse;
-        }
-        serviceId = newCRCResponse.data.serviceId;
-
-        appInfo = {
-          ...appInfo,
-          serviceId
-        };
-
-        if (orgApplicantRelationship === "ONETIME") {
-          setApplicationInfo(appInfo);
-          setLoading(false);
-          history.push("/criminalrecordcheck/success");
-        }
-
-        return axios.get(
-          `/ecrc/private/getServiceFeeAmount?orgTicketNumber=${orgTicketNumber}&scheduleTypeCd=${defaultScheduleTypeCd}&scopeLevelCd=${defaultCrcScopeLevelCd}&requestGuid=${uuid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          }
-        );
-      })
-      .then(serviceFeeResponse => {
-        if (!serviceFeeResponse) {
-          return serviceFeeResponse;
-        }
-        serviceFeeAmount = serviceFeeResponse.data.serviceFeeAmount;
-
-        appInfo = {
-          ...appInfo,
-          serviceFeeAmount
+          ...appResponseInfo
         };
 
         setApplicationInfo(appInfo);
@@ -398,30 +249,12 @@ export default function Consent({
         saveOrg();
         saveApplicationInfo(appInfo);
 
-        const createURL = {
-          invoiceNumber: invoiceId,
-          requestGuid: uuid,
-          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          totalItemsAmount: serviceFeeAmount,
-          serviceIdRef1: serviceId,
-          partyIdRef2: partyId
-        };
-
-        return axios.post("/ecrc/private/createPaymentUrl", createURL, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-      })
-      .then(urlResponse => {
-        if (!urlResponse) {
-          return;
+        if (appInfo.paymentUrl) {
+          window.location.href = appInfo.paymentUrl;
+          setLoading(false);
+        } else {
+          history.push("/criminalrecordcheck/success");
         }
-
-        window.location.href = urlResponse.data.paymentUrl;
-        setLoading(false);
       })
       .catch(error => {
         handleError(error);
