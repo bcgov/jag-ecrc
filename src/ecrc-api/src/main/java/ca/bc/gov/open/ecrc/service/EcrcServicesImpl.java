@@ -117,7 +117,7 @@ public class EcrcServicesImpl implements EcrcServices {
 		String createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
 		return ecrcWebMethodsService.callWebMethodsService(createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
 	}
-
+	@SuppressWarnings("java:S3776")
 	public ResponseEntity<String> createNewCRCApplicant(RequestNewCRCApplicant requestNewCRCApplicant) {
 		ResponseServiceDetails serviceDetails = new ResponseServiceDetails();
 		Gson gson = new Gson();

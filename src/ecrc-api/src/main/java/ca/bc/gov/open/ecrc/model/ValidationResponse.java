@@ -18,8 +18,6 @@ public class ValidationResponse {
 	@JsonProperty("message")
 	private String message;
 	
-	public ValidationResponse() {}
-	
 	public ValidationResponse(boolean valid, String message) {
 		this.valid = valid; 
 		this.message = message; 
