@@ -224,9 +224,7 @@ export default function Consent({
 
     const crcApplicant = {
       requestGuid: uuid,
-      approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-      declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-      errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+      returnPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
       applType: orgApplicantRelationship,
       requestCreateApplicant: createApplicantInfo,
       requestNewCRCService: CRC
