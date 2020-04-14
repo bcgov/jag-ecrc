@@ -41,8 +41,6 @@ describe("terms of use page", () => {
       10000
     );
 
-    browser.sleep(4000);
-
     orgVerificationPage.continue.click();
   });
 

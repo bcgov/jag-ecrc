@@ -51,7 +51,6 @@ describe("success", () => {
       10000
     );
 
-    browser.sleep(4000);
     orgVerificationPage.continue.click();
     termsOfUsePage.readAndAcceptCheckBox.click();
     browser.executeScript(

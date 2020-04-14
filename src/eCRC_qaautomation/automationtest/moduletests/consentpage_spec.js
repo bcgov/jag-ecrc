@@ -54,7 +54,6 @@ describe("consent page", function() {
       10000
     );
 
-    browser.sleep(4000);
     orgVerificationPage.continue.click();
     termsOfUsePage.readAndAcceptCheckBox.click();
     browser.executeScript(

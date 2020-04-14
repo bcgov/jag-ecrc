@@ -51,7 +51,7 @@ describe("Route protection", () => {
       browserWait.elementToBeClickable(orgVerificationPage.continue),
       10000
     );
-    browser.sleep(4000);
+
     orgVerificationPage.continue.click();
   };
 

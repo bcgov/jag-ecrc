@@ -10,11 +10,11 @@ class ApplicationFormPage {
     this.emailAddress = element(by.id("emailAddress"));
     this.applicantPosition = element(by.id("applicantPosition"));
     this.organizationFacility = element(by.id("organizationFacility"));
-    this.currentAddressStreet = element(by.id("addressLine1"));
-    this.currentAddressCity = element(by.id("cityNm"));
-    this.currentAddressProvince = element(by.id("provinceNm"));
-    this.currentAddresPostalCode = element(by.id("postalCodeTxt"));
-    this.currentAddresCountry = element(by.id("countryNm"));
+    this.currentAddressStreet = element.all(by.id("addressLine1")).first();
+    this.currentAddressCity = element.all(by.id("cityNm")).first();
+    this.currentAddressProvince = element.all(by.id("provinceNm")).first();
+    this.currentAddresPostalCode = element.all(by.id("postalCodeTxt")).first();
+    this.currentAddresCountry = element.all(by.id("countryNm")).first();
     this.currentAddressNotSameAsMailingAddressCheckBox = element(by.id("no"));
     this.mailingAddressStreet = element(by.id("mailingAddressLine1"));
     this.mailingAddressCity = element(by.id("mailingCityNm"));

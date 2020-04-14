@@ -49,8 +49,6 @@ describe("success", () => {
       10000
     );
 
-    browser.sleep(4000);
-
     orgVerificationPage.continue.click();
     termsOfUsePage.readAndAcceptCheckBox.click();
     browser.executeScript(
@@ -197,7 +195,6 @@ describe("success", () => {
     paymentPage.cardNumber.sendKeys(testInput.declinedNoResponseCardNumber);
     paymentPage.cardCVD.sendKeys(testInput.declinedNoResponseCardCVD);
     paymentPage.payNow.click();
-    browser.sleep(20000);
 
     expect(paymentPage.paymentStatus.getText()).toBe(testInput.declinedStatus);
   });

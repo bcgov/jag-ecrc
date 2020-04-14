@@ -123,19 +123,18 @@ describe("landing page", () => {
     describe("I am ready", () => {
       it("Verify if the user is directed to the right page on validating a valid access code", () => {
         landingPage.accessCode.sendKeys(inputCodes.accessCode.validCode.code);
-
         landingPage.validate.click().then(() => {
-          browser.sleep(4000);
+          browser.sleep(1500);
           expect(process.env.ORGVERIFICATION_URL).toBe(browser.getCurrentUrl());
         });
       });
 
       it("Verify if the user is directed to the right page on validating a valid access code", () => {
         landingPage.accessCode.sendKeys(inputCodes.accessCode.invalidCode.code);
-
         landingPage.validate.click().then(() => {
-          browser.sleep(4000);
+          browser.sleep(1500);
           expect(process.env.TRANSITION_URL).toBe(browser.getCurrentUrl());
+          handleAlert();
         });
       });
     });
