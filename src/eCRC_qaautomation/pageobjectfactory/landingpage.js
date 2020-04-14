@@ -1,7 +1,9 @@
 class LandingPageObjects {
   constructor() {
     this.needMoreInformationEmployeeOrVolunteer = element(
-      by.css("a[href='volunteer']")
+      by.css(
+        "a[href='https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information']"
+      )
     );
     this.whyINeedToApplyForACriminalRecordCheck = element(
       by.css(

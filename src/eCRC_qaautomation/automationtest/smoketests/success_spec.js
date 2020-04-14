@@ -1,5 +1,3 @@
-//import { browser, element, by } from "protractor"
-
 require("dotenv").config();
 
 const bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
@@ -12,6 +10,7 @@ const consentPage = require("../../pageobjectfactory/consentpage.js");
 const applicationFormPage = require("../../pageobjectfactory/applicationformpage");
 const paymentPage = require("../../pageobjectfactory/paymentpage");
 const informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
+const successPage = require("../../pageobjectfactory/successpage");
 const testInput = require("../../input/success");
 
 describe("success", () => {
@@ -20,8 +19,21 @@ describe("success", () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
   });
 
+  const handleAlert = () => {
+    browser
+      .switchTo()
+      .alert()
+      .then(
+        alert => {
+          alert.accept();
+        },
+        err => {}
+      );
+  };
+
   it("verify that user with a valid org code and bcsc can get through the entire application flow", () => {
     browser.get(process.env.URL);
+    handleAlert();
 
     browser
       .manage()
@@ -37,10 +49,7 @@ describe("success", () => {
       10000
     );
 
-    browser.sleep(4000);
-
     orgVerificationPage.continue.click();
-
     termsOfUsePage.readAndAcceptCheckBox.click();
     browser.executeScript(
       "arguments[0].scrollIntoView(true)",
@@ -70,7 +79,6 @@ describe("success", () => {
       ),
       5000
     );
-
     expect(applicationFormPage.firstName.getAttribute("value")).toBe(
       testInput.applicationFormFirstName
     );
@@ -142,20 +150,20 @@ describe("success", () => {
 
     informationReviewPage.cityAndCountryBirth
       .getText()
-      .then(function(cityAndCountryBirth) {
+      .then(cityAndCountryBirth => {
         expect(cityAndCountryBirth).toBe(
           testInput.applicationFormCityAndCountryBirth
         );
       });
-    informationReviewPage.phoneNumber.getText().then(function(phoneNumber) {
+    informationReviewPage.phoneNumber.getText().then(phoneNumber => {
       expect(phoneNumber).toBe(testInput.applicationFormPhoneNumber);
     });
-    informationReviewPage.emailAddress.getText().then(function(emailAddress) {
+    informationReviewPage.emailAddress.getText().then(emailAddress => {
       expect(emailAddress).toBe(testInput.applicationFormEmailAddress);
     });
     informationReviewPage.applicantPosition
       .getText()
-      .then(function(applicantPosition) {
+      .then(applicantPosition => {
         expect(applicantPosition).toBe(
           testInput.applicationFormApplicantPosition
         );

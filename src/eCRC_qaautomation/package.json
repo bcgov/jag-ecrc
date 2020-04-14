@@ -9,11 +9,17 @@
   "scripts": {
     "webdriver-manager-update": "./node_modules/.bin/webdriver-manager update",
     "webdriver-manager-start": "./node_modules/.bin/webdriver-manager start",
-    "protractor": "./node_modules/.bin/protractor configuration.js --suite success",
+    "success": "./node_modules/.bin/protractor configuration.js --suite success",
     "module": "./node_modules/.bin/protractor configuration.js --suite module",
     "routing": "./node_modules/.bin/protractor configuration.js --suite routing",
     "volunteer": "./node_modules/.bin/protractor configuration.js --suite volunteer",
-    "testdev": "./node_modules/.bin/protractor configuration.js --suite successpage"
+    "successpage": "./node_modules/.bin/protractor configuration.js --suite successpage",
+    "consent": "./node_modules/.bin/protractor configuration.js --suite consent",
+    "landing": "./node_modules/.bin/protractor configuration.js --suite landing",
+    "bcscredirect": "./node_modules/.bin/protractor configuration.js --suite bcscredirect",
+    "termsofuse": "./node_modules/.bin/protractor configuration.js --suite termsofuse",
+    "regression": "./node_modules/.bin/protractor configuration.js --suite regression",
+    "smoke": "./node_modules/.bin/protractor configuration.js --suite smoke"
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
