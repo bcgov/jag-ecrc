@@ -59,6 +59,12 @@ export default function Transition({
                 sessionStorage.setItem("validExit", true);
                 window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
               }}
+              role="button"
+              onKeyDown={() => {
+                sessionStorage.setItem("validExit", true);
+                window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
+              }}
+              tabIndex={0}
             >
               here
             </span>
