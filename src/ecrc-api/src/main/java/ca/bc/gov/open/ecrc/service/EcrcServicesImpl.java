@@ -32,7 +32,10 @@ import static ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants.WEBSERVICE_ER
 @Configuration
 @EnableConfigurationProperties(EcrcProperties.class)
 public class EcrcServicesImpl implements EcrcServices {
-
+	private static final String ONETIME = "O";
+	private static final String EMPLOYEE = "A";
+	private static final String EMPLOYEE_TYPE = "EMPLOYEE";
+	private static final String ONETIME_TYPE = "ONETIME";
 	@Autowired
 	private EcrcProperties ecrcProps;
 
@@ -124,7 +127,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			ResponseEntity<String> clientResp = createApplicant(requestNewCRCApplicant.getRequestCreateApplicant());
 			if (clientResp.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(clientResp.getBody());
-				serviceDetails.setPartyId(obj.getString("partyId"));
+				serviceDetails.setPartyId(String.valueOf(obj.getInt("partyId")));
 				logger.info("Applicant Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("Applicant Failed {}", requestNewCRCApplicant.getRequestGuid());
@@ -133,51 +136,62 @@ public class EcrcServicesImpl implements EcrcServices {
 			ResponseEntity<String> getNextSession = getNextSessionId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
 			if (getNextSession.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(getNextSession.getBody());
-				serviceDetails.setSessionId(obj.getString("sessionId"));
+				serviceDetails.setSessionId(String.valueOf(obj.getInt("sessionId")));
 				logger.info("Session Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("Session Failed {}", requestNewCRCApplicant.getRequestGuid());
 				return getNextSession;
 			}
-			ResponseEntity<String> getNextInvoice = getNextInvoiceId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
-			if (getNextInvoice.getStatusCode() == HttpStatus.OK) {
-				obj = new JSONObject(getNextInvoice.getBody());
-				serviceDetails.setInvoiceId(obj.getString("invoiceId"));
-				logger.info("Invoice Created {}", requestNewCRCApplicant.getRequestGuid());
-			} else {
-				logger.info("Invoice Failed {}", requestNewCRCApplicant.getRequestGuid());
-				return getNextInvoice;
-			}
-			ResponseEntity<String> getServiceFeeAmount = getServiceFeeAmount(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(),requestNewCRCApplicant.getRequestNewCRCService().getScheduleTypeCd(),requestNewCRCApplicant.getRequestNewCRCService().getScopeLevelCd(), requestNewCRCApplicant.getRequestGuid());
-			if (getServiceFeeAmount.getStatusCode() == HttpStatus.OK) {
-				obj = new JSONObject(getServiceFeeAmount.getBody());
-				serviceDetails.setServiceFeeAmount(obj.getString("serviceFeeAmount"));
-				logger.info("Fee retrieved {}", requestNewCRCApplicant.getRequestGuid());
-			} else {
-				logger.info("fee failed {}", requestNewCRCApplicant.getRequestGuid());
-				return getServiceFeeAmount;
+			if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE) || requestNewCRCApplicant.getApplType().equalsIgnoreCase(ONETIME_TYPE)) {
+				ResponseEntity<String> getNextInvoice = getNextInvoiceId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
+				if (getNextInvoice.getStatusCode() == HttpStatus.OK) {
+					obj = new JSONObject(getNextInvoice.getBody());
+					serviceDetails.setInvoiceId(String.valueOf(obj.getInt("invoiceId")));
+					logger.info("Invoice Created {}", requestNewCRCApplicant.getRequestGuid());
+				} else {
+					logger.info("Invoice Failed {}", requestNewCRCApplicant.getRequestGuid());
+					return getNextInvoice;
+				}
 			}
 			requestNewCRCApplicant.getRequestNewCRCService().setApplPartyId(serviceDetails.getPartyId());
 			requestNewCRCApplicant.getRequestNewCRCService().setSessionId(serviceDetails.getSessionId());
 			requestNewCRCApplicant.getRequestNewCRCService().setInvoiceId(serviceDetails.getInvoiceId());
+			if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE)) {
+				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay(EMPLOYEE);
+			} else if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(ONETIME_TYPE)) {
+				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay(ONETIME);
+			} else {
+				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay("");
+			}
 			ResponseEntity<String> createCRC = createNewCRCService(requestNewCRCApplicant.getRequestNewCRCService());
 			if (createCRC.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(createCRC.getBody());
-				serviceDetails.setServiceId(obj.getString("serviceId"));
+				serviceDetails.setServiceId(String.valueOf(obj.getInt("serviceId")));
 				logger.info("CRC Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("CRC Failed {}", requestNewCRCApplicant.getRequestGuid());
 				return createCRC;
 			}
-			RequestPaymentService requestPaymentService = new RequestPaymentService("P",serviceDetails.getInvoiceId(),requestNewCRCApplicant.getApprovedPage(),requestNewCRCApplicant.getDeclinedPage(),requestNewCRCApplicant.getErrorPage(),serviceDetails.getServiceFeeAmount(),"30",serviceDetails.getServiceId(),serviceDetails.getPartyId(),requestNewCRCApplicant.getRequestGuid());
-			ResponseEntity<String> paymentURl = ecrcPaymentService.createPaymentUrl(requestPaymentService);
-			if (paymentURl.getStatusCode() == HttpStatus.OK) {
-				obj = new JSONObject(paymentURl.getBody());
-				serviceDetails.setPaymentUrl(obj.getString("respValue"));
-				logger.info("Payment URL Created {}", requestNewCRCApplicant.getRequestGuid());
-			} else {
-				logger.info("Payment URL Failed {}", requestNewCRCApplicant.getRequestGuid());
-				return paymentURl;
+			if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE)) {
+				ResponseEntity<String> getServiceFeeAmount = getServiceFeeAmount(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestNewCRCService().getScheduleTypeCd(), requestNewCRCApplicant.getRequestNewCRCService().getScopeLevelCd(), requestNewCRCApplicant.getRequestGuid());
+				if (getServiceFeeAmount.getStatusCode() == HttpStatus.OK) {
+					obj = new JSONObject(getServiceFeeAmount.getBody());
+					serviceDetails.setServiceFeeAmount(String.valueOf(obj.getDouble("serviceFeeAmount")));
+					logger.info("Fee retrieved {}", requestNewCRCApplicant.getRequestGuid());
+				} else {
+					logger.info("fee failed {}", requestNewCRCApplicant.getRequestGuid());
+					return getServiceFeeAmount;
+				}
+				RequestPaymentService requestPaymentService = new RequestPaymentService("P", serviceDetails.getInvoiceId(), requestNewCRCApplicant.getApprovedPage(), requestNewCRCApplicant.getDeclinedPage(), requestNewCRCApplicant.getErrorPage(), serviceDetails.getServiceFeeAmount(), "30", serviceDetails.getServiceId(), serviceDetails.getPartyId(), requestNewCRCApplicant.getRequestGuid());
+				ResponseEntity<String> paymentURl = ecrcPaymentService.createPaymentUrl(requestPaymentService);
+				if (paymentURl.getStatusCode() == HttpStatus.OK) {
+					obj = new JSONObject(paymentURl.getBody());
+					serviceDetails.setPaymentUrl(obj.getString("paymentUrl"));
+					logger.info("Payment URL Created {}", requestNewCRCApplicant.getRequestGuid());
+				} else {
+					logger.info("Payment URL Failed {}", requestNewCRCApplicant.getRequestGuid());
+					return paymentURl;
+				}
 			}
 			logger.info("Applicant and CRC Created {}", requestNewCRCApplicant.getRequestGuid());
 			return new ResponseEntity<>(gson.toJson(serviceDetails),HttpStatus.OK);

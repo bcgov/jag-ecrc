@@ -10,8 +10,9 @@ export default function Transition({
 }) {
   useEffect(() => {
     setTimeout(() => {
+      sessionStorage.setItem("validExit", true);
       window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
-    }, 4000);
+    }, 6000);
   }, []);
 
   return (
@@ -19,19 +20,6 @@ export default function Transition({
       <Header header={header} />
       <div className="page">
         <div className="transition-content col-md-8">
-          <p>
-            You are unable to login with your BC Services Card at this time.
-          </p>
-          <br />
-          <p>
-            You’ll be provided with an alternative way to submit your criminal
-            record check and will be required to re-enter your access code to
-            continue. You will be redirected automatically. If you are not
-            redirected automatically, please click{" "}
-            <a href="https://justice.gov.bc.ca/eCRC/home.htm">here</a>
-            {"."}
-          </p>
-          <br />
           {transitionReason === "notwhitelisted" && (
             <p>
               We are transitioning our client organizations currently using
@@ -48,11 +36,26 @@ export default function Transition({
             </p>
           )}
           {transitionReason === "bcsc" && (
-            <p>
-              We require users to have a photo BC Services Card to access the
-              Criminal Record Check at this time.
-            </p>
+            <div>
+              <p>
+                You are unable to login with your BC Services Card at this time.
+              </p>
+              <br />
+              <p>
+                We require users to have a photo BC Services Card to access the
+                Criminal Record Check at this time.
+              </p>
+            </div>
           )}
+          <br />
+          <p>
+            You’ll be provided with an alternative way to submit your criminal
+            record check and will be required to re-enter your access code to
+            continue. You will be redirected automatically. If you are not
+            redirected automatically, please click{" "}
+            <a href="https://justice.gov.bc.ca/eCRC/home.htm">here</a>
+            {"."}
+          </p>
         </div>
       </div>
       <Footer />

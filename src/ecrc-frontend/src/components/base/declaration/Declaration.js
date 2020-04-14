@@ -28,7 +28,12 @@ export default function Declaration({
           )}
           {shareConsent && (
             <span className="declaration-cb">
-              This is checkbox1 for sharing on consent.
+              I understand that to share the result of a criminal record check,
+              I must have completed a criminal record check within the last 5
+              years through the Criminal Records Review Programs (CRRP) and the
+              sharing request must be for the same type of check as previously
+              completed, either for children, vulnerable adults, or both
+              children and vulnerable adults.
             </span>
           )}
           <span id="asterisk" className="mandatory">
@@ -63,7 +68,13 @@ export default function Declaration({
           )}
           {shareConsent && (
             <span className="declaration-cb">
-              This is checkbox2 for sharing on consent.
+              I confirm I have completed a criminal record check within the past
+              five years with the CRRP which did not result in a determination
+              of risk to children and/or vulnerable adults as defined in the{" "}
+              <i>Criminal Records Review Act</i>. I understand no details will
+              be disclosed to the organization I am applying to, only the
+              result. I hereby consent to share the result of the completed
+              check with the organization I am applying to.
             </span>
           )}
           <span id="asterisk" className="mandatory">
@@ -100,7 +111,9 @@ export default function Declaration({
           )}
           {shareConsent && (
             <span className="declaration-cb">
-              This is checkbox3 for sharing on consent.
+              I understand that if the Registrar determines I do not have a
+              criminal record check to share according to the above criteria, I
+              will be promptly notified.
             </span>
           )}
           <span id="asterisk" className="mandatory">
@@ -121,7 +134,12 @@ export default function Declaration({
           )}
           {shareConsent && (
             <span className="declaration-cb">
-              This is checkbox4 for sharing on consent.
+              I understand that within 5 years of the date of my completing this
+              Consent to Share a Criminal Record Check form, should the CRRP
+              make a determination that I pose a risk to children and/or
+              vulnerable adults, the Deputy Registrar will promptly provide
+              notification to me and to the persons and entities (organizations)
+              identified on this Consent to Share a Criminal Record Check.
             </span>
           )}
           <span id="asterisk" className="mandatory">

@@ -127,19 +127,6 @@ export default function Consent({
     }
   };
 
-  const toSuccess = () => {
-    if (!isAuthorized()) {
-      setError({
-        status: 590,
-        message: "Session Expired"
-      });
-      setToError(true);
-      return;
-    }
-
-    history.push("/criminalrecordcheck/success");
-  };
-
   const handleError = error => {
     setToError(true);
 
@@ -283,9 +270,8 @@ export default function Consent({
                 serviceId
               };
               setApplicationInfo(appInfo);
-
-              toSuccess();
               setLoading(false);
+              history.push("/criminalrecordcheck/success");
             });
         }
 
@@ -334,9 +320,8 @@ export default function Consent({
               };
 
               setApplicationInfo(appInfo);
-
-              toSuccess();
               setLoading(false);
+              history.push("/criminalrecordcheck/success");
             });
 
           return false;
@@ -384,9 +369,8 @@ export default function Consent({
 
         if (orgApplicantRelationship === "ONETIME") {
           setApplicationInfo(appInfo);
-
           setLoading(false);
-          toSuccess();
+          history.push("/criminalrecordcheck/success");
         }
 
         return axios.get(
@@ -448,12 +432,6 @@ export default function Consent({
     return <Redirect to="/hosthome" />;
   }
 
-  const asterisk = (
-    <span id="asterisk" className="mandatory">
-      *
-    </span>
-  );
-
   if (toError) {
     return <Redirect to="/criminalrecordcheck/error" />;
   }
@@ -465,10 +443,12 @@ export default function Consent({
         <div className="content col-md-8">
           <h1>Consent for Criminal Record Check</h1>
           <p>
-            In this section, you consent to a criminal background check. Please
-            read the declaration before agreeing.
+            I{", "}
+            <i>
+              {legalFirstNm} {legalSurnameNm}
+            </i>
+            {", "}consent to the following:
           </p>
-          <p>You must complete all mandatory fields ({asterisk} ):</p>
           <Declaration
             checkFirstBox={() => setFirstBoxChecked(!firstBoxChecked)}
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
