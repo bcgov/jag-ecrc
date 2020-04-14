@@ -1,11 +1,11 @@
 package ca.bc.gov.open.ecrc;
 
 
-//@SpringBootTest
-//@TestPropertySource("classpath:application-test.properties")
+@SpringBootTest
+@TestPropertySource("classpath:application-test.properties")
 class EcrcApiApplicationTests {
 
-	//@Test
+	@Test
 	void contextLoads() {
 	}
 

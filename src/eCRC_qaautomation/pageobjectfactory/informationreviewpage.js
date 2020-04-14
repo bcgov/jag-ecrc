@@ -22,16 +22,18 @@ class InformationReviewPage {
     this.street = element(
       by.xpath("//td[text()='Mailing Address']/following-sibling::td")
     );
-    this.city = element(by.xpath("//td[text()='City']/following-sibling::td"));
-    this.province = element(
-      by.xpath("//td[text()='Province']/following-sibling::td")
-    );
-    this.postalCode = element(
-      by.xpath("//td[text()='Postal Code']/following-sibling::td")
-    );
-    this.country = element(
-      by.xpath("//td[text()='Country']/following-sibling::td")
-    );
+    this.city = element
+      .all(by.xpath("//td[text()='City']/following-sibling::td"))
+      .first();
+    this.province = element
+      .all(by.xpath("//td[text()='Province']/following-sibling::td"))
+      .first();
+    this.postalCode = element
+      .all(by.xpath("//td[text()='Postal Code']/following-sibling::td"))
+      .first();
+    this.country = element
+      .all(by.xpath("//td[text()='Country']/following-sibling::td"))
+      .first();
     this.phoneNumber = element(
       by.xpath("//td[text()='Primary Phone Number']/following-sibling::td")
     );

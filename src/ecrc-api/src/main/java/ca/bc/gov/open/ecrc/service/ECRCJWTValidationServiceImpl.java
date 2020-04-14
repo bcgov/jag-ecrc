@@ -25,14 +25,9 @@ import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
 import com.nimbusds.jwt.proc.DefaultJWTClaimsVerifier;
 import com.nimbusds.jwt.proc.DefaultJWTProcessor;
-import com.nimbusds.oauth2.sdk.TokenResponse;
-import com.nimbusds.oauth2.sdk.token.AccessToken;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.model.ValidationResponse;
-import ca.bc.gov.open.ecrc.util.AES256;
-import net.minidev.json.JSONObject;
-import net.minidev.json.parser.JSONParser;
 
 /**
  * 
@@ -139,52 +134,6 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 		}
 
 		return val;
-	}
-
-
-	/**
-	 * 
-	 * Validate the PER claim (Decrypts and validates the BCSC tokens within).
-	 * 
-	 */
-	@Override
-	public ValidationResponse perValidate(String tokens) {
-		ValidationResponse resp = new ValidationResponse();
-		// Decrypt the original claim (labeled "PER") containing the tokens BCSC
-		String decryptedTokens = AES256.decrypt(tokens, ecrcProps.getOauthPERSecret());
-		JSONParser p = new JSONParser(JSONParser.MODE_RFC4627);
-		JSONObject obj;
-		TokenResponse response;
-		try {
-			obj = (JSONObject) p.parse(decryptedTokens);
-			response = TokenResponse.parse(obj);
-		} catch (com.nimbusds.oauth2.sdk.ParseException | net.minidev.json.parser.ParseException e) {
-			logger.error("PER Validate Failed to Parse. ", e);
-			resp.setMessage("PER Claim Invalid");
-			return resp;
-		}
-		
-		// Fetch both tokens within the decrypted string. 
-		AccessToken accessToken = response.toSuccessResponse().getTokens().getAccessToken();
-		String idToken = (String) response.toSuccessResponse().getCustomParameters().get("id_token");
-
-		ValidationResponse val1 = validateBCSCAccessToken(accessToken.getValue());
-		ValidationResponse val2 = validateBCSCIDToken(idToken);
-		Boolean bothValid = val1.isValid() && val2.isValid();
-		
-		// merge the response of two tests into one. 
-		if (Boolean.FALSE.equals(bothValid)) {
-			resp.setValid(false);
-			if ( !val1.isValid() ) 
-				resp.setMessage( val1.getMessage() );
-			else 
-				resp.setMessage( val2.getMessage());
-		} else {
-			resp.setValid(true);
-			resp.setMessage("Successful JWT validation");
-		}
-
-		return resp; 
 	}
 
 }
