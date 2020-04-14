@@ -33,7 +33,7 @@ public class GetProvinceListController {
 			return ecrcServices.getProvinceList(requestGuid);
 		} catch (Exception ex) {
 			logger.error("Error in ecrc service: ", ex);
-			return new ResponseEntity(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+			return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 					EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
 		}
 	}

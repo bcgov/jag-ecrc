@@ -71,6 +71,7 @@ class RequestCreateApplicantTest {
 		requestCreateApplicant.setProvinceNm("provinceNm");
 		requestCreateApplicant.setEmailAddress("emailAddress");
 		requestCreateApplicant.setEmailType("emailType");
+		requestCreateApplicant.setRequestGuid("requestGuid");
 
 		Assertions.assertEquals("addressLine1", requestCreateApplicant.getAddressLine1());
 		Assertions.assertEquals("addressLine2", requestCreateApplicant.getAddressLine2());

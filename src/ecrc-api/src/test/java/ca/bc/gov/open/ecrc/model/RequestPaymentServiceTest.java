@@ -38,6 +38,7 @@ class RequestPaymentServiceTest {
 		paymentInfo.setServiceIdRef1("serviceIdRef1");
 		paymentInfo.setTotalItemsAmount("totalItemsAmount");
 		paymentInfo.setTransType("transType");
+		paymentInfo.setRequestGuid("requestGuid");
 		
 		Assertions.assertEquals("approvedPage", paymentInfo.getApprovedPage());
 		Assertions.assertEquals("declinedPage", paymentInfo.getDeclinedPage());

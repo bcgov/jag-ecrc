@@ -38,6 +38,7 @@ public class RequestNewCRCServiceTest {
         requestNewCRCService.setAuthReleaseToOrgYN("auth_Release_To_Org_YN");
         requestNewCRCService.setApplIdentityVerifiedEIVYN("appl_Identity_Verified_EIV_YN");
         requestNewCRCService.setEivPassDetailsResults("eivPassDetailsResults");
+        requestNewCRCService.setRequestGuid("requestGuid");
 
 		Assertions.assertEquals("orgTicketNumber", requestNewCRCService.getOrgTicketNumber());
 		Assertions.assertEquals("schedule_Type_Cd", requestNewCRCService.getScheduleTypeCd());
