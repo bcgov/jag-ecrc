@@ -2,13 +2,7 @@ import React from "react";
 import { create } from "react-test-renderer";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import {
-  render,
-  fireEvent,
-  getAllByRole,
-  wait,
-  getByTestId
-} from "@testing-library/react";
+import { render, fireEvent, wait, getByTestId } from "@testing-library/react";
 
 import Transition from "./Transition";
 
