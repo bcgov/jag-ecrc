@@ -1,5 +1,3 @@
-//import { browser, element, by } from "protractor"
-
 require("dotenv").config();
 
 const bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");

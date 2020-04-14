@@ -1,5 +1,3 @@
-//import { browser, element, by } from "protractor"
-
 require("dotenv").config();
 const landingPage = require("../../pageobjectfactory/landingpage");
 const orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
