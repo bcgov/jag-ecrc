@@ -2,7 +2,7 @@ package ca.bc.gov.open.ecrc.model;
 
 public class RequestNewCRCApplicant {
     private String requestGuid;
-    private String approvedPage;
+    private String returnPage;
     private String declinedPage;
     private String errorPage;
     private String applType;
@@ -13,9 +13,9 @@ public class RequestNewCRCApplicant {
 
     public void setRequestGuid(String requestGuid) { this.requestGuid = requestGuid; }
 
-    public String getApprovedPage() { return approvedPage; }
+    public String getReturnPage() { return returnPage; }
 
-    public void setApprovedPage(String approvedPage) { this.approvedPage = approvedPage;  }
+    public void setReturnPage(String returnPage) { this.returnPage = returnPage;  }
 
     public String getDeclinedPage() { return declinedPage; }
 
