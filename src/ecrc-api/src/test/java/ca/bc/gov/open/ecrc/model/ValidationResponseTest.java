@@ -15,7 +15,7 @@ class ValidationResponseTest {
 	@DisplayName("Success - ValidationResponse bean")
 	@Test
 	public void generateQueryStringTest() {
-		ValidationResponse validationResponse = new ValidationResponse();
+		ValidationResponse validationResponse = new ValidationResponse(false,"test");
 		validationResponse.setMessage("message");
 		validationResponse.setValid(true);
 

@@ -63,7 +63,7 @@ class JWTAuthorizationFilterTest {
 
 	@Mock
 	EcrcProperties ecrcProperties;
-	
+
 	@Mock
 	ECRCJWTValidationServiceImpl tokenValidationServices;
 
@@ -99,8 +99,7 @@ class JWTAuthorizationFilterTest {
 	void testSuccess2() throws ServletException, IOException {
 		SecurityContextHolder.clearContext();
 		// Authority list malformed
-		ValidationResponse responseBean = new ValidationResponse();
-		responseBean.setValid(true);
+		ValidationResponse responseBean = new ValidationResponse(true, "message");
 		when(tokenValidationServices.validateBCSCAccessToken(any())).thenReturn(responseBean);
 		HttpServletRequest request = mock(HttpServletRequest.class);
 		HttpServletRequestWrapper wrapper = new HttpServletRequestWrapper(request) {
@@ -121,14 +120,13 @@ class JWTAuthorizationFilterTest {
 		filter.doFilterInternal(wrapper, response, chain);
 		Assertions.assertTrue(SecurityContextHolder.getContext().getAuthentication().isAuthenticated());
 	}
-	
+
 	@DisplayName("Error - doFilterInternal jwt filter (private urls)")
 	@Test
 	void testMissingValidPerToken() throws ServletException, IOException {
 		SecurityContextHolder.clearContext();
 		// Authority list malformed
-		ValidationResponse responseBean = new ValidationResponse();
-		responseBean.setValid(false);
+		ValidationResponse responseBean = new ValidationResponse(false, "message");
 		when(tokenValidationServices.validateBCSCAccessToken(any())).thenReturn(responseBean);
 		HttpServletRequest request = mock(HttpServletRequest.class);
 		HttpServletRequestWrapper wrapper = new HttpServletRequestWrapper(request) {
