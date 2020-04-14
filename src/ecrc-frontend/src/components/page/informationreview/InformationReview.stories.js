@@ -102,75 +102,55 @@ const LoadData = props => {
   return props.children({ page });
 };
 
+const NonScheduleD = () => {
+  return (
+    <FailData props={page}>
+      {data => (
+        <MemoryRouter>
+          <InformationReview page={data.page} />
+        </MemoryRouter>
+      )}
+    </FailData>
+  );
+};
+
+const DisplayShareOption = () => {
+  return (
+    <LoadData props={page}>
+      {data => (
+        <MemoryRouter>
+          <InformationReview page={data.page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  );
+};
+
+const ScheduleD = () => {
+  return (
+    <FailData props={page}>
+      {data => (
+        <MemoryRouter>
+          <InformationReview
+            page={{
+              ...data.page,
+              applicant: {
+                ...applicant,
+                organizationFacility: "PBS WIPB"
+              }
+            }}
+          />
+        </MemoryRouter>
+      )}
+    </FailData>
+  );
+};
+
 storiesOf("Information Review", module)
-  .add("Display Share Option", () => (
-    <LoadData props={page}>
-      {data => (
-        <MemoryRouter>
-          <InformationReview page={data.page} />
-        </MemoryRouter>
-      )}
-    </LoadData>
-  ))
-  .add("NonSchedule D Default", () => (
-    <FailData props={page}>
-      {data => (
-        <MemoryRouter>
-          <InformationReview page={data.page} />
-        </MemoryRouter>
-      )}
-    </FailData>
-  ))
-  .add("Schedule D Default", () => (
-    <FailData props={page}>
-      {data => (
-        <MemoryRouter>
-          <InformationReview
-            page={{
-              ...data.page,
-              applicant: {
-                ...applicant,
-                organizationFacility: "PBS WIPB"
-              }
-            }}
-          />
-        </MemoryRouter>
-      )}
-    </FailData>
-  ))
+  .add("Display Share Option", () => <DisplayShareOption />)
+  .add("NonSchedule D Default", () => <NonScheduleD />)
+  .add("Schedule D Default", () => <ScheduleD />)
   .addParameters({ viewport: { defaultViewport: "mobile2" } })
-  .add("NonSchedule D Mobile", () => (
-    <FailData props={page}>
-      {data => (
-        <MemoryRouter>
-          <InformationReview page={data.page} />
-        </MemoryRouter>
-      )}
-    </FailData>
-  ))
-  .add("Schedule D Mobile", () => (
-    <FailData props={page}>
-      {data => (
-        <MemoryRouter>
-          <InformationReview
-            page={{
-              ...data.page,
-              applicant: {
-                ...applicant,
-                organizationFacility: "PBS WIPB"
-              }
-            }}
-          />
-        </MemoryRouter>
-      )}
-    </FailData>
-  ))
-  .add("Display Share Mobile", () => (
-    <LoadData props={page}>
-      {data => (
-        <MemoryRouter>
-          <InformationReview page={data.page} />
-        </MemoryRouter>
-      )}
-    </LoadData>
-  ));
+  .add("NonSchedule D Mobile", () => <NonScheduleD />)
+  .add("Schedule D Mobile", () => <ScheduleD />)
+  .add("Display Share Mobile", () => <DisplayShareOption />);
