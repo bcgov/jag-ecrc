@@ -23776,7 +23776,11 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
          
         <span
           className="pointer-here"
+          data-testid="exitApp"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           here
         </span>
@@ -23934,7 +23938,11 @@ exports[`Storyshots Transition Page Mobile 1`] = `
          
         <span
           className="pointer-here"
+          data-testid="exitApp"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           here
         </span>
@@ -24096,7 +24104,11 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
          
         <span
           className="pointer-here"
+          data-testid="exitApp"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           here
         </span>

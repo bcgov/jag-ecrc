@@ -60,7 +60,11 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
          
         <span
           className="pointer-here"
+          data-testid="exitApp"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           here
         </span>
@@ -222,7 +226,11 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
          
         <span
           className="pointer-here"
+          data-testid="exitApp"
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           here
         </span>

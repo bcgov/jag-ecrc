@@ -54,6 +54,7 @@ export default function Transition({
             continue. You will be redirected automatically. If you are not
             redirected automatically, please click{" "}
             <span
+              data-testid="exitApp"
               className="pointer-here"
               onClick={() => {
                 sessionStorage.setItem("validExit", true);
