@@ -117,7 +117,7 @@ public class EcrcServicesImpl implements EcrcServices {
 		String createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
 		return ecrcWebMethodsService.callWebMethodsService(createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
 	}
-
+	@SuppressWarnings("java:S3776")
 	public ResponseEntity<String> createNewCRCApplicant(RequestNewCRCApplicant requestNewCRCApplicant) {
 		ResponseServiceDetails serviceDetails = new ResponseServiceDetails();
 		Gson gson = new Gson();
@@ -182,7 +182,7 @@ public class EcrcServicesImpl implements EcrcServices {
 					logger.info("fee failed {}", requestNewCRCApplicant.getRequestGuid());
 					return getServiceFeeAmount;
 				}
-				RequestPaymentService requestPaymentService = new RequestPaymentService("P", serviceDetails.getInvoiceId(), requestNewCRCApplicant.getApprovedPage(), requestNewCRCApplicant.getDeclinedPage(), requestNewCRCApplicant.getErrorPage(), serviceDetails.getServiceFeeAmount(), "30", serviceDetails.getServiceId(), serviceDetails.getPartyId(), requestNewCRCApplicant.getRequestGuid());
+				RequestPaymentService requestPaymentService = new RequestPaymentService("P", serviceDetails.getInvoiceId(), requestNewCRCApplicant.getReturnPage(), requestNewCRCApplicant.getReturnPage(), requestNewCRCApplicant.getReturnPage(), serviceDetails.getServiceFeeAmount(), "30", serviceDetails.getServiceId(), serviceDetails.getPartyId(), requestNewCRCApplicant.getRequestGuid());
 				ResponseEntity<String> paymentURl = ecrcPaymentService.createPaymentUrl(requestPaymentService);
 				if (paymentURl.getStatusCode() == HttpStatus.OK) {
 					obj = new JSONObject(paymentURl.getBody());

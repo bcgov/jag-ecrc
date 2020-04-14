@@ -6,7 +6,7 @@ import { render, wait } from "@testing-library/react";
 
 import Transition from "./Transition";
 
-jest.setTimeout(7000);
+jest.setTimeout(10000);
 
 describe("Transition Page Component", () => {
   const header = {
@@ -55,7 +55,7 @@ describe("Transition Page Component", () => {
       () => {
         expect(window.open).toHaveBeenCalled();
       },
-      { timeout: 6000 }
+      { timeout: 7000 }
     );
-  }, 7000);
+  }, 10000);
 });

@@ -30,6 +30,7 @@ public class RequestUpdateServiceFinancialTxnTest {
         requestUpdateServiceFinancialTxn.setInvoiceId("invoice_Id");
         requestUpdateServiceFinancialTxn.setTransactionId("transaction_Id");
         requestUpdateServiceFinancialTxn.setTransactionAmount("transaction_Amount");
+        requestUpdateServiceFinancialTxn.setRequestGuid("requestGuid");
         
 		Assertions.assertEquals("orgTicketNumber", requestUpdateServiceFinancialTxn.getOrgTicketNumber());
 		Assertions.assertEquals("appl_Party_Id", requestUpdateServiceFinancialTxn.getApplPartyId());
