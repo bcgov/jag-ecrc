@@ -57,6 +57,12 @@ mvn clean install
 mvn springboot:run
 ```
 
+## Set project version using maven
+
+```
+mvn versions:set -DartifactId=*  -DgroupId=*
+```
+
 Note: If using STS4, see the **Boot Dashboard** window instead of using the Maven command above. 
 
 ## Application Entry point
@@ -68,6 +74,15 @@ http://localhost:8082/ecrc/
 ## Autodeploy
 
 This application will autodeploy after every save. (Due to Spring Boot Devtools in the POM).  
+
+## Docker
+
+Do run api in Docker conatiner create .env file using .env.template.
+
+Run command 
+```
+docker-compose up --build -d
+```
 
 ## Built With
 
