@@ -52,7 +52,7 @@ describe("ApplicationForm Component", () => {
     countryNm: "Canada"
   };
 
-  const completeApplicant = {
+  const errorScrollApplicant = {
     ...applicant,
     birthPlace: "Daytona Beach, Florida",
     driversLicNo: "123456",
@@ -62,8 +62,8 @@ describe("ApplicationForm Component", () => {
     organizationFacility: "PBS"
   };
 
-  const completeApplicantWithMailingAddress = {
-    ...completeApplicant,
+  const errorScrollApplicantWithMailingAddress = {
+    ...errorScrollApplicant,
     mailingLine1: "456 Somewhere Else",
     mailingCityNm: "Vancouver",
     mailingProvinceNm: "BRITISH COLUMBIA",
@@ -846,7 +846,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if birth location field is empty", async () => {
     const incompleteApplicant = {
-      ...completeApplicant,
+      ...errorScrollApplicant,
       birthPlace: ""
     };
 
@@ -869,7 +869,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if birth location field is missing a country", async () => {
     const incompleteApplicant = {
-      ...completeApplicant,
+      ...errorScrollApplicant,
       birthPlace: "Victoria"
     };
 
@@ -892,7 +892,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if phone number field is empty", async () => {
     const incompleteApplicant = {
-      ...completeApplicant,
+      ...errorScrollApplicant,
       phoneNumber: ""
     };
 
@@ -915,7 +915,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if phone number field is incorrectly formatted", async () => {
     const incompleteApplicant = {
-      ...completeApplicant,
+      ...errorScrollApplicant,
       phoneNumber: "12345678901234567890"
     };
 
@@ -938,7 +938,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if email address field is empty", async () => {
     const incompleteApplicant = {
-      ...completeApplicant,
+      ...errorScrollApplicant,
       emailAddress: ""
     };
 
@@ -961,7 +961,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if email address field is incorrectly formatted", async () => {
     const incompleteApplicant = {
-      ...completeApplicant,
+      ...errorScrollApplicant,
       emailAddress: "bob@ross"
     };
 
@@ -984,7 +984,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if job title field is empty", async () => {
     const incompleteApplicant = {
-      ...completeApplicant,
+      ...errorScrollApplicant,
       jobTitle: ""
     };
 
@@ -1007,7 +1007,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if organization facility field is empty", async () => {
     const incompleteApplicant = {
-      ...completeApplicant,
+      ...errorScrollApplicant,
       organizationFacility: ""
     };
 
@@ -1030,7 +1030,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if mailling address is different and mailing street is empty", async () => {
     const incompleteApplicant = {
-      ...completeApplicantWithMailingAddress,
+      ...errorScrollApplicantWithMailingAddress,
       mailingLine1: ""
     };
 
@@ -1055,7 +1055,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if mailling address is different and mailing city is empty", async () => {
     const incompleteApplicant = {
-      ...completeApplicantWithMailingAddress,
+      ...errorScrollApplicantWithMailingAddress,
       mailingCityNm: ""
     };
 
@@ -1078,7 +1078,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if mailling address is different and mailing province is empty", async () => {
     const incompleteApplicant = {
-      ...completeApplicantWithMailingAddress,
+      ...errorScrollApplicantWithMailingAddress,
       mailingProvinceNm: ""
     };
 
@@ -1101,7 +1101,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if mailling address is different and mailing postal code is empty", async () => {
     const incompleteApplicant = {
-      ...completeApplicantWithMailingAddress,
+      ...errorScrollApplicantWithMailingAddress,
       mailingPostalCodeTxt: ""
     };
 
@@ -1124,7 +1124,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if mailling address is different and mailing postal code is incorrectly formatted", async () => {
     const incompleteApplicant = {
-      ...completeApplicantWithMailingAddress,
+      ...errorScrollApplicantWithMailingAddress,
       mailingPostalCodeTxt: "1234567890"
     };
 
