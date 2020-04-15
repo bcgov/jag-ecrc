@@ -29,7 +29,6 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe("ApplicationForm Component", () => {
-  window.scrollTo = jest.fn();
   window.confirm = jest.fn();
 
   // to silence [react-phone-number-input] Phone number +12345678901 corresponds to country US but CA was specified instead error
@@ -51,6 +50,24 @@ describe("ApplicationForm Component", () => {
     provinceNm: "British Columbia",
     postalCodeTxt: "V9V 9V9",
     countryNm: "Canada"
+  };
+
+  const errorScrollApplicant = {
+    ...applicant,
+    birthPlace: "Daytona Beach, Florida",
+    driversLicNo: "123456",
+    phoneNumber: "1234567890",
+    emailAddress: "bob@ross.com",
+    jobTitle: "Painter",
+    organizationFacility: "PBS"
+  };
+
+  const errorScrollApplicantWithMailingAddress = {
+    ...errorScrollApplicant,
+    mailingLine1: "456 Somewhere Else",
+    mailingCityNm: "Vancouver",
+    mailingProvinceNm: "BRITISH COLUMBIA",
+    mailingPostalCodeTxt: "A1A 1A1"
   };
 
   const setApplicant = jest.fn();
@@ -825,5 +842,308 @@ describe("ApplicationForm Component", () => {
     expect(mockHistoryPush).toHaveBeenCalledWith(
       "/criminalrecordcheck/transition"
     );
+  });
+
+  test("Screen is scrolled if birth location field is empty", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicant,
+      birthPlace: ""
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: incompleteApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "City and country of birth are required")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if birth location field is missing a country", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicant,
+      birthPlace: "Victoria"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: incompleteApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "City and country of birth are required")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if phone number field is empty", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicant,
+      phoneNumber: ""
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: incompleteApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Primary phone number is required")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if phone number field is incorrectly formatted", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicant,
+      phoneNumber: "12345678901234567890"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: incompleteApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Phone number must be in the form XXX XXX-XXXX")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if email address field is empty", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicant,
+      emailAddress: ""
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: incompleteApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Personal email address is required")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if email address field is incorrectly formatted", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicant,
+      emailAddress: "bob@ross"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: incompleteApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Email address must be in the form name@company.ca")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if job title field is empty", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicant,
+      jobTitle: ""
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: incompleteApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Position/job title is required")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if organization facility field is empty", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicant,
+      organizationFacility: ""
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: incompleteApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Organization facility is required")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if mailling address is different and mailing street is empty", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicantWithMailingAddress,
+      mailingLine1: ""
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm
+          page={{ ...page, applicant: incompleteApplicant, sameAddress: false }}
+        />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Street or PO box is required")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if mailling address is different and mailing city is empty", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicantWithMailingAddress,
+      mailingCityNm: ""
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm
+          page={{ ...page, applicant: incompleteApplicant, sameAddress: false }}
+        />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(getByText(container, "City is required")).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if mailling address is different and mailing province is empty", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicantWithMailingAddress,
+      mailingProvinceNm: ""
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm
+          page={{ ...page, applicant: incompleteApplicant, sameAddress: false }}
+        />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(getByText(container, "Province is required")).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if mailling address is different and mailing postal code is empty", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicantWithMailingAddress,
+      mailingPostalCodeTxt: ""
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm
+          page={{ ...page, applicant: incompleteApplicant, sameAddress: false }}
+        />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(getByText(container, "Postal code is required")).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if mailling address is different and mailing postal code is incorrectly formatted", async () => {
+    const incompleteApplicant = {
+      ...errorScrollApplicantWithMailingAddress,
+      mailingPostalCodeTxt: "1234567890"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm
+          page={{ ...page, applicant: incompleteApplicant, sameAddress: false }}
+        />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Postal code must be in the form V9V 9V9")
+    ).toBeInTheDocument();
   });
 });

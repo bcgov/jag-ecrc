@@ -86,6 +86,8 @@ export const TextInput = ({
             );
           })}
         </select>
+        <br />
+        <span className="error">{errorMsg}</span>
       </div>
     );
   }
