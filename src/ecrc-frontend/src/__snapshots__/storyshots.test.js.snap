@@ -23774,11 +23774,16 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       <p>
         You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
-        <a
-          href="https://justice.gov.bc.ca/eCRC/home.htm"
+        <span
+          className="pointer-here"
+          data-testid="exitApp"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           here
-        </a>
+        </span>
         .
       </p>
     </div>
@@ -23931,11 +23936,16 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       <p>
         You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
-        <a
-          href="https://justice.gov.bc.ca/eCRC/home.htm"
+        <span
+          className="pointer-here"
+          data-testid="exitApp"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           here
-        </a>
+        </span>
         .
       </p>
     </div>
@@ -24092,11 +24102,16 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
       <p>
         You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
-        <a
-          href="https://justice.gov.bc.ca/eCRC/home.htm"
+        <span
+          className="pointer-here"
+          data-testid="exitApp"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           here
-        </a>
+        </span>
         .
       </p>
     </div>

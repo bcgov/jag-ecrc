@@ -53,7 +53,22 @@ export default function Transition({
             record check and will be required to re-enter your access code to
             continue. You will be redirected automatically. If you are not
             redirected automatically, please click{" "}
-            <a href="https://justice.gov.bc.ca/eCRC/home.htm">here</a>
+            <span
+              data-testid="exitApp"
+              className="pointer-here"
+              onClick={() => {
+                sessionStorage.setItem("validExit", true);
+                window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
+              }}
+              role="button"
+              onKeyDown={() => {
+                sessionStorage.setItem("validExit", true);
+                window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
+              }}
+              tabIndex={0}
+            >
+              here
+            </span>
             {"."}
           </p>
         </div>

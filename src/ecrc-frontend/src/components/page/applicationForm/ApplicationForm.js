@@ -127,7 +127,7 @@ export default function ApplicationForm({
       });
       history.push("/criminalrecordcheck/error");
     }
-  }, []);
+  }, [history, setError]);
 
   useEffect(() => {
     const urlParam = queryString.parse(location.search);
@@ -251,7 +251,7 @@ export default function ApplicationForm({
         content: { display: "block" }
       });
     }
-  }, [setError, setProvinces]);
+  }, [setError, setProvinces, setApplicant, location.search]);
 
   const currentName = {
     legalFirstNm: {

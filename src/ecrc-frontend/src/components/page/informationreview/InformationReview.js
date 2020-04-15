@@ -114,7 +114,18 @@ export default function InformationReview({
           // else if other error, go to error page and display correct error
         });
     }
-  }, []);
+  }, [
+    birthDt,
+    defaultCrcScopeLevelCd,
+    driversLicNo,
+    genderTxt,
+    legalFirstNm,
+    legalSurnameNm,
+    orgTicketNumber,
+    postalCodeTxt,
+    setApplicationInfo,
+    setError
+  ]);
 
   const personalInfoElement = [
     { name: "First Name", value: legalFirstNm },

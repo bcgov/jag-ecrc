@@ -32,7 +32,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
     }
 
     window.scrollTo(0, 0);
-  }, [org.orgNm]);
+  }, [org.orgNm, setError]);
 
   const orgVerified = () => {
     if (!isAuthenticated()) {
