@@ -127,7 +127,7 @@ export default function ApplicationForm({
       });
       history.push("/criminalrecordcheck/error");
     }
-  }, []);
+  }, [history, setError]);
 
   useEffect(() => {
     const urlParam = queryString.parse(location.search);
