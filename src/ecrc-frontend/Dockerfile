@@ -2,9 +2,9 @@
 FROM node:13.12.0-alpine
 
 # set working directory
-WORKDIR ./
+WORKDIR /
 
-# add `/app/node_modules/.bin` to $PATH
+# add `/node_modules/.bin` to $PATH
 ENV PATH ./node_modules/.bin:$PATH
 
 RUN apk add --update \
@@ -17,7 +17,7 @@ RUN apk add --update \
 && pip install virtualenv \
 && rm -rf /var/cache/apk/*
 
-# install app dependencies
+# install dependencies
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install
