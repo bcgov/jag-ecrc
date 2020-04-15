@@ -52,6 +52,24 @@ describe("ApplicationForm Component", () => {
     countryNm: "Canada"
   };
 
+  const completeApplicant = {
+    ...applicant,
+    birthPlace: "Daytona Beach, Florida",
+    driversLicNo: "123456",
+    phoneNumber: "1234567890",
+    emailAddress: "bob@ross.com",
+    jobTitle: "Painter",
+    organizationFacility: "PBS"
+  };
+
+  const completeApplicantWithMailingAddress = {
+    ...completeApplicant,
+    mailingLine1: "456 Somewhere Else",
+    mailingCityNm: "Vancouver",
+    mailingProvinceNm: "BRITISH COLUMBIA",
+    mailingPostalCodeTxt: "A1A 1A1"
+  };
+
   const setApplicant = jest.fn();
   const setError = jest.fn();
   const org = {
@@ -828,13 +846,8 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if birth location field is empty", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
-      organizationFacility: "PBS"
+      ...completeApplicant,
+      birthPlace: ""
     };
 
     const { container } = render(
@@ -848,17 +861,16 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "City and country of birth are required")
+    ).toBeInTheDocument();
   });
 
   test("Screen is scrolled if birth location field is missing a country", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Victoria",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
-      organizationFacility: "PBS"
+      ...completeApplicant,
+      birthPlace: "Victoria"
     };
 
     const { container } = render(
@@ -872,17 +884,16 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "City and country of birth are required")
+    ).toBeInTheDocument();
   });
 
   test("Screen is scrolled if phone number field is empty", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
-      organizationFacility: "PBS"
+      ...completeApplicant,
+      phoneNumber: ""
     };
 
     const { container } = render(
@@ -896,17 +907,16 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Primary phone number is required")
+    ).toBeInTheDocument();
   });
 
   test("Screen is scrolled if phone number field is incorrectly formatted", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "12345678901234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
-      organizationFacility: "PBS"
+      ...completeApplicant,
+      phoneNumber: "12345678901234567890"
     };
 
     const { container } = render(
@@ -920,17 +930,16 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Phone number must be in the form XXX XXX-XXXX")
+    ).toBeInTheDocument();
   });
 
   test("Screen is scrolled if email address field is empty", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "",
-      jobTitle: "Painter",
-      organizationFacility: "PBS"
+      ...completeApplicant,
+      emailAddress: ""
     };
 
     const { container } = render(
@@ -944,17 +953,16 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Personal email address is required")
+    ).toBeInTheDocument();
   });
 
   test("Screen is scrolled if email address field is incorrectly formatted", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross",
-      jobTitle: "Painter",
-      organizationFacility: "PBS"
+      ...completeApplicant,
+      emailAddress: "bob@ross"
     };
 
     const { container } = render(
@@ -968,17 +976,16 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Email address must be in the form name@company.ca")
+    ).toBeInTheDocument();
   });
 
   test("Screen is scrolled if job title field is empty", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "",
-      organizationFacility: "PBS"
+      ...completeApplicant,
+      jobTitle: ""
     };
 
     const { container } = render(
@@ -992,16 +999,15 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Position/job title is required")
+    ).toBeInTheDocument();
   });
 
   test("Screen is scrolled if organization facility field is empty", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
+      ...completeApplicant,
       organizationFacility: ""
     };
 
@@ -1016,21 +1022,16 @@ describe("ApplicationForm Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     expect(window.scrollTo).toBeCalledTimes(1);
+
+    expect(
+      getByText(container, "Organization facility is required")
+    ).toBeInTheDocument();
   });
 
   test("Screen is scrolled if mailling address is different and mailing street is empty", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
-      organizationFacility: "PBS",
-      mailingLine1: "",
-      mailingCityNm: "Vancouver",
-      mailingProvinceNm: "BRITISH COLUMBIA",
-      mailingPostalCodeTxt: "A1A 1A1"
+      ...completeApplicantWithMailingAddress,
+      mailingLine1: ""
     };
 
     const { container } = render(
@@ -1054,17 +1055,8 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if mailling address is different and mailing city is empty", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
-      organizationFacility: "PBS",
-      mailingLine1: "456 Somewhere Else",
-      mailingCityNm: "",
-      mailingProvinceNm: "BRITISH COLUMBIA",
-      mailingPostalCodeTxt: "A1A 1A1"
+      ...completeApplicantWithMailingAddress,
+      mailingCityNm: ""
     };
 
     const { container } = render(
@@ -1086,17 +1078,8 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if mailling address is different and mailing province is empty", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
-      organizationFacility: "PBS",
-      mailingLine1: "456 Somewhere Else",
-      mailingCityNm: "Vancouver",
-      mailingProvinceNm: "",
-      mailingPostalCodeTxt: "A1A 1A1"
+      ...completeApplicantWithMailingAddress,
+      mailingProvinceNm: ""
     };
 
     const { container } = render(
@@ -1118,16 +1101,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if mailling address is different and mailing postal code is empty", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
-      organizationFacility: "PBS",
-      mailingLine1: "456 Somewhere Else",
-      mailingCityNm: "Vancouver",
-      mailingProvinceNm: "BRITISH COLUMBIA",
+      ...completeApplicantWithMailingAddress,
       mailingPostalCodeTxt: ""
     };
 
@@ -1150,16 +1124,7 @@ describe("ApplicationForm Component", () => {
 
   test("Screen is scrolled if mailling address is different and mailing postal code is incorrectly formatted", async () => {
     const incompleteApplicant = {
-      ...applicant,
-      birthPlace: "Daytona Beach, Florida",
-      driversLicNo: "123456",
-      phoneNumber: "1234567890",
-      emailAddress: "bob@ross.com",
-      jobTitle: "Painter",
-      organizationFacility: "PBS",
-      mailingLine1: "456 Somewhere Else",
-      mailingCityNm: "Vancouver",
-      mailingProvinceNm: "BRITISH COLUMBIA",
+      ...completeApplicantWithMailingAddress,
       mailingPostalCodeTxt: "1234567890"
     };
 
