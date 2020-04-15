@@ -860,7 +860,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "City and country of birth are required")
@@ -883,7 +883,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "City and country of birth are required")
@@ -906,7 +906,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "Primary phone number is required")
@@ -929,7 +929,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "Phone number must be in the form XXX XXX-XXXX")
@@ -952,7 +952,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "Personal email address is required")
@@ -975,7 +975,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "Email address must be in the form name@company.ca")
@@ -998,7 +998,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "Position/job title is required")
@@ -1021,7 +1021,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "Organization facility is required")
@@ -1046,7 +1046,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "Street or PO box is required")
@@ -1071,7 +1071,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(getByText(container, "City is required")).toBeInTheDocument();
   });
@@ -1094,7 +1094,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(getByText(container, "Province is required")).toBeInTheDocument();
   });
@@ -1117,7 +1117,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(getByText(container, "Postal code is required")).toBeInTheDocument();
   });
@@ -1140,7 +1140,7 @@ describe("ApplicationForm Component", () => {
 
     fireEvent.click(getByText(container, "Continue"));
 
-    expect(window.scrollTo).toBeCalledTimes(1);
+    expect(window.scrollTo).toBeCalledTimes(2);
 
     expect(
       getByText(container, "Postal code must be in the form V9V 9V9")
