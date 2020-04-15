@@ -105,6 +105,7 @@ export default function OrgValidation({
       <Header header={header} />
       <div className="page">
         <div className="content col-md-10">
+          <p>{window.REACT_APP_API_BASE_URL}</p>
           <OrgValidationText
             textInput={textInput}
             onChange={setOrgTicketNumber}
