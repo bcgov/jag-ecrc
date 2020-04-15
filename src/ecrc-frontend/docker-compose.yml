@@ -6,6 +6,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - ".:/bindmount"
+      - "/node_modules"
     ports:
       - 3000:3000
     environment:
