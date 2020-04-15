@@ -845,7 +845,9 @@ export default function ApplicationForm({
             </div>
             <br />
             <div ref={jobRef}>
-              <SimpleForm simpleForm={positionInformation} />
+              <div ref={organizationFacilityRef}>
+                <SimpleForm simpleForm={positionInformation} />
+              </div>
             </div>
             <br />
             <div className="smallHeading">
