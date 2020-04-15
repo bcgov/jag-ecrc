@@ -251,7 +251,7 @@ export default function ApplicationForm({
         content: { display: "block" }
       });
     }
-  }, [setError, setProvinces]);
+  }, [setError, setProvinces, setApplicant, location.search]);
 
   const currentName = {
     legalFirstNm: {
