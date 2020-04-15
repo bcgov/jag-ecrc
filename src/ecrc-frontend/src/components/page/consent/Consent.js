@@ -85,7 +85,7 @@ export default function Consent({
       });
       setToError(true);
     }
-  }, []);
+  }, [setError]);
 
   useEffect(() => {
     if (

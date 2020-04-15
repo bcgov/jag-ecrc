@@ -57,7 +57,7 @@ export default function Success({
       });
       history.push("/criminalrecordcheck/error");
     }
-  }, [paymentInfo.trnApproved, orgApplicantRelationship]);
+  }, [paymentInfo.trnApproved, orgApplicantRelationship, history, setError]);
 
   useLayoutEffect(() => {
     if (!isHidden) {
