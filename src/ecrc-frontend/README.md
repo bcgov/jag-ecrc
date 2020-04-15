@@ -1,8 +1,24 @@
 ## eCRC Frontend
 
-In order to connect to the backend api for development, create an env file named .env.development and copy the format of .env.example. Replace <Base_url_of_backend_api> with the url of the back end api (for example: http://localhost:4000), and <Base_url_of_frontend> with the url the frontend will run on (for example http://localhost:3000).
+Welcome to the eCRC frontend!
 
-In the project directory, you can run:
+### Environment Variables
+
+In order to ensure the app runs successfully, you will be required to set some environment variables as specified in the `.env.example` file. Please setup a `.env.development` file for local dev and populate the fields shown with the appropriate values.
+
+In order to connect to the backend api for development, create an env file named .env.development and copy the format of .env.example. Replace `<Base_url_of_backend_api>` with the url of the back end api (for example: http://localhost:4000), and `<Base_url_of_frontend>` with the url the frontend will run on (for example http://localhost:3000).
+
+## Running the Frontend
+
+In the project directory (`ecrc-frontend`), you can run:
+
+### `docker-compose up -d --build`
+
+Builds the image and fires up the container. Just running this single command will install all required dependencies and start up the application on port 3000. Make sure you have set your environment variables as specified above.
+
+### `docker-compose stop`
+
+Stops the container and the frontend application from being run/served.
 
 ### `npm install`
 
@@ -63,7 +79,3 @@ This project uses Jest for snapshot component testing. Snapshot tests are a very
 ### `npm run test`
 
 Launches the test runner in the interactive watch mode.
-
-## Environment Variables
-
-In order to ensure the app runs successfully, you will be required to set some environment variables as specified in the `.env.example` file. Please setup a `.env.development` file for local dev and populate the fields shown with the appropriate values.
