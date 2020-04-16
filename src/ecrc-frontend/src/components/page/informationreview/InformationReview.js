@@ -105,8 +105,6 @@ export default function InformationReview({
           // Available CRC expiration
           setApplicationInfo({ previousServiceId: res.data.serviceId });
 
-          console.log(res.data);
-
           setOldOrg(res.data.oldOrg);
           setOldCRCExpiration(res.data.oldCRCExpiration);
           setShareAvailable(true);
