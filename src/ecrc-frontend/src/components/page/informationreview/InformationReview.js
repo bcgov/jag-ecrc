@@ -105,6 +105,8 @@ export default function InformationReview({
           // Available CRC expiration
           setApplicationInfo({ previousServiceId: res.data.serviceId });
 
+          console.log(res.data);
+
           setOldOrg(res.data.oldOrg);
           setOldCRCExpiration(res.data.oldCRCExpiration);
           setShareAvailable(true);
@@ -409,7 +411,10 @@ export default function InformationReview({
               previousOrg={oldOrg}
               expiration={oldCRCExpiration}
               newOrg={orgNm}
-              clickShare={() => setShare(true)}
+              clickShare={() => {
+                setShare(true);
+                confirm();
+              }}
               boxChecked={boxChecked}
             />
           )}
