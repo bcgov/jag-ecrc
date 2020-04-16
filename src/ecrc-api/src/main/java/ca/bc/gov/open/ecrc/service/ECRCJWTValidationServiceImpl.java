@@ -43,7 +43,7 @@ import ca.bc.gov.open.ecrc.model.ValidationResponse;
 @EnableConfigurationProperties(EcrcProperties.class)
 public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	
-	private final String[] BCSC_ACCESS_TOKEN_CLAIMS =  {"aud", "iss", "exp", "iat", "jti"}; 
+	private static final String[] BCSC_ACCESS_TOKEN_CLAIMS =  {"aud", "iss", "exp", "iat", "jti"}; 
 	
 	@Autowired
 	private EcrcProperties ecrcProps;
