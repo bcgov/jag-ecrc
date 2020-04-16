@@ -18724,7 +18724,7 @@ exports[`Storyshots Success Mobile Onetime 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
@@ -19033,7 +19033,7 @@ exports[`Storyshots Success Mobile Payment Failure 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
@@ -19374,7 +19374,7 @@ exports[`Storyshots Success Mobile Payment Success 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
@@ -19707,7 +19707,7 @@ exports[`Storyshots Success Mobile Volunteer 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
@@ -20016,7 +20016,7 @@ exports[`Storyshots Success Onetime 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
@@ -20325,7 +20325,7 @@ exports[`Storyshots Success Payment Failure 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
@@ -20666,7 +20666,7 @@ exports[`Storyshots Success Payment Success 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
@@ -20999,7 +20999,7 @@ exports[`Storyshots Success Volunteer 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
