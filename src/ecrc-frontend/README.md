@@ -8,6 +8,8 @@ In order to ensure the app runs successfully, you will be required to set some e
 
 Replace `<Base_url_of_backend_api>` with the url of the back end api (for example: http://localhost:4000), and `<Base_url_of_frontend>` with the url the frontend will run on (for example http://localhost:3000).
 
+An empty file named frontend-env.js needs to be created in the public directory. This file is used for production deployments in order to import env variables after build. In order to use this file, variables should be written to it in the form REACT_APP_API_BASE_URL = `<Base_url_of_backend_api>`; and contain the same variables as shown in .env.example.
+
 ## Running the Frontend
 
 In the project directory (`ecrc-frontend`), you can run:

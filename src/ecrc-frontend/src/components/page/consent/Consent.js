@@ -222,9 +222,17 @@ export default function Consent({
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
+    let REACT_APP_FRONTEND_BASE_URL;
+
+    if (window.REACT_APP_FRONTEND_BASE_URL) {
+      REACT_APP_FRONTEND_BASE_URL = window.REACT_APP_FRONTEND_BASE_URL;
+    } else if (process.env.REACT_APP_FRONTEND_BASE_URL) {
+      REACT_APP_FRONTEND_BASE_URL = process.env.REACT_APP_FRONTEND_BASE_URL;
+    }
+
     const crcApplicant = {
       requestGuid: uuid,
-      returnPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+      returnPage: `${REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
       applType: orgApplicantRelationship,
       requestCreateApplicant: createApplicantInfo,
       requestNewCRCService: CRC
