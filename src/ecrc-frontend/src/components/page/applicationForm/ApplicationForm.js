@@ -756,7 +756,7 @@ export default function ApplicationForm({
         driversLicNo: driversLicence,
         phoneNumber: formatedPhone,
         emailAddress: email,
-        emailType: emailType || "Home",
+        emailType: emailType || "HOEM",
         jobTitle: job,
         organizationFacility: organizationLocation
       });
@@ -1010,7 +1010,7 @@ ApplicationForm.defaultProps = {
       driversLicNo: "",
       phoneNumber: "",
       emailAddress: "",
-      emailType: "",
+      emailType: "HOEM",
       jobTitle: "",
       organizationFacility: "",
       mailingLine1: "",
