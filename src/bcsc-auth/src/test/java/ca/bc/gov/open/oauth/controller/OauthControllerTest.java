@@ -5,10 +5,6 @@ import static org.mockito.Mockito.when;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-<<<<<<< HEAD:src/bcsc-auth/src/test/java/ca/bc/gov/open/oauth/controller/OauthControllerTest.java
-
-=======
->>>>>>> master:src/ecrc-api/src/test/java/ca/bc/gov/open/ecrc/controller/OauthControllerTest.java
 import net.minidev.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -93,18 +89,11 @@ class OauthControllerTest {
 		when(oauthServices.getUserInfo(any())).thenReturn(userInfo);
 		when(oauthServices.getToken(any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
-<<<<<<< HEAD:src/bcsc-auth/src/test/java/ca/bc/gov/open/oauth/controller/OauthControllerTest.java
 		when(tokenServices.validateBCSCIDToken(any()))
 				.thenReturn(new ValidationResponse(true, "success"));
 	
 		ResponseEntity<String> response = oauthController.login("test");
 		Assertions.assertNotNull(response);
-=======
-		when(tokenServices.validateBCSCIDToken(any())).thenReturn(new ValidationResponse(true, "success"));
-
-		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID");
-		Assert.assertNotNull(response);
->>>>>>> master:src/ecrc-api/src/test/java/ca/bc/gov/open/ecrc/controller/OauthControllerTest.java
 	}
 
 	@DisplayName("Error - login oauth controller (getToken)")
@@ -132,7 +121,7 @@ class OauthControllerTest {
 		when(oauthServices.getToken(any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
 		when(tokenServices.validateBCSCIDToken(any())).thenReturn(new ValidationResponse(false, "failure"));
-		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
-		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+		ResponseEntity<String> response = oauthController.login("code");
+		Assertions.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 }
