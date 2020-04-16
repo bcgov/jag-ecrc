@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.OauthServiceException;
 import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
 import ch.qos.logback.classic.Logger;
@@ -23,7 +24,7 @@ import ch.qos.logback.classic.Logger;
  * 
  * Provides OIDC endpoints serving the eCRC front end.
  * 
- * @author shaunmillargov
+ * @author sivakaruna
  *
  */
 @Configuration
@@ -41,26 +42,25 @@ public class OauthController {
 	public ResponseEntity<String> getBCSCUrl(@RequestParam(required = true) String requestGuid)
 			throws OauthServiceException {
 		logger.info("BCSC URL request received [{}]", requestGuid);
-
-		return oauthServices.getIDPRedirect();
+		try {
+			return oauthServices.getIDPRedirect();
+		} catch (Exception e) {
+			logger.error("Error retrieving BCSC redirect url ", e);
+			return new ResponseEntity<>(EcrcExceptionConstants.SERVICE_UNAVAILABLE, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 
 	}
 
-	/*
-	 * 
-	 * Uses authorization code provided back from call to /authorize to generate
-	 * access token from IdP.
-	 * 
-	 * Responds to SPA with new JWT (complete with userInfo and encrypted IdP
-	 * token).
-	 * 
-	 */
 	@GetMapping(value = "/protected/login", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode,
 			@RequestParam(required = true) String requestGuid) throws OauthServiceException {
 		logger.info("Login URL request received {}", requestGuid);
-
-		return oauthServices.getToken(authCode);
+		try {
+			return oauthServices.getToken(authCode);
+		} catch (OauthServiceException e) {
+			logger.error("Error logging in to BCSC", e);
+			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
+		}
 	}
 
 }

@@ -47,17 +47,24 @@ public class OauthServicesImpl implements OauthServices {
 	public ResponseEntity<String> getIDPRedirect() throws OauthServiceException {
 		logger.debug("Calling getIDPRedirect");
 
-		Mono<String> responseBody = this.webClient.get().uri(ecrcProps.getOauthGetBCSCRedirectUri()).retrieve()
-				.bodyToMono(String.class);
-		return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
+		try {
+			Mono<String> responseBody = this.webClient.get().uri(ecrcProps.getOauthGetBCSCRedirectUri()).retrieve()
+					.bodyToMono(String.class);
+			return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
+		} catch (Exception e) {
+			throw new OauthServiceException(e.getMessage(), e);
+		}
 
 	}
 
 	public ResponseEntity<String> getToken(String authCode) throws OauthServiceException {
 		logger.debug("Calling getToken");
-
-		String loginUri = String.format(ecrcProps.getOauthLoginUri(), authCode);
-		Mono<String> responseBody = this.webClient.get().uri(loginUri).retrieve().bodyToMono(String.class);
-		return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
+		try {
+			String loginUri = String.format(ecrcProps.getOauthLoginUri(), authCode);
+			Mono<String> responseBody = this.webClient.get().uri(loginUri).retrieve().bodyToMono(String.class);
+			return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
+		} catch (Exception e) {
+			throw new OauthServiceException(e.getMessage(), e);
+		}
 	}
 }
