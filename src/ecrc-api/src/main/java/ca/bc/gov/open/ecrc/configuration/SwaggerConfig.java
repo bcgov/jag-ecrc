@@ -27,9 +27,6 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("eCRC API")
                 .description("Electronic Criminal Record Check API")
-                .license("")
-                .licenseUrl("")
-                .termsOfServiceUrl("")
                 .version(version)
                 .build();
     }
