@@ -31,7 +31,7 @@ const applicant = {
   mailingPostalCodeTxt: "V1V 1A1",
   jobTitle: "Painter",
   organizationFacility: "PBS",
-  emailType: "Home"
+  emailType: "HOEM"
 };
 
 const org = {

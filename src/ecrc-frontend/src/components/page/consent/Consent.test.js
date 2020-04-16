@@ -63,7 +63,7 @@ describe("Consent Page Component", () => {
     jobTitle: "Painter",
     organizationFacility: "PBS",
     emailAddress: "bob.ross@example.com",
-    emailType: "Home"
+    emailType: "HOEM"
   };
 
   const org = {

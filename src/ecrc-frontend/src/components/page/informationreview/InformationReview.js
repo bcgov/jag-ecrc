@@ -409,7 +409,10 @@ export default function InformationReview({
               previousOrg={oldOrg}
               expiration={oldCRCExpiration}
               newOrg={orgNm}
-              clickShare={() => setShare(true)}
+              clickShare={() => {
+                setShare(true);
+                confirm();
+              }}
               boxChecked={boxChecked}
             />
           )}

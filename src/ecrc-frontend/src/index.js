@@ -9,7 +9,9 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-if (process.env.REACT_APP_API_BASE_URL) {
+if (window.REACT_APP_API_BASE_URL) {
+  axios.defaults.baseURL = window.REACT_APP_API_BASE_URL;
+} else if (process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 }
 

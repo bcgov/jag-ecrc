@@ -19,6 +19,7 @@
 		<nimbus.oauth.version>7.0.3</nimbus.oauth.version>
 		<jjwt.version>0.9.1</jjwt.version>
 		<javax.mail.version>1.4</javax.mail.version>
+		<springfox-swagger-version>2.9.2</springfox-swagger-version>
 	</properties>
 
 	<dependencies>
@@ -136,8 +137,20 @@
 		    <artifactId>java-jwt</artifactId>
 		    <version>3.10.0</version>
 		</dependency>
-		
-		 
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox-swagger-version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox-swagger-version}</version>
+			<scope>compile</scope>
+		</dependency>
+
 		<dependency>
 		    <groupId>commons-codec</groupId>
 		    <artifactId>commons-codec</artifactId>
