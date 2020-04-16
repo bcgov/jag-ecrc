@@ -33,6 +33,7 @@ class RequestLogPaymentFailureTest {
 		requestLogPaymentFailure.setServiceFeeAmount("serviceFeeAmount");
 		requestLogPaymentFailure.setServiceId("serviceId");
 		requestLogPaymentFailure.setSessionId("sessionId");
+		requestLogPaymentFailure.setRequestGuid("requestGuid");
 
 		Assertions.assertEquals("applPartyId", requestLogPaymentFailure.getApplPartyId());
 		Assertions.assertEquals("bcepErrorMsg", requestLogPaymentFailure.getBcepErrorMsg());

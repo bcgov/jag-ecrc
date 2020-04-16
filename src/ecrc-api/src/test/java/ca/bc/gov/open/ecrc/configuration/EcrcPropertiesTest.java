@@ -18,6 +18,8 @@ class EcrcPropertiesTest {
 	@Test
 	void test() {
 
+		ecrcProperties.setServerPort("8082");
+
 		Assert.assertEquals("testUrl", ecrcProperties.getBaseUrl());
 		Assert.assertEquals("origins", ecrcProperties.getCorsAllowedOrigins());
 		Assert.assertEquals("mapping", ecrcProperties.getCorsMapping());
@@ -50,6 +52,13 @@ class EcrcPropertiesTest {
 		 * Assert.assertEquals(3000, ecrcProperties.getOauthJwtExpiry());
 		 */
 		Assert.assertEquals(60000, ecrcProperties.getOauthBCSCTimeout());
+		Assert.assertEquals("checkApplicantForPrevCRC", ecrcProperties.getCheckApplicantForPrevCrcUri());
+		Assert.assertEquals("createSharingService", ecrcProperties.getCreateSharingServiceUri());
+		Assert.assertEquals("secret", ecrcProperties.getOauthPERSecret());
+		Assert.assertEquals("/test", ecrcProperties.getOauthAuthorizePath());
+		Assert.assertEquals("/test", ecrcProperties.getOauthTokenPath());
+		Assert.assertEquals("/test", ecrcProperties.getOauthUserinfoPath());
+		Assert.assertEquals("8082", ecrcProperties.getServerPort());
 	}
 
 }

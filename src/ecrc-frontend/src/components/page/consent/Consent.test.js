@@ -1,3 +1,4 @@
+/* eslint-disable prefer-promise-reject-errors */
 import React from "react";
 import axios from "axios";
 import { create } from "react-test-renderer";
@@ -109,7 +110,7 @@ describe("Consent Page Component", () => {
     expect(consent.toJSON()).toMatchSnapshot();
   });
 
-  test("Validate Cancel Redirect", () => {
+  test("Validate Cancel Redirect with confirm box selected as Yes", () => {
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
@@ -120,6 +121,21 @@ describe("Consent Page Component", () => {
     window.confirm = () => true;
     fireEvent.click(getByText(container, "Cancel and Exit"));
     expect(history.location.pathname).toEqual("/hosthome");
+    expect(sessionStorage.getItem("jwt")).toBeFalsy();
+  });
+
+  test("Validate Cancel Redirect with confirm box selected as No", () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    window.confirm = () => false;
+    fireEvent.click(getByText(container, "Cancel and Exit"));
+    expect(history.location.pathname).not.toEqual("/hosthome");
+    expect(sessionStorage.getItem("jwt")).toBeTruthy();
   });
 
   test("Validate Redirect to Error when unauthorized", () => {
@@ -135,6 +151,47 @@ describe("Consent Page Component", () => {
         <Consent page={page} />
       </Router>
     );
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Validate Redirect to Error when expired", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.resolve({
+        data: {
+          paymentUrl: "http://sample.com",
+          serviceId: "123",
+          partyId: "123",
+          sessionId: "123",
+          invoiceId: "123",
+          serviceFeeAmount: "123"
+        }
+      })
+    );
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    sessionStorage.setItem(
+      "jwt",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZSIsImF1dGhvcml0aWVzIjpbIkF1dGhvcml6ZWQiXSwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjJ9.2yplvMygyadMIIhyhLtHpsZzPqAqbreDrWVmBcIh0Gg"
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
 
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
@@ -162,23 +219,45 @@ describe("Consent Page Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
-  test("Validate Employee relationship flow", async () => {
-    axios.get.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          sessionId: "123",
-          invoiceId: "123",
-          serviceFeeAmount: "123"
-        }
+  test("Validate error case when error has appropriate response, status, data and message", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.reject({
+        response: { status: 400, data: { message: "This is error" } }
       })
     );
 
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Validate Employee relationship flow", async () => {
     axios.post.mockImplementation(() =>
       Promise.resolve({
         data: {
-          partyId: "123",
+          paymentUrl: "http://sample.com",
           serviceId: "123",
-          urlResponse: "http://sample.com"
+          partyId: "123",
+          sessionId: "123",
+          invoiceId: "123",
+          serviceFeeAmount: "123"
         }
       })
     );
@@ -210,8 +289,8 @@ describe("Consent Page Component", () => {
     axios.post.mockImplementation(() =>
       Promise.resolve({
         data: {
-          partyId: "123",
-          serviceId: "123"
+          serviceId: "123",
+          partyId: "123"
         }
       })
     );
@@ -239,34 +318,14 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate Onetime relationship flow", async () => {
-    applicant.driversLicNo = "";
-    applicant.alias1FirstNm = "";
-    applicant.alias1SecondNm = "";
-    applicant.alias1SurnameNm = "";
-    applicant.alias2FirstNm = "";
-    applicant.alias2SecondNm = "";
-    applicant.alias2SurnameNm = "";
-    applicant.alias3FirstNm = "";
-    applicant.alias3SecondNm = "";
-    applicant.alias3SurnameNm = "";
-
-    applicant.organizationFacility = "";
-
-    org.orgApplicantRelationship = "VOLUNTEER";
-
-    axios.get.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          sessionId: "123"
-        }
-      })
-    );
+    org.orgApplicantRelationship = "ONETIME";
 
     axios.post.mockImplementation(() =>
       Promise.resolve({
         data: {
+          serviceId: "123",
           partyId: "123",
-          serviceId: "123"
+          sessionId: "123"
         }
       })
     );
@@ -309,22 +368,12 @@ describe("Consent Page Component", () => {
 
     org.orgApplicantRelationship = "VOLUNTEER";
 
-    axios.get.mockImplementation(() =>
-      Promise.resolve({
-        data: {
-          sessionId: "123",
-          invoiceId: "123",
-          serviceFeeAmount: "123"
-        }
-      })
-    );
-
     axios.post.mockImplementation(() =>
       Promise.resolve({
         data: {
-          partyId: "123",
           serviceId: "123",
-          urlResponse: "http://sample.com"
+          partyId: "123",
+          sessionId: "123"
         }
       })
     );

@@ -2,56 +2,69 @@
 
 require("dotenv").config();
 
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
+const bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
+const landingPage = require("../../pageobjectfactory/landingpage");
+const orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
+const termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
+const testInput = require("../../input/success");
 
-var using = require("jasmine-data-provider");
+const using = require("jasmine-data-provider");
 
 describe("bcscRedirectPage", function() {
+  const handleAlert = () => {
+    browser
+      .switchTo()
+      .alert()
+      .then(
+        alert => {
+          alert.accept();
+        },
+        err => {}
+      );
+  };
+
   beforeEach(() => {
-    browser.get(process.env.BCSC_URL);
+    browser.get(process.env.URL);
+    handleAlert();
+
+    browser
+      .manage()
+      .window()
+      .maximize();
+
+    landingPage.accessCode.sendKeys(testInput.validAccessCode);
+    landingPage.validate.click();
+    browserWait = protractor.ExpectedConditions;
+
+    browser.wait(
+      browserWait.elementToBeClickable(orgVerificationPage.continue),
+      10000
+    );
+
+    orgVerificationPage.continue.click();
+    termsOfUsePage.readAndAcceptCheckBox.click();
+    browser.executeScript(
+      "arguments[0].scrollIntoView(true)",
+      termsOfUsePage.termsOfUseFinalParagraph
+    );
+    termsOfUsePage.continueButton.click();
+
+    browser.wait(
+      browserWait.elementToBeClickable(bcscRedirectPage.login),
+      10000
+    );
   });
 
   it("verify if login redirects to the right page", () => {
     bcscRedirectPage.login.click().then(() => {
-      browser.getAllWindowHandles().then(function(windowHandle) {
-        browser.switchTo().window(windowHandle[1]);
-        expect(process.env.BCSC_LOGIN_NAVTITLE).toBe(browser.getTitle());
-        browser.close();
-        browser.switchTo().window(windowHandle[0]);
-      });
+      expect(browser.getTitle()).toBe(process.env.BCSC_LOGIN_NAVTITLE);
     });
   });
 
-  it("verify if setup account redirects to the right page", () => {
-    bcscRedirectPage.setUpAccount.click().then(() => {
-      browser.getAllWindowHandles().then(function(windowHandle) {
-        browser.switchTo().window(windowHandle[1]);
-        expect(process.env.BCSC_SETUPACCOUNT_NAVTITLE).toBe(browser.getTitle());
-        browser.close();
-        browser.switchTo().window(windowHandle[0]);
-      });
-    });
-  });
-
-  xit("verify if request form redirects to the right page", () => {
-    bcscRedirectPage.requestForm.click().then(() => {
-      browser.getAllWindowHandles().then(function(windowHandle) {
-        browser.switchTo().window(windowHandle[1]);
-        expect(process.env.BCSC_LOGIN_NAVTITLE).toBe(browser.getTitle());
-        browser.close();
-        browser.switchTo().window(windowHandle[0]);
-      });
-    });
-  });
-
-  it("verify if read more redirects to the right page", () => {
-    bcscRedirectPage.getBCServicesCardSectionReadMore.click().then(() => {
-      browser.getAllWindowHandles().then(function(windowHandle) {
-        browser.switchTo().window(windowHandle[1]);
-        expect(process.env.BCSC_READMORE_NAVTITLE).toBe(browser.getTitle());
-        browser.close();
-        browser.switchTo().window(windowHandle[0]);
-      });
+  it("verify if 'I do not have a BC Services Card' redirects to the right page", () => {
+    bcscRedirectPage.iDoNotHaveABCServicesCard.click().then(() => {
+      handleAlert();
+      expect(browser.getCurrentUrl()).toBe(process.env.TRANSITION_URL);
     });
   });
 });

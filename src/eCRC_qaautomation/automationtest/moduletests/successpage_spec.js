@@ -15,15 +15,31 @@ const successPage = require("../../pageobjectfactory/successpage");
 const testInput = require("../../input/success");
 
 describe("success page", () => {
-  beforeEach(() => {
-    browser.get(process.env.URL);
+  const handleAlert = () => {
+    browser
+      .switchTo()
+      .alert()
+      .then(
+        alert => {
+          alert.accept();
+        },
+        err => {}
+      );
+  };
+
+  beforeAll(() => {
     browser
       .manage()
       .window()
       .maximize();
+  });
+
+  beforeEach(() => {
+    browser.get(process.env.URL);
+    handleAlert();
 
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 150000;
 
     landingPage.accessCode.sendKeys(testInput.validAccessCode);
     landingPage.validate.click();
@@ -34,7 +50,6 @@ describe("success page", () => {
       10000
     );
 
-    browser.sleep(4000);
     orgVerificationPage.continue.click();
     termsOfUsePage.readAndAcceptCheckBox.click();
     browser.executeScript(
@@ -118,10 +133,6 @@ describe("success page", () => {
 
     applicationFormPage.applicantPosition.sendKeys(
       testInput.applicationFormApplicantPosition
-    );
-
-    applicationFormPage.organizationFacility.sendKeys(
-      testInput.applicationFormOrganizationFacility
     );
 
     applicationFormPage.mailingAddressStreet.sendKeys(

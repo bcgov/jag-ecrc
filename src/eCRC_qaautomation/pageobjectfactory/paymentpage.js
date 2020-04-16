@@ -1,4 +1,4 @@
-class PaymentPageObjects {
+class PaymentPage {
   constructor() {
     this.cardNumber = element(by.name("trnCardNumber"));
     this.cardCVD = element(by.name("trnCardCvd"));
@@ -10,4 +10,4 @@ class PaymentPageObjects {
   }
 }
 
-module.exports = new PaymentPageObjects();
+module.exports = new PaymentPage();

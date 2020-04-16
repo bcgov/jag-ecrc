@@ -1,9 +1,6 @@
 class TermsOfUse {
   constructor() {
     this.readAndAcceptCheckBox = element(by.xpath("//input[@type='checkbox']"));
-    this.authorizeEmailIdCheckBox = element(
-      by.xpath("(//input[@type='checkbox'])[2]")
-    );
     this.downloadButton = element(by.buttonText("Download"));
     this.continueButton = element(by.buttonText("Continue"));
     this.cancelAndExitButton = element(by.buttonText("Cancel and Exit"));

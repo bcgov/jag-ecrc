@@ -73,11 +73,11 @@ public class EcrcPaymentServiceImpl implements EcrcPaymentService {
 		paymentInfo.setServiceIdRef1(PAYMENT_REF1_PREFIX + paymentInfo.getServiceIdRef1());
 		paymentInfo.setPartyIdRef2(PAYMENT_REF2_PREFIX + paymentInfo.getPartyIdRef2());
 
-		String _getPaymentServiceUri = String.format(ecrcProps.getGetSinglePaymentUri(), paymentInfo.toQueryString());
+		String paymentServiceUri = String.format(ecrcProps.getGetSinglePaymentUri(), paymentInfo.toQueryString());
 
-		_getPaymentServiceUri = EcrcUtil.encodeUriSpaces(_getPaymentServiceUri);
+		paymentServiceUri = EcrcUtil.encodeUriSpaces(paymentServiceUri);
 
-		Mono<?> responseBody = this.webClient.get().uri(_getPaymentServiceUri).retrieve()
+		Mono<?> responseBody = this.webClient.get().uri(paymentServiceUri).retrieve()
 				.bodyToMono(ResponsePaymentService.class);
 
 		try {

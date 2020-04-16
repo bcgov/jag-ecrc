@@ -4,7 +4,7 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
 import { FaPrint, FaDownload, FaEnvelope } from "react-icons/fa";
-import { useLocation, Redirect, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import PropTypes from "prop-types";
@@ -38,11 +38,11 @@ export default function Success({
   const location = useLocation();
   const paymentInfo = queryString.parse(location.search);
   const uuid = sessionStorage.getItem("uuid");
-  const [toError, setToError] = useState(false);
-  const [toHostHome, setToHostHome] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
   const headerColor =
     paymentInfo.trnApproved === "0" ? "#ff0000" : "rgb(43, 153, 76)";
+  const history = useHistory();
+  let isBackClicked = false;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -55,9 +55,9 @@ export default function Success({
       setError({
         status: 403
       });
-      setToError(true);
+      history.push("/criminalrecordcheck/error");
     }
-  }, [paymentInfo.trnApproved, orgApplicantRelationship]);
+  }, [paymentInfo.trnApproved, orgApplicantRelationship, history, setError]);
 
   useLayoutEffect(() => {
     if (!isHidden) {
@@ -65,9 +65,6 @@ export default function Success({
     }
     setIsHidden(true);
   }, [isHidden]);
-
-  const history = useHistory();
-  let isBackClicked = false;
 
   history.listen((_, action) => {
     if (action === "POP") {
@@ -91,29 +88,21 @@ export default function Success({
     }
   });
 
-  if (toError) {
-    return <Redirect to="/criminalrecordcheck/error" />;
-  }
-
   const handleError = error => {
-    setToError(true);
-    if (error && error.response && error.response.status) {
-      if (
-        error.request &&
-        error.request.response &&
-        JSON.parse(error.request.response)
-      ) {
-        setError({
-          status: error.response.status,
-          message: JSON.parse(error.request.response).message
-        });
-      } else {
-        setError({
-          status: error.response.status,
-          message: error.response.data
-        });
-      }
+    if (
+      error &&
+      error.response &&
+      error.response.status &&
+      error.response.data &&
+      error.response.data.message
+    ) {
+      setError({
+        status: error.response.status,
+        message: error.response.data.message
+      });
     }
+
+    history.push("/criminalrecordcheck/error");
   };
 
   const receiptInfo = [
@@ -202,16 +191,16 @@ export default function Success({
     const logSuccess = {
       orgTicketNumber,
       requestGuid: uuid,
-      appl_Party_Id: partyId,
-      service_Id: serviceId,
-      cC_Authorization: paymentInfo.trnId,
-      payment_Date: `${paymentDateArr[2]}/${paymentDateArr[0]}/${paymentDateArr[1]}`,
-      payor_Type_Cd: "A",
-      payment_Status_Cd: "A",
-      session_Id: sessionId,
-      invoice_Id: invoiceId,
-      transaction_Id: paymentInfo.trnId,
-      transaction_Amount: paymentInfo.trnAmount
+      applPartyId: partyId,
+      serviceId,
+      cCAuthorization: paymentInfo.trnId,
+      paymentDate: `${paymentDateArr[2]}/${paymentDateArr[0]}/${paymentDateArr[1]}`,
+      payorTypeCd: "A",
+      paymentStatusCd: "A",
+      sessionId,
+      invoiceId,
+      transactionId: paymentInfo.trnId,
+      transactionAmount: paymentInfo.trnAmount
     };
 
     axios
@@ -296,17 +285,13 @@ export default function Success({
 
     if (wishToRedirect) {
       sessionStorage.clear();
-      setToHostHome(true);
+      history.push("/hosthome");
     }
   };
 
   const emailReceipt = () => {
     window.open("mailto:?subject=Criminal Record Check");
   };
-
-  if (toHostHome) {
-    return <Redirect to="/hosthome" />;
-  }
 
   return (
     <main>

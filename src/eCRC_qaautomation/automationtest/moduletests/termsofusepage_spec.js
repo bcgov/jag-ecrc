@@ -1,38 +1,27 @@
-//import { browser, element, by } from "protractor"
-
 require("dotenv").config();
-
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
-
-var landingPage = require("../../pageobjectfactory/landingpage");
-
-var bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
-
-var orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
-
-var termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
-
-var bcServicesCardLandingPage = require("../../pageobjectfactory/bcservicescardlandingpage");
-
-var bcServicesCardLoginPage = require("../../pageobjectfactory/bcservicescardloginpage");
-
-var bcscConsentPage = require("../../pageobjectfactory/bcscconsentpage");
-
-var consentPage = require("../../pageobjectfactory/consentpage.js");
-
-var applicationFormPage = require("../../pageobjectfactory/applicationformpage");
-
-var paymentPage = require("../../pageobjectfactory/paymentpage");
-
-var informationReviewPage = require("../../pageobjectfactory/informationreviewpage");
-
-var testInput = require("../../input/success");
-
-var using = require("jasmine-data-provider");
+const landingPage = require("../../pageobjectfactory/landingpage");
+const orgVerificationPage = require("../../pageobjectfactory/orgverificationpage");
+const termsOfUsePage = require("../../pageobjectfactory/termsofusepage");
+const bcscRedirectPage = require("../../pageobjectfactory/bcscredirectpage");
+const testInput = require("../../input/success");
+const using = require("jasmine-data-provider");
 
 describe("terms of use page", () => {
+  const handleAlert = () => {
+    browser
+      .switchTo()
+      .alert()
+      .then(
+        alert => {
+          alert.accept();
+        },
+        err => {}
+      );
+  };
+
   beforeEach(() => {
     browser.get(process.env.URL);
+    handleAlert();
 
     browser
       .manage()
@@ -50,22 +39,22 @@ describe("terms of use page", () => {
       10000
     );
 
-    browser.sleep(4000);
-
     orgVerificationPage.continue.click();
   });
 
   it("verify that the continue button is enabled when all checkboxes are checked and the terms of use is scrolled to end of section", () => {
     termsOfUsePage.readAndAcceptCheckBox.click();
 
-    termsOfUsePage.authorizeEmailIdCheckBox.click();
-
-    browser
-      .actions()
-      .mouseMove(termsOfUsePage.termsOfUseFinalParagraph)
-      .perform();
+    browser.executeScript(
+      "arguments[0].scrollIntoView(true)",
+      termsOfUsePage.termsOfUseFinalParagraph
+    );
 
     termsOfUsePage.continueButton.click();
+    browser.wait(
+      browserWait.elementToBeClickable(bcscRedirectPage.login),
+      10000
+    );
   });
 
   using(
@@ -75,25 +64,14 @@ describe("terms of use page", () => {
       { unchecked: "termsOfUse" }
     ],
     unchecked => {
-      it("verify that the continue button is disabled when one or more checkboxes are unchecked or if the terms of use is not scrolled", function() {
+      it("verify that the continue button is disabled when the checkbox is unchecked or if the terms of use is not scrolled", () => {
         if (unchecked.unchecked === "readAndAcceptCheckBox") {
-          termsOfUsePage.authorizeEmailIdCheckBox.click();
-
-          browser
-            .actions()
-            .mouseMove(termsOfUsePage.termsOfUseFinalParagraph)
-            .perform();
-        } else if (unchecked.unchecked === "authorizeEmailIdCheckBox") {
-          termsOfUsePage.readAndAcceptCheckBox.click();
-
           browser
             .actions()
             .mouseMove(termsOfUsePage.termsOfUseFinalParagraph)
             .perform();
         } else {
           termsOfUsePage.readAndAcceptCheckBox.click();
-
-          termsOfUsePage.authorizeEmailIdCheckBox.click();
         }
 
         expect(false).toBe(termsOfUsePage.continueButton.isEnabled());

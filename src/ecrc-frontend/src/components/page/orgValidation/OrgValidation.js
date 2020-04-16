@@ -66,27 +66,21 @@ export default function OrgValidation({
       })
       .catch(error => {
         setLoading(false);
+
         if (error && error.response && error.response.status) {
           if (error.response.status === 404) {
             setOrgError("The access code is invalid");
           } else if (error.response.status === 401) {
             setTransitionReason("notwhitelisted");
             history.push("/criminalrecordcheck/transition");
-          } else if (
-            error.request &&
-            error.request.response &&
-            JSON.parse(error.request.response)
-          ) {
+          } else if (error.response.data && error.response.data.message) {
             setToError(true);
             setError({
               status: error.response.status,
-              message: JSON.parse(error.request.response).message
+              message: error.response.data.message
             });
           } else {
             setToError(true);
-            setError({
-              status: error.response.status
-            });
           }
         } else {
           setToError(true);

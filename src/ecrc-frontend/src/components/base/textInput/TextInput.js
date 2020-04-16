@@ -86,6 +86,8 @@ export const TextInput = ({
             );
           })}
         </select>
+        <br />
+        <span className="error">{errorMsg}</span>
       </div>
     );
   }
@@ -97,6 +99,7 @@ export const TextInput = ({
         <Input
           country={"CA"}
           className={textStyle}
+          type="text"
           id={id}
           placeholder={placeholder}
           value={value}

@@ -32,7 +32,10 @@ import static ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants.WEBSERVICE_ER
 @Configuration
 @EnableConfigurationProperties(EcrcProperties.class)
 public class EcrcServicesImpl implements EcrcServices {
-
+	private static final String ONETIME = "O";
+	private static final String EMPLOYEE = "A";
+	private static final String EMPLOYEE_TYPE = "EMPLOYEE";
+	private static final String ONETIME_TYPE = "ONETIME";
 	@Autowired
 	private EcrcProperties ecrcProps;
 
@@ -47,8 +50,8 @@ public class EcrcServicesImpl implements EcrcServices {
 	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
 	    if (ecrcProps.getWhiteList().contains(orgTicketNumber.toLowerCase())) {
 			logger.info("For request guid: [{}] Provided org ticket number white listed", requestGuid);
-            String _doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
-            return ecrcWebMethodsService.callWebMethodsService(_doAuthenticateUserUri, new DoAuthenticateUser(), requestGuid);
+            String doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
+            return ecrcWebMethodsService.callWebMethodsService(doAuthenticateUserUri, new DoAuthenticateUser(), requestGuid);
         } else {
 			logger.info("For request guid: [{}] Provided org ticket number not white listed", requestGuid);
 	        return new ResponseEntity<>(String.format(WEBSERVICE_ERROR_JSON_RESPONSE,"Org not on whitelist", WebServiceStatusCodes.NOTFOUND.getErrorCode()), HttpStatus.UNAUTHORIZED);
@@ -64,39 +67,39 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 	public ResponseEntity<String> getNextSessionId(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
-		String _getNextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), orgTicketNumber);
-		return ecrcWebMethodsService.callWebMethodsService(_getNextSessionIdUri, new GetNextSessionId(), requestGuid);
+		String nextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), orgTicketNumber);
+		return ecrcWebMethodsService.callWebMethodsService(nextSessionIdUri, new GetNextSessionId(), requestGuid);
 	}
 	
 	public ResponseEntity<String> createApplicant(RequestCreateApplicant applicantInfo) throws EcrcServiceException {
-		String _createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(), applicantInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_createApplicantUri, new CreateApplicant(), applicantInfo.getRequestGuid());
+		String createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(), applicantInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(createApplicantUri, new CreateApplicant(), applicantInfo.getRequestGuid());
 	}
 
 	public ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException {
-		String _createNewCRCServiceUri = String.format(ecrcProps.getCreateNewCRCServiceUri(),crcService.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_createNewCRCServiceUri, new CreateNewCrcService(), crcService.getRequestGuid());
+		String createNewCRCServiceUri = String.format(ecrcProps.getCreateNewCRCServiceUri(),crcService.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(createNewCRCServiceUri, new CreateNewCrcService(), crcService.getRequestGuid());
 	}
 
 	public ResponseEntity<String> updateServiceFinancialTxn(RequestUpdateServiceFinancialTxn updateServiceFinancialTxn) throws EcrcServiceException {
-		String _updateServiceFinancialTxnUri = String.format(ecrcProps.getUpdateServiceFinancialTxnUri(),updateServiceFinancialTxn.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_updateServiceFinancialTxnUri, new UpdateServiceFinancialTxn(), updateServiceFinancialTxn.getRequestGuid());
+		String updateServiceFinancialTxnUri = String.format(ecrcProps.getUpdateServiceFinancialTxnUri(),updateServiceFinancialTxn.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(updateServiceFinancialTxnUri, new UpdateServiceFinancialTxn(), updateServiceFinancialTxn.getRequestGuid());
     }
   
 	public ResponseEntity<String> getServiceFeeAmount(String orgTicketNumber, String scheduleTypeCd, String scopeLevelCd, String requestGuid) throws EcrcServiceException {
-		String _getServiceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), orgTicketNumber, scheduleTypeCd, scopeLevelCd);
-		return ecrcWebMethodsService.callWebMethodsService(_getServiceFeeAmountUri, new GetServiceFeeAmount(), requestGuid);
+		String serviceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), orgTicketNumber, scheduleTypeCd, scopeLevelCd);
+		return ecrcWebMethodsService.callWebMethodsService(serviceFeeAmountUri, new GetServiceFeeAmount(), requestGuid);
 	}
 	
 	public ResponseEntity<String> logPaymentFailure(RequestLogPaymentFailure paymentFailure)
 			throws EcrcServiceException {
-		String _logPaymentFailureUri = String.format(ecrcProps.getLogPaymentFailureUri(), paymentFailure.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_logPaymentFailureUri, new LogPaymentFailure(), paymentFailure.getRequestGuid());
+		String logPaymentFailureUri = String.format(ecrcProps.getLogPaymentFailureUri(), paymentFailure.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(logPaymentFailureUri, new LogPaymentFailure(), paymentFailure.getRequestGuid());
 	}
 
 	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
-		String _getNextInvoiceIdUri = String.format(ecrcProps.getGetNextInvoiceIdUri(), orgTicketNumber);
-		return ecrcWebMethodsService.callWebMethodsService(_getNextInvoiceIdUri, new GetNextInvoiceId(), requestGuid);
+		String nextInvoiceIdUri = String.format(ecrcProps.getGetNextInvoiceIdUri(), orgTicketNumber);
+		return ecrcWebMethodsService.callWebMethodsService(nextInvoiceIdUri, new GetNextInvoiceId(), requestGuid);
 	}
 
 	public String getJwtSecret() {
@@ -105,16 +108,16 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo)
 			throws EcrcServiceException {
-		String _checkApplicantForPrevCrcUri = String.format(ecrcProps.getCheckApplicantForPrevCrcUri(), applicantInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_checkApplicantForPrevCrcUri, new CheckApplicantForPrevCrc(), applicantInfo.getRequestGuid());
+		String checkApplicantForPrevCrcUri = String.format(ecrcProps.getCheckApplicantForPrevCrcUri(), applicantInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(checkApplicantForPrevCrcUri, new CheckApplicantForPrevCrc(), applicantInfo.getRequestGuid());
 	}
 
 	public ResponseEntity<String> createSharingService(RequestCreateSharingService serviceInfo)
 			throws EcrcServiceException {
-		String _createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(_createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
+		String createSharingServiceUri = String.format(ecrcProps.getCreateSharingServiceUri(), serviceInfo.toQueryString());
+		return ecrcWebMethodsService.callWebMethodsService(createSharingServiceUri, new CreateSharingService(), serviceInfo.getRequestGuid());
 	}
-
+	@SuppressWarnings("java:S3776")
 	public ResponseEntity<String> createNewCRCApplicant(RequestNewCRCApplicant requestNewCRCApplicant) {
 		ResponseServiceDetails serviceDetails = new ResponseServiceDetails();
 		Gson gson = new Gson();
@@ -124,7 +127,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			ResponseEntity<String> clientResp = createApplicant(requestNewCRCApplicant.getRequestCreateApplicant());
 			if (clientResp.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(clientResp.getBody());
-				serviceDetails.setPartyId(obj.getString("partyId"));
+				serviceDetails.setPartyId(String.valueOf(obj.getInt("partyId")));
 				logger.info("Applicant Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("Applicant Failed {}", requestNewCRCApplicant.getRequestGuid());
@@ -133,51 +136,62 @@ public class EcrcServicesImpl implements EcrcServices {
 			ResponseEntity<String> getNextSession = getNextSessionId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
 			if (getNextSession.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(getNextSession.getBody());
-				serviceDetails.setSessionId(obj.getString("sessionId"));
+				serviceDetails.setSessionId(String.valueOf(obj.getInt("sessionId")));
 				logger.info("Session Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("Session Failed {}", requestNewCRCApplicant.getRequestGuid());
 				return getNextSession;
 			}
-			ResponseEntity<String> getNextInvoice = getNextInvoiceId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
-			if (getNextInvoice.getStatusCode() == HttpStatus.OK) {
-				obj = new JSONObject(getNextInvoice.getBody());
-				serviceDetails.setInvoiceId(obj.getString("invoiceId"));
-				logger.info("Invoice Created {}", requestNewCRCApplicant.getRequestGuid());
-			} else {
-				logger.info("Invoice Failed {}", requestNewCRCApplicant.getRequestGuid());
-				return getNextInvoice;
+			if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE) || requestNewCRCApplicant.getApplType().equalsIgnoreCase(ONETIME_TYPE)) {
+				ResponseEntity<String> getNextInvoice = getNextInvoiceId(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestGuid());
+				if (getNextInvoice.getStatusCode() == HttpStatus.OK) {
+					obj = new JSONObject(getNextInvoice.getBody());
+					serviceDetails.setInvoiceId(String.valueOf(obj.getInt("invoiceId")));
+					logger.info("Invoice Created {}", requestNewCRCApplicant.getRequestGuid());
+				} else {
+					logger.info("Invoice Failed {}", requestNewCRCApplicant.getRequestGuid());
+					return getNextInvoice;
+				}
 			}
-			ResponseEntity<String> getServiceFeeAmount = getServiceFeeAmount(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(),requestNewCRCApplicant.getRequestNewCRCService().getSchedule_Type_Cd(),requestNewCRCApplicant.getRequestNewCRCService().getScope_Level_Cd(), requestNewCRCApplicant.getRequestGuid());
-			if (getServiceFeeAmount.getStatusCode() == HttpStatus.OK) {
-				obj = new JSONObject(getServiceFeeAmount.getBody());
-				serviceDetails.setServiceFeeAmount(obj.getString("serviceFeeAmount"));
-				logger.info("Fee retrieved {}", requestNewCRCApplicant.getRequestGuid());
+			requestNewCRCApplicant.getRequestNewCRCService().setApplPartyId(serviceDetails.getPartyId());
+			requestNewCRCApplicant.getRequestNewCRCService().setSessionId(serviceDetails.getSessionId());
+			requestNewCRCApplicant.getRequestNewCRCService().setInvoiceId(serviceDetails.getInvoiceId());
+			if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE)) {
+				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay(EMPLOYEE);
+			} else if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(ONETIME_TYPE)) {
+				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay(ONETIME);
 			} else {
-				logger.info("fee failed {}", requestNewCRCApplicant.getRequestGuid());
-				return getServiceFeeAmount;
+				requestNewCRCApplicant.getRequestNewCRCService().setOrgApplToPay("");
 			}
-			requestNewCRCApplicant.getRequestNewCRCService().setAppl_Party_Id(serviceDetails.getPartyId());
-			requestNewCRCApplicant.getRequestNewCRCService().setSession_Id(serviceDetails.getSessionId());
-			requestNewCRCApplicant.getRequestNewCRCService().setInvoice_Id(serviceDetails.getInvoiceId());
 			ResponseEntity<String> createCRC = createNewCRCService(requestNewCRCApplicant.getRequestNewCRCService());
 			if (createCRC.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(createCRC.getBody());
-				serviceDetails.setServiceId(obj.getString("serviceId"));
+				serviceDetails.setServiceId(String.valueOf(obj.getInt("serviceId")));
 				logger.info("CRC Created {}", requestNewCRCApplicant.getRequestGuid());
 			} else {
 				logger.info("CRC Failed {}", requestNewCRCApplicant.getRequestGuid());
 				return createCRC;
 			}
-			RequestPaymentService requestPaymentService = new RequestPaymentService("P",serviceDetails.getInvoiceId(),requestNewCRCApplicant.getApprovedPage(),requestNewCRCApplicant.getDeclinedPage(),requestNewCRCApplicant.getErrorPage(),serviceDetails.getServiceFeeAmount(),"30",serviceDetails.getServiceId(),serviceDetails.getPartyId(),requestNewCRCApplicant.getRequestGuid());
-			ResponseEntity<String> paymentURl = ecrcPaymentService.createPaymentUrl(requestPaymentService);
-			if (paymentURl.getStatusCode() == HttpStatus.OK) {
-				obj = new JSONObject(paymentURl.getBody());
-				serviceDetails.setPaymentUrl(obj.getString("respValue"));
-				logger.info("Payment URL Created {}", requestNewCRCApplicant.getRequestGuid());
-			} else {
-				logger.info("Payment URL Failed {}", requestNewCRCApplicant.getRequestGuid());
-				return paymentURl;
+			if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE)) {
+				ResponseEntity<String> getServiceFeeAmount = getServiceFeeAmount(requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(), requestNewCRCApplicant.getRequestNewCRCService().getScheduleTypeCd(), requestNewCRCApplicant.getRequestNewCRCService().getScopeLevelCd(), requestNewCRCApplicant.getRequestGuid());
+				if (getServiceFeeAmount.getStatusCode() == HttpStatus.OK) {
+					obj = new JSONObject(getServiceFeeAmount.getBody());
+					serviceDetails.setServiceFeeAmount(String.valueOf(obj.getDouble("serviceFeeAmount")));
+					logger.info("Fee retrieved {}", requestNewCRCApplicant.getRequestGuid());
+				} else {
+					logger.info("fee failed {}", requestNewCRCApplicant.getRequestGuid());
+					return getServiceFeeAmount;
+				}
+				RequestPaymentService requestPaymentService = new RequestPaymentService("P", serviceDetails.getInvoiceId(), requestNewCRCApplicant.getReturnPage(), requestNewCRCApplicant.getReturnPage(), requestNewCRCApplicant.getReturnPage(), serviceDetails.getServiceFeeAmount(), "30", serviceDetails.getServiceId(), serviceDetails.getPartyId(), requestNewCRCApplicant.getRequestGuid());
+				ResponseEntity<String> paymentURl = ecrcPaymentService.createPaymentUrl(requestPaymentService);
+				if (paymentURl.getStatusCode() == HttpStatus.OK) {
+					obj = new JSONObject(paymentURl.getBody());
+					serviceDetails.setPaymentUrl(obj.getString("paymentUrl"));
+					logger.info("Payment URL Created {}", requestNewCRCApplicant.getRequestGuid());
+				} else {
+					logger.info("Payment URL Failed {}", requestNewCRCApplicant.getRequestGuid());
+					return paymentURl;
+				}
 			}
 			logger.info("Applicant and CRC Created {}", requestNewCRCApplicant.getRequestGuid());
 			return new ResponseEntity<>(gson.toJson(serviceDetails),HttpStatus.OK);

@@ -29,7 +29,7 @@ export default function TOU({ page: { header, setError } }) {
       });
       setToError(true);
     }
-  }, []);
+  }, [setError]);
 
   useEffect(() => {
     if (firstBoxChecked && reachedEnd) {
