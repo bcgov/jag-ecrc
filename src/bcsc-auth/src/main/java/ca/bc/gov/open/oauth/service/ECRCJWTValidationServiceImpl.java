@@ -43,8 +43,8 @@ import ca.bc.gov.open.oauth.model.ValidationResponse;
 @EnableConfigurationProperties(OauthProperties.class)
 public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	
-	private final String[] BCSC_ACCESS_TOKEN_CLAIMS =  {"aud", "iss", "exp", "iat", "jti"}; 
-	private final String[] BCSC_ID_TOKEN_CLAIMS =  {"sub", "aud", "acr", "kid", "iss", "exp", "iat", "jti"}; 
+	private static final String[] BCSC_ACCESS_TOKEN_CLAIMS =  {"aud", "iss", "exp", "iat", "jti"}; 
+	private static final String[] BCSC_ID_TOKEN_CLAIMS =  {"sub", "aud", "acr", "kid", "iss", "exp", "iat", "jti"}; 
 	
 	@Autowired
 	private OauthProperties oauthProps;
