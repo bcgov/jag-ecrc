@@ -20,6 +20,9 @@ public class SwaggerConfig {
     @Value("${info.app.version}")
     private String version;
 
+    @Value("${ecrc.swagger.enable}")
+    private Boolean enable;
+
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("eCRC API")
@@ -42,6 +45,6 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo())
-                .enable(true);
+                .enable(enable);
     }
 }
