@@ -297,7 +297,7 @@ export default function Success({
     <main>
       <Header header={header} />
       <div className="page">
-        <div className="content col-md-8">
+        <div className="content col-md-7">
           <h1 style={{ color: headerColor }}>
             {orgApplicantRelationship !== "EMPLOYEE" && "Application Submitted"}
             {paymentInfo.trnApproved === "0" && "Payment Declined/Cancelled"}
