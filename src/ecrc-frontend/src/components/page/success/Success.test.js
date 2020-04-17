@@ -219,7 +219,7 @@ describe("Success Page Component", () => {
     fireEvent.click(getByText(container, "Try Again"));
 
     await wait(() => {
-      expect(setError).toHaveBeenCalledTimes(1);
+      expect(setError).toHaveBeenCalledTimes(2);
     });
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
@@ -255,7 +255,7 @@ describe("Success Page Component", () => {
     fireEvent.click(getByText(container, "Try Again"));
 
     await wait(() => {
-      expect(setError).toHaveBeenCalledTimes(2);
+      expect(setError).toHaveBeenCalledTimes(3);
     });
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
@@ -281,7 +281,7 @@ describe("Success Page Component", () => {
     );
 
     await wait(() => {
-      expect(setError).toHaveBeenCalledTimes(3);
+      expect(setError).toHaveBeenCalledTimes(4);
     });
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
@@ -307,7 +307,7 @@ describe("Success Page Component", () => {
     );
 
     await wait(() => {
-      expect(setError).toHaveBeenCalledTimes(4);
+      expect(setError).toHaveBeenCalledTimes(5);
     });
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");

@@ -81,6 +81,9 @@ export default function OrgValidation({
             });
           } else {
             setToError(true);
+            setError({
+              status: error.response.status
+            });
           }
         } else {
           setToError(true);

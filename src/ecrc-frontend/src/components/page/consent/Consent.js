@@ -130,17 +130,17 @@ export default function Consent({
   const handleError = error => {
     setToError(true);
 
-    if (
-      error &&
-      error.response &&
-      error.response.status &&
-      error.response.data &&
-      error.response.data.message
-    ) {
-      setError({
-        status: error.response.status,
-        message: error.response.data.message
-      });
+    if (error && error.response && error.response.status) {
+      if (error.response.data && error.response.data.message) {
+        setError({
+          status: error.response.status,
+          message: error.response.data.message
+        });
+      } else {
+        setError({
+          status: error.response.status
+        });
+      }
     }
     setLoading(false);
   };
