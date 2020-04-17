@@ -266,7 +266,7 @@ describe("ApplicationForm Component", () => {
     );
 
     await wait(() => {
-      expect(setError).toBeCalledTimes(2); // it is not called again
+      expect(setError).toBeCalledTimes(3);
     });
 
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
