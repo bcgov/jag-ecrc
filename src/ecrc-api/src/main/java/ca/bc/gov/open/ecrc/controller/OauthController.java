@@ -38,7 +38,7 @@ public class OauthController {
 	private final Logger logger = (Logger) LoggerFactory.getLogger(OauthController.class);
 
 	@ResponseStatus(code = HttpStatus.FOUND)
-	@GetMapping(value = "/protected/getBCSCUrl", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/protected/getBCSCUrl")
 	public ResponseEntity<String> getBCSCUrl(@RequestParam(required = true) String requestGuid)
 			throws OauthServiceException {
 		logger.info("BCSC URL request received [{}]", requestGuid);
@@ -51,7 +51,7 @@ public class OauthController {
 
 	}
 
-	@GetMapping(value = "/protected/login", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/protected/login")
 	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode,
 			@RequestParam(required = true) String requestGuid) throws OauthServiceException {
 		logger.info("Login URL request received {}", requestGuid);
