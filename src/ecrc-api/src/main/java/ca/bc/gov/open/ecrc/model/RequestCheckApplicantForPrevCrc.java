@@ -16,7 +16,6 @@ public class RequestCheckApplicantForPrevCrc {
 	private String postalCodeTxt;
 	private String driversLicNo;
 	private String scopeLevelCd;
-	private String previousServiceId;
 	private String requestGuid;
 
 	public String getOrgTicketNumber() {
@@ -83,14 +82,6 @@ public class RequestCheckApplicantForPrevCrc {
 		this.scopeLevelCd = scopeLevelCd;
 	}
 
-	public String getPreviousServiceId() {
-		return previousServiceId;
-	}
-
-	public void setPreviousServiceId(String previousServiceId) {
-		this.previousServiceId = previousServiceId;
-	}
-
 	public String getRequestGuid() {
 		return requestGuid;
 	}
@@ -100,14 +91,18 @@ public class RequestCheckApplicantForPrevCrc {
 	}
 
 	public String toQueryString() {
-        return 	"?OrgTicketNumber=" + orgTicketNumber +
-        		"&Legal_Surname_Nm=" + legalSurnameNm +
-        		"&Legal_First_Nm=" + legalFirstNm +
-        		"&Birth_Dt=" + birthDt +
-        		"&Gender_Txt=" + genderTxt +
-        		"&Postal_Code_Txt=" + postalCodeTxt +
-        		"&Drivers_Lic_No=" + driversLicNo +
-        		"&Scope_Level_Cd=" + scopeLevelCd +
-        		"&Previous_Service_Id=" + previousServiceId;
+		String queryString = "?OrgTicketNumber=" + orgTicketNumber +
+			"&Legal_Surname_Nm=" + legalSurnameNm +
+			"&Legal_First_Nm=" + legalFirstNm +
+			"&Birth_Dt=" + birthDt +
+			"&Gender_Txt=" + genderTxt +
+			"&Scope_Level_Cd=" + scopeLevelCd;
+		if (null != postalCodeTxt && !postalCodeTxt.isEmpty()) {
+			queryString += "&Postal_Code_Txt=" + postalCodeTxt;
+		}
+		if (null != driversLicNo && !driversLicNo.isEmpty()) {
+			queryString += "&Drivers_Lic_No=" + driversLicNo;
+		}
+        return 	queryString;
     }
 }

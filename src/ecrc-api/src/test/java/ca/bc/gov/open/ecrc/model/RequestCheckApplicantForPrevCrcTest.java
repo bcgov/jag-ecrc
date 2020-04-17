@@ -33,7 +33,6 @@ class RequestCheckApplicantForPrevCrcTest {
 		requestCheckApplicantForPrevCrc.setLegalSurnameNm("legalSurnameNm");
 		requestCheckApplicantForPrevCrc.setPostalCodeTxt("postalCodeTxt");
 		requestCheckApplicantForPrevCrc.setOrgTicketNumber("orgTicketNumber");
-		requestCheckApplicantForPrevCrc.setPreviousServiceId("previousServiceId");
 		requestCheckApplicantForPrevCrc.setScopeLevelCd("scopeLevelCd");
 		requestCheckApplicantForPrevCrc.setRequestGuid("requestGuid");
 
@@ -44,7 +43,6 @@ class RequestCheckApplicantForPrevCrcTest {
 		Assertions.assertEquals("legalSurnameNm", requestCheckApplicantForPrevCrc.getLegalSurnameNm());
 		Assertions.assertEquals("postalCodeTxt", requestCheckApplicantForPrevCrc.getPostalCodeTxt());
 		Assertions.assertEquals("orgTicketNumber", requestCheckApplicantForPrevCrc.getOrgTicketNumber());
-		Assertions.assertEquals("previousServiceId", requestCheckApplicantForPrevCrc.getPreviousServiceId());
 		Assertions.assertEquals("scopeLevelCd", requestCheckApplicantForPrevCrc.getScopeLevelCd());
 		Assertions.assertEquals("requestGuid", requestCheckApplicantForPrevCrc.getRequestGuid());
 		
