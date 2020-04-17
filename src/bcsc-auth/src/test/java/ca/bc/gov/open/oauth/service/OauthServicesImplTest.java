@@ -47,7 +47,7 @@ class OauthServicesImplTest {
 	OauthServicesImpl oauthServices;
 
 	@Mock
-	OauthProperties ecrcProperties;
+	OauthProperties oauthProperties;
 
 	public static MockWebServer mockBackEnd;
 
@@ -66,14 +66,14 @@ class OauthServicesImplTest {
 	void initialize() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 		MockitoAnnotations.initMocks(this);
 		String baseUrl = String.format("http://localhost:%s", mockBackEnd.getPort());
-		Mockito.when(ecrcProperties.getIdp()).thenReturn(baseUrl);
-		Mockito.when(ecrcProperties.getClientId()).thenReturn("123");
-		Mockito.when(ecrcProperties.getScope()).thenReturn("scope");
-		Mockito.when(ecrcProperties.getReturnUri()).thenReturn("test.com");
-		Mockito.when(ecrcProperties.getSecret()).thenReturn("secret");
-		Mockito.when(ecrcProperties.getAuthorizePath()).thenReturn("/test");
-		Mockito.when(ecrcProperties.getTokenPath()).thenReturn("/test");
-		Mockito.when(ecrcProperties.getUserinfoPath()).thenReturn("/test");
+		Mockito.when(oauthProperties.getIdp()).thenReturn(baseUrl);
+		Mockito.when(oauthProperties.getClientId()).thenReturn("123");
+		Mockito.when(oauthProperties.getScope()).thenReturn("scope");
+		Mockito.when(oauthProperties.getReturnUri()).thenReturn("test.com");
+		Mockito.when(oauthProperties.getSecret()).thenReturn("secret");
+		Mockito.when(oauthProperties.getAuthorizePath()).thenReturn("/test");
+		Mockito.when(oauthProperties.getTokenPath()).thenReturn("/test");
+		Mockito.when(oauthProperties.getUserinfoPath()).thenReturn("/test");
 	}
 
 	@DisplayName("Success - getIDPRedirect oauth service")
@@ -134,7 +134,7 @@ class OauthServicesImplTest {
 	@DisplayName("Failure - getToken oauth service")
 	@Test
 	void testGetTokenFailure4() throws OauthServiceException {
-		Mockito.when(ecrcProperties.getReturnUri()).thenReturn("\"");
+		Mockito.when(oauthProperties.getReturnUri()).thenReturn("\"");
 		Assertions.assertThrows(OauthServiceException.class, () -> {
 			oauthServices.getToken("test");
 		});

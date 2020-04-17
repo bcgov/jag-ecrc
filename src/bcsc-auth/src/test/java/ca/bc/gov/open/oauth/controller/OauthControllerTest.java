@@ -46,7 +46,7 @@ class OauthControllerTest {
 	ECRCJWTValidationServiceImpl tokenServices;
 
 	@Mock
-	OauthProperties ecrcProperties;
+	OauthProperties oauthProperties;
 
 	@InjectMocks
 	OauthController oauthController = new OauthController();
@@ -56,9 +56,9 @@ class OauthControllerTest {
 	@BeforeEach
 	public void initMocks() {
 		MockitoAnnotations.initMocks(this);
-		Mockito.when(ecrcProperties.getJwtSecret()).thenReturn("secret");
-		Mockito.when(ecrcProperties.getJwtExpiry()).thenReturn(300);
-		Mockito.when(ecrcProperties.getJwtAuthorizedRole()).thenReturn("role");
+		Mockito.when(oauthProperties.getJwtSecret()).thenReturn("secret");
+		Mockito.when(oauthProperties.getJwtExpiry()).thenReturn(300);
+		Mockito.when(oauthProperties.getJwtAuthorizedRole()).thenReturn("role");
 		userInfo = new JSONObject();
 		userInfo.put("sub", "test");
 	}
