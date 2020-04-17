@@ -43,7 +43,7 @@ exports[`Success Page Component Matches the FailedPayment snapshot 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
@@ -384,7 +384,7 @@ exports[`Success Page Component Matches the SuccessfulPayment snapshot 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={
@@ -717,7 +717,7 @@ exports[`Success Page Component Matches the Volunteer snapshot 1`] = `
     className="page"
   >
     <div
-      className="content col-md-8"
+      className="content col-md-7"
     >
       <h1
         style={

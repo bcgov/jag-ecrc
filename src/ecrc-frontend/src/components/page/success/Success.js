@@ -89,17 +89,17 @@ export default function Success({
   });
 
   const handleError = error => {
-    if (
-      error &&
-      error.response &&
-      error.response.status &&
-      error.response.data &&
-      error.response.data.message
-    ) {
-      setError({
-        status: error.response.status,
-        message: error.response.data.message
-      });
+    if (error && error.response && error.response.status) {
+      if (error.response.data && error.response.data.message) {
+        setError({
+          status: error.response.status,
+          message: error.response.data.message
+        });
+      } else {
+        setError({
+          status: error.response.status
+        });
+      }
     }
 
     history.push("/criminalrecordcheck/error");
@@ -297,7 +297,7 @@ export default function Success({
     <main>
       <Header header={header} />
       <div className="page">
-        <div className="content col-md-8">
+        <div className="content col-md-7">
           <h1 style={{ color: headerColor }}>
             {orgApplicantRelationship !== "EMPLOYEE" && "Application Submitted"}
             {paymentInfo.trnApproved === "0" && "Payment Declined/Cancelled"}
