@@ -17,11 +17,10 @@ class RequestCheckApplicantForPrevCrcTest {
 			+ "&Legal_First_Nm=legalFirstNm"
 			+ "&Birth_Dt=birthDt"
 			+ "&Gender_Txt=genderTxt"
-			+ "&Postal_Code_Txt=postalCodeTxt"
-			+ "&Drivers_Lic_No=driversLicNo"
 			+ "&Scope_Level_Cd=scopeLevelCd"
-			+ "&Previous_Service_Id=previousServiceId";
-
+			+ "&Postal_Code_Txt=postalCodeTxt"
+			+ "&Drivers_Lic_No=driversLicNo";
+	
 	@DisplayName("Success - checkApplicantForPrevCrc request queryString")
 	@Test
 	public void generateQueryStringTest() {
