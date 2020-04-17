@@ -17,11 +17,10 @@ class RequestCheckApplicantForPrevCrcTest {
 			+ "&Legal_First_Nm=legalFirstNm"
 			+ "&Birth_Dt=birthDt"
 			+ "&Gender_Txt=genderTxt"
-			+ "&Postal_Code_Txt=postalCodeTxt"
-			+ "&Drivers_Lic_No=driversLicNo"
 			+ "&Scope_Level_Cd=scopeLevelCd"
-			+ "&Previous_Service_Id=previousServiceId";
-
+			+ "&Postal_Code_Txt=postalCodeTxt"
+			+ "&Drivers_Lic_No=driversLicNo";
+	
 	@DisplayName("Success - checkApplicantForPrevCrc request queryString")
 	@Test
 	public void generateQueryStringTest() {
@@ -33,7 +32,6 @@ class RequestCheckApplicantForPrevCrcTest {
 		requestCheckApplicantForPrevCrc.setLegalSurnameNm("legalSurnameNm");
 		requestCheckApplicantForPrevCrc.setPostalCodeTxt("postalCodeTxt");
 		requestCheckApplicantForPrevCrc.setOrgTicketNumber("orgTicketNumber");
-		requestCheckApplicantForPrevCrc.setPreviousServiceId("previousServiceId");
 		requestCheckApplicantForPrevCrc.setScopeLevelCd("scopeLevelCd");
 		requestCheckApplicantForPrevCrc.setRequestGuid("requestGuid");
 
@@ -44,7 +42,6 @@ class RequestCheckApplicantForPrevCrcTest {
 		Assertions.assertEquals("legalSurnameNm", requestCheckApplicantForPrevCrc.getLegalSurnameNm());
 		Assertions.assertEquals("postalCodeTxt", requestCheckApplicantForPrevCrc.getPostalCodeTxt());
 		Assertions.assertEquals("orgTicketNumber", requestCheckApplicantForPrevCrc.getOrgTicketNumber());
-		Assertions.assertEquals("previousServiceId", requestCheckApplicantForPrevCrc.getPreviousServiceId());
 		Assertions.assertEquals("scopeLevelCd", requestCheckApplicantForPrevCrc.getScopeLevelCd());
 		Assertions.assertEquals("requestGuid", requestCheckApplicantForPrevCrc.getRequestGuid());
 		
