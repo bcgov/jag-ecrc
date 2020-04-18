@@ -19,6 +19,8 @@ public class RequestNewCRCApplicantTest {
 		requestNewCRCApplicant.setRequestCreateApplicant(new RequestCreateApplicant());
 		requestNewCRCApplicant.setRequestNewCRCService(new RequestNewCRCService());
 		requestNewCRCApplicant.setRequestGuid("requestGuid");
+		requestNewCRCApplicant.setDeclinedPage("declinedPage");
+		requestNewCRCApplicant.setErrorPage("errorPage");
 
 		Assertions.assertEquals("applType", requestNewCRCApplicant.getApplType());
 		Assertions.assertEquals("returnPage", requestNewCRCApplicant.getReturnPage());
@@ -27,6 +29,8 @@ public class RequestNewCRCApplicantTest {
 		Assertions.assertEquals(RequestNewCRCService.class,
 				requestNewCRCApplicant.getRequestNewCRCService().getClass());
 		Assertions.assertEquals("requestGuid", requestNewCRCApplicant.getRequestGuid());
+		Assertions.assertEquals("declinedPage", requestNewCRCApplicant.getDeclinedPage());
+		Assertions.assertEquals("errorPage", requestNewCRCApplicant.getErrorPage());
 
 	}
 }
