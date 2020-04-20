@@ -403,20 +403,22 @@ export default function InformationReview({
               </span>
             </label>
           </section>
-          <br />
           {shareAvailable && (
-            <Share
-              previousOrg={oldOrg}
-              expiration={oldCRCExpiration}
-              newOrg={orgNm}
-              clickShare={() => {
-                setShare(true);
-                confirm();
-              }}
-              boxChecked={boxChecked}
-            />
+            <>
+              <br />
+              <Share
+                previousOrg={oldOrg}
+                expiration={oldCRCExpiration}
+                newOrg={orgNm}
+                clickShare={() => {
+                  setShare(true);
+                  confirm();
+                }}
+                boxChecked={boxChecked}
+              />
+              <br />
+            </>
           )}
-          <br />
           <div className="buttons pt-4">
             <Button button={cancelButton} onClick={edit} />
             <Button button={confirmButton} onClick={confirm} />
