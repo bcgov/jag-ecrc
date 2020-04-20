@@ -258,6 +258,7 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate error case when error has appropriate response and status, but no data or message", async () => {
+    const oldEnv = process.env;
     delete process.env.REACT_APP_FRONTEND_BASE_URL;
 
     axios.post.mockImplementation(() =>
@@ -288,6 +289,8 @@ describe("Consent Page Component", () => {
     });
 
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+
+    process.env = oldEnv;
   });
 
   test("Validate Employee relationship flow", async () => {
