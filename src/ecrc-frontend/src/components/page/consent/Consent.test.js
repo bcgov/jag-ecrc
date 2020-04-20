@@ -197,6 +197,9 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate Redirect to Error when failed axios call", async () => {
+    window.REACT_APP_FRONTEND_BASE_URL = "localhost:3000";
+    process.env.REACT_APP_FRONTEND_BASE_URL = "localhost:3000";
+
     axios.post.mockImplementation(() => Promise.reject(new Error("fail")));
 
     const history = createMemoryHistory();
@@ -220,6 +223,9 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate error case when error has appropriate response, status, data and message", async () => {
+    window.REACT_APP_FRONTEND_BASE_URL = null;
+    process.env.REACT_APP_FRONTEND_BASE_URL = "localhost:3000";
+
     axios.post.mockImplementation(() =>
       Promise.reject({
         response: { status: 400, data: { message: "This is error" } }
@@ -242,7 +248,43 @@ describe("Consent Page Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
-      expect(setError).toHaveBeenCalled();
+      expect(setError).toHaveBeenCalledWith({
+        status: 400,
+        message: "This is error"
+      });
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Validate error case when error has appropriate response and status, but no data or message", async () => {
+    delete process.env.REACT_APP_FRONTEND_BASE_URL;
+
+    axios.post.mockImplementation(() =>
+      Promise.reject({
+        response: { status: 400 }
+      })
+    );
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalledWith({
+        status: 400
+      });
     });
 
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
