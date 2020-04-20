@@ -10298,8 +10298,6 @@ exports[`Storyshots Information Review Display Share Mobile 1`] = `
           </span>
         </label>
       </section>
-      <br />
-      <br />
       <div
         className="buttons pt-4"
       >
@@ -10833,8 +10831,6 @@ exports[`Storyshots Information Review Display Share Option 1`] = `
           </span>
         </label>
       </section>
-      <br />
-      <br />
       <div
         className="buttons pt-4"
       >
@@ -11368,8 +11364,6 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
           </span>
         </label>
       </section>
-      <br />
-      <br />
       <div
         className="buttons pt-4"
       >
@@ -11903,8 +11897,6 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
           </span>
         </label>
       </section>
-      <br />
-      <br />
       <div
         className="buttons pt-4"
       >
@@ -12446,8 +12438,6 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
           </span>
         </label>
       </section>
-      <br />
-      <br />
       <div
         className="buttons pt-4"
       >
@@ -12989,8 +12979,6 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
           </span>
         </label>
       </section>
-      <br />
-      <br />
       <div
         className="buttons pt-4"
       >
