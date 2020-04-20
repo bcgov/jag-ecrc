@@ -65,11 +65,20 @@ class OauthControllerTest {
 	}
 
 
+	@DisplayName("Success - getBCSCUrl oauth controller default")
+	@Test
+	void testDefaultGetBCSCUrlSuccess() throws OauthServiceException, URISyntaxException {
+		when(oauthServices.getIDPRedirect(null)).thenReturn(new URI("test"));
+		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID", null);
+		Assert.assertEquals("test", response.getBody());
+		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
+	}
+
 	@DisplayName("Success - getBCSCUrl oauth controller")
 	@Test
 	void testGetBCSCUrlSuccess() throws OauthServiceException, URISyntaxException {
-		when(oauthServices.getIDPRedirect()).thenReturn(new URI("test"));
-		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID");
+		when(oauthServices.getIDPRedirect("TEST")).thenReturn(new URI("test"));
+		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID", "TEST");
 		Assert.assertEquals("test", response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -77,9 +86,9 @@ class OauthControllerTest {
 	@DisplayName("Error - getBCSCUrl oauth controller")
 	@Test
 	void testGetBCSCUrlError() throws OauthServiceException, URISyntaxException {
-		when(oauthServices.getIDPRedirect()).thenReturn(null);
+		when(oauthServices.getIDPRedirect(null)).thenReturn(null);
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthController.getBCSCUrl("SOMEUUID");
+			oauthController.getBCSCUrl("SOMEUUID", null);
 		});
 	}
 
