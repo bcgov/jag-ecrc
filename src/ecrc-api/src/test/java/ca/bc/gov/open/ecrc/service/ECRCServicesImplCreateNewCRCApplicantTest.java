@@ -5,6 +5,12 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCApplicant;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
+import ca.bc.gov.open.ecrc.objects.CreateApplicant;
+import ca.bc.gov.open.ecrc.objects.CreateNewCrcService;
+import ca.bc.gov.open.ecrc.objects.GetNextInvoiceId;
+import ca.bc.gov.open.ecrc.objects.GetNextSessionId;
+import ca.bc.gov.open.ecrc.objects.GetServiceFeeAmount;
+
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -95,18 +101,141 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
         Assert.assertEquals(successOnetimeResp, response.getBody());
         Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
     }
-    @DisplayName("Error - ecrcService CreateNewCRCApplicant")
-    @Test
-    public void testError() throws EcrcServiceException {
 
-        RequestNewCRCApplicant request = new RequestNewCRCApplicant();
-        request.setRequestCreateApplicant(new RequestCreateApplicant());
-        request.setRequestNewCRCService(new RequestNewCRCService());
-        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
-                .thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}", HttpStatus.SERVICE_UNAVAILABLE));
+	@DisplayName("Error - CreateApplicant ecrcService CreateNewCRCApplicant")
+	@Test
+	public void testError1() throws EcrcServiceException {
 
-        ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
-        Assert.assertEquals("{\"message\":\"something happened\",responseCode\":-1}", response.getBody());
-        Assert.assertEquals(HttpStatus.SERVICE_UNAVAILABLE, response.getStatusCode());
-    }
+		RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+		request.setRequestCreateApplicant(new RequestCreateApplicant());
+		request.setRequestNewCRCService(new RequestNewCRCService());
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+				.thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
+						HttpStatus.SERVICE_UNAVAILABLE));
+
+		ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
+		Assert.assertEquals("{\"message\":\"something happened\",responseCode\":-1}", response.getBody());
+		Assert.assertEquals(HttpStatus.SERVICE_UNAVAILABLE, response.getStatusCode());
+	}
+
+	@DisplayName("Error - GetNextSessionId ecrcService CreateNewCRCApplicant")
+	@Test
+	public void testError2() throws EcrcServiceException {
+
+		RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+		request.setApplType("EMPLOYEE");
+		request.setRequestCreateApplicant(new RequestCreateApplicant());
+		request.setRequestNewCRCService(new RequestNewCRCService());
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextSessionId.class), any()))
+				.thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
+						HttpStatus.SERVICE_UNAVAILABLE));
+
+		ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
+		Assert.assertEquals("{\"message\":\"something happened\",responseCode\":-1}", response.getBody());
+		Assert.assertEquals(HttpStatus.SERVICE_UNAVAILABLE, response.getStatusCode());
+	}
+
+	@DisplayName("Error - GetServiceFeeAmount ecrcService CreateNewCRCApplicant")
+	@Test
+	public void testError3() throws EcrcServiceException {
+
+		RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+		request.setApplType("EMPLOYEE");
+		request.setRequestCreateApplicant(new RequestCreateApplicant());
+		request.setRequestNewCRCService(new RequestNewCRCService());
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextSessionId.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextInvoiceId.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateNewCrcService.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetServiceFeeAmount.class), any()))
+				.thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
+						HttpStatus.SERVICE_UNAVAILABLE));
+
+		ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
+		Assert.assertEquals("{\"message\":\"something happened\",responseCode\":-1}", response.getBody());
+		Assert.assertEquals(HttpStatus.SERVICE_UNAVAILABLE, response.getStatusCode());
+	}
+
+	@DisplayName("Error - CreateNewCrcService ecrcService CreateNewCRCApplicant")
+	@Test
+	public void testError4() throws EcrcServiceException {
+
+		RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+		request.setApplType("EMPLOYEE");
+		request.setRequestCreateApplicant(new RequestCreateApplicant());
+		request.setRequestNewCRCService(new RequestNewCRCService());
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextSessionId.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextInvoiceId.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateNewCrcService.class), any()))
+				.thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
+						HttpStatus.SERVICE_UNAVAILABLE));
+
+		ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
+		Assert.assertEquals("{\"message\":\"something happened\",responseCode\":-1}", response.getBody());
+		Assert.assertEquals(HttpStatus.SERVICE_UNAVAILABLE, response.getStatusCode());
+	}
+
+	@DisplayName("Error - GetNextInvoiceId ecrcService CreateNewCRCApplicant")
+	@Test
+	public void testError5() throws EcrcServiceException {
+
+		RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+		request.setApplType("EMPLOYEE");
+		request.setRequestCreateApplicant(new RequestCreateApplicant());
+		request.setRequestNewCRCService(new RequestNewCRCService());
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextSessionId.class), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextInvoiceId.class), any()))
+				.thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
+						HttpStatus.SERVICE_UNAVAILABLE));
+
+		ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
+		Assert.assertEquals("{\"message\":\"something happened\",responseCode\":-1}", response.getBody());
+		Assert.assertEquals(HttpStatus.SERVICE_UNAVAILABLE, response.getStatusCode());
+	}
+	
+	@DisplayName("Error - createPaymentUrl ecrcService CreateNewCRCApplicant")
+	@Test
+	public void testError6() throws EcrcServiceException {
+
+		RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+		request.setApplType("EMPLOYEE");
+		request.setRequestCreateApplicant(new RequestCreateApplicant());
+		request.setRequestNewCRCService(new RequestNewCRCService());
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+
+		Mockito.when(ecrcPaymentService.createPaymentUrl(any())).thenReturn(new ResponseEntity<>(
+				"{\"message\":\"something happened\",responseCode\":-1}", HttpStatus.SERVICE_UNAVAILABLE));
+		ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
+		Assert.assertEquals("{\"message\":\"something happened\",responseCode\":-1}", response.getBody());
+		Assert.assertEquals(HttpStatus.SERVICE_UNAVAILABLE, response.getStatusCode());
+	}
+	
+	@DisplayName("Error - exception ecrcService CreateNewCRCApplicant")
+	@Test
+	public void testError7() throws EcrcServiceException {
+
+		RequestNewCRCApplicant request = new RequestNewCRCApplicant();
+		request.setApplType("EMPLOYEE");
+		request.setRequestCreateApplicant(new RequestCreateApplicant());
+		request.setRequestNewCRCService(new RequestNewCRCService());
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
+				.thenThrow(new NullPointerException("error"));
+		ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
+		Assert.assertEquals("error", response.getBody());
+		Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+	}
 }
