@@ -22,7 +22,7 @@ public class GlobalCorsConfiguration {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping(ecrcProps.getCorsMapping()).allowedMethods("GET", "POST")
-						.allowedOrigins(ecrcProps.getCorsAllowedOrigins());
+						.allowedOrigins(ecrcProps.getCorsAllowedOrigins().split(","));
 			}
 		};
 	}

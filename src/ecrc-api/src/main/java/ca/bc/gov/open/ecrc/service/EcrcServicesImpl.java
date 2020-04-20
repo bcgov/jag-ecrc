@@ -7,6 +7,8 @@ import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.*;
 import ca.bc.gov.open.ecrc.objects.*;
 import com.google.gson.Gson;
+import com.google.gson.JsonParseException;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -164,7 +166,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	 * Private method to create applicant id, session id and invoice id
 	 */
 	private ResponseEntity<String> saveServiceInfo(RequestNewCRCApplicant requestNewCRCApplicant,
-			ResponseServiceDetails serviceDetails) throws EcrcServiceException {
+			ResponseServiceDetails serviceDetails) throws EcrcServiceException, JSONException {
 		ResponseEntity<String> clientResp = createApplicant(requestNewCRCApplicant.getRequestCreateApplicant());
 		JSONObject obj;
 		if (clientResp.getStatusCode() == HttpStatus.OK) {
@@ -208,7 +210,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	 * create payment url if needed
 	 */
 	private ResponseEntity<String> handlePayment(RequestNewCRCApplicant requestNewCRCApplicant,
-			ResponseServiceDetails serviceDetails) throws EcrcServiceException {
+			ResponseServiceDetails serviceDetails) throws EcrcServiceException, JSONException {
 		if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE)) {
 			JSONObject obj;
 			ResponseEntity<String> getServiceFeeAmount = getServiceFeeAmount(
