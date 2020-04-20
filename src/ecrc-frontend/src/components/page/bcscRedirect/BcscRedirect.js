@@ -34,11 +34,14 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
     const uuid = sessionStorage.getItem("uuid");
 
     axios
-      .get(`/ecrc/protected/getBCSCUrl?requestGuid=${uuid}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
+      .get(
+        `/ecrc/protected/getBCSCUrl?requestGuid=${uuid}&returnUrl=${window.location.origin}/criminalrecordcheck/applicationform`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
-      })
+      )
       .then(res => {
         setBcscUrl(res.data);
       })
