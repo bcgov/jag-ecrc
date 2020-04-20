@@ -76,10 +76,17 @@ class OauthServicesImplTest {
 		Mockito.when(ecrcProperties.getOauthUserinfoPath()).thenReturn("/test");
 	}
 
-	@DisplayName("Success - getIDPRedirect oauth service")
+	@DisplayName("Success - getIDPRedirect oauth service default url")
+	@Test
+	void testIdpRedirectDefault() throws URISyntaxException {
+		URI response = oauthServices.getIDPRedirect(null);
+		Assertions.assertEquals("localhost", response.getHost());
+	}
+
+	@DisplayName("Success - getIDPRedirect oauth service specified return")
 	@Test
 	void testIdpRedirect() throws URISyntaxException {
-		URI response = oauthServices.getIDPRedirect();
+		URI response = oauthServices.getIDPRedirect("TEST");
 		Assertions.assertEquals("localhost", response.getHost());
 	}
 

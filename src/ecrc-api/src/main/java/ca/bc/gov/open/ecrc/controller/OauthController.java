@@ -51,11 +51,10 @@ public class OauthController {
 
 	@ResponseStatus(code = HttpStatus.FOUND)
 	@GetMapping(value = "/protected/getBCSCUrl")
-	public ResponseEntity<String> getBCSCUrl(@RequestParam(required=true) String requestGuid) throws OauthServiceException {
+	public ResponseEntity<String> getBCSCUrl(@RequestParam(required=true) String requestGuid, @RequestParam(required=false) String returnUrl) throws OauthServiceException {
 		logger.info("BCSC URL request received [{}]", requestGuid);
-
 		try {
-			return new ResponseEntity<>(oauthServices.getIDPRedirect().toString(), HttpStatus.OK);
+			return new ResponseEntity<>(oauthServices.getIDPRedirect(returnUrl).toString(), HttpStatus.OK);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			throw new OauthServiceException("Configuration Error");
