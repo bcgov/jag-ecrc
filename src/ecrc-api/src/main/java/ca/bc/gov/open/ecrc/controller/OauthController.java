@@ -70,12 +70,13 @@ public class OauthController {
 	 */
 	@GetMapping(value = "/protected/login")
 	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode,
-										@RequestParam(required=true) String requestGuid) throws OauthServiceException {
+										@RequestParam(required=true) String requestGuid,
+										@RequestParam(required=false) String returnUrl) throws OauthServiceException {
 		logger.info("Login URL request received {}", requestGuid);
 		
 		AccessTokenResponse token = null; 
 		try {
-			token = oauthServices.getToken(authCode);
+			token = oauthServices.getToken(authCode, returnUrl);
 		} catch (Exception e) {
 			logger.error("Error while calling Oauth2 /token endpoint. ", e);
 			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
