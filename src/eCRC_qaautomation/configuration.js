@@ -1,6 +1,6 @@
 module.exports.config = {
-  // seleniumAddress: "http://localhost:4444/wd/hub",
-  seleniumAddress: "http://selenium-hub-pqyiwk-tools.pathfinder.bcgov/wd/hub",
+  seleniumAddress: "http://localhost:4444/wd/hub",
+  //seleniumAddress: "http://selenium-hub-pqyiwk-tools.pathfinder.bcgov/wd/hub",
   specs: [
     "./automationtest/moduletests/landingpage_spec.js",
     "./automationtest/moduletests/bcscredirect_spec.js"
@@ -30,6 +30,7 @@ module.exports.config = {
   capabilities: {
     browserName: "chrome",
     chromeOptions: {
+      //args: ["--headless", "--window-size=1920x1080"],
       prefs: {
         download: {
           default_directory: "/tmp/pdfdownloads",
