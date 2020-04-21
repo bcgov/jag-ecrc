@@ -102,8 +102,7 @@ describe("ApplicationForm Component", () => {
   const mock = new MockAdapter(axios);
   const API_REQUEST_PROVINCES =
     "/ecrc/protected/getProvinceList?requestGuid=unique123";
-  const API_REQUEST_JWT =
-    "/ecrc/protected/login?code=code&requestGuid=unique123&returnUrl=http://test.com";
+  const API_REQUEST_JWT = `/ecrc/protected/login?code=code&requestGuid=unique123&returnUrl=${window.location.origin}/criminalrecordcheck/applicationform`;
 
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
