@@ -103,7 +103,7 @@ describe("ApplicationForm Component", () => {
   const API_REQUEST_PROVINCES =
     "/ecrc/protected/getProvinceList?requestGuid=unique123";
   const API_REQUEST_JWT =
-    "/ecrc/protected/login?code=code&requestGuid=unique123";
+    "/ecrc/protected/login?code=code&requestGuid=unique123&returnUrl=http://test.com";
 
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
