@@ -88,14 +88,14 @@ public class OauthServicesImpl implements OauthServices {
 			
 	}
 
-	public AccessTokenResponse getToken(String authCode) throws OauthServiceException {
+	public AccessTokenResponse getToken(String authCode, String returnUrl) throws OauthServiceException {
 		
 		logger.debug("Calling getToken");
 		
 		AuthorizationCode code = new AuthorizationCode(authCode);
 		try {
 			
-			URI callback = new URI(ecrcProps.getOauthReturnUri());
+			URI callback = new URI((returnUrl != null) ? returnUrl : ecrcProps.getOauthReturnUri());
 			
 			// The credentials to authenticate the client at the token endpoint
 			ClientID clientID = new ClientID(ecrcProps.getOauthClientId());
