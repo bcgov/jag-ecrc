@@ -170,7 +170,7 @@ export default function Consent({
     const createApplicantInfo = {
       orgTicketNumber,
       requestGuid: uuid,
-      callPurpose: "CRC",
+      callPurpose: share ? "SHARING" : "CRC",
       legalSurnameNm,
       legalFirstNm,
       legalSecondNm,
@@ -233,7 +233,7 @@ export default function Consent({
     const crcApplicant = {
       requestGuid: uuid,
       returnPage: `${REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-      applType: orgApplicantRelationship,
+      applType: share ? "SHARING" : orgApplicantRelationship,
       requestCreateApplicant: createApplicantInfo,
       requestNewCRCService: CRC
     };
