@@ -90,7 +90,7 @@ public class OauthServicesImpl implements OauthServices {
 
 	public AccessTokenResponse getToken(String authCode, String returnUrl) throws OauthServiceException {
 		
-		logger.debug("Calling getToken");
+		logger.debug("Calling getToken ");
 		
 		AuthorizationCode code = new AuthorizationCode(authCode);
 		try {
