@@ -29,6 +29,7 @@ module.exports.config = {
   },
   capabilities: {
     browserName: "chrome",
+    acceptInsecureCerts: true,
     chromeOptions: {
       args: ["--headless", "--window-size=1920x1080"],
       prefs: {
