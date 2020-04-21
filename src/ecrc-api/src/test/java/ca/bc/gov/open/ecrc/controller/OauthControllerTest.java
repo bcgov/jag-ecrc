@@ -92,45 +92,58 @@ class OauthControllerTest {
 		});
 	}
 
-	@DisplayName("Success - login oauth controller")
+	@DisplayName("Success - login oauth controller default")
 	@Test
-	void testLoginSuccess() throws OauthServiceException, URISyntaxException {
+	void testDefaultLoginSuccess() throws OauthServiceException, URISyntaxException {
 
 		when(oauthServices.getUserInfo(any())).thenReturn(userInfo);
-		when(oauthServices.getToken(any()))
+		when(oauthServices.getToken(any(), any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
 		when(tokenServices.validateBCSCIDToken(any())).thenReturn(new ValidationResponse(true, "success"));
 
-		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID");
+		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID", null);
+		Assert.assertNotNull(response);
+	}
+
+	@DisplayName("Success - login oauth controller other")
+	@Test
+	void testOtherLoginSuccess() throws OauthServiceException, URISyntaxException {
+
+		when(oauthServices.getUserInfo(any())).thenReturn(userInfo);
+		when(oauthServices.getToken(any(), any()))
+				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
+		when(tokenServices.validateBCSCIDToken(any())).thenReturn(new ValidationResponse(true, "success"));
+
+		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID", "TEST");
 		Assert.assertNotNull(response);
 	}
 
 	@DisplayName("Error - login oauth controller (getToken)")
 	@Test
 	void testLoginError1() throws OauthServiceException, URISyntaxException {
-		when(oauthServices.getToken(any())).thenThrow(new OauthServiceException("error"));
-		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
+		when(oauthServices.getToken(any(), any())).thenThrow(new OauthServiceException("error"));
+		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID", null);
 		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 
 	@DisplayName("Error - login oauth controller (getUserInfo)")
 	@Test
 	void testLoginError2() throws OauthServiceException, URISyntaxException {
-		when(oauthServices.getToken(any()))
+		when(oauthServices.getToken(any(), any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
 		when(tokenServices.validateBCSCIDToken(any())).thenReturn(new ValidationResponse(true, "success"));
 		when(oauthServices.getUserInfo(any())).thenThrow(new OauthServiceException("error"));
-		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
+		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID", null);
 		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 
 	@DisplayName("Error - login oauth controller (invalid token)")
 	@Test
 	void testLoginError3() throws OauthServiceException, URISyntaxException {
-		when(oauthServices.getToken(any()))
+		when(oauthServices.getToken(any(), any()))
 				.thenReturn(new AccessTokenResponse(new Tokens(new BearerAccessToken(), new RefreshToken())));
 		when(tokenServices.validateBCSCIDToken(any())).thenReturn(new ValidationResponse(false, "failure"));
-		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
+		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID", null);
 		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 }
