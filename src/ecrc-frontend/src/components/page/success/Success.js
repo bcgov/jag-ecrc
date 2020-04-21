@@ -258,9 +258,9 @@ export default function Success({
         const createURL = {
           invoiceNumber: newInvoiceId,
           requestGuid: uuid,
-          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          approvedPage: `${window.location.origin}/criminalrecordcheck/success`,
+          declinedPage: `${window.location.origin}/criminalrecordcheck/success`,
+          errorPage: `${window.location.origin}/criminalrecordcheck/success`,
           totalItemsAmount: serviceFeeAmount,
           serviceIdRef1: serviceId,
           partyIdRef2: partyId
