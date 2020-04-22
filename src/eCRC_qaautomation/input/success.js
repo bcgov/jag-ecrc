@@ -2,8 +2,8 @@ class SuccessInput {
   constructor() {
     this.validAccessCode = process.env.VALID_ACCESS_CODE;
     this.validVolunteerAccessCode = process.env.VALID_VOLUNTEER_ACCESS_CODE;
-    this.bcServicesCardSerialNumber = process.env.BCSERVIES_CARD_SERIAL_NUMBER;
-    this.bcServicesCardPassword = process.env.BCSERVIES_CARD_PASSWORD;
+    this.bcServicesCardSerialNumber = process.env.BCSERVICES_CARD_SERIAL_NUMBER;
+    this.bcServicesCardPassword = process.env.BCSERVICES_CARD_PASSWORD;
     this.applicationFormCityAndCountryBirth = "Victoria, Canada";
     this.applicationFormPhoneNumber = "444 444-4444";
     this.applicationFormEmailAddress = "gmail@gmail.com";
@@ -61,6 +61,8 @@ class SuccessInput {
       "BC Services Card - Province of British Columbia";
     this.TERMSOFUSE_CONTINUE_NAVTITLE = "Criminal Record Check";
     this.ORGVERIFICATION_CONTINUE_NAVTITLE = "Criminal Record Check";
+    this.PAYMENT_NAVTITLE = "Government of British Columbia";
+    this.PDF_PATH = process.env.PDF_PATH;
 
     //env file urls
     this.BASE_URL = process.env.URL;
@@ -73,7 +75,7 @@ class SuccessInput {
     this.APPLICATIONFORM_URL = this.BASE_URL + "/applicationform";
     this.INFORMATIONREVIEW_URL = this.BASE_URL + "/informationreview";
     this.SUCCESS_URL = this.BASE_URL + "/success";
-    this.TRANSITION_URL_RELATIVE = "criminalrecordcheck/transition";
+    this.TRANSITION_URL_RELATIVE = "/criminalrecordcheck/transition";
   }
 }
 

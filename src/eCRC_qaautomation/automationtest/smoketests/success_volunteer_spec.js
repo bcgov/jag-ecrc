@@ -27,18 +27,18 @@ const testInput = require("../../input/success");
 describe("success", () => {
   beforeEach(() => {
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000;
   });
 
   it("verify that users with a valid volunteer code and bcsc can navigate through the complete application flow", () => {
-    browser.get(process.env.URL);
+    browser.get(testInput.BASE_URL);
     browser
       .manage()
       .window()
       .maximize();
 
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000;
 
     landingPage.accessCode.sendKeys(testInput.validVolunteerAccessCode);
     landingPage.validate.click();
@@ -46,7 +46,7 @@ describe("success", () => {
 
     browser.wait(
       browserWait.elementToBeClickable(orgVerificationPage.continue),
-      10000
+      20000
     );
 
     orgVerificationPage.continue.click();
@@ -59,8 +59,9 @@ describe("success", () => {
     termsOfUsePage.continueButton.click();
     browser.wait(
       browserWait.elementToBeClickable(bcscRedirectPage.login),
-      10000
+      20000
     );
+    browser.sleep(1000);
 
     bcscRedirectPage.login.click();
     bcServicesCardLandingPage.virtualCardTesting.click();
@@ -78,7 +79,7 @@ describe("success", () => {
         applicationFormPage.lastName,
         testInput.applicationFormLastName
       ),
-      5000
+      20000
     );
 
     expect(applicationFormPage.lastName.getAttribute("value")).toBe(
@@ -209,7 +210,7 @@ describe("success", () => {
 
     browser.wait(
       browserWait.elementToBeClickable(successPage.downloadButton),
-      10000
+      20000
     );
 
     expect(successPage.paymentStatus.getText()).toBe(

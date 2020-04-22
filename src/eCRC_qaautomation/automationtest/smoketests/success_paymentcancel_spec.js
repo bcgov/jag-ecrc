@@ -32,7 +32,7 @@ describe("success", () => {
   };
 
   it("verify that entering a valid org code and bcsc can decide to cancel a payment at the end of the flow", () => {
-    browser.get(process.env.URL);
+    browser.get(testInput.BASE_URL);
     handleAlert();
 
     browser
@@ -46,7 +46,7 @@ describe("success", () => {
 
     browser.wait(
       browserWait.elementToBeClickable(orgVerificationPage.continue),
-      10000
+      20000
     );
 
     orgVerificationPage.continue.click();
@@ -59,8 +59,9 @@ describe("success", () => {
     termsOfUsePage.continueButton.click();
     browser.wait(
       browserWait.elementToBeClickable(bcscRedirectPage.login),
-      10000
+      20000
     );
+    browser.sleep(1000);
 
     bcscRedirectPage.login.click();
     bcServicesCardLandingPage.virtualCardTesting.click();
@@ -78,7 +79,7 @@ describe("success", () => {
         applicationFormPage.lastName,
         testInput.applicationFormLastName
       ),
-      5000
+      20000
     );
 
     expect(applicationFormPage.lastName.getAttribute("value")).toBe(

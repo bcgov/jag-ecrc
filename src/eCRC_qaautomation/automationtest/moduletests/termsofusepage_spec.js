@@ -20,7 +20,7 @@ describe("terms of use page", () => {
   };
 
   beforeEach(() => {
-    browser.get(process.env.URL);
+    browser.get(testInput.BASE_URL);
     handleAlert();
 
     browser
@@ -36,7 +36,7 @@ describe("terms of use page", () => {
 
     browser.wait(
       browserWait.elementToBeClickable(orgVerificationPage.continue),
-      10000
+      20000
     );
 
     orgVerificationPage.continue.click();
@@ -53,8 +53,9 @@ describe("terms of use page", () => {
     termsOfUsePage.continueButton.click();
     browser.wait(
       browserWait.elementToBeClickable(bcscRedirectPage.login),
-      10000
+      20000
     );
+    browser.sleep(1000);
   });
 
   using(
