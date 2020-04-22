@@ -403,14 +403,6 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
         <span>
           You have a valid previous CRC.
         </span>
-        <span>
-          It was prepared for: 
-          Old org name
-        </span>
-        <span>
-          It is valid until: 
-          2021-10-12
-        </span>
         <p>
           Would you like to share it with 
           Some org
