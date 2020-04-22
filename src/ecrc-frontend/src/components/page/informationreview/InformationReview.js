@@ -318,6 +318,14 @@ export default function InformationReview({
     disabled: !boxChecked
   };
 
+  const shareButton = {
+    label: "Share",
+    buttonStyle: "btn ecrc_go_btn",
+    buttonSize: "btn",
+    type: "submit",
+    disabled: !boxChecked
+  };
+
   const cancelButton = {
     label: "Edit Application",
     buttonStyle: "btn ecrc_accessary_btn",
@@ -402,19 +410,21 @@ export default function InformationReview({
           {shareAvailable && (
             <>
               <br />
-              <Share
-                newOrg={orgNm}
-                clickShare={() => {
-                  setShare(true);
-                  confirm();
-                }}
-                boxChecked={boxChecked}
-              />
+              <Share />
               <br />
             </>
           )}
           <div className="buttons pt-4">
             <Button button={cancelButton} onClick={edit} />
+            {shareAvailable && (
+              <Button
+                button={shareButton}
+                onClick={() => {
+                  setShare(true);
+                  confirm();
+                }}
+              />
+            )}
             <Button button={confirmButton} onClick={confirm} />
           </div>
         </div>
