@@ -159,7 +159,35 @@ public class EcrcServicesImpl implements EcrcServices {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
+	public ResponseEntity<String> createCRCShare(RequestCRCShare requestCRCShare) throws EcrcServiceException {
+		JSONObject obj;
+		logger.info("Beginning CRC creation process for {}", requestCRCShare.getRequestCreateApplicant().getRequestGuid());
+		try {
+			ResponseEntity<String> clientResp = createApplicant(requestCRCShare.getRequestCreateApplicant());
+
+			if (clientResp.getStatusCode() == HttpStatus.OK) {
+				obj = new JSONObject(clientResp.getBody());
+				requestCRCShare.getRequestCreateSharingService().setApplPartyId(String.valueOf(obj.getInt("partyId")));
+				logger.info("Applicant Created {}", requestCRCShare.getRequestCreateApplicant().getRequestGuid());
+			} else {
+				logger.info("Applicant Failed {}", requestCRCShare.getRequestCreateApplicant().getRequestGuid());
+				return clientResp;
+			}
+			ResponseEntity<String> shareResp = createSharingService(requestCRCShare.getRequestCreateSharingService());
+			if (clientResp.getStatusCode() == HttpStatus.OK) {
+				logger.info("Share Created {}", requestCRCShare.getRequestCreateApplicant().getRequestGuid());
+				return shareResp;
+			} else {
+				logger.info("Share Failed {}", requestCRCShare.getRequestCreateApplicant().getRequestGuid());
+				return shareResp;
+			}
+		} catch (Exception e) {
+			logger.info("Failed to create New CRC Applicant", e);
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+
 	/**
 	 * Private method to create applicant id, session id and invoice id
 	 */
