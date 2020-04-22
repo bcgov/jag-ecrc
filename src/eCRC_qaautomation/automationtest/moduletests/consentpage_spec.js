@@ -37,7 +37,7 @@ describe("consent page", function() {
   };
 
   beforeEach(() => {
-    browser.get(process.env.URL);
+    browser.get(testInput.BASE_URL);
     handleAlert();
 
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
@@ -49,7 +49,7 @@ describe("consent page", function() {
 
     browser.wait(
       browserWait.elementToBeClickable(orgVerificationPage.continue),
-      10000
+      20000
     );
 
     orgVerificationPage.continue.click();
@@ -62,8 +62,9 @@ describe("consent page", function() {
     termsOfUsePage.continueButton.click();
     browser.wait(
       browserWait.elementToBeClickable(bcscRedirectPage.login),
-      10000
+      20000
     );
+    browser.sleep(1000);
 
     bcscRedirectPage.login.click();
     bcServicesCardLandingPage.virtualCardTesting.click();
@@ -81,7 +82,7 @@ describe("consent page", function() {
         applicationFormPage.lastName,
         testInput.applicationFormLastName
       ),
-      5000
+      20000
     );
 
     expect(applicationFormPage.lastName.getAttribute("value")).toBe(
@@ -249,6 +250,6 @@ describe("consent page", function() {
 
     paymentPage.cardNumber.sendKeys(testInput.approvedCardNumber);
 
-    expect(browser.getTitle()).toBe(process.env.PAYMENT_NAVTITLE);
+    expect(browser.getTitle()).toBe(testInput.PAYMENT_NAVTITLE);
   });
 });
