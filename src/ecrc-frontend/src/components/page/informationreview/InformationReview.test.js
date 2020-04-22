@@ -85,9 +85,7 @@ describe("InformationReview Component", () => {
     const API_REQUEST_SHARE = "/ecrc/private/checkApplicantForPrevCRC";
 
     mock.onPost(API_REQUEST_SHARE).reply(200, {
-      serviceId: "1234",
-      oldOrg: "Old org name",
-      oldCRCExpiration: "2021-10-12"
+      serviceId: "1234"
     });
   });
 

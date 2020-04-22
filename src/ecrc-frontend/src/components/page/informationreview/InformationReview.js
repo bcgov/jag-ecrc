@@ -63,8 +63,6 @@ export default function InformationReview({
 
   // SHARE STATES
   const [shareAvailable, setShareAvailable] = useState(false);
-  const [oldOrg, setOldOrg] = useState("");
-  const [oldCRCExpiration, setOldCRCExpiration] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -105,8 +103,6 @@ export default function InformationReview({
           // Available CRC expiration
           setApplicationInfo({ previousServiceId: res.data.serviceId });
 
-          setOldOrg(res.data.oldOrg);
-          setOldCRCExpiration(res.data.oldCRCExpiration);
           setShareAvailable(true);
         })
         .catch(() => {
@@ -407,8 +403,6 @@ export default function InformationReview({
             <>
               <br />
               <Share
-                previousOrg={oldOrg}
-                expiration={oldCRCExpiration}
                 newOrg={orgNm}
                 clickShare={() => {
                   setShare(true);
