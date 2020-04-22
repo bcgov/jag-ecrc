@@ -45,4 +45,6 @@ public interface EcrcServices {
 
 	public ResponseEntity<String> createNewCRCApplicant(RequestNewCRCApplicant requestNewCRCApplicant) throws EcrcServiceException;
 
+	public ResponseEntity<String> createCRCShare(RequestCRCShare requestCRCShare) throws EcrcServiceException;
+
 }
