@@ -51,7 +51,7 @@ export default function InformationReview({
       jobTitle,
       organizationFacility
     },
-    org: { orgNm, orgTicketNumber, defaultCrcScopeLevelCd },
+    org: { orgTicketNumber, defaultCrcScopeLevelCd },
     setApplicationInfo,
     setError,
     setShare
@@ -97,6 +97,8 @@ export default function InformationReview({
         })
         .then(res => {
           // May get info back that needs to be displayed more than just here
+
+          console.log(res.data);
 
           // Expected return could include: (var names not finalized)
           // Old Org name
