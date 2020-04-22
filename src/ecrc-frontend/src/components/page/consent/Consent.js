@@ -222,6 +222,19 @@ export default function Consent({
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
+    const shareCRC = {
+      orgTicketNumber,
+      applPartyId: null,
+      scopeLevelCd: defaultCrcScopeLevelCd,
+      applicantPosn: jobTitle,
+      authReleaseEivVendorYN: "Y",
+      authReleaseToOrgYN: "Y",
+      applIdentityVerifiedEivYN: "Y",
+      previousServiceId,
+      eivPassDetailsResults: "eivPassDetailsResults",
+      requestGuid: uuid
+    };
+
     const crcApplicant = {
       requestGuid: uuid,
       returnPage: `${window.location.origin}/criminalrecordcheck/success`,
