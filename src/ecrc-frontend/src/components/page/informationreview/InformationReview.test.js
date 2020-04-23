@@ -73,6 +73,9 @@ describe("InformationReview Component", () => {
     setShare
   };
 
+  const mock = new MockAdapter(axios);
+  const API_REQUEST_SHARE = "/ecrc/private/checkApplicantForPrevCRC";
+
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
     sessionStorage.setItem("uuid", "unique123");
@@ -81,15 +84,32 @@ describe("InformationReview Component", () => {
       authorities: ["Authorized"]
     });
 
-    const mock = new MockAdapter(axios);
-    const API_REQUEST_SHARE = "/ecrc/private/checkApplicantForPrevCRC";
-
-    mock.onPost(API_REQUEST_SHARE).reply(200, {
-      serviceId: "1234"
+    mock.onPost(API_REQUEST_SHARE).reply(400, {
+      message: "This is an expected failure."
     });
   });
 
-  test("Matches the snapshot", async () => {
+  test("Matches the snapshot for no share", async () => {
+    let infoReview;
+
+    await act(async () => {
+      infoReview = create(
+        <MemoryRouter>
+          <InformationReview page={page} />
+        </MemoryRouter>
+      );
+    });
+
+    await wait(() => {});
+
+    expect(infoReview.toJSON()).toMatchSnapshot();
+  });
+
+  test("Matches the snapshot for share", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(200, {
+      serviceId: "1234"
+    });
+
     let infoReview;
 
     await act(async () => {
@@ -123,6 +143,10 @@ describe("InformationReview Component", () => {
   });
 
   test("Validate share button", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(200, {
+      serviceId: "1234"
+    });
+
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
@@ -130,15 +154,17 @@ describe("InformationReview Component", () => {
       </Router>
     );
 
-    await wait(() => {});
+    await wait(() => {
+      expect(setApplicationInfo).toHaveBeenCalled();
+    });
 
-    expect(getByText(container, "Share").disabled).toBeTruthy();
+    expect(getByText(container, "Share Previous CRC").disabled).toBeTruthy();
 
     fireEvent.click(getByRole(container, "checkbox"));
 
-    expect(getByText(container, "Share").disabled).toBeFalsy();
+    expect(getByText(container, "Share Previous CRC").disabled).toBeFalsy();
 
-    fireEvent.click(getByText(container, "Share"));
+    fireEvent.click(getByText(container, "Share Previous CRC"));
 
     expect(setShare).toHaveBeenCalled();
   });
@@ -177,6 +203,10 @@ describe("InformationReview Component", () => {
   });
 
   test("Clicking share takes you to consent page when checkbox selected and session not expired", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(200, {
+      serviceId: "1234"
+    });
+
     const history = createMemoryHistory();
     const { container } = render(
       <Router history={history}>
@@ -184,10 +214,12 @@ describe("InformationReview Component", () => {
       </Router>
     );
 
-    await wait(() => {});
+    await wait(() => {
+      expect(setApplicationInfo).toHaveBeenCalled();
+    });
 
     fireEvent.click(getByRole(container, "checkbox"));
-    fireEvent.click(getByText(container, "Share"));
+    fireEvent.click(getByText(container, "Share Previous CRC"));
 
     expect(history.location.pathname).toEqual("/criminalrecordcheck/consent");
   });
@@ -215,6 +247,25 @@ describe("InformationReview Component", () => {
 
   test("Sets error and redirects to error page when not authorized on landing on page", async () => {
     sessionStorage.removeItem("jwt");
+
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Sets error and redirects to error page when checkApplicantForPrevCRC fails with something other than 400", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(500, {
+      message: "This is an expected failure."
+    });
 
     const history = createMemoryHistory();
     render(

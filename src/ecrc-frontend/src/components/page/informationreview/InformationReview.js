@@ -100,9 +100,25 @@ export default function InformationReview({
 
           setShareAvailable(true);
         })
-        .catch(() => {
-          // If error = no share, do nothing
-          // else if other error, go to error page and display correct error
+        .catch(error => {
+          if (
+            error &&
+            error.response &&
+            error.response.status &&
+            error.response.status !== 400
+          ) {
+            setToError(true);
+            if (error.response.data && error.response.data.message) {
+              setError({
+                status: error.response.status,
+                message: error.response.data.message
+              });
+            } else {
+              setError({
+                status: error.response.status
+              });
+            }
+          }
         });
     }
   }, [
@@ -306,7 +322,7 @@ export default function InformationReview({
   };
 
   const confirmButton = {
-    label: "Submit",
+    label: shareAvailable ? "Submit New CRC" : "Submit",
     buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit",
@@ -314,7 +330,7 @@ export default function InformationReview({
   };
 
   const shareButton = {
-    label: "Share",
+    label: "Share Previous CRC",
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn",
     type: "submit",
