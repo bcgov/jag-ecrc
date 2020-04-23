@@ -45,3 +45,21 @@ All the react components will be found in the `components` directory. The `compo
 Since we are using storybook and CDD, each component will be its own directory with the component code, styling, tests, as well as `.stories.js` file.
 
 This is pretty much what `create react app` provides out of the box, except slightly modified and adjusted to better suit CDD and focusing on component-first design and development.
+
+## Authors
+
+- Taylor Clausen
+- Siva Karunakaran
+- Shaun Millar
+- Brendan Beach
+- Kevin Ji
+- Shreyas Devalapurkar
+- Alan Dodge
+- Peggy Zhang
+- Adam Kroon
+- Ebenezer Muthiah
+- Suresh Gajendran
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
