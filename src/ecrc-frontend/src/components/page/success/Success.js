@@ -132,7 +132,7 @@ export default function Success({
     });
   }
 
-  if (orgApplicantRelationship !== "EMPLOYEE") {
+  if (share || orgApplicantRelationship !== "EMPLOYEE") {
     receiptInfo.unshift({ name: "Service Number", value: serviceId });
     receiptInfo.push({ name: "Organization", value: orgNm });
   }
@@ -302,11 +302,12 @@ export default function Success({
       <div className="page">
         <div className="content col-md-7">
           <h1 style={{ color: headerColor }}>
-            {orgApplicantRelationship !== "EMPLOYEE" && "Application Submitted"}
+            {(share || orgApplicantRelationship !== "EMPLOYEE") &&
+              "Application Submitted"}
             {paymentInfo.trnApproved === "0" && "Payment Declined/Cancelled"}
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
-          {orgApplicantRelationship !== "EMPLOYEE" && (
+          {(share || orgApplicantRelationship !== "EMPLOYEE") && (
             <>
               <p>
                 Thank you for submitting your application to the Criminal
