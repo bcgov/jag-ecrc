@@ -184,7 +184,7 @@ export default function ApplicationForm({
           const formatGender = gender === "female" ? "F" : "M";
 
           // Convert date format
-          const formatBirthDt = birthdate.split("-").join("/");
+          const formatBirthDt = birthdate.split("-").join("-");
 
           // Convert given names
           const givenNamesArray = given_names.split(" ");

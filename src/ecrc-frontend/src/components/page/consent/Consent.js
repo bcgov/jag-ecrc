@@ -201,47 +201,53 @@ export default function Consent({
       previousServiceId
     };
 
-    // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
-    // eivPassDetailsResults - String returned from equifax, see Shaun
-    const CRC = {
+    let CRC = {
       orgTicketNumber,
       requestGuid: uuid,
-      scheduleTypeCd: defaultScheduleTypeCd,
-      scopeLevelCd: defaultCrcScopeLevelCd,
-      applPartyId: null,
-      orgApplToPay: "",
-      applicantPosn: jobTitle,
-      childCareFacNm: organizationFacility,
-      governingBodyNm: orgNm,
-      sessionId: null,
-      invoiceId: null,
-      authReleaseEIVVendorYN: "Y",
-      authConductCRCCheckYN: "Y",
-      authReleaseToOrgYN: "Y",
-      applIdentityVerifiedEIVYN: "Y",
-      eivPassDetailsResults: "eivPassDetailsResults"
-    };
-
-    const shareCRC = {
-      orgTicketNumber,
       applPartyId: null,
       scopeLevelCd: defaultCrcScopeLevelCd,
       applicantPosn: jobTitle,
       authReleaseEivVendorYN: "Y",
-      authReleaseToOrgYN: "Y",
-      applIdentityVerifiedEivYN: "Y",
-      previousServiceId,
-      eivPassDetailsResults: "eivPassDetailsResults",
-      requestGuid: uuid
+      eivPassDetailsResults: "eivPassDetailsResults"
     };
 
-    const crcApplicant = {
-      requestGuid: uuid,
-      returnPage: `${window.location.origin}/criminalrecordcheck/success`,
-      applType: share ? "SHARING" : orgApplicantRelationship,
-      requestCreateApplicant: createApplicantInfo,
-      requestNewCRCService: CRC
+    let crcApplicant = {
+      requestCreateApplicant: createApplicantInfo
     };
+
+    if (share) {
+      CRC = {
+        ...CRC,
+        applIdentityVerifiedEivYN: "Y",
+        previousServiceId
+      };
+
+      crcApplicant = {
+        ...crcApplicant,
+        requestCreateSharingService: CRC
+      };
+    } else {
+      CRC = {
+        scheduleTypeCd: defaultScheduleTypeCd,
+        orgApplToPay: "",
+        childCareFacNm: organizationFacility,
+        governingBodyNm: orgNm,
+        sessionId: null,
+        invoiceId: null,
+        authConductCRCCheckYN: "Y",
+        applIdentityVerifiedEIVYN: "Y"
+      };
+
+      crcApplicant = {
+        ...crcApplicant,
+        requestGuid: uuid,
+        returnPage: `${window.location.origin}/criminalrecordcheck/success`,
+        applType: share ? "SHARING" : orgApplicantRelationship,
+        requestNewCRCService: CRC
+      };
+    }
+
+    console.log(crcApplicant);
 
     axios
       .post("/ecrc/private/createNewCRCApplicant", crcApplicant, {
