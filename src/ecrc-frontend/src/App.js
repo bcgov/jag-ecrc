@@ -88,6 +88,7 @@ export default function App() {
               applicant,
               org,
               applicationInfo,
+              share,
               saveApplicationInfo,
               setError
             }}

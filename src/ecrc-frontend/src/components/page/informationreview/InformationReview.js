@@ -51,7 +51,7 @@ export default function InformationReview({
       jobTitle,
       organizationFacility
     },
-    org: { orgNm, orgTicketNumber, defaultCrcScopeLevelCd },
+    org: { orgTicketNumber, defaultCrcScopeLevelCd },
     setApplicationInfo,
     setError,
     setShare
@@ -63,8 +63,6 @@ export default function InformationReview({
 
   // SHARE STATES
   const [shareAvailable, setShareAvailable] = useState(false);
-  const [oldOrg, setOldOrg] = useState("");
-  const [oldCRCExpiration, setOldCRCExpiration] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -98,15 +96,8 @@ export default function InformationReview({
           }
         })
         .then(res => {
-          // May get info back that needs to be displayed more than just here
-
-          // Expected return could include: (var names not finalized)
-          // Old Org name
-          // Available CRC expiration
           setApplicationInfo({ previousServiceId: res.data.serviceId });
 
-          setOldOrg(res.data.oldOrg);
-          setOldCRCExpiration(res.data.oldCRCExpiration);
           setShareAvailable(true);
         })
         .catch(() => {
@@ -322,6 +313,14 @@ export default function InformationReview({
     disabled: !boxChecked
   };
 
+  const shareButton = {
+    label: "Share",
+    buttonStyle: "btn ecrc_go_btn",
+    buttonSize: "btn",
+    type: "submit",
+    disabled: !boxChecked
+  };
+
   const cancelButton = {
     label: "Edit Application",
     buttonStyle: "btn ecrc_accessary_btn",
@@ -406,21 +405,21 @@ export default function InformationReview({
           {shareAvailable && (
             <>
               <br />
-              <Share
-                previousOrg={oldOrg}
-                expiration={oldCRCExpiration}
-                newOrg={orgNm}
-                clickShare={() => {
-                  setShare(true);
-                  confirm();
-                }}
-                boxChecked={boxChecked}
-              />
+              <Share />
               <br />
             </>
           )}
           <div className="buttons pt-4">
             <Button button={cancelButton} onClick={edit} />
+            {shareAvailable && (
+              <Button
+                button={shareButton}
+                onClick={() => {
+                  setShare(true);
+                  confirm();
+                }}
+              />
+            )}
             <Button button={confirmButton} onClick={confirm} />
           </div>
         </div>

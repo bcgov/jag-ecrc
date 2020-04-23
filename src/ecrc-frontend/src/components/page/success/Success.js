@@ -31,6 +31,7 @@ export default function Success({
       serviceFeeAmount,
       serviceId
     },
+    share,
     saveApplicationInfo,
     setError
   }
@@ -50,7 +51,9 @@ export default function Success({
     if (
       !isAuthorized() ||
       !isActionPerformed("consent") ||
-      (!paymentInfo.trnApproved && orgApplicantRelationship === "EMPLOYEE")
+      (!paymentInfo.trnApproved &&
+        orgApplicantRelationship === "EMPLOYEE" &&
+        !share)
     ) {
       setError({
         status: 403
@@ -129,7 +132,7 @@ export default function Success({
     });
   }
 
-  if (orgApplicantRelationship !== "EMPLOYEE") {
+  if (share || orgApplicantRelationship !== "EMPLOYEE") {
     receiptInfo.unshift({ name: "Service Number", value: serviceId });
     receiptInfo.push({ name: "Organization", value: orgNm });
   }
@@ -258,9 +261,9 @@ export default function Success({
         const createURL = {
           invoiceNumber: newInvoiceId,
           requestGuid: uuid,
-          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          approvedPage: `${window.location.origin}/criminalrecordcheck/success`,
+          declinedPage: `${window.location.origin}/criminalrecordcheck/success`,
+          errorPage: `${window.location.origin}/criminalrecordcheck/success`,
           totalItemsAmount: serviceFeeAmount,
           serviceIdRef1: serviceId,
           partyIdRef2: partyId
@@ -299,11 +302,12 @@ export default function Success({
       <div className="page">
         <div className="content col-md-7">
           <h1 style={{ color: headerColor }}>
-            {orgApplicantRelationship !== "EMPLOYEE" && "Application Submitted"}
+            {(share || orgApplicantRelationship !== "EMPLOYEE") &&
+              "Application Submitted"}
             {paymentInfo.trnApproved === "0" && "Payment Declined/Cancelled"}
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
-          {orgApplicantRelationship !== "EMPLOYEE" && (
+          {(share || orgApplicantRelationship !== "EMPLOYEE") && (
             <>
               <p>
                 Thank you for submitting your application to the Criminal
@@ -427,6 +431,7 @@ Success.propTypes = {
       serviceFeeAmount: PropTypes.number,
       serviceId: PropTypes.number.isRequired
     }),
+    share: PropTypes.bool.isRequired,
     saveApplicationInfo: PropTypes.func.isRequired,
     setError: PropTypes.func.isRequired
   }).isRequired

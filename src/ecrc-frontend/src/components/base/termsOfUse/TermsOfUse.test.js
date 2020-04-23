@@ -75,7 +75,7 @@ describe("TermsOfUse Component", () => {
 
     await wait(() => {
       expect(window.open).toHaveBeenCalledWith(
-        "https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820",
+        "https://www2.gov.bc.ca/assets/gov/public-safety-and-emergency-services/crime-prevention/criminal-record-check/bcsc_integration_-_terms_of_use_client_final.pdf",
         "_blank"
       );
     });
@@ -96,7 +96,7 @@ describe("TermsOfUse Component", () => {
 
     await wait(() => {
       expect(window.open).toHaveBeenCalledWith(
-        "https://www2.gov.bc.ca/assets/download/66CA082E49F740D69D54C6EB8AE65820",
+        "https://www2.gov.bc.ca/assets/gov/public-safety-and-emergency-services/crime-prevention/criminal-record-check/bcsc_integration_-_terms_of_use_client_final.pdf",
         "_blank"
       );
     });

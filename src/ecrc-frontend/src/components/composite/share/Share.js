@@ -1,50 +1,24 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
-import PropTypes from "prop-types";
 
 import "./Share.css";
-import { Button } from "../../base/button/Button";
 
-export default function Share({
-  previousOrg,
-  expiration,
-  newOrg,
-  clickShare,
-  boxChecked
-}) {
-  const shareButton = {
-    label: "Share",
-    buttonStyle: "btn ecrc_go_btn",
-    buttonSize: "btn",
-    type: "submit",
-    disabled: !boxChecked
-  };
-
+export default function Share() {
   return (
     <div className="share">
-      <span>You have a valid previous CRC.</span>
+      <div className="declareTitle">
+        Share Your Existing Criminal Record Check
+      </div>
       <span>
-        It was prepared for:&nbsp;
-        {previousOrg}
+        If you are an employee or volunteer, you can share the results of your
+        criminal record check at no cost.
       </span>
-      <span>
-        It is valid until:&nbsp;
-        {expiration}
-      </span>
+      <br />
       <p>
-        Would you like to share it with&nbsp;
-        {newOrg}?
+        <b>Note:</b> An organization can decide whether or not they will accept
+        a shared criminal record check result and may ask you to consent to a
+        new criminal record check manually or online.
       </p>
-
-      <Button button={shareButton} onClick={clickShare} />
     </div>
   );
 }
-
-Share.propTypes = {
-  previousOrg: PropTypes.string.isRequired,
-  expiration: PropTypes.string.isRequired,
-  newOrg: PropTypes.string.isRequired,
-  clickShare: PropTypes.func.isRequired,
-  boxChecked: PropTypes.bool.isRequired
-};

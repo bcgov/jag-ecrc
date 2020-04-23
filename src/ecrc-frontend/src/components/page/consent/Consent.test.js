@@ -101,10 +101,19 @@ describe("Consent Page Component", () => {
     });
   });
 
-  test("Matches the snapshot", () => {
+  test("Matches the new CRC page", () => {
     const consent = create(
       <MemoryRouter>
         <Consent page={page} />
+      </MemoryRouter>
+    );
+    expect(consent.toJSON()).toMatchSnapshot();
+  });
+
+  test("Matches the share CRC page", () => {
+    const consent = create(
+      <MemoryRouter>
+        <Consent page={{ ...page, share: true }} />
       </MemoryRouter>
     );
     expect(consent.toJSON()).toMatchSnapshot();
@@ -197,9 +206,6 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate Redirect to Error when failed axios call", async () => {
-    window.REACT_APP_FRONTEND_BASE_URL = "localhost:3000";
-    process.env.REACT_APP_FRONTEND_BASE_URL = "localhost:3000";
-
     axios.post.mockImplementation(() => Promise.reject(new Error("fail")));
 
     const history = createMemoryHistory();
@@ -223,9 +229,6 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate error case when error has appropriate response, status, data and message", async () => {
-    window.REACT_APP_FRONTEND_BASE_URL = null;
-    process.env.REACT_APP_FRONTEND_BASE_URL = "localhost:3000";
-
     axios.post.mockImplementation(() =>
       Promise.reject({
         response: { status: 400, data: { message: "This is error" } }
@@ -258,9 +261,6 @@ describe("Consent Page Component", () => {
   });
 
   test("Validate error case when error has appropriate response and status, but no data or message", async () => {
-    const oldEnv = process.env;
-    delete process.env.REACT_APP_FRONTEND_BASE_URL;
-
     axios.post.mockImplementation(() =>
       Promise.reject({
         response: { status: 400 }
@@ -289,8 +289,6 @@ describe("Consent Page Component", () => {
     });
 
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
-
-    process.env = oldEnv;
   });
 
   test("Validate Employee relationship flow", async () => {

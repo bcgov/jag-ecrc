@@ -60,7 +60,7 @@ mvn springboot:run
 mvn versions:set -DartifactId=*  -DgroupId=*
 ```
 
-Note: If using STS4, see the **Boot Dashboard** window instead of using the Maven command above. 
+Note: If using STS4, see the **Boot Dashboard** window instead of using the Maven command above.
 
 ## Application Entry point
 
@@ -76,35 +76,12 @@ This application will autodeploy after every save. (Due to Spring Boot Devtools 
 
 Do run api in Docker conatiner create .env file using .env.template.
 
-Run command 
+Run command
+
 ```
 docker-compose up --build -d
 ```
 
-## Built With
-
-TBD
-
-## Contributing
-
-TBD
-
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-TBD
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## Outstanding
