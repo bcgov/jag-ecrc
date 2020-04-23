@@ -101,10 +101,19 @@ describe("Consent Page Component", () => {
     });
   });
 
-  test("Matches the snapshot", () => {
+  test("Matches the new CRC page", () => {
     const consent = create(
       <MemoryRouter>
         <Consent page={page} />
+      </MemoryRouter>
+    );
+    expect(consent.toJSON()).toMatchSnapshot();
+  });
+
+  test("Matches the share CRC page", () => {
+    const consent = create(
+      <MemoryRouter>
+        <Consent page={{ ...page, share: true }} />
       </MemoryRouter>
     );
     expect(consent.toJSON()).toMatchSnapshot();

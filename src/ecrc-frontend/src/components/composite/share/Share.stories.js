@@ -10,11 +10,5 @@ export default {
 const clickShare = () => {};
 
 export const Default = () => (
-  <Share
-    previousOrg="Previous Org"
-    expiration="2021-01-04"
-    newOrg="New Org"
-    clickShare={clickShare}
-    boxChecked={false}
-  />
+  <Share newOrg="New Org" clickShare={clickShare} boxChecked={false} />
 );

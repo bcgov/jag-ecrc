@@ -201,37 +201,63 @@ export default function Consent({
       previousServiceId
     };
 
-    // NEED CLARIFICATION: - as per Jason Lee, awaiting confirmation
-    // eivPassDetailsResults - String returned from equifax, see Shaun
-    const CRC = {
+    let CRC = {
       orgTicketNumber,
       requestGuid: uuid,
-      scheduleTypeCd: defaultScheduleTypeCd,
-      scopeLevelCd: defaultCrcScopeLevelCd,
       applPartyId: null,
-      orgApplToPay: "",
+      scopeLevelCd: defaultCrcScopeLevelCd,
       applicantPosn: jobTitle,
-      childCareFacNm: organizationFacility,
-      governingBodyNm: orgNm,
-      sessionId: null,
-      invoiceId: null,
-      authReleaseEIVVendorYN: "Y",
-      authConductCRCCheckYN: "Y",
       authReleaseToOrgYN: "Y",
-      applIdentityVerifiedEIVYN: "Y",
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
-    const crcApplicant = {
-      requestGuid: uuid,
-      returnPage: `${window.location.origin}/criminalrecordcheck/success`,
-      applType: share ? "SHARING" : orgApplicantRelationship,
-      requestCreateApplicant: createApplicantInfo,
-      requestNewCRCService: CRC
+    let crcApplicant = {
+      requestCreateApplicant: createApplicantInfo
     };
 
+    let crcURL;
+
+    if (share) {
+      CRC = {
+        ...CRC,
+        authReleaseEivVendorYN: "Y",
+        applIdentityVerifiedEivYN: "Y",
+        previousServiceId
+      };
+
+      crcApplicant = {
+        ...crcApplicant,
+        requestCreateSharingService: CRC
+      };
+
+      crcURL = "/ecrc/private/shareCRCService";
+    } else {
+      CRC = {
+        ...CRC,
+        scheduleTypeCd: defaultScheduleTypeCd,
+        orgApplToPay: "",
+        childCareFacNm: organizationFacility,
+        governingBodyNm: orgNm,
+        sessionId: null,
+        invoiceId: null,
+        authReleaseEIVVendorYN: "Y",
+        authConductCRCCheckYN: "Y",
+        applIdentityVerifiedEIVYN: "Y"
+      };
+
+      crcApplicant = {
+        ...crcApplicant,
+        requestGuid: uuid,
+        returnPage: `${window.location.origin}/criminalrecordcheck/success`,
+        applType: share ? "SHARING" : orgApplicantRelationship,
+        requestNewCRCService: CRC
+      };
+
+      crcURL = "/ecrc/private/createNewCRCApplicant";
+    }
+
     axios
-      .post("/ecrc/private/createNewCRCApplicant", crcApplicant, {
+      .post(crcURL, crcApplicant, {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -85,9 +85,7 @@ describe("InformationReview Component", () => {
     const API_REQUEST_SHARE = "/ecrc/private/checkApplicantForPrevCRC";
 
     mock.onPost(API_REQUEST_SHARE).reply(200, {
-      serviceId: "1234",
-      oldOrg: "Old org name",
-      oldCRCExpiration: "2021-10-12"
+      serviceId: "1234"
     });
   });
 
@@ -174,6 +172,22 @@ describe("InformationReview Component", () => {
 
     fireEvent.click(getByRole(container, "checkbox"));
     fireEvent.click(getByText(container, "Submit"));
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/consent");
+  });
+
+  test("Clicking share takes you to consent page when checkbox selected and session not expired", async () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
+
+    await wait(() => {});
+
+    fireEvent.click(getByRole(container, "checkbox"));
+    fireEvent.click(getByText(container, "Share"));
 
     expect(history.location.pathname).toEqual("/criminalrecordcheck/consent");
   });

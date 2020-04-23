@@ -400,37 +400,21 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
       <div
         className="share"
       >
-        <span>
-          You have a valid previous CRC.
-        </span>
-        <span>
-          It was prepared for: 
-          Old org name
-        </span>
-        <span>
-          It is valid until: 
-          2021-10-12
-        </span>
-        <p>
-          Would you like to share it with 
-          Some org
-          ?
-        </p>
-        <button
-          className="btn ecrc_go_btn btn"
-          disabled={true}
-          onClick={[Function]}
-          type="submit"
+        <div
+          className="declareTitle"
         >
-          Share
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
+          Share Your Existing Criminal Record Check
+        </div>
+        <span>
+          If you are an employee or volunteer, you can share the results of your criminal record check at no cost.
+        </span>
+        <br />
+        <p>
+          <b>
+            Note:
+          </b>
+           An organization can decide whether or not they will accept a shared criminal record check result and may ask you to consent to a new criminal record check manually or online.
+        </p>
       </div>
       <br />
       <div
@@ -442,6 +426,21 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           type="submit"
         >
           Edit Application
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn btn"
+          disabled={true}
+          onClick={[Function]}
+          type="submit"
+        >
+          Share
           <div
             className="loader-hide"
           >

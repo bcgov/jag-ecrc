@@ -79,6 +79,7 @@ describe("Success Page Component", () => {
     applicant,
     org,
     applicationInfo,
+    share: false,
     saveApplicationInfo,
     setError
   };
@@ -127,6 +128,20 @@ describe("Success Page Component", () => {
       </MemoryRouter>
     );
     expect(failedPayment.toJSON()).toMatchSnapshot();
+  });
+
+  test("Matches the Share snapshot", () => {
+    const successVolunteer = create(
+      <MemoryRouter initialEntries={["/success"]}>
+        <Success
+          page={{
+            ...page,
+            share: true
+          }}
+        />
+      </MemoryRouter>
+    );
+    expect(successVolunteer.toJSON()).toMatchSnapshot();
   });
 
   test("Validate Retry payment", async () => {
