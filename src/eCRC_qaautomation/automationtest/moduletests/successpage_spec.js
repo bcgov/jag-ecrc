@@ -210,55 +210,55 @@ describe("success page", () => {
     consentPage.continueButton.click();
   });
 
-  //Test commented out for pipeline due to issues downloading PDF in headless mode
-  // it("verify when download button is clicked that pdf is downloaded containing receipt info", () => {
-  //   browser.wait(browserWait.elementToBeClickable(paymentPage.payNow), 20000);
-  //   paymentPage.cardNumber.sendKeys(testInput.approvedCardNumber);
-  //   paymentPage.cardCVD.sendKeys(testInput.approvedCardCVD);
-  //   paymentPage.payNow.click();
-  //   expect(paymentPage.paymentStatus.getText()).toBe(testInput.approvedStatus);
+  //Test skipped for pipeline due to issues downloading PDF in headless mode
+  xit("verify when download button is clicked that pdf is downloaded containing receipt info", () => {
+    browser.wait(browserWait.elementToBeClickable(paymentPage.payNow), 20000);
+    paymentPage.cardNumber.sendKeys(testInput.approvedCardNumber);
+    paymentPage.cardCVD.sendKeys(testInput.approvedCardCVD);
+    paymentPage.payNow.click();
+    expect(paymentPage.paymentStatus.getText()).toBe(testInput.approvedStatus);
 
-  //   expect(successPage.lastName.getText()).toBe(
-  //     testInput.applicationFormLastName
-  //   );
-  //   expect(successPage.firstName.getText()).toBe(
-  //     testInput.applicationFormFirstName
-  //   );
+    expect(successPage.lastName.getText()).toBe(
+      testInput.applicationFormLastName
+    );
+    expect(successPage.firstName.getText()).toBe(
+      testInput.applicationFormFirstName
+    );
 
-  //   let filename = testInput.PDF_PATH.concat("\\");
+    let filename = testInput.PDF_PATH.concat("\\");
 
-  //   successPage.serviceNumber.getText().then(serviceNumberVal => {
-  //     filename = filename.concat(serviceNumberVal);
+    successPage.serviceNumber.getText().then(serviceNumberVal => {
+      filename = filename.concat(serviceNumberVal);
 
-  //     successPage.lastName.getText().then(lastNameVal => {
-  //       filename = filename.concat(lastNameVal);
+      successPage.lastName.getText().then(lastNameVal => {
+        filename = filename.concat(lastNameVal);
 
-  //       successPage.firstName.getText().then(firstNameVal => {
-  //         filename = filename.concat(firstNameVal, ".pdf");
+        successPage.firstName.getText().then(firstNameVal => {
+          filename = filename.concat(firstNameVal, ".pdf");
 
-  //         if (fs.existsSync(filename)) {
-  //           //Delete file if it already exists
-  //           fs.unlinkSync(filename);
-  //         }
+          if (fs.existsSync(filename)) {
+            //Delete file if it already exists
+            fs.unlinkSync(filename);
+          }
 
-  //         successPage.downloadButton.click();
+          successPage.downloadButton.click();
 
-  //         browser.sleep(1000);
+          browser.sleep(1000);
 
-  //         browser.driver
-  //           .wait(() => {
-  //             //Wait until file has finished downloading.
-  //             return fs.existsSync(filename);
-  //           }, 10000)
-  //           .then(() => {
-  //             expect(fs.readFileSync(filename, { encoding: "utf8" })).toContain(
-  //               testInput.applicationFormLastName
-  //             );
-  //           });
-  //       });
-  //     });
-  //   });
-  // });
+          browser.driver
+            .wait(() => {
+              //Wait until file has finished downloading.
+              return fs.existsSync(filename);
+            }, 10000)
+            .then(() => {
+              expect(fs.readFileSync(filename, { encoding: "utf8" })).toContain(
+                testInput.applicationFormLastName
+              );
+            });
+        });
+      });
+    });
+  });
 
   it("verify that after a failed payment, we can retry successfully", () => {
     browser.wait(browserWait.elementToBeClickable(paymentPage.payNow), 20000);
