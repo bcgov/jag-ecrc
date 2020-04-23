@@ -67,10 +67,10 @@ describe("terms of use page", () => {
     unchecked => {
       it("verify that the continue button is disabled when the checkbox is unchecked or if the terms of use is not scrolled", () => {
         if (unchecked.unchecked === "readAndAcceptCheckBox") {
-          browser
-            .actions()
-            .mouseMove(termsOfUsePage.termsOfUseFinalParagraph)
-            .perform();
+          browser.executeScript(
+            "arguments[0].scrollIntoView(true)",
+            termsOfUsePage.termsOfUseFinalParagraph
+          );
         } else {
           termsOfUsePage.readAndAcceptCheckBox.click();
         }

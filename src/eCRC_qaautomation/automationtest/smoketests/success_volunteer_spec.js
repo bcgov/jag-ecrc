@@ -24,7 +24,7 @@ const successPage = require("../../pageobjectfactory/successpage.js");
 
 const testInput = require("../../input/success");
 
-describe("success", () => {
+describe("smoke", () => {
   beforeEach(() => {
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000;

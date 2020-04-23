@@ -13,7 +13,7 @@ const informationReviewPage = require("../../pageobjectfactory/informationreview
 const successPage = require("../../pageobjectfactory/successpage");
 const testInput = require("../../input/success");
 
-describe("success", () => {
+describe("smoke", () => {
   beforeEach(() => {
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000;
