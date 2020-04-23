@@ -207,7 +207,7 @@ export default function Consent({
       applPartyId: null,
       scopeLevelCd: defaultCrcScopeLevelCd,
       applicantPosn: jobTitle,
-      authReleaseEivVendorYN: "Y",
+      authReleaseToOrgYN: "Y",
       eivPassDetailsResults: "eivPassDetailsResults"
     };
 
@@ -215,9 +215,12 @@ export default function Consent({
       requestCreateApplicant: createApplicantInfo
     };
 
+    let crcURL;
+
     if (share) {
       CRC = {
         ...CRC,
+        authReleaseEivVendorYN: "Y",
         applIdentityVerifiedEivYN: "Y",
         previousServiceId
       };
@@ -226,14 +229,18 @@ export default function Consent({
         ...crcApplicant,
         requestCreateSharingService: CRC
       };
+
+      crcURL = "/ecrc/private/shareCRCService";
     } else {
       CRC = {
+        ...CRC,
         scheduleTypeCd: defaultScheduleTypeCd,
         orgApplToPay: "",
         childCareFacNm: organizationFacility,
         governingBodyNm: orgNm,
         sessionId: null,
         invoiceId: null,
+        authReleaseEIVVendorYN: "Y",
         authConductCRCCheckYN: "Y",
         applIdentityVerifiedEIVYN: "Y"
       };
@@ -245,12 +252,14 @@ export default function Consent({
         applType: share ? "SHARING" : orgApplicantRelationship,
         requestNewCRCService: CRC
       };
+
+      crcURL = "/ecrc/private/createNewCRCApplicant";
     }
 
     console.log(crcApplicant);
 
     axios
-      .post("/ecrc/private/createNewCRCApplicant", crcApplicant, {
+      .post(crcURL, crcApplicant, {
         headers: {
           Authorization: `Bearer ${token}`
         }

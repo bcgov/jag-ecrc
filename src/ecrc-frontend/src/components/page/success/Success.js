@@ -31,6 +31,7 @@ export default function Success({
       serviceFeeAmount,
       serviceId
     },
+    share,
     saveApplicationInfo,
     setError
   }
@@ -50,7 +51,9 @@ export default function Success({
     if (
       !isAuthorized() ||
       !isActionPerformed("consent") ||
-      (!paymentInfo.trnApproved && orgApplicantRelationship === "EMPLOYEE")
+      (!paymentInfo.trnApproved &&
+        orgApplicantRelationship === "EMPLOYEE" &&
+        !share)
     ) {
       setError({
         status: 403
@@ -427,6 +430,7 @@ Success.propTypes = {
       serviceFeeAmount: PropTypes.number,
       serviceId: PropTypes.number.isRequired
     }),
+    share: PropTypes.bool.isRequired,
     saveApplicationInfo: PropTypes.func.isRequired,
     setError: PropTypes.func.isRequired
   }).isRequired
