@@ -306,7 +306,7 @@ export default function InformationReview({
   };
 
   const confirmButton = {
-    label: "Submit",
+    label: shareAvailable ? "Submit New CRC" : "Submit",
     buttonStyle: "btn ecrc_go_btn mr-0",
     buttonSize: "btn",
     type: "submit",
@@ -314,7 +314,7 @@ export default function InformationReview({
   };
 
   const shareButton = {
-    label: "Share",
+    label: "Share Previous CRC",
     buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn",
     type: "submit",
