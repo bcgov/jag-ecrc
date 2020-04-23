@@ -96,13 +96,6 @@ export default function InformationReview({
           }
         })
         .then(res => {
-          // May get info back that needs to be displayed more than just here
-
-          console.log(res.data);
-
-          // Expected return could include: (var names not finalized)
-          // Old Org name
-          // Available CRC expiration
           setApplicationInfo({ previousServiceId: res.data.serviceId });
 
           setShareAvailable(true);

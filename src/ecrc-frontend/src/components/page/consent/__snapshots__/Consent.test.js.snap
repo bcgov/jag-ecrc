@@ -1,5 +1,1180 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Consent Page Component Matches the new CRC page 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Criminal Record Check
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Consent for Criminal Record Check
+      </h1>
+      <p>
+        I
+        , 
+        <i>
+          Robert
+           
+          Ross
+        </i>
+        , 
+        consent to the following:
+      </p>
+      <div>
+        <div
+          className="declareTitle"
+        >
+          CONSENT
+        </div>
+        <section
+          className="declareSection"
+        >
+          <label
+            htmlFor="checkbox1"
+          >
+            <input
+              id="checkbox1"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I hereby consent to a check of criminal charges and convictions to determine whether I have a conviction or outstanding charge for any relevant or specified offence(s) under the
+               
+              <i>
+                Criminal Records Review Act
+              </i>
+              . I hereby consent to a check of all available law enforcement systems, including any local police records.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
+        </section>
+        <section
+          className="declareSection"
+        >
+          <label
+            htmlFor="checkbox2"
+          >
+            <input
+              id="checkbox2"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I hereby consent to a Vulnerable Sector search to check if I have been convicted of and received a record suspension (formerly known as a pardon) for any sexual offences as per the
+               
+              <i>
+                Criminal Records Review Act
+              </i>
+              . For more information on Vulnerable Sector searches, please visit the
+               
+              <a
+                href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                RCMP website.
+              </a>
+               
+              I understand that as part of the Vulnerable Sector search, I may be required to submit fingerprints to confirm my identity. In addition, where the results of a check indicate that a criminal record or outstanding charge for a relevant or specified offence(s) may exist, I agree to provide my fingerprints to verify any such criminal record.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
+        </section>
+        <section
+          className="declareSection"
+        >
+          <label
+            htmlFor="checkbox3"
+          >
+            <input
+              id="checkbox3"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I hereby consent to the disclosure by BC Corrections to the Deputy Registrar of my identifying information (i.e. name), charges, convictions and outstanding warrants; information relevant to contact with police, BC Corrections, and the judicial system; and my date of birth. I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of my name, date of birth, gender, and relevant involvement with BC Corrections. I consent to the disclosure to the Deputy Registrar by the Criminal Records Review Unit of any personal information relating to any outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
+              <i>
+                Criminal Records Review Act
+              </i>
+               
+              or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the
+               
+              <i>
+                Criminal Records Review Act
+              </i>
+               or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
+        </section>
+        <section
+          className="declareSection"
+        >
+          <label
+            htmlFor="checkbox4"
+          >
+            <input
+              id="checkbox4"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              If I am charged with or convicted of any relevant or specified offence(s) at any time subsequent to the criminal record check authorization herein, I further agree to report the charge(s) or conviction(s) to my organization.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
+        </section>
+      </div>
+      <div
+        className="buttons pt-4"
+      >
+        <button
+          className="btn ecrc_accessary_btn btn"
+          onClick={[Function]}
+          type="submit"
+        >
+          Cancel and Exit
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          disabled={true}
+          onClick={[Function]}
+          type="submit"
+        >
+          Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      className="sidecard"
+    >
+      <div>
+        <div
+          className="wide-dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12 pt-2"
+              style={
+                Object {
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="sideCardRow"
+                    >
+                      <div
+                        className="round-icon-wrapper"
+                      >
+                        <svg
+                          className="side-card-icon"
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="sideCardTitle"
+                      >
+                        Contact the Criminal Records Review Program
+                      </div>
+                    </div>
+                  </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <div
+                      className="side-card-text"
+                    >
+                      For questions about criminal record checks, contact the Criminal Records Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
+                    </div>
+                    <div
+                      className="side-card-text"
+                    >
+                      <div
+                        className="container p-0 m-0 mt-2"
+                      >
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="text-nowrap col-lg-12 col-xl-3"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              strokeWidth="0"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                }
+                              }
+                              viewBox="0 0 512 512"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
+                              />
+                            </svg>
+                             
+                            <div
+                              className="contact-title"
+                            >
+                              Phone: 
+                            </div>
+                          </div>
+                          <div
+                            className="col-lg-12 col-xl-9 pr-0"
+                          >
+                            1 855 587-0185 (option 2)
+                          </div>
+                        </div>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="text-nowrap col-lg-12 col-xl-3"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              strokeWidth="0"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                }
+                              }
+                              viewBox="0 0 496 512"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
+                              />
+                            </svg>
+                             
+                            <div
+                              className="contact-title"
+                            >
+                              Website: 
+                            </div>
+                          </div>
+                          <div
+                            className="col-lg-12 col-xl-9 pr-0"
+                          >
+                            <a
+                              className="email link-email"
+                              href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Criminal Records Review Program
+                            </a>
+                          </div>
+                        </div>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="text-nowrap col-lg-12 col-xl-3"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              strokeWidth="0"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                }
+                              }
+                              viewBox="0 0 512 512"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                              />
+                            </svg>
+                             
+                            <div
+                              className="contact-title"
+                            >
+                              Email: 
+                            </div>
+                          </div>
+                          <div
+                            className="col-lg-12 col-xl-9 pr-0"
+                          >
+                            <a
+                              className="email link-email"
+                              href="mailto:criminalrecords@gov.bc.ca"
+                            >
+                              criminalrecords@gov.bc.ca
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wide-dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12 pt-2"
+              style={
+                Object {
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="notice-section"
+                style={
+                  Object {
+                    "backgroundColor": "#F2F2F2",
+                    "border": "none",
+                    "color": "#000",
+                  }
+                }
+              >
+                <h2
+                  style={
+                    Object {
+                      "color": "#000",
+                    }
+                  }
+                >
+                  Collection Notice
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <div
+                      style={
+                        Object {
+                          "fontSize": "12px",
+                        }
+                      }
+                    >
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      <a
+                        href="mailto:criminalrecords@gov.bc.ca"
+                      >
+                        criminalrecords@gov.bc.ca
+                      </a>
+                       or by telephone at 1- 855-587-0185 (option 2).
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
+    >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
+      >
+        <ul
+          className="navbar-nav text-right"
+        >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
+
+exports[`Consent Page Component Matches the share CRC page 1`] = `
+<main>
+  <header>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+    >
+      <div
+        className="container-fluid navbar-brand pointer"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-none d-md-block"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          width="181"
+        />
+        <img
+          alt="B.C. Government Logo"
+          className="img-fluid d-md-none"
+          height="44"
+          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          width="64"
+        />
+        <div
+          className="pointer navbar-brand nav-item nav-link"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Criminal Record Check
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div
+    className="page"
+  >
+    <div
+      className="content col-md-8"
+    >
+      <h1>
+        Consent for Criminal Record Check
+      </h1>
+      <p>
+        I
+        , 
+        <i>
+          Robert
+           
+          Ross
+        </i>
+        , 
+        consent to the following:
+      </p>
+      <div>
+        <div
+          className="declareTitle"
+        >
+          CONSENT
+        </div>
+        <section
+          className="declareSection"
+        >
+          <label
+            htmlFor="checkbox1"
+          >
+            <input
+              id="checkbox1"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I understand that to share the result of a criminal record check, I must have completed a criminal record check within the last 5 years through the Criminal Records Review Programs (CRRP) and the sharing request must be for the same type of check as previously completed, either for children, vulnerable adults, or both children and vulnerable adults.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
+        </section>
+        <section
+          className="declareSection"
+        >
+          <label
+            htmlFor="checkbox2"
+          >
+            <input
+              id="checkbox2"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I confirm I have completed a criminal record check within the past five years with the CRRP which did not result in a determination of risk to children and/or vulnerable adults as defined in the
+               
+              <i>
+                Criminal Records Review Act
+              </i>
+              . I understand no details will be disclosed to the organization I am applying to, only the result. I hereby consent to share the result of the completed check with the organization I am applying to.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
+        </section>
+        <section
+          className="declareSection"
+        >
+          <label
+            htmlFor="checkbox3"
+          >
+            <input
+              id="checkbox3"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I understand that if the Registrar determines I do not have a criminal record check to share according to the above criteria, I will be promptly notified.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
+        </section>
+        <section
+          className="declareSection"
+        >
+          <label
+            htmlFor="checkbox4"
+          >
+            <input
+              id="checkbox4"
+              onClick={[Function]}
+              type="checkbox"
+            />
+            <span
+              className="declaration-cb"
+            >
+              I understand that within 5 years of the date of my completing this Consent to Share a Criminal Record Check form, should the CRRP make a determination that I pose a risk to children and/or vulnerable adults, the Deputy Registrar will promptly provide notification to me and to the persons and entities (organizations) identified on this Consent to Share a Criminal Record Check.
+            </span>
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </label>
+        </section>
+      </div>
+      <div
+        className="buttons pt-4"
+      >
+        <button
+          className="btn ecrc_accessary_btn btn"
+          onClick={[Function]}
+          type="submit"
+        >
+          Cancel and Exit
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+        <button
+          className="btn ecrc_go_btn mr-0 btn"
+          disabled={true}
+          onClick={[Function]}
+          type="submit"
+        >
+          Continue
+          <div
+            className="loader-hide"
+          >
+            <div
+              className="btn-loader"
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      className="sidecard"
+    >
+      <div>
+        <div
+          className="wide-dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12 pt-2"
+              style={
+                Object {
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="blue-section"
+              >
+                <h2
+                  className="heading-style"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="sideCardRow"
+                    >
+                      <div
+                        className="round-icon-wrapper"
+                      >
+                        <svg
+                          className="side-card-icon"
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          strokeWidth="0"
+                          style={
+                            Object {
+                              "color": undefined,
+                            }
+                          }
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="sideCardTitle"
+                      >
+                        Contact the Criminal Records Review Program
+                      </div>
+                    </div>
+                  </div>
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <div
+                      className="side-card-text"
+                    >
+                      For questions about criminal record checks, contact the Criminal Records Review Program Monday to Friday, 8:30 a.m. - 4:30 p.m.
+                    </div>
+                    <div
+                      className="side-card-text"
+                    >
+                      <div
+                        className="container p-0 m-0 mt-2"
+                      >
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="text-nowrap col-lg-12 col-xl-3"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              strokeWidth="0"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                }
+                              }
+                              viewBox="0 0 512 512"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M64 128H32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zm416 32V77.25c0-8.49-3.37-16.62-9.37-22.63L425.37 9.37c-6-6-14.14-9.37-22.63-9.37H160c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM288 432c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm128 128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm0-128c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-32c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v32zm16-112H176V48h208v32c0 8.84 7.16 16 16 16h32v96z"
+                              />
+                            </svg>
+                             
+                            <div
+                              className="contact-title"
+                            >
+                              Phone: 
+                            </div>
+                          </div>
+                          <div
+                            className="col-lg-12 col-xl-9 pr-0"
+                          >
+                            1 855 587-0185 (option 2)
+                          </div>
+                        </div>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="text-nowrap col-lg-12 col-xl-3"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              strokeWidth="0"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                }
+                              }
+                              viewBox="0 0 496 512"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"
+                              />
+                            </svg>
+                             
+                            <div
+                              className="contact-title"
+                            >
+                              Website: 
+                            </div>
+                          </div>
+                          <div
+                            className="col-lg-12 col-xl-9 pr-0"
+                          >
+                            <a
+                              className="email link-email"
+                              href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Criminal Records Review Program
+                            </a>
+                          </div>
+                        </div>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="text-nowrap col-lg-12 col-xl-3"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              strokeWidth="0"
+                              style={
+                                Object {
+                                  "color": undefined,
+                                }
+                              }
+                              viewBox="0 0 512 512"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                              />
+                            </svg>
+                             
+                            <div
+                              className="contact-title"
+                            >
+                              Email: 
+                            </div>
+                          </div>
+                          <div
+                            className="col-lg-12 col-xl-9 pr-0"
+                          >
+                            <a
+                              className="email link-email"
+                              href="mailto:criminalrecords@gov.bc.ca"
+                            >
+                              criminalrecords@gov.bc.ca
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wide-dashboard-spacing"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12 pt-2"
+              style={
+                Object {
+                  "position": "relative",
+                }
+              }
+            >
+              <p />
+              <section
+                className="submit-container"
+                id="notice-section"
+                style={
+                  Object {
+                    "backgroundColor": "#F2F2F2",
+                    "border": "none",
+                    "color": "#000",
+                  }
+                }
+              >
+                <h2
+                  style={
+                    Object {
+                      "color": "#000",
+                    }
+                  }
+                >
+                  Collection Notice
+                </h2>
+                <div
+                  className="submit-content"
+                >
+                  <span>
+                    <div
+                      style={
+                        Object {
+                          "fontSize": "12px",
+                        }
+                      }
+                    >
+                      The Security Programs Division will collect your personal information for the purpose of fulfilling the criminal record check requirements of the Criminal Records Review Act and in accordance with section 26(c) of the Freedom of Information and Protection of Privacy Act (FoIPPA). Additionally, SPD may collect personal information under section 26(e) of FoIPPA for the purpose of evaluating the Criminal Records Review Program and activities to better serve you. Should you have any questions about the collection, use, or disclosure of your personal information, please contact the Policy Analyst of the Criminal Records Review Program, Security Programs Division via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email to 
+                      <a
+                        href="mailto:criminalrecords@gov.bc.ca"
+                      >
+                        criminalrecords@gov.bc.ca
+                      </a>
+                       or by telephone at 1- 855-587-0185 (option 2).
+                    </div>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <nav
+      className="navbar navbar-expand-sm navbar-dark justify-content-end"
+    >
+      <button
+        className="navbar-toggler"
+        data-target="#footerBar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse flex-grow-0"
+        id="footerBar"
+      >
+        <ul
+          className="navbar-nav text-right"
+        >
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              BC Government
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Disclaimer
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/privacy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/accessibility"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Accessibility
+            </a>
+          </li>
+          <li
+            className="nav-item m-1"
+          >
+            <a
+              className="nav-link"
+              href="https://www2.gov.bc.ca/gov/content/home/copyright"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Copyright
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</main>
+`;
+
 exports[`Consent Page Component Matches the snapshot 1`] = `
 <main>
   <header>

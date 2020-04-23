@@ -256,8 +256,6 @@ export default function Consent({
       crcURL = "/ecrc/private/createNewCRCApplicant";
     }
 
-    console.log(crcApplicant);
-
     axios
       .post(crcURL, crcApplicant, {
         headers: {

@@ -176,6 +176,22 @@ describe("InformationReview Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/consent");
   });
 
+  test("Clicking share takes you to consent page when checkbox selected and session not expired", async () => {
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
+
+    await wait(() => {});
+
+    fireEvent.click(getByRole(container, "checkbox"));
+    fireEvent.click(getByText(container, "Share"));
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/consent");
+  });
+
   test("Clicking submit sets error when checkbox selected and session is expired", async () => {
     const history = createMemoryHistory();
     const { container } = render(
