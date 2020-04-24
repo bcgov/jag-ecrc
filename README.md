@@ -16,6 +16,21 @@ Ministry of Attorney General - eCRC
 ### Login with your BC Services Card
 <img width="857" alt="bcscredirect" src="https://user-images.githubusercontent.com/55710226/80147964-2a8a7a00-8569-11ea-868a-2e5e3d49c32b.PNG">
 
+### BC Services Card Test Site
+<img width="736" alt="bcsc" src="https://user-images.githubusercontent.com/55710226/80238945-2ebfa180-8614-11ea-9d86-7d8564daf13c.PNG">
+
+### Application Form
+<img width="810" alt="appform" src="https://user-images.githubusercontent.com/55710226/80238957-32532880-8614-11ea-8cbf-333f531b51e1.PNG">
+
+### Information Review
+<img width="816" alt="inforeview" src="https://user-images.githubusercontent.com/55710226/80238974-3717dc80-8614-11ea-80a4-d3790526f355.PNG">
+
+### Consent
+<img width="819" alt="consent" src="https://user-images.githubusercontent.com/55710226/80238981-3b43fa00-8614-11ea-984c-85d988d46bb7.PNG">
+
+### Application Complete (Success/Failure)
+<img width="607" alt="success" src="https://user-images.githubusercontent.com/55710226/80238985-3da65400-8614-11ea-862c-3e44908b377a.PNG">
+
 ## Frontend Folder Structure
 
 The folder structure for the frontend react application will be as follows:
