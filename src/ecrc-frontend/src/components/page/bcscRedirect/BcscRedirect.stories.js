@@ -10,7 +10,7 @@ import { generateJWTToken } from "../../../modules/AuthenticationHelper";
 
 function LoadData(props) {
   const mock = new MockAdapter(axios);
-  const API_REQUEST = "/ecrc/protected/getBCSCUrl?requestGuid=unique123";
+  const API_REQUEST = `/ecrc/protected/getBCSCUrl?requestGuid=unique123&returnUrl=${window.location.origin}/criminalrecordcheck/applicationform`;
 
   mock.onGet(API_REQUEST).reply(200, "bcscurl.com");
 

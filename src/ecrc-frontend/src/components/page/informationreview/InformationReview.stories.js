@@ -76,9 +76,9 @@ generateJWTToken(newPayload);
 
 const FailData = props => {
   const mock = new MockAdapter(axios);
-  const API_REQUEST = "/ecrc/private/checkShare?requestGuid=unique123";
+  const API_REQUEST = "/ecrc/private/checkApplicantForPrevCRC";
 
-  mock.onGet(API_REQUEST).reply(404, { message: "No share available." });
+  mock.onPost(API_REQUEST).reply(400, { message: "No share available." });
 
   sessionStorage.setItem("validator", "secret");
   sessionStorage.setItem("uuid", "unique123");
