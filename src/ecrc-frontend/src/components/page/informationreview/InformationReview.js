@@ -101,14 +101,12 @@ export default function InformationReview({
           setShareAvailable(true);
         })
         .catch(error => {
-          console.log(error);
           if (
             error &&
             error.response &&
             error.response.status &&
             error.response.status !== 400
           ) {
-            console.log("Not good");
             setToError(true);
             if (error.response.data && error.response.data.message) {
               setError({
