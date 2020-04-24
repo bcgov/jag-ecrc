@@ -1,0 +1,10 @@
+@media (max-width: 575.98px) {
+  .info-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    margin-right: 0px;
+    margin-bottom: 5px;
+  }
+}
