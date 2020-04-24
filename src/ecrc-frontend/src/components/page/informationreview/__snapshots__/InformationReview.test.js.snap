@@ -397,7 +397,7 @@ exports[`InformationReview Component Matches the snapshot for no share 1`] = `
         </label>
       </section>
       <div
-        className="buttons pt-4"
+        className="buttons info-buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -1055,7 +1055,7 @@ exports[`InformationReview Component Matches the snapshot for share 1`] = `
       </div>
       <br />
       <div
-        className="buttons pt-4"
+        className="buttons info-buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"

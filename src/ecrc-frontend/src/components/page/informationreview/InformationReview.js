@@ -4,6 +4,7 @@ import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
 
+import "./InformationReview.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
@@ -425,7 +426,7 @@ export default function InformationReview({
               <br />
             </>
           )}
-          <div className="buttons pt-4">
+          <div className="buttons info-buttons pt-4">
             <Button button={cancelButton} onClick={edit} />
             {shareAvailable && (
               <Button
