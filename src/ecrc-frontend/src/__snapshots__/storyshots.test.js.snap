@@ -10299,7 +10299,7 @@ exports[`Storyshots Information Review Display Share Mobile 1`] = `
         </label>
       </section>
       <div
-        className="buttons pt-4"
+        className="buttons info-buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -10832,7 +10832,7 @@ exports[`Storyshots Information Review Display Share Option 1`] = `
         </label>
       </section>
       <div
-        className="buttons pt-4"
+        className="buttons info-buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -11365,7 +11365,7 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
         </label>
       </section>
       <div
-        className="buttons pt-4"
+        className="buttons info-buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -11898,7 +11898,7 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
         </label>
       </section>
       <div
-        className="buttons pt-4"
+        className="buttons info-buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -12439,7 +12439,7 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
         </label>
       </section>
       <div
-        className="buttons pt-4"
+        className="buttons info-buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
@@ -12980,7 +12980,7 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
         </label>
       </section>
       <div
-        className="buttons pt-4"
+        className="buttons info-buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
