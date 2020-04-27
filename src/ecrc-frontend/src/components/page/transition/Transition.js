@@ -8,12 +8,12 @@ import "./Transition.css";
 export default function Transition({
   page: { header, transitionReason = "bcsc" }
 }) {
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     sessionStorage.setItem("validExit", true);
-  //     window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
-  //   }, 6000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      sessionStorage.setItem("validExit", true);
+      window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
+    }, 6000);
+  }, []);
 
   return (
     <main>
