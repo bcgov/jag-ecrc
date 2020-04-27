@@ -17,7 +17,7 @@ export default function Share() {
         <p>
           <b>Note:</b> An organization can decide whether or not they will
           accept a shared criminal record check result and may ask you to
-          consent to a new criminal record check manually or online.
+          consent to a new criminal record check.
         </p>
       </div>
     </div>
