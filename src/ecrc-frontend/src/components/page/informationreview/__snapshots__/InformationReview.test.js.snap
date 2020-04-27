@@ -383,10 +383,8 @@ exports[`InformationReview Component Matches the snapshot for no share 1`] = `
             onClick={[Function]}
             type="checkbox"
           />
-          <span
-            className="declaration-cb"
-          >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          <span>
+            I certify that, to the best of my knowledge, the information I have provided and will provide as necessary is complete and accurate.
           </span>
           <span
             className="mandatory"
@@ -1017,10 +1015,8 @@ exports[`InformationReview Component Matches the snapshot for share 1`] = `
             onClick={[Function]}
             type="checkbox"
           />
-          <span
-            className="declaration-cb"
-          >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          <span>
+            I certify that, to the best of my knowledge, the information I have provided and will provide as necessary is complete and accurate.
           </span>
           <span
             className="mandatory"
@@ -1037,13 +1033,13 @@ exports[`InformationReview Component Matches the snapshot for share 1`] = `
         <div
           className="declareTitle"
         >
-          Share Your Existing Criminal Record Check
+          SHARE YOUR EXISTING CRIMINAL RECORD CHECK
         </div>
         <div
           className="declareSection"
         >
           <p>
-            If you are an employee or volunteer, you can share the results of your criminal record check at no cost.
+            If you are an employee or volunteer, you can share the results of your valid criminal record check at no cost. You have an existing valid criminal record check.
           </p>
           <p>
             <b>

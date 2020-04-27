@@ -262,10 +262,27 @@ describe("InformationReview Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
-  test("Sets error and redirects to error page when checkApplicantForPrevCRC fails with something other than 400", async () => {
+  test("Sets error and redirects to error page when checkApplicantForPrevCRC fails with something other than 400 and data/message are present", async () => {
     mock.onPost(API_REQUEST_SHARE).reply(500, {
       message: "This is an expected failure."
     });
+
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Sets error and redirects to error page when checkApplicantForPrevCRC fails with something other than 400 and data/message are not present", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(500);
 
     const history = createMemoryHistory();
     render(

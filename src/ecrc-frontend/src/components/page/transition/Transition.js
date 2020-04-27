@@ -49,10 +49,10 @@ export default function Transition({
           )}
           <br />
           <p>
-            You’ll be provided with an alternative way to submit your criminal
-            record check and will be required to re-enter your access code to
-            continue. You will be redirected automatically. If you are not
-            redirected automatically, please click{" "}
+            You will receive instructions on how to submit your criminal record
+            check and will be required to re-enter your access code to continue.
+            You will be redirected automatically. If you are not redirected
+            automatically, please click{" "}
             <span
               data-testid="exitApp"
               className="pointer-here"

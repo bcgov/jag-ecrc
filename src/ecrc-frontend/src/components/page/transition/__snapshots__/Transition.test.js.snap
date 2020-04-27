@@ -56,7 +56,7 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
       </div>
       <br />
       <p>
-        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
         <span
           className="pointer-here"
@@ -222,7 +222,7 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
       </p>
       <br />
       <p>
-        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
         <span
           className="pointer-here"
