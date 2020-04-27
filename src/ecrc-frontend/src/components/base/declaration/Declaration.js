@@ -98,9 +98,9 @@ export default function Declaration({
               consent to the disclosure to the Deputy Registrar by the Criminal
               Records Review Unit of any personal information relating to any
               outstanding charges or convictions for any relevant or specified
-              offence(s) as defined under the Criminal Records Review Act or any
-              police investigations, charges, or convictions deemed relevant by
-              the Deputy Registrar.
+              offence(s) as defined under the <i>Criminal Records Review Act</i>{" "}
+              or any police investigations, charges, or convictions deemed
+              relevant by the Deputy Registrar.
             </span>
           )}
           {shareConsent && (
@@ -123,7 +123,8 @@ export default function Declaration({
               If I am charged with or convicted of any relevant or specified
               offence(s) at any time subsequent to the criminal record check
               authorization herein, I further agree to report the charge(s) or
-              conviction(s) to my organization.
+              conviction(s) to my organization, in a timely manner, with a new
+              criminal record check authorization.
             </span>
           )}
           {shareConsent && (
