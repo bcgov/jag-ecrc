@@ -80,14 +80,7 @@ export default function OrgValidationText({
           <h3>I need more information</h3>
           <ul className="bodyList">
             <li>
-              <a
-                href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {"I'm an employee or a volunteer"}
-              </a>{" "}
-              and I want to know{" "}
+              I'm an employee or a volunteer and I want to know{" "}
               <a
                 href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
                 target="_blank"
@@ -97,17 +90,11 @@ export default function OrgValidationText({
               </a>
             </li>
             <li>
-              <a
-                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                I don&apos;t have a BC Services Card.
-              </a>{" "}
-              Applicants without a BC Services Card who haven’t lived in B.C.
-              for at least six months or who live outside the province should
-              contact your organization and inquire for an alternative option to
-              submit their criminal record check request
+              <u>I don&apos;t have a BC Services Card.</u> Applicants without a
+              BC Services Card who haven’t lived in B.C. for at least six months
+              or who live outside the province should contact your organization
+              and inquire for an alternative option to submit their criminal
+              record check request
             </li>
             <li>
               <a

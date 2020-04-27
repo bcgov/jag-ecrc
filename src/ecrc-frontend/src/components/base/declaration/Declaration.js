@@ -87,26 +87,20 @@ export default function Declaration({
           <input id="checkbox3" type="checkbox" onClick={checkThirdBox} />
           {!shareConsent && (
             <span className="declaration-cb">
-              I hereby consent to the disclosure by BC Corrections to the Deputy
-              Registrar of my identifying information (i.e. name), charges,
-              convictions and outstanding warrants; information relevant to
-              contact with police, BC Corrections, and the judicial system; and
-              my date of birth. I hereby consent to the disclosure by the Deputy
-              Registrar to the Criminal Records Review Unit of my name, date of
-              birth, gender, and relevant involvement with BC Corrections. I
+              I hereby consent to the disclosure by the Ministry of Public
+              Safety and Solicitor General to the Deputy Registrar of my
+              name(s), alias(es), Correctional Service Number (CS#), history of
+              contact with BC Corrections, and my date of birth and gender as
+              found on the BC Corrections’ client management software, CORNET. I
+              hereby consent to the disclosure by the Deputy Registrar to the
+              Criminal Records Review Unit of my name(s), alias(es), CS#, date
+              of birth, gender, and history of contact with BC Corrections. I
               consent to the disclosure to the Deputy Registrar by the Criminal
               Records Review Unit of any personal information relating to any
               outstanding charges or convictions for any relevant or specified
-              offence(s) as defined under the <i>Criminal Records Review Act</i>{" "}
-              or any police investigations, charges, or convictions deemed
-              relevant by the Deputy Registrar. I further authorize the release
-              to the Deputy Registrar of any documents in the custody of the
-              police, the courts, corrections and crown counsel relating to any
-              such outstanding charges or convictions for any relevant or
-              specified offence(s) as defined under the{" "}
-              <i>Criminal Records Review Act</i> or any such police
-              investigations, charges, or convictions deemed relevant by the
-              Deputy Registrar.
+              offence(s) as defined under the Criminal Records Review Act or any
+              police investigations, charges, or convictions deemed relevant by
+              the Deputy Registrar.
             </span>
           )}
           {shareConsent && (
