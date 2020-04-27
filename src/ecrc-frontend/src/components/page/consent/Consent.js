@@ -300,7 +300,8 @@ export default function Consent({
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
-          <h1>Consent for Criminal Record Check</h1>
+          {share && <h1>Consent to Share a Criminal Record Check</h1>}
+          {!share && <h1>Consent for Criminal Record Check</h1>}
           <p>
             I{", "}
             <i>
@@ -315,6 +316,12 @@ export default function Consent({
             checkFourthBox={() => setFourthBoxChecked(!fourthBoxChecked)}
             shareConsent={share}
           />
+          <br />
+          {!share && (
+            <p className="declaration-cb">
+              This consent is valid from the date signed.
+            </p>
+          )}
           <div className="buttons pt-4">
             <Button button={cancelButton} onClick={cancelClick} />
             <Button button={continueButton} onClick={confirm} />
