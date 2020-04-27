@@ -80,7 +80,7 @@ export default function OrgValidationText({
           <h3>I need more information</h3>
           <ul className="bodyList">
             <li>
-              I'm an employee or a volunteer and I want to know{" "}
+              I&apos;m an employee or a volunteer and I want to know{" "}
               <a
                 href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
                 target="_blank"
