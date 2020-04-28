@@ -1,5 +1,6 @@
 package ca.bc.gov.open.ecrc.controller;
 
+import ca.bc.gov.open.ecrc.util.EcrcConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -33,8 +34,8 @@ public class LinksController {
 
 	@GetMapping(value = "/protected/links", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> getLinks(@RequestParam(required=true) String requestGuid) {
-		MDC.put("request.guid", requestGuid);
-		MDC.put("request.endpoint",  "links");
+		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "links");
 		logger.info("Get links request received [{}]", requestGuid);
 
 		try {
@@ -45,6 +46,9 @@ public class LinksController {
 					String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 							EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 					HttpStatus.NOT_FOUND);
+		} finally {
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 		}
 	}
 
