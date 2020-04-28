@@ -6,6 +6,7 @@ import ca.bc.gov.open.ecrc.service.EcrcServices;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,6 +22,8 @@ public class CreateNewCRCServiceController {
 
     @PostMapping(value = "/private/createNewCRCService", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> createNewCRCService(@RequestBody(required=true) RequestNewCRCService requestNewCRCService) {
+        MDC.put("request.guid", requestNewCRCService.getRequestGuid());
+        MDC.put("request.endpoint",  "createNewCRCService");
         logger.info("Create new crc request received [{}]", requestNewCRCService.getRequestGuid());
         try {
             return ecrcServices.createNewCRCService(requestNewCRCService);

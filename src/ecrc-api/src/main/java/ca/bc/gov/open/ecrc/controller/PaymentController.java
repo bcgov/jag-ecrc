@@ -5,6 +5,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,6 +33,8 @@ public class PaymentController {
 
 	@PostMapping(value = "/private/createPaymentUrl", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createPaymentUrl(@RequestBody RequestPaymentService paymentInfo) {
+		MDC.put("request.guid", paymentInfo.getRequestGuid());
+		MDC.put("request.endpoint",  "createPaymentUrl");
 		logger.info("Payment request received [{}]", paymentInfo.getRequestGuid());
 		try {
 			return paymentService.createPaymentUrl(paymentInfo);

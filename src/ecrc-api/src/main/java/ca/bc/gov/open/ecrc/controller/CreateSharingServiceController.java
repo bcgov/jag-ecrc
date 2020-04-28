@@ -2,6 +2,7 @@ package ca.bc.gov.open.ecrc.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -31,6 +32,8 @@ public class CreateSharingServiceController {
 
 	@PostMapping(value = "/private/createSharingService", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createSharingService(@RequestBody RequestCreateSharingService serviceInfo) {
+		MDC.put("request.guid", serviceInfo.getRequestGuid());
+		MDC.put("request.endpoint",  "createSharingService");
 		logger.info("Create sharing service request received [{}]", serviceInfo.getRequestGuid());
 
 		try {

@@ -6,6 +6,7 @@ import ca.bc.gov.open.ecrc.service.EcrcServices;
 import ca.bc.gov.open.ecrc.model.RequestUpdateServiceFinancialTxn;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,6 +25,8 @@ public class UpdateServiceFinancialTxnController {
 
     @PostMapping(value = "/private/updateServiceFinancialTxn", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> updateServiceFinancialTxn(@RequestBody(required=true) RequestUpdateServiceFinancialTxn requestUpdateServiceFinancialTxn) {
+        MDC.put("request.guid", requestUpdateServiceFinancialTxn.getRequestGuid());
+        MDC.put("request.endpoint",  "updateServiceFinancialTxn");
         logger.info("Update service transaction request received [{}]", requestUpdateServiceFinancialTxn.getRequestGuid());
         try {
             return  ecrcServices.updateServiceFinancialTxn(requestUpdateServiceFinancialTxn);

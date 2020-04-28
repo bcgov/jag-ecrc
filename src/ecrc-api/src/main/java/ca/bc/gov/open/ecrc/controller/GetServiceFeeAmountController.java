@@ -5,6 +5,7 @@ import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -26,6 +27,8 @@ public class GetServiceFeeAmountController {
                                                       @RequestParam(required=true) String scheduleTypeCd,
                                                       @RequestParam(required=true) String scopeLevelCd,
                                                       @RequestParam(required=true) String requestGuid) {
+        MDC.put("request.guid", requestGuid);
+        MDC.put("request.endpoint",  "getServiceFeeAmount");
         logger.info("Get fee amount request received [{}]", requestGuid);
 
         try {
