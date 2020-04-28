@@ -4,6 +4,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,6 +29,8 @@ public class GetProvinceListController {
 
 	@GetMapping(value = "/protected/getProvinceList", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> getProvinceList(@RequestParam(required=true) String requestGuid) {
+		MDC.put("request.guid", requestGuid);
+		MDC.put("request.endpoint",  "getProvinceList");
 		logger.info("Get province list request received [{}]", requestGuid);
 		try {
 			return ecrcServices.getProvinceList(requestGuid);

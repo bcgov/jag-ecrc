@@ -1,6 +1,7 @@
 package ca.bc.gov.open.ecrc.controller;
 
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -52,6 +53,8 @@ public class OauthController {
 	@ResponseStatus(code = HttpStatus.FOUND)
 	@GetMapping(value = "/protected/getBCSCUrl")
 	public ResponseEntity<String> getBCSCUrl(@RequestParam(required=true) String requestGuid, @RequestParam(required=false) String returnUrl) throws OauthServiceException {
+		MDC.put("request.guid", requestGuid);
+		MDC.put("request.endpoint",  "getBCSCUrl");
 		logger.info("BCSC URL request received [{}]", requestGuid);
 		try {
 			return new ResponseEntity<>(oauthServices.getIDPRedirect(returnUrl).toString(), HttpStatus.OK);
@@ -72,7 +75,9 @@ public class OauthController {
 	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode,
 										@RequestParam(required=true) String requestGuid,
 										@RequestParam(required=false) String returnUrl) throws OauthServiceException {
-		logger.info("Login URL request received {}", requestGuid);
+		MDC.put("request.guid", requestGuid);
+		MDC.put("request.endpoint",  "login");
+		logger.info("Login URL request received [{}]", requestGuid);
 		
 		AccessTokenResponse token = null; 
 		try {

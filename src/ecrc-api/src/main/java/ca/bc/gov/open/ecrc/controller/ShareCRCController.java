@@ -6,6 +6,7 @@ import ca.bc.gov.open.ecrc.model.RequestCRCShare;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,6 +24,8 @@ public class ShareCRCController {
 
     @PostMapping(value = "/private/shareCRCService", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> shareCRCService(@RequestBody(required=true) RequestCRCShare requestCRCShare) {
+        MDC.put("request.guid", requestCRCShare.getRequestCreateApplicant().getRequestGuid());
+        MDC.put("request.endpoint",  "shareCRCService");
         logger.info("Share crc request received [{}]", requestCRCShare.getRequestCreateApplicant().getRequestGuid());
         try {
             return ecrcServices.createCRCShare(requestCRCShare);
