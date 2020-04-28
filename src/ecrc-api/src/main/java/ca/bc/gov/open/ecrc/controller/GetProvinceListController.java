@@ -2,6 +2,7 @@ package ca.bc.gov.open.ecrc.controller;
 
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
+import ca.bc.gov.open.ecrc.util.EcrcConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -29,8 +30,8 @@ public class GetProvinceListController {
 
 	@GetMapping(value = "/protected/getProvinceList", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> getProvinceList(@RequestParam(required=true) String requestGuid) {
-		MDC.put("request.guid", requestGuid);
-		MDC.put("request.endpoint",  "getProvinceList");
+		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "getProvinceList");
 		logger.info("Get province list request received [{}]", requestGuid);
 		try {
 			return ecrcServices.getProvinceList(requestGuid);
@@ -38,6 +39,9 @@ public class GetProvinceListController {
 			logger.error("Error in ecrc service: ", ex);
 			return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 					EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
+		} finally {
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 		}
 	}
 }

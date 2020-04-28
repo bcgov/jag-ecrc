@@ -4,6 +4,7 @@ package ca.bc.gov.open.ecrc.controller;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCApplicant;
+import ca.bc.gov.open.ecrc.util.EcrcConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -33,8 +34,8 @@ public class CreateApplicantController {
 
 	@PostMapping(value = "/private/createApplicant", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createApplicant(@RequestBody RequestCreateApplicant applicantInfo) {
-		MDC.put("request.guid", applicantInfo.getRequestGuid());
-		MDC.put("request.endpoint",  "createApplicant");
+		MDC.put(EcrcConstants.REQUEST_GUID, applicantInfo.getRequestGuid());
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "createApplicant");
 		logger.info("Create applicant request received [{}]", applicantInfo.getRequestGuid());
 
 		try {
@@ -43,11 +44,16 @@ public class CreateApplicantController {
 			logger.error("Error in ecrc service: ", ex);
 			return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 					EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
+		} finally {
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 		}
 	}
 
 	@PostMapping(value = "/private/createNewCRCApplicant", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createNewApplicant(@RequestBody RequestNewCRCApplicant newCRCApplicant) {
+		MDC.put(EcrcConstants.REQUEST_GUID, newCRCApplicant.getRequestGuid());
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "createApplicant");
 		logger.info("Create new applicant request received [{}]", newCRCApplicant.getRequestGuid());
 
 		try {
@@ -56,6 +62,9 @@ public class CreateApplicantController {
 			logger.error("Error in ecrc service: ", ex);
 			return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 					EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
+		} finally {
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 		}
 	}
 }

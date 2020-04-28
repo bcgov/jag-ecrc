@@ -1,5 +1,6 @@
 package ca.bc.gov.open.ecrc.controller;
 
+import ca.bc.gov.open.ecrc.util.EcrcConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -31,8 +32,8 @@ public class GetJwtSecretController {
 	
 	@GetMapping(value = "/initialHandshake")
 	public ResponseEntity<String> getJwtSecret(@RequestParam(required=true) String requestGuid) {
-		MDC.put("request.guid", requestGuid);
-		MDC.put("request.endpoint",  "initialHandshake");
+		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "initialHandshake");
 		logger.info("Initial handshake received: [{}]", requestGuid);
 		try {
 			return new ResponseEntity<>(ecrcServices.getJwtSecret(), HttpStatus.OK);		
@@ -42,6 +43,9 @@ public class GetJwtSecretController {
 					String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 							EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 					HttpStatus.NOT_FOUND);
+		} finally {
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 		}
 	}
 }
