@@ -632,7 +632,7 @@ exports[`InformationReview Component Matches the snapshot for no share 1`] = `
 </main>
 `;
 
-exports[`InformationReview Component Matches the snapshot for share 1`] = `
+exports[`InformationReview Component Matches the snapshot for share available 1`] = `
 <main>
   <header>
     <nav
