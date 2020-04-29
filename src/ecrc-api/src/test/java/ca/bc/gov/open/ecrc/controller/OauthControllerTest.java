@@ -53,11 +53,21 @@ class OauthControllerTest {
 		userInfo.put("sub", "test");
 	}
 
+
+	@DisplayName("Success - getBCSCUrl oauth controller default")
+	@Test
+	void testDefaultGetBCSCUrlSuccess() throws OauthServiceException {
+		when(oauthServices.getIDPRedirect(null)).thenReturn(new ResponseEntity<String>("test", HttpStatus.OK));
+		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID", null);
+		Assert.assertEquals("test", response.getBody());
+		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
+	}
+
 	@DisplayName("Success - getBCSCUrl oauth controller")
 	@Test
 	void testGetBCSCUrlSuccess() throws OauthServiceException {
-		when(oauthServices.getIDPRedirect()).thenReturn(new ResponseEntity<String>("test", HttpStatus.OK));
-		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID");
+		when(oauthServices.getIDPRedirect("TEST")).thenReturn(new ResponseEntity<String>("test", HttpStatus.OK));
+		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID", "TEST");
 		Assert.assertEquals("test", response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -65,17 +75,17 @@ class OauthControllerTest {
 	@DisplayName("Error - getBCSCUrl oauth controller")
 	@Test
 	void testGetBCSCUrlError() throws OauthServiceException {
-		when(oauthServices.getIDPRedirect()).thenThrow(new OauthServiceException("error"));
-		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID");
+		when(oauthServices.getIDPRedirect(null)).thenThrow(new OauthServiceException("error"));
+		ResponseEntity<String> response = oauthController.getBCSCUrl("SOMEUUID", null);
 		Assert.assertEquals(EcrcExceptionConstants.SERVICE_UNAVAILABLE, response.getBody());
 		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
 	}
 
-	@DisplayName("Success - login oauth controller")
+	@DisplayName("Success - login oauth controller other")
 	@Test
 	void testLoginSuccess() throws OauthServiceException {
-		when(oauthServices.getToken(any())).thenReturn(new ResponseEntity<String>("test", HttpStatus.OK));
-		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID");
+		when(oauthServices.getToken(any(), any())).thenReturn(new ResponseEntity<String>("test", HttpStatus.OK));
+		ResponseEntity<String> response = oauthController.login("test", "SOMEUUID", "TEST");
 		Assert.assertEquals("test", response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -83,8 +93,8 @@ class OauthControllerTest {
 	@DisplayName("Error - login oauth controller (getToken)")
 	@Test
 	void testLoginError1() throws OauthServiceException {
-		when(oauthServices.getToken(any())).thenThrow(new OauthServiceException("error"));
-		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID");
+		when(oauthServices.getToken(any(), any())).thenThrow(new OauthServiceException("error"));
+		ResponseEntity<String> response = oauthController.login("code", "SOMEUUID", null);
 		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 }

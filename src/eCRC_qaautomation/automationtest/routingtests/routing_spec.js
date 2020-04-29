@@ -13,15 +13,15 @@ const errorPage = require("../../pageobjectfactory/errorpage");
 const testInput = require("../../input/success");
 
 describe("Route protection", () => {
-  const routingProtectionPageUrl = process.env.URL + "/error";
+  const routingProtectionPageUrl = testInput.BASE_URL + "/error";
   const routingTestUrls = [
-    process.env.ORGVERIFICATION_URL,
-    process.env.TERMSOFUSE_URL,
-    process.env.BCSC_URL,
-    process.env.APPLICATIONFORM_URL,
-    process.env.INFORMATIONREVIEW_URL,
-    process.env.CONSENT_URL,
-    process.env.SUCCESS_URL
+    testInput.ORGVERIFICATION_URL,
+    testInput.TERMSOFUSE_URL,
+    testInput.BCSC_URL,
+    testInput.APPLICATIONFORM_URL,
+    testInput.INFORMATIONREVIEW_URL,
+    testInput.CONSENT_URL,
+    testInput.SUCCESS_URL
   ];
 
   browserWait = protractor.ExpectedConditions;
@@ -39,7 +39,7 @@ describe("Route protection", () => {
   };
 
   const returnToOrgVerification = () => {
-    browser.get(process.env.URL);
+    browser.get(testInput.BASE_URL);
     handleAlert();
     landingPage.accessCode.sendKeys(testInput.validAccessCode);
     landingPage.validate.click();
@@ -49,7 +49,7 @@ describe("Route protection", () => {
     returnToOrgVerification();
     browser.wait(
       browserWait.elementToBeClickable(orgVerificationPage.continue),
-      10000
+      20000
     );
 
     orgVerificationPage.continue.click();
@@ -65,8 +65,9 @@ describe("Route protection", () => {
     termsOfUsePage.continueButton.click();
     browser.wait(
       browserWait.elementToBeClickable(bcscRedirectPage.login),
-      10000
+      20000
     );
+    browser.sleep(1000);
     bcscRedirectPage.login.click();
     bcServicesCardLandingPage.virtualCardTesting.click();
     bcServicesCardLoginPage.cardSerialNumber.sendKeys(
@@ -82,7 +83,7 @@ describe("Route protection", () => {
         applicationFormPage.lastName,
         testInput.applicationFormLastName
       ),
-      5000
+      20000
     );
   };
 
@@ -121,19 +122,19 @@ describe("Route protection", () => {
 
   beforeEach(() => {
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
-    browser.get(process.env.URL);
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000;
+    browser.get(testInput.BASE_URL);
     handleAlert();
   });
 
   it("verify route protection from orgvalidation page", () => {
     routingTestUrls.forEach(testUrl => {
-      if (testUrl !== process.env.URL) {
+      if (testUrl !== testInput.BASE_URL) {
         browser.get(testUrl);
         handleAlert();
         browser.wait(
           browserWait.elementToBeClickable(errorPage.homeButton),
-          10000
+          20000
         );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         errorPage.homeButton.click();
@@ -143,12 +144,12 @@ describe("Route protection", () => {
 
   it("verify route protection from orgverification page", () => {
     routingTestUrls.forEach(testUrl => {
-      if (testUrl !== process.env.ORGVERIFICATION_URL) {
+      if (testUrl !== testInput.ORGVERIFICATION_URL) {
         browser.get(testUrl);
         handleAlert();
         browser.wait(
           browserWait.elementToBeClickable(errorPage.homeButton),
-          10000
+          20000
         );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         returnToOrgVerification();
@@ -164,13 +165,13 @@ describe("Route protection", () => {
         handleAlert();
         browser.wait(
           browserWait.elementToBeClickable(errorPage.homeButton),
-          10000
+          20000
         );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         returnToTermsOfUse();
       }
 
-      if (testUrl === process.env.TERMSOFUSE_URL) {
+      if (testUrl === testInput.TERMSOFUSE_URL) {
         onSubsequentPages = true;
       }
     });
@@ -184,13 +185,13 @@ describe("Route protection", () => {
         handleAlert();
         browser.wait(
           browserWait.elementToBeClickable(errorPage.homeButton),
-          10000
+          20000
         );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         returnToApplicationForm();
       }
 
-      if (testUrl === process.env.APPLICATIONFORM_URL) {
+      if (testUrl === testInput.APPLICATIONFORM_URL) {
         onSubsequentPages = true;
       }
     });
@@ -204,13 +205,13 @@ describe("Route protection", () => {
         handleAlert();
         browser.wait(
           browserWait.elementToBeClickable(errorPage.homeButton),
-          10000
+          20000
         );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         returnToInformationReview();
       }
 
-      if (testUrl === process.env.INFORMATIONREVIEW_URL) {
+      if (testUrl === testInput.INFORMATIONREVIEW_URL) {
         onSubsequentPages = true;
       }
     });
@@ -224,13 +225,13 @@ describe("Route protection", () => {
         handleAlert();
         browser.wait(
           browserWait.elementToBeClickable(errorPage.homeButton),
-          10000
+          20000
         );
         expect(browser.getCurrentUrl()).toEqual(routingProtectionPageUrl);
         returnToConsent();
       }
 
-      if (testUrl === process.env.CONSENT_URL) {
+      if (testUrl === testInput.CONSENT_URL) {
         onSubsequentPages = true;
       }
     });

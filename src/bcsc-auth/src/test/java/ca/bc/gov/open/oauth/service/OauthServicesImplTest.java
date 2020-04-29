@@ -76,22 +76,41 @@ class OauthServicesImplTest {
 		Mockito.when(oauthProperties.getUserinfoPath()).thenReturn("/test");
 	}
 
-	@DisplayName("Success - getIDPRedirect oauth service")
+	@DisplayName("Success - getIDPRedirect oauth service default url")
 	@Test
-	void testIdpRedirect() throws URISyntaxException {
-		URI response = oauthServices.getIDPRedirect();
+	void testIdpRedirectDefault() throws URISyntaxException {
+		URI response = oauthServices.getIDPRedirect(null);
 		Assertions.assertEquals("localhost", response.getHost());
 	}
 
-	@DisplayName("Success - getToken oauth service")
+	@DisplayName("Success - getIDPRedirect oauth service specified return")
 	@Test
-	void testGetTokenSuccess() throws OauthServiceException {
+	void testIdpRedirect() throws URISyntaxException {
+		URI response = oauthServices.getIDPRedirect("TEST");
+		Assertions.assertEquals("localhost", response.getHost());
+	}
+
+	@DisplayName("Success - getToken oauth service default")
+	@Test
+	void testDefaultGetTokenSuccess() throws OauthServiceException {
 		MockResponse mockResponse = new MockResponse();
 		mockResponse.setBody(jsonTokenSuccessResp);
 		mockResponse.addHeader("content-type: application/json;");
 		mockResponse.setResponseCode(200);
 		mockBackEnd.enqueue(mockResponse);
-		AccessTokenResponse response = oauthServices.getToken("test");
+		AccessTokenResponse response = oauthServices.getToken("test", null);
+		Assertions.assertEquals("abc.abc.abc", response.getTokens().getBearerAccessToken().getValue());
+	}
+
+	@DisplayName("Success - getToken oauth service other")
+	@Test
+	void testOtherGetTokenSuccess() throws OauthServiceException {
+		MockResponse mockResponse = new MockResponse();
+		mockResponse.setBody(jsonTokenSuccessResp);
+		mockResponse.addHeader("content-type: application/json;");
+		mockResponse.setResponseCode(200);
+		mockBackEnd.enqueue(mockResponse);
+		AccessTokenResponse response = oauthServices.getToken("test", "TEST");
 		Assertions.assertEquals("abc.abc.abc", response.getTokens().getBearerAccessToken().getValue());
 	}
 
@@ -104,7 +123,7 @@ class OauthServicesImplTest {
 		mockResponse.setResponseCode(200);
 		mockBackEnd.enqueue(mockResponse);
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthServices.getToken("test");
+			oauthServices.getToken("test", null);
 		});
 	}
 
@@ -113,7 +132,7 @@ class OauthServicesImplTest {
 	void testGetTokenFailure2() throws OauthServiceException, IOException {
 		tearDown();
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthServices.getToken("test");
+			oauthServices.getToken("test", null);
 		});
 		setUp();
 	}
@@ -127,7 +146,7 @@ class OauthServicesImplTest {
 		mockResponse.setResponseCode(400);
 		mockBackEnd.enqueue(mockResponse);
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthServices.getToken("test");
+			oauthServices.getToken("test", null);
 		});
 	}
 
@@ -136,7 +155,7 @@ class OauthServicesImplTest {
 	void testGetTokenFailure4() throws OauthServiceException {
 		Mockito.when(oauthProperties.getReturnUri()).thenReturn("\"");
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthServices.getToken("test");
+			oauthServices.getToken("test", null);
 		});
 	}
 

@@ -137,11 +137,14 @@ export default function ApplicationForm({
 
     if (!isActionPerformed("appForm") && code) {
       Promise.all([
-        axios.get(`/ecrc/protected/login?code=${code}&requestGuid=${uuid}`, {
-          headers: {
-            Authorization: `Bearer ${token}`
+        axios.get(
+          `/ecrc/protected/login?code=${code}&requestGuid=${uuid}&returnUrl=${window.location.origin}/criminalrecordcheck/applicationform`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
           }
-        }),
+        ),
         axios.get(`/ecrc/protected/getProvinceList?requestGuid=${uuid}`, {
           headers: {
             Authorization: `Bearer ${token}`

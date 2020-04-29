@@ -18,9 +18,9 @@ import net.minidev.json.JSONObject;
  */
 public interface OauthServices {
 
-	public URI getIDPRedirect() throws URISyntaxException;
+	public URI getIDPRedirect(String returnUrl) throws URISyntaxException;
 	
-	public AccessTokenResponse getToken(String code) throws OauthServiceException;
+	public AccessTokenResponse getToken(String code, String returnUrl) throws OauthServiceException;
 
 	public JSONObject getUserInfo(BearerAccessToken accessToken) throws OauthServiceException;
 

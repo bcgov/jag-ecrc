@@ -1,6 +1,8 @@
 package ca.bc.gov.open.ecrc.controller;
 
+import ca.bc.gov.open.ecrc.util.EcrcConstants;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -39,27 +41,41 @@ public class OauthController {
 
 	@ResponseStatus(code = HttpStatus.FOUND)
 	@GetMapping(value = "/protected/getBCSCUrl")
-	public ResponseEntity<String> getBCSCUrl(@RequestParam(required = true) String requestGuid)
-			throws OauthServiceException {
+	public ResponseEntity<String> getBCSCUrl(@RequestParam(required = true) String requestGuid,
+			@RequestParam(required = false) String returnUrl) throws OauthServiceException {
+		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT, "getBCSCUrl");
 		logger.info("BCSC URL request received [{}]", requestGuid);
 		try {
-			return oauthServices.getIDPRedirect();
+			return oauthServices.getIDPRedirect(returnUrl);
 		} catch (Exception e) {
-			logger.error("Error retrieving BCSC redirect url ", e);
+			logger.error("Error retrieving BCSC redirect url ");
+			logger.error(e.getMessage(), e);
 			return new ResponseEntity<>(EcrcExceptionConstants.SERVICE_UNAVAILABLE, HttpStatus.INTERNAL_SERVER_ERROR);
+		} finally {
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 		}
 
 	}
 
 	@GetMapping(value = "/protected/login")
 	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode,
-			@RequestParam(required = true) String requestGuid) throws OauthServiceException {
-		logger.info("Login URL request received {}", requestGuid);
+			@RequestParam(required = true) String requestGuid, @RequestParam(required = false) String returnUrl)
+			throws OauthServiceException {
+		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT, "login");
+		logger.info("Login URL request received [{}]", requestGuid);
+
 		try {
-			return oauthServices.getToken(authCode);
+			return oauthServices.getToken(authCode, returnUrl);
 		} catch (OauthServiceException e) {
-			logger.error("Error logging in to BCSC", e);
+			logger.error("Error logging in to BCSC");
+			logger.error(e.getMessage(), e);
 			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
+		} finally {
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 		}
 	}
 

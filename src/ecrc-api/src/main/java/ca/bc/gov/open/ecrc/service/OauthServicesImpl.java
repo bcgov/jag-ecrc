@@ -37,19 +37,18 @@ public class OauthServicesImpl implements OauthServices {
 
 	@PostConstruct
 	public void InitService() {
-
 		this.webClient = WebClient.builder().baseUrl(ecrcProps.getOauthUrl())
 				.defaultHeaders(
 						header -> header.setBasicAuth(ecrcProps.getOauthUsername(), ecrcProps.getOauthPassword()))
 				.build();
 	}
 
-	public ResponseEntity<String> getIDPRedirect() throws OauthServiceException {
+	public ResponseEntity<String> getIDPRedirect(String returnUrl) throws OauthServiceException {
 		logger.debug("Calling getIDPRedirect");
-
 		try {
-			Mono<String> responseBody = this.webClient.get().uri(ecrcProps.getOauthGetBCSCRedirectUri()).retrieve()
-					.bodyToMono(String.class);
+			String params = "?returnUrl=" + returnUrl;
+			String uri = String.format(ecrcProps.getOauthGetBCSCRedirectUri(), params);
+			Mono<String> responseBody = this.webClient.get().uri(uri).retrieve().bodyToMono(String.class);
 			return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
 		} catch (Exception e) {
 			throw new OauthServiceException(e.getMessage(), e);
@@ -57,10 +56,11 @@ public class OauthServicesImpl implements OauthServices {
 
 	}
 
-	public ResponseEntity<String> getToken(String authCode) throws OauthServiceException {
+	public ResponseEntity<String> getToken(String authCode, String returnUrl) throws OauthServiceException {
 		logger.debug("Calling getToken");
 		try {
-			String loginUri = String.format(ecrcProps.getOauthLoginUri(), authCode);
+			String params = "?code=" + authCode + "&returnUrl=" + returnUrl;
+			String loginUri = String.format(ecrcProps.getOauthLoginUri(), params);
 			Mono<String> responseBody = this.webClient.get().uri(loginUri).retrieve().bodyToMono(String.class);
 			return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
 		} catch (Exception e) {

@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const landingPage = require("../../pageobjectfactory/landingpage");
 const inputCodes = require("../../input/accesscode");
+const testInput = require("../../input/success");
 
 describe("landing page", () => {
   beforeAll(() => {
@@ -24,24 +25,25 @@ describe("landing page", () => {
   };
 
   beforeEach(() => {
-    browser.get(process.env.URL);
+    browser.get(testInput.BASE_URL);
     handleAlert();
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000;
   });
 
   afterEach(() => {
-    browser.get(process.env.URL);
+    browser.get(testInput.BASE_URL);
     handleAlert();
   });
 
   describe("I need more Information", () => {
-    it("Verify if I am an employee or organization redirects to the right page", () => {
+    //Test set to skip due to link being temporarily removed from application. Link will be re-added in the future.
+    xit("Verify if I am an employee or organization redirects to the right page", () => {
       landingPage.needMoreInformationEmployeeOrVolunteer.click().then(() => {
         browser.getAllWindowHandles().then(windowHandle => {
           handleAlert();
           browser.switchTo().window(windowHandle[1]);
-          expect(process.env.LP_NEEDMOREINFORMATION_EMPORGNAVTITLE).toBe(
+          expect(testInput.LP_NEEDMOREINFORMATION_EMPORGNAVTITLE).toBe(
             browser.getTitle()
           );
           browser.close();
@@ -56,7 +58,7 @@ describe("landing page", () => {
           handleAlert();
           browser.switchTo().window(windowHandle[1]);
           expect(
-            process.env.LP_WHYINEEDTOAPPLYFORCRIMINALRECORDCHECK_NAVTITLE
+            testInput.LP_WHYINEEDTOAPPLYFORCRIMINALRECORDCHECK_NAVTITLE
           ).toBe(browser.getTitle());
           browser.close();
           browser.switchTo().window(windowHandle[0]);
@@ -69,7 +71,7 @@ describe("landing page", () => {
         browser.getAllWindowHandles().then(windowHandle => {
           handleAlert();
           browser.switchTo().window(windowHandle[1]);
-          expect(process.env.LP_IAMANAUTHORIZEDCONTACT_NAVTITLE).toBe(
+          expect(testInput.LP_IAMANAUTHORIZEDCONTACT_NAVTITLE).toBe(
             browser.getTitle()
           );
           browser.close();
@@ -83,7 +85,7 @@ describe("landing page", () => {
         browser.getAllWindowHandles().then(windowHandle => {
           handleAlert();
           browser.switchTo().window(windowHandle[1]);
-          expect(process.env.LP_IAMANEMPLOYERORGANIZATION_NAVTITLE).toBe(
+          expect(testInput.LP_IAMANEMPLOYERORGANIZATION_NAVTITLE).toBe(
             browser.getTitle()
           );
           browser.close();
@@ -96,7 +98,7 @@ describe("landing page", () => {
           browser.getAllWindowHandles().then(windowHandle => {
             handleAlert();
             browser.switchTo().window(windowHandle[1]);
-            expect(process.env.LP_IAMAVOLUNTEERORGANIZATION_NAVTITLE).toBe(
+            expect(testInput.LP_IAMAVOLUNTEERORGANIZATION_NAVTITLE).toBe(
               browser.getTitle()
             );
             browser.close();
@@ -110,7 +112,7 @@ describe("landing page", () => {
           browser.getAllWindowHandles().then(windowHandle => {
             handleAlert();
             browser.switchTo().window(windowHandle[1]);
-            expect(process.env.LP_CRIMINALRECORDSREVIEWACT_NAVTITLE).toBe(
+            expect(testInput.LP_CRIMINALRECORDSREVIEWACT_NAVTITLE).toBe(
               browser.getTitle()
             );
             browser.close();
@@ -125,7 +127,7 @@ describe("landing page", () => {
         landingPage.accessCode.sendKeys(inputCodes.accessCode.validCode.code);
         landingPage.validate.click().then(() => {
           browser.sleep(1500);
-          expect(process.env.ORGVERIFICATION_URL).toBe(browser.getCurrentUrl());
+          expect(testInput.ORGVERIFICATION_URL).toBe(browser.getCurrentUrl());
         });
       });
 
@@ -133,7 +135,7 @@ describe("landing page", () => {
         landingPage.accessCode.sendKeys(inputCodes.accessCode.invalidCode.code);
         landingPage.validate.click().then(() => {
           browser.sleep(1500);
-          expect(process.env.TRANSITION_URL).toBe(browser.getCurrentUrl());
+          expect(testInput.TRANSITION_URL).toBe(browser.getCurrentUrl());
           handleAlert();
         });
       });

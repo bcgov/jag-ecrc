@@ -42,6 +42,7 @@ const page = {
   applicant,
   org,
   applicationInfo,
+  share: false,
   saveApplicationInfo,
   setError
 };
@@ -117,6 +118,18 @@ export const MobileOnetime = () => (
   </MemoryRouter>
 );
 
+export const Share = () => (
+  <MemoryRouter>
+    <Success page={{ ...page, share: true }} />
+  </MemoryRouter>
+);
+
+export const MobileShare = () => (
+  <MemoryRouter>
+    <Success page={{ ...page, share: true }} />
+  </MemoryRouter>
+);
+
 export const PaymentSuccess = () => (
   <LoadData props={page}>
     {data => (
@@ -158,6 +171,14 @@ export const MobilePaymentFailure = () => (
 );
 
 MobileVolunteer.story = {
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile2"
+    }
+  }
+};
+
+MobileShare.story = {
   parameters: {
     viewport: {
       defaultViewport: "mobile2"

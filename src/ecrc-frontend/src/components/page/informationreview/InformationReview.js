@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
-import axios from "axios";
+// import axios from "axios";
 
+import "./InformationReview.css";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import Table from "../../composite/table/Table";
@@ -51,7 +52,7 @@ export default function InformationReview({
       jobTitle,
       organizationFacility
     },
-    org: { orgNm, orgTicketNumber, defaultCrcScopeLevelCd },
+    org: { orgTicketNumber, defaultCrcScopeLevelCd },
     setApplicationInfo,
     setError,
     setShare
@@ -62,9 +63,8 @@ export default function InformationReview({
   const [boxChecked, setBoxChecked] = useState(false);
 
   // SHARE STATES
-  const [shareAvailable, setShareAvailable] = useState(false);
-  const [oldOrg, setOldOrg] = useState("");
-  const [oldCRCExpiration, setOldCRCExpiration] = useState("");
+  // const [shareAvailable, setShareAvailable] = useState(false);
+  const shareAvailable = false;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -75,44 +75,50 @@ export default function InformationReview({
       });
       setToError(true);
     } else {
-      const uuid = sessionStorage.getItem("uuid");
-      const token = sessionStorage.getItem("jwt");
-
-      const shareInfo = {
-        orgTicketNumber,
-        legalSurnameNm,
-        legalFirstNm,
-        birthDt,
-        genderTxt,
-        postalCodeTxt,
-        driversLicNo,
-        scopeLevelCd: defaultCrcScopeLevelCd,
-        requestGuid: uuid
-      };
-
+      // const uuid = sessionStorage.getItem("uuid");
+      // const token = sessionStorage.getItem("jwt");
+      // const shareInfo = {
+      //   orgTicketNumber,
+      //   legalSurnameNm,
+      //   legalFirstNm,
+      //   birthDt,
+      //   genderTxt,
+      //   postalCodeTxt,
+      //   driversLicNo,
+      //   scopeLevelCd: defaultCrcScopeLevelCd,
+      //   requestGuid: uuid
+      // };
       // Make axios call to check for sharing service
-      axios
-        .post("/ecrc/private/checkApplicantForPrevCRC", shareInfo, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-        .then(res => {
-          // May get info back that needs to be displayed more than just here
-
-          // Expected return could include: (var names not finalized)
-          // Old Org name
-          // Available CRC expiration
-          setApplicationInfo({ previousServiceId: res.data.serviceId });
-
-          setOldOrg(res.data.oldOrg);
-          setOldCRCExpiration(res.data.oldCRCExpiration);
-          setShareAvailable(true);
-        })
-        .catch(() => {
-          // If error = no share, do nothing
-          // else if other error, go to error page and display correct error
-        });
+      // axios
+      //   .post("/ecrc/private/checkApplicantForPrevCRC", shareInfo, {
+      //     headers: {
+      //       Authorization: `Bearer ${token}`
+      //     }
+      //   })
+      //   .then(res => {
+      //     setApplicationInfo({ previousServiceId: res.data.serviceId });
+      //     setShareAvailable(true);
+      //   })
+      //   .catch(error => {
+      //     if (
+      //       error &&
+      //       error.response &&
+      //       error.response.status &&
+      //       error.response.status !== 400
+      //     ) {
+      //       setToError(true);
+      //       if (error.response.data && error.response.data.message) {
+      //         setError({
+      //           status: error.response.status,
+      //           message: error.response.data.message
+      //         });
+      //       } else {
+      //         setError({
+      //           status: error.response.status
+      //         });
+      //       }
+      //     }
+      //   });
     }
   }, [
     birthDt,
@@ -315,8 +321,16 @@ export default function InformationReview({
   };
 
   const confirmButton = {
-    label: "Submit",
+    label: shareAvailable ? "Submit New CRC" : "Submit",
     buttonStyle: "btn ecrc_go_btn mr-0",
+    buttonSize: "btn",
+    type: "submit",
+    disabled: !boxChecked
+  };
+
+  const shareButton = {
+    label: "Share Previous CRC",
+    buttonStyle: "btn ecrc_go_btn",
     buttonSize: "btn",
     type: "submit",
     disabled: !boxChecked
@@ -390,35 +404,34 @@ export default function InformationReview({
                   setBoxChecked(!boxChecked);
                 }}
               />
-              <span className="declaration-cb">
+              <span>
                 I certify that, to the best of my knowledge, the information I
-                have provided on my application and will provide as necessary is
-                complete, honest and accurate. I understand that a false
-                statement or omission of facts herein may result in the
-                inability of the CRRP to accurately determine whether the
-                applicant poses a risk to children or vulnerable adults.
+                have provided and will provide as necessary is complete and
+                accurate.
               </span>
               <span id="asterisk" className="mandatory">
                 *
               </span>
             </label>
           </section>
-          <br />
           {shareAvailable && (
-            <Share
-              previousOrg={oldOrg}
-              expiration={oldCRCExpiration}
-              newOrg={orgNm}
-              clickShare={() => {
-                setShare(true);
-                confirm();
-              }}
-              boxChecked={boxChecked}
-            />
+            <>
+              <br />
+              <Share />
+              <br />
+            </>
           )}
-          <br />
-          <div className="buttons pt-4">
+          <div className="buttons info-buttons pt-4">
             <Button button={cancelButton} onClick={edit} />
+            {shareAvailable && (
+              <Button
+                button={shareButton}
+                onClick={() => {
+                  setShare(true);
+                  confirm();
+                }}
+              />
+            )}
             <Button button={confirmButton} onClick={confirm} />
           </div>
         </div>

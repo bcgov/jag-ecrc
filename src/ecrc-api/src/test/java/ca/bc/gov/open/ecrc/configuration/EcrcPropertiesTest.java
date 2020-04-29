@@ -47,6 +47,11 @@ class EcrcPropertiesTest {
 		Assert.assertEquals("checkApplicantForPrevCRC", ecrcProperties.getCheckApplicantForPrevCrcUri());
 		Assert.assertEquals("createSharingService", ecrcProperties.getCreateSharingServiceUri());
 		Assert.assertEquals("secret", ecrcProperties.getOauthPERSecret());
+		Assert.assertEquals("user", ecrcProperties.getOauthUsername());
+		Assert.assertEquals("password", ecrcProperties.getOauthPassword());
+		Assert.assertEquals("test", ecrcProperties.getOauthUrl());
+		Assert.assertEquals("login", ecrcProperties.getOauthLoginUri());
+		Assert.assertEquals("getBCSC", ecrcProperties.getOauthGetBCSCRedirectUri());
 		Assert.assertEquals("8082", ecrcProperties.getServerPort());
 	}
 

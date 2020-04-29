@@ -101,10 +101,19 @@ describe("Consent Page Component", () => {
     });
   });
 
-  test("Matches the snapshot", () => {
+  test("Matches the new CRC page", () => {
     const consent = create(
       <MemoryRouter>
         <Consent page={page} />
+      </MemoryRouter>
+    );
+    expect(consent.toJSON()).toMatchSnapshot();
+  });
+
+  test("Matches the share CRC page", () => {
+    const consent = create(
+      <MemoryRouter>
+        <Consent page={{ ...page, share: true }} />
       </MemoryRouter>
     );
     expect(consent.toJSON()).toMatchSnapshot();
@@ -242,7 +251,41 @@ describe("Consent Page Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
-      expect(setError).toHaveBeenCalled();
+      expect(setError).toHaveBeenCalledWith({
+        status: 400,
+        message: "This is error"
+      });
+    });
+
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
+
+  test("Validate error case when error has appropriate response and status, but no data or message", async () => {
+    axios.post.mockImplementation(() =>
+      Promise.reject({
+        response: { status: 400 }
+      })
+    );
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Consent page={page} />
+      </Router>
+    );
+
+    const checkbox = getAllByRole(container, "checkbox");
+
+    fireEvent.click(checkbox[0]);
+    fireEvent.click(checkbox[1]);
+    fireEvent.click(checkbox[2]);
+    fireEvent.click(checkbox[3]);
+    fireEvent.click(getByText(container, "Continue"));
+
+    await wait(() => {
+      expect(setError).toHaveBeenCalledWith({
+        status: 400
+      });
     });
 
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");

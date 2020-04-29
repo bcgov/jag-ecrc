@@ -66,26 +66,38 @@ class OauthServicesImplTest {
 		postConstruct.invoke(oauthServices);
 	}
 
-	@DisplayName("Success - getIDPRedirect oauth service")
+	@DisplayName("Success - getIDPRedirect oauth service specified return")
 	@Test
 	void testIdpRedirect() throws OauthServiceException {
 		MockResponse mockResponse = new MockResponse();
 		mockResponse.setBody("localhost");
 		mockResponse.setResponseCode(200);
 		mockBackEnd.enqueue(mockResponse);
-		ResponseEntity<String> response = oauthServices.getIDPRedirect();
+		ResponseEntity<String> response = oauthServices.getIDPRedirect("TEST");
 		Assertions.assertEquals("localhost", response.getBody());
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
 
-	@DisplayName("Success - getToken oauth service")
+	@DisplayName("Success - getToken oauth service default")
 	@Test
-	void testGetToken() throws OauthServiceException {
+	void testDefaultGetTokenSuccess() throws OauthServiceException {
 		MockResponse mockResponse = new MockResponse();
 		mockResponse.setBody("localhost");
 		mockResponse.setResponseCode(200);
 		mockBackEnd.enqueue(mockResponse);
-		ResponseEntity<String> response = oauthServices.getToken("code");
+		ResponseEntity<String> response = oauthServices.getToken("code", null);
+		Assertions.assertEquals("localhost", response.getBody());
+		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
+	}
+
+	@DisplayName("Success - getToken oauth service other")
+	@Test
+	void testOtherGetTokenSuccess() throws OauthServiceException {
+		MockResponse mockResponse = new MockResponse();
+		mockResponse.setBody("localhost");
+		mockResponse.setResponseCode(200);
+		mockBackEnd.enqueue(mockResponse);
+		ResponseEntity<String> response = oauthServices.getToken("code", "TEST");
 		Assertions.assertEquals("localhost", response.getBody());
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -95,7 +107,7 @@ class OauthServicesImplTest {
 	void testIdpRedirectError() throws OauthServiceException, IOException {
 		mockBackEnd.shutdown();
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthServices.getIDPRedirect();
+			oauthServices.getIDPRedirect(null);
 		});
 	}
 
@@ -103,7 +115,7 @@ class OauthServicesImplTest {
 	@Test
 	void testGetTokenError() throws OauthServiceException, IOException {
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthServices.getToken("code");
+			oauthServices.getToken("code", null);
 		});
 	}
 

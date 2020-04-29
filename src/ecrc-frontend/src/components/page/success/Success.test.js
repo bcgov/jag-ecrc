@@ -79,6 +79,7 @@ describe("Success Page Component", () => {
     applicant,
     org,
     applicationInfo,
+    share: false,
     saveApplicationInfo,
     setError
   };
@@ -91,6 +92,7 @@ describe("Success Page Component", () => {
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
     sessionStorage.setItem("uuid", "unique123");
+    sessionStorage.setItem("receiptPrinted", false);
     generateJWTToken({
       actionsPerformed: ["consent"],
       authorities: ["Authorized"]
@@ -129,6 +131,20 @@ describe("Success Page Component", () => {
     expect(failedPayment.toJSON()).toMatchSnapshot();
   });
 
+  test("Matches the Share snapshot", () => {
+    const successVolunteer = create(
+      <MemoryRouter initialEntries={["/success"]}>
+        <Success
+          page={{
+            ...page,
+            share: true
+          }}
+        />
+      </MemoryRouter>
+    );
+    expect(successVolunteer.toJSON()).toMatchSnapshot();
+  });
+
   test("Validate Retry payment", async () => {
     const { container } = render(
       <MemoryRouter initialEntries={[failureUrl]}>
@@ -152,6 +168,7 @@ describe("Success Page Component", () => {
 
     fireEvent.click(getByText(container, "Print"));
     expect(window.print).toHaveBeenCalled();
+    expect(setError).not.toHaveBeenCalled();
   });
 
   test("Validate Print (on keydown)", () => {
@@ -163,6 +180,7 @@ describe("Success Page Component", () => {
 
     fireEvent.keyDown(getByText(container, "Print"));
     expect(window.print).toHaveBeenCalled();
+    expect(setError).not.toHaveBeenCalled();
   });
 
   test("Validate Email", () => {

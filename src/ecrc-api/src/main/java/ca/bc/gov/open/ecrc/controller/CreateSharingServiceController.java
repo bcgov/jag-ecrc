@@ -1,7 +1,9 @@
 package ca.bc.gov.open.ecrc.controller;
 
+import ca.bc.gov.open.ecrc.util.EcrcConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -31,6 +33,8 @@ public class CreateSharingServiceController {
 
 	@PostMapping(value = "/private/createSharingService", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> createSharingService(@RequestBody RequestCreateSharingService serviceInfo) {
+		MDC.put(EcrcConstants.REQUEST_GUID, serviceInfo.getRequestGuid());
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "createSharingService");
 		logger.info("Create sharing service request received [{}]", serviceInfo.getRequestGuid());
 
 		try {
@@ -41,6 +45,9 @@ public class CreateSharingServiceController {
 					String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 							EcrcExceptionConstants.INTERNAL_SERVICE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 					HttpStatus.BAD_REQUEST);
+		} finally {
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 		}
 	}
 }

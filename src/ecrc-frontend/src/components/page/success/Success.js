@@ -31,6 +31,7 @@ export default function Success({
       serviceFeeAmount,
       serviceId
     },
+    share,
     saveApplicationInfo,
     setError
   }
@@ -43,6 +44,7 @@ export default function Success({
     paymentInfo.trnApproved === "0" ? "#ff0000" : "rgb(43, 153, 76)";
   const history = useHistory();
   let isBackClicked = false;
+  const isPrintClicked = sessionStorage.getItem("receiptPrinted");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,14 +52,22 @@ export default function Success({
     if (
       !isAuthorized() ||
       !isActionPerformed("consent") ||
-      (!paymentInfo.trnApproved && orgApplicantRelationship === "EMPLOYEE")
+      (!paymentInfo.trnApproved &&
+        orgApplicantRelationship === "EMPLOYEE" &&
+        !share)
     ) {
       setError({
         status: 403
       });
       history.push("/criminalrecordcheck/error");
     }
-  }, [paymentInfo.trnApproved, orgApplicantRelationship, history, setError]);
+  }, [
+    paymentInfo.trnApproved,
+    orgApplicantRelationship,
+    history,
+    setError,
+    share
+  ]);
 
   useLayoutEffect(() => {
     if (!isHidden) {
@@ -129,7 +139,7 @@ export default function Success({
     });
   }
 
-  if (orgApplicantRelationship !== "EMPLOYEE") {
+  if (share || orgApplicantRelationship !== "EMPLOYEE") {
     receiptInfo.unshift({ name: "Service Number", value: serviceId });
     receiptInfo.push({ name: "Organization", value: orgNm });
   }
@@ -153,8 +163,9 @@ export default function Success({
     tableElements: receiptInfo,
     tableStyle: "white"
   };
+
   // IF PaymentFailure: LogPaymentFailure
-  if (paymentInfo.trnApproved === "0") {
+  if (paymentInfo.trnApproved === "0" && !JSON.parse(isPrintClicked)) {
     const token = sessionStorage.getItem("jwt");
 
     const logFailure = {
@@ -183,7 +194,7 @@ export default function Success({
   // IF Success and not volunteer: UpdateServiceFinancialTxn?
   // cC_Authorization - Unsure, defer to Shaun
   // payor_Type_Cd - based on application type O for ONETIME, A otherwise
-  if (paymentInfo.trnApproved === "1") {
+  if (paymentInfo.trnApproved === "1" && !JSON.parse(isPrintClicked)) {
     const token = sessionStorage.getItem("jwt");
 
     const paymentDateArr = paymentInfo.trnDate.split(" ")[0].split("/");
@@ -258,9 +269,9 @@ export default function Success({
         const createURL = {
           invoiceNumber: newInvoiceId,
           requestGuid: uuid,
-          approvedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          declinedPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
-          errorPage: `${process.env.REACT_APP_FRONTEND_BASE_URL}/criminalrecordcheck/success`,
+          approvedPage: `${window.location.origin}/criminalrecordcheck/success`,
+          declinedPage: `${window.location.origin}/criminalrecordcheck/success`,
+          errorPage: `${window.location.origin}/criminalrecordcheck/success`,
           totalItemsAmount: serviceFeeAmount,
           serviceIdRef1: serviceId,
           partyIdRef2: partyId
@@ -299,11 +310,12 @@ export default function Success({
       <div className="page">
         <div className="content col-md-7">
           <h1 style={{ color: headerColor }}>
-            {orgApplicantRelationship !== "EMPLOYEE" && "Application Submitted"}
+            {(share || orgApplicantRelationship !== "EMPLOYEE") &&
+              "Application Submitted"}
             {paymentInfo.trnApproved === "0" && "Payment Declined/Cancelled"}
             {paymentInfo.trnApproved === "1" && "Payment Approved"}
           </h1>
-          {orgApplicantRelationship !== "EMPLOYEE" && (
+          {(share || orgApplicantRelationship !== "EMPLOYEE") && (
             <>
               <p>
                 Thank you for submitting your application to the Criminal
@@ -369,9 +381,11 @@ export default function Success({
             role="button"
             className="print-page-success"
             onKeyDown={() => {
+              sessionStorage.setItem("receiptPrinted", true);
               setIsHidden(false);
             }}
             onClick={() => {
+              sessionStorage.setItem("receiptPrinted", true);
               setIsHidden(false);
             }}
             tabIndex={0}
@@ -427,6 +441,7 @@ Success.propTypes = {
       serviceFeeAmount: PropTypes.number,
       serviceId: PropTypes.number.isRequired
     }),
+    share: PropTypes.bool.isRequired,
     saveApplicationInfo: PropTypes.func.isRequired,
     setError: PropTypes.func.isRequired
   }).isRequired

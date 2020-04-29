@@ -1,7 +1,7 @@
 .ecrc_go_btn {
   background-color: rgb(0, 51, 102);
-  width: 132px;
-  height: 40px;
+  min-width: 132px;
+  min-height: 40px;
   color: white;
 }
 
@@ -12,8 +12,8 @@
 
 .ecrc_accessary_btn {
   color: #003366;
-  width: 150px;
-  height: 40px;
+  min-width: 150px;
+  min-height: 40px;
   background-color: white;
   border-width: 1px;
   border-style: solid;
@@ -30,8 +30,8 @@
 
 .ecrc_common_btn {
   color: white;
-  width: 139px;
-  height: 40px;
+  min-width: 139px;
+  min-height: 40px;
   font-weight: 700;
   font-style: normal;
   font-size: 14px;
@@ -58,8 +58,8 @@
 
 .ecrc_bscs_apply_btn {
   color: white;
-  width: 160px;
-  height: 40px;
+  min-width: 160px;
+  min-height: 40px;
   font-weight: 700;
   font-style: normal;
   font-size: 14px;

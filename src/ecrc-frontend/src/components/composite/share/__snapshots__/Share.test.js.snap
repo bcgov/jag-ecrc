@@ -4,36 +4,23 @@ exports[`Share Component Matches the snapshot of Share 1`] = `
 <div
   className="share"
 >
-  <span>
-    You have a valid previous CRC.
-  </span>
-  <span>
-    It was prepared for: 
-    Previous Org
-  </span>
-  <span>
-    It is valid until: 
-    2021-01-04
-  </span>
-  <p>
-    Would you like to share it with 
-    New Org
-    ?
-  </p>
-  <button
-    className="btn ecrc_go_btn btn"
-    disabled={false}
-    onClick={[Function]}
-    type="submit"
+  <div
+    className="declareTitle"
   >
-    Share
-    <div
-      className="loader-hide"
-    >
-      <div
-        className="btn-loader"
-      />
-    </div>
-  </button>
+    SHARE YOUR EXISTING CRIMINAL RECORD CHECK
+  </div>
+  <div
+    className="declareSection"
+  >
+    <p>
+      If you are an employee or volunteer, you can share the results of your valid criminal record check at no cost. You have an existing valid criminal record check.
+    </p>
+    <p>
+      <b>
+        Note:
+      </b>
+       An organization can decide whether or not they will accept a shared criminal record check result and may ask you to consent to a new criminal record check.
+    </p>
+  </div>
 </div>
 `;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InformationReview Component Matches the snapshot 1`] = `
+exports[`InformationReview Component Matches the snapshot for no share 1`] = `
 <main>
   <header>
     <nav
@@ -383,10 +383,8 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
             onClick={[Function]}
             type="checkbox"
           />
-          <span
-            className="declaration-cb"
-          >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          <span>
+            I certify that, to the best of my knowledge, the information I have provided and will provide as necessary is complete and accurate.
           </span>
           <span
             className="mandatory"
@@ -396,45 +394,8 @@ exports[`InformationReview Component Matches the snapshot 1`] = `
           </span>
         </label>
       </section>
-      <br />
       <div
-        className="share"
-      >
-        <span>
-          You have a valid previous CRC.
-        </span>
-        <span>
-          It was prepared for: 
-          Old org name
-        </span>
-        <span>
-          It is valid until: 
-          2021-10-12
-        </span>
-        <p>
-          Would you like to share it with 
-          Some org
-          ?
-        </p>
-        <button
-          className="btn ecrc_go_btn btn"
-          disabled={true}
-          onClick={[Function]}
-          type="submit"
-        >
-          Share
-          <div
-            className="loader-hide"
-          >
-            <div
-              className="btn-loader"
-            />
-          </div>
-        </button>
-      </div>
-      <br />
-      <div
-        className="buttons pt-4"
+        className="buttons info-buttons pt-4"
       >
         <button
           className="btn ecrc_accessary_btn btn"
