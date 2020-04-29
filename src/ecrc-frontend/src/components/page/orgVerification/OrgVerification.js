@@ -59,14 +59,8 @@ export default function OrgVerification({ page: { header, org, setError } }) {
 
   const links = [
     {
-      name: "I'm an employee or volunteer",
-      url:
-        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
-    },
-    {
-      name: "Electronic Identity Verification (EIV)",
-      url:
-        "https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/electronic-identity-verification-eiv"
+      name: "Criminal Records Review Act",
+      url: "http://www.bclaws.ca/civix/document/id/complete/statreg/00_96086_01"
     },
     {
       name: "Results and Reconsideration",
