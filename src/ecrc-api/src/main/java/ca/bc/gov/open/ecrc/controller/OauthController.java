@@ -1,6 +1,8 @@
 package ca.bc.gov.open.ecrc.controller;
 
+import ca.bc.gov.open.ecrc.util.EcrcConstants;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -52,12 +54,17 @@ public class OauthController {
 	@ResponseStatus(code = HttpStatus.FOUND)
 	@GetMapping(value = "/protected/getBCSCUrl")
 	public ResponseEntity<String> getBCSCUrl(@RequestParam(required=true) String requestGuid, @RequestParam(required=false) String returnUrl) throws OauthServiceException {
+		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "getBCSCUrl");
 		logger.info("BCSC URL request received [{}]", requestGuid);
 		try {
 			return new ResponseEntity<>(oauthServices.getIDPRedirect(returnUrl).toString(), HttpStatus.OK);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			throw new OauthServiceException("Configuration Error");
+		} finally {
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 		}
 	}
 
@@ -68,17 +75,23 @@ public class OauthController {
 	 * Responds to SPA with new JWT (complete with userInfo and encrypted IdP token).
 	 * 
 	 */
+	//TODO Refactor: This should be moved to a service. To much logic in this.
 	@GetMapping(value = "/protected/login")
 	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode,
 										@RequestParam(required=true) String requestGuid,
 										@RequestParam(required=false) String returnUrl) throws OauthServiceException {
-		logger.info("Login URL request received {}", requestGuid);
-		
+		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
+		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "login");
+		logger.info("Login URL request received [{}]", requestGuid);
+
 		AccessTokenResponse token = null; 
 		try {
 			token = oauthServices.getToken(authCode, returnUrl);
 		} catch (Exception e) {
 			logger.error("Error while calling Oauth2 /token endpoint. ", e);
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
+
 			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
@@ -87,6 +100,8 @@ public class OauthController {
 		ValidationResponse valResp = tokenServices.validateBCSCIDToken((String)token.toSuccessResponse().getCustomParameters().get("id_token"));
 		if (!valResp.isValid()) {
 			logger.error("ID token failed to validate. Error {}", valResp.getMessage());
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
@@ -96,6 +111,8 @@ public class OauthController {
 			userInfo = oauthServices.getUserInfo((BearerAccessToken)token.toSuccessResponse().getTokens().getAccessToken());
 		} catch (OauthServiceException e) {
 			logger.error("Error fetching userinfo:", e);
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
@@ -106,12 +123,16 @@ public class OauthController {
 	    	encryptedAccessToken = AES256.encrypt(token.getTokens().getBearerAccessToken().getValue(), ecrcProps.getOauthPERSecret() );
 		} catch (Exception e) {
 			logger.error("Error encrypting token:", e);
+			MDC.remove(EcrcConstants.REQUEST_GUID);
+			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
 			return new ResponseEntity<>(OauthServiceException.OAUTH_FAILURE_RESPONSE, HttpStatus.FORBIDDEN);
 		}
 		
 		// Send the new FE JWT in the response body to the caller. 
 	    String feTokenResponse = JwtTokenGenerator.generateFEAccessToken(userInfo, encryptedAccessToken, ecrcProps.getJwtSecret(), ecrcProps.getOauthJwtExpiry(), ecrcProps.getJwtAuthorizedRole());
-        return new ResponseEntity<>(feTokenResponse, HttpStatus.OK);
+		MDC.remove(EcrcConstants.REQUEST_GUID);
+		MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
+	    return new ResponseEntity<>(feTokenResponse, HttpStatus.OK);
 	}
 
 }

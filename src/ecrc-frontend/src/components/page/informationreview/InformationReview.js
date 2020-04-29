@@ -404,13 +404,10 @@ export default function InformationReview({
                   setBoxChecked(!boxChecked);
                 }}
               />
-              <span className="declaration-cb">
+              <span>
                 I certify that, to the best of my knowledge, the information I
-                have provided on my application and will provide as necessary is
-                complete, honest and accurate. I understand that a false
-                statement or omission of facts herein may result in the
-                inability of the CRRP to accurately determine whether the
-                applicant poses a risk to children or vulnerable adults.
+                have provided and will provide as necessary is complete and
+                accurate.
               </span>
               <span id="asterisk" className="mandatory">
                 *

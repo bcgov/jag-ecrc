@@ -37,7 +37,8 @@ describe("landing page", () => {
   });
 
   describe("I need more Information", () => {
-    it("Verify if I am an employee or organization redirects to the right page", () => {
+    //Test set to skip due to link being temporarily removed from application. Link will be re-added in the future.
+    xit("Verify if I am an employee or organization redirects to the right page", () => {
       landingPage.needMoreInformationEmployeeOrVolunteer.click().then(() => {
         browser.getAllWindowHandles().then(windowHandle => {
           handleAlert();

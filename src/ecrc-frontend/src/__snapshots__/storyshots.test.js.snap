@@ -6206,17 +6206,12 @@ exports[`Storyshots Consent page Default 1`] = `
             <span
               className="declaration-cb"
             >
-              I hereby consent to the disclosure by BC Corrections to the Deputy Registrar of my identifying information (i.e. name), charges, convictions and outstanding warrants; information relevant to contact with police, BC Corrections, and the judicial system; and my date of birth. I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of my name, date of birth, gender, and relevant involvement with BC Corrections. I consent to the disclosure to the Deputy Registrar by the Criminal Records Review Unit of any personal information relating to any outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
+              I hereby consent to the disclosure by the Ministry of Public Safety and Solicitor General to the Deputy Registrar of my name(s), alias(es), Correctional Service Number (CS#), history of contact with BC Corrections, and my date of birth and gender as found on the BC Corrections’ client management software, CORNET. I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of my name(s), alias(es), CS#, date of birth, gender, and history of contact with BC Corrections. I consent to the disclosure to the Deputy Registrar by the Criminal Records Review Unit of any personal information relating to any outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
               <i>
                 Criminal Records Review Act
               </i>
                
-              or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the
-               
-              <i>
-                Criminal Records Review Act
-              </i>
-               or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
+              or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
             </span>
             <span
               className="mandatory"
@@ -6240,7 +6235,7 @@ exports[`Storyshots Consent page Default 1`] = `
             <span
               className="declaration-cb"
             >
-              If I am charged with or convicted of any relevant or specified offence(s) at any time subsequent to the criminal record check authorization herein, I further agree to report the charge(s) or conviction(s) to my organization.
+              If I am charged with or convicted of any relevant or specified offence(s) at any time subsequent to the criminal record check authorization herein, I further agree to report the charge(s) or conviction(s) to my organization, in a timely manner, with a new criminal record check authorization.
             </span>
             <span
               className="mandatory"
@@ -6251,6 +6246,12 @@ exports[`Storyshots Consent page Default 1`] = `
           </label>
         </section>
       </div>
+      <br />
+      <p
+        className="declaration-cb"
+      >
+        This consent is valid from the date signed.
+      </p>
       <div
         className="buttons pt-4"
       >
@@ -6806,17 +6807,12 @@ exports[`Storyshots Consent page Mobile 1`] = `
             <span
               className="declaration-cb"
             >
-              I hereby consent to the disclosure by BC Corrections to the Deputy Registrar of my identifying information (i.e. name), charges, convictions and outstanding warrants; information relevant to contact with police, BC Corrections, and the judicial system; and my date of birth. I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of my name, date of birth, gender, and relevant involvement with BC Corrections. I consent to the disclosure to the Deputy Registrar by the Criminal Records Review Unit of any personal information relating to any outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
+              I hereby consent to the disclosure by the Ministry of Public Safety and Solicitor General to the Deputy Registrar of my name(s), alias(es), Correctional Service Number (CS#), history of contact with BC Corrections, and my date of birth and gender as found on the BC Corrections’ client management software, CORNET. I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of my name(s), alias(es), CS#, date of birth, gender, and history of contact with BC Corrections. I consent to the disclosure to the Deputy Registrar by the Criminal Records Review Unit of any personal information relating to any outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
               <i>
                 Criminal Records Review Act
               </i>
                
-              or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the
-               
-              <i>
-                Criminal Records Review Act
-              </i>
-               or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
+              or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
             </span>
             <span
               className="mandatory"
@@ -6840,7 +6836,7 @@ exports[`Storyshots Consent page Mobile 1`] = `
             <span
               className="declaration-cb"
             >
-              If I am charged with or convicted of any relevant or specified offence(s) at any time subsequent to the criminal record check authorization herein, I further agree to report the charge(s) or conviction(s) to my organization.
+              If I am charged with or convicted of any relevant or specified offence(s) at any time subsequent to the criminal record check authorization herein, I further agree to report the charge(s) or conviction(s) to my organization, in a timely manner, with a new criminal record check authorization.
             </span>
             <span
               className="mandatory"
@@ -6851,6 +6847,12 @@ exports[`Storyshots Consent page Mobile 1`] = `
           </label>
         </section>
       </div>
+      <br />
+      <p
+        className="declaration-cb"
+      >
+        This consent is valid from the date signed.
+      </p>
       <div
         className="buttons pt-4"
       >
@@ -7305,7 +7307,7 @@ exports[`Storyshots Consent page MobileSharing 1`] = `
       className="content col-md-8"
     >
       <h1>
-        Consent for Criminal Record Check
+        Consent to Share a Criminal Record Check
       </h1>
       <p>
         I
@@ -7426,6 +7428,7 @@ exports[`Storyshots Consent page MobileSharing 1`] = `
           </label>
         </section>
       </div>
+      <br />
       <div
         className="buttons pt-4"
       >
@@ -7880,7 +7883,7 @@ exports[`Storyshots Consent page Sharing 1`] = `
       className="content col-md-8"
     >
       <h1>
-        Consent for Criminal Record Check
+        Consent to Share a Criminal Record Check
       </h1>
       <p>
         I
@@ -8001,6 +8004,7 @@ exports[`Storyshots Consent page Sharing 1`] = `
           </label>
         </section>
       </div>
+      <br />
       <div
         className="buttons pt-4"
       >
@@ -8498,17 +8502,12 @@ exports[`Storyshots Declaration Default 1`] = `
       <span
         className="declaration-cb"
       >
-        I hereby consent to the disclosure by BC Corrections to the Deputy Registrar of my identifying information (i.e. name), charges, convictions and outstanding warrants; information relevant to contact with police, BC Corrections, and the judicial system; and my date of birth. I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of my name, date of birth, gender, and relevant involvement with BC Corrections. I consent to the disclosure to the Deputy Registrar by the Criminal Records Review Unit of any personal information relating to any outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
+        I hereby consent to the disclosure by the Ministry of Public Safety and Solicitor General to the Deputy Registrar of my name(s), alias(es), Correctional Service Number (CS#), history of contact with BC Corrections, and my date of birth and gender as found on the BC Corrections’ client management software, CORNET. I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of my name(s), alias(es), CS#, date of birth, gender, and history of contact with BC Corrections. I consent to the disclosure to the Deputy Registrar by the Criminal Records Review Unit of any personal information relating to any outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
         <i>
           Criminal Records Review Act
         </i>
          
-        or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar. I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any such outstanding charges or convictions for any relevant or specified offence(s) as defined under the
-         
-        <i>
-          Criminal Records Review Act
-        </i>
-         or any such police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
+        or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
       </span>
       <span
         className="mandatory"
@@ -8532,7 +8531,7 @@ exports[`Storyshots Declaration Default 1`] = `
       <span
         className="declaration-cb"
       >
-        If I am charged with or convicted of any relevant or specified offence(s) at any time subsequent to the criminal record check authorization herein, I further agree to report the charge(s) or conviction(s) to my organization.
+        If I am charged with or convicted of any relevant or specified offence(s) at any time subsequent to the criminal record check authorization herein, I further agree to report the charge(s) or conviction(s) to my organization, in a timely manner, with a new criminal record check authorization.
       </span>
       <span
         className="mandatory"
@@ -10285,10 +10284,8 @@ exports[`Storyshots Information Review Display Share Mobile 1`] = `
             onClick={[Function]}
             type="checkbox"
           />
-          <span
-            className="declaration-cb"
-          >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          <span>
+            I certify that, to the best of my knowledge, the information I have provided and will provide as necessary is complete and accurate.
           </span>
           <span
             className="mandatory"
@@ -10818,10 +10815,8 @@ exports[`Storyshots Information Review Display Share Option 1`] = `
             onClick={[Function]}
             type="checkbox"
           />
-          <span
-            className="declaration-cb"
-          >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          <span>
+            I certify that, to the best of my knowledge, the information I have provided and will provide as necessary is complete and accurate.
           </span>
           <span
             className="mandatory"
@@ -11351,10 +11346,8 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
             onClick={[Function]}
             type="checkbox"
           />
-          <span
-            className="declaration-cb"
-          >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          <span>
+            I certify that, to the best of my knowledge, the information I have provided and will provide as necessary is complete and accurate.
           </span>
           <span
             className="mandatory"
@@ -11884,10 +11877,8 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
             onClick={[Function]}
             type="checkbox"
           />
-          <span
-            className="declaration-cb"
-          >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          <span>
+            I certify that, to the best of my knowledge, the information I have provided and will provide as necessary is complete and accurate.
           </span>
           <span
             className="mandatory"
@@ -12425,10 +12416,8 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
             onClick={[Function]}
             type="checkbox"
           />
-          <span
-            className="declaration-cb"
-          >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          <span>
+            I certify that, to the best of my knowledge, the information I have provided and will provide as necessary is complete and accurate.
           </span>
           <span
             className="mandatory"
@@ -12966,10 +12955,8 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
             onClick={[Function]}
             type="checkbox"
           />
-          <span
-            className="declaration-cb"
-          >
-            I certify that, to the best of my knowledge, the information I have provided on my application and will provide as necessary is complete, honest and accurate. I understand that a false statement or omission of facts herein may result in the inability of the CRRP to accurately determine whether the applicant poses a risk to children or vulnerable adults.
+          <span>
+            I certify that, to the best of my knowledge, the information I have provided and will provide as necessary is complete and accurate.
           </span>
           <span
             className="mandatory"
@@ -13589,15 +13576,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
               className="bodyList"
             >
               <li>
-                <a
-                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  I'm an employee or a volunteer
-                </a>
-                 
-                and I want to know
+                I'm an employee or a volunteer and I want to know
                  
                 <a
                   href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
@@ -13608,15 +13587,10 @@ exports[`Storyshots OrgValidation Default 1`] = `
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
+                <u>
                   I don't have a BC Services Card.
-                </a>
-                 
-                Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
+                </u>
+                 Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
               </li>
               <li>
                 <a
@@ -13941,15 +13915,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
               className="bodyList"
             >
               <li>
-                <a
-                  href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  I'm an employee or a volunteer
-                </a>
-                 
-                and I want to know
+                I'm an employee or a volunteer and I want to know
                  
                 <a
                   href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
@@ -13960,15 +13926,10 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
+                <u>
                   I don't have a BC Services Card.
-                </a>
-                 
-                Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
+                </u>
+                 Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
               </li>
               <li>
                 <a
@@ -14266,15 +14227,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
         className="bodyList"
       >
         <li>
-          <a
-            href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/online-service-information"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            I'm an employee or a volunteer
-          </a>
-           
-          and I want to know
+          I'm an employee or a volunteer and I want to know
            
           <a
             href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
@@ -14285,15 +14238,10 @@ exports[`Storyshots OrgValidationText Default 1`] = `
           </a>
         </li>
         <li>
-          <a
-            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <u>
             I don't have a BC Services Card.
-          </a>
-           
-          Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
+          </u>
+           Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
         </li>
         <li>
           <a
@@ -14515,10 +14463,10 @@ Canada
           className="contactList"
         >
           <li>
-            you have an outstanding charge or conviction relating to a relevant or specified offence; and
+            you have an outstanding charge or conviction relating to a relevant or specified offence(s), and that the matter has been referred to the Deputy Registrar for review; and
           </li>
           <li>
-            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+            the Deputy Registrar has determined that you present a risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults. The determination will include consideration of any relevant or specified offence(s) for which you have received a record suspension (formerly known as a pardon).
           </li>
         </ol>
         <p>
@@ -15230,10 +15178,10 @@ Canada
           className="contactList"
         >
           <li>
-            you have an outstanding charge or conviction relating to a relevant or specified offence; and
+            you have an outstanding charge or conviction relating to a relevant or specified offence(s), and that the matter has been referred to the Deputy Registrar for review; and
           </li>
           <li>
-            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+            the Deputy Registrar has determined that you present a risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults. The determination will include consideration of any relevant or specified offence(s) for which you have received a record suspension (formerly known as a pardon).
           </li>
         </ol>
         <p>
@@ -15945,10 +15893,10 @@ Canada
           className="contactList"
         >
           <li>
-            you have an outstanding charge or conviction relating to a relevant or specified offence; and
+            you have an outstanding charge or conviction relating to a relevant or specified offence(s), and that the matter has been referred to the Deputy Registrar for review; and
           </li>
           <li>
-            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+            the Deputy Registrar has determined that you present a risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults. The determination will include consideration of any relevant or specified offence(s) for which you have received a record suspension (formerly known as a pardon).
           </li>
         </ol>
         <p>
@@ -16660,10 +16608,10 @@ Canada
           className="contactList"
         >
           <li>
-            you have an outstanding charge or conviction relating to a relevant or specified offence; and
+            you have an outstanding charge or conviction relating to a relevant or specified offence(s), and that the matter has been referred to the Deputy Registrar for review; and
           </li>
           <li>
-            a determination of risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults has been made by the Deputy Registrar.
+            the Deputy Registrar has determined that you present a risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults. The determination will include consideration of any relevant or specified offence(s) for which you have received a record suspension (formerly known as a pardon).
           </li>
         </ol>
         <p>
@@ -17221,19 +17169,19 @@ exports[`Storyshots Share Default 1`] = `
   <div
     className="declareTitle"
   >
-    Share Your Existing Criminal Record Check
+    SHARE YOUR EXISTING CRIMINAL RECORD CHECK
   </div>
   <div
     className="declareSection"
   >
     <p>
-      If you are an employee or volunteer, you can share the results of your criminal record check at no cost.
+      If you are an employee or volunteer, you can share the results of your valid criminal record check at no cost. You have an existing valid criminal record check.
     </p>
     <p>
       <b>
         Note:
       </b>
-       An organization can decide whether or not they will accept a shared criminal record check result and may ask you to consent to a new criminal record check manually or online.
+       An organization can decide whether or not they will accept a shared criminal record check result and may ask you to consent to a new criminal record check.
     </p>
   </div>
 </div>
@@ -24373,7 +24321,7 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
       </div>
       <br />
       <p>
-        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
         <span
           className="pointer-here"
@@ -24535,7 +24483,7 @@ exports[`Storyshots Transition Page Mobile 1`] = `
       </div>
       <br />
       <p>
-        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
         <span
           className="pointer-here"
@@ -24701,7 +24649,7 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
       </p>
       <br />
       <p>
-        You’ll be provided with an alternative way to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
+        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
          
         <span
           className="pointer-here"

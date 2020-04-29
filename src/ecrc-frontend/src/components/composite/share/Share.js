@@ -7,17 +7,18 @@ export default function Share() {
   return (
     <div className="share">
       <div className="declareTitle">
-        Share Your Existing Criminal Record Check
+        SHARE YOUR EXISTING CRIMINAL RECORD CHECK
       </div>
       <div className="declareSection">
         <p>
           If you are an employee or volunteer, you can share the results of your
-          criminal record check at no cost.
+          valid criminal record check at no cost. You have an existing valid
+          criminal record check.
         </p>
         <p>
           <b>Note:</b> An organization can decide whether or not they will
           accept a shared criminal record check result and may ask you to
-          consent to a new criminal record check manually or online.
+          consent to a new criminal record check.
         </p>
       </div>
     </div>
