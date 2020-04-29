@@ -105,7 +105,7 @@ describe("InformationReview Component", () => {
     expect(infoReview.toJSON()).toMatchSnapshot();
   });
 
-  test("Matches the snapshot for share", async () => {
+  test("Matches the snapshot for share available", async () => {
     mock.onPost(API_REQUEST_SHARE).reply(200, {
       serviceId: "1234"
     });
