@@ -32,6 +32,7 @@ Ministry of Attorney General - eCRC
 <img width="607" alt="success" src="https://user-images.githubusercontent.com/55710226/80238985-3da65400-8614-11ea-862c-3e44908b377a.PNG">
 
 ## Frontend Folder Structure
+
 The folder structure for the frontend react application will be as follows:
 
 ```
