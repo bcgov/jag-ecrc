@@ -105,25 +105,25 @@ describe("InformationReview Component", () => {
     expect(infoReview.toJSON()).toMatchSnapshot();
   });
 
-  // test("Matches the snapshot for share available", async () => {
-  //   mock.onPost(API_REQUEST_SHARE).reply(200, {
-  //     serviceId: "1234"
-  //   });
+  test("Matches the snapshot for share available", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(200, {
+      serviceId: "1234"
+    });
 
-  //   let infoReview;
+    let infoReview;
 
-  //   await act(async () => {
-  //     infoReview = create(
-  //       <MemoryRouter>
-  //         <InformationReview page={page} />
-  //       </MemoryRouter>
-  //     );
-  //   });
+    await act(async () => {
+      infoReview = create(
+        <MemoryRouter>
+          <InformationReview page={page} />
+        </MemoryRouter>
+      );
+    });
 
-  //   await wait(() => {});
+    await wait(() => {});
 
-  //   expect(infoReview.toJSON()).toMatchSnapshot();
-  // });
+    expect(infoReview.toJSON()).toMatchSnapshot();
+  });
 
   test("Validate checkbox", async () => {
     const history = createMemoryHistory();
@@ -142,32 +142,32 @@ describe("InformationReview Component", () => {
     expect(getByText(container, "Submit").disabled).toBeFalsy();
   });
 
-  // test("Validate share button", async () => {
-  //   mock.onPost(API_REQUEST_SHARE).reply(200, {
-  //     serviceId: "1234"
-  //   });
+  test("Validate share button", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(200, {
+      serviceId: "1234"
+    });
 
-  //   const history = createMemoryHistory();
-  //   const { container } = render(
-  //     <Router history={history}>
-  //       <InformationReview page={page} />
-  //     </Router>
-  //   );
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
 
-  //   await wait(() => {
-  //     expect(setApplicationInfo).toHaveBeenCalled();
-  //   });
+    await wait(() => {
+      expect(setApplicationInfo).toHaveBeenCalled();
+    });
 
-  //   expect(getByText(container, "Share Previous CRC").disabled).toBeTruthy();
+    expect(getByText(container, "Share Previous CRC").disabled).toBeTruthy();
 
-  //   fireEvent.click(getByRole(container, "checkbox"));
+    fireEvent.click(getByRole(container, "checkbox"));
 
-  //   expect(getByText(container, "Share Previous CRC").disabled).toBeFalsy();
+    expect(getByText(container, "Share Previous CRC").disabled).toBeFalsy();
 
-  //   fireEvent.click(getByText(container, "Share Previous CRC"));
+    fireEvent.click(getByText(container, "Share Previous CRC"));
 
-  //   expect(setShare).toHaveBeenCalled();
-  // });
+    expect(setShare).toHaveBeenCalled();
+  });
 
   test("Validate Back button", async () => {
     const history = createMemoryHistory();
@@ -202,27 +202,27 @@ describe("InformationReview Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/consent");
   });
 
-  // test("Clicking share takes you to consent page when checkbox selected and session not expired", async () => {
-  //   mock.onPost(API_REQUEST_SHARE).reply(200, {
-  //     serviceId: "1234"
-  //   });
+  test("Clicking share takes you to consent page when checkbox selected and session not expired", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(200, {
+      serviceId: "1234"
+    });
 
-  //   const history = createMemoryHistory();
-  //   const { container } = render(
-  //     <Router history={history}>
-  //       <InformationReview page={page} />
-  //     </Router>
-  //   );
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
 
-  //   await wait(() => {
-  //     expect(setApplicationInfo).toHaveBeenCalled();
-  //   });
+    await wait(() => {
+      expect(setApplicationInfo).toHaveBeenCalled();
+    });
 
-  //   fireEvent.click(getByRole(container, "checkbox"));
-  //   fireEvent.click(getByText(container, "Share Previous CRC"));
+    fireEvent.click(getByRole(container, "checkbox"));
+    fireEvent.click(getByText(container, "Share Previous CRC"));
 
-  //   expect(history.location.pathname).toEqual("/criminalrecordcheck/consent");
-  // });
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/consent");
+  });
 
   test("Clicking submit sets error when checkbox selected and session is expired", async () => {
     const history = createMemoryHistory();
@@ -262,41 +262,41 @@ describe("InformationReview Component", () => {
     expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
-  // test("Sets error and redirects to error page when checkApplicantForPrevCRC fails with something other than 400 and data/message are present", async () => {
-  //   mock.onPost(API_REQUEST_SHARE).reply(500, {
-  //     message: "This is an expected failure."
-  //   });
+  test("Sets error and redirects to error page when checkApplicantForPrevCRC fails with something other than 400 and data/message are present", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(500, {
+      message: "This is an expected failure."
+    });
 
-  //   const history = createMemoryHistory();
-  //   render(
-  //     <Router history={history}>
-  //       <InformationReview page={page} />
-  //     </Router>
-  //   );
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
 
-  //   await wait(() => {
-  //     expect(setError).toHaveBeenCalled();
-  //   });
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
 
-  //   expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
-  // });
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
 
-  // test("Sets error and redirects to error page when checkApplicantForPrevCRC fails with something other than 400 and data/message are not present", async () => {
-  //   mock.onPost(API_REQUEST_SHARE).reply(500);
+  test("Sets error and redirects to error page when checkApplicantForPrevCRC fails with something other than 400 and data/message are not present", async () => {
+    mock.onPost(API_REQUEST_SHARE).reply(500);
 
-  //   const history = createMemoryHistory();
-  //   render(
-  //     <Router history={history}>
-  //       <InformationReview page={page} />
-  //     </Router>
-  //   );
+    const history = createMemoryHistory();
+    render(
+      <Router history={history}>
+        <InformationReview page={page} />
+      </Router>
+    );
 
-  //   await wait(() => {
-  //     expect(setError).toHaveBeenCalled();
-  //   });
+    await wait(() => {
+      expect(setError).toHaveBeenCalled();
+    });
 
-  //   expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
-  // });
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
+  });
 
   test("Validate drivers licence number conditional rendering", async () => {
     console.error = jest.fn();
