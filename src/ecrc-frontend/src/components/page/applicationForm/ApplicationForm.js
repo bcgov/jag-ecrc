@@ -926,6 +926,7 @@ export default function ApplicationForm({
               >
                 AddressChangeBC
               </a>
+              .
             </section>
             <div className="buttons pt-4">
               <Button button={cancelButton} onClick={back} />

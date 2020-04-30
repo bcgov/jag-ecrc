@@ -966,6 +966,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             >
               AddressChangeBC
             </a>
+            .
           </section>
           <div
             class="buttons pt-4"
@@ -2206,6 +2207,7 @@ exports[`ApplicationForm Component Matches the snapshot with gender being female
             >
               AddressChangeBC
             </a>
+            .
           </section>
           <div
             class="buttons pt-4"
@@ -3446,6 +3448,7 @@ exports[`ApplicationForm Component Matches the snapshot with valid region/provin
             >
               AddressChangeBC
             </a>
+            .
           </section>
           <div
             class="buttons pt-4"
