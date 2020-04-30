@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
-import axios from "axios";
+// import axios from "axios";
 
 import "./InformationReview.css";
 import Header from "../../base/header/Header";
@@ -63,7 +63,8 @@ export default function InformationReview({
   const [boxChecked, setBoxChecked] = useState(false);
 
   // SHARE STATES
-  const [shareAvailable, setShareAvailable] = useState(false);
+  // const [shareAvailable, setShareAvailable] = useState(false);
+  const shareAvailable = false;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -74,51 +75,50 @@ export default function InformationReview({
       });
       setToError(true);
     } else {
-      const uuid = sessionStorage.getItem("uuid");
-      const token = sessionStorage.getItem("jwt");
-      const shareInfo = {
-        orgTicketNumber,
-        legalSurnameNm,
-        legalFirstNm,
-        birthDt,
-        genderTxt,
-        mailingPostalCodeTxt,
-        driversLicNo,
-        scopeLevelCd: defaultCrcScopeLevelCd,
-        requestGuid: uuid
-      };
-
+      // const uuid = sessionStorage.getItem("uuid");
+      // const token = sessionStorage.getItem("jwt");
+      // const shareInfo = {
+      //   orgTicketNumber,
+      //   legalSurnameNm,
+      //   legalFirstNm,
+      //   birthDt,
+      //   genderTxt,
+      //   mailingPostalCodeTxt,
+      //   driversLicNo,
+      //   scopeLevelCd: defaultCrcScopeLevelCd,
+      //   requestGuid: uuid
+      // };
       // Make axios call to check for sharing service
-      axios
-        .post("/ecrc/private/checkApplicantForPrevCRC", shareInfo, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-        .then(res => {
-          setApplicationInfo({ previousServiceId: res.data.serviceId });
-          setShareAvailable(true);
-        })
-        .catch(error => {
-          if (
-            error &&
-            error.response &&
-            error.response.status &&
-            error.response.status !== 400
-          ) {
-            setToError(true);
-            if (error.response.data && error.response.data.message) {
-              setError({
-                status: error.response.status,
-                message: error.response.data.message
-              });
-            } else {
-              setError({
-                status: error.response.status
-              });
-            }
-          }
-        });
+      // axios
+      //   .post("/ecrc/private/checkApplicantForPrevCRC", shareInfo, {
+      //     headers: {
+      //       Authorization: `Bearer ${token}`
+      //     }
+      //   })
+      //   .then(res => {
+      //     setApplicationInfo({ previousServiceId: res.data.serviceId });
+      //     setShareAvailable(true);
+      //   })
+      //   .catch(error => {
+      //     if (
+      //       error &&
+      //       error.response &&
+      //       error.response.status &&
+      //       error.response.status !== 400
+      //     ) {
+      //       setToError(true);
+      //       if (error.response.data && error.response.data.message) {
+      //         setError({
+      //           status: error.response.status,
+      //           message: error.response.data.message
+      //         });
+      //       } else {
+      //         setError({
+      //           status: error.response.status
+      //         });
+      //       }
+      //     }
+      //   });
     }
   }, [
     birthDt,
