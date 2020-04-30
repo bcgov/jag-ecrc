@@ -999,6 +999,7 @@ exports[`Storyshots Application Form Mobile Non Schedule D 1`] = `
           >
             AddressChangeBC
           </a>
+          .
         </section>
         <div
           className="buttons pt-4"
@@ -2352,6 +2353,7 @@ exports[`Storyshots Application Form Mobile Schedule D 1`] = `
           >
             AddressChangeBC
           </a>
+          .
         </section>
         <div
           className="buttons pt-4"
@@ -3665,6 +3667,7 @@ exports[`Storyshots Application Form Non Schedule D 1`] = `
           >
             AddressChangeBC
           </a>
+          .
         </section>
         <div
           className="buttons pt-4"
@@ -5018,6 +5021,7 @@ exports[`Storyshots Application Form Schedule D 1`] = `
           >
             AddressChangeBC
           </a>
+          .
         </section>
         <div
           className="buttons pt-4"
