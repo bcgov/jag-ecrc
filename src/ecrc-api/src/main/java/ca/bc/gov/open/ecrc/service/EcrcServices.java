@@ -5,6 +5,8 @@ import java.util.Map;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.*;
 import javassist.NotFoundException;
+
+import org.json.JSONObject;
 import org.springframework.http.ResponseEntity;
 
 
@@ -37,7 +39,7 @@ public interface EcrcServices {
 
 	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber, String requestGuid) throws EcrcServiceException;
 	
-	public String getJwtDetails() throws EcrcServiceException;
+	public JSONObject getJwtDetails() throws EcrcServiceException;
 
 	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo) throws EcrcServiceException;
 

@@ -32,12 +32,14 @@ public class GetJwtDetailsController {
 	private EcrcServices ecrcServices;
 	
 	@GetMapping(value = "/initialHandshake")
-	public ResponseEntity<String> getJwtDetails(@RequestParam(required=true) String requestGuid) {
+	public ResponseEntity<Object> getJwtDetails(@RequestParam(required=true) String requestGuid) {
 		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
 		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "initialHandshake");
 		logger.info("Initial handshake received: [{}]", requestGuid);
 		try {
-			return new ResponseEntity<>(ecrcServices.getJwtDetails(), HttpStatus.OK);		
+			System.out.println("IN CONTROLLER");
+			System.out.println(ecrcServices.getJwtDetails());
+			return new ResponseEntity<>(ecrcServices.getJwtDetails().toMap(), HttpStatus.OK);		
 		} catch (EcrcServiceException e) {
 			logger.error("Error in service: ", e);
 			return new ResponseEntity<>(
