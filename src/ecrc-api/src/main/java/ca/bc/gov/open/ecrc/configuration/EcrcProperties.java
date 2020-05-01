@@ -42,6 +42,7 @@ public class EcrcProperties {
 	
 	//OAUTH properties
 	private String oauthIdp;
+	private String oauthClientId;
 	private String oauthWellKnown;
 	private String oauthPERSecret;
 	private int oauthBCSCTimeout;
@@ -264,6 +265,14 @@ public class EcrcProperties {
 
 	public void setOauthIdp(String oauthIdp) {
 		this.oauthIdp = oauthIdp;
+	}
+
+	public String getOauthClientId() {
+		return oauthClientId;
+	}
+
+	public void setOauthClientId(String oauthClientId) {
+		this.oauthClientId = oauthClientId;
 	}
 
 	public String getOauthWellKnown() {
