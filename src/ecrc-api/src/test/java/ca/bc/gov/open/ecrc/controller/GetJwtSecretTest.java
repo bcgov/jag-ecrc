@@ -18,9 +18,6 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 /**
  * 
  * @author BrendanBeachBCJ
@@ -35,9 +32,6 @@ public class GetJwtSecretTest {
 	@Mock
 	private EcrcServices ecrcServices;
 
-	@Mock
-	HttpServletRequest request;
-
 	@BeforeEach
 	public void initMocks() {
 		MockitoAnnotations.initMocks(this);
@@ -47,7 +41,7 @@ public class GetJwtSecretTest {
 	@Test
 	public void testSuccess() throws EcrcServiceException {
 		when(ecrcServices.getJwtSecret()).thenReturn("testSecret");
-		ResponseEntity<String> response = getJwtSecretController.getJwtSecret("SOMEUUID", request);
+		ResponseEntity<String> response = getJwtSecretController.getJwtSecret("SOMEUUID");
 		assertEquals("testSecret", response.getBody());
 	}
 	
@@ -56,7 +50,7 @@ public class GetJwtSecretTest {
 	@Test
 	public void testError() throws EcrcServiceException {
 		when(ecrcServices.getJwtSecret()).thenThrow(new EcrcServiceException(EcrcExceptionConstants.DATA_NOT_FOUND_ERROR));
-		ResponseEntity<String> response = getJwtSecretController.getJwtSecret("SOMEUUID", request);
+		ResponseEntity<String> response = getJwtSecretController.getJwtSecret("SOMEUUID");
 		assertEquals(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 				response.getBody());
