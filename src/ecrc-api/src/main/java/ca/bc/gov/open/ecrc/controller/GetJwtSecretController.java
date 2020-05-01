@@ -16,6 +16,8 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Endpoint that provides the jwt secret from the properties file.
  * 
@@ -31,9 +33,10 @@ public class GetJwtSecretController {
 	private EcrcServices ecrcServices;
 	
 	@GetMapping(value = "/initialHandshake")
-	public ResponseEntity<String> getJwtSecret(@RequestParam(required=true) String requestGuid) {
+	public ResponseEntity<String> getJwtSecret(@RequestParam(required=true) String requestGuid, HttpServletRequest request) {
 		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
 		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "initialHandshake");
+		logger.info("Request IP: {}", request.getRemoteAddr());
 		logger.info("Initial handshake received: [{}]", requestGuid);
 		try {
 			return new ResponseEntity<>(ecrcServices.getJwtSecret(), HttpStatus.OK);		
