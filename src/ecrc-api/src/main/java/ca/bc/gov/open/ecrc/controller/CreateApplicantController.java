@@ -54,6 +54,7 @@ public class CreateApplicantController {
 	public ResponseEntity<String> createNewApplicant(@RequestBody RequestNewCRCApplicant newCRCApplicant) {
 		MDC.put(EcrcConstants.REQUEST_GUID, newCRCApplicant.getRequestGuid());
 		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "createApplicant");
+		MDC.put(EcrcConstants.REQUEST_APPLTYPE, newCRCApplicant.getApplType());
 		logger.info("Create new applicant request received [{}]", newCRCApplicant.getRequestGuid());
 
 		try {
@@ -65,6 +66,7 @@ public class CreateApplicantController {
 		} finally {
 			MDC.remove(EcrcConstants.REQUEST_GUID);
 			MDC.remove(EcrcConstants.REQUEST_ENDPOINT);
+			MDC.remove(EcrcConstants.REQUEST_APPLTYPE);
 		}
 	}
 }

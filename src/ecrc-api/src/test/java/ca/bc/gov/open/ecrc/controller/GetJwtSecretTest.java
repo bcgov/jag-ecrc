@@ -31,7 +31,7 @@ public class GetJwtSecretTest {
 	
 	@Mock
 	private EcrcServices ecrcServices;
-	
+
 	@BeforeEach
 	public void initMocks() {
 		MockitoAnnotations.initMocks(this);
