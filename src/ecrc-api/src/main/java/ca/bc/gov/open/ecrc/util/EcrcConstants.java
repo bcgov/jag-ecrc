@@ -6,4 +6,5 @@ public final class EcrcConstants {
     }
     public static final String REQUEST_GUID = "request.guid";
     public static final String REQUEST_ENDPOINT = "request.endpoint";
+    public static final String REQUEST_APPLTYPE = "request.appltype";
 }
