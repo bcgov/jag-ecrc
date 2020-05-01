@@ -37,7 +37,7 @@ public interface EcrcServices {
 
 	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber, String requestGuid) throws EcrcServiceException;
 	
-	public String getJwtSecret() throws EcrcServiceException;
+	public String getJwtDetails() throws EcrcServiceException;
 
 	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo) throws EcrcServiceException;
 
