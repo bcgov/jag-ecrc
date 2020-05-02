@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClient.Builder;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.OauthServiceException;
@@ -21,6 +22,7 @@ import reactor.core.publisher.Mono;
  * Oauth API Services Implementation class.
  *
  * @author sivakaruna
+ * @author sdevalapurkar-bcgov
  *
  */
 @Service
@@ -33,22 +35,29 @@ public class OauthServicesImpl implements OauthServices {
 
 	private final Logger logger = LoggerFactory.getLogger(OauthServicesImpl.class);
 
-	private WebClient webClient = null;
+	private Builder builder = null;
 
 	@PostConstruct
 	public void InitService() {
-		this.webClient = WebClient.builder().baseUrl(ecrcProps.getOauthUrl())
+		this.builder = WebClient.builder().baseUrl(ecrcProps.getOauthUrl())
 				.defaultHeaders(
-						header -> header.setBasicAuth(ecrcProps.getOauthUsername(), ecrcProps.getOauthPassword()))
-				.build();
+						header -> header.setBasicAuth(ecrcProps.getOauthUsername(), ecrcProps.getOauthPassword()));
 	}
 
-	public ResponseEntity<String> getIDPRedirect(String returnUrl) throws OauthServiceException {
+	public ResponseEntity<String> getIDPRedirect(String jwtToken, String returnUrl) throws OauthServiceException {
+		WebClient webClient = null;
+
+		if (jwtToken != null) {
+			this.builder.defaultHeader("Authorization", "Bearer " + jwtToken);
+		}
+		
+		webClient = this.builder.build();
+
 		logger.debug("Calling getIDPRedirect");
 		try {
 			String params = "?returnUrl=" + returnUrl;
 			String uri = String.format(ecrcProps.getOauthGetBCSCRedirectUri(), params);
-			Mono<String> responseBody = this.webClient.get().uri(uri).retrieve().bodyToMono(String.class);
+			Mono<String> responseBody = webClient.get().uri(uri).retrieve().bodyToMono(String.class);
 			return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
 		} catch (Exception e) {
 			throw new OauthServiceException(e.getMessage(), e);
@@ -56,12 +65,20 @@ public class OauthServicesImpl implements OauthServices {
 
 	}
 
-	public ResponseEntity<String> getToken(String authCode, String returnUrl) throws OauthServiceException {
+	public ResponseEntity<String> getToken(String jwtToken, String authCode, String returnUrl) throws OauthServiceException {
+		WebClient webClient = null;
+
+		if (jwtToken != null) {
+			this.builder.defaultHeader("Authorization", "Bearer " + jwtToken);
+		}
+		
+		webClient = this.builder.build();
+		
 		logger.debug("Calling getToken");
 		try {
 			String params = "?code=" + authCode + "&returnUrl=" + returnUrl;
 			String loginUri = String.format(ecrcProps.getOauthLoginUri(), params);
-			Mono<String> responseBody = this.webClient.get().uri(loginUri).retrieve().bodyToMono(String.class);
+			Mono<String> responseBody = webClient.get().uri(loginUri).retrieve().bodyToMono(String.class);
 			return new ResponseEntity<>(responseBody.block(), HttpStatus.OK);
 		} catch (Exception e) {
 			throw new OauthServiceException(e.getMessage(), e);

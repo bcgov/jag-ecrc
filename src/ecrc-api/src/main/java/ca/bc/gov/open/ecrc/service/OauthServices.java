@@ -13,8 +13,8 @@ import ca.bc.gov.open.ecrc.exception.OauthServiceException;
  */
 public interface OauthServices {
 
-	public ResponseEntity<String> getIDPRedirect(String returnUrl) throws OauthServiceException;
+	public ResponseEntity<String> getIDPRedirect(String jwtToken, String returnUrl) throws OauthServiceException;
 
-	public ResponseEntity<String> getToken(String code, String returnUrl) throws OauthServiceException;
+	public ResponseEntity<String> getToken(String jwtToken, String code, String returnUrl) throws OauthServiceException;
 
 }

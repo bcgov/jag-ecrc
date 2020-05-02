@@ -1,6 +1,9 @@
 package ca.bc.gov.open.ecrc.controller;
 
 import ca.bc.gov.open.ecrc.util.EcrcConstants;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,13 +43,14 @@ public class OauthController {
 
 	@ResponseStatus(code = HttpStatus.FOUND)
 	@GetMapping(value = "/protected/getBCSCUrl")
-	public ResponseEntity<String> getBCSCUrl(@RequestParam(required = true) String requestGuid,
+	public ResponseEntity<String> getBCSCUrl(HttpServletRequest request, @RequestParam(required = true) String requestGuid,
 			@RequestParam(required = false) String returnUrl) throws OauthServiceException {
 		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
 		MDC.put(EcrcConstants.REQUEST_ENDPOINT, "getBCSCUrl");
 		logger.info("BCSC URL request received [{}]", requestGuid);
 		try {
-			return oauthServices.getIDPRedirect(returnUrl);
+			String jwtToken = request.getHeader("Authorization").replace("Bearer ", "").trim();
+			return oauthServices.getIDPRedirect(jwtToken, returnUrl);
 		} catch (Exception e) {
 			logger.error("Error retrieving BCSC redirect url ");
 			logger.error(e.getMessage(), e);
@@ -59,7 +63,7 @@ public class OauthController {
 	}
 
 	@GetMapping(value = "/protected/login")
-	public ResponseEntity<String> login(@RequestParam(name = "code", required = true) String authCode,
+	public ResponseEntity<String> login(HttpServletRequest request, @RequestParam(name = "code", required = true) String authCode,
 			@RequestParam(required = true) String requestGuid, @RequestParam(required = false) String returnUrl)
 			throws OauthServiceException {
 		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
@@ -67,7 +71,8 @@ public class OauthController {
 		logger.info("Login URL request received [{}]", requestGuid);
 
 		try {
-			return oauthServices.getToken(authCode, returnUrl);
+			String jwtToken = request.getHeader("Authorization").replace("Bearer ", "").trim();
+			return oauthServices.getToken(jwtToken, authCode, returnUrl);
 		} catch (OauthServiceException e) {
 			logger.error("Error logging in to BCSC");
 			logger.error(e.getMessage(), e);
