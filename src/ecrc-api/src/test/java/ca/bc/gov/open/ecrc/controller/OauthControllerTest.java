@@ -68,17 +68,14 @@ class OauthControllerTest {
 		wrapper = new HttpServletRequestWrapper(request) {
 			@Override
 			public String getHeader(String name) {
-				return "prefix" + jwtSuccess;
+				return jwtSuccess;
 			}
 		};
 	}
 
-
 	@DisplayName("Success - getBCSCUrl oauth controller default")
 	@Test
 	void testDefaultGetBCSCUrlSuccess() throws OauthServiceException {
-		
-
 		when(oauthServices.getIDPRedirect(jwtSuccess, null)).thenReturn(new ResponseEntity<String>("test", HttpStatus.OK));
 		ResponseEntity<String> response = oauthController.getBCSCUrl(wrapper, "SOMEUUID", null);
 		Assert.assertEquals("test", response.getBody());
@@ -106,7 +103,7 @@ class OauthControllerTest {
 	@DisplayName("Success - login oauth controller other")
 	@Test
 	void testLoginSuccess() throws OauthServiceException {
-		when(oauthServices.getToken(jwtSuccess, any(), any())).thenReturn(new ResponseEntity<String>("test", HttpStatus.OK));
+		when(oauthServices.getToken(any(), any(), any())).thenReturn(new ResponseEntity<String>("test", HttpStatus.OK));
 		ResponseEntity<String> response = oauthController.login(wrapper, "test", "SOMEUUID", "TEST");
 		Assert.assertEquals("test", response.getBody());
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
@@ -115,7 +112,7 @@ class OauthControllerTest {
 	@DisplayName("Error - login oauth controller (getToken)")
 	@Test
 	void testLoginError1() throws OauthServiceException {
-		when(oauthServices.getToken(jwtSuccess, any(), any())).thenThrow(new OauthServiceException("error"));
+		when(oauthServices.getToken(any(), any(), any())).thenThrow(new OauthServiceException("error"));
 		ResponseEntity<String> response = oauthController.login(wrapper, "code", "SOMEUUID", null);
 		Assert.assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}

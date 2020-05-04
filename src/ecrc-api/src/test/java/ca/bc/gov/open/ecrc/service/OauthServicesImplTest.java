@@ -31,6 +31,10 @@ import okhttp3.mockwebserver.MockWebServer;
  */
 class OauthServicesImplTest {
 
+	private final String jwtSuccess = "eyJhbGciOiJIUzI1NiJ9."
+			+ "eyJoZWFkZXIiOiJwcmVmaXgiLCJhdXRob3JpdGllcyI6WyJyb2xlIl19."
+			+ "hRTr1-4SQQDyru3SQp1DHbLLJnb3UQqyg_v-PgDEd5Y";
+
 	@InjectMocks
 	@Spy
 	OauthServicesImpl oauthServices;
@@ -73,7 +77,7 @@ class OauthServicesImplTest {
 		mockResponse.setBody("localhost");
 		mockResponse.setResponseCode(200);
 		mockBackEnd.enqueue(mockResponse);
-		ResponseEntity<String> response = oauthServices.getIDPRedirect("TEST");
+		ResponseEntity<String> response = oauthServices.getIDPRedirect(jwtSuccess, "TEST");
 		Assertions.assertEquals("localhost", response.getBody());
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -85,7 +89,7 @@ class OauthServicesImplTest {
 		mockResponse.setBody("localhost");
 		mockResponse.setResponseCode(200);
 		mockBackEnd.enqueue(mockResponse);
-		ResponseEntity<String> response = oauthServices.getToken("code", null);
+		ResponseEntity<String> response = oauthServices.getToken(jwtSuccess, "code", null);
 		Assertions.assertEquals("localhost", response.getBody());
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -97,7 +101,7 @@ class OauthServicesImplTest {
 		mockResponse.setBody("localhost");
 		mockResponse.setResponseCode(200);
 		mockBackEnd.enqueue(mockResponse);
-		ResponseEntity<String> response = oauthServices.getToken("code", "TEST");
+		ResponseEntity<String> response = oauthServices.getToken(jwtSuccess, "code", "TEST");
 		Assertions.assertEquals("localhost", response.getBody());
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
@@ -107,7 +111,7 @@ class OauthServicesImplTest {
 	void testIdpRedirectError() throws OauthServiceException, IOException {
 		mockBackEnd.shutdown();
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthServices.getIDPRedirect(null);
+			oauthServices.getIDPRedirect(jwtSuccess, null);
 		});
 	}
 
@@ -115,7 +119,7 @@ class OauthServicesImplTest {
 	@Test
 	void testGetTokenError() throws OauthServiceException, IOException {
 		Assertions.assertThrows(OauthServiceException.class, () -> {
-			oauthServices.getToken("code", null);
+			oauthServices.getToken(jwtSuccess, "code", null);
 		});
 	}
 

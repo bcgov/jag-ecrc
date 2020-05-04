@@ -46,9 +46,9 @@ public class GetJwtDetailsTest {
 		JSONObject obj = new JSONObject().put("secret", "mysecret");
 		when(ecrcServices.getJwtDetails()).thenReturn(obj);
 		ResponseEntity<Object> response = getJwtDetailsController.getJwtDetails("SOMEUUID");
-		assertEquals(obj, response.getBody());
+		assertEquals(obj.toMap(), response.getBody());
 	}
-	
+
 	
 	@DisplayName("Error - getJwtDetailsController")
 	@Test
