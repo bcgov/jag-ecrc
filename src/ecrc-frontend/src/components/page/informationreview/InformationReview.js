@@ -82,7 +82,7 @@ export default function InformationReview({
         legalFirstNm,
         birthDt,
         genderTxt,
-        mailingPostalCodeTxt,
+        postalCodeTxt: mailingPostalCodeTxt,
         driversLicNo,
         scopeLevelCd: defaultCrcScopeLevelCd,
         requestGuid: uuid
