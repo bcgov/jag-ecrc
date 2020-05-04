@@ -48,7 +48,7 @@ public class OauthServicesImpl implements OauthServices {
 		WebClient webClient = null;
 
 		if (jwtToken != null) {
-			this.builder.defaultHeader("Authorization", "Bearer " + jwtToken);
+			this.builder.defaultHeader("Authorization2", "Bearer " + jwtToken);
 		}
 		
 		webClient = this.builder.build();
@@ -69,7 +69,7 @@ public class OauthServicesImpl implements OauthServices {
 		WebClient webClient = null;
 
 		if (jwtToken != null) {
-			this.builder.defaultHeader("Authorization", "Bearer " + jwtToken);
+			this.builder.defaultHeader("Authorization2", "Bearer " + jwtToken);
 		}
 		
 		webClient = this.builder.build();
