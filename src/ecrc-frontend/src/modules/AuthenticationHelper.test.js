@@ -186,13 +186,16 @@ describe("AuthenticationHelper Module", () => {
   test("storeJWTDetails sets the validator and client id in session storage when we retrieve them from backend", async () => {
     const mock = new MockAdapter(axios);
     const API_REQUEST = "/ecrc/initialHandshake?requestGuid=unique123";
-    mock.onGet(API_REQUEST).reply(200, "secret");
+    mock.onGet(API_REQUEST).reply(200, {
+      secret: "secret",
+      clientId: "123"
+    });
 
     sessionStorage.setItem("uuid", "unique123");
 
     const result = storeJWTDetails();
     const validator = "secret";
-    const clientId = "clientId";
+    const clientId = "123";
 
     await wait(() => {
       expect(sessionStorage.getItem("validator")).toEqual(validator);
@@ -244,6 +247,7 @@ describe("AuthenticationHelper Module", () => {
 
   test("generateJWTToken sets token in session storage when it works", () => {
     sessionStorage.setItem("validator", "secret");
+    sessionStorage.setItem("clientId", "123");
 
     const payload = { key: "value" };
 
