@@ -51,14 +51,14 @@ export default function Header({ header: { name } }) {
         >
           <img
             className="img-fluid d-none d-md-block"
-            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+            src={`${process.env.PUBLIC_URL}/images/bcid-logo-rev-en.svg`}
             width="181"
             height="44"
             alt="B.C. Government Logo"
           />
           <img
             className="img-fluid d-md-none"
-            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+            src={`${process.env.PUBLIC_URL}/images/bcid-symbol-rev.svg`}
             width="64"
             height="44"
             alt="B.C. Government Logo"
