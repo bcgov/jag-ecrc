@@ -17,14 +17,14 @@ exports[`TermOfUse Page Component Matches the snapshot 1`] = `
           alt="B.C. Government Logo"
           className="img-fluid d-none d-md-block"
           height="44"
-          src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+          src="undefined/images/bcid-logo-rev-en.svg"
           width="181"
         />
         <img
           alt="B.C. Government Logo"
           className="img-fluid d-md-none"
           height="44"
-          src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+          src="undefined/images/bcid-symbol-rev.svg"
           width="64"
         />
         <div
