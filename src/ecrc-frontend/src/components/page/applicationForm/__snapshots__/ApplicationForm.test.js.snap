@@ -16,14 +16,14 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             alt="B.C. Government Logo"
             class="img-fluid d-none d-md-block"
             height="44"
-            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+            src="undefined/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             class="img-fluid d-md-none"
             height="44"
-            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+            src="undefined/images/bcid-symbol-rev.svg"
             width="64"
           />
           <div
@@ -1257,14 +1257,14 @@ exports[`ApplicationForm Component Matches the snapshot with gender being female
             alt="B.C. Government Logo"
             class="img-fluid d-none d-md-block"
             height="44"
-            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+            src="undefined/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             class="img-fluid d-md-none"
             height="44"
-            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+            src="undefined/images/bcid-symbol-rev.svg"
             width="64"
           />
           <div
@@ -2498,14 +2498,14 @@ exports[`ApplicationForm Component Matches the snapshot with valid region/provin
             alt="B.C. Government Logo"
             class="img-fluid d-none d-md-block"
             height="44"
-            src="/criminalrecordcheck/images/bcid-logo-rev-en.svg"
+            src="undefined/images/bcid-logo-rev-en.svg"
             width="181"
           />
           <img
             alt="B.C. Government Logo"
             class="img-fluid d-md-none"
             height="44"
-            src="/criminalrecordcheck/images/bcid-symbol-rev.svg"
+            src="undefined/images/bcid-symbol-rev.svg"
             width="64"
           />
           <div
