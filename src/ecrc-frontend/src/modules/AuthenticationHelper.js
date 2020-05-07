@@ -59,7 +59,7 @@ export function isActionPerformed(action) {
   return isPerformed;
 }
 
-export function storeValidator() {
+export function storeJWTDetails() {
   const uuid = sessionStorage.getItem("uuid");
 
   if (!uuid) return false;
@@ -69,8 +69,9 @@ export function storeValidator() {
     .then(res => {
       const value = res.data;
 
-      if (value) {
-        sessionStorage.setItem("validator", value);
+      if (value && value.secret && value.clientId) {
+        sessionStorage.setItem("validator", value.secret);
+        sessionStorage.setItem("clientId", value.clientId);
         return true;
       }
 
@@ -90,15 +91,21 @@ export function storeUUID() {
 
 export function generateJWTToken(payload) {
   const validator = sessionStorage.getItem("validator");
+  const clientId = sessionStorage.getItem("clientId");
 
-  if (!validator) return false;
+  if (!validator || !clientId) return false;
+
+  const updatedPayload = {
+    ...payload,
+    clientId
+  };
 
   let token;
 
-  if (payload.exp) {
-    token = jwt.sign(payload, validator);
+  if (updatedPayload.exp) {
+    token = jwt.sign(updatedPayload, validator);
   } else {
-    token = jwt.sign(payload, validator, { expiresIn: "1h" });
+    token = jwt.sign(updatedPayload, validator, { expiresIn: "1h" });
   }
 
   sessionStorage.setItem("jwt", token);

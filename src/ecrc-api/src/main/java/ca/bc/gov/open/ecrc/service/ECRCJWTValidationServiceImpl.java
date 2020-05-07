@@ -43,8 +43,7 @@ import ca.bc.gov.open.ecrc.model.ValidationResponse;
 @EnableConfigurationProperties(EcrcProperties.class)
 public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	
-	private static final String[] BCSC_ACCESS_TOKEN_CLAIMS =  {"aud", "iss", "exp", "iat", "jti"};
-	private static final String[] BCSC_ID_TOKEN_CLAIMS =  {"sub", "aud", "acr", "kid", "iss", "exp", "iat", "jti"};
+	private static final String[] BCSC_ACCESS_TOKEN_CLAIMS =  {"aud", "iss", "exp", "iat", "jti"}; 
 	
 	@Autowired
 	private EcrcProperties ecrcProps;
@@ -61,15 +60,6 @@ public class ECRCJWTValidationServiceImpl implements ECRCJWTValidationService {
 	public ValidationResponse validateBCSCAccessToken(String token) { 
 		logger.debug("validateBCSCAccessToken called.");
 		return validateBCSCToken(token, BCSC_ACCESS_TOKEN_CLAIMS);
-	}
-	
-	/**
-	 * Validate BCSC ID Token 
-	 */
-	@Override
-	public ValidationResponse validateBCSCIDToken(String token) {
-		logger.debug("validateBCSCIDToken called.");
-		return validateBCSCToken(token, BCSC_ID_TOKEN_CLAIMS);
 	}
 	
    /**

@@ -6,7 +6,6 @@ import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.RequestCRCShare;
 import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 import ca.bc.gov.open.ecrc.model.RequestCreateSharingService;
-import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
 import ca.bc.gov.open.ecrc.service.EcrcServicesImpl;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
