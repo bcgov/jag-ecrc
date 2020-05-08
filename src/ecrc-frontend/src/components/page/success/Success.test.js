@@ -91,7 +91,6 @@ describe("Success Page Component", () => {
 
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
-    sessionStorage.setItem("clientId", "123");
     sessionStorage.setItem("uuid", "unique123");
     sessionStorage.setItem("receiptPrinted", false);
     generateJWTToken({

@@ -40,19 +40,19 @@ public class EcrcProperties {
 	private String corsMapping;
 	private String corsAllowedOrigins;
 	
-	//OAUTH properties
+	//OAUTH Properties
 	private String oauthIdp;
 	private String oauthClientId;
+	private String oauthSecret;
+	private String oauthScope;
+	private String oauthReturnUri;
+	private int oauthJwtExpiry;
+	private String oauthTokenPath;
+	private String oauthUserinfoPath;
+	private String oauthAuthorizePath;
 	private String oauthWellKnown;
 	private String oauthPERSecret;
 	private int oauthBCSCTimeout;
-	
-	private String oauthUsername;
-	private String oauthPassword;
-	private String oauthUrl;
-	private String oauthLoginUri;
-	private String oauthGetBCSCRedirectUri;
-	
 
 	// JWT properties
 	private String jwtHeader;
@@ -275,6 +275,50 @@ public class EcrcProperties {
 		this.oauthClientId = oauthClientId;
 	}
 
+	public String getOauthSecret() {
+		return oauthSecret;
+	}
+
+	public void setOauthSecret(String oauthSecret) {
+		this.oauthSecret = oauthSecret;
+	}
+
+	public String getOauthScope() {
+		return oauthScope;
+	}
+
+	public void setOauthScope(String oauthScope) {
+		this.oauthScope = oauthScope;
+	}
+
+	public String getOauthReturnUri() {
+		return oauthReturnUri;
+	}
+
+	public void setOauthReturnUri(String oauthReturnUri) {
+		this.oauthReturnUri = oauthReturnUri;
+	}
+
+	public int getOauthJwtExpiry() {
+		return oauthJwtExpiry;
+	}
+
+	public void setOauthJwtExpiry(String oautJwtExpiry) {
+		this.oauthJwtExpiry = Integer.parseInt(oautJwtExpiry);
+	}
+
+	public String getOauthTokenPath() { return oauthTokenPath; }
+
+	public void setOauthTokenPath(String oauthTokenPath) { this.oauthTokenPath = oauthTokenPath; }
+
+	public String getOauthUserinfoPath() { return oauthUserinfoPath; }
+
+	public void setOauthUserinfoPath(String oauthUserinfoPath) { this.oauthUserinfoPath = oauthUserinfoPath; }
+
+	public String getOauthAuthorizePath() { return oauthAuthorizePath; }
+
+	public void setOauthAuthorizePath(String oauthAuthorizePath) { this.oauthAuthorizePath = oauthAuthorizePath; }
+	
 	public String getOauthWellKnown() {
 		return oauthWellKnown;
 	}
@@ -294,45 +338,5 @@ public class EcrcProperties {
 	public int getOauthBCSCTimeout() { return oauthBCSCTimeout; }
 
 	public void setOauthBCSCTimeout(int oauthBCSCTimeout) { this.oauthBCSCTimeout = oauthBCSCTimeout; }
-
-	public String getOauthUsername() {
-		return oauthUsername;
-	}
-
-	public void setOauthUsername(String oauthUsername) {
-		this.oauthUsername = oauthUsername;
-	}
-
-	public String getOauthPassword() {
-		return oauthPassword;
-	}
-
-	public void setOauthPassword(String oauthPassword) {
-		this.oauthPassword = oauthPassword;
-	}
-
-	public String getOauthUrl() {
-		return oauthUrl;
-	}
-
-	public void setOauthUrl(String oauthUrl) {
-		this.oauthUrl = oauthUrl;
-	}
-
-	public String getOauthLoginUri() {
-		return oauthLoginUri;
-	}
-
-	public void setOauthLoginUri(String oauthLoginUri) {
-		this.oauthLoginUri = oauthLoginUri;
-	}
-
-	public String getOauthGetBCSCRedirectUri() {
-		return oauthGetBCSCRedirectUri;
-	}
-
-	public void setOauthGetBCSCRedirectUri(String oauthGetBCSCRedirectUri) {
-		this.oauthGetBCSCRedirectUri = oauthGetBCSCRedirectUri;
-	}
 
 }
