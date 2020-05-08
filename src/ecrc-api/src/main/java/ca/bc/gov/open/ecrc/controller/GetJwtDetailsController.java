@@ -37,6 +37,8 @@ public class GetJwtDetailsController {
 		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "initialHandshake");
 		logger.info("Initial handshake received: [{}]", requestGuid);
 		try {
+			System.out.println("IN CONTROLLER");
+			System.out.println(ecrcServices.getJwtDetails());
 			return new ResponseEntity<>(ecrcServices.getJwtDetails().toMap(), HttpStatus.OK);		
 		} catch (EcrcServiceException e) {
 			logger.error("Error in service: ", e);
