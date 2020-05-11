@@ -5,7 +5,7 @@ import {
   isAuthenticated,
   isAuthorized,
   isActionPerformed,
-  storeJWTDetails,
+  storeValidator,
   storeUUID,
   generateJWTToken,
   accessJWTToken
@@ -177,55 +177,50 @@ describe("AuthenticationHelper Module", () => {
     expect(result).toEqual(true);
   });
 
-  test("storeJWTDetails should return false when no uuid is present in session storage", () => {
-    const result = storeJWTDetails();
+  test("storeValidator should return false when no uuid is present in session storage", () => {
+    const result = storeValidator();
 
     expect(result).toEqual(false);
   });
 
-  test("storeJWTDetails sets the validator and client id in session storage when we retrieve them from backend", async () => {
+  test("storeValidator sets the validator in session storage when we retrieve it from backend", async () => {
     const mock = new MockAdapter(axios);
     const API_REQUEST = "/ecrc/initialHandshake?requestGuid=unique123";
-    mock.onGet(API_REQUEST).reply(200, {
-      secret: "secret",
-      clientId: "123"
-    });
+    mock.onGet(API_REQUEST).reply(200, "secret");
 
     sessionStorage.setItem("uuid", "unique123");
 
-    const result = storeJWTDetails();
+    const result = storeValidator();
     const validator = "secret";
-    const clientId = "123";
 
     await wait(() => {
       expect(sessionStorage.getItem("validator")).toEqual(validator);
-      expect(sessionStorage.getItem("clientId")).toEqual(clientId);
       expect(result).toEqual(true);
     });
   });
 
-  test("storeJWTDetails does not set validator when backend does not return data properly", async () => {
+  test("storeValidator does not set validator when backend does not return data properly", async () => {
     const mock = new MockAdapter(axios);
     const API_REQUEST = "/ecrc/initialHandshake?requestGuid=unique123";
     mock.onGet(API_REQUEST).reply(200);
 
     sessionStorage.setItem("uuid", "unique123");
 
-    storeJWTDetails();
+    storeValidator();
 
     await wait(() => {
       expect(sessionStorage.getItem("validator")).toBeFalsy();
     });
   });
 
-  test("storeJWTDetails does not set validator when backend errors", async () => {
+  test("storeValidator does not set validator when backend errors", async () => {
     const mock = new MockAdapter(axios);
     const API_REQUEST = "/ecrc/initialHandshake?requestGuid=unique123";
     mock.onGet(API_REQUEST).reply(400);
 
     sessionStorage.setItem("uuid", "unique123");
 
-    storeJWTDetails();
+    storeValidator();
 
     await wait(() => {
       expect(sessionStorage.getItem("validator")).toBeFalsy();
@@ -247,7 +242,6 @@ describe("AuthenticationHelper Module", () => {
 
   test("generateJWTToken sets token in session storage when it works", () => {
     sessionStorage.setItem("validator", "secret");
-    sessionStorage.setItem("clientId", "123");
 
     const payload = { key: "value" };
 

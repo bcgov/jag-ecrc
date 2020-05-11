@@ -8,7 +8,7 @@ import OrgValidationText from "../../base/orgValidationText/OrgValidationText";
 import "../page.css";
 import {
   generateJWTToken,
-  storeJWTDetails,
+  storeValidator,
   storeUUID
 } from "../../../modules/AuthenticationHelper";
 
@@ -24,7 +24,7 @@ export default function OrgValidation({
   useEffect(() => {
     // create guid and get the initial validator from backend and store it for subsequent requests (for JWT)
     storeUUID();
-    storeJWTDetails();
+    storeValidator();
     setLoading(false);
 
     window.scrollTo(0, 0);

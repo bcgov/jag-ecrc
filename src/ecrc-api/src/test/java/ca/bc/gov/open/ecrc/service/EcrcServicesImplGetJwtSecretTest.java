@@ -14,13 +14,12 @@ import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 
 /**
- * Tests the getJwtDetails service.
+ * Tests the getJwtSecret service.
  * 
  * @author BrendanBeachBCJ
- * @author sdevalapurkar-bcgov
  *
  */
-public class EcrcServicesImplGetJwtDetailsTest {
+public class EcrcServicesImplGetJwtSecretTest {
 	
 	@InjectMocks
 	EcrcServicesImpl ecrcServices;
@@ -33,13 +32,11 @@ public class EcrcServicesImplGetJwtDetailsTest {
 		MockitoAnnotations.initMocks(this);
 	}
 	
-	@DisplayName("Success - ecrcService getJwtDetails")
+	@DisplayName("Success - ecrcService getJwtSecret")
 	@Test
 	public void testGetJwtSecretSuccess() throws EcrcServiceException {
 		when(ecrcProperties.getJwtSecret()).thenReturn("secret");
-		when(ecrcProperties.getOauthClientId()).thenReturn(("123"));
-		assertEquals("secret", ecrcServices.getJwtDetails().getString("secret"));
-		assertEquals("123", ecrcServices.getJwtDetails().getString("clientId"));
+		assertEquals("secret", ecrcServices.getJwtSecret());
 	}
-
+	
 }

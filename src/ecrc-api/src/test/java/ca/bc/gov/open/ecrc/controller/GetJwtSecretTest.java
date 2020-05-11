@@ -3,7 +3,6 @@ package ca.bc.gov.open.ecrc.controller;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,17 +19,15 @@ import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 
 /**
- * Tests the getJwtDetails controller.
  * 
  * @author BrendanBeachBCJ
- * @author sdevalapurkar-bcgov
  *
  */
 @ContextConfiguration
-public class GetJwtDetailsTest {
+public class GetJwtSecretTest {
 	
 	@InjectMocks
-	private GetJwtDetailsController getJwtDetailsController;
+	private GetJwtSecretController getJwtSecretController;
 	
 	@Mock
 	private EcrcServices ecrcServices;
@@ -40,21 +37,20 @@ public class GetJwtDetailsTest {
 		MockitoAnnotations.initMocks(this);
 	}
 	
-	@DisplayName("Success - getJwtDetailsController")
+	@DisplayName("Success - getJwtSecretController")
 	@Test
 	public void testSuccess() throws EcrcServiceException {
-		JSONObject obj = new JSONObject().put("secret", "mysecret");
-		when(ecrcServices.getJwtDetails()).thenReturn(obj);
-		ResponseEntity<Object> response = getJwtDetailsController.getJwtDetails("SOMEUUID");
-		assertEquals(obj.toMap(), response.getBody());
+		when(ecrcServices.getJwtSecret()).thenReturn("testSecret");
+		ResponseEntity<String> response = getJwtSecretController.getJwtSecret("SOMEUUID");
+		assertEquals("testSecret", response.getBody());
 	}
-
 	
-	@DisplayName("Error - getJwtDetailsController")
+	
+	@DisplayName("Error - getJwtSecretController")
 	@Test
 	public void testError() throws EcrcServiceException {
-		when(ecrcServices.getJwtDetails()).thenThrow(new EcrcServiceException(EcrcExceptionConstants.DATA_NOT_FOUND_ERROR));
-		ResponseEntity<Object> response = getJwtDetailsController.getJwtDetails("SOMEUUID");
+		when(ecrcServices.getJwtSecret()).thenThrow(new EcrcServiceException(EcrcExceptionConstants.DATA_NOT_FOUND_ERROR));
+		ResponseEntity<String> response = getJwtSecretController.getJwtSecret("SOMEUUID");
 		assertEquals(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
 						EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()),
 				response.getBody());

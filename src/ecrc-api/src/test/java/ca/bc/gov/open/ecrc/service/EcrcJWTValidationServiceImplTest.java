@@ -138,4 +138,59 @@ public class EcrcJWTValidationServiceImplTest {
 		
 		Assertions.assertEquals(false, resp.isValid());
 	}
+	
+	@DisplayName("Good test - validateBCSCIDToken")
+	@Test
+	public void testIDToken() throws JsonProcessingException, EcrcServiceException {
+		MockResponse mockResponse = new MockResponse();
+		mockResponse.setBody(jwksResponse);
+		mockResponse.addHeader("content-type: application/json;charset=ISO-8859-1");
+		mockResponse.setResponseCode(200);
+		
+		// Two calls are made to the JWKS endpoint and why we queue up two responses. 
+		mockBackEnd.enqueue(mockResponse);
+		mockBackEnd.enqueue(mockResponse);
+		
+		// Calculate expiry for 1 year in the future.
+		Calendar exp = Calendar.getInstance();
+		exp.add(Calendar.YEAR, 1); 
+		
+		// Generate a JWT based on the same original private key. 
+		String idToken = TestTokenGenerator.generateBCSCIDToken(privateKey, ecrcProperties.getOauthIdp() + "/oauth2/", exp.getTime());
+		
+		System.out.println(idToken); 
+		
+		// Uses the JWKS public key to validate the above. 
+		ValidationResponse resp = tokenServices.validateBCSCIDToken(idToken);
+		
+		Assertions.assertEquals(true, resp.isValid());
+	}
+	
+	@DisplayName("Error test - validateBCSCIDToken (Expired)")
+	@Test
+	public void testIDTokenExpired() throws JsonProcessingException, EcrcServiceException {
+		MockResponse mockResponse = new MockResponse();
+		mockResponse.setBody(jwksResponse);
+		mockResponse.addHeader("content-type: application/json;charset=ISO-8859-1");
+		mockResponse.setResponseCode(200);
+		
+		// Two calls are made to the JWKS endpoint and why we queue up two responses. 
+		mockBackEnd.enqueue(mockResponse);
+		mockBackEnd.enqueue(mockResponse);
+		
+		// Calculate expiry for 1 day prior to today.
+		Calendar exp = Calendar.getInstance();
+		exp.add(Calendar.DAY_OF_WEEK, -1); 
+		
+		// Generate a JWT based on the same original private key. 
+		String idToken = TestTokenGenerator.generateBCSCIDToken(privateKey, ecrcProperties.getOauthIdp() + "/oauth2/", exp.getTime());
+		
+		System.out.println(idToken); 
+		
+		// Uses the JWKS public key to validate the above. 
+		ValidationResponse resp = tokenServices.validateBCSCIDToken(idToken);
+		
+		Assertions.assertEquals(false, resp.isValid());
+	}
+
 }

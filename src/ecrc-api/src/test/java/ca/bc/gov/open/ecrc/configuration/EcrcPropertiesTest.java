@@ -42,16 +42,19 @@ class EcrcPropertiesTest {
 		Assert.assertEquals("role", ecrcProperties.getJwtRole());
 		Assert.assertEquals("/getSinglePaymentURL", ecrcProperties.getGetSinglePaymentUri());
 		Assert.assertEquals("bcsc", ecrcProperties.getOauthIdp());
+		Assert.assertEquals("1234", ecrcProperties.getOauthClientId());
+		Assert.assertEquals("5678", ecrcProperties.getOauthSecret());
+		Assert.assertEquals("api", ecrcProperties.getOauthScope());
+		Assert.assertEquals("returnuri", ecrcProperties.getOauthReturnUri());
 		Assert.assertEquals("wellknown", ecrcProperties.getOauthWellKnown());
+		Assert.assertEquals(3000, ecrcProperties.getOauthJwtExpiry());
 		Assert.assertEquals(60000, ecrcProperties.getOauthBCSCTimeout());
 		Assert.assertEquals("checkApplicantForPrevCRC", ecrcProperties.getCheckApplicantForPrevCrcUri());
 		Assert.assertEquals("createSharingService", ecrcProperties.getCreateSharingServiceUri());
 		Assert.assertEquals("secret", ecrcProperties.getOauthPERSecret());
-		Assert.assertEquals("user", ecrcProperties.getOauthUsername());
-		Assert.assertEquals("password", ecrcProperties.getOauthPassword());
-		Assert.assertEquals("test", ecrcProperties.getOauthUrl());
-		Assert.assertEquals("login", ecrcProperties.getOauthLoginUri());
-		Assert.assertEquals("getBCSC", ecrcProperties.getOauthGetBCSCRedirectUri());
+		Assert.assertEquals("/test", ecrcProperties.getOauthAuthorizePath());
+		Assert.assertEquals("/test", ecrcProperties.getOauthTokenPath());
+		Assert.assertEquals("/test", ecrcProperties.getOauthUserinfoPath());
 		Assert.assertEquals("8082", ecrcProperties.getServerPort());
 	}
 

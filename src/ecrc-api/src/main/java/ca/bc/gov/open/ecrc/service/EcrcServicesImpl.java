@@ -102,11 +102,8 @@ public class EcrcServicesImpl implements EcrcServices {
 		return ecrcWebMethodsService.callWebMethodsService(nextInvoiceIdUri, new GetNextInvoiceId(), requestGuid);
 	}
 
-	public JSONObject getJwtDetails() {
-		JSONObject obj = new JSONObject();
-		obj.put("secret", ecrcProps.getJwtSecret());
-		obj.put("clientId", ecrcProps.getOauthClientId());
-		return obj;
+	public String getJwtSecret() {
+		return ecrcProps.getJwtSecret();
 	}
 
 	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo)
