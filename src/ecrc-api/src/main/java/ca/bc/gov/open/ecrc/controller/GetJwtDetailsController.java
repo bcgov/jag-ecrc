@@ -17,26 +17,27 @@ import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.service.EcrcServices;
 
 /**
- * Endpoint that provides the jwt secret from the properties file.
+ * Endpoint that provides the jwt details from the properties file.
  * 
  * @author BrendanBeachBCJ
+ * @author sdevalapurkar-bcgov
  *
  */
 @RestController
-public class GetJwtSecretController {
+public class GetJwtDetailsController {
 	
-	private final Logger logger = LoggerFactory.getLogger(GetJwtSecretController.class);
+	private final Logger logger = LoggerFactory.getLogger(GetJwtDetailsController.class);
 	
 	@Autowired
 	private EcrcServices ecrcServices;
 	
 	@GetMapping(value = "/initialHandshake")
-	public ResponseEntity<String> getJwtSecret(@RequestParam(required=true) String requestGuid) {
+	public ResponseEntity<Object> getJwtDetails(@RequestParam(required=true) String requestGuid) {
 		MDC.put(EcrcConstants.REQUEST_GUID, requestGuid);
 		MDC.put(EcrcConstants.REQUEST_ENDPOINT,  "initialHandshake");
 		logger.info("Initial handshake received: [{}]", requestGuid);
 		try {
-			return new ResponseEntity<>(ecrcServices.getJwtSecret(), HttpStatus.OK);		
+			return new ResponseEntity<>(ecrcServices.getJwtDetails().toMap(), HttpStatus.OK);		
 		} catch (EcrcServiceException e) {
 			logger.error("Error in service: ", e);
 			return new ResponseEntity<>(

@@ -78,6 +78,7 @@ describe("InformationReview Component", () => {
 
   beforeEach(() => {
     sessionStorage.setItem("validator", "secret");
+    sessionStorage.setItem("clientId", "123");
     sessionStorage.setItem("uuid", "unique123");
     generateJWTToken({
       actionsPerformed: ["appForm"],
