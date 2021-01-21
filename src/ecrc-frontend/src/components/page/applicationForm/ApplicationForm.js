@@ -118,6 +118,20 @@ export default function ApplicationForm({
 
   const location = useLocation();
 
+  const getAge = birthdateString => {
+    const today = new Date();
+    const birthdate = new Date(birthdateString);
+    let age = today.getFullYear() - birthdate.getFullYear();
+    let monthDiff = today.getMonth() - birthdate.getMonth();
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && today.getDate() < birthdate.getDate())
+    ) {
+      age--;
+    }
+    return age;
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -182,6 +196,16 @@ export default function ApplicationForm({
 
           // Convert gender text
           const formatGender = gender === "female" ? "F" : "M";
+
+          const age = getAge(birthdate);
+
+          if (age < 12) {
+            setError({
+              status: 403,
+              message: "User is under the age of 12"
+            });
+            history.push("/criminalrecordcheck/error");
+          }
 
           // Convert date format
           const formatBirthDt = birthdate.split("-").join("/");
