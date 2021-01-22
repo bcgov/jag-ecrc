@@ -127,6 +127,31 @@ describe("Error Component", () => {
     expect(getByText(container, "Your session has expired")).toBeTruthy();
   });
 
+  test("Validate user under 12 error case", async () => {
+    const updatedError = {
+      status: 403,
+      message: "User is under the age of 12"
+    };
+
+    const newPage = {
+      header,
+      error: updatedError
+    };
+
+    const history = createMemoryHistory();
+    const { container } = render(
+      <Router history={history}>
+        <Error page={newPage} />
+      </Router>
+    );
+
+    await expect(() => {
+      getByText(container, "wrongtext");
+    }).toThrow();
+
+    expect(getByText(container, "Unauthorized age group")).toBeTruthy();
+  });
+
   test("Validate unexpected error case", async () => {
     const updatedError = { ...error, status: 204 };
 

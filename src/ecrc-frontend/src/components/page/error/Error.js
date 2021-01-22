@@ -39,6 +39,16 @@ export default function Error({ page: { header, error } }) {
           </p>
         </div>
       );
+    } else if (error.message === "User is under the age of 12") {
+      errorContent = (
+        <div>
+          <h1>Unauthorized age group</h1>
+          <p>
+            To submit an online request for a criminal record check, you must be
+            at least 12 years of age.
+          </p>
+        </div>
+      );
     } else {
       errorContent = (
         <div>
