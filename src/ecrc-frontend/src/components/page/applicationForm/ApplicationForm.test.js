@@ -284,6 +284,57 @@ describe("ApplicationForm Component", () => {
     expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
   });
 
+  test("With applicant under the age of 12, redirects to error page", async () => {
+    setError.mockClear();
+    const birthDtString = new Date().toISOString().substring(0, 10);
+
+    const newApplicant = { ...applicant, birthDt: birthDtString };
+
+    const newPage = {
+      ...page,
+      applicant: newApplicant
+    };
+
+    let updatePayload = {
+      userInfo: {
+        birthdate: birthDtString,
+        address: {
+          street_address: "123 addy",
+          locality: "local",
+          region: "BC",
+          postal_code: "v9n1d4"
+        },
+        gender: "F",
+        given_name: "given",
+        given_names: "givens",
+        family_name: "fam",
+        identity_assurance_level: 3
+      },
+      authorities: ["Authorized"]
+    };
+
+    let token = generateJWTToken(updatePayload);
+
+    mock.onGet(API_REQUEST_JWT).reply(200, token);
+
+    render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={newPage} />
+      </MemoryRouter>
+    );
+
+    await wait(() => {
+      expect(setError).toBeCalledTimes(1);
+    });
+
+    expect(setError).toHaveBeenCalledWith({
+      message: "User is under the age of 12",
+      status: 403
+    });
+
+    expect(mockHistoryPush).toHaveBeenCalledWith("/criminalrecordcheck/error");
+  });
+
   test("Displays Organization Facility when Schedule D Org", async () => {
     const { container } = render(
       <MemoryRouter initialEntries={["/applicationform?code=code"]}>
