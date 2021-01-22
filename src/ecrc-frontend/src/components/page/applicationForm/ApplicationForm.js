@@ -122,12 +122,12 @@ export default function ApplicationForm({
     const today = new Date();
     const birthdate = new Date(birthdateString);
     let age = today.getFullYear() - birthdate.getFullYear();
-    let monthDiff = today.getMonth() - birthdate.getMonth();
+    const monthDiff = today.getMonth() - birthdate.getMonth();
     if (
       monthDiff < 0 ||
       (monthDiff === 0 && today.getDate() < birthdate.getDate())
     ) {
-      age--;
+      age -= 1;
     }
     return age;
   };

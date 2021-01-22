@@ -295,7 +295,7 @@ describe("ApplicationForm Component", () => {
       applicant: newApplicant
     };
 
-    let updatePayload = {
+    const updatePayload = {
       userInfo: {
         birthdate: birthDtString,
         address: {
@@ -313,7 +313,7 @@ describe("ApplicationForm Component", () => {
       authorities: ["Authorized"]
     };
 
-    let token = generateJWTToken(updatePayload);
+    const token = generateJWTToken(updatePayload);
 
     mock.onGet(API_REQUEST_JWT).reply(200, token);
 
