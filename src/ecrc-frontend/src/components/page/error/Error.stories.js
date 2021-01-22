@@ -59,6 +59,17 @@ export const BcscUnauthorizedError = () => (
   </MemoryRouter>
 );
 
+export const UnauthorizedAgeGroup = () => (
+  <MemoryRouter>
+    <Error
+      page={{
+        header,
+        error: { status: 403, message: "User is under the age of 12" }
+      }}
+    />
+  </MemoryRouter>
+);
+
 Mobile.story = {
   parameters: {
     viewport: {
