@@ -24429,7 +24429,6 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
         <p>
           There was an error authenticating your BC Services Card. For information about how to authenticate your card click 
           <a
-            class="external-link"
             data-testid="exitApp"
             href="https://www2.gov.bc.ca/gov/content/governments/services-for-government/information-management-technology/identity-and-authentication-services/bc-services-card-authentication-service"
             rel="nofollow"
@@ -24587,7 +24586,6 @@ exports[`Storyshots Transition Page Mobile 1`] = `
         <p>
           There was an error authenticating your BC Services Card. For information about how to authenticate your card click 
           <a
-            class="external-link"
             data-testid="exitApp"
             href="https://www2.gov.bc.ca/gov/content/governments/services-for-government/information-management-technology/identity-and-authentication-services/bc-services-card-authentication-service"
             rel="nofollow"
