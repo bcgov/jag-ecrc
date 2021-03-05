@@ -57,11 +57,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
            
         </p>
         <p>
-          Only cards 
-          <b>
-            with a photo
-          </b>
-           are accepted. If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to 
+          If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to 
           <a
             href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
             rel="noopener noreferrer"
@@ -83,7 +79,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
             <div
               class="col-sm-8 mt-lg-2 mb-2"
             >
-              I have a photo BC Services Card
+              I have a BC Services Card
             </div>
             <div
               class="col-sm-4"
@@ -110,7 +106,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
           <a
             href="/criminalrecordcheck/transition"
           >
-            I do not have a BC Services Card, or I have a non-photo BC Services Card
+            I do not have a BC Services Card
           </a>
           .
         </div>

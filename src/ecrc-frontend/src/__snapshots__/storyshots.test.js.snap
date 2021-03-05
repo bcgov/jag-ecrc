@@ -5397,11 +5397,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
          
       </p>
       <p>
-        Only cards 
-        <b>
-          with a photo
-        </b>
-         are accepted. If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to
+        If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to
          
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
@@ -5424,7 +5420,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
           <div
             className="col-sm-8 mt-lg-2 mb-2"
           >
-            I have a photo BC Services Card
+            I have a BC Services Card
           </div>
           <div
             className="col-sm-4"
@@ -5452,7 +5448,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
         <a
           href="/criminalrecordcheck/transition"
         >
-          I do not have a BC Services Card, or I have a non-photo BC Services Card
+          I do not have a BC Services Card
         </a>
         .
       </div>
@@ -5726,11 +5722,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
          
       </p>
       <p>
-        Only cards 
-        <b>
-          with a photo
-        </b>
-         are accepted. If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to
+        If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to
          
         <a
           href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
@@ -5753,7 +5745,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
           <div
             className="col-sm-8 mt-lg-2 mb-2"
           >
-            I have a photo BC Services Card
+            I have a BC Services Card
           </div>
           <div
             className="col-sm-4"
@@ -5781,7 +5773,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
         <a
           href="/criminalrecordcheck/transition"
         >
-          I do not have a BC Services Card, or I have a non-photo BC Services Card
+          I do not have a BC Services Card
         </a>
         .
       </div>
@@ -14613,10 +14605,10 @@ Canada
           className="eligibleList"
         >
           <li>
-            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
+            You are requested to login with your BC Services Card. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
-            If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
+            If you are not eligible for a BC Services Card, an alternative online option may be available for you.
           </li>
           <li>
             Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
@@ -15317,10 +15309,10 @@ Canada
           className="eligibleList"
         >
           <li>
-            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
+            You are requested to login with your BC Services Card. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
-            If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
+            If you are not eligible for a BC Services Card, an alternative online option may be available for you.
           </li>
           <li>
             Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
@@ -16021,10 +16013,10 @@ Canada
           className="eligibleList"
         >
           <li>
-            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
+            You are requested to login with your BC Services Card. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
-            If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
+            If you are not eligible for a BC Services Card, an alternative online option may be available for you.
           </li>
           <li>
             Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
@@ -16725,10 +16717,10 @@ Canada
           className="eligibleList"
         >
           <li>
-            You are requested to login with your BC Services Card. Only cards with a photo are accepted at this point. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
+            You are requested to login with your BC Services Card. If you do not already have a BC Services Card, you can initiate the process on the BC Services Card website.
           </li>
           <li>
-            If you are not eligible for a BC Services Card, or have a card without a photo, an alternative online option may be available for you.
+            If you are not eligible for a BC Services Card, an alternative online option may be available for you.
           </li>
           <li>
             Employee applicants must pay a fee by credit card (Visa, MasterCard, or AMEX). For volunteers completing a request for a criminal record check, no payment is required.
@@ -18366,7 +18358,7 @@ exports[`Storyshots SideCards Without BC Service Card 1`] = `
                 <div
                   className="sideCardTitle"
                 >
-                  Applicants Without a BC Services Card with a photo
+                  Applicants Without a BC Services Card
                 </div>
               </div>
             </div>
@@ -24435,29 +24427,25 @@ exports[`Storyshots Transition Page Default To BCSC 1`] = `
     >
       <div>
         <p>
-          You are unable to login with your BC Services Card at this time.
-        </p>
-        <br />
-        <p>
-          We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
+          There was an error authenticating your BC Services Card. For information about how to authenticate your card click 
+          <a
+            class="external-link"
+            data-testid="exitApp"
+            href="https://www2.gov.bc.ca/gov/content/governments/services-for-government/information-management-technology/identity-and-authentication-services/bc-services-card-authentication-service"
+            rel="nofollow"
+          >
+            here
+          </a>
+           or you can contact the 
+          <a
+            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/log-in-with-card/get-help"
+          >
+            BC Services Card Helpdesk
+          </a>
+          .
         </p>
       </div>
       <br />
-      <p>
-        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
-         
-        <span
-          className="pointer-here"
-          data-testid="exitApp"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          here
-        </span>
-        .
-      </p>
     </div>
   </div>
   <footer
@@ -24597,29 +24585,25 @@ exports[`Storyshots Transition Page Mobile 1`] = `
     >
       <div>
         <p>
-          You are unable to login with your BC Services Card at this time.
-        </p>
-        <br />
-        <p>
-          We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
+          There was an error authenticating your BC Services Card. For information about how to authenticate your card click 
+          <a
+            class="external-link"
+            data-testid="exitApp"
+            href="https://www2.gov.bc.ca/gov/content/governments/services-for-government/information-management-technology/identity-and-authentication-services/bc-services-card-authentication-service"
+            rel="nofollow"
+          >
+            here
+          </a>
+           or you can contact the 
+          <a
+            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/log-in-with-card/get-help"
+          >
+            BC Services Card Helpdesk
+          </a>
+          .
         </p>
       </div>
       <br />
-      <p>
-        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
-         
-        <span
-          className="pointer-here"
-          data-testid="exitApp"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          here
-        </span>
-        .
-      </p>
     </div>
   </div>
   <footer
@@ -24771,21 +24755,6 @@ exports[`Storyshots Transition Page Not Whitelisted 1`] = `
          been transitioned to the new system yet.
       </p>
       <br />
-      <p>
-        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
-         
-        <span
-          className="pointer-here"
-          data-testid="exitApp"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          here
-        </span>
-        .
-      </p>
     </div>
   </div>
   <footer

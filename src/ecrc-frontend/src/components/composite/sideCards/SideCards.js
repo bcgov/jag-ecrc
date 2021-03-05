@@ -223,7 +223,7 @@ export default function SideCards({ type, sideCardLinks }) {
             <FaQuestion className="side-card-icon" />
           </div>
           <div key="withoutBCServiceCardHeader" className="sideCardTitle">
-            Applicants Without a BC Services Card with a photo
+            Applicants Without a BC Services Card
           </div>
         </div>
       </div>

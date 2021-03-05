@@ -8,13 +8,6 @@ import "./Transition.css";
 export default function Transition({
   page: { header, transitionReason = "bcsc" }
 }) {
-  useEffect(() => {
-    setTimeout(() => {
-      sessionStorage.setItem("validExit", true);
-      window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
-    }, 6000);
-  }, []);
-
   return (
     <main>
       <Header header={header} />
@@ -38,39 +31,25 @@ export default function Transition({
           {transitionReason === "bcsc" && (
             <div>
               <p>
-                You are unable to login with your BC Services Card at this time.
-              </p>
-              <br />
-              <p>
-                We require users to have a photo BC Services Card to access the
-                Criminal Record Check at this time.
+                There was an error authenticating your BC Services Card. For
+                information about how to authenticate your card click&nbsp;
+                <a
+                  data-testid="exitApp"
+                  href="https://www2.gov.bc.ca/gov/content/governments/services-for-government/information-management-technology/identity-and-authentication-services/bc-services-card-authentication-service"
+                  class="external-link"
+                  rel="nofollow"
+                >
+                  here
+                </a>
+                &nbsp;or you can contact the&nbsp;
+                <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/log-in-with-card/get-help">
+                  BC Services Card Helpdesk
+                </a>
+                .
               </p>
             </div>
           )}
           <br />
-          <p>
-            You will receive instructions on how to submit your criminal record
-            check and will be required to re-enter your access code to continue.
-            You will be redirected automatically. If you are not redirected
-            automatically, please click{" "}
-            <span
-              data-testid="exitApp"
-              className="pointer-here"
-              onClick={() => {
-                sessionStorage.setItem("validExit", true);
-                window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
-              }}
-              role="button"
-              onKeyDown={() => {
-                sessionStorage.setItem("validExit", true);
-                window.open("https://justice.gov.bc.ca/eCRC/home.htm", "_self");
-              }}
-              tabIndex={0}
-            >
-              here
-            </span>
-            {"."}
-          </p>
         </div>
       </div>
       <Footer />

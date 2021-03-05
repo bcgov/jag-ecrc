@@ -47,29 +47,25 @@ exports[`Transition Page Component Matches the default/BCSC snapshot 1`] = `
     >
       <div>
         <p>
-          You are unable to login with your BC Services Card at this time.
-        </p>
-        <br />
-        <p>
-          We require users to have a photo BC Services Card to access the Criminal Record Check at this time.
+          There was an error authenticating your BC Services Card. For information about how to authenticate your card click 
+          <a
+            class="external-link"
+            data-testid="exitApp"
+            href="https://www2.gov.bc.ca/gov/content/governments/services-for-government/information-management-technology/identity-and-authentication-services/bc-services-card-authentication-service"
+            rel="nofollow"
+          >
+            here
+          </a>
+           or you can contact the 
+          <a
+            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/log-in-with-card/get-help"
+          >
+            BC Services Card Helpdesk
+          </a>
+          .
         </p>
       </div>
       <br />
-      <p>
-        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
-         
-        <span
-          className="pointer-here"
-          data-testid="exitApp"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          here
-        </span>
-        .
-      </p>
     </div>
   </div>
   <footer
@@ -221,21 +217,6 @@ exports[`Transition Page Component Matches the non-whitelisted snapshot 1`] = `
          been transitioned to the new system yet.
       </p>
       <br />
-      <p>
-        You will receive instructions on how to submit your criminal record check and will be required to re-enter your access code to continue. You will be redirected automatically. If you are not redirected automatically, please click
-         
-        <span
-          className="pointer-here"
-          data-testid="exitApp"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          here
-        </span>
-        .
-      </p>
     </div>
   </div>
   <footer
