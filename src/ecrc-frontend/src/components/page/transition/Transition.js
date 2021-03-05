@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
@@ -36,7 +36,6 @@ export default function Transition({
                 <a
                   data-testid="exitApp"
                   href="https://www2.gov.bc.ca/gov/content/governments/services-for-government/information-management-technology/identity-and-authentication-services/bc-services-card-authentication-service"
-                  class="external-link"
                   rel="nofollow"
                 >
                   here
