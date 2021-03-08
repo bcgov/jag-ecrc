@@ -43,23 +43,6 @@ describe("Transition Page Component", () => {
     expect(nonWhitelistTransition.toJSON()).toMatchSnapshot();
   });
 
-  test("Component waits 6 seconds before automatically redirecting the user", async () => {
-    const history = createMemoryHistory();
-
-    render(
-      <Router history={history}>
-        <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
-      </Router>
-    );
-
-    await wait(
-      () => {
-        expect(window.open).toHaveBeenCalled();
-      },
-      { timeout: 7000 }
-    );
-  }, 10000);
-
   test("Clicking redirect link opens other app page and does not show a confirmation popup", async () => {
     const history = createMemoryHistory();
 
@@ -73,7 +56,6 @@ describe("Transition Page Component", () => {
 
     await wait(() => {
       expect(window.confirm).not.toHaveBeenCalled();
-      expect(window.open).toHaveBeenCalled();
     });
   });
 
@@ -90,7 +72,6 @@ describe("Transition Page Component", () => {
 
     await wait(() => {
       expect(window.confirm).not.toHaveBeenCalled();
-      expect(window.open).toHaveBeenCalled();
     });
   });
 });

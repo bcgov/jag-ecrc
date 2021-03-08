@@ -99,10 +99,9 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
             </a>{" "}
           </p>
           <p>
-            Only cards <b>with a photo</b> are accepted. If it&apos;s your first
-            time using your BC Services Card to access an online service, you
-            need to set up your account for use online. Completing a one-time
-            security check to{" "}
+            If it&apos;s your first time using your BC Services Card to access
+            an online service, you need to set up your account for use online.
+            Completing a one-time security check to{" "}
             <a
               href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
               target="_blank"
@@ -117,7 +116,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
           <div className="option">
             <div className="row">
               <div className="col-sm-8 mt-lg-2 mb-2">
-                I have a photo BC Services Card
+                I have a BC Services Card
               </div>
               <div className="col-sm-4">
                 <Button button={loginBtn} onClick={onLoginClick} />
@@ -127,8 +126,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
 
           <div className="mt-5">
             <a href="/criminalrecordcheck/transition">
-              I do not have a BC Services Card, or I have a non-photo BC
-              Services Card
+              I do not have a BC Services Card
             </a>
             .
           </div>

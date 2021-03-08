@@ -159,15 +159,13 @@ export default function OrgVerification({ page: { header, org, setError } }) {
             </p>
             <ul className="eligibleList">
               <li>
-                You are requested to login with your BC Services Card. Only
-                cards with a photo are accepted at this point. If you do not
-                already have a BC Services Card, you can initiate the process on
-                the BC Services Card website.
+                You are requested to login with your BC Services Card. If you do
+                not already have a BC Services Card, you can initiate the
+                process on the BC Services Card website.
               </li>
               <li>
-                If you are not eligible for a BC Services Card, or have a card
-                without a photo, an alternative online option may be available
-                for you.
+                If you are not eligible for a BC Services Card, an alternative
+                online option may be available for you.
               </li>
               <li>
                 Employee applicants must pay a fee by credit card (Visa,
