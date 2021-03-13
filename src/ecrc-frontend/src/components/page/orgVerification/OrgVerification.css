@@ -3,7 +3,7 @@
 }
 
 .contactList {
-  list-style-type: lower-roman;
+  list-style: disc;
 }
 
 .smallTableHeader {

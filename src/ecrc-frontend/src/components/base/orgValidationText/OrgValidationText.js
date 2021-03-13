@@ -50,6 +50,12 @@ export default function OrgValidationText({
               services. If you don&apos;t have a BC Services Card, an
               alternative option is available.
             </li>
+            <li>
+              Applicants without a BC Services Card who haven’t lived in B.C.
+              for at least six months or who live outside the province should
+              contact your organization and inquire for an alternative option to
+              submit their criminal record check request
+            </li>
             <li>Have an access code provided by your organization.</li>
           </ul>
         </div>
@@ -89,13 +95,7 @@ export default function OrgValidationText({
                 why I need to apply for a criminal record check
               </a>
             </li>
-            <li>
-              <u>I don&apos;t have a BC Services Card.</u> Applicants without a
-              BC Services Card who haven’t lived in B.C. for at least six months
-              or who live outside the province should contact your organization
-              and inquire for an alternative option to submit their criminal
-              record check request
-            </li>
+
             <li>
               <a
                 href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration"
