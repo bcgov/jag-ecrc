@@ -89,17 +89,6 @@ export default function SideCards({ type, sideCardLinks }) {
         If you have a BC Services Card, you must use it to log in to the online
         security verification page.
       </div>,
-      <div key="bcscLearnMore">
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="side-card-link">
-            Learn more about the BC Services Card.
-          </div>
-        </a>
-      </div>,
       <div key="bcscEligibility" className="side-card-text">
         <br />
         Eligibility for a BC Services Card is the same as for the Medical
@@ -107,7 +96,7 @@ export default function SideCards({ type, sideCardLinks }) {
       </div>,
       <div key="bcscEligibilityLink">
         <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
+          href="https://www2.gov.bc.ca/gov/content?id=87EEAD6D19974459950AA7FF7F60AD54"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -282,7 +271,7 @@ export default function SideCards({ type, sideCardLinks }) {
       <a
         key="personalInfoLink"
         className="link"
-        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
         target="_blank"
         rel="noopener noreferrer"
       >
