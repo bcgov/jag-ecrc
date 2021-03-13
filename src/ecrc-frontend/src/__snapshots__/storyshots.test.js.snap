@@ -1140,7 +1140,7 @@ exports[`Storyshots Application Form Mobile Non Schedule D 1`] = `
                       Please visit the 
                       <a
                         className="link"
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -2494,7 +2494,7 @@ exports[`Storyshots Application Form Mobile Schedule D 1`] = `
                       Please visit the 
                       <a
                         className="link"
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -3808,7 +3808,7 @@ exports[`Storyshots Application Form Non Schedule D 1`] = `
                       Please visit the 
                       <a
                         className="link"
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -5162,7 +5162,7 @@ exports[`Storyshots Application Form Schedule D 1`] = `
                       Please visit the 
                       <a
                         className="link"
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -5397,16 +5397,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
          
       </p>
       <p>
-        If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          verify your identity
-        </a>
-        .
+        If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to verify your identity.
       </p>
       <p>
         Please select an option below:
@@ -5530,19 +5521,6 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                     >
                       If you have a BC Services Card, you must use it to log in to the online security verification page.
                     </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about the BC Services Card.
-                        </div>
-                      </a>
-                    </div>
                     <div
                       className="side-card-text"
                     >
@@ -5551,7 +5529,7 @@ exports[`Storyshots BcscRedirect page Default 1`] = `
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
+                        href="https://www2.gov.bc.ca/gov/content?id=87EEAD6D19974459950AA7FF7F60AD54"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -5722,16 +5700,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
          
       </p>
       <p>
-        If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          verify your identity
-        </a>
-        .
+        If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to verify your identity.
       </p>
       <p>
         Please select an option below:
@@ -5855,19 +5824,6 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                     >
                       If you have a BC Services Card, you must use it to log in to the online security verification page.
                     </div>
-                    <div>
-                      <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <div
-                          className="side-card-link"
-                        >
-                          Learn more about the BC Services Card.
-                        </div>
-                      </a>
-                    </div>
                     <div
                       className="side-card-text"
                     >
@@ -5876,7 +5832,7 @@ exports[`Storyshots BcscRedirect page Mobile 1`] = `
                     </div>
                     <div>
                       <a
-                        href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
+                        href="https://www2.gov.bc.ca/gov/content?id=87EEAD6D19974459950AA7FF7F60AD54"
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -10586,7 +10542,7 @@ exports[`Storyshots Information Review Display Share Mobile 1`] = `
                     Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -11117,7 +11073,7 @@ exports[`Storyshots Information Review Display Share Option 1`] = `
                     Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -11648,7 +11604,7 @@ exports[`Storyshots Information Review NonSchedule D Default 1`] = `
                     Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -12179,7 +12135,7 @@ exports[`Storyshots Information Review NonSchedule D Mobile 1`] = `
                     Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -12718,7 +12674,7 @@ exports[`Storyshots Information Review Schedule D Default 1`] = `
                     Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -13257,7 +13213,7 @@ exports[`Storyshots Information Review Schedule D Mobile 1`] = `
                     Please visit the 
                     <a
                       className="link"
-                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                      href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -13650,6 +13606,9 @@ exports[`Storyshots OrgValidation Default 1`] = `
                 The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
               </li>
               <li>
+                Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
+              </li>
+              <li>
                 Have an access code provided by your organization.
               </li>
             </ul>
@@ -13744,12 +13703,6 @@ exports[`Storyshots OrgValidation Default 1`] = `
                 >
                   why I need to apply for a criminal record check
                 </a>
-              </li>
-              <li>
-                <u>
-                  I don't have a BC Services Card.
-                </u>
-                 Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
               </li>
               <li>
                 <a
@@ -13989,6 +13942,9 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                 The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
               </li>
               <li>
+                Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
+              </li>
+              <li>
                 Have an access code provided by your organization.
               </li>
             </ul>
@@ -14083,12 +14039,6 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                 >
                   why I need to apply for a criminal record check
                 </a>
-              </li>
-              <li>
-                <u>
-                  I don't have a BC Services Card.
-                </u>
-                 Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
               </li>
               <li>
                 <a
@@ -14284,6 +14234,9 @@ exports[`Storyshots OrgValidationText Default 1`] = `
           The BC Services Card provides secure access to government online services. If you don't have a BC Services Card, an alternative option is available.
         </li>
         <li>
+          Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
+        </li>
+        <li>
           Have an access code provided by your organization.
         </li>
       </ul>
@@ -14395,12 +14348,6 @@ exports[`Storyshots OrgValidationText Default 1`] = `
           >
             why I need to apply for a criminal record check
           </a>
-        </li>
-        <li>
-          <u>
-            I don't have a BC Services Card.
-          </u>
-           Applicants without a BC Services Card who haven’t lived in B.C. for at least six months or who live outside the province should contact your organization and inquire for an alternative option to submit their criminal record check request
         </li>
         <li>
           <a
@@ -14618,7 +14565,7 @@ Canada
         <p>
           Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
-        <ol
+        <ul
           className="contactList"
         >
           <li>
@@ -14627,7 +14574,7 @@ Canada
           <li>
             the Deputy Registrar has determined that you present a risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults. The determination will include consideration of any relevant or specified offence(s) for which you have received a record suspension (formerly known as a pardon).
           </li>
-        </ol>
+        </ul>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
@@ -15322,7 +15269,7 @@ Canada
         <p>
           Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
-        <ol
+        <ul
           className="contactList"
         >
           <li>
@@ -15331,7 +15278,7 @@ Canada
           <li>
             the Deputy Registrar has determined that you present a risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults. The determination will include consideration of any relevant or specified offence(s) for which you have received a record suspension (formerly known as a pardon).
           </li>
-        </ol>
+        </ul>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
@@ -16026,7 +15973,7 @@ Canada
         <p>
           Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
-        <ol
+        <ul
           className="contactList"
         >
           <li>
@@ -16035,7 +15982,7 @@ Canada
           <li>
             the Deputy Registrar has determined that you present a risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults. The determination will include consideration of any relevant or specified offence(s) for which you have received a record suspension (formerly known as a pardon).
           </li>
-        </ol>
+        </ul>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
@@ -16730,7 +16677,7 @@ Canada
         <p>
           Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
-        <ol
+        <ul
           className="contactList"
         >
           <li>
@@ -16739,7 +16686,7 @@ Canada
           <li>
             the Deputy Registrar has determined that you present a risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults. The determination will include consideration of any relevant or specified offence(s) for which you have received a record suspension (formerly known as a pardon).
           </li>
-        </ol>
+        </ul>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>
@@ -17579,19 +17526,6 @@ exports[`Storyshots SideCards Bc Service 1`] = `
               >
                 If you have a BC Services Card, you must use it to log in to the online security verification page.
               </div>
-              <div>
-                <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <div
-                    className="side-card-link"
-                  >
-                    Learn more about the BC Services Card.
-                  </div>
-                </a>
-              </div>
               <div
                 className="side-card-text"
               >
@@ -17600,7 +17534,7 @@ exports[`Storyshots SideCards Bc Service 1`] = `
               </div>
               <div>
                 <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
+                  href="https://www2.gov.bc.ca/gov/content?id=87EEAD6D19974459950AA7FF7F60AD54"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -18158,7 +18092,7 @@ exports[`Storyshots SideCards Personal Information 1`] = `
               Please visit the 
               <a
                 className="link"
-                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -22179,17 +22113,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             start="9"
           >
             <li>
-              You are required to have a
-               
-              <a
-                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                BC Services Card
-              </a>
-               
-              to login and submit an online request for a criminal record check.
+              You are required to have a BC Services Card to login and submit an online request for a criminal record check.
             </li>
             <li>
               Each time you access the Site, you must be authenticated by following an external link to the
@@ -22436,17 +22360,7 @@ exports[`Storyshots Term Of Use page Default 1`] = `
             start="9"
           >
             <li>
-              You are required to have a
-               
-              <a
-                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                BC Services Card
-              </a>
-               
-              to login and submit an online request for a criminal record check.
+              You are required to have a BC Services Card to login and submit an online request for a criminal record check.
             </li>
             <li>
               Each time you access the Site, you must be authenticated by following an external link to the
@@ -22959,17 +22873,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             start="9"
           >
             <li>
-              You are required to have a
-               
-              <a
-                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                BC Services Card
-              </a>
-               
-              to login and submit an online request for a criminal record check.
+              You are required to have a BC Services Card to login and submit an online request for a criminal record check.
             </li>
             <li>
               Each time you access the Site, you must be authenticated by following an external link to the
@@ -23216,17 +23120,7 @@ exports[`Storyshots Term Of Use page Mobile 1`] = `
             start="9"
           >
             <li>
-              You are required to have a
-               
-              <a
-                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                BC Services Card
-              </a>
-               
-              to login and submit an online request for a criminal record check.
+              You are required to have a BC Services Card to login and submit an online request for a criminal record check.
             </li>
             <li>
               Each time you access the Site, you must be authenticated by following an external link to the
@@ -23695,17 +23589,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
       start="9"
     >
       <li>
-        You are required to have a
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          BC Services Card
-        </a>
-         
-        to login and submit an online request for a criminal record check.
+        You are required to have a BC Services Card to login and submit an online request for a criminal record check.
       </li>
       <li>
         Each time you access the Site, you must be authenticated by following an external link to the
@@ -23952,17 +23836,7 @@ exports[`Storyshots Terms of Use Default 1`] = `
       start="9"
     >
       <li>
-        You are required to have a
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          BC Services Card
-        </a>
-         
-        to login and submit an online request for a criminal record check.
+        You are required to have a BC Services Card to login and submit an online request for a criminal record check.
       </li>
       <li>
         Each time you access the Site, you must be authenticated by following an external link to the

@@ -159,17 +159,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
       start="9"
     >
       <li>
-        You are required to have a
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          BC Services Card
-        </a>
-         
-        to login and submit an online request for a criminal record check.
+        You are required to have a BC Services Card to login and submit an online request for a criminal record check.
       </li>
       <li>
         Each time you access the Site, you must be authenticated by following an external link to the
@@ -416,17 +406,7 @@ exports[`TermsOfUse Component Matches the snapshot 1`] = `
       start="9"
     >
       <li>
-        You are required to have a
-         
-        <a
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          BC Services Card
-        </a>
-         
-        to login and submit an online request for a criminal record check.
+        You are required to have a BC Services Card to login and submit an online request for a criminal record check.
       </li>
       <li>
         Each time you access the Site, you must be authenticated by following an external link to the
