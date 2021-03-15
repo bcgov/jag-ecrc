@@ -157,7 +157,7 @@ Canada
         <p>
           Once the criminal record check is carried out, the organization noted above will be notified of whether:
         </p>
-        <ol
+        <ul
           className="contactList"
         >
           <li>
@@ -166,7 +166,7 @@ Canada
           <li>
             the Deputy Registrar has determined that you present a risk or no risk of physical or sexual abuse to children and/or physical, sexual or financial abuse to vulnerable adults. The determination will include consideration of any relevant or specified offence(s) for which you have received a record suspension (formerly known as a pardon).
           </li>
-        </ol>
+        </ul>
         <p>
           By selecting continue, you are consenting to have your information released to this organization.
         </p>

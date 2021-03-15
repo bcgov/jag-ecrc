@@ -101,15 +101,7 @@ export default function BcscRedirect({ page: { header, saveOrg, setError } }) {
           <p>
             If it&apos;s your first time using your BC Services Card to access
             an online service, you need to set up your account for use online.
-            Completing a one-time security check to{" "}
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              verify your identity
-            </a>
-            .
+            Completing a one-time security check to verify your identity.
           </p>
 
           <p>Please select an option below:</p>

@@ -254,19 +254,6 @@ exports[`SideCards Component BcServices sidecard 1`] = `
               >
                 If you have a BC Services Card, you must use it to log in to the online security verification page.
               </div>
-              <div>
-                <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <div
-                    className="side-card-link"
-                  >
-                    Learn more about the BC Services Card.
-                  </div>
-                </a>
-              </div>
               <div
                 className="side-card-text"
               >
@@ -275,7 +262,7 @@ exports[`SideCards Component BcServices sidecard 1`] = `
               </div>
               <div>
                 <a
-                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
+                  href="https://www2.gov.bc.ca/gov/content?id=87EEAD6D19974459950AA7FF7F60AD54"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

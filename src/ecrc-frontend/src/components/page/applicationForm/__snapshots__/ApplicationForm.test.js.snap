@@ -1088,7 +1088,7 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                         Please visit the 
                         <a
                           class="link"
-                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -2329,7 +2329,7 @@ exports[`ApplicationForm Component Matches the snapshot with gender being female
                         Please visit the 
                         <a
                           class="link"
-                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -3570,7 +3570,7 @@ exports[`ApplicationForm Component Matches the snapshot with valid region/provin
                         Please visit the 
                         <a
                           class="link"
-                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/change-personal-information"
+                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/your-card/change-personal-information"
                           rel="noopener noreferrer"
                           target="_blank"
                         >

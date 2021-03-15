@@ -57,15 +57,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
            
         </p>
         <p>
-          If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to 
-          <a
-            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            verify your identity
-          </a>
-          .
+          If it's your first time using your BC Services Card to access an online service, you need to set up your account for use online. Completing a one-time security check to verify your identity.
         </p>
         <p>
           Please select an option below:
@@ -175,19 +167,6 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                       >
                         If you have a BC Services Card, you must use it to log in to the online security verification page.
                       </div>
-                      <div>
-                        <a
-                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          <div
-                            class="side-card-link"
-                          >
-                            Learn more about the BC Services Card.
-                          </div>
-                        </a>
-                      </div>
                       <div
                         class="side-card-text"
                       >
@@ -196,7 +175,7 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
                       </div>
                       <div>
                         <a
-                          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/get-a-card"
+                          href="https://www2.gov.bc.ca/gov/content?id=87EEAD6D19974459950AA7FF7F60AD54"
                           rel="noopener noreferrer"
                           target="_blank"
                         >

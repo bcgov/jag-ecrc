@@ -178,7 +178,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
               Once the criminal record check is carried out, the organization
               noted above will be notified of whether:
             </p>
-            <ol className="contactList">
+            <ul className="contactList">
               <li>
                 you have an outstanding charge or conviction relating to a
                 relevant or specified offence(s), and that the matter has been
@@ -192,7 +192,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
                 specified offence(s) for which you have received a record
                 suspension (formerly known as a pardon).
               </li>
-            </ol>
+            </ul>
             <p>
               By selecting continue, you are consenting to have your information
               released to this organization.

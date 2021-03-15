@@ -131,15 +131,8 @@ export default function TermsOfUse({
       <h2>Authentication:</h2>
       <ol start="9">
         <li>
-          You are required to have a{" "}
-          <a
-            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/login-with-card"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            BC Services Card
-          </a>{" "}
-          to login and submit an online request for a criminal record check.
+          You are required to have a BC Services Card to login and submit an
+          online request for a criminal record check.
         </li>
         <li>
           Each time you access the Site, you must be authenticated by following
