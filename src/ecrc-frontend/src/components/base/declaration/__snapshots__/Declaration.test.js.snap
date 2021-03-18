@@ -21,12 +21,12 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
       <span
         className="declaration-cb"
       >
-        I hereby consent to a check of criminal charges and convictions to determine whether I have a conviction or outstanding charge for any relevant or specified offence(s) under the
+        I hereby consent to a criminal record check pursuant to the
          
         <i>
           Criminal Records Review Act
         </i>
-        . I hereby consent to a check of all available law enforcement systems, including any local police records.
+         (CRRA) to determine whether I have a conviction or outstanding charge for any relevant or specified offence(s) as defined under that Act (CRRA check). I hereby consent to a check of available law enforcement systems as further described below, including any local police records.
       </span>
       <span
         className="mandatory"
@@ -53,19 +53,16 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
         I hereby consent to a Vulnerable Sector search to check if I have been convicted of and received a record suspension (formerly known as a pardon) for any sexual offences as per the
          
         <i>
-          Criminal Records Review Act
+          Criminal Records Act.
         </i>
-        . For more information on Vulnerable Sector searches, please visit the
+         For more information on Vulnerable Sector searches, please visit the Royal Canadian Mounted Police (RCMP) website:
          
         <a
           href="http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks"
-          rel="noopener noreferrer"
-          target="_blank"
         >
-          RCMP website.
+          http://www.rcmp-grc.gc.ca/en/types-criminal-background-checks
         </a>
-         
-        I understand that as part of the Vulnerable Sector search, I may be required to submit fingerprints to confirm my identity. In addition, where the results of a check indicate that a criminal record or outstanding charge for a relevant or specified offence(s) may exist, I agree to provide my fingerprints to verify any such criminal record.
+        . I understand that as part of the Vulnerable Sector search, I may be required to submit fingerprints to confirm my identity. In addition, where the results of a check indicate that a criminal record or outstanding charge for a relevant or specified offence(s) may exist, I agree to provide my fingerprints to verify any such criminal record.
       </span>
       <span
         className="mandatory"
@@ -89,12 +86,7 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
       <span
         className="declaration-cb"
       >
-        I hereby consent to the disclosure by the Ministry of Public Safety and Solicitor General to the Deputy Registrar of my name(s), alias(es), Correctional Service Number (CS#), history of contact with BC Corrections, and my date of birth and gender as found on the BC Corrections’ client management software, CORNET. I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of my name(s), alias(es), CS#, date of birth, gender, and history of contact with BC Corrections. I consent to the disclosure to the Deputy Registrar by the Criminal Records Review Unit of any personal information relating to any outstanding charges or convictions for any relevant or specified offence(s) as defined under the 
-        <i>
-          Criminal Records Review Act
-        </i>
-         
-        or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
+        If I am charged with or convicted of any relevant or specified offence(s) at any time subsequent to the criminal record check authorization herein, I agree to report the charge(s) or conviction(s) to my organization, in a timely manner, with a new criminal record check authorization.
       </span>
       <span
         className="mandatory"
@@ -103,6 +95,13 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
         *
       </span>
     </label>
+  </section>
+  <section>
+    <span
+      className="declaration-cb"
+    >
+      For the purpose of completing my CRRA check as described above, I authorize the collection and/or consent to the disclosure of my personal information within Canada, as follows:
+    </span>
   </section>
   <section
     className="declareSection"
@@ -118,7 +117,112 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
       <span
         className="declaration-cb"
       >
-        If I am charged with or convicted of any relevant or specified offence(s) at any time subsequent to the criminal record check authorization herein, I further agree to report the charge(s) or conviction(s) to my organization, in a timely manner, with a new criminal record check authorization.
+        Pursuant to the
+         
+        <i>
+          Freedom of Information and Protection of Privacy Act
+        </i>
+         
+        (FoIPPA), I hereby consent to the disclosure by the Ministry of Public Safety and Solicitor General to the Deputy Registrar of my my name(s), alias(es), Correctional Service Number (CS#), history of contact with BC Corrections, and my date of birth as found on the BC Corrections’ client management software, CORNET.
+      </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
+    </label>
+  </section>
+  <section
+    className="declareSection"
+  >
+    <label
+      htmlFor="checkbox5"
+    >
+      <input
+        id="checkbox5"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        Pursuant to FoIPPA, I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of the RCMP (CRRU) of my name(s), alias(es), CS#, date of birth, gender, and history of contact with BC Corrections. I also authorize the collection, by the CRRU and other federal government institutions under the 
+        <i>
+          Privacy Act
+        </i>
+        , of the same information and of any and all personal information relating to this CRRA check in support of my application, for the purpose of conducting a check of criminal investigations, charges, convictions and information in police databases, including incidents that did not result in conviction. For the same purpose, I also authorize the provision to the CRRU of my personal information by the BC Municipal Law Enforcement Agencies as well as other authorized public bodies under FoIPPA.
+      </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
+    </label>
+  </section>
+  <section
+    className="declareSection"
+  >
+    <label
+      htmlFor="checkbox6"
+    >
+      <input
+        id="checkbox6"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        Pursuant to FoIPPA, the 
+        <i>
+          Privacy Act
+        </i>
+        , and any other relevant applicable provincial and federal legislation, I hereby consent to the disclosure to the Deputy Registrar by the CRRU, the BC Municipal Law Enforcement Agencies as well as other authorized public body agencies of any personal information relating to my CRRA check. This personal information may include:
+        <ul
+          className="declaration-ul"
+        >
+          <li
+            className="declaration-li"
+          >
+            Criminal record check or fingerprint- based criminal record verification by searching the Canadian Police Information Centre database;
+          </li>
+          <li
+            className="declaration-li"
+          >
+            A police information check, including the Police Records Information Management Environment (PRIME-BC) and the Police Reporting and Occurrence System (PROS).
+          </li>
+          <li
+            className="declaration-li"
+          >
+            My CRRA check could result in disclosure to the Deputy Registrar of any information in the named database, regardless of whether any identified occurrence resulted in a charge or conviction.
+            <span
+              className="mandatory"
+              id="asterisk"
+            >
+              *
+            </span>
+          </li>
+        </ul>
+      </span>
+    </label>
+  </section>
+  <section
+    className="declareSection"
+  >
+    <label
+      htmlFor="checkbox7"
+    >
+      <input
+        id="checkbox7"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        In addition to the foregoing, and as may be required for the Deputy Registrar to make a determination pursuant to s. 4 (2) and 4 (3) CRRA, I further authorize the release to the Deputy Registrar of any documents in the custody of the police, the courts, corrections and crown counsel relating to any outstanding charges or convictions for any relevant or specified offence(s) as defined under the CRRA or any police investigations, charges, or convictions deemed relevant by the Deputy Registrar.
       </span>
       <span
         className="mandatory"

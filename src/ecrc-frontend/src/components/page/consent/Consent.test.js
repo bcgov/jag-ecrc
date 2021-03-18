@@ -197,6 +197,9 @@ describe("Consent Page Component", () => {
     fireEvent.click(checkbox[1]);
     fireEvent.click(checkbox[2]);
     fireEvent.click(checkbox[3]);
+    fireEvent.click(checkbox[4]);
+    fireEvent.click(checkbox[5]);
+    fireEvent.click(checkbox[6]);
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
@@ -222,6 +225,9 @@ describe("Consent Page Component", () => {
     fireEvent.click(checkbox[1]);
     fireEvent.click(checkbox[2]);
     fireEvent.click(checkbox[3]);
+    fireEvent.click(checkbox[4]);
+    fireEvent.click(checkbox[5]);
+    fireEvent.click(checkbox[6]);
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {});
@@ -249,6 +255,9 @@ describe("Consent Page Component", () => {
     fireEvent.click(checkbox[1]);
     fireEvent.click(checkbox[2]);
     fireEvent.click(checkbox[3]);
+    fireEvent.click(checkbox[4]);
+    fireEvent.click(checkbox[5]);
+    fireEvent.click(checkbox[6]);
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
@@ -281,6 +290,9 @@ describe("Consent Page Component", () => {
     fireEvent.click(checkbox[1]);
     fireEvent.click(checkbox[2]);
     fireEvent.click(checkbox[3]);
+    fireEvent.click(checkbox[4]);
+    fireEvent.click(checkbox[5]);
+    fireEvent.click(checkbox[6]);
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
@@ -319,6 +331,9 @@ describe("Consent Page Component", () => {
     fireEvent.click(checkbox[1]);
     fireEvent.click(checkbox[2]);
     fireEvent.click(checkbox[3]);
+    fireEvent.click(checkbox[4]);
+    fireEvent.click(checkbox[5]);
+    fireEvent.click(checkbox[6]);
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
@@ -387,6 +402,9 @@ describe("Consent Page Component", () => {
     fireEvent.click(checkbox[1]);
     fireEvent.click(checkbox[2]);
     fireEvent.click(checkbox[3]);
+    fireEvent.click(checkbox[4]);
+    fireEvent.click(checkbox[5]);
+    fireEvent.click(checkbox[6]);
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
@@ -435,6 +453,9 @@ describe("Consent Page Component", () => {
     fireEvent.click(checkbox[1]);
     fireEvent.click(checkbox[2]);
     fireEvent.click(checkbox[3]);
+    fireEvent.click(checkbox[4]);
+    fireEvent.click(checkbox[5]);
+    fireEvent.click(checkbox[6]);
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {

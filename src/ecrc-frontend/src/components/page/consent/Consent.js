@@ -73,6 +73,9 @@ export default function Consent({
   const [secondBoxChecked, setSecondBoxChecked] = useState(false);
   const [thirdBoxChecked, setThirdBoxChecked] = useState(false);
   const [fourthBoxChecked, setFourthBoxChecked] = useState(false);
+  const [fifthBoxChecked, setFifthBoxChecked] = useState(false);
+  const [sixthBoxChecked, setSixthBoxChecked] = useState(false);
+  const [seventhBoxChecked, setSeventhBoxChecked] = useState(false);
   const [continueBtnEnabled, setContinueBtnEnabled] = useState(false);
 
   useEffect(() => {
@@ -89,16 +92,33 @@ export default function Consent({
 
   useEffect(() => {
     if (
-      firstBoxChecked &&
-      secondBoxChecked &&
-      thirdBoxChecked &&
-      fourthBoxChecked
+      (firstBoxChecked &&
+        secondBoxChecked &&
+        thirdBoxChecked &&
+        fourthBoxChecked &&
+        fifthBoxChecked &&
+        sixthBoxChecked &&
+        seventhBoxChecked) ||
+      (firstBoxChecked &&
+        secondBoxChecked &&
+        thirdBoxChecked &&
+        fourthBoxChecked &&
+        share)
     ) {
       setContinueBtnEnabled(true);
     } else {
       setContinueBtnEnabled(false);
     }
-  }, [firstBoxChecked, secondBoxChecked, thirdBoxChecked, fourthBoxChecked]);
+  }, [
+    firstBoxChecked,
+    secondBoxChecked,
+    thirdBoxChecked,
+    fourthBoxChecked,
+    fifthBoxChecked,
+    sixthBoxChecked,
+    seventhBoxChecked,
+    share
+  ]);
 
   const cancelButton = {
     label: "Cancel and Exit",
@@ -314,12 +334,37 @@ export default function Consent({
             checkSecondBox={() => setSecondBoxChecked(!secondBoxChecked)}
             checkThirdBox={() => setThirdBoxChecked(!thirdBoxChecked)}
             checkFourthBox={() => setFourthBoxChecked(!fourthBoxChecked)}
+            checkFifthBox={() => setFifthBoxChecked(!fifthBoxChecked)}
+            checkSixthBox={() => setSixthBoxChecked(!sixthBoxChecked)}
+            checkSeventhBox={() => setSeventhBoxChecked(!seventhBoxChecked)}
             shareConsent={share}
           />
           <br />
           {!share && (
             <p className="declaration-cb">
               This consent is valid from the date signed.
+            </p>
+          )}
+          {!share && <h2>CRRP Collection Notice</h2>}
+          {!share && (
+            <p>
+              The Security Programs Division (SPD) will collect your personal
+              information for the purpose of fulfilling the criminal record
+              check requirements of the <i>Criminal Records Review Act</i> and
+              in accordance with section 26(c) of the{" "}
+              <i>Freedom of Information and Protection of Privacy Act</i>{" "}
+              (FoIPPA). Additionally, SPD may collect personal information under
+              section 26(e) of FoIPPA for the purpose of evaluating the Criminal
+              Records Review Program and activities to better serve you. Should
+              you have any questions about the collection, use, or disclosure of
+              your personal information, please contact the Policy Analyst of
+              the Criminal Records Review Program, Security Programs Division
+              via mail to PO Box 9217 Stn Prov Govt Victoria, BC V8W 9J1; email
+              to{" "}
+              <a href="mailto:criminalrecords@gov.bc.ca">
+                criminalrecords@gov.bc.ca
+              </a>
+              ; or by telephone at 1- 855-587-0185 (option 2).
             </p>
           )}
           <div className="buttons pt-4">
