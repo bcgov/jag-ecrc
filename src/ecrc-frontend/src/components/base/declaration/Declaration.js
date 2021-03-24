@@ -160,9 +160,9 @@ export default function Declaration({
               of criminal investigations, charges, convictions and information
               in police databases, including incidents that did not result in
               conviction. For the same purpose, I also authorize the provision
-              to the CRRU of my personal information by the BC Municipal Law
-              Enforcement Agencies as well as other authorized public bodies
-              under FoIPPA.
+              to the CRRU of my personal information by all queried federal,
+              provincial and municipal Law Enforcement Agencies in Canada as
+              well as other authorized public bodies under FoIPPA.
             </span>
             <span id="asterisk" className="mandatory">
               *

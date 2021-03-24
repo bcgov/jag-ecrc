@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import queryString from "query-string";
-import { FaPrint, FaDownload, FaEnvelope } from "react-icons/fa";
+import { FaPrint, FaDownload } from "react-icons/fa";
 import { useLocation, useHistory } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
@@ -300,10 +300,6 @@ export default function Success({
     }
   };
 
-  const emailReceipt = () => {
-    window.open("mailto:?subject=Criminal Record Check");
-  };
-
   return (
     <main>
       <Header header={header} />
@@ -402,16 +398,6 @@ export default function Success({
           >
             <FaDownload style={{ marginRight: "10px" }} />
             Download
-          </div>
-          <div
-            className="print-page-success"
-            role="button"
-            onKeyDown={emailReceipt}
-            onClick={emailReceipt}
-            tabIndex={0}
-          >
-            <FaEnvelope style={{ marginRight: "10px" }} />
-            Email
           </div>
         </div>
       </div>

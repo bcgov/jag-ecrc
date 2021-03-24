@@ -184,17 +184,6 @@ describe("Success Page Component", () => {
     expect(setError).not.toHaveBeenCalled();
   });
 
-  test("Validate Email", () => {
-    const { container } = render(
-      <MemoryRouter initialEntries={[successUrl]}>
-        <Success page={page} />
-      </MemoryRouter>
-    );
-
-    fireEvent.click(getByText(container, "Email"));
-    expect(window.open).toHaveBeenCalled();
-  });
-
   test("Redirects to error page when not authorized on page load", async () => {
     sessionStorage.clear();
 
