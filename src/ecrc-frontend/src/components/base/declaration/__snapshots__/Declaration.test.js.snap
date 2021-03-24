@@ -151,7 +151,7 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
         <i>
           Privacy Act
         </i>
-        , of the same information and of any and all personal information relating to this CRRA check in support of my application, for the purpose of conducting a check of criminal investigations, charges, convictions and information in police databases, including incidents that did not result in conviction. For the same purpose, I also authorize the provision to the CRRU of my personal information by the BC Municipal Law Enforcement Agencies as well as other authorized public bodies under FoIPPA.
+        , of the same information and of any and all personal information relating to this CRRA check in support of my application, for the purpose of conducting a check of criminal investigations, charges, convictions and information in police databases, including incidents that did not result in conviction. For the same purpose, I also authorize the provision to the CRRU of my personal information by all queried federal, provincial and municipal Law Enforcement Agencies in Canada as well as other authorized public bodies under FoIPPA.
       </span>
       <span
         className="mandatory"
