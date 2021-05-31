@@ -1,7 +1,7 @@
 {
   "name": "ecrc_qaautomation",
   "dependencies": {
-    "protractor": "^5.4.3",
+    "protractor": "^7.0.0",
     "jasmine-data-provider": "^2.2.0",
     "jasmine": "^3.5.0",
     "dotenv": "^8.2.0"
