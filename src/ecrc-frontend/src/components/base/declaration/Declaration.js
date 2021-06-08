@@ -11,6 +11,7 @@ export default function Declaration({
   checkFifthBox,
   checkSixthBox,
   checkSeventhBox,
+  checkEighthBox,
   shareConsent
 }) {
   return (
@@ -106,6 +107,7 @@ export default function Declaration({
           </span>
         </label>
       </section>
+      <br />
       {!shareConsent && (
         <section>
           <span className="declaration-cb">
@@ -124,9 +126,9 @@ export default function Declaration({
               <i>Freedom of Information and Protection of Privacy Act</i>{" "}
               (FoIPPA), I hereby consent to the disclosure by the Ministry of
               Public Safety and Solicitor General to the Deputy Registrar of my
-              my name(s), alias(es), Correctional Service Number (CS#), history
-              of contact with BC Corrections, and my date of birth as found on
-              the BC Corrections’ client management software, CORNET.
+              name(s), alias(es), Correctional Service Number (CS#), history of
+              contact with BC Corrections, and my date of birth as found on the
+              BC Corrections’ client management software, CORNET.
             </span>
           )}
           {shareConsent && (
@@ -151,18 +153,19 @@ export default function Declaration({
             <span className="declaration-cb">
               Pursuant to FoIPPA, I hereby consent to the disclosure by the
               Deputy Registrar to the Criminal Records Review Unit of the RCMP
-              (CRRU) of my name(s), alias(es), CS#, date of birth, gender, and
-              history of contact with BC Corrections. I also authorize the
-              collection, by the CRRU and other federal government institutions
-              under the <i>Privacy Act</i>, of the same information and of any
-              and all personal information relating to this CRRA check in
-              support of my application, for the purpose of conducting a check
-              of criminal investigations, charges, convictions and information
-              in police databases, including incidents that did not result in
-              conviction. For the same purpose, I also authorize the provision
-              to the CRRU of my personal information by all queried federal,
-              provincial and municipal Law Enforcement Agencies in Canada as
-              well as other authorized public bodies under FoIPPA.
+              (CRRU) of my name(s), alias(es), CS#, date of birth, gender,
+              driver’s licence/ BCID#, and history of contact with BC
+              Corrections. I also authorize the collection, by the CRRU and
+              other federal government institutions under the <i>Privacy Act</i>
+              , of the same information and of any and all personal information
+              relating to this CRRA check in support of my application, for the
+              purpose of conducting a check of criminal investigations, charges,
+              convictions and information in police databases, including
+              incidents that did not result in conviction. For the same purpose,
+              I also authorize the provision to the CRRU of my personal
+              information by all queried federal, provincial and municipal Law
+              Enforcement Agencies in Canada as well as other authorized public
+              bodies under FoIPPA.
             </span>
             <span id="asterisk" className="mandatory">
               *
@@ -193,15 +196,6 @@ export default function Declaration({
                   Information Management Environment (PRIME-BC) and the Police
                   Reporting and Occurrence System (PROS).
                 </li>
-                <li className="declaration-li">
-                  My CRRA check could result in disclosure to the Deputy
-                  Registrar of any information in the named database, regardless
-                  of whether any identified occurrence resulted in a charge or
-                  conviction.
-                  <span id="asterisk" className="mandatory">
-                    *
-                  </span>
-                </li>
               </ul>
             </span>
           </label>
@@ -211,6 +205,24 @@ export default function Declaration({
         <section className="declareSection">
           <label htmlFor="checkbox7">
             <input id="checkbox7" type="checkbox" onClick={checkSeventhBox} />
+            <span className="declaration-cb">
+              I acknowledge that in certain instances, although no identified
+              occurrence(s) resulted in a charge or conviction, the CRRU may
+              assess that I pose a public safety risk and advise Security
+              Programs Division that it will terminate its check of law
+              enforcement systems accordingly, with the result that my CRRA
+              check may not be concluded.
+            </span>
+            <span id="asterisk" className="mandatory">
+              *
+            </span>
+          </label>
+        </section>
+      )}
+      {!shareConsent && (
+        <section className="declareSection">
+          <label htmlFor="checkbox8">
+            <input id="checkbox8" type="checkbox" onClick={checkEighthBox} />
             <span className="declaration-cb">
               In addition to the foregoing, and as may be required for the
               Deputy Registrar to make a determination pursuant to s. 4 (2) and
@@ -239,6 +251,7 @@ Declaration.propTypes = {
   checkFifthBox: PropTypes.func,
   checkSixthBox: PropTypes.func,
   checkSeventhBox: PropTypes.func,
+  checkEighthBox: PropTypes.func,
   shareConsent: PropTypes.bool.isRequired
 };
 
