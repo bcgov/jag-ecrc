@@ -96,6 +96,7 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
       </span>
     </label>
   </section>
+  <br />
   <section>
     <span
       className="declaration-cb"
@@ -123,7 +124,7 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
           Freedom of Information and Protection of Privacy Act
         </i>
          
-        (FoIPPA), I hereby consent to the disclosure by the Ministry of Public Safety and Solicitor General to the Deputy Registrar of my my name(s), alias(es), Correctional Service Number (CS#), history of contact with BC Corrections, and my date of birth as found on the BC Corrections’ client management software, CORNET.
+        (FoIPPA), I hereby consent to the disclosure by the Ministry of Public Safety and Solicitor General to the Deputy Registrar of my name(s), alias(es), Correctional Service Number (CS#), history of contact with BC Corrections, and my date of birth as found on the BC Corrections’ client management software, CORNET.
       </span>
       <span
         className="mandatory"
@@ -147,7 +148,7 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
       <span
         className="declaration-cb"
       >
-        Pursuant to FoIPPA, I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of the RCMP (CRRU) of my name(s), alias(es), CS#, date of birth, gender, and history of contact with BC Corrections. I also authorize the collection, by the CRRU and other federal government institutions under the 
+        Pursuant to FoIPPA, I hereby consent to the disclosure by the Deputy Registrar to the Criminal Records Review Unit of the RCMP (CRRU) of my name(s), alias(es), CS#, date of birth, gender, driver’s licence/ BCID#, and history of contact with BC Corrections. I also authorize the collection, by the CRRU and other federal government institutions under the 
         <i>
           Privacy Act
         </i>
@@ -193,17 +194,6 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
           >
             A police information check, including the Police Records Information Management Environment (PRIME-BC) and the Police Reporting and Occurrence System (PROS).
           </li>
-          <li
-            className="declaration-li"
-          >
-            My CRRA check could result in disclosure to the Deputy Registrar of any information in the named database, regardless of whether any identified occurrence resulted in a charge or conviction.
-            <span
-              className="mandatory"
-              id="asterisk"
-            >
-              *
-            </span>
-          </li>
         </ul>
       </span>
     </label>
@@ -216,6 +206,30 @@ exports[`Declaration Component Matches the default snapshot 1`] = `
     >
       <input
         id="checkbox7"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="declaration-cb"
+      >
+        I acknowledge that in certain instances, although no identified occurrence(s) resulted in a charge or conviction, the CRRU may assess that I pose a public safety risk and advise Security Programs Division that it will terminate its check of law enforcement systems accordingly, with the result that my CRRA check may not be concluded.
+      </span>
+      <span
+        className="mandatory"
+        id="asterisk"
+      >
+        *
+      </span>
+    </label>
+  </section>
+  <section
+    className="declareSection"
+  >
+    <label
+      htmlFor="checkbox8"
+    >
+      <input
+        id="checkbox8"
         onClick={[Function]}
         type="checkbox"
       />
@@ -319,6 +333,7 @@ exports[`Declaration Component Matches the sharing snapshot 1`] = `
       </span>
     </label>
   </section>
+  <br />
   <section
     className="declareSection"
   >
