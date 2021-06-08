@@ -262,5 +262,6 @@ Declaration.defaultProps = {
   checkFourthBox: () => {},
   checkFifthBox: () => {},
   checkSixthBox: () => {},
-  checkSeventhBox: () => {}
+  checkSeventhBox: () => {},
+  checkEighthBox: () => {}
 };
