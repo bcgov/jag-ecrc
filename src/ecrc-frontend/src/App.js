@@ -27,8 +27,6 @@ export default function App() {
   const [provinces, setProvinces] = useState([]);
   const [sameAddress, setSameAddress] = useState(true);
 
-  const [transitionReason, setTransitionReason] = useState("bcsc");
-
   const saveOrg = (orgInfo = org) => {
     sessionStorage.setItem("org", JSON.stringify(orgInfo));
   };
@@ -50,9 +48,7 @@ export default function App() {
       <Switch>
         <Redirect exact from="/" to="/criminalrecordcheck" />
         <Route exact path="/criminalrecordcheck">
-          <OrgValidation
-            page={{ header, setOrg, setTransitionReason, setError }}
-          />
+          <OrgValidation page={{ header, setOrg, setError }} />
         </Route>
         <Route path="/criminalrecordcheck/orgverification">
           <OrgVerification page={{ header, org, setError }} />
@@ -73,7 +69,7 @@ export default function App() {
           />
         </Route>
         <Route path="/criminalrecordcheck/transition">
-          <Transition page={{ header, transitionReason }} />
+          <Transition page={{ header, transitionReason: "bcsc" }} />
         </Route>
         <Route path="/criminalrecordcheck/termsofuse">
           <TOU page={{ header, setError }} />

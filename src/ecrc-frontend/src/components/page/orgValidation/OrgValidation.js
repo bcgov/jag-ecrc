@@ -12,9 +12,7 @@ import {
   storeUUID
 } from "../../../modules/AuthenticationHelper";
 
-export default function OrgValidation({
-  page: { header, setOrg, setTransitionReason, setError }
-}) {
+export default function OrgValidation({ page: { header, setOrg, setError } }) {
   const history = useHistory();
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
