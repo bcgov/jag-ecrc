@@ -25,12 +25,6 @@ export const DefaultToBCSC = () => (
   </Router>
 );
 
-export const NotWhitelisted = () => (
-  <Router history={history}>
-    <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
-  </Router>
-);
-
 export const Mobile = () => (
   <Router history={history}>
     <Transition page={page} />

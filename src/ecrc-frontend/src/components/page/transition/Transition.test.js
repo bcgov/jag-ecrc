@@ -32,23 +32,12 @@ describe("Transition Page Component", () => {
     expect(defaultTransition.toJSON()).toMatchSnapshot();
   });
 
-  test("Matches the non-whitelisted snapshot", () => {
-    const history = createMemoryHistory();
-
-    const nonWhitelistTransition = create(
-      <Router history={history}>
-        <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
-      </Router>
-    );
-    expect(nonWhitelistTransition.toJSON()).toMatchSnapshot();
-  });
-
   test("Component waits 6 seconds before automatically redirecting the user", async () => {
     const history = createMemoryHistory();
 
     render(
       <Router history={history}>
-        <Transition page={{ ...page, transitionReason: "notwhitelisted" }} />
+        <Transition page={{ ...page, transitionReason: "bcsc" }} />
       </Router>
     );
 
