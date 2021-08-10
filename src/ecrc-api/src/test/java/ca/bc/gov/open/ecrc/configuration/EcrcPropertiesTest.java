@@ -34,7 +34,6 @@ class EcrcPropertiesTest {
 		Assert.assertEquals("password", ecrcProperties.getPassword());
 		Assert.assertEquals("updateServiceFinancialTxn", ecrcProperties.getUpdateServiceFinancialTxnUri());
 		Assert.assertEquals("usename", ecrcProperties.getUsername());
-		Assert.assertEquals("abc", ecrcProperties.getWhiteList().get(0));
 		Assert.assertEquals("https://test1.ca", ecrcProperties.getLinks().get("test1"));
 		Assert.assertEquals("header", ecrcProperties.getJwtHeader());
 		Assert.assertEquals("prefix", ecrcProperties.getJwtPrefix());

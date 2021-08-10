@@ -21,7 +21,6 @@ The following Windows environmental variables must be set either as Windows envi
 | ECRC_BASEURL              |        http:8000//myendpoint |
 | ECRC_USERNAME             |                         user |
 | ECRC_PASSWORD             |                     password |
-| ECRC_WHITELIST            |                         test |
 | ECRC_SERVER_PORT          |                         8080 |
 | ECRC_CORS_MAPPING         |                       //\*\* |
 | ECRC_CORS_ALLOWED_ORIGINS |                    http:3000 |
