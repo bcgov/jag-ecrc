@@ -12,9 +12,7 @@ import {
   storeUUID
 } from "../../../modules/AuthenticationHelper";
 
-export default function OrgValidation({
-  page: { header, setOrg, setTransitionReason, setError }
-}) {
+export default function OrgValidation({ page: { header, setOrg, setError } }) {
   const history = useHistory();
   const [orgTicketNumber, setOrgTicketNumber] = useState("");
   const [orgError, setOrgError] = useState("");
@@ -70,9 +68,6 @@ export default function OrgValidation({
         if (error && error.response && error.response.status) {
           if (error.response.status === 404) {
             setOrgError("The access code is invalid");
-          } else if (error.response.status === 401) {
-            setTransitionReason("notwhitelisted");
-            history.push("/criminalrecordcheck/transition");
           } else if (error.response.data && error.response.data.message) {
             setToError(true);
             setError({

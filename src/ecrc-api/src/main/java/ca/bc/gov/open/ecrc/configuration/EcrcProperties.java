@@ -60,9 +60,6 @@ public class EcrcProperties {
 	private String jwtSecret;
 	private String jwtRole;
 	private String jwtAuthorizedRole;
-
-	@Value("#{'${ecrc.whitelist}'.split(',')}")
-	private List<String> whiteList;
 	
 	private Map<String, String> links = new HashMap<>();
 	
@@ -189,10 +186,6 @@ public class EcrcProperties {
 	public void setCorsAllowedOrigins(String corsAllowedOrigins) {
 		this.corsAllowedOrigins = corsAllowedOrigins;
 	}
-
-	public List<String> getWhiteList() { return whiteList; }
-
-	public void setWhiteList(List<String> whiteList) { this.whiteList = whiteList; }
 
 	public Map<String, String> getLinks() {
 		return links;

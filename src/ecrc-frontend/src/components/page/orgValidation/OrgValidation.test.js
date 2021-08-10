@@ -113,7 +113,7 @@ describe("OrgValidation Component", () => {
     );
   });
 
-  test("Redirects to Transition page", async () => {
+  test("Redirects to Error page on 401 response", async () => {
     axios.get.mockResolvedValueOnce({ data: "secret" });
     axios.get.mockRejectedValueOnce({ response: { status: 401 } });
 
@@ -136,12 +136,10 @@ describe("OrgValidation Component", () => {
     fireEvent.click(getByText(container, "Continue"));
 
     await wait(() => {
-      expect(setTransitionReason).toHaveBeenCalled();
+      expect(setError).toHaveBeenCalled();
     });
 
-    expect(history.location.pathname).toEqual(
-      "/criminalrecordcheck/transition"
-    );
+    expect(history.location.pathname).toEqual("/criminalrecordcheck/error");
   });
 
   test("Redirects to error page under case where error has no response", async () => {

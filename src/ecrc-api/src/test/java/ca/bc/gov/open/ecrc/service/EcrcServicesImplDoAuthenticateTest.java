@@ -70,7 +70,6 @@ public class EcrcServicesImplDoAuthenticateTest {
             "    },\n" +
             "    \"responseCode\": 0\n" +
             "}";
-    private final String notWhitelistResult = "{\"message\":\"Org not on whitelist\", \"responseCode\":1}";
     @InjectMocks
     EcrcServicesImpl ecrcServices;
 
@@ -84,7 +83,6 @@ public class EcrcServicesImplDoAuthenticateTest {
     public void initMocks() {
         MockitoAnnotations.initMocks(this);
         Mockito.when(ecrcProperties.getDoAuthenticateUserUri()).thenReturn("doauthurl?%s");
-        Mockito.when(ecrcProperties.getWhiteList()).thenReturn(Arrays.asList("crce","test","test"));
     }
 
     @DisplayName("Success - ecrcService doAuthenticate")
@@ -94,13 +92,5 @@ public class EcrcServicesImplDoAuthenticateTest {
         serviceResult = ecrcServices.doAuthenticateUser("CRCE", GUID);
         Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());
         Assertions.assertEquals(result, serviceResult.getBody());
-    }
-
-    @DisplayName("Not Whitelisted - ecrcService doAuthenticate")
-    @Test
-    public void testDoAuthenticateResultNotWhitelist() throws NotFoundException, EcrcServiceException {
-        serviceResult = ecrcServices.doAuthenticateUser("NOTWHITLIST", GUID);
-        Assertions.assertEquals(HttpStatus.UNAUTHORIZED, serviceResult.getStatusCode());
-        Assertions.assertEquals(notWhitelistResult, serviceResult.getBody());
     }
 }
