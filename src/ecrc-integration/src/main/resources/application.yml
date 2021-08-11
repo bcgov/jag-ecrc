@@ -1,1 +1,4 @@
-
+security:
+  basic-auth:
+    password: ${BASIC_AUTH_PASSWORD}
+    username: ${BASIC_AUTH_USER}
