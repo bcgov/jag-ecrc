@@ -15,7 +15,12 @@ services:
       - 10667:10667
       - 10668:10668/udp
     healthcheck:
-      test: ['CMD', 'curl', '-f', 'https://localhost:8000']
+      test: [ 'CMD', 'curl', '-f', 'https://localhost:8000' ]
       interval: 5s
       timeout: 5s
       retries: 20
+  ecrcapi:
+    build:
+      context: .
+    ports:
+      - 8080:8080
