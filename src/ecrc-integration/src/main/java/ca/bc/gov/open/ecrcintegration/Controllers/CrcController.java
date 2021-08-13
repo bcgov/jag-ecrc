@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/invoke")
+@RequestMapping("/rest")
 @Slf4j
 public class CrcController {
 
     @Autowired
     public CrcController() {}
 
-    @GetMapping("/VCRC.Source.CreateNewCRCService.Services/createNewCRCService")
+    @GetMapping("/VCRC/Source/CreateNewCRCService/Services")
     public Object createNewCrc(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNumber,
             @RequestParam(value = "Schedule_Type_Cd") String scheduleCode,
@@ -35,7 +35,7 @@ public class CrcController {
         return null;
     }
 
-    @GetMapping("/VCRC.Source.CreateSharingService.Services/CreateSharingService")
+    @GetMapping("/VCRC/Source/CreateSharingService/Services")
     public Object shareCrc(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNumber,
             @RequestParam(value = "Appl_Party_Id") String applPartyId,
@@ -48,7 +48,7 @@ public class CrcController {
         return null;
     }
 
-    @GetMapping("/VCRC.Source.GetServiceFeeAmount.Services/getServiceFeeAmount")
+    @GetMapping("/VCRC/Source/GetServiceFeeAmount/Services")
     public Object getServiceFees(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNumber,
             @RequestParam(value = "ScheduleTypeCd") String scheduleTypeCode,
@@ -56,7 +56,7 @@ public class CrcController {
         return null;
     }
 
-    @GetMapping("/VCRC.Source.UpdateServiceFinancialTxn.Services/UpdateServiceFinancialTxn")
+    @GetMapping("/VCRC/Source/UpdateServiceFinancialTxn/Services")
     public Object updateServiceFinancialTxn(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNumber,
             @RequestParam(value = "Appl_Party_Id") String applPartyId,

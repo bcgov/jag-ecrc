@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/invoke")
+@RequestMapping("/rest")
 @Slf4j
 public class AuthenticationController {
     @Autowired
     public AuthenticationController() {}
 
-    @GetMapping("/VCRC.Source.DoAuthenticateUser.Services/doAuthenticateUser")
+    @GetMapping("/VCRC/Source/DoAuthenticateUser/Services")
     public Object authenticateUser(@RequestParam Long OrgTicketNumber) {
         return null;
     }

@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@RequestMapping("/invoke")
+@RequestMapping("/rest")
 public class ApplicantController {
 
     @Autowired
     public ApplicantController() {}
 
-    @GetMapping("/VCRC.Source.CheckApplicantForPrevCRC.Services/checkApplicantForPrevCRC")
+    @GetMapping("/VCRC/Source/CheckApplicantForPrevCRC/Services")
     public Object checkApplicantForPrevCrc(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNum,
             @RequestParam(value = "Legal_Surname_Nm") String surname,
@@ -30,7 +30,7 @@ public class ApplicantController {
         return null;
     }
 
-    @GetMapping("/VCRC.Source.CheckApplicantForPrevCRCEx.Services/checkApplicantForPrevCRC")
+    @GetMapping("/VCRC/Source/CheckApplicantForPrevCRCEx/Services")
     public Object checkApplicantForPrevCrcEx(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNum,
             @RequestParam(value = "Legal_Surname_Nm") String surname,
@@ -43,7 +43,7 @@ public class ApplicantController {
         return null;
     }
 
-    @GetMapping("/VCRC.Source.CreateApplicant.Services/createApplicant")
+    @GetMapping("/VCRC/Source/CreateApplicant/Services")
     public Object createApplicant(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNumber,
             @RequestParam(value = "Call_Purpose") String purposeParam,
@@ -72,7 +72,7 @@ public class ApplicantController {
         return null;
     }
 
-    @GetMapping("/VCRC.Source.CreateApplicantEx.Services/createApplicant")
+    @GetMapping("/VCRC/Source/CreateApplicantEx/Services")
     public Object createApplicantEx(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNumber,
             @RequestParam(value = "Call_Purpose") String purposeParam,

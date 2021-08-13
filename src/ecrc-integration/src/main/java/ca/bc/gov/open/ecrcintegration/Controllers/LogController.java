@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/invoke")
+@RequestMapping("/rest")
 @Slf4j
 public class LogController {
     @Autowired
     public LogController() {}
 
-    @GetMapping("/VCRC.Source.LogEivFailure.Services/logEivFailure")
+    @GetMapping("/VCRC/Source/LogEivFailure/Services")
     public Object logEivFailure(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNumber,
             @RequestParam(value = "Session_Id") String sessionId,
@@ -27,7 +27,7 @@ public class LogController {
         return null;
     }
 
-    @GetMapping("/VCRC.Source.LogPaymentFailure.Services/logPaymentFailure")
+    @GetMapping("/VCRC/Source/LogPaymentFailure/Services")
     public Object logPaymentFailure(
             @RequestParam(value = "OrgTicketNumber") Long orgTicketNumber,
             @RequestParam(value = "Service_Id") String serviceId,
