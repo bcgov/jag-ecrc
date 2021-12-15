@@ -14,7 +14,7 @@ Ministry of Attorney General - eCRC
 <img width="882" alt="tou" src="https://user-images.githubusercontent.com/55710226/80148189-848b3f80-8569-11ea-9f03-aaed01422e82.PNG">
 
 ### Login with your BC Services Card
-<img width="857" alt="bcscredirect" src="https://user-images.githubusercontent.com/55710226/80147964-2a8a7a00-8569-11ea-868a-2e5e3d49c32b.PNG">
+![bcscredirect](https://user-images.githubusercontent.com/55457785/146273694-4c92aa33-12a6-4a20-b186-9ea5d2b946cc.PNG)
 
 ### BC Services Card Test Site
 <img width="736" alt="bcsc" src="https://user-images.githubusercontent.com/55710226/80238945-2ebfa180-8614-11ea-9d86-7d8564daf13c.PNG">
