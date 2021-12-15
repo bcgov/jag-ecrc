@@ -37,6 +37,7 @@ export default function OrgValidationText({
           </p>
           <ul className="bodyList">
             <li>{"Be at least 12 years of age as of today's date."}</li>
+            <li>Have an access code provided by your organization.</li>
             <li>
               Have your identity verified by using your{" "}
               <a
@@ -47,16 +48,15 @@ export default function OrgValidationText({
                 BC Services Card.
               </a>{" "}
               The BC Services Card provides secure access to government online
-              services. If you don&apos;t have a BC Services Card, an
-              alternative option is available.
+              services.
             </li>
             <li>
-              Applicants without a BC Services Card who haven’t lived in B.C.
-              for at least six months or who live outside the province should
-              contact your organization and inquire for an alternative option to
-              submit their criminal record check request
+              If you do not have a BC Services Card or if you live outside of
+              the province,{" "}
+              <span className="mandatory">
+                please contact your organization for a manual consent form.
+              </span>
             </li>
-            <li>Have an access code provided by your organization.</li>
           </ul>
         </div>
 

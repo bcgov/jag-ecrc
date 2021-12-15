@@ -251,6 +251,12 @@ exports[`Consent Page Component Matches the new CRC page 1`] = `
                   className="declaration-li"
                 >
                   A police information check, including the Police Records Information Management Environment (PRIME-BC) and the Police Reporting and Occurrence System (PROS).
+                  <span
+                    className="mandatory"
+                    id="asterisk"
+                  >
+                    *
+                  </span>
                 </li>
               </ul>
             </span>
