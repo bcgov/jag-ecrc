@@ -34,7 +34,7 @@
     "react-scripts": "4.0.3",
     "regenerator-runtime": "^0.13.5",
     "uuid": "^7.0.2",
-    "webpack": "4.41.5"
+    "webpack": "4.44.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -73,7 +73,6 @@
     "@testing-library/react-hooks": "3.2.1",
     "@testing-library/user-event": "^7.1.2",
     "eslint": "7.11.0",
-    "webpack": "4.44.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.22.1",
