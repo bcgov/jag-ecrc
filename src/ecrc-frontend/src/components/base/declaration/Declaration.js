@@ -195,6 +195,9 @@ export default function Declaration({
                   A police information check, including the Police Records
                   Information Management Environment (PRIME-BC) and the Police
                   Reporting and Occurrence System (PROS).
+                  <span id="asterisk" className="mandatory">
+                    *
+                  </span>
                 </li>
               </ul>
             </span>

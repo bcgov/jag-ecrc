@@ -92,16 +92,6 @@ exports[`BcscRedirect Page Component Matches the snapshot 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="mt-5"
-        >
-          <a
-            href="/criminalrecordcheck/transition"
-          >
-            I do not have a BC Services Card
-          </a>
-          .
-        </div>
       </div>
       <div
         class="sidecard"
