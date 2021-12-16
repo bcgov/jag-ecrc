@@ -10782,13 +10782,7 @@ exports[`Storyshots OrgValidation Default 1`] = `
                 The BC Services Card provides secure access to government online services.
               </li>
               <li>
-                If you do not have a BC Services Card or if you live outside of the province,
-                 
-                <span
-                  className="mandatory"
-                >
-                  please contact your organization for a manual consent form.
-                </span>
+                If you do not have a BC Services Card or if you live outside of the province, please contact your organization for a manual consent form.
               </li>
             </ul>
           </div>
@@ -11124,13 +11118,7 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
                 The BC Services Card provides secure access to government online services.
               </li>
               <li>
-                If you do not have a BC Services Card or if you live outside of the province,
-                 
-                <span
-                  className="mandatory"
-                >
-                  please contact your organization for a manual consent form.
-                </span>
+                If you do not have a BC Services Card or if you live outside of the province, please contact your organization for a manual consent form.
               </li>
             </ul>
           </div>
@@ -11422,13 +11410,7 @@ exports[`Storyshots OrgValidationText Default 1`] = `
           The BC Services Card provides secure access to government online services.
         </li>
         <li>
-          If you do not have a BC Services Card or if you live outside of the province,
-           
-          <span
-            className="mandatory"
-          >
-            please contact your organization for a manual consent form.
-          </span>
+          If you do not have a BC Services Card or if you live outside of the province, please contact your organization for a manual consent form.
         </li>
       </ul>
     </div>
