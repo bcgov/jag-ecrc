@@ -52,10 +52,8 @@ export default function OrgValidationText({
             </li>
             <li>
               If you do not have a BC Services Card or if you live outside of
-              the province,{" "}
-              <span className="mandatory">
-                please contact your organization for a manual consent form.
-              </span>
+              the province, please contact your organization for a manual
+              consent form.
             </li>
           </ul>
         </div>
