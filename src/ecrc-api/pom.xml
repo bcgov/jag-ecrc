@@ -20,7 +20,7 @@
 		<jjwt.version>0.9.1</jjwt.version>
 		<javax.mail.version>1.4</javax.mail.version>
 		<springfox-swagger-version>2.9.2</springfox-swagger-version>
-		<log4j2.version>2.17.0</log4j2.version>
+		<log4j2.version>2.17.1</log4j2.version>
 	</properties>
 
 	<dependencies>
@@ -195,7 +195,7 @@
 				<dependency>
 					<groupId>com.splunk.logging</groupId>
 					<artifactId>splunk-library-javalogging</artifactId>
-					<version>1.11.3</version>
+					<version>1.11.4</version>
 				</dependency>
 			</dependencies>
 
