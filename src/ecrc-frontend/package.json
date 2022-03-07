@@ -47,7 +47,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+	"coverage": "jest --coverage --env=jest-environment-jsdom-sixteen"
   },
   "eslintConfig": {
     "extends": "react-app"
