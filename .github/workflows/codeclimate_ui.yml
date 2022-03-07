@@ -84,7 +84,7 @@ jobs:
 
       # Build - Ecrc Frontend Client
       - name: Build - Ecrc Frontend
-        run: yarn --cwd src/ecrc-frontend build --production=true
+        run: yarn --cwd src/ecrc-frontend build 
         
       # Run lint - Ecrc Frontend Client
       - name: Run lint - Ecrc Frontend
