@@ -1,4 +1,4 @@
-name: Generate/Upload Spring Boot Coverage Report To Code Climate 
+name: Generate/Upload Spring Boot Coverage Report To Code Climate
 
 on:
   push:
@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       # Checkout Project
       - name: Checkout Ecrc Repository
         uses: actions/checkout@v2
@@ -57,14 +56,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-          
+
       - uses: actions/cache@v1
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-     
+
       # Run Maven Verify to generate all jacoco reports
       - name: Build with Maven
         run: mvn -B verify --file src/ecrc-api/pom.xml
@@ -72,20 +71,20 @@ jobs:
       # Formatting the coverage reports generated (dynamically)
       - name: Format coverage reports
         run: |
-          JACOCO_SOURCE_PATH=src/ecrc-api/src/main/java ./cc-test-reporter format-coverage /target/site/jacoco/jacoco.xml --input-type jacoco --output coverage/ecrc-codeclimate.json;
+          JACOCO_SOURCE_PATH=src/ecrc-api/src/main/java ./cc-test-reporter format-coverage /src/ecrc-api/target/site/jacoco/jacoco.xml --input-type jacoco --output coverage/ecrc-codeclimate.json;
       # Count of all total coverage files available
       - name: Debug Count files present
         run: |
           echo "FILE_COUNTER=$(ls -1q ./coverage | wc -l )" >> $GITHUB_ENV
           #echo "::set-env name=FILE_COUNTER::$(ls -1q ./coverage | wc -l )"
-    
+
       # Upload JSON for debugging purposes
       - name: Upload JSON for debugging purposes
         uses: actions/upload-artifact@v2
         with:
           name: summed-java-coverage-report
           path: coverage/ecrc-codeclimate.json
-    
+
       # Upload total coverage report to Code Climate
       - name: Upload coverage report to Code Climate
         run: ./cc-test-reporter upload-coverage -i coverage/ecrc-codeclimate.json
