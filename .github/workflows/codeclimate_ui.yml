@@ -5,7 +5,7 @@ on:
     types: [opened, reopened, synchronize]
     paths:
       - "src/ecrc-frontend/**"
-      - ".github/workflows/ci-ui.yml"
+      - ".github/workflows/codeclimate_ui.yml"
 
 jobs:
   yarn:
