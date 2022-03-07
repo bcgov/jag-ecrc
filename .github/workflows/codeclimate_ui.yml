@@ -33,7 +33,7 @@ jobs:
 
       # Set required env vars for yarn coverage
       - name: Set required env vars for yarn coverage
-        run:  cp src/ecrc-frontend/.env.template src/ecrc-frontend/.env
+        run:  cp src/ecrc-frontend/.env.example src/ecrc-frontend/.env
 
       # Set required Git env vars for either pull request
       - name: Set ENV for codeclimate (pull_request)
