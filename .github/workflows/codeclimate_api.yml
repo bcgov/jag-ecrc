@@ -2,9 +2,9 @@ name: Generate/Upload Spring Boot Coverage Report To Code Climate
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   spring-boot:
@@ -46,7 +46,7 @@ jobs:
           echo "GIT_COMMIT_SHA=$GITHUB_SHA" >> $GITHUB_ENV
         if: github.event_name == 'push'
 
-      # Trimming the ref to main in order to publish correct report (paambaati)
+      # Trimming the ref to master in order to publish correct report (paambaati)
       - name: Set ref/head/master to master
         run: |
           echo "GIT_BRANCH=master" >> $GITHUB_ENV
