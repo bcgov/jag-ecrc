@@ -71,7 +71,7 @@ jobs:
       # Formatting the coverage reports generated (dynamically)
       - name: Format coverage reports
         run: |
-          JACOCO_SOURCE_PATH=src/ecrc-api/src/main/java ./cc-test-reporter format-coverage /src/ecrc-api/target/site/jacoco/jacoco.xml --input-type jacoco --output coverage/ecrc-codeclimate.json;
+          JACOCO_SOURCE_PATH=${{github.workspace}}/src/ecrc-api/src/main/java ./cc-test-reporter format-coverage ${{github.workspace}}/src/ecrc-api/target/site/jacoco/jacoco.xml --input-type jacoco --output coverage/ecrc-codeclimate.json;
       # Count of all total coverage files available
       - name: Debug Count files present
         run: |
