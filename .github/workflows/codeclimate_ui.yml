@@ -81,10 +81,10 @@ jobs:
       # Run Yarn Install - Ecrc Frontend Client
       - name: Run Yarn Install - Ecrc Frontend
         run: yarn --cwd src/ecrc-frontend install
-
-      # Build - Ecrc Frontend Client
-      - name: Build - Ecrc Frontend
-        run: yarn --cwd src/ecrc-frontend build 
+        
+      # Check lint version
+      - name: Check lint - Ecrc Frontend
+        run: yarn --cwd src/ecrc-frontend run lint -v
         
       # Run lint - Ecrc Frontend Client
       - name: Run lint - Ecrc Frontend
