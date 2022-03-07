@@ -1,0 +1,109 @@
+name: CI/CD for UI - Checkout, Build, Test, and generate Coverage Report for Ecrc Frontend
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - "src/ecrc-frontend/**"
+      - ".github/workflows/codeclimate_ui.yml"
+
+jobs:
+  yarn:
+    env:
+      FILE_COUNTER: 0
+      CC_TEST_REPORTER_ID: 49f511c02b4a733d0209c387cda806284462e2cdbb5393ea75426f9e55c21169
+      ACTION_DEBUG: true
+
+    name: CI/CD for UI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Get Code Climate binary
+      - name: Download Code Climate Binary
+        run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+
+      # Permissions applied to the Code Climate Executable
+      - name: Apply executable perms to Code Climate Binary
+        run: chmod +x ./cc-test-reporter
+
+      # Before build
+      - name: Before build
+        run: ./cc-test-reporter before-build
+
+      # Set required env vars for yarn coverage
+      - name: Set required env vars for yarn coverage
+        run:  cp src/ecrc-frontend/.env.example src/ecrc-frontend/.env
+
+      # Set required Git env vars for either pull request
+      - name: Set ENV for codeclimate (pull_request)
+        run: |
+          echo "GIT_BRANCH=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
+          echo "GIT_COMMIT_SHA=${{ github.event.pull_request.head.sha }}" >> $GITHUB_ENV
+          #echo "::set-env name=GIT_BRANCH::${{ github.event.pull_request.head.ref }}"
+          #echo "::set-env name=GIT_COMMIT_SHA::${{ github.event.pull_request.head.sha }}"
+        if: github.event_name == 'pull_request'
+
+      # Set required Git env vars for a push to main
+      - name: Set ENV for codeclimate (push)
+        run: |
+          echo "GIT_BRANCH=$GITHUB_REF" >> GITHUB_ENV
+          echo "GIT_COMMIT_SHA=$GITHUB_SHA" >> GITHUB_ENV
+          #echo "::set-env name=GIT_BRANCH::$GITHUB_REF"
+          #echo "::set-env name=GIT_COMMIT_SHA::$GITHUB_SHA"
+        if: github.event_name == 'push'
+
+      # Trimming the ref to master in order to publish correct report (paambaati)
+      - name: Set ref/head/master to master
+        run: |
+          echo "GIT_BRANCH=master" >> $GITHUB_ENV
+          #echo "::set-env name=GIT_BRANCH::master"
+        if: env.GIT_BRANCH == 'refs/heads/master'
+
+      # Figure out where yarn is caching things
+      - name: Yarn Cache
+        run: yarn cache dir
+
+      # Implement Caching Action for Yarn Project
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # YARN cache files are stored in `/home/runner/.cache/yarn/v6` on git actions
+          path: /home/runner/.cache/yarn/v6
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      # Run Yarn Install - Ecrc Frontend Client
+      - name: Run Yarn Install - Ecrc Frontend
+        run: yarn --cwd src/ecrc-frontend install
+        
+      # Run lint - Ecrc Frontend Client
+      - name: Run lint - Ecrc Frontend
+        run: yarn --cwd src/ecrc-frontend run lint
+
+      # Yarn Coverage - Ecrc Frontend Client
+      - name: Run Yarn Coverage - Ecrc Frontend
+        run: yarn --cwd src/ecrc-frontend coverage
+
+      # Formatting the Ecrc Frontend coverage report
+      - name: Format the Ecrc Frontend coverage report
+        run: |          
+          pushd .
+          cd ${{github.workspace}}/src/ecrc-frontend/
+          ${{github.workspace}}/cc-test-reporter format-coverage -t lcov -o coverage/codeclimate-ui.json coverage/lcov.info
+          popd
+         
+      # List all formatted files in coverage directory
+      - name: WHERE AM I - FORMATTED?
+        run: |
+          ls ${{github.workspace}}/src/ecrc-frontend/coverage
+        if: ${{ env.ACTION_DEBUG }}
+
+      # Upload total coverage report to Code Climate
+      - name: Upload coverage report to Code Climate
+        run: ./cc-test-reporter upload-coverage -d -i ${{github.workspace}}/src/ecrc-frontend/coverage/codeclimate-ui.json
