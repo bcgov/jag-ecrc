@@ -6,10 +6,10 @@
   "dependencies": {
     "@babel/preset-react": "^7.8.3",
     "@bcgov/bootstrap-theme": "https://github.com/bcgov/bootstrap-theme/releases/download/v1.1.1/bcgov-bootstrap-theme-1.1.1.tgz",
-    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-queryparams": "^6.2.9",
-    "@storybook/addon-storyshots": "^6.4.9",
-    "@storybook/react": "^6.4.9",
+    "@storybook/addon-storyshots": "^6.4.19",
+    "@storybook/react": "^6.4.19",
     "@testing-library/jest-dom": "^4.2.4",
     "axios": "^0.21.1",
     "axios-mock-adapter": "^1.18.1",
@@ -20,7 +20,6 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "follow-redirects": ">=1.14.7",
     "history": "^4.10.1",
-    "immer": ">=9.0.6",
     "jquery": "^3.4.1",
     "jsonwebtoken": "^8.5.1",
     "jspdf": "^2.3.1",
@@ -48,7 +47,7 @@
     "build-storybook": "build-storybook -s public",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-	"coverage": "jest --coverage "
+    "coverage": "jest --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -69,9 +68,9 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
-    "@storybook/addon-links": "^6.4.9",
-    "@storybook/addon-viewport": "6.4.9",
-    "@storybook/addons": "^6.4.9",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/addon-viewport": "6.4.19",
+    "@storybook/addons": "^6.4.19",
     "@storybook/preset-create-react-app": "^1.5.2",
     "@testing-library/react": "^9.3.2",
     "@testing-library/react-hooks": "3.2.1",
@@ -84,6 +83,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-storybook": "^0.5.7",
     "husky": "^4.2.3",
     "jest-sonar-reporter": "^2.0.0",
     "prettier": "1.19.1",
