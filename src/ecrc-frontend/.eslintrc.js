@@ -27,6 +27,7 @@ module.exports = {
     "import/no-unresolved": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-curly-brace-presence": "off",
+    "no-param-reassign": "off",
     "prettier/prettier": ["error"],
     "react/forbid-prop-types": "warn"
   }
