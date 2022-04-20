@@ -8,8 +8,8 @@
     "@bcgov/bootstrap-theme": "https://github.com/bcgov/bootstrap-theme/releases/download/v1.1.1/bcgov-bootstrap-theme-1.1.1.tgz",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-queryparams": "^6.2.9",
-    "@storybook/addon-storyshots": "^6.4.19",
-    "@storybook/react": "^6.4.19",
+    "@storybook/addon-storyshots": "^6.1.21",
+    "@storybook/react": "^6.1.21",
     "@testing-library/jest-dom": "^4.2.4",
     "axios": "^0.21.1",
     "axios-mock-adapter": "^1.18.1",
@@ -32,11 +32,11 @@
     "react-icons": "^3.9.0",
     "react-phone-number-input": "^3.0.22",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "regenerator-runtime": "^0.13.5",
     "trim": ">=0.0.3",
     "uuid": "^7.0.2",
-    "webpack": "4.44.2"
+    "webpack": "^5.72.0"
   },
   "scripts": {
     "start": "react-scripts start",
