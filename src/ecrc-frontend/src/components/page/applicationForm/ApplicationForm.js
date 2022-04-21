@@ -1015,7 +1015,9 @@ ApplicationForm.propTypes = {
       defaultScheduleTypeCd: PropTypes.string.isRequired
     }),
     setError: PropTypes.func.isRequired,
-    provinces: PropTypes.array,
+    provinces: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    ).isRequired,
     setProvinces: PropTypes.func,
     sameAddress: PropTypes.bool.isRequired,
     setSameAddress: PropTypes.func.isRequired

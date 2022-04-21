@@ -74,7 +74,9 @@ SideCard.propTypes = {
   sideCard: PropTypes.shape({
     heading: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
       .isRequired,
-    content: PropTypes.array.isRequired,
+    content: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    ).isRequired,
     type: PropTypes.string.isRequired,
     image: PropTypes.string,
     imageLink: PropTypes.string,

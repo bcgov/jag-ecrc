@@ -106,7 +106,7 @@ export default function Error({ page: { header, error } }) {
 
 Error.propTypes = {
   page: PropTypes.shape({
-    error: PropTypes.object.isRequired,
+    error: PropTypes.objectOf(PropTypes.object).isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired
