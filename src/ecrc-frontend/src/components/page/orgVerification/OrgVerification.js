@@ -216,7 +216,7 @@ export default function OrgVerification({ page: { header, org, setError } }) {
 
 OrgVerification.propTypes = {
   page: PropTypes.shape({
-    org: PropTypes.object.isRequired,
+    org: PropTypes.objectOf(PropTypes.object).isRequired,
     header: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired,
