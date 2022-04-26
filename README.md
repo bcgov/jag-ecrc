@@ -90,7 +90,7 @@ This is pretty much what `create react app` provides out of the box, except slig
 
 ## Backend Folder Structure
 
-The backend API will follow the standard Java Spring Boot MVC model for folder structure breakdown where there are `models` and `controllers`.
+The backend API will follow the standard Java Spring Boot MVC model for folder structure breakdown where there are `models` and `controllers`. 
 
 ## Authors
 
