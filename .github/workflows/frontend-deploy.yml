@@ -1,4 +1,4 @@
-name: Frontend - Deploy ecrc-api
+name: Frontend - Deploy ecrc-frontend
 on:
   workflow_dispatch:
     inputs:
