@@ -4,7 +4,7 @@ on:
     inputs:
       source_image_tag:
         required: true
-        description: What is the tag that is going to be promoted?
+        description: What is the image tag that is going to be promoted?
         type: string
       environment:
         required: true
