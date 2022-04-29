@@ -1,4 +1,4 @@
-name: Maven Tests
+name: API - Maven Tests
 
 on: [push]
 
