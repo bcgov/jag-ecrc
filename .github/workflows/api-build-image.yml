@@ -8,10 +8,15 @@ on:
   workflow_dispatch: {}
 
 jobs:
+  unit-test:
+    uses: SierraSystems/reusable-workflows/.github/workflows/java-unit-tests.yml@main
+    with:
+      working_directory: src/ecrc-api
+
   build-image:
     uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@main
     needs:
-      - app-version
+      - unit-test
     with:
       build_config_name: "ecrc-api"
       image_tags: "dev,$CI_COMMIT_TAG"
