@@ -1,0 +1,22 @@
+name: Frontend - Build ecrc-frontend Image
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/ecrc-frontend/**"
+  workflow_dispatch: {}
+
+jobs:
+  build-image:
+    uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@main
+    needs:
+      - app-version
+    with:
+      build_config_name: "ecrc-frontend"
+      image_tags: "dev,$CI_COMMIT_TAG"
+    secrets:
+      openshift_namespace: "${{ secrets.OPENSHIFT_LICENSE_PLATE_SILVER }}-tools"
+      openshift_server_url: "${{ secrets.OPENSHIFT_SERVER_URL_SILVER }}"
+      openshift_token: "${{ secrets.OPENSHIFT_SA_PIPELINE_TOKEN_SILVER }}"
+      openshift_external_repository: "${{ secrets.OPENSHIFT_EXTERNAL_REPOSITORY_SILVER }}"
