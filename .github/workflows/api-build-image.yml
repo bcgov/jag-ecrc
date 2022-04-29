@@ -5,9 +5,7 @@ on:
       - main
     paths:
       - "src/ecrc-api/**"
-  workflow_dispatch:
-    branches:
-      - main
+  workflow_dispatch: {}
 
 jobs:
   unit-test:
