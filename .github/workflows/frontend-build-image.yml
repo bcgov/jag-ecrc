@@ -10,8 +10,6 @@ on:
 jobs:
   build-image:
     uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@main
-    needs:
-      - app-version
     with:
       build_config_name: "ecrc-frontend"
       image_tags: "dev,$CI_COMMIT_TAG"
