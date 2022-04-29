@@ -13,25 +13,13 @@ jobs:
     with:
       working_directory: src/ecrc-api
 
-  tag:
-    runs-on: ubuntu-latest
-    outputs:
-      tag: ${{ steps.get-version.outputs.app-version }}
-    steps:
-    - name: Get the version
-      id: get-version
-      run: |
-        echo ::set-output name=app-version::${GITHUB_REF/refs\/tags\//}
-        echo $app_version
-
   build-image:
     uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@main
     needs:
       - unit-test
-      - tag
     with:
       build_config_name: "ecrc-api"
-      image_tags: "dev,${{ needs.tag.outputs.tag }}"
+      image_tags: "dev,${{ github.ref_name }}"
     secrets:
       openshift_namespace: "${{ secrets.OPENSHIFT_LICENSE_PLATE_SILVER }}-tools"
       openshift_server_url: "${{ secrets.OPENSHIFT_SERVER_URL_SILVER }}"
