@@ -1,11 +1,11 @@
-name: CI/CD for UI - Checkout, Build, Test, and generate Coverage Report for Ecrc Frontend
+name: Frontend - CI/CD for UI - Checkout, Build, Test, and generate Coverage Report for Ecrc Frontend
 
 on:
   pull_request:
     types: [opened, reopened, synchronize]
     paths:
       - "src/ecrc-frontend/**"
-      - ".github/workflows/codeclimate_ui.yml"
+      - ".github/workflows/frontend-codeclimate.yml"
 
 jobs:
   yarn:

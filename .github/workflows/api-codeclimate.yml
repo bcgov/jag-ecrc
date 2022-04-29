@@ -1,4 +1,4 @@
-name: Generate/Upload Spring Boot Coverage Report To Code Climate
+name: API - Generate/Upload Spring Boot Coverage Report To Code Climate
 
 on:
   push:
