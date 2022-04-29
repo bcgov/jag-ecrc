@@ -1,0 +1,32 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: ecrc-frontend
+  name: ecrc-frontend
+  namespace: 9041f4-tools
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: ecrc-frontend:latest
+  resources:
+    limits:
+      cpu: "4"
+      memory: 4Gi
+    requests:
+      cpu: "1"
+      memory: 1Gi
+  source:
+    contextDir: src/ecrc-frontend
+    git:
+      ref: master
+      uri: https://github.com/bcgov/jag-ecrc
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: nodejs:latest
+        namespace: openshift
+    type: Source
