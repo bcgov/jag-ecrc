@@ -19,7 +19,7 @@ jobs:
       - unit-test
     with:
       build_config_name: "ecrc-api"
-      image_tags: "dev,$GITHUB_REF_NAME"
+      image_tags: "dev,${{ GITHUB_REF_NAME }}"
     secrets:
       openshift_namespace: "${{ secrets.OPENSHIFT_LICENSE_PLATE_SILVER }}-tools"
       openshift_server_url: "${{ secrets.OPENSHIFT_SERVER_URL_SILVER }}"
