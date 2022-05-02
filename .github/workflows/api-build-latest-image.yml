@@ -1,27 +1,28 @@
-name: Frontend - Build ecrc-frontend Image
+name: API - Build ecrc-api Image used for development
 on:
   push:
     branches:
       - main
     paths:
-      - "src/ecrc-frontend/**"
+      - "src/ecrc-api/**"
   workflow_dispatch: {}
 
 jobs:
   unit-test:
-    uses: SierraSystems/reusable-workflows/.github/workflows/npm-test.yml@feature/npm-test
+    uses: SierraSystems/reusable-workflows/.github/workflows/java-unit-tests.yml@main
     with:
-      working_directory: src/ecrc-frontend
+      working_directory: src/ecrc-api
 
   build-image:
     uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@main
     needs:
       - unit-test
     with:
-      build_config_name: "ecrc-frontend"
-      image_tags: "dev,${{ github.ref_name }}"
+      build_config_name: "ecrc-api"
+      image_tags: "dev"
     secrets:
       openshift_namespace: "${{ secrets.OPENSHIFT_LICENSE_PLATE_SILVER }}-tools"
       openshift_server_url: "${{ secrets.OPENSHIFT_SERVER_URL_SILVER }}"
       openshift_token: "${{ secrets.OPENSHIFT_SA_PIPELINE_TOKEN_SILVER }}"
       openshift_external_repository: "${{ secrets.OPENSHIFT_EXTERNAL_REPOSITORY_SILVER }}"
+
