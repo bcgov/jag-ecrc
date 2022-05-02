@@ -2,7 +2,7 @@ name: API - Build ecrc-api Image used for development
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - "src/ecrc-api/**"
   workflow_dispatch: {}
