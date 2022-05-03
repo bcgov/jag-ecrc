@@ -2,7 +2,7 @@ name: Frontend - Build ecrc-frontend Image for development
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - "src/ecrc-frontend/**"
   workflow_dispatch: {}
