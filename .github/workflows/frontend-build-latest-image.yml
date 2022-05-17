@@ -6,6 +6,9 @@ on:
     paths:
       - "src/ecrc-frontend/**"
   workflow_dispatch: {}
+  create:
+    tags:
+      - "*"
 
 jobs:
   unit-test:
