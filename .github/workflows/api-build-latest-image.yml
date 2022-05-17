@@ -17,10 +17,10 @@ jobs:
       working_directory: src/ecrc-api
 
   github-tag:
-    uses: SierraSystems/reusable-workflows/.github/workflows/github-get-tag.yml@feature/get-git-tag
+    uses: SierraSystems/reusable-workflows/.github/workflows/github-get-tag.yml@main
 
   build-image:
-    uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@feature/get-git-tag
+    uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@main
     needs:
       - unit-test
       - github-tag
