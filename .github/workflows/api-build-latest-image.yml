@@ -20,7 +20,7 @@ jobs:
     uses: SierraSystems/reusable-workflows/.github/workflows/github-get-tag.yml@feature/get-git-tag
 
   build-image:
-    uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@main
+    uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@feature/get-git-tag
     needs:
       - unit-test
       - github-tag
