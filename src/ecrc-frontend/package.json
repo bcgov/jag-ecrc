@@ -1,6 +1,6 @@
 {
   "name": "ecrc-frontend",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "/criminalrecordcheck",
   "private": true,
   "dependencies": {

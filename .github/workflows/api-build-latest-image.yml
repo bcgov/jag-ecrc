@@ -5,6 +5,9 @@ on:
       - master
     paths:
       - "src/ecrc-api/**"
+  create:
+    tags:
+      - "*"
   workflow_dispatch: {}
 
 jobs:
@@ -13,13 +16,17 @@ jobs:
     with:
       working_directory: src/ecrc-api
 
+  github-tag:
+    uses: SierraSystems/reusable-workflows/.github/workflows/github-get-tag.yml@main
+
   build-image:
     uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@main
     needs:
       - unit-test
+      - github-tag
     with:
       build_config_name: "ecrc-api"
-      image_tags: "dev"
+      image_tags: "dev,${{ needs.github-tag.outputs.git-tag }}"
     secrets:
       openshift_namespace: "${{ secrets.OPENSHIFT_LICENSE_PLATE_SILVER }}-tools"
       openshift_server_url: "${{ secrets.OPENSHIFT_SERVER_URL_SILVER }}"
