@@ -18,8 +18,12 @@
 ##############################################################################################
 FROM nginx:1.21-alpine
 
+RUN rm -rf /usr/share/nginx/html/
 COPY ./build /usr/share/nginx/html/criminalrecordcheck
-EXPOSE 80
+#COPY --from=build /app/build /usr/share/nginx/html/criminalrecordcheck
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
 
 
