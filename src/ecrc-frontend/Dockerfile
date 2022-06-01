@@ -20,20 +20,8 @@ CMD ["npm","run","start"]
 ##############################################################################################
 FROM nginx:1.21-alpine
 
-RUN rm -rf /usr/share/nginx/html/
-COPY --from=build --chown="nginx:nginx" /app/build /usr/share/nginx/html
-
-WORKDIR /etc/nginx/html/ecrc
-
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-RUN chown :nginx g+rwx /var/cache/nginx /var/log/nginx
-
-EXPOSE 8080
-USER nginx
-
+COPY --from=build /app/build /usr/share/nginx/html/criminalrecordcheck
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-
 
 
