@@ -1,30 +1,36 @@
-# pull official base image
-FROM node:13.12.0-alpine
+FROM node:16-alpine as build
 
-# set working directory
-WORKDIR /ecrc-frontend
+WORKDIR /app
 
-# add `/node_modules/.bin` to $PATH
-ENV PATH ./node_modules/.bin:$PATH
+COPY ./package*.json ./
 
-RUN apk add --update \
-  python \
-  python-dev \
-  py-pip \
-  build-base \
-  git \
-  openssh-client \
-&& pip install virtualenv \
-&& rm -rf /var/cache/apk/*
+ENV NODE_ENV=production
 
-# install dependencies
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install
-RUN npm install react-scripts@3.4.1 -g
+RUN npm ci \
+    && npm add --dev react-app-rewired # this line makes sure that react-app-rewired scripts will be in the PATH. It can
+                                              # be removed when the react-app-rewired module is no longer required to the project.
+COPY . .
 
-# add app
-COPY . ./
+RUN npm run build
 
-# start app
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
+
+##############################################################################################
+####                                 PRODUCTION IMAGE                                      ###
+##############################################################################################
+FROM nginx:1.21-alpine as production
+
+RUN rm -rf /usr/share/nginx/html/
+COPY --from=build --chown=nginx:nginx /app/build /usr/share/nginx/html/criminalrecordcheck
+COPY nginx.conf /etc/nginx/nginx.conf
+
+USER root
+RUN chown :nginx /var/cache/nginx /var/log/nginx && \
+    chmod g+rwx /var/cache/nginx /var/log/nginx
+
+EXPOSE 8080
+USER nginx
+
+CMD ["nginx", "-g", "daemon off;"]
+
+
