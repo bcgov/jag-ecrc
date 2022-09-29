@@ -2,6 +2,7 @@ package ca.bc.gov.open.ecrc.service;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
+import ca.bc.gov.open.ecrc.exception.EcrcUriException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -46,12 +47,13 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
                 .build();
     }
 
-    public ResponseEntity<String> callWebMethodsService(String uri, Object returnObject, String requestGuid) throws URISyntaxException {
+    public ResponseEntity<String> callWebMethodsService(String uri, Object returnObject, String requestGuid) {
 
-        Mono<?> responseBody = this.webClient.get().uri(new URI(uri)).retrieve()
+        Mono<?> responseBody = this.webClient.get().uri(encodeRequest(uri)).retrieve()
                 .bodyToMono(returnObject.getClass());
 
         try {
+
             JSONObject obj = new JSONObject(objectMapper.writeValueAsString(responseBody.block()));
             int respCode = obj.getInt("responseCode");
             logger.info("For request guid: [{}] webMethods returned code: {} and message: {} ", requestGuid, respCode, obj.getString("message"));
@@ -79,4 +81,15 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
                     EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
         }
     }
+
+    private URI encodeRequest(String request) {
+
+        try {
+            return new URI(request);
+        } catch (Exception ex) {
+            throw new EcrcUriException(ex.getMessage());
+        }
+
+    }
+
 }
