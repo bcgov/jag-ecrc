@@ -6,6 +6,7 @@ import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.jndi.toolkit.url.Uri;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.PostConstruct;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @Service
 @Configuration
@@ -42,8 +46,9 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
                 .build();
     }
 
-    public ResponseEntity<String> callWebMethodsService(String uri, Object returnObject, String requestGuid) {
-        Mono<?> responseBody = this.webClient.get().uri(uri).retrieve()
+    public ResponseEntity<String> callWebMethodsService(String uri, Object returnObject, String requestGuid) throws URISyntaxException {
+
+        Mono<?> responseBody = this.webClient.get().uri(new URI(uri)).retrieve()
                 .bodyToMono(returnObject.getClass());
 
         try {
