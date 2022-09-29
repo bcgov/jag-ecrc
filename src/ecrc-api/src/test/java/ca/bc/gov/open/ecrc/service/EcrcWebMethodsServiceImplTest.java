@@ -69,7 +69,7 @@ public class EcrcWebMethodsServiceImplTest {
         mockResponse.addHeader("content-type: application/xml;");
         mockResponse.setResponseCode(200);
         mockBackEnd.enqueue(mockResponse);
-        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl(), new DoAuthenticateUser(), GUID);
+        ResponseEntity<String> res = ecrcWebMethodsService.callWebMethodsService(ecrcProperties.getBaseUrl() + "?test=test&test&test1=test1", new DoAuthenticateUser(), GUID);
         Assertions.assertEquals(HttpStatus.OK, res.getStatusCode());
         Assertions.assertEquals(jsonResp, res.getBody());
     }

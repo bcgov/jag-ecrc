@@ -1,5 +1,9 @@
 package ca.bc.gov.open.ecrc.model;
 
+import java.net.URLEncoder;
+
+import static ca.bc.gov.open.ecrc.util.EcrcUtil.encodeData;
+
 /**
  * Object for requesting create applicant 
  *  
@@ -265,7 +269,7 @@ public class RequestCreateApplicant {
         		"&Legal_Second_Nm=" + legalSecondNm +
         		"&Birth_Dt=" + birthDt +
         		"&Gender_Txt=" + genderTxt +
-        		"&Birth_Place=" + birthPlace +
+        		"&Birth_Place=" + encodeData(birthPlace) +
         		"&Alias1_Surname_Nm=" + alias1SurnameNm +
         		"&Alias1_First_Nm=" + alias1FirstNm +
         		"&Alias1_Second_Nm=" + alias1SecondNm +
@@ -276,10 +280,10 @@ public class RequestCreateApplicant {
         		"&Alias3_First_Nm=" + alias3FirstNm +
         		"&Alias3_Second_Nm=" + alias3SecondNm +
         		"&Phone_Number=" + phoneNumber +
-        		"&Address_Line1=" + addressLine1 +
-        		"&City_Nm=" + cityNm +
-        		"&Province_Nm=" + provinceNm +
-        		"&Country_Nm=" + countryNm +
+        		"&Address_Line1=" +  encodeData(addressLine1) +
+        		"&City_Nm=" + encodeData(cityNm) +
+        		"&Province_Nm=" + encodeData(provinceNm) +
+        		"&Country_Nm=" + encodeData(countryNm) +
         		"&Postal_Code_Txt=" + postalCodeTxt +
         		"&Drivers_Lic_No=" + driversLicNo +
         		"&Email_Address=" + emailAddress +

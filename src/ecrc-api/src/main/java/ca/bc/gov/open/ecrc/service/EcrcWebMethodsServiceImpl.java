@@ -2,12 +2,10 @@ package ca.bc.gov.open.ecrc.service;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
-import ca.bc.gov.open.ecrc.exception.EcrcUriException;
 import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.jndi.toolkit.url.Uri;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,9 +19,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.PostConstruct;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 
 @Service
 @Configuration
@@ -49,7 +44,7 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
 
     public ResponseEntity<String> callWebMethodsService(String uri, Object returnObject, String requestGuid) {
 
-        Mono<?> responseBody = this.webClient.get().uri(encodeRequest(uri)).retrieve()
+        Mono<?> responseBody = this.webClient.get().uri(uri).retrieve()
                 .bodyToMono(returnObject.getClass());
 
         try {
@@ -80,16 +75,6 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
             return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
                     EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
         }
-    }
-
-    private URI encodeRequest(String request) {
-
-        try {
-            return new URI(request);
-        } catch (Exception ex) {
-            throw new EcrcUriException(ex.getMessage());
-        }
-
     }
 
 }
