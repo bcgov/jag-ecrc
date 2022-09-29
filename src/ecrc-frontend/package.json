@@ -134,11 +134,5 @@
     "reportPath": "coverage",
     "reportFile": "test-report.xml",
     "indent": 4
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "pre-push": "npx eslint ."
-    }
   }
 }
