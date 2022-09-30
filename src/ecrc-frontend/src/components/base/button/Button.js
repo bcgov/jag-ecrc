@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import "./Button.css";
 import Loader from "../loader/Loader";
 
-export const Button = ({
+export function Button({
   button: { label, buttonStyle, buttonSize, type, disabled, loader },
   onClick
-}) => {
+}) {
   let buttonType = "button";
   let displayLoader = "loader-hide";
   const validTypes = ["button", "submit", "reset"];
@@ -33,7 +33,7 @@ export const Button = ({
       </div>
     </button>
   );
-};
+}
 
 Button.propTypes = {
   button: PropTypes.shape({

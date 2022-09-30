@@ -4,7 +4,7 @@ import Input from "react-phone-number-input/input";
 import PropTypes from "prop-types";
 import "./TextInput.css";
 
-export const TextInput = ({
+export function TextInput({
   textInput: {
     label,
     id,
@@ -18,7 +18,7 @@ export const TextInput = ({
     errorMsg
   },
   onChange
-}) => {
+}) {
   let asterisk = "";
   if (isRequired) {
     asterisk = (
@@ -126,7 +126,7 @@ export const TextInput = ({
       <span className="error">{errorMsg}</span>
     </div>
   );
-};
+}
 
 TextInput.propTypes = {
   textInput: PropTypes.shape({

@@ -25,11 +25,13 @@ const button = {
   type: "submit"
 };
 
-export const Default = () => (
-  <OrgValidationText
-    textInput={textInput}
-    button={button}
-    onChange={onChange}
-    onClick={onClick}
-  />
-);
+export function Default() {
+  return (
+    <OrgValidationText
+      textInput={textInput}
+      button={button}
+      onChange={onChange}
+      onClick={onClick}
+    />
+  );
+}

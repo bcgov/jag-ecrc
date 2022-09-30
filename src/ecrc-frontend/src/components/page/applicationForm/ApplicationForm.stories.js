@@ -108,55 +108,63 @@ const LoadData = props => {
   return props.children({ page, org });
 };
 
-export const NonScheduleD = () => (
-  <LoadData>
-    {data => (
-      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
-        <ApplicationForm
-          page={{
-            ...data.page,
-            org: { ...data.org, defaultScheduleTypeCd: "WBSC" }
-          }}
-        />
-      </MemoryRouter>
-    )}
-  </LoadData>
-);
+export function NonScheduleD() {
+  return (
+    <LoadData>
+      {data => (
+        <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+          <ApplicationForm
+            page={{
+              ...data.page,
+              org: { ...data.org, defaultScheduleTypeCd: "WBSC" }
+            }}
+          />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  );
+}
 
-export const MobileNonScheduleD = () => (
-  <LoadData>
-    {data => (
-      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
-        <ApplicationForm
-          page={{
-            ...data.page,
-            org: { ...data.org, defaultScheduleTypeCd: "WBSC" }
-          }}
-        />
-      </MemoryRouter>
-    )}
-  </LoadData>
-);
+export function MobileNonScheduleD() {
+  return (
+    <LoadData>
+      {data => (
+        <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+          <ApplicationForm
+            page={{
+              ...data.page,
+              org: { ...data.org, defaultScheduleTypeCd: "WBSC" }
+            }}
+          />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  );
+}
 
-export const ScheduleD = () => (
-  <LoadData>
-    {data => (
-      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
-        <ApplicationForm page={data.page} />
-      </MemoryRouter>
-    )}
-  </LoadData>
-);
+export function ScheduleD() {
+  return (
+    <LoadData>
+      {data => (
+        <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+          <ApplicationForm page={data.page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  );
+}
 
-export const MobileScheduleD = () => (
-  <LoadData>
-    {data => (
-      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
-        <ApplicationForm page={data.page} />
-      </MemoryRouter>
-    )}
-  </LoadData>
-);
+export function MobileScheduleD() {
+  return (
+    <LoadData>
+      {data => (
+        <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+          <ApplicationForm page={data.page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  );
+}
 
 MobileNonScheduleD.story = {
   parameters: {

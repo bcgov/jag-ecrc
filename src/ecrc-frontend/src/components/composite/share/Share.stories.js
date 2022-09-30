@@ -9,6 +9,6 @@ export default {
 
 const clickShare = () => {};
 
-export const Default = () => (
-  <Share newOrg="New Org" clickShare={clickShare} boxChecked={false} />
-);
+export function Default() {
+  return <Share newOrg="New Org" clickShare={clickShare} boxChecked={false} />;
+}

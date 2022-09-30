@@ -86,89 +86,115 @@ const FailData = props => {
   return props.children({ page });
 };
 
-export const Volunteer = () => (
-  <MemoryRouter>
-    <Success
-      page={{ ...page, org: { ...org, orgApplicantRelationship: "VOLUNTEER" } }}
-    />
-  </MemoryRouter>
-);
+export function Volunteer() {
+  return (
+    <MemoryRouter>
+      <Success
+        page={{
+          ...page,
+          org: { ...org, orgApplicantRelationship: "VOLUNTEER" }
+        }}
+      />
+    </MemoryRouter>
+  );
+}
 
-export const MobileVolunteer = () => (
-  <MemoryRouter>
-    <Success
-      page={{ ...page, org: { ...org, orgApplicantRelationship: "VOLUNTEER" } }}
-    />
-  </MemoryRouter>
-);
+export function MobileVolunteer() {
+  return (
+    <MemoryRouter>
+      <Success
+        page={{
+          ...page,
+          org: { ...org, orgApplicantRelationship: "VOLUNTEER" }
+        }}
+      />
+    </MemoryRouter>
+  );
+}
 
-export const Onetime = () => (
-  <MemoryRouter>
-    <Success
-      page={{ ...page, org: { ...org, orgApplicantRelationship: "ONETIME" } }}
-    />
-  </MemoryRouter>
-);
+export function Onetime() {
+  return (
+    <MemoryRouter>
+      <Success
+        page={{ ...page, org: { ...org, orgApplicantRelationship: "ONETIME" } }}
+      />
+    </MemoryRouter>
+  );
+}
 
-export const MobileOnetime = () => (
-  <MemoryRouter>
-    <Success
-      page={{ ...page, org: { ...org, orgApplicantRelationship: "ONETIME" } }}
-    />
-  </MemoryRouter>
-);
+export function MobileOnetime() {
+  return (
+    <MemoryRouter>
+      <Success
+        page={{ ...page, org: { ...org, orgApplicantRelationship: "ONETIME" } }}
+      />
+    </MemoryRouter>
+  );
+}
 
-export const Share = () => (
-  <MemoryRouter>
-    <Success page={{ ...page, share: true }} />
-  </MemoryRouter>
-);
+export function Share() {
+  return (
+    <MemoryRouter>
+      <Success page={{ ...page, share: true }} />
+    </MemoryRouter>
+  );
+}
 
-export const MobileShare = () => (
-  <MemoryRouter>
-    <Success page={{ ...page, share: true }} />
-  </MemoryRouter>
-);
+export function MobileShare() {
+  return (
+    <MemoryRouter>
+      <Success page={{ ...page, share: true }} />
+    </MemoryRouter>
+  );
+}
 
-export const PaymentSuccess = () => (
-  <LoadData props={page}>
-    {data => (
-      <MemoryRouter initialEntries={[successUrl]}>
-        <Success page={data.page} />
-      </MemoryRouter>
-    )}
-  </LoadData>
-);
+export function PaymentSuccess() {
+  return (
+    <LoadData props={page}>
+      {data => (
+        <MemoryRouter initialEntries={[successUrl]}>
+          <Success page={data.page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  );
+}
 
-export const MobilePaymentSuccess = () => (
-  <LoadData props={page}>
-    {data => (
-      <MemoryRouter initialEntries={[successUrl]}>
-        <Success page={data.page} />
-      </MemoryRouter>
-    )}
-  </LoadData>
-);
+export function MobilePaymentSuccess() {
+  return (
+    <LoadData props={page}>
+      {data => (
+        <MemoryRouter initialEntries={[successUrl]}>
+          <Success page={data.page} />
+        </MemoryRouter>
+      )}
+    </LoadData>
+  );
+}
 
-export const PaymentFailure = () => (
-  <FailData props={page}>
-    {data => (
-      <MemoryRouter initialEntries={[failureUrl]}>
-        <Success page={data.page} />
-      </MemoryRouter>
-    )}
-  </FailData>
-);
+export function PaymentFailure() {
+  return (
+    <FailData props={page}>
+      {data => (
+        <MemoryRouter initialEntries={[failureUrl]}>
+          <Success page={data.page} />
+        </MemoryRouter>
+      )}
+    </FailData>
+  );
+}
 
-export const MobilePaymentFailure = () => (
-  <FailData props={page}>
-    {data => (
-      <MemoryRouter initialEntries={[failureUrl]}>
-        <Success page={data.page} />
-      </MemoryRouter>
-    )}
-  </FailData>
-);
+export function MobilePaymentFailure() {
+  return (
+    <FailData props={page}>
+      {data => (
+        <MemoryRouter initialEntries={[failureUrl]}>
+          <Success page={data.page} />
+        </MemoryRouter>
+      )}
+    </FailData>
+  );
+}
 
 MobileVolunteer.story = {
   parameters: {

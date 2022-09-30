@@ -28,4 +28,6 @@ const fullname = {
   }
 };
 
-export const Default = () => <FullName title={null} fullname={fullname} />;
+export function Default() {
+  return <FullName title={null} fullname={fullname} />;
+}
