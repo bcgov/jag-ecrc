@@ -1,5 +1,8 @@
 package ca.bc.gov.open.ecrc.util;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 /**
 *
 * Ecrc Util class.
@@ -15,6 +18,20 @@ public class EcrcUtil {
 
 	public static String encodeUriSpaces(String uri) {
 		return uri.replace(SPACE, ENCODED_SPACE);
+	}
+
+	public static String encodeData(String value) {
+
+		if (value == null) {
+			return "";
+		}
+
+		try {
+			return URLEncoder.encode(value , "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			return "";
+		}
+
 	}
 
 }

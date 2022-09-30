@@ -43,10 +43,12 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
     }
 
     public ResponseEntity<String> callWebMethodsService(String uri, Object returnObject, String requestGuid) {
+
         Mono<?> responseBody = this.webClient.get().uri(uri).retrieve()
                 .bodyToMono(returnObject.getClass());
 
         try {
+
             JSONObject obj = new JSONObject(objectMapper.writeValueAsString(responseBody.block()));
             int respCode = obj.getInt("responseCode");
             logger.info("For request guid: [{}] webMethods returned code: {} and message: {} ", requestGuid, respCode, obj.getString("message"));
@@ -74,4 +76,5 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
                     EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
         }
     }
+
 }
