@@ -61,8 +61,8 @@ jobs:
         if: env.GIT_BRANCH == 'refs/heads/master'
 
       # Figure out where yarn is caching things
-      - name: Yarn Cache
-        run: yarn cache dir
+      #- name: Yarn Cache
+      #  run: yarn cache dir
 
       # Implement Caching Action for Yarn Project
       #- name: Cache node modules
@@ -80,12 +80,12 @@ jobs:
 
       # Run Yarn Install - Ecrc Frontend Client
       - name: Run npm Install - Ecrc Frontend
-        run: npm --cwd src/ecrc-frontend install
-        
+        run: npm install
+        working-directory: src/ecrc-frontend
       # Run lint - Ecrc Frontend Client
       - name: Run lint - Ecrc Frontend
-        run: npm --cwd src/ecrc-frontend run lint
-
+        run: npm run lint
+        working-directory: src/ecrc-frontend
       - name: Install dependencies
         run: npm ci
         working-directory: src/ecrc-frontend
