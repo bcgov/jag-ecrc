@@ -86,10 +86,14 @@ jobs:
       - name: Run lint - Ecrc Frontend
         run: npm --cwd src/ecrc-frontend run lint
 
+      - name: Install dependencies
+        run: npm ci
+        working-directory: src/ecrc-frontend
+        
       # Yarn Coverage - Ecrc Frontend Client
       - name: Run npm Coverage - Ecrc Frontend
-        run: npm --cwd src/ecrc-frontend coverage
-
+        run: CI=true npm run coverage
+        working-directory: src/ecrc-frontend
       # Formatting the Ecrc Frontend coverage report
       - name: Format the Ecrc Frontend coverage report
         run: |          
