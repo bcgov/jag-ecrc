@@ -78,7 +78,7 @@ jobs:
       #      ${{ runner.os }}-build-
       #      ${{ runner.os }}-
 
-      # Run Yarn Install - Ecrc Frontend Client
+      # Run npm Install - Ecrc Frontend Client
       - name: Run npm Install - Ecrc Frontend
         run: npm install
         working-directory: src/ecrc-frontend
