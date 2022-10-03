@@ -12,4 +12,6 @@ const element = {
   value: "The name"
 };
 
-export const Default = () => <TableElement element={element} />;
+export function Default() {
+  return <TableElement element={element} />;
+}

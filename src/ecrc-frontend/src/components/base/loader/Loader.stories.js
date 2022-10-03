@@ -7,15 +7,21 @@ export default {
   component: Loader
 };
 
-export const Default = () => (
-  <div style={{ background: "grey" }}>
-    <Loader />
-  </div>
-);
+export function Default() {
+  return (
+    <div style={{ background: "grey" }}>
+      <Loader />
+    </div>
+  );
+}
 
-export const Page = () => <Loader page />;
+export function Page() {
+  return <Loader page />;
+}
 
-export const Mobile = () => <Loader page />;
+export function Mobile() {
+  return <Loader page />;
+}
 
 Mobile.story = {
   parameters: {

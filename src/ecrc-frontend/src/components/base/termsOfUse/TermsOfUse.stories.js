@@ -8,13 +8,15 @@ export default {
   component: TermsOfUse
 };
 
-export const Default = () => (
-  <TermsOfUse
-    onContinueClick={action("on continue click")}
-    checkFirstBox={action("check first box")}
-    termOfUseOnScroll={action("terms of use scroll")}
-    onClick={action("Terms of Use button clicked")}
-    continueBtnEnabled={false}
-    reachedEnd={false}
-  />
-);
+export function Default() {
+  return (
+    <TermsOfUse
+      onContinueClick={action("on continue click")}
+      checkFirstBox={action("check first box")}
+      termOfUseOnScroll={action("terms of use scroll")}
+      onClick={action("Terms of Use button clicked")}
+      continueBtnEnabled={false}
+      reachedEnd={false}
+    />
+  );
+}

@@ -19,17 +19,21 @@ const page = {
 
 const history = createMemoryHistory();
 
-export const DefaultToBCSC = () => (
-  <Router history={history}>
-    <Transition page={page} />
-  </Router>
-);
+export function DefaultToBCSC() {
+  return (
+    <Router history={history}>
+      <Transition page={page} />
+    </Router>
+  );
+}
 
-export const Mobile = () => (
-  <Router history={history}>
-    <Transition page={page} />
-  </Router>
-);
+export function Mobile() {
+  return (
+    <Router history={history}>
+      <Transition page={page} />
+    </Router>
+  );
+}
 
 Mobile.story = {
   parameters: {
