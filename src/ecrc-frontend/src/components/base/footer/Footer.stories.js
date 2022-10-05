@@ -7,9 +7,13 @@ export default {
   component: Footer
 };
 
-export const Default = () => <Footer />;
+export function Default() {
+  return <Footer />;
+}
 
-export const Mobile = () => <Footer />;
+export function Mobile() {
+  return <Footer />;
+}
 
 Mobile.story = {
   parameters: {

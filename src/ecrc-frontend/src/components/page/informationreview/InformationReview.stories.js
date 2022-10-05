@@ -100,7 +100,7 @@ const LoadData = props => {
   return props.children({ page });
 };
 
-const NonScheduleD = () => {
+function NonScheduleD() {
   return (
     <FailData props={page}>
       {data => (
@@ -110,9 +110,9 @@ const NonScheduleD = () => {
       )}
     </FailData>
   );
-};
+}
 
-const DisplayShareOption = () => {
+function DisplayShareOption() {
   return (
     <LoadData props={page}>
       {data => (
@@ -122,9 +122,9 @@ const DisplayShareOption = () => {
       )}
     </LoadData>
   );
-};
+}
 
-const ScheduleD = () => {
+function ScheduleD() {
   return (
     <FailData props={page}>
       {data => (
@@ -142,7 +142,7 @@ const ScheduleD = () => {
       )}
     </FailData>
   );
-};
+}
 
 storiesOf("Information Review", module)
   .add("Display Share Option", () => <DisplayShareOption />)

@@ -36,33 +36,41 @@ const page = {
 sessionStorage.setItem("validator", "secret");
 sessionStorage.setItem("uuid", "unique123");
 
-export const WorksWithAdultsAndChildren = () => (
-  <MemoryRouter>
-    <OrgVerification page={page} />
-  </MemoryRouter>
-);
+export function WorksWithAdultsAndChildren() {
+  return (
+    <MemoryRouter>
+      <OrgVerification page={page} />
+    </MemoryRouter>
+  );
+}
 
-export const WorksWithVulnerableAdults = () => (
-  <MemoryRouter>
-    <OrgVerification
-      page={{ ...page, org: { ...org, defaultCrcScopeLevelCd: "WWAD" } }}
-    />
-  </MemoryRouter>
-);
+export function WorksWithVulnerableAdults() {
+  return (
+    <MemoryRouter>
+      <OrgVerification
+        page={{ ...page, org: { ...org, defaultCrcScopeLevelCd: "WWAD" } }}
+      />
+    </MemoryRouter>
+  );
+}
 
-export const WorksWithChildren = () => (
-  <MemoryRouter>
-    <OrgVerification
-      page={{ ...page, org: { ...org, defaultCrcScopeLevelCd: "WWCH" } }}
-    />
-  </MemoryRouter>
-);
+export function WorksWithChildren() {
+  return (
+    <MemoryRouter>
+      <OrgVerification
+        page={{ ...page, org: { ...org, defaultCrcScopeLevelCd: "WWCH" } }}
+      />
+    </MemoryRouter>
+  );
+}
 
-export const Mobile = () => (
-  <MemoryRouter>
-    <OrgVerification page={page} />
-  </MemoryRouter>
-);
+export function Mobile() {
+  return (
+    <MemoryRouter>
+      <OrgVerification page={page} />
+    </MemoryRouter>
+  );
+}
 
 Mobile.story = {
   parameters: {

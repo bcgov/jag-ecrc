@@ -21,4 +21,6 @@ const table = {
   tableElements
 };
 
-export const Default = () => <Table table={table} />;
+export function Default() {
+  return <Table table={table} />;
+}

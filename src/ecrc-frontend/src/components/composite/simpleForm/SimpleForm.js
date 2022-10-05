@@ -4,7 +4,7 @@ import "./SimpleForm.css";
 import { TextInput } from "../../base/textInput/TextInput";
 import { Button } from "../../base/button/Button";
 
-export const SimpleForm = ({ simpleForm: { title, textInputs, buttons } }) => {
+export function SimpleForm({ simpleForm: { title, textInputs, buttons } }) {
   const inputList = textInputs.map(input => {
     return (
       <li key={input.id}>
@@ -36,7 +36,7 @@ export const SimpleForm = ({ simpleForm: { title, textInputs, buttons } }) => {
       {buttonList.length > 0 && <ul id="buttonList">{buttonList}</ul>}
     </form>
   );
-};
+}
 
 SimpleForm.propTypes = {
   simpleForm: PropTypes.shape({

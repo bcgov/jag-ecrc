@@ -12,4 +12,6 @@ const menuItem = {
   url: "http://www.url.com"
 };
 
-export const Default = () => <MenuItem menuItem={menuItem} />;
+export function Default() {
+  return <MenuItem menuItem={menuItem} />;
+}

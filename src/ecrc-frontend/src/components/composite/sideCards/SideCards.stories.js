@@ -26,20 +26,30 @@ const links = [
   }
 ];
 
-export const AccessCode = () => <SideCards type={"accesscode"} />;
-export const GetBcService = () => <SideCards type={"getbcservice"} />;
-export const BcService = () => <SideCards type={"bcservice"} />;
-export const ContactInformation = () => (
-  <SideCards type={"contactinformation"} />
-);
-export const CriminalRecord = () => <SideCards type={"criminalrecord"} />;
-export const PersonalInformation = () => (
-  <SideCards type={"personalinformation"} />
-);
-export const CollectionNotice = () => <SideCards type={"collectionnotice"} />;
-export const UsefulLinks = () => (
-  <SideCards type={"usefullinks"} sideCardLinks={links} />
-);
-export const WithoutBCServiceCard = () => (
-  <SideCards type={"withoutBCServiceCard"} />
-);
+export function AccessCode() {
+  return <SideCards type={"accesscode"} />;
+}
+export function GetBcService() {
+  return <SideCards type={"getbcservice"} />;
+}
+export function BcService() {
+  return <SideCards type={"bcservice"} />;
+}
+export function ContactInformation() {
+  return <SideCards type={"contactinformation"} />;
+}
+export function CriminalRecord() {
+  return <SideCards type={"criminalrecord"} />;
+}
+export function PersonalInformation() {
+  return <SideCards type={"personalinformation"} />;
+}
+export function CollectionNotice() {
+  return <SideCards type={"collectionnotice"} />;
+}
+export function UsefulLinks() {
+  return <SideCards type={"usefullinks"} sideCardLinks={links} />;
+}
+export function WithoutBCServiceCard() {
+  return <SideCards type={"withoutBCServiceCard"} />;
+}

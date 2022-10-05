@@ -23,17 +23,21 @@ const page = {
   setError
 };
 
-export const Default = () => (
-  <MemoryRouter>
-    <OrgValidation page={page} />
-  </MemoryRouter>
-);
+export function Default() {
+  return (
+    <MemoryRouter>
+      <OrgValidation page={page} />
+    </MemoryRouter>
+  );
+}
 
-export const Mobile = () => (
-  <MemoryRouter>
-    <OrgValidation page={page} />
-  </MemoryRouter>
-);
+export function Mobile() {
+  return (
+    <MemoryRouter>
+      <OrgValidation page={page} />
+    </MemoryRouter>
+  );
+}
 
 Mobile.story = {
   parameters: {

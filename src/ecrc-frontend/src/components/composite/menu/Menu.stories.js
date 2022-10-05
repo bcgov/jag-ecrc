@@ -26,11 +26,17 @@ const menuItems = [
   }
 ];
 
-export const Empty = () => <Menu />;
+export function Empty() {
+  return <Menu />;
+}
 
-export const Default = () => <Menu menuItems={menuItems} />;
+export function Default() {
+  return <Menu menuItems={menuItems} />;
+}
 
-export const Mobile = () => <Menu menuItems={menuItems} />;
+export function Mobile() {
+  return <Menu menuItems={menuItems} />;
+}
 
 Mobile.story = {
   parameters: {
