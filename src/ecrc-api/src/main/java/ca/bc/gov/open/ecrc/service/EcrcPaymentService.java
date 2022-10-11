@@ -1,9 +1,8 @@
 package ca.bc.gov.open.ecrc.service;
 
-import org.springframework.http.ResponseEntity;
-
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestPaymentService;
+import org.springframework.http.ResponseEntity;
 
 /**
 *

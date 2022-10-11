@@ -1,9 +1,11 @@
 package ca.bc.gov.open.ecrc.controller;
 
+import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
+import ca.bc.gov.open.ecrc.exception.OauthServiceException;
+import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
 import ca.bc.gov.open.ecrc.util.EcrcConstants;
-
-import javax.servlet.http.HttpServletRequest;
-
+import ch.qos.logback.classic.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
-import ca.bc.gov.open.ecrc.exception.OauthServiceException;
-import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
-import ch.qos.logback.classic.Logger;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 

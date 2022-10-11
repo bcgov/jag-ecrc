@@ -1,8 +1,7 @@
 package ca.bc.gov.open.ecrc.service;
 
-import org.springframework.http.ResponseEntity;
-
 import ca.bc.gov.open.ecrc.exception.OauthServiceException;
+import org.springframework.http.ResponseEntity;
 
 /**
  *

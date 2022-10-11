@@ -3,7 +3,6 @@ package ca.bc.gov.open.ecrc.service;
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

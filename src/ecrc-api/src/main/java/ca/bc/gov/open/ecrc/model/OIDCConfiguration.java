@@ -1,9 +1,10 @@
 package ca.bc.gov.open.ecrc.model;
 
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import java.util.List;
 
 /**
  * OIDC Configuration - Used for serializing https://[myOauthServer]/.well-known/openid-configuration response. 

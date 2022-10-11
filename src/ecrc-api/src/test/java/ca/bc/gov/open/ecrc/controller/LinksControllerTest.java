@@ -1,15 +1,13 @@
 package ca.bc.gov.open.ecrc.controller;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-
-import static org.mockito.Mockito.when;
-
-import java.util.HashMap;
-import java.util.Map;
-
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
+import ca.bc.gov.open.ecrc.service.EcrcServices;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -19,10 +17,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
 
-import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
-import ca.bc.gov.open.ecrc.service.EcrcServices;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.mockito.Mockito.when;
 
 /**
  * 

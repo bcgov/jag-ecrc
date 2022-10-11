@@ -3,7 +3,6 @@ package ca.bc.gov.open.ecrc.service;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.*;
 import ca.bc.gov.open.ecrc.objects.*;
 import com.google.gson.Gson;
@@ -18,8 +17,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
-
-import static ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE;
 
 /**
  *
@@ -67,8 +64,9 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 	
 	public ResponseEntity<String> createApplicant(RequestCreateApplicant applicantInfo) throws EcrcServiceException {
-		String createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(), applicantInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(createApplicantUri, new CreateApplicant(), applicantInfo.getRequestGuid());
+
+		return ecrcWebMethodsService.callWebMethodsService(ecrcProps.getCreateApplicantUri(), applicantInfo.buildQuery(), new CreateApplicant(), applicantInfo.getRequestGuid());
+
 	}
 
 	public ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException {

@@ -1,11 +1,13 @@
 package ca.bc.gov.open.ecrc.controller;
 
-import static org.mockito.Mockito.when;
-
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
+import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCApplicant;
 import ca.bc.gov.open.ecrc.model.ResponseServiceDetails;
+import ca.bc.gov.open.ecrc.service.EcrcServices;
 import com.google.gson.Gson;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,11 +19,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import ca.bc.gov.open.ecrc.service.EcrcServices;
-import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
-import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests for create applicant controller

@@ -3,6 +3,7 @@ package ca.bc.gov.open.ecrc.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.util.MultiValueMap;
 
 /**
  * Tests for create applicant request bean
@@ -141,5 +142,72 @@ class RequestCreateApplicantTest {
 		Assertions.assertEquals(expectedEncodedQueryString, requestCreateApplicant.toQueryString());
 
 	}
+
+
+	@DisplayName("Success - createApplicant request map")
+	@Test
+	public void generateMapTest() {
+		RequestCreateApplicant requestCreateApplicant = new RequestCreateApplicant();
+		requestCreateApplicant.setAddressLine1("addressLine1");
+		requestCreateApplicant.setAddressLine2("addressLine2");
+		requestCreateApplicant.setAlias1FirstNm("alias1FirstNm");
+		requestCreateApplicant.setAlias1SecondNm("alias1SecondNm");
+		requestCreateApplicant.setAlias1SurnameNm("alias1SurnameNm");
+		requestCreateApplicant.setAlias2FirstNm("alias2FirstNm");
+		requestCreateApplicant.setAlias2SecondNm("alias2SecondNm");
+		requestCreateApplicant.setAlias2SurnameNm("alias2SurnameNm");
+		requestCreateApplicant.setAlias3FirstNm("alias3FirstNm");
+		requestCreateApplicant.setAlias3SecondNm("alias3SecondNm");
+		requestCreateApplicant.setAlias3SurnameNm("alias3SurnameNm");
+		requestCreateApplicant.setBirthDt("birthDt");
+		requestCreateApplicant.setBirthPlace("birthPlace");
+		requestCreateApplicant.setCallPurpose("callPurpose");
+		requestCreateApplicant.setCityNm("cityNm");
+		requestCreateApplicant.setCountryNm("countryNm");
+		requestCreateApplicant.setDriversLicNo("driversLicNo");
+		requestCreateApplicant.setGenderTxt("genderTxt");
+		requestCreateApplicant.setLegalFirstNm("legalFirstNm");
+		requestCreateApplicant.setLegalSecondNm("legalSecondNm");
+		requestCreateApplicant.setLegalSurnameNm("legalSurnameNm");
+		requestCreateApplicant.setOrgTicketNumber("orgTicketNumber");
+		requestCreateApplicant.setPhoneNumber("phoneNumber");
+		requestCreateApplicant.setPostalCodeTxt("postalCodeTxt");
+		requestCreateApplicant.setProvinceNm("provinceNm");
+		requestCreateApplicant.setEmailAddress("emailAddress");
+		requestCreateApplicant.setEmailType("emailType");
+		requestCreateApplicant.setRequestGuid("requestGuid");
+
+		MultiValueMap<String, String> result = requestCreateApplicant.buildQuery();
+
+		Assertions.assertEquals(26, result.size());
+		Assertions.assertEquals("addressLine1", result.get("Address_Line1").get(0));
+		Assertions.assertEquals("alias1FirstNm", result.get("Alias1_First_Nm").get(0));
+		Assertions.assertEquals("alias1SecondNm", result.get("Alias1_Second_Nm").get(0));
+		Assertions.assertEquals("alias1SurnameNm", result.get("Alias1_Surname_Nm").get(0));
+		Assertions.assertEquals("alias2FirstNm", result.get("Alias2_First_Nm").get(0));
+		Assertions.assertEquals("alias2SecondNm", result.get("Alias2_Second_Nm").get(0));
+		Assertions.assertEquals("alias2SurnameNm", result.get("Alias2_Surname_Nm").get(0));
+		Assertions.assertEquals("alias3FirstNm", result.get("Alias3_First_Nm").get(0));
+		Assertions.assertEquals("alias3SecondNm", result.get("Alias3_Second_Nm").get(0));
+		Assertions.assertEquals("alias3SurnameNm", result.get("Alias3_Surname_Nm").get(0));
+		Assertions.assertEquals("birthDt", result.get("Birth_Dt").get(0));
+		Assertions.assertEquals("birthPlace", result.get("Birth_Place").get(0));
+		Assertions.assertEquals("callPurpose", result.get("Call_Purpose").get(0));
+		Assertions.assertEquals("cityNm", result.get("City_Nm").get(0));
+		Assertions.assertEquals("countryNm", result.get("Country_Nm").get(0));
+		Assertions.assertEquals("driversLicNo", result.get("Drivers_Lic_No").get(0));
+		Assertions.assertEquals("genderTxt", result.get("Gender_Txt").get(0));
+		Assertions.assertEquals("legalFirstNm", result.get("Legal_First_Nm").get(0));
+		Assertions.assertEquals("legalSecondNm", result.get("Legal_Second_Nm").get(0));
+		Assertions.assertEquals("legalSurnameNm", result.get("Legal_Surname_Nm").get(0));
+		Assertions.assertEquals("orgTicketNumber", result.get("OrgTicketNumber").get(0));
+		Assertions.assertEquals("phoneNumber", result.get("Phone_Number").get(0));
+		Assertions.assertEquals("postalCodeTxt", result.get("Postal_Code_Txt").get(0));
+		Assertions.assertEquals("provinceNm", result.get("Province_Nm").get(0));
+		Assertions.assertEquals("emailAddress", result.get("Email_Address").get(0));
+		Assertions.assertEquals("emailType", result.get("Email_Type").get(0));
+
+	}
+
 
 }

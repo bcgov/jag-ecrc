@@ -1,7 +1,7 @@
 package ca.bc.gov.open.ecrc.service;
 
-import java.lang.reflect.InvocationTargetException;
-
+import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -11,8 +11,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Tests for oidc Configuration Service
