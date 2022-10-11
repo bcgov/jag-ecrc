@@ -1,6 +1,14 @@
 package ca.bc.gov.open.ecrc.model;
 
+import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.util.UriBuilder;
+import org.springframework.web.util.UriComponentsBuilder;
+
 import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
 
 import static ca.bc.gov.open.ecrc.util.EcrcUtil.encodeData;
 
@@ -289,4 +297,38 @@ public class RequestCreateApplicant {
         		"&Email_Address=" + emailAddress +
         		"&Email_Type=" + emailType;
     }
+    
+    public MultiValueMap<String, String> buildQuery() {
+		MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+		queryParams.add("OrgTicketNumber", orgTicketNumber);
+		queryParams.add("Call_Purpose", callPurpose);
+		queryParams.add("Legal_Surname_Nm",  legalSurnameNm);
+		queryParams.add("Legal_First_Nm",  legalFirstNm);
+		queryParams.add("Legal_Second_Nm",  legalSecondNm);
+		queryParams.add("Birth_Dt",  birthDt);
+		queryParams.add("Gender_Txt",  genderTxt);
+		queryParams.add("Birth_Place" , birthPlace);
+		queryParams.add("Alias1_Surname_Nm",  alias1SurnameNm);
+		queryParams.add("Alias1_First_Nm",  alias1FirstNm );
+		queryParams.add("Alias1_Second_Nm",  alias1SecondNm);
+		queryParams.add("Alias2_Surname_Nm",  alias2SurnameNm );
+		queryParams.add("Alias2_First_Nm",  alias2FirstNm);
+		queryParams.add("Alias2_Second_Nm",  alias2SecondNm );
+		queryParams.add("Alias3_Surname_Nm",  alias3SurnameNm );
+		queryParams.add("Alias3_First_Nm",  alias3FirstNm );
+		queryParams.add("Alias3_Second_Nm",  alias3SecondNm );
+		queryParams.add("Phone_Number",  phoneNumber );
+		queryParams.add("Address_Line1", addressLine1);
+		queryParams.add("City_Nm", cityNm);
+		queryParams.add("Province_Nm", provinceNm);
+		queryParams.add("Country_Nm", countryNm);
+		queryParams.add("Postal_Code_Txt", postalCodeTxt );
+		queryParams.add("Drivers_Lic_No", driversLicNo );
+		queryParams.add("Email_Address", emailAddress );
+		queryParams.add("Email_Type", emailType);
+
+		return queryParams;
+
+	}
+    
 }

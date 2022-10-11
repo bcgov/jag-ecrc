@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -42,9 +43,49 @@ public class EcrcWebMethodsServiceImpl implements EcrcWebMethodsService {
                 .build();
     }
 
+    //TODO these should be moved to use controller advice.
     public ResponseEntity<String> callWebMethodsService(String uri, Object returnObject, String requestGuid) {
 
         Mono<?> responseBody = this.webClient.get().uri(uri).retrieve()
+                .bodyToMono(returnObject.getClass());
+        try {
+
+            JSONObject obj = new JSONObject(objectMapper.writeValueAsString(responseBody.block()));
+            int respCode = obj.getInt("responseCode");
+            logger.info("For request guid: [{}] webMethods returned code: {} and message: {} ", requestGuid, respCode, obj.getString("message"));
+            if (respCode == WebServiceStatusCodes.SUCCESS.getErrorCode()) {
+                return new ResponseEntity<>(obj.toString(), HttpStatus.OK);
+            } else if (respCode == WebServiceStatusCodes.NOTFOUND.getErrorCode()) {
+                return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                        EcrcExceptionConstants.DATA_NOT_FOUND_ERROR, respCode), HttpStatus.NOT_FOUND);
+            } else if (respCode == WebServiceStatusCodes.ERROR.getErrorCode()) {
+                return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                        EcrcExceptionConstants.SERVICE_UNAVAILABLE, respCode), HttpStatus.SERVICE_UNAVAILABLE);
+            } else {
+                return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                        obj.getString("message"), respCode), HttpStatus.BAD_REQUEST);
+            }
+        } catch (JsonProcessingException e) {
+            logger.error("Request json exception: ", e);
+            logger.error("For request guid: [{}] Failed to convert to json processing exception", requestGuid);
+            return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                    EcrcExceptionConstants.CONVERT_TO_JSON_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
+        } catch (Exception e) {
+            logger.error("For request guid: [{}] Error in call to webMethods", requestGuid);
+            logger.error("Request general exception: ", e);
+            return new ResponseEntity<>(String.format(EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE,
+                    EcrcExceptionConstants.WEBSERVICE_RESPONSE_ERROR, WebServiceStatusCodes.ERROR.getErrorCode()), HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    //TODO these should be moved to use controller advice.
+    public ResponseEntity<String> callWebMethodsService(String uri, MultiValueMap<String, String> queryParams, Object returnObject, String requestGuid) {
+
+        Mono<?> responseBody = this.webClient.get()
+                .uri(uriBuilder -> uriBuilder
+                .path(uri)
+                .queryParams(queryParams)
+                .build()).retrieve()
                 .bodyToMono(returnObject.getClass());
 
         try {

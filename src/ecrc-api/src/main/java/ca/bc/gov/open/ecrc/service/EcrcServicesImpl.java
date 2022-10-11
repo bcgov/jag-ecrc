@@ -67,8 +67,9 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 	
 	public ResponseEntity<String> createApplicant(RequestCreateApplicant applicantInfo) throws EcrcServiceException {
-		String createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(), applicantInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(createApplicantUri, new CreateApplicant(), applicantInfo.getRequestGuid());
+
+		return ecrcWebMethodsService.callWebMethodsService(ecrcProps.getCreateApplicantUri(), applicantInfo.buildQuery(), new CreateApplicant(), applicantInfo.getRequestGuid());
+
 	}
 
 	public ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException {

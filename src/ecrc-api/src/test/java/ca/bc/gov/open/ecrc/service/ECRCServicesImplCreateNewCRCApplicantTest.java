@@ -45,8 +45,8 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 
     @BeforeEach
     public void initMocks() {
-        MockitoAnnotations.initMocks(this);
-        Mockito.when(ecrcProperties.getCreateApplicantUri()).thenReturn("/createApplicant%s");
+        MockitoAnnotations.openMocks(this);
+        Mockito.when(ecrcProperties.getCreateApplicantUri()).thenReturn("/createApplicant");
         Mockito.when(ecrcProperties.getGetNextInvoiceIdUri()).thenReturn("invoiceurl?%s");
         Mockito.when(ecrcProperties.getGetNextSessionIdUri()).thenReturn("sessionurl?%s");
         Mockito.when(ecrcProperties.getCreateNewCRCServiceUri()).thenReturn("crcurl?%s");
@@ -64,6 +64,9 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
         Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
                 .thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+
         Mockito.when(ecrcPaymentService.createPaymentUrl(any())).thenReturn(new ResponseEntity<>(serviceResp, HttpStatus.OK));
         ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
         Assert.assertEquals(successEmployeeResp, response.getBody());
@@ -79,6 +82,9 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
         request.setRequestNewCRCService(new RequestNewCRCService());
         Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
                 .thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 
         Mockito.when(ecrcPaymentService.createPaymentUrl(any())).thenReturn(new ResponseEntity<>(serviceResp, HttpStatus.OK));
         ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
@@ -96,6 +102,9 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
         Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
                 .thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+
         Mockito.when(ecrcPaymentService.createPaymentUrl(any())).thenReturn(new ResponseEntity<>(serviceResp, HttpStatus.OK));
         ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);
         Assert.assertEquals(successOnetimeResp, response.getBody());
@@ -109,7 +118,8 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 		RequestNewCRCApplicant request = new RequestNewCRCApplicant();
 		request.setRequestCreateApplicant(new RequestCreateApplicant());
 		request.setRequestNewCRCService(new RequestNewCRCService());
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(CreateApplicant.class), any()))
 				.thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
 						HttpStatus.SERVICE_UNAVAILABLE));
 
@@ -126,7 +136,7 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 		request.setApplType("EMPLOYEE");
 		request.setRequestCreateApplicant(new RequestCreateApplicant());
 		request.setRequestNewCRCService(new RequestNewCRCService());
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(CreateApplicant.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextSessionId.class), any()))
 				.thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
@@ -145,7 +155,7 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 		request.setApplType("EMPLOYEE");
 		request.setRequestCreateApplicant(new RequestCreateApplicant());
 		request.setRequestNewCRCService(new RequestNewCRCService());
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(CreateApplicant.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextSessionId.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
@@ -170,7 +180,7 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 		request.setApplType("EMPLOYEE");
 		request.setRequestCreateApplicant(new RequestCreateApplicant());
 		request.setRequestNewCRCService(new RequestNewCRCService());
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(CreateApplicant.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextSessionId.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
@@ -193,7 +203,7 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 		request.setApplType("EMPLOYEE");
 		request.setRequestCreateApplicant(new RequestCreateApplicant());
 		request.setRequestNewCRCService(new RequestNewCRCService());
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(CreateApplicant.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextSessionId.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
@@ -214,6 +224,10 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 		request.setApplType("EMPLOYEE");
 		request.setRequestCreateApplicant(new RequestCreateApplicant());
 		request.setRequestNewCRCService(new RequestNewCRCService());
+
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 
@@ -232,6 +246,10 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 		request.setApplType("EMPLOYEE");
 		request.setRequestCreateApplicant(new RequestCreateApplicant());
 		request.setRequestNewCRCService(new RequestNewCRCService());
+
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(), any()))
+				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
 				.thenThrow(new NullPointerException("error"));
 		ResponseEntity<String> response = ecrcServices.createNewCRCApplicant(request);

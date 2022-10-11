@@ -2,6 +2,7 @@ package ca.bc.gov.open.ecrc.service;
 
 import static org.mockito.ArgumentMatchers.any;
 
+import ca.bc.gov.open.ecrc.objects.CreateApplicant;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -44,14 +45,14 @@ class EcrcServicesImplCreateApplicantTest {
 
 	@BeforeEach
 	public void initMocks() {
-		MockitoAnnotations.initMocks(this);
-		Mockito.when(ecrcProperties.getCreateApplicantUri()).thenReturn("/createApplicant%s");
+		MockitoAnnotations.openMocks(this);
+		Mockito.when(ecrcProperties.getCreateApplicantUri()).thenReturn("/createApplicant");
 	}
 
 	@DisplayName("Success - ecrcService createApplicant")
 	@Test
-	public void testCreateApplicantResultSuccess() throws NotFoundException, EcrcServiceException {
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
+	public void testCreateApplicantResultSuccess() throws EcrcServiceException {
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(CreateApplicant.class), any()))
 				.thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
 		serviceResult = ecrcServices.createApplicant(new RequestCreateApplicant());
 		Assertions.assertEquals(HttpStatus.OK, serviceResult.getStatusCode());
