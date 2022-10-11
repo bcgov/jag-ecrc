@@ -1,7 +1,8 @@
 package ca.bc.gov.open.ecrc.service;
 
-import static org.mockito.ArgumentMatchers.any;
-
+import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 import ca.bc.gov.open.ecrc.objects.CreateApplicant;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,10 +15,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
-import javassist.NotFoundException;
+import static org.mockito.ArgumentMatchers.any;
 
 /**
  * Tests for create applicant service

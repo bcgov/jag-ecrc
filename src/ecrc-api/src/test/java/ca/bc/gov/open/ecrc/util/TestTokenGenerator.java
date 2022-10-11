@@ -1,8 +1,5 @@
 package ca.bc.gov.open.ecrc.util;
 
-import java.text.ParseException;
-import java.util.Date;
-
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSAlgorithm;
 import com.nimbusds.jose.JWSHeader;
@@ -11,6 +8,9 @@ import com.nimbusds.jose.crypto.RSASSASigner;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
+
+import java.text.ParseException;
+import java.util.Date;
 
 /**
  * 

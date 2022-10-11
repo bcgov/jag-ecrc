@@ -1,7 +1,8 @@
 package ca.bc.gov.open.ecrc.service;
 
-import static org.mockito.ArgumentMatchers.any;
-
+import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import javassist.NotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,9 +14,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import javassist.NotFoundException;
+import static org.mockito.ArgumentMatchers.any;
 
 /**
  * Tests for get province list service

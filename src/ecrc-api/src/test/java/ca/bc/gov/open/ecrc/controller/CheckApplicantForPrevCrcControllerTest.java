@@ -1,7 +1,10 @@
 package ca.bc.gov.open.ecrc.controller;
 
-import static org.mockito.Mockito.when;
-
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
+import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
+import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
+import ca.bc.gov.open.ecrc.model.RequestCheckApplicantForPrevCrc;
+import ca.bc.gov.open.ecrc.service.EcrcServices;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,11 +16,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import ca.bc.gov.open.ecrc.service.EcrcServices;
-import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
-import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
-import ca.bc.gov.open.ecrc.model.RequestCheckApplicantForPrevCrc;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests for check applicant for previous crc controller

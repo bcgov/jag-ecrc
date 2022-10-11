@@ -5,12 +5,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCApplicant;
 import ca.bc.gov.open.ecrc.model.RequestNewCRCService;
-import ca.bc.gov.open.ecrc.objects.CreateApplicant;
-import ca.bc.gov.open.ecrc.objects.CreateNewCrcService;
-import ca.bc.gov.open.ecrc.objects.GetNextInvoiceId;
-import ca.bc.gov.open.ecrc.objects.GetNextSessionId;
-import ca.bc.gov.open.ecrc.objects.GetServiceFeeAmount;
-
+import ca.bc.gov.open.ecrc.objects.*;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

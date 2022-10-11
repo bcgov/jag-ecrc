@@ -1,14 +1,7 @@
 package ca.bc.gov.open.ecrc.model;
 
-import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.util.UriBuilder;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.Map;
 
 import static ca.bc.gov.open.ecrc.util.EcrcUtil.encodeData;
 
