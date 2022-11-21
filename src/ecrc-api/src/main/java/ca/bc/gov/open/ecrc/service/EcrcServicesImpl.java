@@ -6,6 +6,7 @@ import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.*;
 import ca.bc.gov.open.ecrc.objects.*;
 import com.google.gson.Gson;
+import org.apache.cxf.common.util.StringUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,7 +47,7 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
 		logger.info("For request guid: [{}] Authenticating using org ticket number", requestGuid);
-        String doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber.trim());
+        String doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), trimString(orgTicketNumber));
         return ecrcWebMethodsService.callWebMethodsService(doAuthenticateUserUri, new DoAuthenticateUser(), requestGuid);
 	}
 
@@ -59,7 +60,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 	public ResponseEntity<String> getNextSessionId(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
-		String nextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), orgTicketNumber.trim());
+		String nextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), trimString(orgTicketNumber));
 		return ecrcWebMethodsService.callWebMethodsService(nextSessionIdUri, new GetNextSessionId(), requestGuid);
 	}
 	
@@ -80,7 +81,7 @@ public class EcrcServicesImpl implements EcrcServices {
     }
   
 	public ResponseEntity<String> getServiceFeeAmount(String orgTicketNumber, String scheduleTypeCd, String scopeLevelCd, String requestGuid) throws EcrcServiceException {
-		String serviceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), orgTicketNumber.trim(), scheduleTypeCd, scopeLevelCd);
+		String serviceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), trimString(orgTicketNumber), scheduleTypeCd, scopeLevelCd);
 		return ecrcWebMethodsService.callWebMethodsService(serviceFeeAmountUri, new GetServiceFeeAmount(), requestGuid);
 	}
 	
@@ -91,7 +92,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
-		String nextInvoiceIdUri = String.format(ecrcProps.getGetNextInvoiceIdUri(), orgTicketNumber.trim());
+		String nextInvoiceIdUri = String.format(ecrcProps.getGetNextInvoiceIdUri(), trimString(orgTicketNumber));
 		return ecrcWebMethodsService.callWebMethodsService(nextInvoiceIdUri, new GetNextInvoiceId(), requestGuid);
 	}
 
@@ -200,7 +201,7 @@ public class EcrcServicesImpl implements EcrcServices {
 			return clientResp;
 		}
 		ResponseEntity<String> getNextSession = getNextSessionId(
-				requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber().trim(),
+				requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(),
 				requestNewCRCApplicant.getRequestGuid());
 		if (getNextSession.getStatusCode() == HttpStatus.OK) {
 			obj = new JSONObject(getNextSession.getBody());
@@ -213,7 +214,7 @@ public class EcrcServicesImpl implements EcrcServices {
 		if (requestNewCRCApplicant.getApplType().equalsIgnoreCase(EMPLOYEE_TYPE)
 				|| requestNewCRCApplicant.getApplType().equalsIgnoreCase(ONETIME_TYPE)) {
 			ResponseEntity<String> getNextInvoice = getNextInvoiceId(
-					requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber().trim(),
+					requestNewCRCApplicant.getRequestCreateApplicant().getOrgTicketNumber(),
 					requestNewCRCApplicant.getRequestGuid());
 			if (getNextInvoice.getStatusCode() == HttpStatus.OK) {
 				obj = new JSONObject(getNextInvoice.getBody());
@@ -264,6 +265,16 @@ public class EcrcServicesImpl implements EcrcServices {
 			}
 		}
 		return null;
+	}
+
+	private String trimString(String input) {
+
+		if (StringUtils.isEmpty(input)) {
+			return "";
+		}
+
+		return input.trim();
+
 	}
 
 }
