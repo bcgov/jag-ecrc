@@ -1,5 +1,7 @@
 package ca.bc.gov.open.ecrc.model;
 
+import org.apache.cxf.common.util.StringUtils;
+
 /***
  * Object for requesting new CRC Service
  */
@@ -22,7 +24,11 @@ public class RequestNewCRCService {
     private String requestGuid;
 
     public String getOrgTicketNumber() {
-        return orgTicketNumber;
+        if (!StringUtils.isEmpty(orgTicketNumber))
+            return orgTicketNumber.trim();
+
+        return null;
+
     }
 
     public void setOrgTicketNumber(String orgTicketNumber) {
