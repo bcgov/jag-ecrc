@@ -2,8 +2,11 @@ package ca.bc.gov.open.ecrc.service;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.model.*;
-import ca.bc.gov.open.ecrc.objects.*;
+import ca.bc.gov.open.ecrc.model.RequestCRCShare;
+import ca.bc.gov.open.ecrc.model.RequestCreateApplicant;
+import ca.bc.gov.open.ecrc.model.RequestCreateSharingService;
+import ca.bc.gov.open.ecrc.objects.CreateApplicant;
+import ca.bc.gov.open.ecrc.objects.CreateSharingService;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -43,6 +46,10 @@ public class EcrcServiceImplShareCRC {
         RequestCRCShare request = new RequestCRCShare();
         request.setRequestCreateApplicant(new RequestCreateApplicant());
         request.setRequestCreateSharingService(new RequestCreateSharingService());
+
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(), any()))
+                .thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
+
         Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
                 .thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 
@@ -59,7 +66,7 @@ public class EcrcServiceImplShareCRC {
         RequestCRCShare request = new RequestCRCShare();
         request.setRequestCreateApplicant(new RequestCreateApplicant());
         request.setRequestCreateSharingService(new RequestCreateSharingService());
-        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any() ,any(CreateApplicant.class), any()))
                 .thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
                         HttpStatus.SERVICE_UNAVAILABLE));
 
@@ -75,7 +82,7 @@ public class EcrcServiceImplShareCRC {
         RequestCRCShare request = new RequestCRCShare();
         request.setRequestCreateApplicant(new RequestCreateApplicant());
         request.setRequestCreateSharingService(new RequestCreateSharingService());
-        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateApplicant.class), any()))
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(CreateApplicant.class), any()))
                 .thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
         Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateSharingService.class), any()))
                 .thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
@@ -93,7 +100,7 @@ public class EcrcServiceImplShareCRC {
         RequestCRCShare request = new RequestCRCShare();
         request.setRequestCreateApplicant(new RequestCreateApplicant());
         request.setRequestCreateSharingService(new RequestCreateSharingService());
-        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
+        Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any(), any()))
                 .thenThrow(new NullPointerException("error"));
         ResponseEntity<String> response = ecrcServices.createCRCShare(request);
         Assert.assertEquals("error", response.getBody());

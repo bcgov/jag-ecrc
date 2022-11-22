@@ -1,29 +1,22 @@
 package ca.bc.gov.open.ecrc.service;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Calendar;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.OIDCConfiguration;
 import ca.bc.gov.open.ecrc.model.ValidationResponse;
 import ca.bc.gov.open.ecrc.util.TestTokenGenerator;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
+import org.junit.jupiter.api.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 
 /**
  * 

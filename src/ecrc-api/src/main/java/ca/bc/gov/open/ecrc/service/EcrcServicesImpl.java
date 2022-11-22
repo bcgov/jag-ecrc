@@ -3,10 +3,10 @@ package ca.bc.gov.open.ecrc.service;
 
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
-import ca.bc.gov.open.ecrc.exception.WebServiceStatusCodes;
 import ca.bc.gov.open.ecrc.model.*;
 import ca.bc.gov.open.ecrc.objects.*;
 import com.google.gson.Gson;
+import org.apache.cxf.common.util.StringUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,8 +18,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
-
-import static ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants.WEBSERVICE_ERROR_JSON_RESPONSE;
 
 /**
  *
@@ -49,7 +47,7 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	public ResponseEntity<String> doAuthenticateUser(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
 		logger.info("For request guid: [{}] Authenticating using org ticket number", requestGuid);
-        String doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), orgTicketNumber);
+        String doAuthenticateUserUri = String.format(ecrcProps.getDoAuthenticateUserUri(), trimString(orgTicketNumber));
         return ecrcWebMethodsService.callWebMethodsService(doAuthenticateUserUri, new DoAuthenticateUser(), requestGuid);
 	}
 
@@ -62,13 +60,14 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 	public ResponseEntity<String> getNextSessionId(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
-		String nextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), orgTicketNumber);
+		String nextSessionIdUri = String.format(ecrcProps.getGetNextSessionIdUri(), trimString(orgTicketNumber));
 		return ecrcWebMethodsService.callWebMethodsService(nextSessionIdUri, new GetNextSessionId(), requestGuid);
 	}
 	
 	public ResponseEntity<String> createApplicant(RequestCreateApplicant applicantInfo) throws EcrcServiceException {
-		String createApplicantUri = String.format(ecrcProps.getCreateApplicantUri(), applicantInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(createApplicantUri, new CreateApplicant(), applicantInfo.getRequestGuid());
+
+		return ecrcWebMethodsService.callWebMethodsService(ecrcProps.getCreateApplicantUri(), applicantInfo.buildQuery(), new CreateApplicant(), applicantInfo.getRequestGuid());
+
 	}
 
 	public ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException {
@@ -82,7 +81,7 @@ public class EcrcServicesImpl implements EcrcServices {
     }
   
 	public ResponseEntity<String> getServiceFeeAmount(String orgTicketNumber, String scheduleTypeCd, String scopeLevelCd, String requestGuid) throws EcrcServiceException {
-		String serviceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), orgTicketNumber, scheduleTypeCd, scopeLevelCd);
+		String serviceFeeAmountUri = String.format(ecrcProps.getGetServiceFeeAmountUri(), trimString(orgTicketNumber), scheduleTypeCd, scopeLevelCd);
 		return ecrcWebMethodsService.callWebMethodsService(serviceFeeAmountUri, new GetServiceFeeAmount(), requestGuid);
 	}
 	
@@ -93,7 +92,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	}
 
 	public ResponseEntity<String> getNextInvoiceId(String orgTicketNumber, String requestGuid) throws EcrcServiceException {
-		String nextInvoiceIdUri = String.format(ecrcProps.getGetNextInvoiceIdUri(), orgTicketNumber);
+		String nextInvoiceIdUri = String.format(ecrcProps.getGetNextInvoiceIdUri(), trimString(orgTicketNumber));
 		return ecrcWebMethodsService.callWebMethodsService(nextInvoiceIdUri, new GetNextInvoiceId(), requestGuid);
 	}
 
@@ -266,6 +265,16 @@ public class EcrcServicesImpl implements EcrcServices {
 			}
 		}
 		return null;
+	}
+
+	private String trimString(String input) {
+
+		if (StringUtils.isEmpty(input)) {
+			return "";
+		}
+
+		return input.trim();
+
 	}
 
 }

@@ -1,9 +1,9 @@
 package ca.bc.gov.open.ecrc.model;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ResponseBCSCClientDetailsTest {
 	@DisplayName("Success - get and set client details")

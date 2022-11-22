@@ -1,11 +1,10 @@
 package ca.bc.gov.open.ecrc.controller;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
-
+import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
+import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
+import ca.bc.gov.open.ecrc.exception.OauthServiceException;
+import ca.bc.gov.open.ecrc.service.ECRCJWTValidationServiceImpl;
+import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
 import net.minidev.json.JSONObject;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,13 +17,12 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
-import ca.bc.gov.open.ecrc.exception.EcrcExceptionConstants;
-import ca.bc.gov.open.ecrc.exception.OauthServiceException;
-import ca.bc.gov.open.ecrc.service.ECRCJWTValidationServiceImpl;
-import ca.bc.gov.open.ecrc.service.OauthServicesImpl;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests for oauth controller
