@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ca.bc.gov.open</groupId>
 	<artifactId>ecrc-api</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.7</version>
 	<name>ecrc-api</name>
 	<description>Criminal Record Check (eCRC)</description>
 
