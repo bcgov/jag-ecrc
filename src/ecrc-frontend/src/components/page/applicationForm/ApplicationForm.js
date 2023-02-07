@@ -743,7 +743,7 @@ export default function ApplicationForm({
       job !== "" &&
       !(defaultScheduleTypeCd === "WBSD" && organizationLocation === "") &&
       ((!sameAddress &&
-        mailingAddressLine1 !== "" && 
+        mailingAddressLine1 !== "" &&
         mailingAddressLine1.length <= 40 &&
         mailingCity !== "" &&
         mailingProvince !== "" &&
