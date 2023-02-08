@@ -696,6 +696,15 @@ export default function ApplicationForm({
       }
     }
 
+    if (!sameAddress && mailingAddressLine1.length > 40) {
+      setMailingAddressLine1Error(
+        "Street or PO box can not be greater than 40 characters"
+      );
+      if (!hasScrolled) {
+        scrollToRef(mailingAddressLine1Ref);
+      }
+    }
+
     if (!sameAddress && !mailingCity) {
       setMailingCityError("City is required");
       if (!hasScrolled) {
@@ -735,6 +744,7 @@ export default function ApplicationForm({
       !(defaultScheduleTypeCd === "WBSD" && organizationLocation === "") &&
       ((!sameAddress &&
         mailingAddressLine1 !== "" &&
+        mailingAddressLine1.length <= 40 &&
         mailingCity !== "" &&
         mailingProvince !== "" &&
         validatePostalCode(mailingPostalCode)) ||
