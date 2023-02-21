@@ -41,7 +41,7 @@ class RequestCreateApplicantTest {
 			+ "&Email_Address=emailAddress"
 			+ "&Email_Type=emailType";
 
-	private final String expectedEncodedQueryString = "?OrgTicketNumber=orgTicketNumber&Call_Purpose=callPurpose&Legal_Surname_Nm=legalSurnameNm&Legal_First_Nm=legalFirstNm&Legal_Second_Nm=legalSecondNm&Birth_Dt=birthDt&Gender_Txt=genderTxt&Birth_Place=birthPlace&Alias1_Surname_Nm=alias1SurnameNm&Alias1_First_Nm=alias1FirstNm&Alias1_Second_Nm=alias1SecondNm&Alias2_Surname_Nm=alias2SurnameNm&Alias2_First_Nm=alias2FirstNm&Alias2_Second_Nm=alias2SecondNm&Alias3_Surname_Nm=alias3SurnameNm&Alias3_First_Nm=alias3FirstNm&Alias3_Second_Nm=alias3SecondNm&Phone_Number=phoneNumber&Address_Line1=addressLine1%26addressLine1&City_Nm=cityNm%26cityNm&Province_Nm=provinceNm&Country_Nm=&Postal_Code_Txt=postalCodeTxt&Drivers_Lic_No=driversLicNo&Email_Address=emailAddress&Email_Type=emailType";
+	private final String expectedEncodedQueryString = "?OrgTicketNumber=orgTicketNumber&Call_Purpose=callPurpose&Legal_Surname_Nm=legalSurnameNm&Legal_First_Nm=legalFirstNm&Legal_Second_Nm=legalSecondNm&Birth_Dt=birthDt&Gender_Txt=genderTxt&Birth_Place=birthPlace&Alias1_Surname_Nm=alias1SurnameNm&Alias1_First_Nm=alias1FirstNm&Alias1_Second_Nm=alias1SecondNm&Alias2_Surname_Nm=alias2SurnameNm&Alias2_First_Nm=alias2FirstNm&Alias2_Second_Nm=alias2SecondNm&Alias3_Surname_Nm=alias3SurnameNm&Alias3_First_Nm=alias3FirstNm&Alias3_Second_Nm=alias3SecondNm&Phone_Number=phoneNumber&Address_Line1=addressLine1&addressLine1&City_Nm=cityNm%26cityNm&Province_Nm=provinceNm&Country_Nm=&Postal_Code_Txt=postalCodeTxt&Drivers_Lic_No=driversLicNo&Email_Address=emailAddress&Email_Type=emailType";
 	@DisplayName("Success - createApplicant request queryString")
 	@Test
 	public void generateQueryStringTest() {
@@ -179,7 +179,7 @@ class RequestCreateApplicantTest {
 
 		MultiValueMap<String, String> result = requestCreateApplicant.buildQuery();
 
-		Assertions.assertEquals(26, result.size());
+		Assertions.assertEquals(27, result.size());
 		Assertions.assertEquals("addressLine1", result.get("Address_Line1").get(0));
 		Assertions.assertEquals("alias1FirstNm", result.get("Alias1_First_Nm").get(0));
 		Assertions.assertEquals("alias1SecondNm", result.get("Alias1_Second_Nm").get(0));

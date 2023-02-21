@@ -281,7 +281,7 @@ public class RequestCreateApplicant {
         		"&Alias3_First_Nm=" + alias3FirstNm +
         		"&Alias3_Second_Nm=" + alias3SecondNm +
         		"&Phone_Number=" + phoneNumber +
-        		"&Address_Line1=" +  encodeData(addressLine1) +
+        		"&Address_Line1=" +  addressLine1 +
         		"&City_Nm=" + encodeData(cityNm) +
         		"&Province_Nm=" + encodeData(provinceNm) +
         		"&Country_Nm=" + encodeData(countryNm) +
@@ -312,6 +312,7 @@ public class RequestCreateApplicant {
 		queryParams.add("Alias3_Second_Nm",  alias3SecondNm );
 		queryParams.add("Phone_Number",  phoneNumber );
 		queryParams.add("Address_Line1", addressLine1);
+		queryParams.add("Address_Line2", addressLine2);
 		queryParams.add("City_Nm", cityNm);
 		queryParams.add("Province_Nm", provinceNm);
 		queryParams.add("Country_Nm", countryNm);
