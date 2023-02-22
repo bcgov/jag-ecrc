@@ -1000,7 +1000,7 @@ export default function ApplicationForm({
                 Current Residential Address
               </span>
             </div>
-              <SimpleForm simpleForm={address} />
+            <SimpleForm simpleForm={address} />
             <p className="heading">
               Is your current mailing address the same as your current
               residential address?&nbsp;
