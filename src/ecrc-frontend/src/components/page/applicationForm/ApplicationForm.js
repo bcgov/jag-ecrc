@@ -72,20 +72,30 @@ export default function ApplicationForm({
   });
 
   const [alias1First, setAlias1First] = useState(alias1FirstNm || "");
+  const [alias1FirstError, setAlias1FirstError] = useState("");
   const [alias1Second, setAlias1Second] = useState(alias1SecondNm || "");
+  const [alias1SecondError, setAlias1SecondError] = useState("");
   const [alias1Surname, setAlias1Surname] = useState(alias1SurnameNm || "");
+  const [alias1SurnameError, setAlias1SurnameError] = useState("");
 
   const [alias2First, setAlias2First] = useState(alias2FirstNm || "");
+  const [alias2FirstError, setAlias2FirstError] = useState("");
   const [alias2Second, setAlias2Second] = useState(alias2SecondNm || "");
+  const [alias2SecondError, setAlias2SecondError] = useState("");
   const [alias2Surname, setAlias2Surname] = useState(alias2SurnameNm || "");
+  const [alias2SurnameError, setAlias2SurnameError] = useState("");
 
   const [alias3First, setAlias3First] = useState(alias3FirstNm || "");
+  const [alias3FirstError, setAlias3FirstError] = useState("");
   const [alias3Second, setAlias3Second] = useState(alias3SecondNm || "");
+  const [alias3SecondError, setAlias3SecondError] = useState("");
   const [alias3Surname, setAlias3Surname] = useState(alias3SurnameNm || "");
+  const [alias3SurnameError, setAlias3SurnameError] = useState("");
 
   const [birthLoc, setBirthLoc] = useState(birthPlace || "");
   const [birthPlaceError, setBirthPlaceError] = useState("");
   const [driversLicence, setDriversLicence] = useState(driversLicNo || "");
+  const [driversLicenceError, setDriversLicenceError] = useState("");
   const [phoneNum, setPhoneNum] = useState(
     phoneNumber ? `+1${phoneNumber.replace(" ", "").replace("-", "")}` : ""
   );
@@ -238,7 +248,7 @@ export default function ApplicationForm({
           if (formatProvinceNm === undefined) {
             formatProvinceNm = "Invalid Province";
           }
-
+                                                                                      
           setApplicant({
             legalFirstNm: given_name,
             legalSecondNm: formatSecondNm,
@@ -306,24 +316,30 @@ export default function ApplicationForm({
       label: "First Name",
       id: "alias1First",
       value: alias1First,
+      errorMsg: alias1FirstError,
       onChange: event => {
         setAlias1First(event);
+        setAlias1FirstError("");
       }
     },
     legalSecondNm: {
       label: "Middle Name",
       id: "alias1Seocnd",
       value: alias1Second,
+      errorMsg: alias1SecondError,      
       onChange: event => {
         setAlias1Second(event);
+        setAlias1SecondError("");        
       }
     },
     legalSurnameNm: {
       label: "Last Name",
       id: "alias1Surname",
       value: alias1Surname,
+      errorMsg: alias1SurnameError,        
       onChange: event => {
         setAlias1Surname(event);
+        setAlias1SurnameError("");         
       }
     }
   };
@@ -333,24 +349,30 @@ export default function ApplicationForm({
       label: "First Name",
       id: "alias2First",
       value: alias2First,
+      errorMsg: alias2FirstError,        
       onChange: event => {
         setAlias2First(event);
+        setAlias2FirstError("");          
       }
     },
     legalSecondNm: {
       label: "Middle Name",
       id: "alias2Second",
       value: alias2Second,
+      errorMsg: alias2SecondError,       
       onChange: event => {
         setAlias2Second(event);
+        setAlias2SecondError("");         
       }
     },
     legalSurnameNm: {
       label: "Last Name",
       id: "alias2Surname",
       value: alias2Surname,
+      errorMsg: alias2SurnameError,         
       onChange: event => {
         setAlias2Surname(event);
+        setAlias2SurnameError("");           
       }
     }
   };
@@ -359,25 +381,31 @@ export default function ApplicationForm({
     legalFirstNm: {
       label: "First Name",
       id: "alias3First",
-      value: alias3FirstNm,
+      value: alias3First,
+      errorMsg: alias3FirstError,            
       onChange: event => {
         setAlias3First(event);
+        setAlias3FirstError("");          
       }
     },
     legalSecondNm: {
       label: "Middle Name",
       id: "alias3Second",
       value: alias3Second,
+      errorMsg: alias3SecondError,       
       onChange: event => {
         setAlias3Second(event);
+        setAlias3SecondError("");          
       }
     },
     legalSurnameNm: {
       label: "Last Name",
       id: "alias3Surname",
       value: alias3Surname,
+      errorMsg:alias3SurnameError,       
       onChange: event => {
         setAlias3Surname(event);
+        setAlias3SurnameError("");          
       }
     }
   };
@@ -414,6 +442,7 @@ export default function ApplicationForm({
         id: "bcDLNumber",
         value: driversLicence,
         note: "(Current or Expired)",
+        errorMsg: driversLicenceError,
         onChange: setDriversLicence
       },
       {
@@ -624,15 +653,45 @@ export default function ApplicationForm({
     }
   };
 
+  const fullNameRef = useRef(null);
   const birthLocRef = useRef(null);
   const phoneNumRef = useRef(null);
   const emailRef = useRef(null);
+  const driversLicenceRef = useRef(null);
   const jobRef = useRef(null);
   const organizationFacilityRef = useRef(null);
   const mailingAddressLine1Ref = useRef(null);
   const mailingCityRef = useRef(null);
   const mailingProvinceRef = useRef(null);
   const mailingPostalCodeRef = useRef(null);
+  const cityRef = useRef(null);
+
+  const verifyAliasFirstName = (name, setName) => {
+    if(name && name.length > 25) {
+      setName("First Name can not be greater than 25 characters");
+      if (!hasScrolled) {
+        scrollToRef(fullNameRef);
+      }         
+    }
+  }
+
+  const verifyAliasMiddleName = (name, setName) => {
+    if(name && name.length > 25) {
+      setName("Middle Name can not be greater than 25 characters");
+      if (!hasScrolled) {
+        scrollToRef(fullNameRef);
+      }         
+    }
+  }  
+
+  const verifyAliasSurName = (name, setName) => {
+    if(name && name.length > 40) {
+      setName("Last Name can not be greater than 25 characters");
+      if (!hasScrolled) {
+        scrollToRef(fullNameRef);
+      }         
+    }
+  }    
 
   const applicationVerification = () => {
     if (!isAuthorized()) {
@@ -644,11 +703,28 @@ export default function ApplicationForm({
       return;
     }
 
+    verifyAliasFirstName(alias1First, setAlias1FirstError);
+    verifyAliasMiddleName(alias1Second, setAlias1SecondError);
+    verifyAliasSurName(alias1Surname, setAlias1SurnameError);
+
+    verifyAliasFirstName(alias2First, setAlias2FirstError);
+    verifyAliasMiddleName(alias3Second, setAlias2SecondError);
+    verifyAliasSurName(alias3Surname, setAlias2SurnameError);
+
+    verifyAliasFirstName(alias3First, setAlias3FirstError);
+    verifyAliasMiddleName(alias3Second, setAlias3SecondError);
+    verifyAliasSurName(alias3Surname, setAlias3SurnameError);
+
     if (!birthLoc || !validateBirthPlace(birthLoc)) {
       setBirthPlaceError("City and country of birth are required");
       if (!hasScrolled) {
         scrollToRef(birthLocRef);
       }
+    } else if(birthLoc && birthLoc.length > 100) {
+      setBirthPlaceError("City and country of birth can not be greater than 100 characters");
+      if (!hasScrolled) {
+        scrollToRef(birthLocRef);
+      }      
     }
 
     if (!phoneNum) {
@@ -663,16 +739,30 @@ export default function ApplicationForm({
       }
     }
 
+    if(driversLicence && driversLicence.length > 80) {
+      setDriversLicenceError("BC Driver's Licence Number can not be greater than 80 characters");
+      if (!hasScrolled) {
+        scrollToRef(driversLicenceRef);
+      }      
+    }
+
     if (!email) {
       setEmailAddressError("Personal email address is required");
       if (!hasScrolled) {
         scrollToRef(emailRef);
       }
-    } else if (!validateEmail(email)) {
-      setEmailAddressError("Email address must be in the form name@company.ca");
-      if (!hasScrolled) {
-        scrollToRef(emailRef);
-      }
+    } else {
+      if(email.length > 80) {
+        setEmailAddressError("Email address must be  can not be greater than 80 characters");
+        if (!hasScrolled) {
+          scrollToRef(emailRef);
+        }       
+      } else if (!validateEmail(email)) {
+        setEmailAddressError("Email address must be in the form name@company.ca");
+        if (!hasScrolled) {
+          scrollToRef(emailRef);
+        }
+      } 
     }
 
     if (!job) {
@@ -680,6 +770,11 @@ export default function ApplicationForm({
       if (!hasScrolled) {
         scrollToRef(jobRef);
       }
+    } else if (job.length > 3900) {
+      setJobTitleError("Position/job title is required can not be greater than 3900 characters");
+      if (!hasScrolled) {
+        scrollToRef(jobRef);
+      } 
     }
 
     if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
@@ -696,7 +791,7 @@ export default function ApplicationForm({
       }
     }
 
-    if (!sameAddress && mailingAddressLine1.length > 40) {
+    if (!sameAddress && mailingAddressLine1 && mailingAddressLine1.length > 40) {
       setMailingAddressLine1Error(
         "Street or PO box can not be greater than 40 characters"
       );
@@ -705,10 +800,17 @@ export default function ApplicationForm({
       }
     }
 
-    if (!sameAddress && !mailingCity) {
-      setMailingCityError("City is required");
-      if (!hasScrolled) {
-        scrollToRef(mailingCityRef);
+    if (!sameAddress) {
+      if(!mailingCity) {
+        setMailingCityError("City is required");
+        if (!hasScrolled) {
+          scrollToRef(mailingCityRef);
+        }
+      } else if(mailingCity.length > 25) {
+        setMailingCityError("City can not be greater than 25 characters");
+        if (!hasScrolled) {
+          scrollToRef(mailingCityRef);
+        }
       }
     }
 
@@ -854,13 +956,15 @@ export default function ApplicationForm({
                 - Including birth name, previous name, maiden name, and/or alias
               </span>
             </div>
-            <FullName title={null} fullname={previousNameOne} />
-            {previousNames.previousTwo && (
-              <FullName title={null} fullname={previousNameTwo} />
-            )}
-            {previousNames.previousThree && (
-              <FullName title={null} fullname={previousNameThree} />
-            )}
+            <div ref={fullNameRef}>
+              <FullName title={null} fullname={previousNameOne} />
+              {previousNames.previousTwo && (
+                <FullName title={null} fullname={previousNameTwo} />
+              )}
+              {previousNames.previousThree && (
+                <FullName title={null} fullname={previousNameThree} />
+              )}
+            </div>
             {(!previousNames.previousTwo || !previousNames.previousThree) && (
               <span className="heading note previousFooter">
                 If you have more than one previous name, please&nbsp;
@@ -876,7 +980,9 @@ export default function ApplicationForm({
             <div ref={birthLocRef}>
               <div ref={phoneNumRef}>
                 <div ref={emailRef}>
-                  <SimpleForm simpleForm={applicantInformation} />
+                  <div ref={driversLicenceRef}>
+                    <SimpleForm simpleForm={applicantInformation} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -895,7 +1001,9 @@ export default function ApplicationForm({
                 Current Residential Address
               </span>
             </div>
-            <SimpleForm simpleForm={address} />
+            <div ref={cityRef}>
+              <SimpleForm simpleForm={address} />
+            </div>
             <p className="heading">
               Is your current mailing address the same as your current
               residential address?&nbsp;
