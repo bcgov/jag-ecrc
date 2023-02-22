@@ -664,11 +664,10 @@ export default function ApplicationForm({
   const mailingCityRef = useRef(null);
   const mailingProvinceRef = useRef(null);
   const mailingPostalCodeRef = useRef(null);
-  const cityRef = useRef(null);
 
   const verifyAliasFirstName = (name, setName) => {
     if(name && name.length > 25) {
-      setName("First Name can not be greater than 25 characters");
+      setName("First name can not be greater than 25 characters");
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }         
@@ -677,7 +676,7 @@ export default function ApplicationForm({
 
   const verifyAliasMiddleName = (name, setName) => {
     if(name && name.length > 25) {
-      setName("Middle Name can not be greater than 25 characters");
+      setName("Middle name can not be greater than 25 characters");
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }         
@@ -686,7 +685,7 @@ export default function ApplicationForm({
 
   const verifyAliasSurName = (name, setName) => {
     if(name && name.length > 40) {
-      setName("Last Name can not be greater than 25 characters");
+      setName("Last name can not be greater than 40 characters");
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }         
@@ -740,7 +739,7 @@ export default function ApplicationForm({
     }
 
     if(driversLicence && driversLicence.length > 80) {
-      setDriversLicenceError("BC Driver's Licence Number can not be greater than 80 characters");
+      setDriversLicenceError("BC driver's licence number can not be greater than 80 characters");
       if (!hasScrolled) {
         scrollToRef(driversLicenceRef);
       }      
@@ -753,7 +752,7 @@ export default function ApplicationForm({
       }
     } else {
       if(email.length > 80) {
-        setEmailAddressError("Email address must be  can not be greater than 80 characters");
+        setEmailAddressError("Email address must be can not be greater than 80 characters");
         if (!hasScrolled) {
           scrollToRef(emailRef);
         }       
@@ -1001,9 +1000,7 @@ export default function ApplicationForm({
                 Current Residential Address
               </span>
             </div>
-            <div ref={cityRef}>
               <SimpleForm simpleForm={address} />
-            </div>
             <p className="heading">
               Is your current mailing address the same as your current
               residential address?&nbsp;
