@@ -174,96 +174,98 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
               - Including birth name, previous name, maiden name, and/or alias
             </span>
           </div>
-          <form
-            class="simpleForm"
-          >
-            <ul>
-              <li>
-                <div>
-                  <label
-                    class="label"
-                    for="alias1First"
-                  >
-                    <div
-                      class="textinput_label"
+          <div>
+            <form
+              class="simpleForm"
+            >
+              <ul>
+                <li>
+                  <div>
+                    <label
+                      class="label"
+                      for="alias1First"
                     >
-                      First Name
-                    </div>
-                     
-                    <span
-                      class="note"
+                      <div
+                        class="textinput_label"
+                      >
+                        First Name
+                      </div>
+                       
+                      <span
+                        class="note"
+                      />
+                    </label>
+                    <input
+                      class="textinput_editable_white"
+                      id="alias1First"
+                      type="text"
+                      value=""
                     />
-                  </label>
-                  <input
-                    class="textinput_editable_white"
-                    id="alias1First"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                  <span
-                    class="error"
-                  />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <label
-                    class="label"
-                    for="alias1Seocnd"
-                  >
-                    <div
-                      class="textinput_label"
+                    <br />
+                    <span
+                      class="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      class="label"
+                      for="alias1Seocnd"
                     >
-                      Middle Name
-                    </div>
-                     
-                    <span
-                      class="note"
+                      <div
+                        class="textinput_label"
+                      >
+                        Middle Name
+                      </div>
+                       
+                      <span
+                        class="note"
+                      />
+                    </label>
+                    <input
+                      class="textinput_editable_white"
+                      id="alias1Seocnd"
+                      type="text"
+                      value=""
                     />
-                  </label>
-                  <input
-                    class="textinput_editable_white"
-                    id="alias1Seocnd"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                  <span
-                    class="error"
-                  />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <label
-                    class="label"
-                    for="alias1Surname"
-                  >
-                    <div
-                      class="textinput_label"
+                    <br />
+                    <span
+                      class="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      class="label"
+                      for="alias1Surname"
                     >
-                      Last Name
-                    </div>
-                     
-                    <span
-                      class="note"
+                      <div
+                        class="textinput_label"
+                      >
+                        Last Name
+                      </div>
+                       
+                      <span
+                        class="note"
+                      />
+                    </label>
+                    <input
+                      class="textinput_editable_white"
+                      id="alias1Surname"
+                      type="text"
+                      value=""
                     />
-                  </label>
-                  <input
-                    class="textinput_editable_white"
-                    id="alias1Surname"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                  <span
-                    class="error"
-                  />
-                </div>
-              </li>
-            </ul>
-          </form>
+                    <br />
+                    <span
+                      class="error"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </form>
+          </div>
           <span
             class="heading note previousFooter"
           >
@@ -278,210 +280,212 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
           <div>
             <div>
               <div>
-                <form
-                  class="simpleForm"
-                >
-                  <ul>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="birthLoc"
-                        >
-                          <div
-                            class="textinput_label"
+                <div>
+                  <form
+                    class="simpleForm"
+                  >
+                    <ul>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="birthLoc"
                           >
-                            City and Country of Birth
-                          </div>
-                          <span
-                            class="mandatory"
-                            id="asterisk"
-                          >
-                            *
-                          </span>
-                           
-                          <span
-                            class="note"
+                            <div
+                              class="textinput_label"
+                            >
+                              City and Country of Birth
+                            </div>
+                            <span
+                              class="mandatory"
+                              id="asterisk"
+                            >
+                              *
+                            </span>
+                             
+                            <span
+                              class="note"
+                            />
+                          </label>
+                          <input
+                            class="textinput_editable_white"
+                            id="birthLoc"
+                            placeholder="City, Country"
+                            type="text"
+                            value=""
                           />
-                        </label>
-                        <input
-                          class="textinput_editable_white"
-                          id="birthLoc"
-                          placeholder="City, Country"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="birthDt"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Date of Birth
-                          </div>
-                           
+                          <br />
                           <span
-                            class="note"
+                            class="error"
                           />
-                        </label>
-                        <input
-                          class="textinput_non_editable_gray"
-                          id="birthDt"
-                          readonly=""
-                          type="text"
-                          value="1942-10-29"
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="genderTxt"
-                        >
-                          <div
-                            class="textinput_label"
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="birthDt"
                           >
-                            Sex
-                          </div>
-                           
-                          <span
-                            class="note"
+                            <div
+                              class="textinput_label"
+                            >
+                              Date of Birth
+                            </div>
+                             
+                            <span
+                              class="note"
+                            />
+                          </label>
+                          <input
+                            class="textinput_non_editable_gray"
+                            id="birthDt"
+                            readonly=""
+                            type="text"
+                            value="1942-10-29"
                           />
-                        </label>
-                        <input
-                          class="textinput_non_editable_gray"
-                          id="genderTxt"
-                          readonly=""
-                          type="text"
-                          value="Male"
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="bcDLNumber"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            BC Driver's Licence Number
-                          </div>
-                           
+                          <br />
                           <span
-                            class="note"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="genderTxt"
                           >
-                            (Current or Expired)
-                          </span>
-                        </label>
-                        <input
-                          class="textinput_editable_white"
-                          id="bcDLNumber"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="phoneNumber"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Primary Phone Number
-                          </div>
+                            <div
+                              class="textinput_label"
+                            >
+                              Sex
+                            </div>
+                             
+                            <span
+                              class="note"
+                            />
+                          </label>
+                          <input
+                            class="textinput_non_editable_gray"
+                            id="genderTxt"
+                            readonly=""
+                            type="text"
+                            value="Male"
+                          />
+                          <br />
                           <span
-                            class="mandatory"
-                            id="asterisk"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="bcDLNumber"
                           >
-                            *
-                          </span>
-                           
+                            <div
+                              class="textinput_label"
+                            >
+                              BC Driver's Licence Number
+                            </div>
+                             
+                            <span
+                              class="note"
+                            >
+                              (Current or Expired)
+                            </span>
+                          </label>
+                          <input
+                            class="textinput_editable_white"
+                            id="bcDLNumber"
+                            type="text"
+                            value=""
+                          />
+                          <br />
                           <span
-                            class="note"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="phoneNumber"
                           >
-                            (Including area code)
-                          </span>
-                        </label>
-                        <input
-                          autocomplete="tel"
-                          class="textinput_editable_white"
-                          id="phoneNumber"
-                          placeholder="250 555-1234"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="emailAddress"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Personal Email Address
-                          </div>
+                            <div
+                              class="textinput_label"
+                            >
+                              Primary Phone Number
+                            </div>
+                            <span
+                              class="mandatory"
+                              id="asterisk"
+                            >
+                              *
+                            </span>
+                             
+                            <span
+                              class="note"
+                            >
+                              (Including area code)
+                            </span>
+                          </label>
+                          <input
+                            autocomplete="tel"
+                            class="textinput_editable_white"
+                            id="phoneNumber"
+                            placeholder="250 555-1234"
+                            type="text"
+                            value=""
+                          />
+                          <br />
                           <span
-                            class="mandatory"
-                            id="asterisk"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="emailAddress"
                           >
-                            *
-                          </span>
-                           
+                            <div
+                              class="textinput_label"
+                            >
+                              Personal Email Address
+                            </div>
+                            <span
+                              class="mandatory"
+                              id="asterisk"
+                            >
+                              *
+                            </span>
+                             
+                            <span
+                              class="note"
+                            >
+                              We may use this to communicate with you about your application
+                            </span>
+                          </label>
+                          <input
+                            class="textinput_editable_white"
+                            id="emailAddress"
+                            placeholder="example@test.com"
+                            type="text"
+                            value=""
+                          />
+                          <br />
                           <span
-                            class="note"
-                          >
-                            We may use this to communicate with you about your application
-                          </span>
-                        </label>
-                        <input
-                          class="textinput_editable_white"
-                          id="emailAddress"
-                          placeholder="example@test.com"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                  </ul>
-                </form>
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -1415,96 +1419,98 @@ exports[`ApplicationForm Component Matches the snapshot with gender being female
               - Including birth name, previous name, maiden name, and/or alias
             </span>
           </div>
-          <form
-            class="simpleForm"
-          >
-            <ul>
-              <li>
-                <div>
-                  <label
-                    class="label"
-                    for="alias1First"
-                  >
-                    <div
-                      class="textinput_label"
+          <div>
+            <form
+              class="simpleForm"
+            >
+              <ul>
+                <li>
+                  <div>
+                    <label
+                      class="label"
+                      for="alias1First"
                     >
-                      First Name
-                    </div>
-                     
-                    <span
-                      class="note"
+                      <div
+                        class="textinput_label"
+                      >
+                        First Name
+                      </div>
+                       
+                      <span
+                        class="note"
+                      />
+                    </label>
+                    <input
+                      class="textinput_editable_white"
+                      id="alias1First"
+                      type="text"
+                      value=""
                     />
-                  </label>
-                  <input
-                    class="textinput_editable_white"
-                    id="alias1First"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                  <span
-                    class="error"
-                  />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <label
-                    class="label"
-                    for="alias1Seocnd"
-                  >
-                    <div
-                      class="textinput_label"
+                    <br />
+                    <span
+                      class="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      class="label"
+                      for="alias1Seocnd"
                     >
-                      Middle Name
-                    </div>
-                     
-                    <span
-                      class="note"
+                      <div
+                        class="textinput_label"
+                      >
+                        Middle Name
+                      </div>
+                       
+                      <span
+                        class="note"
+                      />
+                    </label>
+                    <input
+                      class="textinput_editable_white"
+                      id="alias1Seocnd"
+                      type="text"
+                      value=""
                     />
-                  </label>
-                  <input
-                    class="textinput_editable_white"
-                    id="alias1Seocnd"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                  <span
-                    class="error"
-                  />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <label
-                    class="label"
-                    for="alias1Surname"
-                  >
-                    <div
-                      class="textinput_label"
+                    <br />
+                    <span
+                      class="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      class="label"
+                      for="alias1Surname"
                     >
-                      Last Name
-                    </div>
-                     
-                    <span
-                      class="note"
+                      <div
+                        class="textinput_label"
+                      >
+                        Last Name
+                      </div>
+                       
+                      <span
+                        class="note"
+                      />
+                    </label>
+                    <input
+                      class="textinput_editable_white"
+                      id="alias1Surname"
+                      type="text"
+                      value=""
                     />
-                  </label>
-                  <input
-                    class="textinput_editable_white"
-                    id="alias1Surname"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                  <span
-                    class="error"
-                  />
-                </div>
-              </li>
-            </ul>
-          </form>
+                    <br />
+                    <span
+                      class="error"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </form>
+          </div>
           <span
             class="heading note previousFooter"
           >
@@ -1519,210 +1525,212 @@ exports[`ApplicationForm Component Matches the snapshot with gender being female
           <div>
             <div>
               <div>
-                <form
-                  class="simpleForm"
-                >
-                  <ul>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="birthLoc"
-                        >
-                          <div
-                            class="textinput_label"
+                <div>
+                  <form
+                    class="simpleForm"
+                  >
+                    <ul>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="birthLoc"
                           >
-                            City and Country of Birth
-                          </div>
-                          <span
-                            class="mandatory"
-                            id="asterisk"
-                          >
-                            *
-                          </span>
-                           
-                          <span
-                            class="note"
+                            <div
+                              class="textinput_label"
+                            >
+                              City and Country of Birth
+                            </div>
+                            <span
+                              class="mandatory"
+                              id="asterisk"
+                            >
+                              *
+                            </span>
+                             
+                            <span
+                              class="note"
+                            />
+                          </label>
+                          <input
+                            class="textinput_editable_white"
+                            id="birthLoc"
+                            placeholder="City, Country"
+                            type="text"
+                            value=""
                           />
-                        </label>
-                        <input
-                          class="textinput_editable_white"
-                          id="birthLoc"
-                          placeholder="City, Country"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="birthDt"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Date of Birth
-                          </div>
-                           
+                          <br />
                           <span
-                            class="note"
+                            class="error"
                           />
-                        </label>
-                        <input
-                          class="textinput_non_editable_gray"
-                          id="birthDt"
-                          readonly=""
-                          type="text"
-                          value="1942-10-29"
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="genderTxt"
-                        >
-                          <div
-                            class="textinput_label"
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="birthDt"
                           >
-                            Sex
-                          </div>
-                           
-                          <span
-                            class="note"
+                            <div
+                              class="textinput_label"
+                            >
+                              Date of Birth
+                            </div>
+                             
+                            <span
+                              class="note"
+                            />
+                          </label>
+                          <input
+                            class="textinput_non_editable_gray"
+                            id="birthDt"
+                            readonly=""
+                            type="text"
+                            value="1942-10-29"
                           />
-                        </label>
-                        <input
-                          class="textinput_non_editable_gray"
-                          id="genderTxt"
-                          readonly=""
-                          type="text"
-                          value="Female"
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="bcDLNumber"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            BC Driver's Licence Number
-                          </div>
-                           
+                          <br />
                           <span
-                            class="note"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="genderTxt"
                           >
-                            (Current or Expired)
-                          </span>
-                        </label>
-                        <input
-                          class="textinput_editable_white"
-                          id="bcDLNumber"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="phoneNumber"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Primary Phone Number
-                          </div>
+                            <div
+                              class="textinput_label"
+                            >
+                              Sex
+                            </div>
+                             
+                            <span
+                              class="note"
+                            />
+                          </label>
+                          <input
+                            class="textinput_non_editable_gray"
+                            id="genderTxt"
+                            readonly=""
+                            type="text"
+                            value="Female"
+                          />
+                          <br />
                           <span
-                            class="mandatory"
-                            id="asterisk"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="bcDLNumber"
                           >
-                            *
-                          </span>
-                           
+                            <div
+                              class="textinput_label"
+                            >
+                              BC Driver's Licence Number
+                            </div>
+                             
+                            <span
+                              class="note"
+                            >
+                              (Current or Expired)
+                            </span>
+                          </label>
+                          <input
+                            class="textinput_editable_white"
+                            id="bcDLNumber"
+                            type="text"
+                            value=""
+                          />
+                          <br />
                           <span
-                            class="note"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="phoneNumber"
                           >
-                            (Including area code)
-                          </span>
-                        </label>
-                        <input
-                          autocomplete="tel"
-                          class="textinput_editable_white"
-                          id="phoneNumber"
-                          placeholder="250 555-1234"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="emailAddress"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Personal Email Address
-                          </div>
+                            <div
+                              class="textinput_label"
+                            >
+                              Primary Phone Number
+                            </div>
+                            <span
+                              class="mandatory"
+                              id="asterisk"
+                            >
+                              *
+                            </span>
+                             
+                            <span
+                              class="note"
+                            >
+                              (Including area code)
+                            </span>
+                          </label>
+                          <input
+                            autocomplete="tel"
+                            class="textinput_editable_white"
+                            id="phoneNumber"
+                            placeholder="250 555-1234"
+                            type="text"
+                            value=""
+                          />
+                          <br />
                           <span
-                            class="mandatory"
-                            id="asterisk"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="emailAddress"
                           >
-                            *
-                          </span>
-                           
+                            <div
+                              class="textinput_label"
+                            >
+                              Personal Email Address
+                            </div>
+                            <span
+                              class="mandatory"
+                              id="asterisk"
+                            >
+                              *
+                            </span>
+                             
+                            <span
+                              class="note"
+                            >
+                              We may use this to communicate with you about your application
+                            </span>
+                          </label>
+                          <input
+                            class="textinput_editable_white"
+                            id="emailAddress"
+                            placeholder="example@test.com"
+                            type="text"
+                            value=""
+                          />
+                          <br />
                           <span
-                            class="note"
-                          >
-                            We may use this to communicate with you about your application
-                          </span>
-                        </label>
-                        <input
-                          class="textinput_editable_white"
-                          id="emailAddress"
-                          placeholder="example@test.com"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                  </ul>
-                </form>
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -2656,96 +2664,98 @@ exports[`ApplicationForm Component Matches the snapshot with valid region/provin
               - Including birth name, previous name, maiden name, and/or alias
             </span>
           </div>
-          <form
-            class="simpleForm"
-          >
-            <ul>
-              <li>
-                <div>
-                  <label
-                    class="label"
-                    for="alias1First"
-                  >
-                    <div
-                      class="textinput_label"
+          <div>
+            <form
+              class="simpleForm"
+            >
+              <ul>
+                <li>
+                  <div>
+                    <label
+                      class="label"
+                      for="alias1First"
                     >
-                      First Name
-                    </div>
-                     
-                    <span
-                      class="note"
+                      <div
+                        class="textinput_label"
+                      >
+                        First Name
+                      </div>
+                       
+                      <span
+                        class="note"
+                      />
+                    </label>
+                    <input
+                      class="textinput_editable_white"
+                      id="alias1First"
+                      type="text"
+                      value=""
                     />
-                  </label>
-                  <input
-                    class="textinput_editable_white"
-                    id="alias1First"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                  <span
-                    class="error"
-                  />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <label
-                    class="label"
-                    for="alias1Seocnd"
-                  >
-                    <div
-                      class="textinput_label"
+                    <br />
+                    <span
+                      class="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      class="label"
+                      for="alias1Seocnd"
                     >
-                      Middle Name
-                    </div>
-                     
-                    <span
-                      class="note"
+                      <div
+                        class="textinput_label"
+                      >
+                        Middle Name
+                      </div>
+                       
+                      <span
+                        class="note"
+                      />
+                    </label>
+                    <input
+                      class="textinput_editable_white"
+                      id="alias1Seocnd"
+                      type="text"
+                      value=""
                     />
-                  </label>
-                  <input
-                    class="textinput_editable_white"
-                    id="alias1Seocnd"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                  <span
-                    class="error"
-                  />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <label
-                    class="label"
-                    for="alias1Surname"
-                  >
-                    <div
-                      class="textinput_label"
+                    <br />
+                    <span
+                      class="error"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <label
+                      class="label"
+                      for="alias1Surname"
                     >
-                      Last Name
-                    </div>
-                     
-                    <span
-                      class="note"
+                      <div
+                        class="textinput_label"
+                      >
+                        Last Name
+                      </div>
+                       
+                      <span
+                        class="note"
+                      />
+                    </label>
+                    <input
+                      class="textinput_editable_white"
+                      id="alias1Surname"
+                      type="text"
+                      value=""
                     />
-                  </label>
-                  <input
-                    class="textinput_editable_white"
-                    id="alias1Surname"
-                    type="text"
-                    value=""
-                  />
-                  <br />
-                  <span
-                    class="error"
-                  />
-                </div>
-              </li>
-            </ul>
-          </form>
+                    <br />
+                    <span
+                      class="error"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </form>
+          </div>
           <span
             class="heading note previousFooter"
           >
@@ -2760,210 +2770,212 @@ exports[`ApplicationForm Component Matches the snapshot with valid region/provin
           <div>
             <div>
               <div>
-                <form
-                  class="simpleForm"
-                >
-                  <ul>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="birthLoc"
-                        >
-                          <div
-                            class="textinput_label"
+                <div>
+                  <form
+                    class="simpleForm"
+                  >
+                    <ul>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="birthLoc"
                           >
-                            City and Country of Birth
-                          </div>
-                          <span
-                            class="mandatory"
-                            id="asterisk"
-                          >
-                            *
-                          </span>
-                           
-                          <span
-                            class="note"
+                            <div
+                              class="textinput_label"
+                            >
+                              City and Country of Birth
+                            </div>
+                            <span
+                              class="mandatory"
+                              id="asterisk"
+                            >
+                              *
+                            </span>
+                             
+                            <span
+                              class="note"
+                            />
+                          </label>
+                          <input
+                            class="textinput_editable_white"
+                            id="birthLoc"
+                            placeholder="City, Country"
+                            type="text"
+                            value=""
                           />
-                        </label>
-                        <input
-                          class="textinput_editable_white"
-                          id="birthLoc"
-                          placeholder="City, Country"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="birthDt"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Date of Birth
-                          </div>
-                           
+                          <br />
                           <span
-                            class="note"
+                            class="error"
                           />
-                        </label>
-                        <input
-                          class="textinput_non_editable_gray"
-                          id="birthDt"
-                          readonly=""
-                          type="text"
-                          value="1942-10-29"
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="genderTxt"
-                        >
-                          <div
-                            class="textinput_label"
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="birthDt"
                           >
-                            Sex
-                          </div>
-                           
-                          <span
-                            class="note"
+                            <div
+                              class="textinput_label"
+                            >
+                              Date of Birth
+                            </div>
+                             
+                            <span
+                              class="note"
+                            />
+                          </label>
+                          <input
+                            class="textinput_non_editable_gray"
+                            id="birthDt"
+                            readonly=""
+                            type="text"
+                            value="1942-10-29"
                           />
-                        </label>
-                        <input
-                          class="textinput_non_editable_gray"
-                          id="genderTxt"
-                          readonly=""
-                          type="text"
-                          value="Male"
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="bcDLNumber"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            BC Driver's Licence Number
-                          </div>
-                           
+                          <br />
                           <span
-                            class="note"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="genderTxt"
                           >
-                            (Current or Expired)
-                          </span>
-                        </label>
-                        <input
-                          class="textinput_editable_white"
-                          id="bcDLNumber"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="phoneNumber"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Primary Phone Number
-                          </div>
+                            <div
+                              class="textinput_label"
+                            >
+                              Sex
+                            </div>
+                             
+                            <span
+                              class="note"
+                            />
+                          </label>
+                          <input
+                            class="textinput_non_editable_gray"
+                            id="genderTxt"
+                            readonly=""
+                            type="text"
+                            value="Male"
+                          />
+                          <br />
                           <span
-                            class="mandatory"
-                            id="asterisk"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="bcDLNumber"
                           >
-                            *
-                          </span>
-                           
+                            <div
+                              class="textinput_label"
+                            >
+                              BC Driver's Licence Number
+                            </div>
+                             
+                            <span
+                              class="note"
+                            >
+                              (Current or Expired)
+                            </span>
+                          </label>
+                          <input
+                            class="textinput_editable_white"
+                            id="bcDLNumber"
+                            type="text"
+                            value=""
+                          />
+                          <br />
                           <span
-                            class="note"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="phoneNumber"
                           >
-                            (Including area code)
-                          </span>
-                        </label>
-                        <input
-                          autocomplete="tel"
-                          class="textinput_editable_white"
-                          id="phoneNumber"
-                          placeholder="250 555-1234"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <label
-                          class="label"
-                          for="emailAddress"
-                        >
-                          <div
-                            class="textinput_label"
-                          >
-                            Personal Email Address
-                          </div>
+                            <div
+                              class="textinput_label"
+                            >
+                              Primary Phone Number
+                            </div>
+                            <span
+                              class="mandatory"
+                              id="asterisk"
+                            >
+                              *
+                            </span>
+                             
+                            <span
+                              class="note"
+                            >
+                              (Including area code)
+                            </span>
+                          </label>
+                          <input
+                            autocomplete="tel"
+                            class="textinput_editable_white"
+                            id="phoneNumber"
+                            placeholder="250 555-1234"
+                            type="text"
+                            value=""
+                          />
+                          <br />
                           <span
-                            class="mandatory"
-                            id="asterisk"
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <label
+                            class="label"
+                            for="emailAddress"
                           >
-                            *
-                          </span>
-                           
+                            <div
+                              class="textinput_label"
+                            >
+                              Personal Email Address
+                            </div>
+                            <span
+                              class="mandatory"
+                              id="asterisk"
+                            >
+                              *
+                            </span>
+                             
+                            <span
+                              class="note"
+                            >
+                              We may use this to communicate with you about your application
+                            </span>
+                          </label>
+                          <input
+                            class="textinput_editable_white"
+                            id="emailAddress"
+                            placeholder="example@test.com"
+                            type="text"
+                            value=""
+                          />
+                          <br />
                           <span
-                            class="note"
-                          >
-                            We may use this to communicate with you about your application
-                          </span>
-                        </label>
-                        <input
-                          class="textinput_editable_white"
-                          id="emailAddress"
-                          placeholder="example@test.com"
-                          type="text"
-                          value=""
-                        />
-                        <br />
-                        <span
-                          class="error"
-                        />
-                      </div>
-                    </li>
-                  </ul>
-                </form>
+                            class="error"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
