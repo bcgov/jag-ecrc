@@ -248,7 +248,7 @@ export default function ApplicationForm({
           if (formatProvinceNm === undefined) {
             formatProvinceNm = "Invalid Province";
           }
-                                                                                      
+
           setApplicant({
             legalFirstNm: given_name,
             legalSecondNm: formatSecondNm,
@@ -326,20 +326,20 @@ export default function ApplicationForm({
       label: "Middle Name",
       id: "alias1Seocnd",
       value: alias1Second,
-      errorMsg: alias1SecondError,      
+      errorMsg: alias1SecondError,
       onChange: event => {
         setAlias1Second(event);
-        setAlias1SecondError("");        
+        setAlias1SecondError("");
       }
     },
     legalSurnameNm: {
       label: "Last Name",
       id: "alias1Surname",
       value: alias1Surname,
-      errorMsg: alias1SurnameError,        
+      errorMsg: alias1SurnameError,
       onChange: event => {
         setAlias1Surname(event);
-        setAlias1SurnameError("");         
+        setAlias1SurnameError("");
       }
     }
   };
@@ -349,30 +349,30 @@ export default function ApplicationForm({
       label: "First Name",
       id: "alias2First",
       value: alias2First,
-      errorMsg: alias2FirstError,        
+      errorMsg: alias2FirstError,
       onChange: event => {
         setAlias2First(event);
-        setAlias2FirstError("");          
+        setAlias2FirstError("");
       }
     },
     legalSecondNm: {
       label: "Middle Name",
       id: "alias2Second",
       value: alias2Second,
-      errorMsg: alias2SecondError,       
+      errorMsg: alias2SecondError,
       onChange: event => {
         setAlias2Second(event);
-        setAlias2SecondError("");         
+        setAlias2SecondError("");
       }
     },
     legalSurnameNm: {
       label: "Last Name",
       id: "alias2Surname",
       value: alias2Surname,
-      errorMsg: alias2SurnameError,         
+      errorMsg: alias2SurnameError,
       onChange: event => {
         setAlias2Surname(event);
-        setAlias2SurnameError("");           
+        setAlias2SurnameError("");
       }
     }
   };
@@ -382,30 +382,30 @@ export default function ApplicationForm({
       label: "First Name",
       id: "alias3First",
       value: alias3First,
-      errorMsg: alias3FirstError,            
+      errorMsg: alias3FirstError,
       onChange: event => {
         setAlias3First(event);
-        setAlias3FirstError("");          
+        setAlias3FirstError("");
       }
     },
     legalSecondNm: {
       label: "Middle Name",
       id: "alias3Second",
       value: alias3Second,
-      errorMsg: alias3SecondError,       
+      errorMsg: alias3SecondError,
       onChange: event => {
         setAlias3Second(event);
-        setAlias3SecondError("");          
+        setAlias3SecondError("");
       }
     },
     legalSurnameNm: {
       label: "Last Name",
       id: "alias3Surname",
       value: alias3Surname,
-      errorMsg:alias3SurnameError,       
+      errorMsg: alias3SurnameError,
       onChange: event => {
         setAlias3Surname(event);
-        setAlias3SurnameError("");          
+        setAlias3SurnameError("");
       }
     }
   };
@@ -666,31 +666,31 @@ export default function ApplicationForm({
   const mailingPostalCodeRef = useRef(null);
 
   const verifyAliasFirstName = (name, setName) => {
-    if(name && name.length > 25) {
+    if (name && name.length > 25) {
       setName("First name can not be greater than 25 characters");
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
-      }         
+      }
     }
-  }
+  };
 
   const verifyAliasMiddleName = (name, setName) => {
-    if(name && name.length > 25) {
+    if (name && name.length > 25) {
       setName("Middle name can not be greater than 25 characters");
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
-      }         
+      }
     }
-  }  
+  };
 
   const verifyAliasSurName = (name, setName) => {
-    if(name && name.length > 40) {
+    if (name && name.length > 40) {
       setName("Last name can not be greater than 40 characters");
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
-      }         
+      }
     }
-  }    
+  };
 
   const applicationVerification = () => {
     if (!isAuthorized()) {
@@ -719,11 +719,13 @@ export default function ApplicationForm({
       if (!hasScrolled) {
         scrollToRef(birthLocRef);
       }
-    } else if(birthLoc && birthLoc.length > 100) {
-      setBirthPlaceError("City and country of birth can not be greater than 100 characters");
+    } else if (birthLoc && birthLoc.length > 100) {
+      setBirthPlaceError(
+        "City and country of birth can not be greater than 100 characters"
+      );
       if (!hasScrolled) {
         scrollToRef(birthLocRef);
-      }      
+      }
     }
 
     if (!phoneNum) {
@@ -738,11 +740,13 @@ export default function ApplicationForm({
       }
     }
 
-    if(driversLicence && driversLicence.length > 80) {
-      setDriversLicenceError("BC driver's licence number can not be greater than 80 characters");
+    if (driversLicence && driversLicence.length > 80) {
+      setDriversLicenceError(
+        "BC driver's licence number can not be greater than 80 characters"
+      );
       if (!hasScrolled) {
         scrollToRef(driversLicenceRef);
-      }      
+      }
     }
 
     if (!email) {
@@ -750,18 +754,18 @@ export default function ApplicationForm({
       if (!hasScrolled) {
         scrollToRef(emailRef);
       }
-    } else {
-      if(email.length > 80) {
-        setEmailAddressError("Email address must be can not be greater than 80 characters");
-        if (!hasScrolled) {
-          scrollToRef(emailRef);
-        }       
-      } else if (!validateEmail(email)) {
-        setEmailAddressError("Email address must be in the form name@company.ca");
-        if (!hasScrolled) {
-          scrollToRef(emailRef);
-        }
-      } 
+    } else if (email.length > 80) {
+      setEmailAddressError(
+        "Email address must be can not be greater than 80 characters"
+      );
+      if (!hasScrolled) {
+        scrollToRef(emailRef);
+      }
+    } else if (!validateEmail(email)) {
+      setEmailAddressError("Email address must be in the form name@company.ca");
+      if (!hasScrolled) {
+        scrollToRef(emailRef);
+      }
     }
 
     if (!job) {
@@ -770,10 +774,12 @@ export default function ApplicationForm({
         scrollToRef(jobRef);
       }
     } else if (job.length > 3900) {
-      setJobTitleError("Position/job title is required can not be greater than 3900 characters");
+      setJobTitleError(
+        "Position/job title is required can not be greater than 3900 characters"
+      );
       if (!hasScrolled) {
         scrollToRef(jobRef);
-      } 
+      }
     }
 
     if (defaultScheduleTypeCd === "WBSD" && !organizationLocation) {
@@ -790,7 +796,11 @@ export default function ApplicationForm({
       }
     }
 
-    if (!sameAddress && mailingAddressLine1 && mailingAddressLine1.length > 40) {
+    if (
+      !sameAddress &&
+      mailingAddressLine1 &&
+      mailingAddressLine1.length > 40
+    ) {
       setMailingAddressLine1Error(
         "Street or PO box can not be greater than 40 characters"
       );
@@ -800,12 +810,12 @@ export default function ApplicationForm({
     }
 
     if (!sameAddress) {
-      if(!mailingCity) {
+      if (!mailingCity) {
         setMailingCityError("City is required");
         if (!hasScrolled) {
           scrollToRef(mailingCityRef);
         }
-      } else if(mailingCity.length > 25) {
+      } else if (mailingCity.length > 25) {
         setMailingCityError("City can not be greater than 25 characters");
         if (!hasScrolled) {
           scrollToRef(mailingCityRef);
