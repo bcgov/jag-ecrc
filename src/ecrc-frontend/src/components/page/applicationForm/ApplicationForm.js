@@ -665,34 +665,42 @@ export default function ApplicationForm({
   const mailingProvinceRef = useRef(null);
   const mailingPostalCodeRef = useRef(null);
 
-  const verifyAliasFirstName = (name, setName) => {
+  const verifyAliasFirstNameExceedLen = (name, setName) => {
     if (name && name.length > 25) {
       setName("First name can not be greater than 25 characters");
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }
+      return true;
     }
+    return false;
   };
 
-  const verifyAliasMiddleName = (name, setName) => {
+  const verifyAliasMiddleNameExceedLen = (name, setName) => {
     if (name && name.length > 25) {
       setName("Middle name can not be greater than 25 characters");
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }
+      return true;
     }
+    return false;
   };
 
-  const verifyAliasSurName = (name, setName) => {
+  const verifyAliasSurNameExceedLen = (name, setName) => {
     if (name && name.length > 40) {
       setName("Last name can not be greater than 40 characters");
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }
+      return true;
     }
+    return false;
   };
 
   const applicationVerification = () => {
+    let exceedLength = false;
+
     if (!isAuthorized()) {
       setError({
         status: 590,
@@ -702,17 +710,33 @@ export default function ApplicationForm({
       return;
     }
 
-    verifyAliasFirstName(alias1First, setAlias1FirstError);
-    verifyAliasMiddleName(alias1Second, setAlias1SecondError);
-    verifyAliasSurName(alias1Surname, setAlias1SurnameError);
-
-    verifyAliasFirstName(alias2First, setAlias2FirstError);
-    verifyAliasMiddleName(alias3Second, setAlias2SecondError);
-    verifyAliasSurName(alias3Surname, setAlias2SurnameError);
-
-    verifyAliasFirstName(alias3First, setAlias3FirstError);
-    verifyAliasMiddleName(alias3Second, setAlias3SecondError);
-    verifyAliasSurName(alias3Surname, setAlias3SurnameError);
+    exceedLength =
+      verifyAliasFirstNameExceedLen(alias1First, setAlias1FirstError) ||
+      exceedLength;
+    exceedLength =
+      verifyAliasMiddleNameExceedLen(alias1Second, setAlias1SecondError) ||
+      exceedLength;
+    exceedLength =
+      verifyAliasSurNameExceedLen(alias1Surname, setAlias1SurnameError) ||
+      exceedLength;
+    exceedLength =
+      verifyAliasFirstNameExceedLen(alias2First, setAlias2FirstError) ||
+      exceedLength;
+    exceedLength =
+      verifyAliasMiddleNameExceedLen(alias3Second, setAlias2SecondError) ||
+      exceedLength;
+    exceedLength =
+      verifyAliasSurNameExceedLen(alias3Surname, setAlias2SurnameError) ||
+      exceedLength;
+    exceedLength =
+      verifyAliasFirstNameExceedLen(alias3First, setAlias3FirstError) ||
+      exceedLength;
+    exceedLength =
+      verifyAliasMiddleNameExceedLen(alias3Second, setAlias3SecondError) ||
+      exceedLength;
+    exceedLength =
+      verifyAliasSurNameExceedLen(alias3Surname, setAlias3SurnameError) ||
+      exceedLength;
 
     if (!birthLoc || !validateBirthPlace(birthLoc)) {
       setBirthPlaceError("City and country of birth are required");
@@ -720,6 +744,7 @@ export default function ApplicationForm({
         scrollToRef(birthLocRef);
       }
     } else if (birthLoc && birthLoc.length > 100) {
+      exceedLength = true;
       setBirthPlaceError(
         "City and country of birth can not be greater than 100 characters"
       );
@@ -744,6 +769,7 @@ export default function ApplicationForm({
     console.log(driversLicence);
 
     if (driversLicence && driversLicence.length > 80) {
+      exceedLength = true;
       setDriversLicenceError(
         "BC driver's licence number can not be greater than 80 characters"
       );
@@ -758,6 +784,7 @@ export default function ApplicationForm({
         scrollToRef(emailRef);
       }
     } else if (email.length > 80) {
+      exceedLength = true;
       setEmailAddressError(
         "Email address must be can not be greater than 80 characters"
       );
@@ -777,6 +804,7 @@ export default function ApplicationForm({
         scrollToRef(jobRef);
       }
     } else if (job.length > 3900) {
+      exceedLength = true;
       setJobTitleError(
         "Position/job title is required can not be greater than 3900 characters"
       );
@@ -804,6 +832,7 @@ export default function ApplicationForm({
       mailingAddressLine1 &&
       mailingAddressLine1.length > 40
     ) {
+      exceedLength = true;
       setMailingAddressLine1Error(
         "Street or PO box can not be greater than 40 characters"
       );
@@ -856,10 +885,12 @@ export default function ApplicationForm({
       validateEmail(email) &&
       job !== "" &&
       !(defaultScheduleTypeCd === "WBSD" && organizationLocation === "") &&
+      !exceedLength &&
       ((!sameAddress &&
         mailingAddressLine1 !== "" &&
         mailingAddressLine1.length <= 40 &&
         mailingCity !== "" &&
+        mailingCity.length <= 25 &&
         mailingProvince !== "" &&
         validatePostalCode(mailingPostalCode)) ||
         (sameAddress && addressLine1 && cityNm && provinceNm && postalCodeTxt))
