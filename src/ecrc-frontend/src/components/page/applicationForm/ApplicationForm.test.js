@@ -1197,4 +1197,208 @@ describe("ApplicationForm Component", () => {
       getByText(container, "Postal code must be in the form V9V 9V9")
     ).toBeInTheDocument();
   });
+
+  test("Screen is scrolled if Alias First Name, Middle Name and Last Name fields are greater than 80 chars", async () => {
+    const faultApplicant = {
+      ...applicant,
+      alias1FirstNm:
+        "A very long very long very long very long very long very longvery long very long First Name field"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: faultApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(2);
+
+    expect(
+      getByText(container, "First name can not be greater than 25 characters")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if Alias First Name field is greater than 80 chars", async () => {
+    const faultApplicant = {
+      ...applicant,
+      alias1FirstNm:
+        "A very long very long very long very long very long very longvery long very long First Name field"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: faultApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(2);
+
+    expect(
+      getByText(container, "First name can not be greater than 25 characters")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if Alias Middle Name field is greater than 80 chars", async () => {
+    const faultApplicant = {
+      ...applicant,
+      alias1SecondNm:
+        "A very long very long very long very long very long very longvery long very long Middle Name field"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: faultApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(2);
+
+    expect(
+      getByText(container, "Middle name can not be greater than 25 characters")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if Alias Last Name field is greater than 80 chars", async () => {
+    const faultApplicant = {
+      ...applicant,
+      alias1SurnameNm:
+        "A very long very long very long very long very long very longvery long very long Last Name field"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: faultApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(2);
+
+    expect(
+      getByText(container, "Last name can not be greater than 40 characters")
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if City and Country of Birth field is greater than 80 chars", async () => {
+    const faultApplicant = {
+      ...applicant,
+      birthPlace:
+        "A very long very long very long very long very long very longvery long very long City and Country field"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: faultApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(2);
+
+    expect(
+      getByText(
+        container,
+        "City and country of birth can not be greater than 100 characters"
+      )
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if BC Drivers License field is greater than 80 chars", async () => {
+    const faultApplicant = {
+      ...applicant,
+      driversLicNo:
+        "A very long very long very long very long very long very longvery long very long BC Drivers License field"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: faultApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(2);
+
+    expect(
+      getByText(
+        container,
+        "BC driver's licence number can not be greater than 80 characters"
+      )
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if email address field is greater than 80 chars", async () => {
+    const faultApplicant = {
+      ...applicant,
+      emailAddress:
+        "A very long very long very long very long very long very longvery long very long Personal Email Address field"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm page={{ ...page, applicant: faultApplicant }} />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(2);
+
+    expect(
+      getByText(
+        container,
+        "Email address must be can not be greater than 80 characters"
+      )
+    ).toBeInTheDocument();
+  });
+
+  test("Screen is scrolled if City field is greater than 80 chars", async () => {
+    const faultApplicant = {
+      ...applicant,
+      sameAddress: false,
+      mailingCityNm:
+        "A very long very long very long very long very long very longvery long very long City field"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm
+          page={{ ...page, applicant: faultApplicant, sameAddress: false }}
+        />
+      </MemoryRouter>
+    );
+
+    window.scrollTo = jest.fn();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(window.scrollTo).toBeCalledTimes(2);
+
+    expect(
+      getByText(container, "City can not be greater than 25 characters")
+    ).toBeInTheDocument();
+  });
 });

@@ -740,6 +740,9 @@ export default function ApplicationForm({
       }
     }
 
+    console.log("driversLicence");
+    console.log(driversLicence);
+
     if (driversLicence && driversLicence.length > 80) {
       setDriversLicenceError(
         "BC driver's licence number can not be greater than 80 characters"
