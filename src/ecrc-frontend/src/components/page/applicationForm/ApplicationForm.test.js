@@ -1316,7 +1316,7 @@ describe("ApplicationForm Component", () => {
     expect(
       getByText(
         container,
-        "City and country of birth can not be greater than 100 characters"
+        "City and country of birth can not be greater than 40 characters"
       )
     ).toBeInTheDocument();
   });

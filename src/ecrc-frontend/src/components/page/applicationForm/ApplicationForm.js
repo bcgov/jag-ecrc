@@ -22,6 +22,17 @@ import {
 } from "../../../modules/AuthenticationHelper";
 import Loader from "../../base/loader/Loader";
 
+const [SURNAME_LEN, FIRSTNAME_LEN, SECONDENAME_LEN] = [40, 25, 25];
+const [
+  BIRTH_PLACE_LEN,
+  ADDR_1_LEN,
+  ADDR_2_LEN,
+  CITY_LEN,
+  EMAIL_ADDR_LEN,
+  DRIVERS_LIC_LEN,
+  APPLICANT_POSITION_LEN
+] = [40, 40, 80, 25, 80, 80, 3900];
+
 export default function ApplicationForm({
   page: {
     header,
@@ -709,8 +720,8 @@ export default function ApplicationForm({
   const mailingPostalCodeRef = useRef(null);
 
   const verifyAliasFirstNameExceedLen = (name, setName) => {
-    if (name && name.length > 25) {
-      setName("First name can not be greater than 25 characters");
+    if (name && name.length > FIRSTNAME_LEN) {
+      setName(`First name can not be greater than ${FIRSTNAME_LEN} characters`);
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }
@@ -720,8 +731,10 @@ export default function ApplicationForm({
   };
 
   const verifyAliasMiddleNameExceedLen = (name, setName) => {
-    if (name && name.length > 25) {
-      setName("Middle name can not be greater than 25 characters");
+    if (name && name.length > SECONDENAME_LEN) {
+      setName(
+        `Middle name can not be greater than ${SECONDENAME_LEN} characters`
+      );
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }
@@ -731,8 +744,8 @@ export default function ApplicationForm({
   };
 
   const verifyAliasSurNameExceedLen = (name, setName) => {
-    if (name && name.length > 40) {
-      setName("Last name can not be greater than 40 characters");
+    if (name && name.length > SURNAME_LEN) {
+      setName(`Last name can not be greater than ${SURNAME_LEN} characters`);
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }
@@ -753,9 +766,9 @@ export default function ApplicationForm({
       return;
     }
 
-    if (!sameAddress && addressLine2 && addressLine2.length > 80) {
+    if (!sameAddress && addressLine2 && addressLine2.length > ADDR_2_LEN) {
       window.alert(
-        "Error: additional street or PO box exceeds 80 characters. Please enter a valid address."
+        `Error: additional street or PO box exceeds ${ADDR_2_LEN} characters. Please enter a valid address.`
       );
       return;
     }
@@ -793,10 +806,10 @@ export default function ApplicationForm({
       if (!hasScrolled) {
         scrollToRef(birthLocRef);
       }
-    } else if (birthLoc && birthLoc.length > 100) {
+    } else if (birthLoc && birthLoc.length > BIRTH_PLACE_LEN) {
       exceedLength = true;
       setBirthPlaceError(
-        "City and country of birth can not be greater than 100 characters"
+        `City and country of birth can not be greater than ${BIRTH_PLACE_LEN} characters`
       );
       if (!hasScrolled) {
         scrollToRef(birthLocRef);
@@ -815,10 +828,11 @@ export default function ApplicationForm({
       }
     }
 
-    if (driversLicence && driversLicence.length > 80) {
+    if (driversLicence && driversLicence.length > DRIVERS_LIC_LEN) {
       exceedLength = true;
       setDriversLicenceError(
-        "BC driver's licence number can not be greater than 80 characters"
+        "BC driver's licence number can not be greater than " +
+          `${DRIVERS_LIC_LEN} characters`
       );
       if (!hasScrolled) {
         scrollToRef(driversLicenceRef);
@@ -830,10 +844,10 @@ export default function ApplicationForm({
       if (!hasScrolled) {
         scrollToRef(emailRef);
       }
-    } else if (email.length > 80) {
+    } else if (email.length > EMAIL_ADDR_LEN) {
       exceedLength = true;
       setEmailAddressError(
-        "Email address must be can not be greater than 80 characters"
+        `Email address must be can not be greater than ${EMAIL_ADDR_LEN} characters`
       );
       if (!hasScrolled) {
         scrollToRef(emailRef);
@@ -850,10 +864,10 @@ export default function ApplicationForm({
       if (!hasScrolled) {
         scrollToRef(jobRef);
       }
-    } else if (job.length > 3900) {
+    } else if (job.length > APPLICANT_POSITION_LEN) {
       exceedLength = true;
       setJobTitleError(
-        "Position/job title is required can not be greater than 3900 characters"
+        `Position/job title is required can not be greater than ${APPLICANT_POSITION_LEN} characters`
       );
       if (!hasScrolled) {
         scrollToRef(jobRef);
@@ -873,9 +887,10 @@ export default function ApplicationForm({
         if (!hasScrolled) {
           scrollToRef(mailingAddressLine1Ref);
         }
-      } else if (mailingCity.length > 40) {
+      } else if (mailingAddressLine1.length > ADDR_1_LEN) {
+        exceedLength = true;
         setMailingAddressLine1Error(
-          "Street or PO box can not be greater than 40 characters"
+          `Street or PO box can not be greater than ${ADDR_1_LEN} characters`
         );
         if (!hasScrolled) {
           scrollToRef(mailingAddressLine1Ref);
@@ -883,39 +898,14 @@ export default function ApplicationForm({
       }
     }
 
-    if (!sameAddress) {
-      if (mailingCity && mailingCity.length > 80) {
-        setMailingAddressLine2Error(
-          "Additional street or PO box can not be greater than 80 characters"
-        );
-        if (!hasScrolled) {
-          scrollToRef(mailingAddressLine2Ref);
-        }
-      }
-    }
-
-    if (
-      !sameAddress &&
-      mailingAddressLine1 &&
-      mailingAddressLine1.length > 40
-    ) {
-      exceedLength = true;
-      setMailingAddressLine1Error(
-        "Street or PO box can not be greater than 40 characters"
-      );
-      if (!hasScrolled) {
-        scrollToRef(mailingAddressLine1Ref);
-      }
-    }
-
     if (
       !sameAddress &&
       mailingAddressLine2 &&
-      mailingAddressLine2.length > 80
+      mailingAddressLine2.length > ADDR_2_LEN
     ) {
       exceedLength = true;
       setMailingAddressLine2Error(
-        "Additional Street or PO box exceeds 80 characters. Please enter a valid address"
+        `Additional street or PO box can not be greater than ${ADDR_2_LEN} characters`
       );
       if (!hasScrolled) {
         scrollToRef(mailingAddressLine2Ref);
@@ -928,8 +918,10 @@ export default function ApplicationForm({
         if (!hasScrolled) {
           scrollToRef(mailingCityRef);
         }
-      } else if (mailingCity.length > 25) {
-        setMailingCityError("City can not be greater than 25 characters");
+      } else if (mailingCity.length > CITY_LEN) {
+        setMailingCityError(
+          `City can not be greater than ${CITY_LEN} characters`
+        );
         if (!hasScrolled) {
           scrollToRef(mailingCityRef);
         }
@@ -969,9 +961,10 @@ export default function ApplicationForm({
       !exceedLength &&
       ((!sameAddress &&
         mailingAddressLine1 !== "" &&
-        mailingAddressLine1.length <= 40 &&
+        mailingAddressLine1.length <= ADDR_1_LEN &&
+        (!mailingAddressLine2 || mailingAddressLine2.length <= ADDR_2_LEN) &&
         mailingCity !== "" &&
-        mailingCity.length <= 25 &&
+        mailingCity.length <= CITY_LEN &&
         mailingProvince !== "" &&
         validatePostalCode(mailingPostalCode)) ||
         (sameAddress && addressLine1 && cityNm && provinceNm && postalCodeTxt))
