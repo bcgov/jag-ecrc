@@ -13,6 +13,7 @@ import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+
 import {
   isActionPerformed,
   generateJWTToken,
@@ -31,6 +32,7 @@ export default function ApplicationForm({
       birthDt,
       genderTxt,
       addressLine1,
+      addressLine2,
       cityNm,
       provinceNm,
       postalCodeTxt,
@@ -52,6 +54,7 @@ export default function ApplicationForm({
       jobTitle,
       organizationFacility,
       mailingLine1 = "",
+      mailingLine2 = "",
       mailingCityNm = "",
       mailingProvinceNm = "BRITISH COLUMBIA",
       mailingPostalCodeTxt = ""
@@ -111,8 +114,14 @@ export default function ApplicationForm({
     ""
   );
 
-  const [mailingAddressLine1, setMailingAddressLine1] = useState(mailingLine1);
+  const [mailingAddressLine1, setMailingAddressLine1] = useState(
+    mailingLine1 || ""
+  );
   const [mailingAddressLine1Error, setMailingAddressLine1Error] = useState("");
+  const [mailingAddressLine2, setMailingAddressLine2] = useState(
+    mailingLine2 || ""
+  );
+  const [mailingAddressLine2Error, setMailingAddressLine2Error] = useState("");
   const [mailingCity, setMailingCity] = useState(mailingCityNm);
   const [mailingCityError, setMailingCityError] = useState("");
   const [mailingProvince, setMailingProvince] = useState(mailingProvinceNm);
@@ -249,13 +258,20 @@ export default function ApplicationForm({
             formatProvinceNm = "Invalid Province";
           }
 
+          const index = street_address.indexOf("\n");
+          const addressLine_1 =
+            index !== -1 ? street_address.slice(0, index) : street_address;
+          const addressLine_2 =
+            index !== -1 ? street_address.slice(index + 1) : "";
+
           setApplicant({
             legalFirstNm: given_name,
             legalSecondNm: formatSecondNm,
             legalSurnameNm: family_name,
             birthDt: formatBirthDt,
             genderTxt: formatGender,
-            addressLine1: street_address,
+            addressLine1: addressLine_1,
+            addressLine2: addressLine_2,
             cityNm: locality,
             provinceNm: formatProvinceNm,
             postalCodeTxt: postal_code,
@@ -266,6 +282,14 @@ export default function ApplicationForm({
             loader: { display: "none" },
             content: { display: "block" }
           });
+
+          if (addressLine_2 && addressLine_2.length > 80) {
+            setTimeout(() => {
+              window.alert(
+                "Error: additional street or PO box exceeds 80 characters. Please enter a valid address."
+              );
+            }, 200);
+          }
         })
         .catch(error => {
           if (error && error.response && error.response.status) {
@@ -522,6 +546,12 @@ export default function ApplicationForm({
         textInputStyle: "textinput_non_editable_gray"
       },
       {
+        label: "Additional Street",
+        id: "addressLine2",
+        value: addressLine2,
+        textInputStyle: "textinput_non_editable_gray"
+      },
+      {
         label: "City",
         id: "cityNm",
         value: cityNm,
@@ -562,6 +592,18 @@ export default function ApplicationForm({
         onChange: event => {
           setMailingAddressLine1(event);
           setMailingAddressLine1Error("");
+        }
+      },
+      {
+        label: "Additional Street",
+        id: "mailingAddressLine2",
+        placeholder: "Additional Street or PO Box",
+        value: mailingAddressLine2,
+        isRequired: true,
+        errorMsg: mailingAddressLine2Error,
+        onChange: event => {
+          setMailingAddressLine2(event);
+          setMailingAddressLine2Error("");
         }
       },
       {
@@ -661,6 +703,7 @@ export default function ApplicationForm({
   const jobRef = useRef(null);
   const organizationFacilityRef = useRef(null);
   const mailingAddressLine1Ref = useRef(null);
+  const mailingAddressLine2Ref = useRef(null);
   const mailingCityRef = useRef(null);
   const mailingProvinceRef = useRef(null);
   const mailingPostalCodeRef = useRef(null);
@@ -707,6 +750,13 @@ export default function ApplicationForm({
         message: "Session Expired"
       });
       history.push("/criminalrecordcheck/error");
+      return;
+    }
+
+    if (!sameAddress && addressLine2 && addressLine2.length > 80) {
+      window.alert(
+        "Error: additional street or PO box exceeds 80 characters. Please enter a valid address."
+      );
       return;
     }
 
@@ -765,9 +815,6 @@ export default function ApplicationForm({
       }
     }
 
-    console.log("driversLicence");
-    console.log(driversLicence);
-
     if (driversLicence && driversLicence.length > 80) {
       exceedLength = true;
       setDriversLicenceError(
@@ -820,10 +867,30 @@ export default function ApplicationForm({
       }
     }
 
-    if (!sameAddress && !mailingAddressLine1) {
-      setMailingAddressLine1Error("Street or PO box is required");
-      if (!hasScrolled) {
-        scrollToRef(mailingAddressLine1Ref);
+    if (!sameAddress) {
+      if (!mailingAddressLine1) {
+        setMailingAddressLine1Error("Street or PO box is required");
+        if (!hasScrolled) {
+          scrollToRef(mailingAddressLine1Ref);
+        }
+      } else if (mailingCity.length > 40) {
+        setMailingAddressLine1Error(
+          "Street or PO box can not be greater than 40 characters"
+        );
+        if (!hasScrolled) {
+          scrollToRef(mailingAddressLine1Ref);
+        }
+      }
+    }
+
+    if (!sameAddress) {
+      if (mailingCity && mailingCity.length > 80) {
+        setMailingAddressLine2Error(
+          "Additional street or PO box can not be greater than 80 characters"
+        );
+        if (!hasScrolled) {
+          scrollToRef(mailingAddressLine2Ref);
+        }
       }
     }
 
@@ -838,6 +905,20 @@ export default function ApplicationForm({
       );
       if (!hasScrolled) {
         scrollToRef(mailingAddressLine1Ref);
+      }
+    }
+
+    if (
+      !sameAddress &&
+      mailingAddressLine2 &&
+      mailingAddressLine2.length > 80
+    ) {
+      exceedLength = true;
+      setMailingAddressLine2Error(
+        "Additional Street or PO box exceeds 80 characters. Please enter a valid address"
+      );
+      if (!hasScrolled) {
+        scrollToRef(mailingAddressLine2Ref);
       }
     }
 
@@ -924,7 +1005,9 @@ export default function ApplicationForm({
         birthDt,
         genderTxt,
         addressLine1,
+        addressLine2,
         mailingLine1: sameAddress ? addressLine1 : mailingAddressLine1,
+        mailingLine2: sameAddress ? addressLine2 : mailingAddressLine2,
         cityNm,
         mailingCityNm: sameAddress ? cityNm : mailingCity,
         provinceNm,
@@ -1072,11 +1155,13 @@ export default function ApplicationForm({
               <span className="previousHeader">Current Mailing Address</span>
             </div>
             <div ref={mailingAddressLine1Ref}>
-              <div ref={mailingCityRef}>
-                <div ref={mailingProvinceRef}>
-                  <div ref={mailingPostalCodeRef}>
-                    {sameAddress && <SimpleForm simpleForm={address} />}
-                    {!sameAddress && <SimpleForm simpleForm={mailing} />}
+              <div ref={mailingAddressLine2Ref}>
+                <div ref={mailingCityRef}>
+                  <div ref={mailingProvinceRef}>
+                    <div ref={mailingPostalCodeRef}>
+                      {sameAddress && <SimpleForm simpleForm={address} />}
+                      {!sameAddress && <SimpleForm simpleForm={mailing} />}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1144,6 +1229,7 @@ ApplicationForm.propTypes = {
       birthDt: PropTypes.string.isRequired,
       genderTxt: PropTypes.string.isRequired,
       addressLine1: PropTypes.string.isRequired,
+      addressLine2: PropTypes.string.isRequired,
       cityNm: PropTypes.string.isRequired,
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
@@ -1165,6 +1251,7 @@ ApplicationForm.propTypes = {
       jobTitle: PropTypes.string,
       organizationFacility: PropTypes.string,
       mailingLine1: PropTypes.string,
+      mailingLine2: PropTypes.string,
       mailingCityNm: PropTypes.string,
       mailingProvinceNm: PropTypes.string,
       mailingPostalCodeTxt: PropTypes.string
@@ -1203,6 +1290,7 @@ ApplicationForm.defaultProps = {
       jobTitle: "",
       organizationFacility: "",
       mailingLine1: "",
+      mailingLine2: "",
       mailingCityNm: "",
       mailingProvinceNm: "",
       mailingPostalCodeTxt: ""

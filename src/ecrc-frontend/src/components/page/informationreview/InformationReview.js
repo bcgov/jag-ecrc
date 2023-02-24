@@ -37,11 +37,13 @@ export default function InformationReview({
       birthDt,
       genderTxt,
       addressLine1,
+      addressLine2,
       cityNm,
       provinceNm,
       postalCodeTxt,
       countryNm,
       mailingLine1,
+      mailingLine2,
       mailingCityNm,
       mailingProvinceNm,
       mailingPostalCodeTxt,
@@ -262,6 +264,10 @@ export default function InformationReview({
       value: addressLine1
     },
     {
+      name: "Additional Residential Address",
+      value: addressLine2
+    },
+    {
       name: "City",
       value: cityNm
     },
@@ -296,6 +302,10 @@ export default function InformationReview({
     {
       name: "Mailing Address",
       value: mailingLine1
+    },
+    {
+      name: "Additional Mailing Address",
+      value: mailingLine2
     },
     {
       name: "City",
@@ -465,11 +475,13 @@ InformationReview.propTypes = {
       birthDt: PropTypes.string.isRequired,
       genderTxt: PropTypes.string.isRequired,
       addressLine1: PropTypes.string.isRequired,
+      addressLine2: PropTypes.string.isRequired,
       cityNm: PropTypes.string.isRequired,
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
       countryNm: PropTypes.string.isRequired,
       mailingLine1: PropTypes.string.isRequired,
+      mailingLine2: PropTypes.string.isRequired,
       mailingCityNm: PropTypes.string.isRequired,
       mailingProvinceNm: PropTypes.string.isRequired,
       mailingPostalCodeTxt: PropTypes.string.isRequired,

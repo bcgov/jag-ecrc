@@ -633,6 +633,35 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
                 <div>
                   <label
                     class="label"
+                    for="addressLine2"
+                  >
+                    <div
+                      class="textinput_label"
+                    >
+                      Additional Street
+                    </div>
+                     
+                    <span
+                      class="note"
+                    />
+                  </label>
+                  <input
+                    class="textinput_non_editable_gray"
+                    id="addressLine2"
+                    readonly=""
+                    type="text"
+                    value=""
+                  />
+                  <br />
+                  <span
+                    class="error"
+                  />
+                </div>
+              </li>
+              <li>
+                <div>
+                  <label
+                    class="label"
                     for="cityNm"
                   >
                     <div
@@ -787,157 +816,188 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
             <div>
               <div>
                 <div>
-                  <form
-                    class="simpleForm"
-                  >
-                    <ul>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="addressLine1"
-                          >
-                            <div
-                              class="textinput_label"
+                  <div>
+                    <form
+                      class="simpleForm"
+                    >
+                      <ul>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="addressLine1"
                             >
-                              Street
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Street
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="addressLine1"
+                              readonly=""
+                              type="text"
+                              value="123 Somewhere"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="addressLine1"
-                            readonly=""
-                            type="text"
-                            value="123 Somewhere"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="cityNm"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="addressLine2"
                             >
-                              City
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Additional Street
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="addressLine2"
+                              readonly=""
+                              type="text"
+                              value=""
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="cityNm"
-                            readonly=""
-                            type="text"
-                            value="Here"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="provinceNm"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="cityNm"
                             >
-                              Province
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                City
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="cityNm"
+                              readonly=""
+                              type="text"
+                              value="Here"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="provinceNm"
-                            readonly=""
-                            type="text"
-                            value="British Columbia"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="postalCodeTxt"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="provinceNm"
                             >
-                              Postal Code
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Province
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="provinceNm"
+                              readonly=""
+                              type="text"
+                              value="British Columbia"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="postalCodeTxt"
-                            readonly=""
-                            type="text"
-                            value="V9V 9V9"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="countryNm"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="postalCodeTxt"
                             >
-                              Country
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Postal Code
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="postalCodeTxt"
+                              readonly=""
+                              type="text"
+                              value="V9V 9V9"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="countryNm"
-                            readonly=""
-                            type="text"
-                            value="Canada"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                    </ul>
-                  </form>
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="countryNm"
+                            >
+                              <div
+                                class="textinput_label"
+                              >
+                                Country
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="countryNm"
+                              readonly=""
+                              type="text"
+                              value="Canada"
+                            />
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1878,6 +1938,35 @@ exports[`ApplicationForm Component Matches the snapshot with gender being female
                 <div>
                   <label
                     class="label"
+                    for="addressLine2"
+                  >
+                    <div
+                      class="textinput_label"
+                    >
+                      Additional Street
+                    </div>
+                     
+                    <span
+                      class="note"
+                    />
+                  </label>
+                  <input
+                    class="textinput_non_editable_gray"
+                    id="addressLine2"
+                    readonly=""
+                    type="text"
+                    value=""
+                  />
+                  <br />
+                  <span
+                    class="error"
+                  />
+                </div>
+              </li>
+              <li>
+                <div>
+                  <label
+                    class="label"
                     for="cityNm"
                   >
                     <div
@@ -2032,157 +2121,188 @@ exports[`ApplicationForm Component Matches the snapshot with gender being female
             <div>
               <div>
                 <div>
-                  <form
-                    class="simpleForm"
-                  >
-                    <ul>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="addressLine1"
-                          >
-                            <div
-                              class="textinput_label"
+                  <div>
+                    <form
+                      class="simpleForm"
+                    >
+                      <ul>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="addressLine1"
                             >
-                              Street
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Street
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="addressLine1"
+                              readonly=""
+                              type="text"
+                              value="123 Somewhere"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="addressLine1"
-                            readonly=""
-                            type="text"
-                            value="123 Somewhere"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="cityNm"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="addressLine2"
                             >
-                              City
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Additional Street
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="addressLine2"
+                              readonly=""
+                              type="text"
+                              value=""
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="cityNm"
-                            readonly=""
-                            type="text"
-                            value="Here"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="provinceNm"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="cityNm"
                             >
-                              Province
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                City
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="cityNm"
+                              readonly=""
+                              type="text"
+                              value="Here"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="provinceNm"
-                            readonly=""
-                            type="text"
-                            value="British Columbia"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="postalCodeTxt"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="provinceNm"
                             >
-                              Postal Code
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Province
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="provinceNm"
+                              readonly=""
+                              type="text"
+                              value="British Columbia"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="postalCodeTxt"
-                            readonly=""
-                            type="text"
-                            value="V9V 9V9"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="countryNm"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="postalCodeTxt"
                             >
-                              Country
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Postal Code
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="postalCodeTxt"
+                              readonly=""
+                              type="text"
+                              value="V9V 9V9"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="countryNm"
-                            readonly=""
-                            type="text"
-                            value="Canada"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                    </ul>
-                  </form>
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="countryNm"
+                            >
+                              <div
+                                class="textinput_label"
+                              >
+                                Country
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="countryNm"
+                              readonly=""
+                              type="text"
+                              value="Canada"
+                            />
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3123,6 +3243,35 @@ exports[`ApplicationForm Component Matches the snapshot with valid region/provin
                 <div>
                   <label
                     class="label"
+                    for="addressLine2"
+                  >
+                    <div
+                      class="textinput_label"
+                    >
+                      Additional Street
+                    </div>
+                     
+                    <span
+                      class="note"
+                    />
+                  </label>
+                  <input
+                    class="textinput_non_editable_gray"
+                    id="addressLine2"
+                    readonly=""
+                    type="text"
+                    value=""
+                  />
+                  <br />
+                  <span
+                    class="error"
+                  />
+                </div>
+              </li>
+              <li>
+                <div>
+                  <label
+                    class="label"
                     for="cityNm"
                   >
                     <div
@@ -3277,157 +3426,188 @@ exports[`ApplicationForm Component Matches the snapshot with valid region/provin
             <div>
               <div>
                 <div>
-                  <form
-                    class="simpleForm"
-                  >
-                    <ul>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="addressLine1"
-                          >
-                            <div
-                              class="textinput_label"
+                  <div>
+                    <form
+                      class="simpleForm"
+                    >
+                      <ul>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="addressLine1"
                             >
-                              Street
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Street
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="addressLine1"
+                              readonly=""
+                              type="text"
+                              value="123 Somewhere"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="addressLine1"
-                            readonly=""
-                            type="text"
-                            value="123 Somewhere"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="cityNm"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="addressLine2"
                             >
-                              City
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Additional Street
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="addressLine2"
+                              readonly=""
+                              type="text"
+                              value=""
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="cityNm"
-                            readonly=""
-                            type="text"
-                            value="Here"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="provinceNm"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="cityNm"
                             >
-                              Province
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                City
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="cityNm"
+                              readonly=""
+                              type="text"
+                              value="Here"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="provinceNm"
-                            readonly=""
-                            type="text"
-                            value="British Columbia"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="postalCodeTxt"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="provinceNm"
                             >
-                              Postal Code
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Province
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="provinceNm"
+                              readonly=""
+                              type="text"
+                              value="British Columbia"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="postalCodeTxt"
-                            readonly=""
-                            type="text"
-                            value="V9V 9V9"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <label
-                            class="label"
-                            for="countryNm"
-                          >
-                            <div
-                              class="textinput_label"
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="postalCodeTxt"
                             >
-                              Country
-                            </div>
-                             
-                            <span
-                              class="note"
+                              <div
+                                class="textinput_label"
+                              >
+                                Postal Code
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="postalCodeTxt"
+                              readonly=""
+                              type="text"
+                              value="V9V 9V9"
                             />
-                          </label>
-                          <input
-                            class="textinput_non_editable_gray"
-                            id="countryNm"
-                            readonly=""
-                            type="text"
-                            value="Canada"
-                          />
-                          <br />
-                          <span
-                            class="error"
-                          />
-                        </div>
-                      </li>
-                    </ul>
-                  </form>
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <label
+                              class="label"
+                              for="countryNm"
+                            >
+                              <div
+                                class="textinput_label"
+                              >
+                                Country
+                              </div>
+                               
+                              <span
+                                class="note"
+                              />
+                            </label>
+                            <input
+                              class="textinput_non_editable_gray"
+                              id="countryNm"
+                              readonly=""
+                              type="text"
+                              value="Canada"
+                            />
+                            <br />
+                            <span
+                              class="error"
+                            />
+                          </div>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
