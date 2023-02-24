@@ -294,10 +294,10 @@ export default function ApplicationForm({
             content: { display: "block" }
           });
 
-          if (addressLine_2 && addressLine_2.length > 80) {
+          if (addressLine_2 && addressLine_2.length > ADDR_2_LEN) {
             setTimeout(() => {
               window.alert(
-                "Error: additional street or PO box exceeds 80 characters. Please enter a valid address."
+                `Error: additional street or PO box exceeds ${ADDR_2_LEN} characters. Please enter a valid address.`
               );
             }, 200);
           }
@@ -766,7 +766,7 @@ export default function ApplicationForm({
       return;
     }
 
-    if (!sameAddress && addressLine2 && addressLine2.length > ADDR_2_LEN) {
+    if (sameAddress && addressLine2 && addressLine2.length > ADDR_2_LEN) {
       window.alert(
         `Error: additional street or PO box exceeds ${ADDR_2_LEN} characters. Please enter a valid address.`
       );
