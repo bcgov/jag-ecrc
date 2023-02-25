@@ -610,7 +610,6 @@ export default function ApplicationForm({
         id: "mailingAddressLine2",
         placeholder: "Additional Street or PO Box",
         value: mailingAddressLine2,
-        isRequired: true,
         errorMsg: mailingAddressLine2Error,
         onChange: event => {
           setMailingAddressLine2(event);
@@ -919,6 +918,7 @@ export default function ApplicationForm({
           scrollToRef(mailingCityRef);
         }
       } else if (mailingCity.length > CITY_LEN) {
+        exceedLength = true;
         setMailingCityError(
           `City can not be greater than ${CITY_LEN} characters`
         );
@@ -961,10 +961,7 @@ export default function ApplicationForm({
       !exceedLength &&
       ((!sameAddress &&
         mailingAddressLine1 !== "" &&
-        mailingAddressLine1.length <= ADDR_1_LEN &&
-        (!mailingAddressLine2 || mailingAddressLine2.length <= ADDR_2_LEN) &&
         mailingCity !== "" &&
-        mailingCity.length <= CITY_LEN &&
         mailingProvince !== "" &&
         validatePostalCode(mailingPostalCode)) ||
         (sameAddress && addressLine1 && cityNm && provinceNm && postalCodeTxt))
