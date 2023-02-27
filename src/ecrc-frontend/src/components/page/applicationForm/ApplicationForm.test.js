@@ -1316,7 +1316,7 @@ describe("ApplicationForm Component", () => {
     expect(
       getByText(
         container,
-        "City and country of birth can not be greater than 100 characters"
+        "City and country of birth can not be greater than 40 characters"
       )
     ).toBeInTheDocument();
   });
@@ -1399,6 +1399,64 @@ describe("ApplicationForm Component", () => {
 
     expect(
       getByText(container, "City can not be greater than 25 characters")
+    ).toBeInTheDocument();
+  });
+
+  test("Street or PO box can not be greater than 40 characters", async () => {
+    const completeApplicant = {
+      ...applicant,
+      mailingLine1:
+        "first - Current 218 EVERGREEN ST first - Current 218 EVERGREEN ST"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm
+          page={{ ...page, applicant: completeApplicant, sameAddress: false }}
+        />
+      </MemoryRouter>
+    );
+
+    expect(
+      getByPlaceholderText(container, "Street or PO Box")
+    ).toBeInTheDocument();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(
+      getByText(
+        container,
+        "Street or PO box can not be greater than 40 characters"
+      )
+    ).toBeInTheDocument();
+  });
+
+  test("Additional street or PO box can not be greater than 80 characters", async () => {
+    const completeApplicant = {
+      ...applicant,
+      mailingLine2:
+        "second - P.O. BOX 291  POSTAL STATION MA Second - P.O. BOX 291  POSTAL STATION MA USA"
+    };
+
+    const { container } = render(
+      <MemoryRouter initialEntries={["/applicationform?code=code"]}>
+        <ApplicationForm
+          page={{ ...page, applicant: completeApplicant, sameAddress: false }}
+        />
+      </MemoryRouter>
+    );
+
+    expect(
+      getByPlaceholderText(container, "Additional Street or PO Box")
+    ).toBeInTheDocument();
+
+    fireEvent.click(getByText(container, "Continue"));
+
+    expect(
+      getByText(
+        container,
+        "Additional street or PO box can not be greater than 80 characters"
+      )
     ).toBeInTheDocument();
   });
 });

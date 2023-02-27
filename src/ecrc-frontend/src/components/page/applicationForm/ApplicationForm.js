@@ -7,12 +7,14 @@ import PropTypes from "prop-types";
 import queryString from "query-string";
 
 import "./ApplicationForm.css";
+import { ToastContainer, toast } from "react-toastify";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
 import FullName from "../../composite/fullName/FullName";
 import { Button } from "../../base/button/Button";
 import SideCards from "../../composite/sideCards/SideCards";
+
 import {
   isActionPerformed,
   generateJWTToken,
@@ -20,6 +22,19 @@ import {
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
 import Loader from "../../base/loader/Loader";
+
+import "react-toastify/dist/ReactToastify.css";
+
+const [SURNAME_LEN, FIRSTNAME_LEN, SECONDENAME_LEN] = [40, 25, 25];
+const [
+  BIRTH_PLACE_LEN,
+  ADDR_1_LEN,
+  ADDR_2_LEN,
+  CITY_LEN,
+  EMAIL_ADDR_LEN,
+  DRIVERS_LIC_LEN,
+  APPLICANT_POSITION_LEN
+] = [40, 40, 80, 25, 80, 80, 3900];
 
 export default function ApplicationForm({
   page: {
@@ -31,6 +46,7 @@ export default function ApplicationForm({
       birthDt,
       genderTxt,
       addressLine1,
+      addressLine2,
       cityNm,
       provinceNm,
       postalCodeTxt,
@@ -52,6 +68,7 @@ export default function ApplicationForm({
       jobTitle,
       organizationFacility,
       mailingLine1 = "",
+      mailingLine2 = "",
       mailingCityNm = "",
       mailingProvinceNm = "BRITISH COLUMBIA",
       mailingPostalCodeTxt = ""
@@ -111,8 +128,14 @@ export default function ApplicationForm({
     ""
   );
 
-  const [mailingAddressLine1, setMailingAddressLine1] = useState(mailingLine1);
+  const [mailingAddressLine1, setMailingAddressLine1] = useState(
+    mailingLine1 || ""
+  );
   const [mailingAddressLine1Error, setMailingAddressLine1Error] = useState("");
+  const [mailingAddressLine2, setMailingAddressLine2] = useState(
+    mailingLine2 || ""
+  );
+  const [mailingAddressLine2Error, setMailingAddressLine2Error] = useState("");
   const [mailingCity, setMailingCity] = useState(mailingCityNm);
   const [mailingCityError, setMailingCityError] = useState("");
   const [mailingProvince, setMailingProvince] = useState(mailingProvinceNm);
@@ -249,13 +272,20 @@ export default function ApplicationForm({
             formatProvinceNm = "Invalid Province";
           }
 
+          const index = street_address.indexOf("\n");
+          const addressLine_1 =
+            index !== -1 ? street_address.slice(0, index) : street_address;
+          const addressLine_2 =
+            index !== -1 ? street_address.slice(index + 1) : "";
+
           setApplicant({
             legalFirstNm: given_name,
             legalSecondNm: formatSecondNm,
             legalSurnameNm: family_name,
             birthDt: formatBirthDt,
             genderTxt: formatGender,
-            addressLine1: street_address,
+            addressLine1: addressLine_1,
+            addressLine2: addressLine_2,
             cityNm: locality,
             provinceNm: formatProvinceNm,
             postalCodeTxt: postal_code,
@@ -266,6 +296,14 @@ export default function ApplicationForm({
             loader: { display: "none" },
             content: { display: "block" }
           });
+
+          if (addressLine_2 && addressLine_2.length > ADDR_2_LEN) {
+            setTimeout(() => {
+              toast.warn(
+                `Error: additional street or PO box exceeds ${ADDR_2_LEN} characters. Please enter a valid address.`
+              );
+            }, 200);
+          }
         })
         .catch(error => {
           if (error && error.response && error.response.status) {
@@ -522,6 +560,12 @@ export default function ApplicationForm({
         textInputStyle: "textinput_non_editable_gray"
       },
       {
+        label: "Additional Street",
+        id: "addressLine2",
+        value: addressLine2,
+        textInputStyle: "textinput_non_editable_gray"
+      },
+      {
         label: "City",
         id: "cityNm",
         value: cityNm,
@@ -562,6 +606,17 @@ export default function ApplicationForm({
         onChange: event => {
           setMailingAddressLine1(event);
           setMailingAddressLine1Error("");
+        }
+      },
+      {
+        label: "Additional Street",
+        id: "mailingAddressLine2",
+        placeholder: "Additional Street or PO Box",
+        value: mailingAddressLine2,
+        errorMsg: mailingAddressLine2Error,
+        onChange: event => {
+          setMailingAddressLine2(event);
+          setMailingAddressLine2Error("");
         }
       },
       {
@@ -661,13 +716,14 @@ export default function ApplicationForm({
   const jobRef = useRef(null);
   const organizationFacilityRef = useRef(null);
   const mailingAddressLine1Ref = useRef(null);
+  const mailingAddressLine2Ref = useRef(null);
   const mailingCityRef = useRef(null);
   const mailingProvinceRef = useRef(null);
   const mailingPostalCodeRef = useRef(null);
 
   const verifyAliasFirstNameExceedLen = (name, setName) => {
-    if (name && name.length > 25) {
-      setName("First name can not be greater than 25 characters");
+    if (name && name.length > FIRSTNAME_LEN) {
+      setName(`First name can not be greater than ${FIRSTNAME_LEN} characters`);
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }
@@ -677,8 +733,10 @@ export default function ApplicationForm({
   };
 
   const verifyAliasMiddleNameExceedLen = (name, setName) => {
-    if (name && name.length > 25) {
-      setName("Middle name can not be greater than 25 characters");
+    if (name && name.length > SECONDENAME_LEN) {
+      setName(
+        `Middle name can not be greater than ${SECONDENAME_LEN} characters`
+      );
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }
@@ -688,8 +746,8 @@ export default function ApplicationForm({
   };
 
   const verifyAliasSurNameExceedLen = (name, setName) => {
-    if (name && name.length > 40) {
-      setName("Last name can not be greater than 40 characters");
+    if (name && name.length > SURNAME_LEN) {
+      setName(`Last name can not be greater than ${SURNAME_LEN} characters`);
       if (!hasScrolled) {
         scrollToRef(fullNameRef);
       }
@@ -707,6 +765,13 @@ export default function ApplicationForm({
         message: "Session Expired"
       });
       history.push("/criminalrecordcheck/error");
+      return;
+    }
+
+    if (sameAddress && addressLine2 && addressLine2.length > ADDR_2_LEN) {
+      toast.warn(
+        `Error: additional street or PO box exceeds ${ADDR_2_LEN} characters. Please enter a valid address.`
+      );
       return;
     }
 
@@ -743,10 +808,10 @@ export default function ApplicationForm({
       if (!hasScrolled) {
         scrollToRef(birthLocRef);
       }
-    } else if (birthLoc && birthLoc.length > 100) {
+    } else if (birthLoc && birthLoc.length > BIRTH_PLACE_LEN) {
       exceedLength = true;
       setBirthPlaceError(
-        "City and country of birth can not be greater than 100 characters"
+        `City and country of birth can not be greater than ${BIRTH_PLACE_LEN} characters`
       );
       if (!hasScrolled) {
         scrollToRef(birthLocRef);
@@ -765,13 +830,11 @@ export default function ApplicationForm({
       }
     }
 
-    console.log("driversLicence");
-    console.log(driversLicence);
-
-    if (driversLicence && driversLicence.length > 80) {
+    if (driversLicence && driversLicence.length > DRIVERS_LIC_LEN) {
       exceedLength = true;
       setDriversLicenceError(
-        "BC driver's licence number can not be greater than 80 characters"
+        "BC driver's licence number can not be greater than " +
+          `${DRIVERS_LIC_LEN} characters`
       );
       if (!hasScrolled) {
         scrollToRef(driversLicenceRef);
@@ -783,10 +846,10 @@ export default function ApplicationForm({
       if (!hasScrolled) {
         scrollToRef(emailRef);
       }
-    } else if (email.length > 80) {
+    } else if (email.length > EMAIL_ADDR_LEN) {
       exceedLength = true;
       setEmailAddressError(
-        "Email address must be can not be greater than 80 characters"
+        `Email address must be can not be greater than ${EMAIL_ADDR_LEN} characters`
       );
       if (!hasScrolled) {
         scrollToRef(emailRef);
@@ -803,10 +866,10 @@ export default function ApplicationForm({
       if (!hasScrolled) {
         scrollToRef(jobRef);
       }
-    } else if (job.length > 3900) {
+    } else if (job.length > APPLICANT_POSITION_LEN) {
       exceedLength = true;
       setJobTitleError(
-        "Position/job title is required can not be greater than 3900 characters"
+        `Position/job title is required can not be greater than ${APPLICANT_POSITION_LEN} characters`
       );
       if (!hasScrolled) {
         scrollToRef(jobRef);
@@ -820,24 +883,34 @@ export default function ApplicationForm({
       }
     }
 
-    if (!sameAddress && !mailingAddressLine1) {
-      setMailingAddressLine1Error("Street or PO box is required");
-      if (!hasScrolled) {
-        scrollToRef(mailingAddressLine1Ref);
+    if (!sameAddress) {
+      if (!mailingAddressLine1) {
+        setMailingAddressLine1Error("Street or PO box is required");
+        if (!hasScrolled) {
+          scrollToRef(mailingAddressLine1Ref);
+        }
+      } else if (mailingAddressLine1.length > ADDR_1_LEN) {
+        exceedLength = true;
+        setMailingAddressLine1Error(
+          `Street or PO box can not be greater than ${ADDR_1_LEN} characters`
+        );
+        if (!hasScrolled) {
+          scrollToRef(mailingAddressLine1Ref);
+        }
       }
     }
 
     if (
       !sameAddress &&
-      mailingAddressLine1 &&
-      mailingAddressLine1.length > 40
+      mailingAddressLine2 &&
+      mailingAddressLine2.length > ADDR_2_LEN
     ) {
       exceedLength = true;
-      setMailingAddressLine1Error(
-        "Street or PO box can not be greater than 40 characters"
+      setMailingAddressLine2Error(
+        `Additional street or PO box can not be greater than ${ADDR_2_LEN} characters`
       );
       if (!hasScrolled) {
-        scrollToRef(mailingAddressLine1Ref);
+        scrollToRef(mailingAddressLine2Ref);
       }
     }
 
@@ -847,8 +920,11 @@ export default function ApplicationForm({
         if (!hasScrolled) {
           scrollToRef(mailingCityRef);
         }
-      } else if (mailingCity.length > 25) {
-        setMailingCityError("City can not be greater than 25 characters");
+      } else if (mailingCity.length > CITY_LEN) {
+        exceedLength = true;
+        setMailingCityError(
+          `City can not be greater than ${CITY_LEN} characters`
+        );
         if (!hasScrolled) {
           scrollToRef(mailingCityRef);
         }
@@ -888,9 +964,7 @@ export default function ApplicationForm({
       !exceedLength &&
       ((!sameAddress &&
         mailingAddressLine1 !== "" &&
-        mailingAddressLine1.length <= 40 &&
         mailingCity !== "" &&
-        mailingCity.length <= 25 &&
         mailingProvince !== "" &&
         validatePostalCode(mailingPostalCode)) ||
         (sameAddress && addressLine1 && cityNm && provinceNm && postalCodeTxt))
@@ -924,7 +998,9 @@ export default function ApplicationForm({
         birthDt,
         genderTxt,
         addressLine1,
+        addressLine2,
         mailingLine1: sameAddress ? addressLine1 : mailingAddressLine1,
+        mailingLine2: sameAddress ? addressLine2 : mailingAddressLine2,
         cityNm,
         mailingCityNm: sameAddress ? cityNm : mailingCity,
         provinceNm,
@@ -979,6 +1055,18 @@ export default function ApplicationForm({
 
   return (
     <main>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">
@@ -1072,11 +1160,13 @@ export default function ApplicationForm({
               <span className="previousHeader">Current Mailing Address</span>
             </div>
             <div ref={mailingAddressLine1Ref}>
-              <div ref={mailingCityRef}>
-                <div ref={mailingProvinceRef}>
-                  <div ref={mailingPostalCodeRef}>
-                    {sameAddress && <SimpleForm simpleForm={address} />}
-                    {!sameAddress && <SimpleForm simpleForm={mailing} />}
+              <div ref={mailingAddressLine2Ref}>
+                <div ref={mailingCityRef}>
+                  <div ref={mailingProvinceRef}>
+                    <div ref={mailingPostalCodeRef}>
+                      {sameAddress && <SimpleForm simpleForm={address} />}
+                      {!sameAddress && <SimpleForm simpleForm={mailing} />}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1144,6 +1234,7 @@ ApplicationForm.propTypes = {
       birthDt: PropTypes.string.isRequired,
       genderTxt: PropTypes.string.isRequired,
       addressLine1: PropTypes.string.isRequired,
+      addressLine2: PropTypes.string.isRequired,
       cityNm: PropTypes.string.isRequired,
       provinceNm: PropTypes.string.isRequired,
       postalCodeTxt: PropTypes.string.isRequired,
@@ -1165,6 +1256,7 @@ ApplicationForm.propTypes = {
       jobTitle: PropTypes.string,
       organizationFacility: PropTypes.string,
       mailingLine1: PropTypes.string,
+      mailingLine2: PropTypes.string,
       mailingCityNm: PropTypes.string,
       mailingProvinceNm: PropTypes.string,
       mailingPostalCodeTxt: PropTypes.string
@@ -1203,6 +1295,7 @@ ApplicationForm.defaultProps = {
       jobTitle: "",
       organizationFacility: "",
       mailingLine1: "",
+      mailingLine2: "",
       mailingCityNm: "",
       mailingProvinceNm: "",
       mailingPostalCodeTxt: ""

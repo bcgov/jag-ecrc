@@ -265,6 +265,12 @@ exports[`InformationReview Component Matches the snapshot for no share 1`] = `
           </tr>
           <tr>
             <td>
+              Additional Residential Address
+            </td>
+            <td />
+          </tr>
+          <tr>
+            <td>
               City
             </td>
             <td>
@@ -332,6 +338,12 @@ exports[`InformationReview Component Matches the snapshot for no share 1`] = `
             <td>
               456 Elsewhere
             </td>
+          </tr>
+          <tr>
+            <td>
+              Additional Mailing Address
+            </td>
+            <td />
           </tr>
           <tr>
             <td>
@@ -897,6 +909,12 @@ exports[`InformationReview Component Matches the snapshot for share available 1`
           </tr>
           <tr>
             <td>
+              Additional Residential Address
+            </td>
+            <td />
+          </tr>
+          <tr>
+            <td>
               City
             </td>
             <td>
@@ -964,6 +982,12 @@ exports[`InformationReview Component Matches the snapshot for share available 1`
             <td>
               456 Elsewhere
             </td>
+          </tr>
+          <tr>
+            <td>
+              Additional Mailing Address
+            </td>
+            <td />
           </tr>
           <tr>
             <td>

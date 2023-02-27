@@ -37,6 +37,7 @@
     "react-phone-number-input": "^3.0.22",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^5.0.1",
+    "react-toastify": "^9.1.1",
     "regenerator-runtime": "^0.13.5",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
