@@ -2,6 +2,9 @@
 
 exports[`Storyshots Application Form Mobile Non Schedule D 1`] = `
 <main>
+  <div
+    className="Toastify"
+  />
   <header>
     <nav
       className="navbar navbar-expand-lg navbar-dark"
@@ -1388,6 +1391,9 @@ exports[`Storyshots Application Form Mobile Non Schedule D 1`] = `
 
 exports[`Storyshots Application Form Mobile Schedule D 1`] = `
 <main>
+  <div
+    className="Toastify"
+  />
   <header>
     <nav
       className="navbar navbar-expand-lg navbar-dark"
@@ -2814,6 +2820,9 @@ exports[`Storyshots Application Form Mobile Schedule D 1`] = `
 
 exports[`Storyshots Application Form Non Schedule D 1`] = `
 <main>
+  <div
+    className="Toastify"
+  />
   <header>
     <nav
       className="navbar navbar-expand-lg navbar-dark"
@@ -4200,6 +4209,9 @@ exports[`Storyshots Application Form Non Schedule D 1`] = `
 
 exports[`Storyshots Application Form Schedule D 1`] = `
 <main>
+  <div
+    className="Toastify"
+  />
   <header>
     <nav
       className="navbar navbar-expand-lg navbar-dark"

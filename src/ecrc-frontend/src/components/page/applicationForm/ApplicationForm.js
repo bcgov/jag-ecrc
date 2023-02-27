@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import queryString from "query-string";
 
 import "./ApplicationForm.css";
+import { ToastContainer, toast } from "react-toastify";
 import Header from "../../base/header/Header";
 import Footer from "../../base/footer/Footer";
 import { SimpleForm } from "../../composite/simpleForm/SimpleForm";
@@ -21,6 +22,8 @@ import {
   isAuthorized
 } from "../../../modules/AuthenticationHelper";
 import Loader from "../../base/loader/Loader";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const [SURNAME_LEN, FIRSTNAME_LEN, SECONDENAME_LEN] = [40, 25, 25];
 const [
@@ -296,7 +299,7 @@ export default function ApplicationForm({
 
           if (addressLine_2 && addressLine_2.length > ADDR_2_LEN) {
             setTimeout(() => {
-              window.alert(
+              toast.warn(
                 `Error: additional street or PO box exceeds ${ADDR_2_LEN} characters. Please enter a valid address.`
               );
             }, 200);
@@ -766,7 +769,7 @@ export default function ApplicationForm({
     }
 
     if (sameAddress && addressLine2 && addressLine2.length > ADDR_2_LEN) {
-      window.alert(
+      toast.warn(
         `Error: additional street or PO box exceeds ${ADDR_2_LEN} characters. Please enter a valid address.`
       );
       return;
@@ -1052,6 +1055,18 @@ export default function ApplicationForm({
 
   return (
     <main>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Header header={header} />
       <div className="page">
         <div className="content col-md-8">

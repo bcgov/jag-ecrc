@@ -3,6 +3,9 @@
 exports[`ApplicationForm Component Matches the snapshot 1`] = `
 <DocumentFragment>
   <main>
+    <div
+      class="Toastify"
+    />
     <header>
       <nav
         class="navbar navbar-expand-lg navbar-dark"
@@ -1308,6 +1311,9 @@ exports[`ApplicationForm Component Matches the snapshot 1`] = `
 exports[`ApplicationForm Component Matches the snapshot with gender being female 1`] = `
 <DocumentFragment>
   <main>
+    <div
+      class="Toastify"
+    />
     <header>
       <nav
         class="navbar navbar-expand-lg navbar-dark"
@@ -2613,6 +2619,9 @@ exports[`ApplicationForm Component Matches the snapshot with gender being female
 exports[`ApplicationForm Component Matches the snapshot with valid region/province 1`] = `
 <DocumentFragment>
   <main>
+    <div
+      class="Toastify"
+    />
     <header>
       <nav
         class="navbar navbar-expand-lg navbar-dark"
