@@ -281,8 +281,7 @@ public class RequestCreateApplicant {
         		"&Alias3_First_Nm=" + alias3FirstNm +
         		"&Alias3_Second_Nm=" + alias3SecondNm +
         		"&Phone_Number=" + phoneNumber +
-        		"&Address_Line1=" +  addressLine1 +
-        		"&Address_Line2=" +  addressLine2 +						
+        		"&Address_Line1=" +  addressLine1 +					
         		"&City_Nm=" + encodeData(cityNm) +
         		"&Province_Nm=" + encodeData(provinceNm) +
         		"&Country_Nm=" + encodeData(countryNm) +
