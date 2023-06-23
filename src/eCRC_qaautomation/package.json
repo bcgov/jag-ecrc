@@ -1,31 +1,28 @@
 {
-  "name": "ecrc_qaautomation",
-  "dependencies": {
-    "protractor": "^7.0.0",
-    "jasmine-data-provider": "^2.2.0",
-    "jasmine": "^3.5.0",
-    "dotenv": "^8.2.0",
-    "json-schema": "0.4.0"
-  },
-  "scripts": {
-    "webdriver-manager-update": "./node_modules/.bin/webdriver-manager update",
-    "webdriver-manager-start": "./node_modules/.bin/webdriver-manager start",
-    "success": "./node_modules/.bin/protractor configuration.js --suite success",
-    "module": "./node_modules/.bin/protractor configuration.js --suite module",
-    "routing": "./node_modules/.bin/protractor configuration.js --suite routing",
-    "volunteer": "./node_modules/.bin/protractor configuration.js --suite volunteer",
-    "successpage": "./node_modules/.bin/protractor configuration.js --suite successpage",
-    "consent": "./node_modules/.bin/protractor configuration.js --suite consent",
-    "landing": "./node_modules/.bin/protractor configuration.js --suite landing",
-    "bcscredirect": "./node_modules/.bin/protractor configuration.js --suite bcscredirect",
-    "termsofuse": "./node_modules/.bin/protractor configuration.js --suite termsofuse",
-    "regression": "./node_modules/.bin/protractor configuration.js --suite regression",
-    "smoke": "./node_modules/.bin/protractor configuration.js --suite smoke"
-  },
-  "devDependencies": {
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
-  },
-  "resolutions": {
-    "minimist": "^1.2.3"
-  }
+	"name": "ecrc_qaautomation",
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"jasmine": "^3.5.0",
+		"jasmine-data-provider": "^2.2.0",
+		"json-schema": "0.4.0",
+		"protractor": "^7.0.0"
+	},
+	"scripts": {
+		"webdriver-manager-update": "./node_modules/.bin/webdriver-manager update",
+		"webdriver-manager-start": "./node_modules/.bin/webdriver-manager start",
+		"success": "./node_modules/.bin/protractor configuration.js --suite success",
+		"module": "./node_modules/.bin/protractor configuration.js --suite module",
+		"routing": "./node_modules/.bin/protractor configuration.js --suite routing",
+		"volunteer": "./node_modules/.bin/protractor configuration.js --suite volunteer",
+		"successpage": "./node_modules/.bin/protractor configuration.js --suite successpage",
+		"consent": "./node_modules/.bin/protractor configuration.js --suite consent",
+		"landing": "./node_modules/.bin/protractor configuration.js --suite landing",
+		"bcscredirect": "./node_modules/.bin/protractor configuration.js --suite bcscredirect",
+		"termsofuse": "./node_modules/.bin/protractor configuration.js --suite termsofuse",
+		"regression": "./node_modules/.bin/protractor configuration.js --suite regression",
+		"smoke": "./node_modules/.bin/protractor configuration.js --suite smoke"
+	},
+	"devDependencies": {
+		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
+	}
 }
