@@ -24,12 +24,5 @@
 	},
 	"devDependencies": {
 		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
-	},
-	"overrides": {
-		"json-schema": "^0.4.0",
-		"qs": "^6.5.3",
-		"minimatch": "^3.0.5",
-		"ansi-regex": "^5.0.1",
-		"xml2js": "^0.5.0"
 	}
 }
