@@ -138,6 +138,7 @@
     "indent": 4
   },
   "overrides": {
+      "json5": "2.2.2",
       "trim-newlines" : "^3.0.1",
       "nth-check" : "^2.0.1",
       "glob-parent" : "^5.1.2",
