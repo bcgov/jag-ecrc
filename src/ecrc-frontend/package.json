@@ -50,6 +50,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "test:update-snapshot": "test -- -u",
     "test": "jest --env='jsdom'",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
