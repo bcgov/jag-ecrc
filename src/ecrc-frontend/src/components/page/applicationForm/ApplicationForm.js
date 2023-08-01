@@ -148,7 +148,13 @@ export default function ApplicationForm({
     loader: { width: "100%", textAlign: "center", display: "inline-block" },
     content: { display: "none" }
   });
-
+  // Create a gender text Map
+  const genderTxtMap = new Map([
+    ["female", "F"],
+    ["male", "M"],
+    ["diverse", "X"],
+    ["unknown", "U"]
+  ]);
   const location = useLocation();
 
   const getAge = birthdateString => {
@@ -228,7 +234,7 @@ export default function ApplicationForm({
           }
 
           // Convert gender text
-          const formatGender = gender === "female" ? "F" : "M";
+          const formatGender = genderTxtMap.get(gender.toLowerCase());
 
           const age = getAge(birthdate);
 
