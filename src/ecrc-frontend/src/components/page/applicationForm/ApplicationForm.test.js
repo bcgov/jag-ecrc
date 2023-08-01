@@ -213,7 +213,7 @@ describe("ApplicationForm Component", () => {
           region: "British Columbia",
           postal_code: "v9n1d4"
         },
-        gender: "X",
+        gender: "U",
         given_name: "given",
         given_names: "givens",
         family_name: "fam",

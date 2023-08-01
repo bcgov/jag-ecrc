@@ -152,7 +152,7 @@ export default function ApplicationForm({
   const genderTxtMap = new Map([
     ["female", "F"],
     ["male", "M"],
-    ["diverse", "X"],
+    ["diverse", "U"],
     ["unknown", "U"]
   ]);
   const location = useLocation();
