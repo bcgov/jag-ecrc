@@ -27,8 +27,8 @@ export default function TermsOfUse({
         request for a criminal record check.
       </p>
       <p>
-        These Terms of Use are an agreement between you and His Majesty the
-        King in Right of the Province of British Columbia, represented by the
+        These Terms of Use are an agreement between you and His Majesty the King
+        in Right of the Province of British Columbia, represented by the
         Minister of Public Safety and Solicitor General (the
         &quot;Province&quot;) and they govern your use of the Site and, where
         applicable, any associated service (&quot;Associated Service&quot; and,
