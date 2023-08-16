@@ -1,6 +1,9 @@
 import React from "react";
 
+const PACKAGE_VERSION = require("../../../../package.json").version;
+
 export default function Footer() {
+  console.log(`Release version: ${PACKAGE_VERSION}`);
   return (
     <footer className="footer">
       <nav className="navbar navbar-expand-sm navbar-dark justify-content-end">
