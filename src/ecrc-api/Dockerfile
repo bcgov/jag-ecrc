@@ -1,7 +1,7 @@
 #############################################################################################
 ###              Stage where Docker is building spring boot app using maven               ###
 #############################################################################################
-FROM maven:3.6.3-jdk-17 as build
+FROM maven:3.8.5-openjdk-17 as build
 
 ARG PROXY_SET=false
 ARG PROXY_HOST=
