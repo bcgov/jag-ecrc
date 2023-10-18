@@ -3,7 +3,6 @@ package ca.bc.gov.open.ecrc.service;
 import ca.bc.gov.open.ecrc.configuration.EcrcProperties;
 import ca.bc.gov.open.ecrc.exception.EcrcServiceException;
 import ca.bc.gov.open.ecrc.model.RequestCheckApplicantForPrevCrc;
-import javassist.NotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -48,7 +47,7 @@ class EcrcServicesImplCheckApplicantForPrevCrcTest {
 
 	@DisplayName("Success - ecrcService checkApplicantForPrevCrc")
 	@Test
-	public void testCheckApplicantForPrevCrcSuccess() throws NotFoundException, EcrcServiceException {
+	public void testCheckApplicantForPrevCrcSuccess() throws EcrcServiceException {
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(), any()))
 				.thenReturn(new ResponseEntity<>(result, HttpStatus.OK));
 		serviceResult = ecrcServices.checkApplicantForPrevCrc(new RequestCheckApplicantForPrevCrc());

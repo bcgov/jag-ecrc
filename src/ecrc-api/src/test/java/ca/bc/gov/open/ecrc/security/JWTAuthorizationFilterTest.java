@@ -13,11 +13,11 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequestWrapper;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
@@ -32,22 +32,22 @@ import static org.mockito.Mockito.when;
  *
  */
 class JWTAuthorizationFilterTest {
-
 	private final String jwtSuccess = "eyJhbGciOiJIUzI1NiJ9."
-			+ "eyJoZWFkZXIiOiJwcmVmaXgiLCJhdXRob3JpdGllcyI6WyJyb2xlIl19."
-			+ "hRTr1-4SQQDyru3SQp1DHbLLJnb3UQqyg_v-PgDEd5Y";
+		+"eyJoZWFkZXIiOiJwcmVmaXgiLCJhdXRob3JpdGllcyI6WyJyb2xlIl19."
+		+"VcQJjwPagd49D7v9YLKdM1FGc5DtsJeUzeDeG6IjKSs";
 	private final String jwtPerSuccess = "eyJhbGciOiJIUzI1NiJ9."
-			+ "eyJoZWFkZXIiOiJwcmVmaXgiLCJhdXRob3JpdGllcyI6WyJyb2xlIl0sInBlciI6ImVlVEFNTHZ0LytBeGoweEt1V2dycWZMd3ZwK1VacXZ"
-			+ "IajJuUVpiOTFvWEZZRVVTT3djMXpFSDJwVHRzY1U1Q2VrVzNsYXMvN2UzVFhjUVU1ZnZVNzdFNFhDRXF2OFZvcjUyTm9wR1hRclcwVkF"
-			+ "lMFUvYW85czg5ZzZoemk0RnJXRmREUXNSWFIrSlNNTFdGMytkVUhiUGhkZkFmY05razR3YllKNTRFTHRnSjE2TkJOaVVQRS9XaUg5dU11"
-			+ "Vzk2L3dobm5TaEIwNjM4ekYvdzFPWVUvWklkVHZ2SjQxVHR1b2J6N25oTmtkWWVyQnkvenorMi9qWXRzN2x4QnJPRGo1VjY5L2tnNFJhVm5"
-			+ "UYmwwendINUVVdTJxMUxOWW5ia3MxeVRrNFhPUUNRSzA5QXN4NE13NnJNb1FXRmNzS2dVek1GbUVDeEhCaUJpbWFMaVY2VkpHZndHRjU3Lzdy"
-			+ "dXV1YnBSUzhnVFNtUVl5bnB3M1R4RkdWTU5rdnlENHljMkM5T1VBNVdpQy9hOFplNEdRN203TkZ5UnhzMUZjNTRXY25CNlJzT3lHZnErMURJWW"
-			+ "9ES1BlQkwybUdMQ0RZY0MzYVFlcEtraENsbHowV09lU2pyVmZjaGI1VHJVRHpLSENFZ0ZWMkU1SzExQ1ozcXZ0SDF5RFRFRnFPM3RVVnBpWmJT"
-			+ "RU9BQ2dDWjRRTnRwWTJjT0pMVXBBR3ZtbU9CbU93YjN5RHdtaVpaZytOQmdjVEhMUmFsSTRyNEZwVGlOTjZCOElVZUhRdEd0cG0xK1RjOS90L3"
-			+ "NEb2FFa3RHN081Tmp5bXVReUY5OG1EK0YwWFBIRUpxN1pIVlVDbDE2ZW5NNEZMS0JxNlpwS1BTLzcrNFZkNXZvSEVPWkM4azFSREVha3MzVnZ5c"
-			+ "UptQ0I2QTM5TUREeVUvNVk5NGc1NlNkTmpYOVZtUGd1UWRZTEd0eXMvQU5od3pIZjNUSWZTbllNQjhNQy81YmNOZ2lDa3BYdURyVWI4ZGhCUGVBY"
-			+ "np0RXJnUWlLSVdBOTJtdzRMclBIbkNwRHhXU3dUZjBMcFE2bmVhVHlIQ2FOL1k9In0.NLKnS4tVeehLPGBu01aVB3b93zeYgj_H9HPPTM_75yg";
+			+ "eyJoZWFkZXIiOiJwcmVmaXgiLCJhdXRob3JpdGllcyI6WyJyb2xlIl0sInBlciI6Ikw3anYzK3g0VHJFb3lUVkdGS3pCR1c5VldzY3pLNlI2am"
+			+ "1VLzJUdDB3ck1Iekk5VWJ3Kzk1SlZ4TVdXc291TTNrZ2xBd3FTSC8vTXErcEJlMVUrNzNJejhwS2E5Q3haVXlEL3BTeEN4dUNTcGFoeU1wek9V"
+			+ "VjNQUVFiaFlhSUdYeFNsK3E1ajEzemcyaExzNGRQT3FEZFlrTEtrYk5EWEQzNnJ4eGVTbTV5U29xeWZMUG45cEV6MitEWHVwNzIyd2FqNzcrNk"
+			+ "Z0djNUN040NVVUeTlIeHhzSm81aHNnbUpYREhpd3VNTFpTOGF4Rm1GdFhQZVRMK1o3MHJmczl3QUZDU1ZESXpmTzllU09IR0xzUVFRUmtYL2Fk"
+			+ "R2d5MVcxY25UQ2Z3ZVFLMkZQU3lvb2pvUisvUTROblIyKytmNmh4V3JhWm5SV1Z4L2VOYU9uYUdub1c5c1p5M2Fkd09VcU5HOFNDZ1JyZG1TNX"
+			+ "AzWHhPQlltU1o0RUlXMGR5TVNGQWphMy9KeS90d2xHYm9hVW43QjVmUnlTZUc0dnJncjAwaXBwQThnRjJUdDVLakZXcHRlRit1Z1ZPZTQ1bktJ"
+			+ "bHY4RVFjZlk4UHd3R2o5aTZzbkpKb3VJSGc0ZWRaSmh4YTFac1BXVStJWHFGSTc3OUFKOWY0QnU1bjVXbm9NVlBHbmdZSUFiS1E0Uk9rdjJLd1"
+			+ "BaTWVZUmtLalBmeW44Y2RIckczREpDOVFkWFhXUkVna3JjOXNTVVEzWWZ0S2VVaHdNKy9QdlNIUDRXZVhSWnNLL2llQnVpU1FYemNHVzhGRzVB"
+			+ "MEFKU0M3WWExV3FVdDFGSVIzR3BYNEo4c05DWWJSblY0QTc3UHpxeExzdWcyaEhDUCsrVE1zVCs3U1NzN0FmUXNmZ01LM3ZFYjlvblY1bU4zSn"
+			+ "BZMUJnS2ZtUDFHRFdJNUp2U2xkdWhXWTVxQVYwa0k1YkV3VHlUUmpOaVVrWlprdER4bGdkNEdzYkF2RW9WN1czcCtVTFE0bGhwM3BmSkprcW1D"
+			+ "YUJaRjNiSTFnVWc0VDlDTDJkYkJpbjJkblJHN0ZYY3pyR0U9In0."
+			+ "0J6Q1uh3y-xT5edpU-vyi3Orl9lkLtcdMzZH05OP4HQ";
 	private final String jwtRunTimeError = "eyJhbGciOiJIUzI1NiJ9."
 			+ "eyJoZWFkZXIiOiJwcmVmaXgiLCJhdXRob3JpdGllcyI6InJvbGUifQ." + "Xyh5YRGNLdaPfxCUak6dokgoWb9EA51w9LslqcndWjU";
 	private final String jwtSignError = "eyJhbGciOiJIUzI1NiJ9."
@@ -69,8 +69,8 @@ class JWTAuthorizationFilterTest {
 		MockitoAnnotations.initMocks(this);
 		Mockito.when(ecrcProperties.getJwtHeader()).thenReturn("header");
 		Mockito.when(ecrcProperties.getJwtPrefix()).thenReturn("prefix");
-		Mockito.when(ecrcProperties.getJwtSecret()).thenReturn("secret");
-		Mockito.when(ecrcProperties.getOauthPERSecret()).thenReturn("secret");
+		Mockito.when(ecrcProperties.getJwtSecret()).thenReturn("this-is-very-long-256-bit-secret");
+		Mockito.when(ecrcProperties.getOauthPERSecret()).thenReturn("this-is-very-long-256-bit-secret");
 	}
 
 	@DisplayName("Success - doFilterInternal jwt filter")

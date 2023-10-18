@@ -1,7 +1,7 @@
 #############################################################################################
 ###              Stage where Docker is building spring boot app using maven               ###
 #############################################################################################
-FROM maven:3.6.3-jdk-8 as build
+FROM maven:3.6.3-jdk-17 as build
 
 ARG PROXY_SET=false
 ARG PROXY_HOST=
@@ -25,7 +25,7 @@ RUN mvn -B clean package \
 #############################################################################################
 ### Stage where Docker is running a java process to run a service built in previous stage ###
 #############################################################################################
-FROM openjdk:8-jdk-slim
+FROM eclipse-temurin:17-jre-alpine
 
 ARG MVN_PROFILES
 ARG ECRC_SERVICE_NAME

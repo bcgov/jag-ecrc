@@ -156,7 +156,7 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextInvoiceId.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateNewCrcService.class), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateNewCRCService.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetServiceFeeAmount.class), any()))
 				.thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
@@ -181,7 +181,7 @@ public class ECRCServicesImplCreateNewCRCApplicantTest {
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
 		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(GetNextInvoiceId.class), any()))
 				.thenReturn(new ResponseEntity<>(WEBMETHODSRES, HttpStatus.OK));
-		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateNewCrcService.class), any()))
+		Mockito.when(ecrcWebMethodsService.callWebMethodsService(any(), any(CreateNewCRCService.class), any()))
 				.thenReturn(new ResponseEntity<>("{\"message\":\"something happened\",responseCode\":-1}",
 						HttpStatus.SERVICE_UNAVAILABLE));
 

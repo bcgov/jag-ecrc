@@ -72,7 +72,7 @@ public class EcrcServicesImpl implements EcrcServices {
 
 	public ResponseEntity<String> createNewCRCService(RequestNewCRCService crcService) throws EcrcServiceException {
 		String createNewCRCServiceUri = String.format(ecrcProps.getCreateNewCRCServiceUri(),crcService.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(createNewCRCServiceUri, new CreateNewCrcService(), crcService.getRequestGuid());
+		return ecrcWebMethodsService.callWebMethodsService(createNewCRCServiceUri, new CreateNewCRCService(), crcService.getRequestGuid());
 	}
 
 	public ResponseEntity<String> updateServiceFinancialTxn(RequestUpdateServiceFinancialTxn updateServiceFinancialTxn) throws EcrcServiceException {
@@ -106,7 +106,7 @@ public class EcrcServicesImpl implements EcrcServices {
 	public ResponseEntity<String> checkApplicantForPrevCrc(RequestCheckApplicantForPrevCrc applicantInfo)
 			throws EcrcServiceException {
 		String checkApplicantForPrevCrcUri = String.format(ecrcProps.getCheckApplicantForPrevCrcUri(), applicantInfo.toQueryString());
-		return ecrcWebMethodsService.callWebMethodsService(checkApplicantForPrevCrcUri, new CheckApplicantForPrevCrc(), applicantInfo.getRequestGuid());
+		return ecrcWebMethodsService.callWebMethodsService(checkApplicantForPrevCrcUri, new CheckApplicantForPrevCRC(), applicantInfo.getRequestGuid());
 	}
 
 	public ResponseEntity<String> createSharingService(RequestCreateSharingService serviceInfo)
