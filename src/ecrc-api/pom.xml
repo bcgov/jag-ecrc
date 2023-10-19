@@ -18,16 +18,15 @@
 		<java.version>17</java.version>
 		<nimbus.oauth.version>7.0.3</nimbus.oauth.version>
 		<javax.mail.version>1.4</javax.mail.version>
-		<springfox-swagger-version>2.9.2</springfox-swagger-version>
 		<log4j2.version>2.17.1</log4j2.version>
 		<snakeyaml.version>2.0</snakeyaml.version>
+		<jjwt-api.version>0.11.5</jjwt-api.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
@@ -110,18 +109,18 @@
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
-			<version>0.11.5</version>
+			<version>${jjwt-api.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-impl</artifactId>
-			<version>0.11.5</version>
+			<version>${jjwt-api.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
-			<version>0.11.5</version>
+			<version>${jjwt-api.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
