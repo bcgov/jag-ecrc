@@ -20,8 +20,8 @@
 		<javax.mail.version>1.4</javax.mail.version>
 		<springfox-swagger-version>2.9.2</springfox-swagger-version>
 		<log4j2.version>2.17.1</log4j2.version>
+		<snakeyaml.version>2.0</snakeyaml.version>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -90,7 +90,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20230227</version>
+			<version>20231013</version>
 		</dependency>
 		<dependency>
 			<groupId>com.squareup.okhttp3</groupId>
@@ -102,13 +102,11 @@
 			<artifactId>mockwebserver</artifactId>
 			<version>3.14.9</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.nimbusds</groupId>
 			<artifactId>oauth2-oidc-sdk</artifactId>
 			<version>${nimbus.oauth.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
@@ -126,26 +124,20 @@
 			<version>0.11.5</version>
 			<scope>runtime</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>${javax.mail.version}</version>
 		</dependency>
-
-
-
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.2.0</version>
 		</dependency>
-
 		<dependency>
 		    <groupId>commons-codec</groupId>
 		    <artifactId>commons-codec</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
@@ -173,12 +165,15 @@
 			<artifactId>javassist</artifactId>
 			<version>3.12.1.GA</version>
 		</dependency>
+		<dependency>
+			<groupId>com.squareup.okio</groupId>
+			<artifactId>okio</artifactId>
+			<version>3.4.0</version>
+		</dependency>
 	</dependencies>
 	<profiles>
 		<profile>
-
 			<id>openshift</id>
-
 			<repositories>
 				<repository>
 					<id>splunk-artifactory</id>
@@ -186,7 +181,6 @@
 					<url>https://splunk.jfrog.io/artifactory/ext-releases-local/</url>
 				</repository>
 			</repositories>
-
 			<dependencies>
 				<dependency>
 					<groupId>com.splunk.logging</groupId>
@@ -194,7 +188,6 @@
 					<version>1.11.4</version>
 				</dependency>
 			</dependencies>
-
 		</profile>
 	</profiles>
 	<build>
@@ -292,7 +285,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -328,5 +320,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
