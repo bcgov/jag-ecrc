@@ -15,6 +15,7 @@ jobs:
     uses: SierraSystems/reusable-workflows/.github/workflows/java-unit-tests.yml@main
     with:
       working_directory: src/ecrc-api
+      java_version: 17
 
   frontend-build-image:
     uses: SierraSystems/reusable-workflows/.github/workflows/openshift-source-to-image.yml@main
