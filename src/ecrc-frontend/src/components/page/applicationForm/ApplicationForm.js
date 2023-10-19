@@ -279,10 +279,10 @@ export default function ApplicationForm({
           }
 
           const index = street_address.indexOf("\n");
-					const addressLine_1 =
-						index !== -1 ? street_address.slice(0, index) : street_address;
-					const addressLine_2 =
-						index !== -1 ? street_address.slice(index + 1) : "";
+          const addressLine_1 =
+            index !== -1 ? street_address.slice(0, index) : street_address;
+          const addressLine_2 =
+            index !== -1 ? street_address.slice(index + 1) : "";
 
           setApplicant({
             legalFirstNm: given_name,
