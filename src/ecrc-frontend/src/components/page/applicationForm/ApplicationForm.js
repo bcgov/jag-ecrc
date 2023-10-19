@@ -278,12 +278,11 @@ export default function ApplicationForm({
             formatProvinceNm = "Invalid Province";
           }
 
-          const street_address1 = "609-6879 LONELY WAY\n609-6879 LONELY WAYSOME\nSOME VERY LARGE TEXT EXCEEDING THE 40 CHARACTER LIMITyyyyyyyyyyyyyyyyyyy";
-          const index = street_address1.indexOf("\n");
-          const addressLine_1 =
-            index !== -1 ? street_address1.slice(0, index) : street_address1;
-          const addressLine_2 =
-            index !== -1 ? street_address1.slice(index + 1) : "";
+          const index = street_address.indexOf("\n");
+					const addressLine_1 =
+						index !== -1 ? street_address.slice(0, index) : street_address;
+					const addressLine_2 =
+						index !== -1 ? street_address.slice(index + 1) : "";
 
           setApplicant({
             legalFirstNm: given_name,
