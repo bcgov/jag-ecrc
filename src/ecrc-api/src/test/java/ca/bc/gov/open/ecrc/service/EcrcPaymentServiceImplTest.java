@@ -22,7 +22,7 @@ import static org.mockito.ArgumentMatchers.any;
 
 public class EcrcPaymentServiceImplTest {
 	
-	
+
 	private final String jsonResp = "{\"respValue\":\"test.com\",\"respMsg\":\"success\",\"respCode\":0}";
 	private final String jsonNotFoundResp = "{\"respMsg\":\"Requested data not found\", \"respCode\":1}";
 	private final String jsonServiceUnavailableResp = "{\"respMsg\":\"Service unavailable returned\", \"respCode\":-1}";
@@ -78,7 +78,8 @@ public class EcrcPaymentServiceImplTest {
 		mockResponse.addHeader("content-type: application/xml;");
 		mockResponse.setResponseCode(200);
 		mockBackEnd.enqueue(mockResponse);
-		ResponseEntity<String> res = ecrcPaymentService.createPaymentUrl(new RequestPaymentService());
+        RequestPaymentService request = new RequestPaymentService();
+		ResponseEntity<String> res = ecrcPaymentService.createPaymentUrl(request);
 		Assertions.assertEquals(HttpStatus.OK, res.getStatusCode());
 		Assertions.assertEquals(serviceResp, res.getBody());
 	}

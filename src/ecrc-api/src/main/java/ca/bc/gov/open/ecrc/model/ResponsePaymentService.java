@@ -1,6 +1,6 @@
 package ca.bc.gov.open.ecrc.model;
 
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 
 /**
  * Response object for payment
