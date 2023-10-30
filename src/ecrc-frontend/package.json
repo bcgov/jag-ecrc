@@ -24,7 +24,7 @@
     "https-browserify": "^1.0.0",
     "jest-environment-jsdom": "^29.1.2",
     "jquery": "^3.4.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "jspdf": "^2.3.1",
     "jspdf-autotable": "^3.2.13",
     "os-browserify": "^0.3.0",
