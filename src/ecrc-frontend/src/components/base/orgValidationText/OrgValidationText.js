@@ -96,7 +96,7 @@ export default function OrgValidationText({
 
             <li>
               <a
-                href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration"
+                href="https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/authorized-contacts"
                 target="_blank"
                 rel="noopener noreferrer"
               >
