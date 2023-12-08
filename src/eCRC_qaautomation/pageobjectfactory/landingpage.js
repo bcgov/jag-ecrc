@@ -12,7 +12,7 @@ class LandingPageObjects {
     );
     this.iAmAnAuthorizedContact = element(
       by.css(
-        "a[href='https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/organization-registration/employee-organization-registration/employee-contact-registration']"
+        "a[href='https://www2.gov.bc.ca/gov/content/safety/crime-prevention/criminal-record-check/authorized-contacts']"
       )
     );
     this.iAmAnEmployerOrganization = element(
