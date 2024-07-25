@@ -14,7 +14,11 @@ export default function OrgValidationText({
 }) {
   return (
     <div>
-      <h2>Please be advised that our system will be undergoing scheduled maintenance from 3:00pm on July 26 until 9:00am on July 29. During this time, the system will be unavailable. </h2>
+      <h2>
+        Please be advised that our system will be undergoing scheduled
+        maintenance from 3:00pm on July 26 until 9:00am on July 29. During this
+        time, the system will be unavailable.{" "}
+      </h2>
       <h1>Criminal Record Check</h1>
       <p>
         In British Columbia, if you work or volunteer with, or have the
