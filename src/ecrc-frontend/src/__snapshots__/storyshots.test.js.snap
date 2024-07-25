@@ -11080,9 +11080,18 @@ exports[`Storyshots OrgValidation Default 1`] = `
       className="content col-md-10"
     >
       <div>
-        <h2>
+        <h2
+          style={
+            Object {
+              "color": "red",
+            }
+          }
+        >
           Please be advised that our system will be undergoing scheduled maintenance from 3:00pm on July 26 until 9:00am on July 29. During this time, the system will be unavailable.
            
+        </h2>
+        <h2>
+          We apologize for any inconvenience this may cause. Thank you for your patience as we work to improve our services.
         </h2>
         <h1>
           Criminal Record Check
@@ -11420,9 +11429,18 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
       className="content col-md-10"
     >
       <div>
-        <h2>
+        <h2
+          style={
+            Object {
+              "color": "red",
+            }
+          }
+        >
           Please be advised that our system will be undergoing scheduled maintenance from 3:00pm on July 26 until 9:00am on July 29. During this time, the system will be unavailable.
            
+        </h2>
+        <h2>
+          We apologize for any inconvenience this may cause. Thank you for your patience as we work to improve our services.
         </h2>
         <h1>
           Criminal Record Check
@@ -11716,9 +11734,18 @@ exports[`Storyshots OrgValidation Mobile 1`] = `
 
 exports[`Storyshots OrgValidationText Default 1`] = `
 <div>
-  <h2>
+  <h2
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
     Please be advised that our system will be undergoing scheduled maintenance from 3:00pm on July 26 until 9:00am on July 29. During this time, the system will be unavailable.
      
+  </h2>
+  <h2>
+    We apologize for any inconvenience this may cause. Thank you for your patience as we work to improve our services.
   </h2>
   <h1>
     Criminal Record Check
