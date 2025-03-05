@@ -2,7 +2,7 @@
 
 Ministry of Attorney General - eCRC
 
-[![img](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
+[![Lifecycle:Retired](https://img.shields.io/badge/Lifecycle-Retired-d45500)]([<Redirect-URL>](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md))
 [![Maintainability](https://api.codeclimate.com/v1/badges/d9e6b117e755e4e3fe7a/maintainability)](https://codeclimate.com/github/bcgov/jag-ecrc/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d9e6b117e755e4e3fe7a/test_coverage)](https://codeclimate.com/github/bcgov/jag-ecrc/test_coverage)
 
